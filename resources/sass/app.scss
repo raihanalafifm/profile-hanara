@@ -7,11 +7,101 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+/* Scroll Down Animation CSS */
+ .scroll-down-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.scroll-down-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-down-button {
+  width: 50px;
+  height: 50px;
+  background-color: #ff6700;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.scroll-down-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(255, 103, 0, 0.3);
+}
+
+.scroll-down-button.up .scroll-arrow {
+  transform: rotate(-135deg);
+  margin-top: 5px;
+}
+
+.scroll-down-button.down .scroll-arrow {
+  transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+.scroll-arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .scroll-down-container {
+      bottom: 20px;
+      right: 20px;
+  }
+  
+  .scroll-down-button {
+      width: 40px;
+      height: 40px;
+  }
+  
+  .scroll-arrow {
+      width: 10px;
+      height: 10px;
+  }
+}
+
+/*navbar setting*/
 .navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   padding: 10px 0;
 }
+/* Navbar sebelum scroll */
+.navbar.navbar-default {
+  background-color: transparent !important;
+  box-shadow: none;
+}
 
+/* Navbar setelah scroll */
+.navbar.navbar-scrolled {
+  padding: 10px 0;
+  background-color: #ffffff !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .navbar-brand img {
+  height: 35px; /* Logo mengecil saat scroll */
+}
 .logo {
   height: 35px;
   width: auto;
@@ -380,5 +470,119 @@
   
   .hero-title {
     font-size: 30px;
+  }
+}
+
+/* About Section Styles */
+.about-section {
+  padding: 80px 0;
+  background-color: #fff;
+  position: relative;
+}
+
+/* Image Area Styling */
+.about-images {
+  position: relative;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.certificate-logo {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100px;
+  height: 100px;
+  z-index: 3;
+}
+
+.main-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Area Styling */
+.about-content {
+  padding-left: 40px;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+}
+
+.section-tag {
+  display: block;
+  color: #ff6700; /* Oranye yang lebih terang */
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.company-name {
+  font-size: 30px;
+  font-weight: 800; /* Extra bold */
+  color: #000;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.company-name .text-primary {
+  color: #ff8100 !important;
+}
+
+.about-description p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .about-content {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+  
+  .certificate-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .about-image-wrapper {
+    margin-bottom: 30px;
+  }
+  
+  .company-name {
+    font-size: 26px;
+  }
+  
+  .section-tag {
+    text-align: center;
+  }
+  
+  .company-name, .about-description p {
+    text-align: center;
   }
 }

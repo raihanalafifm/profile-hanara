@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
         <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara" class="logo">
@@ -63,20 +63,29 @@
     </div>
   </nav>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      if (window.innerWidth >= 992) {
-        document.querySelectorAll('.navbar .dropdown').forEach(function(dropdown) {
-          dropdown.addEventListener('mouseenter', function() {
-            this.querySelector('.dropdown-toggle').click();
-            this.querySelector('.dropdown-toggle').classList.add('show');
-            this.querySelector('.dropdown-menu').classList.add('show');
-          });
-          
-          dropdown.addEventListener('mouseleave', function() {
-            this.querySelector('.dropdown-toggle').classList.remove('show');
-            this.querySelector('.dropdown-menu').classList.remove('show');
-          });
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth >= 992) {
+    document.querySelectorAll('.navbar .dropdown').forEach(function(dropdown) {
+      dropdown.addEventListener('mouseenter', function() {
+        // Tambahkan preventDefault() untuk mencegah fokus default
+        const dropdownToggle = this.querySelector('.dropdown-toggle');
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
         });
-      }
+        
+        dropdownToggle.click();
+        dropdownToggle.classList.add('show');
+        this.querySelector('.dropdown-menu').classList.add('show');
+        
+        // Hapus fokus setelah klik
+        dropdownToggle.blur();
+      });
+      
+      dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-toggle').classList.remove('show');
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
     });
+  }
+});
     </script>
