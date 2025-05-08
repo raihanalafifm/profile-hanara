@@ -5,7 +5,7 @@
         <!-- Logo dan Copyright -->
         <div class="col-md-4">
           <div class="footer-logo">
-            <img src="{{ asset('images/hanara-logo-white.png') }}" alt="Hanara">
+            <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara">
           </div>
           <p class="copyright">© 2025 Hanara Prima Solusindo.<br>Powered By Hanara Prima Solusindo</p>
           <div class="social-icons">
