@@ -75,5 +75,359 @@
         window.addEventListener('scroll', checkScroll);
         checkScroll();
     });
+// Clean Testimonial Slider JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  // Get testimonial elements
+  const testimonialItems = document.querySelectorAll('.testimonial-clean-item');
+  const cleanDots = document.querySelectorAll('.clean-dot');
+  
+  let currentSlide = 0;
+  const totalSlides = testimonialItems.length;
+  let autoplayInterval;
+  
+  // Function to show a specific slide
+  function showSlide(index) {
+    // Remove active class from all slides and dots
+    testimonialItems.forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    cleanDots.forEach(dot => {
+      dot.classList.remove('active');
+    });
+    
+    // Add active class to current slide and dot
+    currentSlide = (index + totalSlides) % totalSlides; // Ensure it wraps around
+    testimonialItems[currentSlide].classList.add('active');
+    cleanDots[currentSlide].classList.add('active');
+  }
+  
+  // Set up dot click handlers
+  cleanDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index);
+      resetAutoplay();
+    });
+  });
+  
+  // Function to start autoplay
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000); // Change slide every 5 seconds
+  }
+  
+  // Function to reset autoplay
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+  
+  // Initialize slider and start autoplay
+  showSlide(0);
+  startAutoplay();
+  
+  // Add swipe functionality for mobile
+  const slider = document.querySelector('.testimonial-clean-slider');
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  slider.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  
+  slider.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+  
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+      // Swiped left - next slide
+      showSlide(currentSlide + 1);
+      resetAutoplay();
+    } else if (touchEndX > touchStartX + 50) {
+      // Swiped right - previous slide
+      showSlide(currentSlide - 1);
+      resetAutoplay();
+    }
+  }
+});
+// Blog Slider JavaScript with Mouse Drag (No Arrow Buttons)
+document.addEventListener('DOMContentLoaded', function() {
+  // Get slider elements
+  const sliderContainer = document.querySelector('.blog-slider-container');
+  const slides = document.querySelectorAll('.blog-card');
+  const dots = document.querySelectorAll('.blog-slider-dot');
+  
+  let currentIndex = 0;
+  let slideWidth = 0;
+  let totalSlides = slides.length;
+  let autoplayInterval;
+  let slidesPerView = 3; // Default for desktop
+  
+  // Mouse/Touch tracking variables
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = 0;
+  let currentPosition = 0;
+  
+  // Calculate how many slides to show based on screen width
+  function calculateSlidesPerView() {
+    if (window.innerWidth < 768) {
+      slidesPerView = 1; // Mobile
+    } else if (window.innerWidth < 992) {
+      slidesPerView = 2; // Tablet
+    } else {
+      slidesPerView = 3; // Desktop
+    }
+    
+    // Recalculate slide width
+    updateSlideWidth();
+  }
+  
+  // Calculate slide width
+  function updateSlideWidth() {
+    if (sliderContainer) {
+      const containerWidth = sliderContainer.parentElement.clientWidth;
+      slideWidth = (containerWidth - (20 * (slidesPerView - 1))) / slidesPerView;
+      
+      // Update CSS for each slide
+      slides.forEach(slide => {
+        slide.style.minWidth = `${slideWidth}px`;
+      });
+      
+      // Update container position to current slide
+      goToSlide(currentIndex, false); // false = no animation for initial setup
+    }
+  }
+  
+  // Go to specific slide
+  function goToSlide(index, animate = true) {
+    if (!sliderContainer) return;
+    
+    // Limit the maximum slide
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+    currentIndex = Math.min(Math.max(0, index), maxIndex);
+    
+    // Calculate offset
+    const offset = -currentIndex * (slideWidth + 20); // 20px is gap
+    prevTranslate = offset;
+    currentTranslate = offset;
+    
+    // Apply transform with or without animation
+    if (animate) {
+      sliderContainer.style.transition = 'transform 0.3s ease-out';
+    } else {
+      sliderContainer.style.transition = 'none';
+    }
+    
+    sliderContainer.style.transform = `translateX(${offset}px)`;
+    currentPosition = offset;
+    
+    // After transition, reset transition property
+    if (animate) {
+      setTimeout(() => {
+        sliderContainer.style.transition = '';
+      }, 300);
+    }
+    
+    // Update active dot
+    updateActiveDot();
+  }
+  
+  // Update active dot
+  function updateActiveDot() {
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  // Set up click events for dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      resetAutoplay();
+    });
+  });
+  
+  // Mouse and Touch Events for Dragging
+  
+  // Mouse Events
+  if (sliderContainer) {
+    // Disable context menu on right click
+    sliderContainer.addEventListener('contextmenu', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+    
+    // Mouse Down
+    sliderContainer.addEventListener('mousedown', dragStart);
+    
+    // Mouse Move
+    window.addEventListener('mousemove', drag);
+    
+    // Mouse Up
+    window.addEventListener('mouseup', dragEnd);
+    
+    // Mouse Leave
+    window.addEventListener('mouseleave', dragEnd);
+    
+    // Touch Events
+    sliderContainer.addEventListener('touchstart', dragStart);
+    window.addEventListener('touchmove', drag);
+    window.addEventListener('touchend', dragEnd);
+  }
+  
+  // Functions for drag functionality
+  function dragStart(e) {
+    e.preventDefault();
+    
+    // Get starting position
+    if (e.type === 'touchstart') {
+      startPos = e.touches[0].clientX;
+    } else {
+      startPos = e.clientX;
+      
+      // For mouse events, add a "grabbing" cursor
+      sliderContainer.style.cursor = 'grabbing';
+    }
+    
+    // Clear autoplay while dragging
+    clearInterval(autoplayInterval);
+    
+    // Set dragging to true
+    isDragging = true;
+    
+    // Start animation loop
+    animationID = requestAnimationFrame(animation);
+    
+    // Remove transition while dragging
+    sliderContainer.style.transition = 'none';
+  }
+  
+  function drag(e) {
+    if (!isDragging) return;
+    
+    let currentX;
+    if (e.type === 'touchmove') {
+      currentX = e.touches[0].clientX;
+    } else {
+      currentX = e.clientX;
+    }
+    
+    // Calculate how much we moved
+    const diff = currentX - startPos;
+    currentTranslate = prevTranslate + diff;
+  }
+  
+  function dragEnd() {
+    if (!isDragging) return;
+    
+    // Cancel animation
+    cancelAnimationFrame(animationID);
+    
+    // End dragging state
+    isDragging = false;
+    
+    // Reset cursor
+    sliderContainer.style.cursor = '';
+    
+    // Add transition back for snap effect
+    sliderContainer.style.transition = 'transform 0.3s ease-out';
+    
+    // Calculate which slide to snap to
+    const movedBy = currentTranslate - prevTranslate;
+    
+    if (movedBy < -100 && currentIndex < totalSlides - slidesPerView) {
+      // If dragged left enough, go to next slide
+      currentIndex += 1;
+    } else if (movedBy > 100 && currentIndex > 0) {
+      // If dragged right enough, go to previous slide
+      currentIndex -= 1;
+    }
+    
+    // Go to the determined slide
+    goToSlide(currentIndex);
+    
+    // Restart autoplay
+    startAutoplay();
+  }
+  
+  function animation() {
+    if (isDragging) {
+      setSliderPosition();
+      requestAnimationFrame(animation);
+    }
+  }
+  
+  function setSliderPosition() {
+    // Limit how far user can drag
+    const maxTranslate = 0;
+    const minTranslate = -(totalSlides - slidesPerView) * (slideWidth + 20);
+    
+    if (currentTranslate > maxTranslate) {
+      currentTranslate = maxTranslate;
+    } else if (currentTranslate < minTranslate) {
+      currentTranslate = minTranslate;
+    }
+    
+    currentPosition = currentTranslate;
+    sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+  }
+  
+  // Start autoplay
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      // If we're at the last possible slide, go back to the first
+      if (currentIndex >= totalSlides - slidesPerView) {
+        goToSlide(0);
+      } else {
+        goToSlide(currentIndex + 1); // Go to next slide
+      }
+    }, 5000); // Change slide every 5 seconds
+  }
+  
+  // Reset autoplay
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+  
+  // Window resize handler
+  function handleResize() {
+    calculateSlidesPerView();
+    resetAutoplay();
+  }
+  
+  // Initialize slider
+  function initSlider() {
+    calculateSlidesPerView();
+    startAutoplay();
+    
+    // Stop autoplay on hover
+    if (sliderContainer) {
+      sliderContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+      });
+      
+      sliderContainer.addEventListener('mouseleave', () => {
+        // Only restart if not dragging
+        if (!isDragging) {
+          startAutoplay();
+        }
+      });
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', handleResize);
+  }
+  
+  // Initialize
+  initSlider();
+});
 </script>
 </html>

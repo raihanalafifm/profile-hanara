@@ -285,4 +285,337 @@
     </div>
   </div>
 </section>
+<!-- Testimonial Section with Consistent Company Icon -->
+<section class="testimonial-clean-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="testimonial-clean-heading">
+          <span class="testimonial-clean-tag">• Client's Testimonial •</span>
+          <h2 class="testimonial-clean-title">Our Clients Feedback</h2>
+        </div>
+        
+        <div class="testimonial-clean-slider">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-clean-item active">
+            <div class="testimonial-clean-text">
+              “ Keputusan untuk bekerja sama dengan tim Hanara adalah salah satu keputusan terbaik yang pernah saya buat. Mereka tidak hanya menunjukkan dedikasi yang luar biasa terhadap proyek ini, tetapi juga menghasilkan kualitas kerja yang sangat memuaskan.”            
+            </div>
+            <div class="testimonial-clean-company">
+              <div class="company-logo-wrapper">
+                <img src="{{ asset('assets/images/icon/cde-logo.png') }}" alt="PT. Cakrawala Dinamika Energi" class="company-logo">
+              </div>
+              <p class="company-name">PT. Cakrawala Dinamika Energi</p>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial-clean-item">
+            <div class="testimonial-clean-text">
+              “Kerja tim Hanara tidak hanya mengagumkan tetapi juga melebihi ekspektasi saya yang tertinggi. Mereka tidak hanya menghadirkan solusi kreatif dan inovatif, tetapi juga menjaga tingkat akurasi dan profesionalisme yang tinggi. "            
+            </div>
+            <div class="testimonial-clean-company">
+              <div class="company-logo-wrapper">
+                <img src="{{ asset('assets/images/icon/spn-logo.png') }}" alt="PT. Global Tech Indonesia" class="company-logo">
+              </div>
+              <p class="company-name">PT. SPN</p>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial-clean-item">
+            <div class="testimonial-clean-text">
+              “ Saya merasa sungguh beruntung dapat bekerja dengan tim Hanara yang luar biasa ini. Kerja keras mereka benar-benar terbayar dengan hasil yang luar biasa"
+            </div>
+            <div class="testimonial-clean-company">
+              <div class="company-logo-wrapper">
+                <img src="{{ asset('assets/images/icon/JYL.png') }}" alt="PT. Mitra Solusi Digital" class="company-logo">
+              </div>
+              <p class="company-name">PT. JYL</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Dots -->
+        <div class="testimonial-clean-dots">
+          <span class="clean-dot active" data-slide="0"></span>
+          <span class="clean-dot" data-slide="1"></span>
+          <span class="clean-dot" data-slide="2"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Clients Section -->
+<section class="trusted-clients-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="trusted-clients-heading">
+          <span class="trusted-clients-tag">• Our Client •</span>
+          <h2 class="trusted-clients-title">Kami telah dipercaya oleh banyak klien dan perusahaan</h2>
+          <p class="trusted-clients-subtitle">
+            Kami memiliki beberapa keahlian untuk bekerja sama dengan perusahaan dan organisasi terkemuka di Indonesia. Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row trusted-clients-logos">
+      <!-- Row 1 -->
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/cde-coal.png') }}" alt="CDE Coal">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/ces-coal.png') }}" alt="CES Coal">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/mpp.png') }}" alt="MPP">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/yacoonn.png') }}" alt="Yacoon">
+        </div>
+      </div>
+      
+      <!-- Row 2 -->
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/chm.png') }}" alt="CHM">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/spn-logo.png') }}" alt="Sindo Prima Niaga">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/ef bengkulu.png') }}" alt="Branch Kota Bengkulu">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/mitra plus.png') }}" alt="Mitra Plus">
+        </div>
+      </div>
+      
+      <!-- Row 3 -->
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/msk.png') }}" alt="MSK">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/tek.png') }}" alt="TEK">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/sac.png') }}" alt="Asia Capital">
+        </div>
+      </div>
+      <div class="col-6 col-md-3 trusted-client-logo-wrap">
+        <div class="trusted-client-logo">
+          <img src="{{ asset('assets/images/icon/mavix.png') }}" alt="Mavix">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Application Products Section - HP Outside Cards -->
+<section class="product-gallery-section py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-12">
+        <h2 class="product-gallery-title"><span class="text-product-orange">OUR</span> APPLICATION<br>PRODUCTS.</h2>
+      </div>
+    </div>
+    
+    <!-- Products Layout -->
+    <div class="product-gallery-layout">
+      <!-- First Row: MIT and HCM -->
+      <div class="row">
+        <!-- MIT Product -->
+        <div class="col-lg-6 product-item-col">
+          <div class="product-item position-relative">
+            <!-- Phone Image (outside card) -->
+            <div class="product-phone-image mit-phone">
+              <img src="{{ asset('assets/images/icon/mit-hp.png') }}" alt="MIT App Screenshot">
+            </div>
+            
+            <!-- Card Content -->
+            <div class="product-item-card orange-product-bg">
+              <div class="product-item-icon">
+                <img src="{{ asset('assets/images/icon/icon-mit.png') }}" alt="MIT Icon">
+              </div>
+              <h3 class="product-item-title">MANAGAMENT<br>INFO TECHNOLOGY</h3>
+              <p class="product-item-desc">
+                MIT merupakan solusi untuk pengelolaan seluruh Departemen IT. Aplikasi ini mencakup tiga fungsi utama pengelolaan teknologi informasi: Infrastruktur, Aplikasi, dan Digital Creative.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- HCM Product -->
+        <div class="col-lg-6 product-item-col">
+          <div class="product-item position-relative">
+            <!-- Phone Image (outside card) -->
+            <div class="product-phone-image hcm-phone">
+              <img src="{{ asset('assets/images/icon/hcis-hp.png') }}" alt="HCM App Screenshot">
+            </div>
+            
+            <!-- Card Content -->
+            <div class="product-item-card green-product-bg">
+              <div class="product-item-icon">
+                <img src="{{ asset('assets/images/icon/icon-hcis.png') }}" alt="HCM Icon">
+              </div>
+              <h3 class="product-item-title">HUMAN CAPITAL<br>MANAGEMENT</h3>
+              <p class="product-item-desc">
+                HCM merupakan platform berbasis web yang terintegrasi dengan berbagai fitur esensial untuk efisiensi dan produktivitas pengelolaan SDM di perusahaan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Second Row: Sikerja -->
+      <div class="row mt-5 justify-content-center">
+        <div class="col-lg-6 product-item-col">
+          <div class="product-item position-relative">
+            <!-- Phone Image (outside card) -->
+            <div class="product-phone-image sikerja-phone">
+              <img src="{{ asset('assets/images/icon/sikerja-hp.png') }}" alt="Sikerja App Screenshot">
+            </div>
+            
+            <!-- Card Content -->
+            <div class="product-item-card orange-product-bg">
+              <div class="product-item-icon">
+                <img src="{{ asset('assets/images/icon/icon-sikerja.png') }}" alt="Sikerja Icon">
+              </div>
+              <h3 class="product-item-title">SIKERJA WORK<br>PRODUCTIVITY APP</h3>
+              <p class="product-item-desc">
+                HCM merupakan platform berbasis web yang terintegrasi dengan berbagai fitur esensial untuk efisiensi dan produktivitas pengelolaan SDM di perusahaan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Latest Blog Section with Slider (No Arrow Buttons) -->
+<section class="latest-blog-section py-5">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-lg-12">
+        <span class="blog-tag">• Our Latest Blog •</span>
+        <h2 class="blog-title">Connect with us for experiencing<br>the best <span class="text-blog-orange">IT Solutions</span></h2>
+        <p class="blog-subtitle">
+          Kami memiliki beberapa kesempatan untuk bekerja sama dengan perusahaan dan organisasi ternama di Indonesia.<br>
+          Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Blog Cards Slider -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="blog-slider">
+          <div class="blog-slider-container">
+            <!-- Blog Card 1 -->
+            <div class="blog-card">
+              <div class="blog-card-img">
+                <img src="{{ asset('assets/images/icon/zimbra-blog.png') }}" alt="Zimbra Server">
+                <div class="blog-card-overlay">
+                  <h3 class="blog-card-headline">INSTALLATION<br>ZIMBRA SERVER</h3>
+                </div>
+              </div>
+              <div class="blog-card-content">
+                <h4 class="blog-card-title">Zimbra Mail Server</h4>
+                <p class="blog-card-text">
+                  Zimbra Mail Server sendiri adalah software open source untuk email server dan kolaborasi (groupware) yang banyak digunakan diberbagai instalsi pemerintah
+                </p>
+                <a href="#" class="blog-card-link">
+                  <i class="fas fa-arrow-right"></i> Read More
+                </a>
+              </div>
+            </div>
+            
+            <!-- Blog Card 2 -->
+            <div class="blog-card">
+              <div class="blog-card-img">
+                <img src="{{ asset('assets/images/icon/web-blog.png') }}" alt="Web Development">
+                <div class="blog-card-overlay">
+                  <h3 class="blog-card-headline">WE DESIGN<br>DIGITAL<br>PRODUCTS<br>NOT JUST ART</h3>
+                </div>
+              </div>
+              <div class="blog-card-content">
+                <h4 class="blog-card-title">Development Website</h4>
+                <p class="blog-card-text">
+                  Solusi ++ bagi anda yang ingin membuat website. baik itu website untuk perusahaan, website company profile, website UMKM atau website sekolah
+                </p>
+                <a href="#" class="blog-card-link">
+                  <i class="fas fa-arrow-right"></i> Read More
+                </a>
+              </div>
+            </div>
+            
+            <!-- Blog Card 3 -->
+            <div class="blog-card">
+              <div class="blog-card-img">
+                <img src="{{ asset('assets/images/icon/server-blog.png') }}" alt="Server Internet">
+                <div class="blog-card-overlay">
+                  <h3 class="blog-card-headline">Server Internet</h3>
+                </div>
+              </div>
+              <div class="blog-card-content">
+                <h4 class="blog-card-title">Server Internet</h4>
+                <p class="blog-card-text">
+                  Maintenance Server adalah layanan tambahan untuk memudahkan anda yang menggunakan layanan Dedicated server atau Colocation, agar anda tidak bersusah payah
+                </p>
+                <a href="#" class="blog-card-link">
+                  <i class="fas fa-arrow-right"></i> Read More
+                </a>
+              </div>
+            </div>
+            
+            <!-- Blog Card 4 (Optional) -->
+            <div class="blog-card">
+              <div class="blog-card-img">
+                <img src="{{ asset('assets/images/icon/jaringan-blog.png') }}" alt="Cloud Computing">
+                <div class="blog-card-overlay">
+                  <h3 class="blog-card-headline">CLOUD<br>COMPUTING</h3>
+                </div>
+              </div>
+              <div class="blog-card-content">
+                <h4 class="blog-card-title">Cloud Solutions</h4>
+                <p class="blog-card-text">
+                  Kami menyediakan solusi cloud computing lengkap untuk kebutuhan bisnis Anda. Dengan infrastruktur yang handal dan keamanan tingkat tinggi.
+                </p>
+                <a href="#" class="blog-card-link">
+                  <i class="fas fa-arrow-right"></i> Read More
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slider Navigation -->
+          <div class="blog-slider-nav">
+            <span class="blog-slider-dot active" data-slide="0"></span>
+            <span class="blog-slider-dot" data-slide="1"></span>
+            <span class="blog-slider-dot" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 @endsection
