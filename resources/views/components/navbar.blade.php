@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}">
+      <a class="navbar-brand" href="{{ url('dashboard') }}">
         <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara" class="logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,16 +9,16 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('dashboard') }}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {{ request()->is('about*') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="false aria-expanded="false">
               About
             </a>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <li><a class="dropdown-item" href="{{ url('/about') }}">About Us</a></li>
-              <li><a class="dropdown-item" href="{{ url('/team') }}">Cotact US</a></li>
-              <li><a class="dropdown-item" href="{{ url('/team') }}">Career</a></li>
+              <li><a class="dropdown-item" href="{{ url('about-us') }}">About Us</a></li>
+              <li><a class="dropdown-item" href="{{ url('contact-us') }}">Cotact US</a></li>
+              <li><a class="dropdown-item" href="{{ url('career') }}">Career</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

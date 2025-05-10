@@ -429,5 +429,91 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize
   initSlider();
 });
+ // Initialize the map when document is ready
+ document.addEventListener('DOMContentLoaded', function() {
+      initMap();
+    });
+
+    function initMap() {
+      // Coordinates for Jl. Batang Hari, Bengkulu
+      const officeLocation = { lat: -3.8123, lng: 102.2995 };
+      
+      // Create map centered at office location
+      const map = new google.maps.Map(document.getElementById('contactMap'), {
+        zoom: 15,
+        center: officeLocation,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        zoomControl: true,
+      });
+      
+      
+      // Add info window with company details
+      const infoWindow = new google.maps.InfoWindow({
+        content: `
+          <div class="map-info-window">
+            <h5>PT Hanara Prima Solusindo</h5>
+            <p>Jl. Batang Hari, RT.011/RW.003, Nusa Indah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu 38223</p>
+            <a href="tel:+627367050202">(0736) 7050-202</a>
+          </div>
+        `
+      });
+      
+      // Open info window when marker is clicked
+      marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+      });
+      
+      // Initially open the info window
+      infoWindow.open(map, marker);
+    }
+
+   //kareeer 
+    document.addEventListener('DOMContentLoaded', function() {
+  // Toggle job details when the header is clicked
+  const jobToggles = document.querySelectorAll('.hnr-job-toggle');
+  
+  jobToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get the target job details element
+      const targetId = this.getAttribute('data-target');
+      const targetDetails = document.getElementById(targetId);
+      
+      // Toggle the collapsed class
+      this.classList.toggle('collapsed');
+      targetDetails.classList.toggle('collapsed');
+    });
+  });
+});
+//job detail
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle file input display text change
+  const fileInputs = document.querySelectorAll('.hnr-file-input');
+  
+  fileInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const textElement = this.nextElementSibling.querySelector('.hnr-file-input-text');
+      
+      if (this.files.length > 0) {
+        textElement.textContent = this.files[0].name;
+      } else {
+        textElement.textContent = 'No file chosen';
+      }
+    });
+  });
+  
+  // Form submission handling
+  const form = document.getElementById('jobApplicationForm');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // You would add your AJAX form submission code here
+    alert('Your application has been submitted successfully!');
+    // form.reset(); // Uncomment to reset form after submission
+  });
+});
 </script>
 </html>

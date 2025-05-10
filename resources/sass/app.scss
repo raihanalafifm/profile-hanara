@@ -1530,3 +1530,909 @@
     min-width: 100%; /* One card per row */
   }
 }
+
+/* About Page Styles - Add to your existing CSS or create a new CSS file */
+
+/* About Page Section */
+.about-page-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+/* About Page Header */
+.about-page-header {
+  margin-bottom: 40px;
+}
+
+.about-page-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.about-orange {
+  color: #ff6700;
+}
+
+.about-page-tagline {
+  font-size: 24px;
+  color: #666;
+}
+
+/* Team Image */
+.about-team-image {
+  margin-bottom: 60px;
+}
+
+.about-team-image img {
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* About Sections */
+.about-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff6700;
+  margin-bottom: 30px;
+  margin-left: 90px;
+}
+
+.about-description p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+  margin-right: 90px;
+}
+
+/* Mission Cards */
+.mission-cards {
+  margin-top: 10px;
+}
+
+.mission-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mission Icon */
+.mission-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.orange-bg {
+  background-color: #ff6700;
+}
+
+.mission-number {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Mission Content */
+.mission-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.mission-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .about-page-section {
+    padding: 60px 0;
+  }
+  
+  .about-page-title {
+    font-size: 36px;
+  }
+  
+  .about-section-title {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-page-section {
+    padding: 50px 0;
+  }
+  
+  .about-page-title {
+    font-size: 30px;
+  }
+  
+  .about-section-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .mission-card {
+    margin-bottom: 20px;
+  }
+}
+/* Contact Page Styles - Add to your existing CSS or create a new CSS file */
+
+/* Contact Page Styles - Add to your existing CSS or create a new CSS file */
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  background-color: #fff;
+  position: relative;
+}
+
+/* Contact Title */
+.contact-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.text-contact-orange {
+  color: #ff6700;
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Contact Info Box */
+.contact-info-box {
+  background-color: #ff6700;
+  color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-header {
+  margin-bottom: 40px;
+}
+
+.contact-info-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact-info-subtitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Contact Details */
+.contact-details {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.contact-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes the icon white */
+}
+
+.contact-text {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.contact-text a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact-text a:hover {
+  opacity: 0.8;
+}
+
+/* Background Elements */
+.contact-bg-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  bottom: -50px;
+  right: -50px;
+  z-index: 1;
+}
+
+/* Contact Form */
+.contact-form-container {
+  padding: 20px 0;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.contact-form .form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  border-color: #ff6700;
+  box-shadow: 0 0 0 0.25rem rgba(255, 103, 0, 0.25);
+}
+
+.contact-form .form-control::placeholder {
+  color: #aaa;
+}
+
+/* Time Options */
+.time-options {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-right: 5px;
+}
+
+.form-check-input:checked {
+  background-color: #ff6700;
+  border-color: #ff6700;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 103, 0, 0.25);
+}
+
+/* Custom radio buttons */
+.form-check-inline {
+  margin-right: 15px;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: #ff6700;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #e45c00;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 103, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .contact-title {
+    font-size: 36px;
+  }
+  
+  .contact-info-box {
+    margin-bottom: 30px;
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 50px 0;
+  }
+  
+  .contact-title {
+    font-size: 32px;
+  }
+  
+  .contact-subtitle {
+    font-size: 15px;
+  }
+  
+  .contact-info-title {
+    font-size: 22px;
+  }
+  
+  .contact-info-subtitle {
+    font-size: 24px;
+  }
+  
+  .contact-detail-item {
+    margin-bottom: 20px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+  }
+}
+.contact-map-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.map-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.map-actions .btn {
+  background-color: #ff6700;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.map-actions .btn:hover {
+  background-color: #e45c00;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 103, 0, 0.3);
+}
+
+/* career Styles */
+.hnr-career-section {
+  padding: 60px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.hnr-career-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hnr-career-title {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hnr-career-title-orange {
+  color: #FF6B00;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hnr-career-title-black {
+  color: #000;
+  font-size: 28px;
+}
+
+.hnr-career-subtitle {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Banner Image */
+.hnr-career-banner {
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hnr-career-banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.hnr-career-banner-img:hover {
+  filter: grayscale(0);
+}
+
+/* Tagline */
+.hnr-career-tagline {
+  margin-bottom: 40px;
+}
+
+.hnr-career-tagline-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+  text-align: left;
+}
+
+/* Job Listings */
+.hnr-career-jobs {
+  margin-bottom: 30px;
+}
+
+.hnr-job-card {
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.hnr-job-card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.hnr-job-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.hnr-job-number {
+  color: #999;
+  font-size: 16px;
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+.hnr-job-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.hnr-job-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.hnr-job-tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.hnr-tag-fulltime {
+  background-color: #FFE6D6;
+  color: #FF6B00;
+}
+
+.hnr-tag-parttime {
+  background-color: #D6E6FF;
+  color: #0057FF;
+}
+
+.hnr-job-toggle {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hnr-job-toggle.collapsed svg {
+  transform: rotate(180deg);
+}
+
+.hnr-job-details {
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+  display: block;
+}
+
+.hnr-job-details.collapsed {
+  display: none;
+}
+
+.hnr-job-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.hnr-job-description-text {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hnr-apply-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid #FF6B00;
+  color: #FF6B00;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-apply-button:hover {
+  background-color: rgba(255, 107, 0, 0.05);
+  border-color: #FF6B00;
+  color: #FF6B00;
+  text-decoration: none;
+}
+
+.hnr-apply-button-container {
+  margin-top: 20px;
+}
+
+.hnr-apply-button svg {
+  transition: transform 0.3s ease;
+  stroke: #FF6B00;
+  margin-left: 4px;
+}
+
+.hnr-apply-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .hnr-career-title-orange {
+    font-size: 32px;
+  }
+  
+  .hnr-career-title-black {
+    font-size: 32px;
+  }
+  
+  .hnr-career-tagline-text {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hnr-career-title-orange {
+    font-size: 36px;
+  }
+  
+  .hnr-career-title-black {
+    font-size: 36px;
+  }
+}
+/* Job Detail Page Styles */
+.hnr-job-detail-section {
+  padding: 40px 0 60px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+/* Back Button */
+.hnr-back-link-container {
+  margin-bottom: 30px;
+}
+
+.hnr-back-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  color: #FF6B00;
+  text-decoration: none;
+  border: 1px solid #FF6B00;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.hnr-back-link svg {
+  margin-right: 8px;
+}
+
+.hnr-back-link:hover {
+  background-color: rgba(255, 107, 0, 0.05);
+  text-decoration: none;
+  color: #FF6B00;
+}
+
+/* Job Title Section */
+.hnr-job-detail-header {
+  margin-bottom: 40px;
+}
+
+.hnr-job-detail-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #FF6B00;
+  margin-bottom: 8px;
+}
+
+.hnr-job-detail-type {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* Job Sections */
+.hnr-job-section {
+  margin-bottom: 40px;
+}
+
+.hnr-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.hnr-section-content {
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Skills and Qualifications Lists */
+.hnr-skill-list,
+.hnr-qualification-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.hnr-skill-list li,
+.hnr-qualification-list li {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.hnr-skill-list strong {
+  color: #333;
+}
+
+/* Application Form Section */
+.hnr-application-section {
+  margin-top: 60px;
+}
+
+.hnr-application-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.hnr-application-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hnr-application-form {
+  max-width: 800px;
+}
+
+/* Form Elements */
+.hnr-form-group {
+  margin-bottom: 20px;
+}
+
+.hnr-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.hnr-required {
+  color: #FF6B00;
+  margin-left: 3px;
+}
+
+.hnr-form-input,
+.hnr-form-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.hnr-form-input:focus,
+.hnr-form-select:focus {
+  border-color: #FF6B00;
+  outline: none;
+}
+
+.hnr-form-input::placeholder {
+  color: #aaa;
+}
+
+/* Radio Buttons */
+.hnr-radio-group {
+  display: flex;
+  gap: 30px;
+}
+
+.hnr-radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.hnr-radio-option input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #FF6B00;
+}
+
+/* File Input Styling */
+.hnr-file-input-container {
+  position: relative;
+}
+
+.hnr-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hnr-file-input-custom {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hnr-file-input-text {
+  flex-grow: 1;
+  padding: 12px 15px;
+  color: #777;
+}
+
+.hnr-file-input-button {
+  padding: 12px 20px;
+  background-color: #f5f5f5;
+  border-left: 1px solid #ddd;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.hnr-file-input-button:hover {
+  background-color: #eee;
+}
+
+/* Submit Button */
+.hnr-form-submit {
+  margin-top: 30px;
+}
+
+.hnr-submit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  background-color: #FF6B00;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hnr-submit-button:hover {
+  background-color: #E56000;
+}
+
+.hnr-submit-button svg {
+  transition: transform 0.3s ease;
+}
+
+.hnr-submit-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hnr-job-detail-title {
+    font-size: 32px;
+  }
+  
+  .hnr-radio-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
