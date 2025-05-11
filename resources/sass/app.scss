@@ -2436,3 +2436,569 @@
     gap: 15px;
   }
 }
+/* Zimbra Installation Page Styles */
+.hnr-zimbra-section {
+  padding: 50px 0;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo Styling */
+.hnr-zimbra-logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hnr-zimbra-logo {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Content Styling */
+.hnr-zimbra-content {
+  padding-left: 20px;
+}
+
+.hnr-zimbra-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #FF6B00;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.hnr-zimbra-subtitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-zimbra-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Features Styling */
+.hnr-zimbra-features {
+  margin-bottom: 20px;
+}
+
+.hnr-zimbra-feature-item {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.hnr-feature-bullet {
+  color: #FF6B00;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.hnr-zimbra-conclusion {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0;
+}
+.hnr-zimbra-interface-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.hnr-interface-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hnr-text-orange {
+  color: #FF6B00;
+}
+
+.hnr-interface-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-interface-image-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-interface-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-zimbra-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .hnr-zimbra-logo {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-zimbra-section {
+    padding: 30px 0;
+  }
+  
+  .hnr-zimbra-title {
+    font-size: 22px;
+  }
+  
+  .hnr-zimbra-subtitle {
+    font-size: 24px;
+  }
+   .hnr-interface-title {
+    font-size: 24px;
+  }
+}
+/* Fitur Unggulan Zimbra Styles - KODE CSS BARU */
+.hnr-zimbra-features-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.hnr-features-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hnr-features-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-feature-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.hnr-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #FFF1E6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hnr-feature-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.hnr-feature-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.hnr-feature-card-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments for feature cards */
+@media (max-width: 767px) {
+  .hnr-feature-card {
+    margin-bottom: 20px;
+  }
+  
+  .hnr-feature-card-title {
+    font-size: 16px;
+  }
+  
+  .hnr-feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .hnr-feature-icon img {
+    width: 25px;
+    height: 25px;
+  }
+}
+/* Zimbra vs Email Hosting Comparison Styles - KODE CSS BARU */
+.hnr-comparison-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.hnr-comparison-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hnr-comparison-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-comparison-table {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-comparison-header {
+  display: flex;
+  font-weight: 700;
+  color: white;
+}
+
+.hnr-header-zimbra {
+  background-color: #00C853;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+}
+
+.hnr-header-hosting {
+  background-color: #FF4D4D;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+}
+
+.hnr-comparison-content {
+  background-color: #fff;
+}
+
+.hnr-comparison-row {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.hnr-comparison-row:last-child {
+  border-bottom: none;
+}
+
+.hnr-zimbra-feature {
+  flex: 1;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  background-color: #E8F5E9;
+  font-size: 15px;
+  color: #333;
+}
+
+.hnr-hosting-feature {
+  flex: 1;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  background-color: #FFEBEE;
+  font-size: 15px;
+  color: #333;
+}
+
+.hnr-check-icon,
+.hnr-cross-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hnr-check-icon {
+  background-color: #00C853;
+}
+
+.hnr-check-icon:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  top: 3px;
+  left: 7px;
+}
+
+.hnr-cross-icon {
+  background-color: #FF4D4D;
+}
+
+.hnr-cross-icon:before,
+.hnr-cross-icon:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: white;
+  top: 9px;
+  left: 4px;
+}
+
+.hnr-cross-icon:before {
+  transform: rotate(45deg);
+}
+
+.hnr-cross-icon:after {
+  transform: rotate(-45deg);
+}
+
+/* Email Protocol Styles - KODE CSS YANG DIPERBARUI */
+.hnr-protocol-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.hnr-protocol-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hnr-protocol-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-protocol-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+}
+
+.hnr-protocol-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-protocol-number-container {
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.hnr-protocol-number {
+  width: 42px;
+  height: 42px;
+  background-color: #0288D1;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.hnr-protocol-content {
+  flex: 1;
+}
+
+.hnr-protocol-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.hnr-protocol-card-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 0;
+}
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .hnr-comparison-row {
+    flex-direction: column;
+  }
+  
+  .hnr-header-zimbra,
+  .hnr-header-hosting {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+    .hnr-protocol-card-title {
+    font-size: 15px;
+  }
+  
+  .hnr-protocol-number {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+/* FAQ Section Styles - KODE CSS DIPERBAIKI */
+.hnr-faq-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.hnr-faq-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #FF6B00;
+}
+
+.hnr-faq-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.hnr-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hnr-faq-item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.hnr-faq-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.hnr-faq-item.active .hnr-faq-header {
+  background-color: #fff;
+}
+
+.hnr-faq-number {
+  font-size: 16px;
+  font-weight: 500;
+  color: #999;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.hnr-faq-question {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.hnr-faq-toggle {
+  flex-shrink: 0;
+  color: #999;
+  transition: transform 0.3s ease;
+}
+
+.hnr-faq-item.active .hnr-faq-toggle {
+  transform: rotate(180deg);
+}
+
+.hnr-faq-body {
+  padding: 20px 20px 20px 55px;
+  text-align: left;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-faq-item.active .hnr-faq-body {
+  display: block;
+}
+
+.hnr-faq-body .hnr-faq-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.hnr-faq-answer {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .hnr-faq-header {
+    padding: 15px;
+  }
+  
+  .hnr-faq-question {
+    font-size: 16px;
+  }
+  
+  .hnr-faq-body {
+    padding: 15px 15px 15px 45px;
+  }
+}
+/* AKHIR KODE CSS DIPERBAIKI */

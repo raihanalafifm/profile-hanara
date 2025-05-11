@@ -22,3 +22,7 @@ Route::get('/career/it-support', function(){
     return view('content.about.job-detail');
 });
 // Route::get('/career/{job_id}', 'CareerController@showJob')->name('career.job');
+
+Route::get('/instalasi-zimbra', function(){
+    return view('content.zimbra.instalasi');
+});

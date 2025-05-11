@@ -515,5 +515,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // form.reset(); // Uncomment to reset form after submission
   });
 });
+// JavaScript untuk Fungsi FAQ - KODE JS DIPERBAIKI
+document.addEventListener('DOMContentLoaded', function() {
+  // Dapatkan semua header FAQ
+  const faqHeaders = document.querySelectorAll('.hnr-faq-header');
+  
+  // Tambahkan event listener untuk tiap header FAQ
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Dapatkan parent item
+      const faqItem = this.parentElement;
+      
+      // Toggle class active pada item yang diklik
+      const isActive = faqItem.classList.contains('active');
+      
+      // Opsional: Tutup semua FAQ terlebih dahulu
+      // document.querySelectorAll('.hnr-faq-item').forEach(item => {
+      //   item.classList.remove('active');
+      // });
+      
+      // Toggle active class
+      if (isActive) {
+        faqItem.classList.remove('active');
+      } else {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+});
 </script>
 </html>
