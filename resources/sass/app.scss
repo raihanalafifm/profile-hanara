@@ -3001,4 +3001,152 @@
     padding: 15px 15px 15px 45px;
   }
 }
-/* AKHIR KODE CSS DIPERBAIKI */
+/* Maintenance Zimbra Page Styles - All selectors prefixed with 'hnr-maint-' to prevent conflicts */
+.hnr-maint-section {
+  padding: 60px 0;
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo Styling */
+.hnr-maint-logo-container {
+  text-align: center;
+}
+
+.hnr-maint-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Content Styling */
+.hnr-maint-content {
+  padding-left: 20px;
+}
+
+.hnr-maint-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-maint-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-maint-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Manfaat Maintenance Section */
+.hnr-manfaat-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hnr-manfaat-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.hnr-manfaat-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-manfaat-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.hnr-manfaat-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 25px 20px;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-manfaat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hnr-manfaat-icon-container {
+  margin-bottom: 15px;
+}
+
+.hnr-manfaat-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #FF6B00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hnr-manfaat-icon img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.hnr-manfaat-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.hnr-manfaat-item-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-maint-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .hnr-maint-logo {
+    max-width: 80%;
+  }
+  
+  .hnr-layanan-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-maint-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-maint-title {
+    font-size: 24px;
+  }
+  
+  .hnr-manfaat-title {
+    font-size: 24px;
+  }
+  
+  .hnr-manfaat-item {
+    margin-bottom: 20px;
+  }
+  
+  .hnr-layanan-title {
+    font-size: 24px;
+  }
+}

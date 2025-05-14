@@ -26,3 +26,6 @@ Route::get('/career/it-support', function(){
 Route::get('/instalasi-zimbra', function(){
     return view('content.zimbra.instalasi');
 });
+Route::get('/maintenance-zimbra', function(){
+    return view('content.zimbra.maintenance');
+});
