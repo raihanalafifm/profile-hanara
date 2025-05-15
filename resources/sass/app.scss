@@ -3112,6 +3112,112 @@
   line-height: 1.6;
   color: #555;
 }
+.hnr-layanan-section {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hnr-layanan-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hnr-layanan-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-layanan-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-layanan-card {
+  background-color: #FAFAFC;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.hnr-layanan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-layanan-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FF6B00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hnr-layanan-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hnr-layanan-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hnr-check-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-color: #00A651;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-check-icon:before {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 4px;
+}
+
+.hnr-layanan-feature-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hnr-layanan-card {
+    background-color: #161615;
+  }
+  
+  .hnr-layanan-feature-text {
+    color: #EDEDEC;
+  }
+  
+  .hnr-layanan-title {
+    color: #EDEDEC;
+  }
+  
+  .hnr-layanan-subtitle {
+    color: #A1A09A;
+  }
+}
 
 /* Responsive Adjustments */
 @media (max-width: 991px) {
@@ -3148,5 +3254,642 @@
   
   .hnr-layanan-title {
     font-size: 24px;
+  }
+}
+/* Troubleshooting Zimbra CSS Styles */
+
+/* Main Troubleshooting Section */
+.hnr-troubleshoot-section {
+  padding: 60px 0;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
+}
+
+.hnr-troubleshoot-logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hnr-troubleshoot-logo {
+  max-width: 90%;
+  height: auto;
+}
+
+.hnr-troubleshoot-content {
+  padding-left: 20px;
+}
+
+.hnr-troubleshoot-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-troubleshoot-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-troubleshoot-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0;
+}
+
+/* Title Section */
+.hnr-troubleshoot-title-section {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.hnr-main-title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #FF6B00;
+  margin-bottom: 15px;
+}
+
+.hnr-title-bold {
+  font-weight: 700;
+  color: #333;
+}
+
+.hnr-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Service Cards */
+.hnr-troubleshoot-services {
+  padding: 20px 0 60px;
+  background-color: #FFFFFF;
+}
+
+.hnr-service-card {
+  background-color: #FAFAFC;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.hnr-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-service-icon {
+  width: 60px;
+  height: 60px;
+  // background-color: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  overflow: hidden;
+}
+
+.hnr-icon-image {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.hnr-service-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  min-height: 54px; /* Ensures consistent height for all titles */
+}
+
+.hnr-service-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Advantages Section */
+.hnr-advantages-section {
+  padding: 60px;
+  background-color: #ffffff;
+}
+
+.hnr-advantages-title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #FF6B00;
+}
+
+.hnr-advantages-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.hnr-advantage-card {
+  background-color: #FAFAFC;
+  border-radius: 10px;
+  padding: 30px 25px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-advantage-card:hover {
+  transform: translateY(-5px);
+}
+
+.hnr-advantage-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  // background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.hnr-advantage-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.hnr-advantage-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  min-height: 54px; /* Consistent height */
+}
+
+.hnr-advantage-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .hnr-troubleshoot-section,
+  .hnr-advantages-section {
+    background-color: #161615;
+  }
+  
+  .hnr-service-card,
+  .hnr-advantage-card {
+    background-color: #232323;
+  }
+  
+  .hnr-troubleshoot-title {
+    color: #EDEDEC;
+  }
+  
+  .hnr-troubleshoot-description,
+  .hnr-service-text,
+  .hnr-advantage-text {
+    color: #ADADAD;
+  }
+  
+  .hnr-service-title,
+  .hnr-advantage-title,
+  .hnr-title-bold {
+    color: #FFFFFF;
+  }
+  
+  .hnr-subtitle,
+  .hnr-advantages-subtitle {
+    color: #ADADAD;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .hnr-troubleshoot-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .hnr-troubleshoot-logo {
+    max-width: 70%;
+  }
+  
+  .hnr-advantage-card {
+    margin-bottom: 20px;
+  }
+  
+  .hnr-main-title,
+  .hnr-advantages-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-troubleshoot-section,
+  .hnr-troubleshoot-title-section,
+  .hnr-advantages-section{
+    padding: 40px 0;
+  }
+  
+  .hnr-troubleshoot-title {
+    font-size: 24px;
+  }
+  
+  .hnr-service-title,
+  .hnr-advantage-title {
+    min-height: auto;
+  }
+  
+  .hnr-service-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Zimbra Cloud CSS Styles */
+
+//* Zimbra Cloud CSS Styles */
+
+/* Main Cloud Section */
+.hnr-cloud-section {
+  padding: 60px 0;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
+}
+
+.hnr-cloud-logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hnr-cloud-logo {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-cloud-content {
+  padding-left: 20px;
+}
+
+.hnr-cloud-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-cloud-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-cloud-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0;
+}
+
+/* Title Styling */
+.hnr-title-bold {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Features Section */
+.hnr-cloud-features-section {
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.hnr-cloud-features-title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #FF6B00;
+  margin-bottom: 15px;
+}
+
+.hnr-cloud-features-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.hnr-feature-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.hnr-feature-circle:hover {
+  transform: translateY(-10px);
+}
+
+.hnr-feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #FF6B00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hnr-feature-icon i {
+  font-size: 32px;
+  color: white;
+}
+
+.hnr-feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Packages Section */
+.hnr-cloud-packages-section {
+  padding: 60px 0;
+  background-color: #f9f9fb;
+}
+
+.hnr-cloud-packages-title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #FF6B00;
+  margin-bottom: 15px;
+}
+
+.hnr-cloud-packages-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.hnr-package-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-package-header {
+  background-color: #F8F8F8;
+  padding: 25px 20px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.hnr-package-header.standard-package {
+  background-color: #E8F5E9;
+}
+
+.hnr-package-header.professional-package {
+  background-color: #FFF3E0;
+}
+
+.hnr-package-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hnr-badge-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #FF6B00;
+  margin-right: 8px;
+}
+
+.hnr-badge-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.hnr-package-price {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hnr-price-period {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+}
+
+.hnr-order-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-order-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+}
+
+.hnr-order-btn.professional-btn {
+  background-color: #FF6B00;
+  border-color: #FF6B00;
+  color: #fff;
+}
+
+.hnr-order-btn.professional-btn:hover {
+  background-color: #e25e00;
+  color: #fff;
+}
+
+.hnr-package-content {
+  padding: 25px 20px;
+  flex-grow: 1;
+}
+
+.hnr-included-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hnr-package-section {
+  margin-bottom: 20px;
+}
+
+.hnr-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hnr-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hnr-feature-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.text-orange {
+  color: #FF6B00;
+}
+
+.text-green {
+  color: #4CAF50;
+}
+
+.hnr-more-btn {
+  display: inline-block;
+  font-size: 14px;
+  color: #FF6B00;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hnr-more-btn:hover {
+  text-decoration: underline;
+  color: #e25e00;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .hnr-cloud-section,
+  .hnr-cloud-packages-section {
+    background-color: #161615;
+  }
+  
+  .hnr-cloud-features-section,
+  .hnr-contact-section {
+    background-color: #1a1a1a;
+  }
+  
+  .hnr-package-card {
+    background-color: #232323;
+    border: 1px solid #333;
+  }
+  
+  .hnr-package-header {
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #333;
+  }
+  
+  .hnr-package-header.standard-package {
+    background-color: #1a3320;
+  }
+  
+  .hnr-package-header.professional-package {
+    background-color: #3d2a14;
+  }
+  
+  .hnr-cloud-title,
+  .hnr-included-title,
+  .hnr-section-title,
+  .hnr-package-price {
+    color: #e0e0e0;
+  }
+  
+  .hnr-cloud-description,
+  .hnr-feature-item,
+  .hnr-badge-text,
+  .hnr-price-period {
+    color: #aaa;
+  }
+  
+  .hnr-title-bold {
+    color: #f0f0f0;
+  }
+  
+  .hnr-feature-title {
+    color: #e0e0e0;
+  }
+  
+  .hnr-order-btn {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+  
+  .hnr-order-btn:hover {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .hnr-cloud-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .hnr-cloud-logo {
+    max-width: 80%;
+  }
+  
+  .hnr-cloud-features-title,
+  .hnr-cloud-packages-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-cloud-section,
+  .hnr-cloud-features-section,
+  .hnr-cloud-packages-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-cloud-title {
+    font-size: 24px;
+  }
+  
+  .hnr-feature-circle {
+    margin-bottom: 30px;
+  }
+  
+  .hnr-package-card {
+    margin-bottom: 20px;
   }
 }

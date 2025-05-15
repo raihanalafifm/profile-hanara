@@ -29,3 +29,9 @@ Route::get('/instalasi-zimbra', function(){
 Route::get('/maintenance-zimbra', function(){
     return view('content.zimbra.maintenance');
 });
+Route::get('/troubleshooting-zimbra', function(){
+    return view('content.zimbra.troubleshooting');
+});
+Route::get('/cloud-zimbra', function(){
+    return view('content.zimbra.cloud');
+});

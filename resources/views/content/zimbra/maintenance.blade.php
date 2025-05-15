@@ -300,6 +300,8 @@
         </div>
       </div>
     </div>
+
+    @include('components.contact')
   </div>
 </section>
 @endsection
