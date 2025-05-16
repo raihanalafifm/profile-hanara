@@ -44,3 +44,6 @@ Route::get('/maintenance-web', function(){
 Route::get('/develop-web', function(){
     return view('content.house.web');
 });
+Route::get('/web-application', function(){
+    return view('content.house.webapp');
+});
