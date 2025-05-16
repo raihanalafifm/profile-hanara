@@ -4321,3 +4321,744 @@
     color: #ddd;
   }
 }
+/* Website Maintenance Page Styles */
+.hnr-house-maint-section {
+  padding: 60px 0;
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo Styling */
+.hnr-house-maint-logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hnr-house-maint-logo {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Content Styling */
+.hnr-house-maint-content {
+  padding-left: 20px;
+}
+
+.hnr-house-maint-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-house-maint-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-house-maint-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 0;
+}
+
+/* Benefits Section */
+.hnr-house-benefit-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hnr-house-benefit-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.hnr-house-benefit-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-house-benefit-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.hnr-house-benefit-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 25px 20px;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-house-benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hnr-house-benefit-icon-container {
+  margin-bottom: 15px;
+}
+
+.hnr-house-benefit-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hnr-house-benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Remove the filter that makes icons white */
+  filter: none; 
+}
+
+.hnr-house-benefit-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.hnr-house-benefit-item-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Services Section */
+.hnr-house-services-section {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hnr-house-services-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hnr-house-services-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-house-services-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-house-services-card {
+  background-color: #FAFAFC;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.hnr-house-services-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-house-services-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FF6B00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hnr-house-services-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hnr-house-services-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hnr-house-services-feature-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Expertise Section */
+.hnr-house-expertise-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hnr-house-expertise-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.hnr-house-expertise-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-house-expertise-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hnr-house-expertise-card {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.hnr-house-expertise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-house-expertise-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.hnr-house-expertise-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hnr-house-expertise-content {
+  flex: 1;
+}
+
+.hnr-house-expertise-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hnr-house-expertise-card-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hnr-house-services-card {
+    background-color: #232323;
+  }
+  
+  .hnr-house-services-feature-text {
+    color: #EDEDEC;
+  }
+  
+  .hnr-house-services-title {
+    color: #EDEDEC;
+  }
+  
+  .hnr-house-services-subtitle {
+    color: #A1A09A;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-house-maint-content {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .hnr-house-maint-logo {
+    max-width: 80%;
+  }
+  
+  .hnr-house-services-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-house-maint-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-house-maint-title {
+    font-size: 24px;
+  }
+  
+  .hnr-house-benefit-title {
+    font-size: 24px;
+  }
+  
+  .hnr-house-benefit-item {
+    margin-bottom: 20px;
+  }
+  
+  .hnr-house-services-title {
+    font-size: 24px;
+  }
+  
+  .hnr-house-expertise-title {
+    font-size: 24px;
+  }
+  
+  .hnr-house-expertise-card {
+    margin-bottom: 20px;
+  }
+}
+/* Website Development Page Styles */
+.hnr-house-web-section {
+  padding: 60px 0;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Web Design Image Styling */
+.hnr-house-web-img-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hnr-house-web-img {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Content Styling */
+.hnr-house-web-content {
+  padding-left: 20px;
+}
+
+.hnr-house-web-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hnr-house-web-title-orange {
+  color: #FF6B00;
+}
+
+.hnr-house-web-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Stats Section */
+.hnr-house-web-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.hnr-house-web-stat-item {
+  display: flex;
+  align-items: center;
+}
+
+.hnr-house-web-stat-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-house-web-stat-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-house-web-stat-content {
+  flex: 1;
+}
+
+.hnr-house-web-stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FF6B00;
+  margin: 0;
+}
+
+.hnr-house-web-stat-text {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+/* Section Titles */
+.hnr-house-web-section-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.hnr-house-web-title-bold {
+  font-weight: 700;
+  color: #000;
+}
+
+.hnr-house-web-section-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.hnr-house-web-section-desc {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Feature Cards */
+.hnr-house-web-feature-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 25px 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hnr-house-web-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hnr-house-web-feature-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-house-web-feature-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-house-web-feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  min-height: 44px; /* Consistent height for titles */
+}
+
+.hnr-house-web-feature-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+/* Pricing Section */
+.hnr-house-web-pricing-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FF6B00;
+  margin-bottom: 10px;
+}
+
+.hnr-house-web-pricing-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hnr-house-web-pricing-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-house-web-pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hnr-house-web-pricing-card.popular {
+  border: 2px solid #FF6B00;
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.hnr-house-web-pricing-card.popular:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.hnr-house-web-pricing-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FF6B00;
+  color: white;
+  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.hnr-house-web-pricing-header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.hnr-house-web-pricing-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-house-web-pricing-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-house-web-pricing-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.hnr-house-web-pricing-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.hnr-house-web-pricing-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FF6B00;
+  margin-bottom: 20px;
+}
+
+.hnr-house-web-pricing-btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #fff;
+  border: 1px solid #FF6B00;
+  border-radius: 30px;
+  color: #FF6B00;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-house-web-pricing-btn:hover {
+  background-color: rgba(255, 107, 0, 0.1);
+  color: #FF6B00;
+  text-decoration: none;
+}
+
+.hnr-house-web-pricing-btn-popular {
+  background-color: #FF6B00;
+  color: #fff;
+}
+
+.hnr-house-web-pricing-btn-popular:hover {
+  background-color: #e05e00;
+  color: #fff;
+}
+
+.hnr-house-web-pricing-features {
+  padding: 20px;
+}
+
+.hnr-house-web-pricing-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.hnr-pricing-check-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hnr-pricing-check-icon:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  top: 4px;
+  left: 7px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-house-web-content {
+    padding-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .hnr-house-web-stats {
+    justify-content: center;
+  }
+  
+  .hnr-house-web-section-title,
+  .hnr-house-web-pricing-title {
+    font-size: 28px;
+  }
+  
+  .hnr-house-web-section-subtitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-house-web-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-house-web-title {
+    font-size: 24px;
+  }
+  
+  .hnr-house-web-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .hnr-house-web-feature-card,
+  .hnr-house-web-pricing-card {
+    margin-bottom: 20px;
+  }
+  
+  .hnr-house-web-feature-title {
+    min-height: auto;
+  }
+  
+  .hnr-house-web-pricing-card.popular {
+    transform: none;
+  }
+  
+  .hnr-house-web-pricing-card.popular:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hnr-house-web-section {
+    background-color: #161615;
+  }
+  
+  .hnr-house-web-title,
+  .hnr-house-web-section-subtitle {
+    color: #e0e0e0;
+  }
+  
+  .hnr-house-web-title-bold {
+    color: #fff;
+  }
+  
+  .hnr-house-web-description,
+  .hnr-house-web-section-desc,
+  .hnr-house-web-pricing-subtitle {
+    color: #aaa;
+  }
+  
+  .hnr-house-web-feature-card,
+  .hnr-house-web-pricing-card {
+    background-color: #232323;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hnr-house-web-feature-title,
+  .hnr-house-web-pricing-name {
+    color: #ddd;
+  }
+  
+  .hnr-house-web-feature-text,
+  .hnr-house-web-pricing-feature {
+    color: #bbb;
+  }
+  
+  .hnr-house-web-pricing-header {
+    border-color: #333;
+  }
+  
+  .hnr-house-web-pricing-desc {
+    color: #999;
+  }
+  
+  .hnr-house-web-pricing-btn {
+    background-color: #232323;
+  }
+}

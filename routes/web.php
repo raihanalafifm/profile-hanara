@@ -38,3 +38,9 @@ Route::get('/cloud-zimbra', function(){
 Route::get('/server-zimbra', function(){
     return view('content.zimbra.server');
 });
+Route::get('/maintenance-web', function(){
+    return view('content.house.maintenance');
+});
+Route::get('/develop-web', function(){
+    return view('content.house.web');
+});
