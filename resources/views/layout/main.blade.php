@@ -543,5 +543,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+// Fungsi untuk toggle semua fitur
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButtons = document.querySelectorAll('.hnr-cloud-toggle-btn');
+  
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const packageCard = this.closest('.hnr-cloud-package-card');
+      
+      // Toggle expanded class
+      packageCard.classList.toggle('expanded');
+      
+      // Change button text and icon based on state
+      if (packageCard.classList.contains('expanded')) {
+        this.innerHTML = 'Tutup fitur <i class="bi bi-chevron-up"></i>';
+      } else {
+        this.innerHTML = 'Lihat semua fitur <i class="bi bi-chevron-down"></i>';
+      }
+    });
+  });
+});
 </script>
 </html>

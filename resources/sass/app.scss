@@ -3621,94 +3621,125 @@
   text-align: center;
 }
 
-/* Packages Section */
+/* Zimbra Cloud Packages Section - Updated styling */
 .hnr-cloud-packages-section {
-  padding: 60px 0;
-  background-color: #f9f9fb;
+  padding: 70px 0;
+  background-color: #fff;
 }
 
 .hnr-cloud-packages-title {
   font-size: 32px;
-  font-weight: normal;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hnr-cloud-packages-title span {
   color: #FF6B00;
-  margin-bottom: 15px;
 }
 
 .hnr-cloud-packages-subtitle {
   font-size: 16px;
   color: #666;
   margin-bottom: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hnr-package-card {
+/* Package Card */
+.hnr-cloud-package-card {
   background-color: #fff;
   border-radius: 10px;
+  border: 1px solid #eee;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.hnr-package-card:hover {
-  transform: translateY(-8px);
+.hnr-cloud-package-card:hover {
+  transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.hnr-package-header {
-  background-color: #F8F8F8;
+/* Popular Package Styling */
+.hnr-cloud-package-card.popular {
+  border-color: #FF6B00;
+  box-shadow: 0 5px 20px rgba(255, 107, 0, 0.15);
+}
+
+.hnr-cloud-popular-badge {
+  background-color: #FF6B00;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Package Header */
+.hnr-cloud-package-header {
   padding: 25px 20px;
+  background-color: #f8f8f8;
   text-align: center;
   border-bottom: 1px solid #eee;
 }
 
-.hnr-package-header.standard-package {
-  background-color: #E8F5E9;
+.hnr-cloud-package-card.popular .hnr-cloud-package-header {
+  padding-top: 40px;
+  background-color: #FFF8F2;
 }
 
-.hnr-package-header.professional-package {
-  background-color: #FFF3E0;
-}
-
-.hnr-package-badge {
+.hnr-cloud-package-type {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
 }
 
-.hnr-badge-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #FF6B00;
-  margin-right: 8px;
+.hnr-cloud-package-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
 
-.hnr-badge-text {
-  font-size: 14px;
+.hnr-cloud-package-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hnr-cloud-package-name {
+  font-size: 16px;
   font-weight: 600;
-  color: #666;
+  color: #333;
 }
 
-.hnr-package-price {
-  font-size: 26px;
+.hnr-cloud-package-price {
+  font-size: 36px;
   font-weight: 700;
-  color: #333;
+  color: #222;
   margin-bottom: 15px;
 }
 
-.hnr-price-period {
+.hnr-cloud-price-period {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 400;
   color: #666;
 }
 
-.hnr-order-btn {
+.hnr-cloud-order-btn {
   display: inline-block;
-  padding: 8px 20px;
-  background-color: #fff;
+  padding: 10px 30px;
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 50px;
   color: #333;
@@ -3716,180 +3747,577 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-.hnr-order-btn:hover {
-  background-color: #f0f0f0;
+.hnr-cloud-order-btn:hover {
+  background-color: #f5f5f5;
   color: #333;
   text-decoration: none;
 }
 
-.hnr-order-btn.professional-btn {
+.hnr-cloud-order-btn-popular {
   background-color: #FF6B00;
   border-color: #FF6B00;
-  color: #fff;
+  color: white;
 }
 
-.hnr-order-btn.professional-btn:hover {
-  background-color: #e25e00;
-  color: #fff;
+.hnr-cloud-order-btn-popular:hover {
+  background-color: #e86000;
+  color: white;
 }
 
-.hnr-package-content {
+/* Package Content */
+.hnr-cloud-package-content {
   padding: 25px 20px;
-  flex-grow: 1;
 }
 
-.hnr-included-title {
+.hnr-cloud-included-title {
   font-size: 16px;
   font-weight: 600;
   color: #333;
   margin-bottom: 20px;
 }
 
-.hnr-package-section {
+.hnr-cloud-feature-group {
   margin-bottom: 20px;
 }
 
-.hnr-section-title {
-  font-size: 14px;
+.hnr-cloud-feature-group-title {
+  font-size: 16px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-.hnr-feature-list {
+.hnr-cloud-feature-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 15px 0;
 }
 
-.hnr-feature-item {
+.hnr-cloud-feature-item {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
   font-size: 14px;
   color: #555;
-  margin-bottom: 10px;
 }
 
-.text-orange {
-  color: #FF6B00;
+.hnr-cloud-feature-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
-.text-green {
-  color: #4CAF50;
+.hnr-icon-check {
+  color: #00C853;
 }
 
-.hnr-more-btn {
-  display: inline-block;
+.hnr-icon-cross {
+  color: #FF4D4D;
+}
+
+.hnr-cloud-toggle-btn {
+  width: 100%;
+  border: none;
+  background: none;
+  border-top: 1px solid #eee;
+  padding: 15px 0 0;
+  color: #666;
   font-size: 14px;
-  color: #FF6B00;
   font-weight: 500;
-  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  transition: color 0.3s ease;
 }
 
-.hnr-more-btn:hover {
-  text-decoration: underline;
-  color: #e25e00;
+.hnr-cloud-toggle-btn i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
 }
 
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-  .hnr-cloud-section,
+.hnr-cloud-toggle-btn:hover {
+  color: #FF6B00;
+}
+
+.hnr-cloud-toggle-btn:hover i {
+  transform: translateY(2px);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
   .hnr-cloud-packages-section {
-    background-color: #161615;
+    padding: 50px 0;
   }
   
-  .hnr-cloud-features-section,
-  .hnr-contact-section {
+  .hnr-cloud-packages-title {
+    font-size: 28px;
+  }
+  
+  .hnr-cloud-package-card {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-cloud-packages-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-cloud-packages-title {
+    font-size: 24px;
+  }
+  
+  .hnr-cloud-package-price {
+    font-size: 30px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hnr-cloud-packages-section {
     background-color: #1a1a1a;
   }
   
-  .hnr-package-card {
+  .hnr-cloud-package-card {
     background-color: #232323;
-    border: 1px solid #333;
+    border-color: #333;
   }
   
-  .hnr-package-header {
+  .hnr-cloud-package-header {
     background-color: #2a2a2a;
-    border-bottom: 1px solid #333;
+    border-color: #333;
   }
   
-  .hnr-package-header.standard-package {
-    background-color: #1a3320;
-  }
-  
-  .hnr-package-header.professional-package {
+  .hnr-cloud-package-card.popular .hnr-cloud-package-header {
     background-color: #3d2a14;
   }
   
-  .hnr-cloud-title,
-  .hnr-included-title,
-  .hnr-section-title,
-  .hnr-package-price {
+  .hnr-cloud-package-name,
+  .hnr-cloud-package-price,
+  .hnr-cloud-included-title,
+  .hnr-cloud-feature-group-title {
     color: #e0e0e0;
   }
   
-  .hnr-cloud-description,
-  .hnr-feature-item,
-  .hnr-badge-text,
-  .hnr-price-period {
+  .hnr-cloud-packages-subtitle,
+  .hnr-cloud-price-period,
+  .hnr-cloud-feature-item,
+  .hnr-cloud-toggle-btn {
     color: #aaa;
   }
   
-  .hnr-title-bold {
-    color: #f0f0f0;
-  }
-  
-  .hnr-feature-title {
-    color: #e0e0e0;
-  }
-  
-  .hnr-order-btn {
+  .hnr-cloud-order-btn {
     background-color: #2a2a2a;
     border-color: #444;
     color: #e0e0e0;
   }
   
-  .hnr-order-btn:hover {
+  .hnr-cloud-order-btn:hover {
     background-color: #333;
     color: #fff;
   }
+  
+  .hnr-cloud-toggle-btn {
+    border-color: #333;
+  }
+}
+/* Zimbra Cloud Feature Cards - Unique class names to avoid conflicts */
+.hnr-cloud-features-section {
+  padding: 60px 0;
+  background-color: #fff;
 }
 
-/* Responsive styles */
+.hnr-cloud-feature-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hnr-cloud-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-cloud-feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #FF6B00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hnr-cloud-feature-icon i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.hnr-cloud-feature-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hnr-cloud-feature-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
 @media (max-width: 991px) {
-  .hnr-cloud-content {
-    padding-left: 0;
-    margin-top: 20px;
+  .hnr-cloud-features-section {
+    padding: 50px 0;
   }
   
-  .hnr-cloud-logo {
-    max-width: 80%;
+  .hnr-cloud-feature-card {
+    padding: 20px;
   }
   
-  .hnr-cloud-features-title,
-  .hnr-cloud-packages-title {
-    font-size: 28px;
+  .hnr-cloud-feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hnr-cloud-feature-icon i {
+    font-size: 25px;
   }
 }
 
 @media (max-width: 767px) {
-  .hnr-cloud-section,
-  .hnr-cloud-features-section,
-  .hnr-cloud-packages-section {
+  .hnr-cloud-features-section {
     padding: 40px 0;
   }
   
-  .hnr-cloud-title {
-    font-size: 24px;
+  .hnr-cloud-feature-name {
+    font-size: 16px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hnr-cloud-features-section {
+    background-color: #1a1a1a;
   }
   
-  .hnr-feature-circle {
-    margin-bottom: 30px;
+  .hnr-cloud-feature-card {
+    background-color: #232323;
   }
   
-  .hnr-package-card {
+  .hnr-cloud-feature-name {
+    color: #e0e0e0;
+  }
+  
+  .hnr-cloud-feature-desc {
+    color: #aaa;
+  }
+}
+/* Styling untuk fitur tambahan yang tersembunyi */
+.hnr-cloud-expanded-features {
+  display: none; /* Sembunyikan secara default */
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #eee;
+  transition: all 0.3s ease;
+}
+
+/* Menampilkan fitur tambahan saat package card memiliki class expanded */
+.hnr-cloud-package-card.expanded .hnr-cloud-expanded-features {
+  display: block;
+  animation: fadeInDown 0.5s ease forwards;
+}
+
+/* Animasi untuk menampilkan fitur tambahan */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling untuk toggle button ketika expanded */
+.hnr-cloud-package-card.expanded .hnr-cloud-toggle-btn {
+  color: #FF6B00;
+}
+
+.hnr-cloud-package-card.expanded .hnr-cloud-toggle-btn i {
+  transform: rotate(180deg);
+}
+/* Zimbra Server Page Specific Styles - Using unique prefixes to avoid conflicts */
+.hnr-zimserver-section {
+  padding: 60px 0;
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo and Main Content Styling */
+.hnr-zimserver-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hnr-zimserver-logo {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-zimserver-content {
+  padding-left: 20px;
+}
+
+.hnr-zimserver-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.hnr-zimserver-orange {
+  color: #FF6B00;
+}
+
+.hnr-zimserver-black {
+  color: #222;
+}
+
+.hnr-zimserver-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Section Headings */
+.hnr-zimserver-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.hnr-zimserver-section-subtitle {
+  font-size: 26px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.hnr-zimserver-section-desc {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Feature Icons Grid */
+.hnr-zimserver-feature-item {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hnr-zimserver-feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-zimserver-feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-zimserver-feature-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-zimserver-feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Package Sections */
+.hnr-zimserver-package-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.hnr-zimserver-package-subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FF6B00;
+  margin-bottom: 15px;
+}
+
+.hnr-zimserver-package-desc {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Package Features */
+.hnr-zimserver-package-feature {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hnr-zimserver-package-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-zimserver-package-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #FF6B00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.hnr-zimserver-package-icon i {
+  font-size: 24px;
+  color: #fff;
+}
+
+.hnr-zimserver-package-content {
+  flex: 1;
+}
+
+.hnr-zimserver-feature-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hnr-zimserver-feature-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-zimserver-content {
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .hnr-zimserver-title {
+    justify-content: center;
+  }
+  
+  .hnr-zimserver-desc {
+    text-align: center;
+  }
+  
+  .hnr-zimserver-section-title,
+  .hnr-zimserver-package-title {
+    font-size: 28px;
+  }
+  
+  .hnr-zimserver-section-subtitle,
+  .hnr-zimserver-package-subtitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-zimserver-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-zimserver-feature-item {
     margin-bottom: 20px;
+  }
+  
+  .hnr-zimserver-feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hnr-zimserver-package-feature {
+    margin-bottom: 20px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hnr-zimserver-section {
+    background-color: #161615;
+  }
+  
+  .hnr-zimserver-black,
+  .hnr-zimserver-section-subtitle,
+  .hnr-zimserver-package-title {
+    color: #e0e0e0;
+  }
+  
+  .hnr-zimserver-desc,
+  .hnr-zimserver-feature-desc {
+    color: #aaa;
+  }
+  
+  .hnr-zimserver-section-desc,
+  .hnr-zimserver-package-desc {
+    color: #999;
+  }
+  
+  .hnr-zimserver-feature-item,
+  .hnr-zimserver-package-feature {
+    background-color: #232323;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hnr-zimserver-feature-title,
+  .hnr-zimserver-feature-name {
+    color: #ddd;
   }
 }

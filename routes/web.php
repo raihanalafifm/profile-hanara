@@ -35,3 +35,6 @@ Route::get('/troubleshooting-zimbra', function(){
 Route::get('/cloud-zimbra', function(){
     return view('content.zimbra.cloud');
 });
+Route::get('/server-zimbra', function(){
+    return view('content.zimbra.server');
+});

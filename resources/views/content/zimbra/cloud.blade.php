@@ -8,7 +8,7 @@
       <!-- Zimbra Cloud Image -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="hnr-cloud-logo-container">
-          <img src="{{ asset('assets/images/icon/zimbra-cloud.png') }}" alt="Zimbra Cloud" class="hnr-cloud-logo">
+          <img src="{{ asset('assets/images/icon/zimbra cloud.png') }}" alt="Zimbra Cloud" class="hnr-cloud-logo">
         </div>
       </div>
       
@@ -38,88 +38,95 @@
       </div>
     </div>
 
-    <div class="row mt-5">
-      <!-- Row 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+    <div class="row mt-4">
+      <!-- Feature Cards - 3 per row on desktop -->
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-gear-fill"></i>
           </div>
-          <h3 class="hnr-feature-title">Admin Console</h3>
+          <h3 class="hnr-cloud-feature-name">Admin Console</h3>
+          <p class="hnr-cloud-feature-desc">Panel kontrol administrator yang mudah digunakan untuk mengelola semua aspek email server Anda.</p>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-list-task"></i>
           </div>
-          <h3 class="hnr-feature-title">Task</h3>
+          <h3 class="hnr-cloud-feature-name">Task</h3>
+          <p class="hnr-cloud-feature-desc">Manajemen tugas terintegrasi untuk mengatur pekerjaan dan meningkatkan produktivitas tim.</p>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-calendar-week"></i>
           </div>
-          <h3 class="hnr-feature-title">Calendar</h3>
+          <h3 class="hnr-cloud-feature-name">Calendar</h3>
+          <p class="hnr-cloud-feature-desc">Kalender yang dapat dibagikan untuk menjadwalkan rapat dan mengelola jadwal tim dengan efisien.</p>
         </div>
       </div>
 
-      <!-- Row 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-funnel-fill"></i>
           </div>
-          <h3 class="hnr-feature-title">Mail Filter</h3>
+          <h3 class="hnr-cloud-feature-name">Mail Filter</h3>
+          <p class="hnr-cloud-feature-desc">Filter email canggih untuk mengorganisir kotak masuk dan menyaring pesan yang tidak diinginkan.</p>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-folder2-open"></i>
           </div>
-          <h3 class="hnr-feature-title">Folder & File</h3>
+          <h3 class="hnr-cloud-feature-name">Folder & File</h3>
+          <p class="hnr-cloud-feature-desc">Manajemen folder dan file yang fleksibel untuk menyimpan dan mengatur dokumen penting.</p>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-key-fill"></i>
           </div>
-          <h3 class="hnr-feature-title">Forgot Password</h3>
+          <h3 class="hnr-cloud-feature-name">Forgot Password</h3>
+          <p class="hnr-cloud-feature-desc">Sistem pemulihan kata sandi yang aman dan mudah digunakan untuk pengguna.</p>
         </div>
       </div>
 
-      <!-- Row 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-shield-lock-fill"></i>
           </div>
-          <h3 class="hnr-feature-title">Mail Protection</h3>
+          <h3 class="hnr-cloud-feature-name">Mail Protection</h3>
+          <p class="hnr-cloud-feature-desc">Perlindungan email yang komprehensif terhadap spam, virus, dan serangan phishing.</p>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-person-lines-fill"></i>
           </div>
-          <h3 class="hnr-feature-title">Contact</h3>
+          <h3 class="hnr-cloud-feature-name">Contact</h3>
+          <p class="hnr-cloud-feature-desc">Manajemen kontak yang kuat untuk menyimpan dan mengelola informasi kontak bisnis.</p>
         </div>
       </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="hnr-feature-circle">
-          <div class="hnr-feature-icon">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="hnr-cloud-feature-card">
+          <div class="hnr-cloud-feature-icon">
             <i class="bi bi-briefcase-fill"></i>
           </div>
-          <h3 class="hnr-feature-title">Briefcase</h3>
+          <h3 class="hnr-cloud-feature-name">Briefcase</h3>
+          <p class="hnr-cloud-feature-desc">Penyimpanan aman untuk file dan dokumen penting yang dapat diakses dari mana saja.</p>
         </div>
       </div>
     </div>
@@ -132,167 +139,926 @@
     <div class="row text-center">
       <div class="col-12">
         <h2 class="hnr-cloud-packages-title">Paket <span class="hnr-title-bold">Zimbra Cloud</span></h2>
-        <p class="hnr-cloud-packages-subtitle">Dapatkan penawaran paket Zimbra Cloud yang terbaik dan PT Hanara Prima Solusindo</p>
+        <p class="hnr-cloud-packages-subtitle">Dapatkan penawaran paket Zimbra Cloud yang terbaik dari PT. Hanara Prima Solusindo</p>
       </div>
     </div>
 
     <div class="row mt-5">
-      <!-- Package 1: Basic -->
+      <!-- Package 1: Business Email - Rp30k -->
       <div class="col-md-6 col-lg-3 mb-4">
-        <div class="hnr-package-card">
-          <div class="hnr-package-header">
-            <div class="hnr-package-badge">
-              <span class="hnr-badge-dot"></span>
-              <span class="hnr-badge-text">Business Email</span>
+        <div class="hnr-cloud-package-card">
+          <div class="hnr-cloud-package-header">
+            <div class="hnr-cloud-package-type">
+              <div class="hnr-cloud-package-icon">
+                <img src="{{ asset('assets/images/icon/icon-paket-cloud.png') }}" alt="Business Email" class="img-fluid">
+              </div>
+              <span class="hnr-cloud-package-name">Business Email</span>
             </div>
-            <h3 class="hnr-package-price">Rp30k <span class="hnr-price-period">/bulan</span></h3>
-            <a href="#" class="hnr-order-btn">Pesan Paket</a>
+            <h3 class="hnr-cloud-package-price">Rp30k<span class="hnr-cloud-price-period">/month</span></h3>
+            <a href="#" class="hnr-cloud-order-btn">Beli Paket</a>
           </div>
           
-          <div class="hnr-package-content">
-            <h4 class="hnr-included-title">What's Included</h4>
+          <div class="hnr-cloud-package-content">
+            <h4 class="hnr-cloud-included-title">What's Included</h4>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Email</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Advanced Search</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Zimbra for Custom Extensions</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Conversation Views</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Offline Web Client (Online & Offline)</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Attachment Search</li>
+            <!-- Fitur Utama (Selalu Ditampilkan) -->
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Email</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Advanced Search</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Zimlets for Custom Extensions</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Conversation Views</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Offline Web Client (Chrome & Firefox)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Attachment Search</span>
+                </li>
               </ul>
             </div>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Contacts</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Personal Distribution Lists</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Shared Address Lists (GAL)</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> LDAP Exchange Interoperability</li>
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Contacts</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Personal Distribution Lists</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Global Address Lists (GAL)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>MS Exchange Interoperability</span>
+                </li>
               </ul>
             </div>
             
-            <a href="#" class="hnr-more-btn">Lihat semua fitur</a>
+            <!-- Fitur Tambahan (Tersembunyi secara default) -->
+            <div class="hnr-cloud-expanded-features">
+              <!-- Calendar Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Calendar</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Basic Calendar</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Shared Calendars</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Calendar Scheduling</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Resource Scheduling</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Document Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Documents</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Basic Document Storage</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Document Sharing</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Document Versioning</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Tasks Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Tasks</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Basic Task Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Shared Tasks</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Task Notifications</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Mobile Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Mobile & Sync</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Mobile Web Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>ActiveSync Support</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>POP/IMAP Access</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Admin Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Administration</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Basic Admin Controls</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Advanced User Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Domain Management</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Storage & Limits -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Storage & Limits</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>5GB Storage per User</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Max 25MB Attachment Size</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <button class="hnr-cloud-toggle-btn">Lihat semua fitur <i class="bi bi-chevron-down"></i></button>
           </div>
         </div>
       </div>
 
-      <!-- Package 2: Standard -->
+      <!-- Package 2: Business Email Plus - Rp50k -->
       <div class="col-md-6 col-lg-3 mb-4">
-        <div class="hnr-package-card">
-          <div class="hnr-package-header">
-            <div class="hnr-package-badge">
-              <span class="hnr-badge-dot"></span>
-              <span class="hnr-badge-text">Business Email</span>
+        <div class="hnr-cloud-package-card">
+          <div class="hnr-cloud-package-header">
+            <div class="hnr-cloud-package-type">
+              <div class="hnr-cloud-package-icon">
+                <img src="{{ asset('assets/images/icon/icon-paket-cloud2.png') }}" alt="Business Email Plus" class="img-fluid">
+              </div>
+              <span class="hnr-cloud-package-name">Business Email Plus</span>
             </div>
-            <h3 class="hnr-package-price">Rp50k <span class="hnr-price-period">/bulan</span></h3>
-            <a href="#" class="hnr-order-btn">Pesan Paket</a>
+            <h3 class="hnr-cloud-package-price">Rp50k<span class="hnr-cloud-price-period">/month</span></h3>
+            <a href="#" class="hnr-cloud-order-btn">Beli Paket</a>
           </div>
           
-          <div class="hnr-package-content">
-            <h4 class="hnr-included-title">What's Included</h4>
+          <div class="hnr-cloud-package-content">
+            <h4 class="hnr-cloud-included-title">What's Included</h4>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Email</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Advanced Search</li>
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Zimbra for Custom Extensions</li>
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Conversation Views</li>
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Offline Web Client (Online & Offline)</li>
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Attachment Search</li>
+            <!-- Fitur Utama (Selalu Ditampilkan) -->
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Email</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Advanced Search</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Zimlets for Custom Extensions</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Conversation Views</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Offline Web Client (Chrome & Firefox)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>Attachment Search</span>
+                </li>
               </ul>
             </div>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Contacts</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Personal Distribution Lists</li>
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>Shared Address Lists (GAL)</li>
-                <li class="hnr-feature-item"><span class="hnr-check-icon"></span>LDAP Exchange Interoperability</li>
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Contacts</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Personal Distribution Lists</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Global Address Lists (GAL)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                  <span>MS Exchange Interoperability</span>
+                </li>
               </ul>
             </div>
             
-            <a href="#" class="hnr-more-btn">Lihat semua fitur</a>
+            <!-- Fitur Tambahan (Tersembunyi secara default) -->
+            <div class="hnr-cloud-expanded-features">
+              <!-- Calendar Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Calendar</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Basic Calendar</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Shared Calendars</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Calendar Scheduling</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Resource Scheduling</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Document Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Documents</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Storage</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Sharing</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Document Versioning</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Tasks Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Tasks</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Task Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Shared Tasks</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-x-circle-fill hnr-icon-cross"></i>
+                    <span>Task Notifications</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Mobile Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Mobile & Sync</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Mobile Web Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>ActiveSync Support</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>POP/IMAP Access</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Admin Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Administration</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Admin Controls</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>User Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Domain Management</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Storage & Limits -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Storage & Limits</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>10GB Storage per User</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Max 50MB Attachment Size</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <button class="hnr-cloud-toggle-btn">Lihat semua fitur <i class="bi bi-chevron-down"></i></button>
           </div>
         </div>
       </div>
 
-      <!-- Package 3: Standard Plus -->
+      <!-- Package 3: Standard Edition - Rp70k -->
       <div class="col-md-6 col-lg-3 mb-4">
-        <div class="hnr-package-card">
-          <div class="hnr-package-header standard-package">
-            <div class="hnr-package-badge">
-              <span class="hnr-badge-dot"></span>
-              <span class="hnr-badge-text">Standard Email</span>
+        <div class="hnr-cloud-package-card">
+          <div class="hnr-cloud-package-header">
+            <div class="hnr-cloud-package-type">
+              <div class="hnr-cloud-package-icon">
+                <img src="{{ asset('assets/images/icon/icon-paket-cloud3.png') }}" alt="Standard Edition" class="img-fluid">
+              </div>
+              <span class="hnr-cloud-package-name">Standard Edition</span>
             </div>
-            <h3 class="hnr-package-price">Rp70k <span class="hnr-price-period">/bulan</span></h3>
-            <a href="#" class="hnr-order-btn">Pesan Paket</a>
+            <h3 class="hnr-cloud-package-price">Rp70k<span class="hnr-cloud-price-period">/month</span></h3>
+            <a href="#" class="hnr-cloud-order-btn">Beli Paket</a>
           </div>
           
-          <div class="hnr-package-content">
-            <h4 class="hnr-included-title">What's Included</h4>
+          <div class="hnr-cloud-package-content">
+            <h4 class="hnr-cloud-included-title">What's Included</h4>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Email</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Advanced Search</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Zimbra for Custom Extensions</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Conversation Views</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Offline Web Client (Online & Offline)</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Attachment Search</li>
+            <!-- Fitur Utama (Selalu Ditampilkan) -->
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Email</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Advanced Search</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Zimlets for Custom Extensions</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Conversation Views</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Offline Web Client (Chrome & Firefox)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Attachment Search</span>
+                </li>
               </ul>
             </div>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Contacts</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Personal Distribution Lists</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> Shared Address Lists (GAL)</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-green"></i> LDAP Exchange Interoperability</li>
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Contacts</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Personal Distribution Lists</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Global Address Lists (GAL)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>MS Exchange Interoperability</span>
+                </li>
               </ul>
             </div>
             
-            <a href="#" class="hnr-more-btn">Lihat semua fitur</a>
+            <!-- Fitur Tambahan (Tersembunyi secara default) -->
+            <div class="hnr-cloud-expanded-features">
+              <!-- Calendar Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Calendar</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Calendar</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Shared Calendars</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Calendar Scheduling</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Resource Scheduling</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Document Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Documents</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Storage</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Sharing</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Versioning</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Tasks Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Tasks</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Task Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Shared Tasks</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Task Notifications</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Mobile Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Mobile & Sync</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Mobile Web Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>ActiveSync Support</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>POP/IMAP Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Mobile Device Management</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Security Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Security</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Enhanced Spam Protection</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Anti-Virus Scanning</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Data Encryption</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Admin Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Administration</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Admin Controls</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Comprehensive User Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Multi-Domain Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Backup & Restore</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Storage & Limits -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Storage & Limits</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>25GB Storage per User</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Max 100MB Attachment Size</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Quota Management</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Collaboration Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Collaboration</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Shared Folders</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Delegation</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Team Mailboxes</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Additional Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Additional Features</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Email Auto-Responders</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Email Filters & Rules</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>LDAP Integration</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <button class="hnr-cloud-toggle-btn">Lihat semua fitur <i class="bi bi-chevron-down"></i></button>
           </div>
         </div>
       </div>
 
-      <!-- Package 4: Professional -->
+      <!-- Package 4: Professional Edition (Most Popular) - Rp90k -->
       <div class="col-md-6 col-lg-3 mb-4">
-        <div class="hnr-package-card">
-          <div class="hnr-package-header professional-package">
-            <div class="hnr-package-badge">
-              <span class="hnr-badge-dot"></span>
-              <span class="hnr-badge-text">Professional</span>
+        <div class="hnr-cloud-package-card popular">
+          <div class="hnr-cloud-popular-badge">Paling Popular</div>
+          <div class="hnr-cloud-package-header">
+            <div class="hnr-cloud-package-type">
+              <div class="hnr-cloud-package-icon">
+                <img src="{{ asset('assets/images/icon/icon-paket-cloud4.png') }}" alt="Professional Edition" class="img-fluid">
+              </div>
+              <span class="hnr-cloud-package-name">Professional Edition</span>
             </div>
-            <h3 class="hnr-package-price">Rp90k <span class="hnr-price-period">/bulan</span></h3>
-            <a href="#" class="hnr-order-btn professional-btn">Pesan Paket</a>
+            <h3 class="hnr-cloud-package-price">Rp90k<span class="hnr-cloud-price-period">/month</span></h3>
+            <a href="#" class="hnr-cloud-order-btn hnr-cloud-order-btn-popular">Beli Paket</a>
           </div>
           
-          <div class="hnr-package-content">
-            <h4 class="hnr-included-title">What's Included</h4>
+          <div class="hnr-cloud-package-content">
+            <h4 class="hnr-cloud-included-title">What's Included</h4>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Email</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Advanced Search</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Zimbra for Custom Extensions</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Conversation Views</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Offline Web Client (Online & Offline)</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Attachment Search</li>
+            <!-- Fitur Utama (Selalu Ditampilkan) -->
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Email</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Advanced Search</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Zimlets for Custom Extensions</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Conversation Views</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Offline Web Client (Chrome & Firefox)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Attachment Search</span>
+                </li>
               </ul>
             </div>
             
-            <div class="hnr-package-section">
-              <h5 class="hnr-section-title">Contacts</h5>
-              <ul class="hnr-feature-list">
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Personal Distribution Lists</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> Shared Address Lists (GAL)</li>
-                <li class="hnr-feature-item"><i class="bi bi-check-circle-fill text-orange"></i> LDAP Exchange Interoperability</li>
+            <div class="hnr-cloud-feature-group">
+              <h5 class="hnr-cloud-feature-group-title">Contacts</h5>
+              <ul class="hnr-cloud-feature-list">
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Personal Distribution Lists</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>Global Address Lists (GAL)</span>
+                </li>
+                <li class="hnr-cloud-feature-item">
+                  <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                  <span>MS Exchange Interoperability</span>
+                </li>
               </ul>
             </div>
             
-            <a href="#" class="hnr-more-btn">Lihat semua fitur</a>
+            <!-- Fitur Tambahan (Tersembunyi secara default) -->
+            <div class="hnr-cloud-expanded-features">
+              <!-- Calendar Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Calendar</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Enterprise Calendar</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Shared Calendars</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Calendar Delegation</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Resource Scheduling & Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Meeting Room Management</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Document Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Documents</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Enterprise Document Storage</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Document Sharing</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Versioning</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Document Workflow</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Tasks Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Tasks</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Enterprise Task Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Shared Task Lists</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Task Assignments</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Task Notifications & Reminders</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Mobile Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Mobile & Sync</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Enterprise Mobile Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced ActiveSync</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>POP/IMAP Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Comprehensive Mobile Device Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Mobile Security Policies</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Security Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Security</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Premium Spam Protection</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Anti-Virus</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Data Loss Prevention (DLP)</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Email Encryption</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Two-Factor Authentication</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Email Archiving</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Admin Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Administration</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Enterprise Admin Console</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Role-Based Administration</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Multi-Domain Management</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Backup & Restore</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Monitoring & Reporting</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Storage & Limits -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Storage & Limits</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>50GB Storage per User</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Unlimited Attachment Size</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Dynamic Quota Management</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Collaboration Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Collaboration</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Shared Folders</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Delegation</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Team Collaboration Spaces</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Group Messaging</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Additional Features -->
+              <div class="hnr-cloud-feature-group">
+                <h5 class="hnr-cloud-feature-group-title">Additional Features</h5>
+                <ul class="hnr-cloud-feature-list">
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced Email Rules & Filters</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Email Signatures & Templates</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Advanced LDAP Integration</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>API Access</span>
+                  </li>
+                  <li class="hnr-cloud-feature-item">
+                    <i class="bi bi-check-circle-fill hnr-icon-check"></i>
+                    <span>Priority Support</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <button class="hnr-cloud-toggle-btn">Lihat semua fitur <i class="bi bi-chevron-down"></i></button>
           </div>
         </div>
       </div>
