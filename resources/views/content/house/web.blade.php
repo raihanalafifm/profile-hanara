@@ -8,7 +8,7 @@
       <!-- Web Design Image -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="hnr-house-web-img-container">
-          <img src="{{ asset('assets/images/icon/web-design.png') }}" alt="Web Design" class="hnr-house-web-img">
+          <img src="{{ asset('assets/images/icon/jasa pembuatan website.png') }}" alt="Web Design" class="hnr-house-web-img">
         </div>
       </div>
       
@@ -27,7 +27,7 @@
           <div class="hnr-house-web-stats">
             <div class="hnr-house-web-stat-item">
               <div class="hnr-house-web-stat-icon">
-                <img src="{{ asset('assets/images/icon/project-icon.png') }}" alt="Projects">
+                <img src="{{ asset('assets/images/icon/monitor.png') }}" alt="Projects">
               </div>
               <div class="hnr-house-web-stat-content">
                 <h3 class="hnr-house-web-stat-number">200 +</h3>
@@ -37,7 +37,7 @@
             
             <div class="hnr-house-web-stat-item">
               <div class="hnr-house-web-stat-icon">
-                <img src="{{ asset('assets/images/icon/experience-icon.png') }}" alt="Experience">
+                <img src="{{ asset('assets/images/icon/calender.png') }}" alt="Experience">
               </div>
               <div class="hnr-house-web-stat-content">
                 <h3 class="hnr-house-web-stat-number">5 +</h3>
@@ -53,7 +53,7 @@
     <div class="row mt-5 text-center">
       <div class="col-12">
         <h2 class="hnr-house-web-section-title">
-          Mengapa <span class="hnr-house-web-title-bold">Harus Kami Yang</span>
+        <span class="hnr-house-web-title-orange">Mengapa</span> <span class="hnr-house-web-title-bold">Harus Kami Yang</span>
         </h2>
         <h3 class="hnr-house-web-section-subtitle">Membuat Website Anda?</h3>
         <p class="hnr-house-web-section-desc">Pilihan terbaik, teknologi terbaru, dan harga tepat, solusi website Anda</p>
@@ -66,7 +66,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/domain-icon.png') }}" alt="Domain">
+            <img src="{{ asset('assets/images/icon/icon-card-web1.png') }}" alt="Domain">
           </div>
           <h3 class="hnr-house-web-feature-title">Sudah Termasuk Domain</h3>
           <p class="hnr-house-web-feature-text">
@@ -79,7 +79,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/hosting-icon.png') }}" alt="Hosting">
+            <img src="{{ asset('assets/images/icon/icon-card-web2.png') }}" alt="Hosting">
           </div>
           <h3 class="hnr-house-web-feature-title">Sudah Termasuk Hosting</h3>
           <p class="hnr-house-web-feature-text">
@@ -92,7 +92,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/customization-icon.png') }}" alt="Customization">
+            <img src="{{ asset('assets/images/icon/icon-card-web3.png') }}" alt="Customization">
           </div>
           <h3 class="hnr-house-web-feature-title">Sesuai Kebutuhan Anda</h3>
           <p class="hnr-house-web-feature-text">
@@ -108,7 +108,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/interactive-icon.png') }}" alt="Interaktif">
+            <img src="{{ asset('assets/images/icon/icon-card-web4.png') }}" alt="Interaktif">
           </div>
           <h3 class="hnr-house-web-feature-title">Interaktif</h3>
           <p class="hnr-house-web-feature-text">
@@ -121,7 +121,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/responsive-icon.png') }}" alt="Responsif">
+            <img src="{{ asset('assets/images/icon/icon-card-web5.png') }}" alt="Responsif">
           </div>
           <h3 class="hnr-house-web-feature-title">Responsif</h3>
           <p class="hnr-house-web-feature-text">
@@ -134,7 +134,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/seo-icon.png') }}" alt="SEO Friendly">
+            <img src="{{ asset('assets/images/icon/icon-card-web6.png') }}" alt="SEO Friendly">
           </div>
           <h3 class="hnr-house-web-feature-title">SEO Friendly</h3>
           <p class="hnr-house-web-feature-text">
@@ -150,7 +150,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/marketing-icon.png') }}" alt="Marketing">
+            <img src="{{ asset('assets/images/icon/icon-card-web7.png') }}" alt="Marketing">
           </div>
           <h3 class="hnr-house-web-feature-title">Membantu Memahami Marketing Strategy Anda</h3>
           <p class="hnr-house-web-feature-text">
@@ -163,7 +163,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/online-store-icon.png') }}" alt="Online Store">
+            <img src="{{ asset('assets/images/icon/icon-card-web8.png') }}" alt="Online Store">
           </div>
           <h3 class="hnr-house-web-feature-title">Fitur Toko Online</h3>
           <p class="hnr-house-web-feature-text">
@@ -176,7 +176,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/payment-icon.png') }}" alt="Payment">
+            <img src="{{ asset('assets/images/icon/icon-card-web9.png') }}" alt="Payment">
           </div>
           <h3 class="hnr-house-web-feature-title">Integrasi Dengan Payment Gateway</h3>
           <p class="hnr-house-web-feature-text">
@@ -192,7 +192,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/social-media-icon.png') }}" alt="Social Media">
+            <img src="{{ asset('assets/images/icon/icon-card-web10.png') }}" alt="Social Media">
           </div>
           <h3 class="hnr-house-web-feature-title">Dibuatkan Social Media</h3>
           <p class="hnr-house-web-feature-text">
@@ -205,7 +205,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/email-icon.png') }}" alt="Email">
+            <img src="{{ asset('assets/images/icon/icon-card-web11.png') }}" alt="Email">
           </div>
           <h3 class="hnr-house-web-feature-title">Email Perusahaan</h3>
           <p class="hnr-house-web-feature-text">
@@ -218,7 +218,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/analytics-icon.png') }}" alt="Analytics">
+            <img src="{{ asset('assets/images/icon/icon-card-web12.png') }}" alt="Analytics">
           </div>
           <h3 class="hnr-house-web-feature-title">Analytics Tools</h3>
           <p class="hnr-house-web-feature-text">
@@ -234,7 +234,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/chat-icon.png') }}" alt="Chat">
+            <img src="{{ asset('assets/images/icon/icon-card-web13.png') }}" alt="Chat">
           </div>
           <h3 class="hnr-house-web-feature-title">Realtime Chat</h3>
           <p class="hnr-house-web-feature-text">
@@ -247,7 +247,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/whatsapp-icon.png') }}" alt="WhatsApp">
+            <img src="{{ asset('assets/images/icon/icon-card-web14.png') }}" alt="WhatsApp">
           </div>
           <h3 class="hnr-house-web-feature-title">Connect WhatsApp</h3>
           <p class="hnr-house-web-feature-text">
@@ -260,7 +260,7 @@
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
           <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/android-icon.png') }}" alt="Android">
+            <img src="{{ asset('assets/images/icon/icon-card-web15.png') }}" alt="Android">
           </div>
           <h3 class="hnr-house-web-feature-title">Download ke Playstore</h3>
           <p class="hnr-house-web-feature-text">
@@ -270,339 +270,452 @@
       </div>
     </div>
     
-    <!-- Features Grid - Row 6 -->
-    <div class="row">
-      <!-- Feature 16: BONUS Whatsapp -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-house-web-feature-card">
-          <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/bonus-icon.png') }}" alt="Bonus">
-          </div>
-          <h3 class="hnr-house-web-feature-title">BONUS Whatsapp</h3>
-          <p class="hnr-house-web-feature-text">
-            Anda dapat langsung bonus aplikasi Whatsapp yang terkoneksi website Anda secara control, bahkan harus memeksimalkan marketing agar sempurna hingga bisa dirubah antar yang menginkan website Anda.
-          </p>
+   <!-- Modified Features Grid - Row 6 with centered content -->
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="row">
+                    <!-- Feature 16: BONUS Whatsapp -->
+                    <div class="col-md-6 mb-4">
+                        <div class="hnr-house-web-feature-card">
+                            <div class="hnr-house-web-feature-icon">
+                                <img src="{{ asset('assets/images/icon/icon-card-web16.png') }}" alt="Bonus">
+                            </div>
+                            <h3 class="hnr-house-web-feature-title">BONUS Whatsapp</h3>
+                            <p class="hnr-house-web-feature-text">
+                                Anda dapat langsung bonus aplikasi Whatsapp yang terkoneksi website Anda secara control, bahkan harus memeksimalkan marketing agar sempurna hingga bisa dirubah antar yang menginkan website Anda.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 17: FREE Training -->
+                    <div class="col-md-6 mb-4">
+                        <div class="hnr-house-web-feature-card">
+                            <div class="hnr-house-web-feature-icon">
+                                <img src="{{ asset('assets/images/icon/icon-card-web17.png') }}" alt="Training">
+                            </div>
+                            <h3 class="hnr-house-web-feature-title">FREE Training</h3>
+                            <p class="hnr-house-web-feature-text">
+                                Untuk pembuatan paket website Discovery, kami diberikan dan hosting langsung sandera selama 2 bulan. Ramu juga akan di training cara menambah dan mengelola informasi secara mudah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <!-- Feature 17: FREE Training -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-house-web-feature-card">
-          <div class="hnr-house-web-feature-icon">
-            <img src="{{ asset('assets/images/icon/training-icon.png') }}" alt="Training">
-          </div>
-          <h3 class="hnr-house-web-feature-title">FREE Training</h3>
-          <p class="hnr-house-web-feature-text">
-            Untuk pembuatan paket website Discovery, kami diberikan dan hosting langsung sandera selama 2 bulan. Ramu juga akan di training cara menambah dan mengelola informasi secara mudah.
-          </p>
-        </div>
-      </div>
-    </div>
     
     <!-- Pricing Section -->
-    <div class="row mt-5 mb-5 text-center">
-      <div class="col-12">
-        <h2 class="hnr-house-web-pricing-title">Paket Website Terbaik Kami</h2>
-        <p class="hnr-house-web-pricing-subtitle">Dapatkan penawaran paket website terbaik dan tepat. Harga Mulia 3.000.000 Web Discovery</p>
-      </div>
-    </div>
-    
-    <div class="row mb-5">
-      <!-- Package 1: Web Startup (Ekonomis) -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-house-web-pricing-card">
-          <div class="hnr-house-web-pricing-header">
-            <div class="hnr-house-web-pricing-icon">
-              <img src="{{ asset('assets/images/icon/startup-icon.png') }}" alt="Startup Package">
-            </div>
-            <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Ekonomis)</h3>
-            <p class="hnr-house-web-pricing-desc">Includes Domain & Hosting 1 Tahun</p>
-            <div class="hnr-house-web-pricing-price">Rp 3.990.000</div>
-            <a href="#" class="hnr-house-web-pricing-btn">Pesan Paket</a>
-          </div>
-          
-          <div class="hnr-house-web-pricing-features">
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>FREE Domain (.com) 1 Tahun</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Hosting 1 Tahun</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>5GB Storage</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Google Ads</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Unlimited Bandwidth</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Email Account</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Unlimited POP3 Email</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Access</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Designer Responsive</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>SSL Certificate</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Social Icon</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Home Page</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman About Us</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman Gallery</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman Contact</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman Product dan Service</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Form Order</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Connect Whatsapp</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Renewal Tahun Berikutnya Rp. 1.375.000/Tahun</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Package 2: Web Startup (Best Seller) -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-house-web-pricing-card popular">
-          <div class="hnr-house-web-pricing-badge">Best Seller</div>
-          <div class="hnr-house-web-pricing-header">
-            <div class="hnr-house-web-pricing-icon">
-              <img src="{{ asset('assets/images/icon/startup-pro-icon.png') }}" alt="Startup Pro Package">
-            </div>
-            <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Best Seller)</h3>
-            <p class="hnr-house-web-pricing-desc">Includes Domain & Hosting 1 Tahun</p>
-            <div class="hnr-house-web-pricing-price">Rp 5.990.000</div>
-            <a href="#" class="hnr-house-web-pricing-btn hnr-house-web-pricing-btn-popular">Pesan Paket</a>
-          </div>
-          
-          <div class="hnr-house-web-pricing-features">
-            <!-- Pricing features similar to package 1 but with more items -->
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>FREE Domain (.com) 1 Tahun</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Hosting 1 Tahun</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>7GB Storage</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Unlimited Bandwidth</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Email Account</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Unlimited POP3 Email</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Designer Responsive</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Social Icon</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Home Page</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Form Order</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Designer Payment Gateway</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Form Order</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Realtime Tracking</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Connect Whatsapp</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Google Analytics</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Create Google My Business</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Google Icon</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Google Map</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Renewal Tahun Berikutnya Rp. 1.980.000/Tahun</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Package 3: Web Startup (Lebih Hemat) -->
-      <div class="col-md-4 mb-4">
-        <div class="hnr-house-web-pricing-card">
-          <div class="hnr-house-web-pricing-header">
-            <div class="hnr-house-web-pricing-icon">
-              <img src="{{ asset('assets/images/icon/startup-premium-icon.png') }}" alt="Premium Package">
-            </div>
-            <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Lebih Hemat)</h3>
-            <p class="hnr-house-web-pricing-desc">Includes Domain & Hosting 3 Tahun</p>
-            <div class="hnr-house-web-pricing-price">Rp 12.900.000</div>
-            <a href="#" class="hnr-house-web-pricing-btn">Pesan Paket</a>
-          </div>
-          
-          <div class="hnr-house-web-pricing-features">
-            <!-- Pricing features similar to package 1 but with more premium items -->
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>FREE Domain (.com) 1 Tahun</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Hosting 3 Tahun</span>
-            </div>
-         <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>10GB Storage</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Google Ads</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Unlimited Bandwidth</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Email Account</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Unlimited POP3 Email</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Access</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Designer Responsive</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>SSL Certificate</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Social Icon</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Home Page</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman About Us</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman Gallery</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman Contact</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Halaman Product dan Service</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Form Order</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Connect Whatsapp</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Free Content Instagram</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Integrate Payment Gateway</span>
-            </div>
-            <div class="hnr-house-web-pricing-feature">
-              <span class="hnr-pricing-check-icon"></span>
-              <span>Renewal Tahun Berikutnya Rp. 2.980.000/Tahun</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   <!-- Pricing Section -->
+<div class="row mt-5 mb-5 text-center">
+  <div class="col-12">
+    <h2 class="hnr-house-web-pricing-title"><span class="hnr-house-web-title-orange">Paket </span> Website Terbaik Kami</h2>
+    <p class="hnr-house-web-pricing-subtitle">Dapatkan penawaran paket website terbaik dan tepat. Harga Mulai 3.000.000 Web Discovery</p>
+  </div>
+</div>
 
-    @include('components.contact')
+<div class="row mb-5">
+  <!-- Package 1: Web Startup (Ekonomis) -->
+  <div class="col-md-4 mb-4">
+    <div class="hnr-house-web-pricing-card">
+      <div class="hnr-house-web-pricing-header">
+        <div class="hnr-house-web-pricing-type">
+          <div class="hnr-house-web-pricing-icon">
+            <img src="{{ asset('assets/images/icon/icon-paket-cloud2.png') }}" alt="Startup Package">
+          </div>
+          <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Ekonomi)</h3>
+          <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 1 Tahun</p>
+        </div>
+        <div class="hnr-house-web-pricing-price">Rp 3.990.000</div>
+        <a href="#" class="hnr-house-web-pricing-btn">Beli Paket</a>
+      </div>
+      
+      <div class="hnr-house-web-pricing-features">
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FREE Domain (.com) 1 Tahun</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Hosting 1 Tahun</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>3GB Storage</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Server IIX</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Unlimited Bandwidth</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Email Account</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Unlimited POP3 Email</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FTP Access</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Tampilan Responsive</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>SEO Friendly</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>SSL Lets Encrypt</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Home Page</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman About Us</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Galeri</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Contact Us</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Produk dan Service</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Form Order</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Connect Whatsapp</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Renewal Tahun Berikutnya Rp. 1.375.000/Tahun</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Package 2: Web Startup (Best Seller) -->
+  <div class="col-md-4 mb-4">
+    <div class="hnr-house-web-pricing-card popular">
+      <div class="hnr-house-web-pricing-badge">Paling Popular</div>
+      <div class="hnr-house-web-pricing-header">
+        <div class="hnr-house-web-pricing-type">
+          <div class="hnr-house-web-pricing-icon">
+            <img src="{{ asset('assets/images/icon/icon-paket-cloud3.png') }}" alt="Startup Pro Package">
+          </div>
+          <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Best Seller)</h3>
+          <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 1 Tahun</p>
+        </div>
+        <div class="hnr-house-web-pricing-price">Rp 5.990.000</div>
+        <a href="#" class="hnr-house-web-pricing-btn hnr-house-web-pricing-btn-popular">Beli Paket</a>
+      </div>
+      
+      <div class="hnr-house-web-pricing-features">
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FREE Domain (.com) 1 Tahun</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Hosting 1 Tahun</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>7GB Storage</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Server IIX</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Unlimited Bandwidth</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Email Account</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Unlimited POP3 Email</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FTP Access</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Tampilan Responsive</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>SEO Friendly</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>SSL Lets Encrypt</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Home Page</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman About Us</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Galeri</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Contact Us</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Produk dan Service</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Toko Online</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Integrasi Payment Gateway</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Form Order</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Realtime Chatting</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Connect Whatsapp</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Analytic Tools</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Create Google My Business</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Create Fans Page</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Create Instagram Account</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Renewal Tahun Berikutnya Rp. 1.980.000/Tahun</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Package 3: Web Startup (Lebih Hemat) -->
+  <div class="col-md-4 mb-4">
+    <div class="hnr-house-web-pricing-card">
+      <div class="hnr-house-web-pricing-header">
+        <div class="hnr-house-web-pricing-type">
+          <div class="hnr-house-web-pricing-icon">
+            <img src="{{ asset('assets/images/icon/icon-paket-cloud4.png') }}" alt="Premium Package">
+          </div>
+          <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Lebih Hemat)</h3>
+          <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 3 Tahun</p>
+        </div>
+        <div class="hnr-house-web-pricing-price">Rp 12.900.000</div>
+        <a href="#" class="hnr-house-web-pricing-btn">Beli Paket</a>
+      </div>
+      
+      <div class="hnr-house-web-pricing-features">
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FREE Domain (.com) 1 Tahun</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Hosting 3 Tahun</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>10GB Storage</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Server IIX</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Unlimited Bandwidth</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Email Account</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Unlimited POP3 Email</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FTP Access</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Tampilan Responsive</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>SEO Friendly</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>SSL Lets Encrypt</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Home Page</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman About Us</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Galeri</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Contact Us</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Halaman Produk dan Service</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Toko Online</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Integrasi Payment Gateway</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Form Order</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Realtime Chatting</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Fitur Connect Whatsapp</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Analytic Tools</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>FREE Training Membuat Halaman/Artikel</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Create Google My Business</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Create Fans Page</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Create Instagram Account</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>BONUS Google Ads Rp.250.000,-</span>
+        </div>
+        <div class="hnr-house-web-pricing-feature">
+          <span class="hnr-pricing-check-icon"></span>
+          <span>Renewal Tahun Berikutnya Rp. 2.980.000/Tahun</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Tools Section - Place this after package selection and before contact -->
+<div class="row mt-5 mb-5">
+  <div class="col-12 text-center">
+    <h2 class="hnr-tools-title">
+      <span class="hnr-tools-title-orange">Tools</span> Yang Akan Mendukung 
+      <span class="d-block">Website Anda</span>
+    </h2>
+    <p class="hnr-tools-description">
+      Untuk memberikan layanan terbaik bagi anda, hosting kami sudah terpasang software software terbaik 
+      dan terpdate seperti Nginx WebServer, WordPress, Fail2ban, SSL, WP Accelerator dan software 
+      pendukung lainnya untuk performa terbaik, kenyamanan mengelola dan keamanan website anda
+    </p>
+  </div>
+</div>
+
+<div class="hnr-tools-container mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="hnr-tools-logos">
+        <!-- cPanel -->
+        <div class="hnr-tool-item">
+          <img src="{{ asset('assets/images/icon/cpanel.png') }}" alt="cPanel" class="hnr-tool-logo">
+        </div>
+        
+        <!-- SSL Secured -->
+        <div class="hnr-tool-item">
+          <img src="{{ asset('assets/images/icon/ssl.png') }}" alt="SSL Secured" class="hnr-tool-logo">
+        </div>
+        
+        <!-- WordPress -->
+        <div class="hnr-tool-item">
+          <img src="{{ asset('assets/images/icon/wordpress.png') }}" alt="WordPress" class="hnr-tool-logo">
+        </div>
+        
+        <!-- Nginx -->
+        <div class="hnr-tool-item">
+          <img src="{{ asset('assets/images/icon/nginx.png') }}" alt="Nginx" class="hnr-tool-logo">
+        </div>
+        
+        <!-- Let's Encrypt -->
+        <div class="hnr-tool-item">
+          <img src="{{ asset('assets/images/icon/enc.png') }}" alt="Let's Encrypt" class="hnr-tool-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section would be placed here -->
+@include('components.contact')
   </div>
 </section>
 @endsection
