@@ -563,5 +563,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+// JavaScript for FAQ Section
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all FAQ headers
+  const faqHeaders = document.querySelectorAll('.hnr-nextcloud-faq-header');
+  
+  // Add click event listener to each header
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Get parent item
+      const faqItem = this.parentElement;
+      
+      // Toggle active class
+      const isActive = faqItem.classList.contains('active');
+      
+      // Optional: Close all FAQs first
+      document.querySelectorAll('.hnr-nextcloud-faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Toggle active class
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+});
 </script>
 </html>

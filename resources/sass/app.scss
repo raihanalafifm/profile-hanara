@@ -5451,3 +5451,851 @@
     color: #aaa;
   }
 }
+/* CCTV Page Styles */
+.hnr-cctv-hero-section {
+  padding: 80px 0;
+  background-color: #f9f9fb;
+  position: relative;
+  overflow: hidden;
+}
+
+.hnr-cctv-image-container {
+  position: relative;
+  text-align: center;
+}
+
+.hnr-cctv-main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hnr-cctv-brands {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+.hnr-cctv-brand-logo {
+  max-width: 60px;
+  height: auto;
+  margin: 5px;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.1));
+}
+
+.hnr-cctv-content {
+  padding-left: 20px;
+}
+
+.hnr-cctv-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.hnr-cctv-title-orange {
+  color: #FF6B00;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.hnr-cctv-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.hnr-cctv-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #FF6B00;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-cctv-button:hover {
+  background-color: #e05e00;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+  text-decoration: none;
+}
+
+/* Why Choose Us Section */
+.hnr-cctv-why-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.hnr-cctv-section-title {
+  margin-bottom: 30px;
+}
+
+.hnr-cctv-title-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.hnr-cctv-title-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hnr-cctv-title-description {
+  font-size: 16px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hnr-cctv-feature-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 25px 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-cctv-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-cctv-feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-cctv-feature-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-cctv-feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0;
+  min-height: 50px;
+}
+
+/* Product Section */
+.hnr-cctv-product-section {
+  padding: 80px 0;
+  background-color: #fff;
+  margin-bottom: 60px;
+}
+
+.hnr-cctv-brand-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.hnr-cctv-brand-logo-item {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-cctv-brand-logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-cctv-brand-logo-item img {
+  max-width: 100%;
+  max-height: 40px;
+  object-fit: contain;
+  filter: grayscale(50%);
+  transition: filter 0.3s ease;
+}
+
+.hnr-cctv-brand-logo-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .hnr-cctv-hero-section, 
+  .hnr-cctv-why-section, 
+  .hnr-cctv-product-section {
+    padding: 60px 0;
+  }
+  
+  .hnr-cctv-content {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .hnr-cctv-title {
+    font-size: 28px;
+  }
+  
+  .hnr-cctv-title-heading,
+  .hnr-cctv-title-subheading {
+    font-size: 24px;
+  }
+  
+  .hnr-cctv-brand-logos {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-cctv-hero-section, 
+  .hnr-cctv-why-section, 
+  .hnr-cctv-product-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-cctv-title {
+    font-size: 24px;
+  }
+  
+  .hnr-cctv-brand-logo-item {
+    min-width: 120px;
+    height: 60px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hnr-cctv-hero-section {
+    background-color: #161615;
+  }
+  
+  .hnr-cctv-why-section {
+    background-color: #1a1a1a;
+  }
+  
+  .hnr-cctv-product-section {
+    background-color: #161615;
+  }
+  
+  .hnr-cctv-title,
+  .hnr-cctv-title-heading,
+  .hnr-cctv-title-subheading {
+    color: #e0e0e0;
+  }
+  
+  .hnr-cctv-description,
+  .hnr-cctv-title-description {
+    color: #aaa;
+  }
+  
+  .hnr-cctv-feature-card {
+    background-color: #232323;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hnr-cctv-feature-title {
+    color: #ddd;
+  }
+  
+  .hnr-cctv-brand-logo-item {
+    background-color: #232323;
+  }
+}
+/* Motorola Page Styles */
+.hnr-motorola-hero-section {
+  padding: 80px 0;
+  background-color: #f9f9fb;
+  position: relative;
+  overflow: hidden;
+}
+
+.hnr-motorola-image-container {
+  text-align: center;
+}
+
+.hnr-motorola-main-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.hnr-motorola-content {
+  padding-left: 20px;
+}
+
+.hnr-motorola-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-motorola-title-orange {
+  color: #FF6B00;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.hnr-motorola-title-black {
+  color: #222;
+  font-weight: 800;
+}
+
+.hnr-motorola-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.hnr-motorola-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #FF6B00;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-motorola-button:hover {
+  background-color: #e05e00;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+  text-decoration: none;
+}
+
+/* Categories Section */
+.hnr-motorola-categories-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.hnr-motorola-section-title {
+  margin-bottom: 20px;
+}
+
+.hnr-motorola-title-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.hnr-motorola-title-description {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hnr-motorola-category-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-motorola-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-motorola-category-icon {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hnr-motorola-category-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-motorola-category-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0;
+  min-height: 40px;
+}
+
+/* Products Section */
+.hnr-motorola-products-section {
+  padding: 80px 0;
+  background-color: #f9f9fb;
+}
+
+.hnr-motorola-section-alt {
+  background-color: #fff;
+}
+
+.hnr-motorola-product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-motorola-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-motorola-product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-motorola-product-badge img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-motorola-product-image {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hnr-motorola-product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-motorola-product-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0;
+  min-height: 60px;
+}
+
+/* Contact Section */
+.hnr-motorola-contact-section {
+  padding: 80px 0;
+  background-color: #f9f9fb;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .hnr-motorola-hero-section, 
+  .hnr-motorola-categories-section, 
+  .hnr-motorola-products-section, 
+  .hnr-motorola-contact-section {
+    padding: 60px 0;
+  }
+  
+  .hnr-motorola-content {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .hnr-motorola-title,
+  .hnr-motorola-title-heading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-motorola-hero-section, 
+  .hnr-motorola-categories-section, 
+  .hnr-motorola-products-section, 
+  .hnr-motorola-contact-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-motorola-product-image {
+    height: 140px;
+  }
+  
+  .hnr-motorola-category-icon {
+    height: 120px;
+  }
+  
+  .hnr-motorola-category-title,
+  .hnr-motorola-product-title {
+    font-size: 12px;
+    min-height: 50px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hnr-motorola-hero-section {
+    background-color: #161615;
+  }
+  
+  .hnr-motorola-categories-section,
+  .hnr-motorola-section-alt {
+    background-color: #1a1a1a;
+  }
+  
+  .hnr-motorola-products-section {
+    background-color: #161615;
+  }
+  
+  .hnr-motorola-contact-section {
+    background-color: #1a1a1a;
+  }
+  
+  .hnr-motorola-title-black,
+  .hnr-motorola-title-heading {
+    color: #e0e0e0;
+  }
+  
+  .hnr-motorola-description,
+  .hnr-motorola-title-description {
+    color: #aaa;
+  }
+  
+  .hnr-motorola-category-card,
+  .hnr-motorola-product-card {
+    background-color: #232323;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hnr-motorola-category-title,
+  .hnr-motorola-product-title {
+    color: #ddd;
+  }
+}
+/* Nextcloud Installation Page Specific Styles */
+.hnr-nextcloud-section {
+  padding: 60px 0;
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo Styling */
+.hnr-nextcloud-logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hnr-nextcloud-logo {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Content Styling */
+.hnr-nextcloud-content {
+  padding-left: 20px;
+}
+
+.hnr-nextcloud-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hnr-nextcloud-title-orange {
+  color: #FF6B00;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.hnr-nextcloud-title-dark {
+  color: #222;
+  display: block;
+}
+
+.hnr-nextcloud-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Section Title Styling */
+.hnr-nextcloud-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.hnr-nextcloud-section-subtitle {
+  font-size: 16px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+/* Interface Image */
+.hnr-nextcloud-interface-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hnr-nextcloud-interface-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Service Cards */
+.hnr-nextcloud-service-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hnr-nextcloud-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-nextcloud-service-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hnr-nextcloud-service-content {
+  flex: 1;
+}
+
+.hnr-nextcloud-service-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FF6B00;
+  margin-bottom: 10px;
+}
+
+.hnr-nextcloud-service-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* FAQ Styling */
+.hnr-nextcloud-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hnr-nextcloud-faq-item {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.hnr-nextcloud-faq-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.hnr-nextcloud-faq-item.active .hnr-nextcloud-faq-header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.hnr-nextcloud-faq-number {
+  font-size: 16px;
+  font-weight: 500;
+  color: #999;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.hnr-nextcloud-faq-question {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.hnr-nextcloud-faq-toggle {
+  flex-shrink: 0;
+  color: #999;
+  transition: transform 0.3s ease;
+}
+
+.hnr-nextcloud-faq-item.active .hnr-nextcloud-faq-toggle {
+  transform: rotate(180deg);
+}
+
+.hnr-nextcloud-faq-body {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hnr-nextcloud-faq-item.active .hnr-nextcloud-faq-body {
+  padding: 20px;
+  max-height: 1000px;
+}
+
+.hnr-nextcloud-faq-answer {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-nextcloud-content {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .hnr-nextcloud-description {
+    text-align: center;
+  }
+  
+  .hnr-nextcloud-service-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hnr-nextcloud-service-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-nextcloud-section {
+    padding: 40px 0;
+  }
+  
+  .hnr-nextcloud-title {
+    font-size: 28px;
+  }
+  
+  .hnr-nextcloud-section-title {
+    font-size: 24px;
+  }
+  
+  .hnr-nextcloud-faq-header {
+    padding: 15px;
+  }
+  
+  .hnr-nextcloud-faq-question {
+    font-size: 16px;
+  }
+  
+  .hnr-nextcloud-faq-item.active .hnr-nextcloud-faq-body {
+    padding: 15px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hnr-nextcloud-section {
+    background-color: #161615;
+  }
+  
+  .hnr-nextcloud-title-dark,
+  .hnr-nextcloud-section-title {
+    color: #e0e0e0;
+  }
+  
+  .hnr-nextcloud-description,
+  .hnr-nextcloud-service-desc,
+  .hnr-nextcloud-faq-answer {
+    color: #aaa;
+  }
+  
+  .hnr-nextcloud-section-subtitle {
+    color: #999;
+  }
+  
+  .hnr-nextcloud-service-card,
+  .hnr-nextcloud-faq-item {
+    background-color: #232323;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hnr-nextcloud-faq-header {
+    background-color: #2a2a2a;
+  }
+  
+  .hnr-nextcloud-faq-item.active .hnr-nextcloud-faq-header {
+    background-color: #232323;
+    border-color: #333;
+  }
+  
+  .hnr-nextcloud-faq-question {
+    color: #ddd;
+  }
+}

@@ -47,3 +47,12 @@ Route::get('/develop-web', function(){
 Route::get('/web-application', function(){
     return view('content.house.webapp');
 });
+Route::get('/cctv', function(){
+    return view('content.cctv.cctv');
+});
+Route::get('/motorola', function(){
+    return view('content.motorola.motorola');
+});
+Route::get('/nextcloud', function(){
+    return view('content.bisnis.nextcloud');
+});
