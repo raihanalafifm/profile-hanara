@@ -6316,3 +6316,366 @@
     color: #ddd;
   }
 }
+/* Custom HCM styles to avoid conflicts */
+      /* Custom HCM styles to avoid conflicts */
+    .hcm-hero-section {
+        background: linear-gradient(135deg, #ffaa5b 0%, #ff7e28 100%);
+        padding: 60px 0;
+        overflow: hidden;
+    }
+
+    .hcm-orange {
+        color: #FF7A00;
+    }
+
+    .hcm-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 20px 0;
+        line-height: 1.2;
+    }
+
+    .hcm-app-store-btn, .hcm-play-store-btn {
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px 15px;
+        color: #333;
+        font-weight: 500;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .hcm-app-store-btn:hover, .hcm-play-store-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .hcm-dashboard-image {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hcm-dashboard-image img {
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .hcm-about-section {
+        background-color: #fff;
+        padding: 60px 0;
+    }
+
+    .hcm-illustration-container {
+        position: relative;
+    }
+
+    .hcm-section-subtitle {
+        color: #FF7A00;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .hcm-section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #212529;
+    }
+
+    .hcm-section-title-dark {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #212529;
+        line-height: 1.2;
+    }
+
+    .hcm-section-title-orange {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #FF7A00;
+        line-height: 1.2;
+    }
+
+    .hcm-description {
+        color: #6c757d;
+        line-height: 1.8;
+    }
+
+    /* Services Section Styles */
+    .hcm-services-section {
+        background-color: #fff;
+        padding: 60px 0;
+    }
+
+    .hcm-services-desc {
+        color: #6c757d;
+        margin-bottom: 40px;
+        line-height: 1.6;
+    }
+
+    .hcm-service-card {
+        padding: 25px 15px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+
+    .hcm-service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .hcm-service-icon {
+        margin-bottom: 20px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hcm-service-icon img {
+        max-height: 80px;
+        max-width: 80px;
+    }
+
+    .hcm-service-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .hcm-service-desc {
+        color: #777;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Team Section Styles */
+    .hcm-team-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+    
+    .hcm-team-section .row {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .hcm-team-card {
+        background-color: transparent;
+        border-radius: 0;
+        overflow: hidden;
+        max-width: 240px;
+        margin: 0 auto;
+        box-shadow: none;
+        transition: transform 0.3s ease;
+    }
+
+    .hcm-team-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .hcm-team-image {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background-color: #e8e8e8;
+        border-radius: 8px;
+    }
+
+    .hcm-team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hcm-team-name {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin: 15px 0 5px;
+        color: #333;
+        text-align: center;
+    }
+
+    .hcm-team-position {
+        color: #FF7A00;
+        font-weight: 500;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    /* Pricing Section Styles */
+    .hcm-pricing-section {
+        background-color: #fff;
+        padding: 60px 0;
+    }
+    
+    .hcm-pricing-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #212529;
+    }
+    
+    .hcm-pricing-subtitle {
+        color: #6c757d;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hcm-pricing-card {
+        border: 1px solid #eaeaea;
+        border-radius: 12px;
+        padding: 30px 20px;
+        background-color: #fff;
+        height: 100%;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hcm-pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .hcm-pricing-popular {
+        border-color: #FF7A00;
+        border-width: 2px;
+    }
+    
+    .hcm-popular-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: #FF7A00;
+        color: white;
+        text-align: center;
+        padding: 8px 0;
+        font-weight: 600;
+        border-radius: 10px 10px 0 0;
+        margin: -30px -20px 20px -20px;
+    }
+    
+    .hcm-pricing-icon-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    
+    .hcm-pricing-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        margin-right: 15px;
+        background-color: #FFF3E8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hcm-pricing-icon img {
+        max-width: 60%;
+        max-height: 60%;
+        object-fit: contain;
+    }
+    
+    .hcm-pricing-amount {
+        margin: 25px 0;
+    }
+    
+    .hcm-pricing-amount h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #333;
+    }
+    
+    .hcm-pricing-amount h2 span {
+        font-size: 1rem;
+        color: #999;
+        font-weight: 400;
+    }
+    
+    .hcm-pricing-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #FF7A00;
+        border: 2px solid #FF7A00;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .hcm-pricing-btn:hover {
+        background-color: #FF7A00;
+        color: #fff;
+    }
+    
+    .hcm-pricing-btn-popular {
+        background-color: #FF7A00;
+        color: #fff;
+    }
+    
+    .hcm-pricing-btn-popular:hover {
+        background-color: #e56e00;
+    }
+    
+    .hcm-pricing-divider {
+        margin: 25px 0;
+        border-top: 1px solid #eaeaea;
+    }
+    
+    .hcm-pricing-features h6 {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .hcm-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .hcm-feature-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        color: #555;
+    }
+    
+    .hcm-check-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: #00c851;
+        position: relative;
+    }
+    
+    .hcm-check-icon:before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 10px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%) rotate(45deg);
+    }
