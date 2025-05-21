@@ -7,7 +7,7 @@
       <div class="row align-items-center">
         <!-- Left Content -->
         <div class="col-lg-6 hero-content">
-          <div class="company-name">PT HANARA PRIMA SOLUTION</div>
+          <div class="company-name-hero">PT HANARA PRIMA SOLUTION</div>
           <h1 class="hero-title">
             <span class="text-primary">Digital</span> Innovation<br>
             For Your Future

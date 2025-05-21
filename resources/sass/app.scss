@@ -118,8 +118,25 @@
   padding: 8px 12px !important;
 }
 
-.nav-link:hover, .nav-link.active {
-  color: #f39c12 !important;
+
+/* Navbar Active Link Styles */
+.navbar-nav .nav-link.active {
+  color: #ff6700 !important; /* Warna orange sesuai desain Anda */
+}
+
+.navbar-nav .dropdown-item.active {
+  background-color: rgba(255, 103, 0, 0.1); /* Background ringan saat aktif */
+  color: #ff6700 !important;
+}
+
+/* Tambahan hover effect untuk konsistensi */
+.navbar-nav .nav-link:hover {
+  color: #ff6700 !important;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: rgba(255, 103, 0, 0.1);
+  color: #ff6700 !important;
 }
 
 .dropdown-toggle::after {
@@ -308,7 +325,7 @@
   padding-right: 30px;
 }
 
-.company-name {
+.company-name-hero {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 800;
