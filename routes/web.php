@@ -56,3 +56,6 @@ Route::get('/motorola', function(){
 Route::get('/nextcloud', function(){
     return view('content.bisnis.nextcloud');
 });
+Route::get('/hcis', function(){
+    return view('content.bisnis.hcm');
+});
