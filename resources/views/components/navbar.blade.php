@@ -26,11 +26,11 @@
               Zimbra
             </a>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <li><a class="dropdown-item" href="{{ url('/about') }}">Zimbra Cloud</a></li>
-              <li><a class="dropdown-item" href="{{ url('/team') }}">Zimbra Server</a></li>
-              <li><a class="dropdown-item" href="{{ url('/team') }}">Instalasi</a></li>
-              <li><a class="dropdown-item" href="{{ url('/team') }}">Maintenance</a></li>
-              <li><a class="dropdown-item" href="{{ url('/team') }}">Troubleshooting</a></li>
+              <li><a class="dropdown-item" href="{{ url('cloud-zimbra') }}">Zimbra Cloud</a></li>
+              <li><a class="dropdown-item" href="{{ url('server-zimbra') }}">Zimbra Server</a></li>
+              <li><a class="dropdown-item" href="{{ url('instalasi-zimbra') }}">Instalasi</a></li>
+              <li><a class="dropdown-item" href="{{ url('maintenance-zimbra') }}">Maintenance</a></li>
+              <li><a class="dropdown-item" href="{{ url('troubleshooting-zimbra') }}">Troubleshooting</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -38,9 +38,9 @@
               Software House
             </a>
             <ul class="dropdown-menu" aria-labelledby="softwareDropdown">
-              <li><a class="dropdown-item" href="{{ url('/software-house/web') }}">Web Development</a></li>
-              <li><a class="dropdown-item" href="{{ url('/software-house/mobile') }}">Mobile Apps</a></li>
-              <li><a class="dropdown-item" href="{{ url('/software-house/mobile') }}">Maintenance</a></li>
+              <li><a class="dropdown-item" href="{{ url('develop-web') }}">Web Development</a></li>
+              <li><a class="dropdown-item" href="{{ url('web-application') }}">Mobile Apps</a></li>
+              <li><a class="dropdown-item" href="{{ url('maintenance-web') }}">Maintenance</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -48,15 +48,15 @@
               Business Solution
             </a>
             <ul class="dropdown-menu" aria-labelledby="businessDropdown">
-              <li><a class="dropdown-item" href="{{ url('/business-solution/erp') }}">HCM + HCIS</a></li>
-              <li><a class="dropdown-item" href="{{ url('/business-solution/crm') }}">Nextcloud</a></li>
+              <li><a class="dropdown-item" href="{{ url('hcis') }}">HCM + HCIS</a></li>
+              <li><a class="dropdown-item" href="{{ url('nextcloud') }}">Nextcloud</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('cctv*') ? 'active' : '' }}" href="{{ url('/cctv') }}">Motorola</a>
+            <a class="nav-link {{ request()->is('cctv*') ? 'active' : '' }}" href="{{ url('motorola') }}">Motorola</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('cctv*') ? 'active' : '' }}" href="{{ url('/cctv') }}">CCTV</a>
+            <a class="nav-link {{ request()->is('cctv*') ? 'active' : '' }}" href="{{ url('cctv') }}">CCTV</a>
           </li>
         </ul>
       </div>
