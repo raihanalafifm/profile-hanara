@@ -36,11 +36,8 @@
   <div class="container">
     <div class="hnr-motorola-section-title text-center">
       <h2 class="hnr-motorola-title-heading">
-        Pilih <span class="hnr-motorola-title-orange">Kategori Produk</span>
+        <span class="hnr-motorola-title-orange">Broadband</span> devices & apps
       </h2>
-      <p class="hnr-motorola-title-description">
-        Temukan kategori produk yang Anda butuhkan
-      </p>
     </div>
     
     <div class="row mt-5">
@@ -48,7 +45,7 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-category-card text-center">
           <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/icon/moto-vhf.png') }}" alt="Handy Talky & Radio RIG Motorola VHF">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/fulcrum-mash-up.png') }}" alt="Handy Talky & Radio RIG Motorola VHF">
           </div>
           <h3 class="hnr-motorola-category-title">HANDY TALKY & RADIO RIG MOTOROLA VHF</h3>
         </div>
@@ -58,7 +55,7 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-category-card text-center">
           <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/icon/moto-uhf.png') }}" alt="Handy Talky & Radio RIG Motorola UHF">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/rg170_V2.png') }}" alt="Handy Talky & Radio RIG Motorola UHF">
           </div>
           <h3 class="hnr-motorola-category-title">HANDY TALKY & RADIO RIG MOTOROLA UHF</h3>
         </div>
@@ -68,7 +65,7 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-category-card text-center">
           <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/icon/moto-battery.png') }}" alt="Battery, Antena, Dan Cable">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/TLK_Series.png') }}" alt="Battery, Antena, Dan Cable">
           </div>
           <h3 class="hnr-motorola-category-title">BATTERY, ANTENA, DAN CABLE</h3>
         </div>
@@ -78,7 +75,7 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-category-card text-center">
           <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/icon/moto-repeater.png') }}" alt="Repeater">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/TLK110_WavePTX_Radio_FRONT.png') }}" alt="Repeater">
           </div>
           <h3 class="hnr-motorola-category-title">REPEATER</h3>
         </div>
@@ -92,7 +89,7 @@
   <div class="container">
     <div class="hnr-motorola-section-title text-center">
       <h2 class="hnr-motorola-title-heading">
-        HT dan RIG <span class="hnr-motorola-title-orange">Motorola VHF</span>
+       Radio<span class="hnr-motorola-title-orange"> Mobil</span>
       </h2>
     </div>
     
@@ -101,10 +98,10 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p3688.png') }}" alt="XIR P3688">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/MOTOTRBO XiR M3688 Mobile Radio/xir_m3688_lg.png') }}" alt="XIR P3688">
           </div>
           <h3 class="hnr-motorola-product-title">XIR P3688 136-174 5W LKR(16)</h3>
         </div>
@@ -114,10 +111,10 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p6620i.png') }}" alt="XIR P6620I">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/XiR M6660 Digital Mobile/xir_m6660_lg.png') }}" alt="XIR P6620I">
           </div>
           <h3 class="hnr-motorola-product-title">XIR P6620I 136-174 5W LKP</h3>
         </div>
@@ -127,10 +124,10 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p8608i.png') }}" alt="XIR P8608I">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/XiR M8600i Series/m8620i_28i.png') }}" alt="XIR P8608I">
           </div>
           <h3 class="hnr-motorola-product-title">XIR P8608I 136-174 5W NKP</h3>
         </div>
@@ -140,64 +137,12 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p8668i.png') }}" alt="XIR P8668I">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/XiR M8600i Series/m8660i_68i.png') }}" alt="XIR P8668I">
           </div>
           <h3 class="hnr-motorola-product-title">XIR P8668i 136-174 5W FKP GPS BT WIFI</h3>
-        </div>
-      </div>
-      
-      <!-- Product 5 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p8668i.png') }}" alt="XIR P8668I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P6688I 136-174M 5W FKP (16)</h3>
-        </div>
-      </div>
-      
-      <!-- Product 6 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/motorola-r2.png') }}" alt="Motorola R2">
-          </div>
-          <h3 class="hnr-motorola-product-title">Motorola R2 136-174 5W NKP</h3>
-        </div>
-      </div>
-      
-      <!-- Product 7 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-m3688.png') }}" alt="XIR M3688">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR M3688 136-174M 25W AD</h3>
-        </div>
-      </div>
-      
-      <!-- Product 8 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-m8660.png') }}" alt="XIR M8660">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR M8660 136-174M 45W AD</h3>
         </div>
       </div>
     </div>
@@ -209,7 +154,7 @@
   <div class="container">
     <div class="hnr-motorola-section-title text-center">
       <h2 class="hnr-motorola-title-heading">
-        HT dan RIG <span class="hnr-motorola-title-orange">Motorola UHF</span>
+        Radio <span class="hnr-motorola-title-orange">Portable</span>
       </h2>
     </div>
     
@@ -218,10 +163,10 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/tdr-4400.png') }}" alt="TDR 4400HZ">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/R2/R2.png') }}" alt="TDR 4400HZ">
           </div>
           <h3 class="hnr-motorola-product-title">TDR 4400HZ 350-400MHz 403-527 4W LKP</h3>
         </div>
@@ -231,10 +176,10 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/tdr-4400.png') }}" alt="TDR 4400HZ">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/R7/r7.png') }}" alt="TDR 4400HZ">
           </div>
           <h3 class="hnr-motorola-product-title">TDR 4400HZ 403-440MHz 403-527 4W LKP(16A)</h3>
         </div>
@@ -248,10 +193,10 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p8608i.png') }}" alt="XIR P8608I">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/SL1M Portable Two-Way Radio/sl1m.png') }}" alt="XIR P8608I">
           </div>
           <h3 class="hnr-motorola-product-title">XIR P8608I 350-400MHz 403-527 4W NKP</h3>
         </div>
@@ -261,10 +206,21 @@
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/motorola-icon.png') }}" alt="Motorola">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/icon/xir-p8668i.png') }}" alt="XIR P8668I">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/XiR C2660-C2620-C1200 Series/XiR-C2660.png') }}" alt="XIR P8668I">
+          </div>
+          <h3 class="hnr-motorola-product-title">XIR P8668i 350-400MHz 403-527 4W NKP F16</h3>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <div class="hnr-motorola-product-card text-center">
+          <div class="hnr-motorola-product-badge">
+            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
+          </div>
+          <div class="hnr-motorola-product-image">
+            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/XiR P6600i Series/XPR3000e.png') }}" alt="XIR P8668I">
           </div>
           <h3 class="hnr-motorola-product-title">XIR P8668i 350-400MHz 403-527 4W NKP F16</h3>
         </div>
