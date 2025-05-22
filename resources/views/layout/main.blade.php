@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="@yield('meta_description', 'PT Hanara Prima Solusindo - Solusi Digital Terdepan untuk Bisnis Anda')">
+    <meta name="keywords" content="@yield('meta_keywords', 'IT Solution, Web Development, Zimbra, CCTV, Motorola, Cloud Services')">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('og_title', 'PT Hanara Prima Solusindo')">
+    <meta property="og:description" content="@yield('og_description', 'Solusi Digital Terdepan untuk Bisnis Anda')">
+    <meta property="og:image" content="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="@yield('twitter_title', 'PT Hanara Prima Solusindo')">
+    <meta name="twitter:description" content="@yield('twitter_description', 'Solusi Digital Terdepan untuk Bisnis Anda')">
+    <meta name="twitter:image" content="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}">
+
+    <title>@yield('page_title', 'PT Hanara Prima Solusindo - Solusi Digital Terdepan')</title>
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="{{ url()->current() }}" />
+
     @vite(['resources/js/app.js'])
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Preload critical assets -->
+<link rel="preload" href="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" as="image">
+<link rel="preconnect" href="https://fonts.bunny.net">
+
+<!-- Defer non-critical CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" media="print" onload="this.media='all'">
 </head>
 <body>
     @include('components.navbar')
