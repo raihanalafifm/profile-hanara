@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeControler extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+   public function index(): View
     {
         $pageTitle = 'PT Hanara Prima Solusindo - Solusi Digital Terdepan';
         $metaDescription = 'Solusi teknologi informasi terpadu untuk kebutuhan bisnis Anda. Kami menyediakan layanan Zimbra, Web Development, CCTV, dan solusi digital lainnya.';

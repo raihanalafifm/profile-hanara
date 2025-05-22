@@ -1,5 +1,6 @@
 @extends('layout.main')
 
+
 @section('container')
 <!-- Hero Section -->
 <section class="hero-section">
