@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');  
 
+
 Route::get('/about-us', function(){
     return view('content.about.about');
 })->name('about-us');
@@ -69,3 +70,10 @@ Route::get('/nextcloud', function(){
 Route::get('/hcis', function(){
     return view('content.bisnis.hcm');
 })->name('hcis');
+
+Route::get('/backend-dashboard', function(){
+    return view('backend.layout.main');
+});
+Route::get('/backend-article', function(){
+    return view('backend.base.article');
+});
