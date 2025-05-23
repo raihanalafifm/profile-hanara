@@ -109,5 +109,18 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    function editArticle(article) {
+    const form = document.getElementById('editForm');
+    form.action = `/backend/articles/${article.id}`;
+    
+    document.getElementById('edit_title').value = article.title;
+    document.getElementById('edit_link').value = article.link || '';
+    document.getElementById('edit_description').value = article.description;
+    
+    const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+    editModal.show();
+}
+</script>
   </body>
 </html>

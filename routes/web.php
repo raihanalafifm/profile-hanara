@@ -2,11 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');  
 
+// Backend Routes
+Route::prefix('backend')->name('backend.')->group(function () {
+    Route::get('/dashboard', function(){
+        return view('backend.layout.main');
+    })->name('dashboard');
+    
+    // Articles Management
+    Route::resource('articles', ArticleController::class);
+    Route::patch('articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])
+        ->name('articles.toggle-status');
+});
 
+// Frontend Routes
 Route::get('/about-us', function(){
     return view('content.about.about');
 })->name('about-us');
@@ -70,10 +83,3 @@ Route::get('/nextcloud', function(){
 Route::get('/hcis', function(){
     return view('content.bisnis.hcm');
 })->name('hcis');
-
-Route::get('/backend-dashboard', function(){
-    return view('backend.layout.main');
-});
-Route::get('/backend-article', function(){
-    return view('backend.base.article');
-});

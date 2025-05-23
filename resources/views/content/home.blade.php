@@ -512,7 +512,7 @@
     </div>
   </div>
 </section>
-<!-- Latest Blog Section with Slider (No Arrow Buttons) -->
+<!-- Latest Blog Section with Dynamic Articles -->
 <section class="latest-blog-section py-5">
   <div class="container">
     <div class="row text-center mb-4">
@@ -531,7 +531,37 @@
       <div class="col-lg-12">
         <div class="blog-slider">
           <div class="blog-slider-container">
-            <!-- Blog Card 1 -->
+            @forelse($articles as $article)
+            <!-- Blog Card -->
+            <div class="blog-card">
+              <div class="blog-card-img">
+                @if($article->image)
+                  <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}">
+                @else
+                  <img src="{{ asset('assets/images/default-blog.jpg') }}" alt="{{ $article->title }}">
+                @endif
+                <div class="blog-card-overlay">
+                  <h3 class="blog-card-headline">{{ strtoupper(Str::limit($article->title, 40)) }}</h3>
+                </div>
+              </div>
+              <div class="blog-card-content">
+                <h4 class="blog-card-title">{{ $article->title }}</h4>
+                <p class="blog-card-text">
+                  {{ Str::limit($article->description, 150) }}
+                </p>
+                @if($article->link)
+                <a href="{{ $article->link }}" class="blog-card-link" target="_blank">
+                  <i class="fas fa-arrow-right"></i> Read More
+                </a>
+                @else
+                <a href="#" class="blog-card-link">
+                  <i class="fas fa-arrow-right"></i> Read More
+                </a>
+                @endif
+              </div>
+            </div>
+            @empty
+            <!-- Default Blog Cards if no articles -->
             <div class="blog-card">
               <div class="blog-card-img">
                 <img src="{{ asset('assets/images/icon/zimbra-blog.png') }}" alt="Zimbra Server">
@@ -549,71 +579,17 @@
                 </a>
               </div>
             </div>
-            
-            <!-- Blog Card 2 -->
-            <div class="blog-card">
-              <div class="blog-card-img">
-                <img src="{{ asset('assets/images/icon/web-blog.png') }}" alt="Web Development">
-                <div class="blog-card-overlay">
-                  <h3 class="blog-card-headline">WE DESIGN<br>DIGITAL<br>PRODUCTS<br>NOT JUST ART</h3>
-                </div>
-              </div>
-              <div class="blog-card-content">
-                <h4 class="blog-card-title">Development Website</h4>
-                <p class="blog-card-text">
-                  Solusi ++ bagi anda yang ingin membuat website. baik itu website untuk perusahaan, website company profile, website UMKM atau website sekolah
-                </p>
-                <a href="#" class="blog-card-link">
-                  <i class="fas fa-arrow-right"></i> Read More
-                </a>
-              </div>
-            </div>
-            
-            <!-- Blog Card 3 -->
-            <div class="blog-card">
-              <div class="blog-card-img">
-                <img src="{{ asset('assets/images/icon/server-blog.png') }}" alt="Server Internet">
-                <div class="blog-card-overlay">
-                  <h3 class="blog-card-headline">Server Internet</h3>
-                </div>
-              </div>
-              <div class="blog-card-content">
-                <h4 class="blog-card-title">Server Internet</h4>
-                <p class="blog-card-text">
-                  Maintenance Server adalah layanan tambahan untuk memudahkan anda yang menggunakan layanan Dedicated server atau Colocation, agar anda tidak bersusah payah
-                </p>
-                <a href="#" class="blog-card-link">
-                  <i class="fas fa-arrow-right"></i> Read More
-                </a>
-              </div>
-            </div>
-            
-            <!-- Blog Card 4 (Optional) -->
-            <div class="blog-card">
-              <div class="blog-card-img">
-                <img src="{{ asset('assets/images/icon/jaringan-blog.png') }}" alt="Cloud Computing">
-                <div class="blog-card-overlay">
-                  <h3 class="blog-card-headline">CLOUD<br>COMPUTING</h3>
-                </div>
-              </div>
-              <div class="blog-card-content">
-                <h4 class="blog-card-title">Cloud Solutions</h4>
-                <p class="blog-card-text">
-                  Kami menyediakan solusi cloud computing lengkap untuk kebutuhan bisnis Anda. Dengan infrastruktur yang handal dan keamanan tingkat tinggi.
-                </p>
-                <a href="#" class="blog-card-link">
-                  <i class="fas fa-arrow-right"></i> Read More
-                </a>
-              </div>
-            </div>
+            @endforelse
           </div>
           
           <!-- Slider Navigation -->
+          @if($articles->count() > 1)
           <div class="blog-slider-nav">
-            <span class="blog-slider-dot active" data-slide="0"></span>
-            <span class="blog-slider-dot" data-slide="1"></span>
-            <span class="blog-slider-dot" data-slide="2"></span>
+            @foreach($articles as $index => $article)
+            <span class="blog-slider-dot {{ $index === 0 ? 'active' : '' }}" data-slide="{{ $index }}"></span>
+            @endforeach
           </div>
+          @endif
         </div>
       </div>
     </div>

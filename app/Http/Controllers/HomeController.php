@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\View\View;  
-
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,7 +15,10 @@ class HomeController extends Controller
         $pageTitle = 'PT Hanara Prima Solusindo - Solusi Digital Terdepan';
         $metaDescription = 'Solusi teknologi informasi terpadu untuk kebutuhan bisnis Anda. Kami menyediakan layanan Zimbra, Web Development, CCTV, dan solusi digital lainnya.';
         
-        return view('content.home', compact('pageTitle', 'metaDescription'));
+        // Ambil artikel yang aktif dan terurut
+        $articles = Article::active()->ordered()->take(4)->get();
+        
+        return view('content.home', compact('pageTitle', 'metaDescription', 'articles'));
     }
 
     /**
