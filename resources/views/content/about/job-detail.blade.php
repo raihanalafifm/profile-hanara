@@ -5,7 +5,7 @@
   <div class="container">
     <!-- Back Button -->
     <div class="hnr-back-link-container">
-      <a href="{{ url('career') }}" class="hnr-back-link">
+      <a href="{{ route('career') }}" class="hnr-back-link">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         Kembali
       </a>
@@ -13,58 +13,45 @@
 
     <!-- Job Title -->
     <div class="hnr-job-detail-header">
-      <h1 class="hnr-job-detail-title">IT Support</h1>
-      <p class="hnr-job-detail-type">Part Time / Full Time</p>
+      <h1 class="hnr-job-detail-title">{{ $career->position }}</h1>
+      <p class="hnr-job-detail-type">
+        @if($career->type == 'Both')
+          Part Time / Full Time
+        @else
+          {{ $career->type }}
+        @endif
+      </p>
     </div>
 
     <!-- Job Description -->
     <div class="hnr-job-section">
       <h2 class="hnr-section-title">Description.</h2>
-      <p class="hnr-section-content">
-        Bergabunglah dengan tim kami sebagai IT Support. Tanggung jawab Anda meliputi pemeliharaan sistem, dukungan teknis, dan 
-        troubleshooting masalah perangkat keras dan perangkat lunak. Kami mencari seseorang yang detail-oriented dan mampu bekerja 
-        baik secara mandiri maupun dalam tim.
-      </p>
+      <p class="hnr-section-content">{{ $career->description }}</p>
     </div>
 
     <!-- Skills Section -->
+    @if($career->skills && count($career->skills) > 0)
     <div class="hnr-job-section">
       <h2 class="hnr-section-title">Skills.</h2>
       <ul class="hnr-skill-list">
-        <li>
-          <strong>Troubleshooting:</strong> Kemampuan untuk menganalisis dan menyelesaikan masalah teknis pada perangkat keras, perangkat lunak, 
-          dan jaringan secara cepat dan efektif.
-        </li>
-        <li>
-          <strong>Technical Knowledge:</strong> Pemahaman mendalam tentang sistem operasi (Windows, macOS, Linux), perangkat keras komputer, 
-          printer, jaringan dasar, dan aplikasi umum (Microsoft Office, email clients).
-        </li>
-        <li>
-          <strong>Customer Service:</strong> Keterampilan komunikasi dan empati untuk membantu pengguna dengan sabar dan profesional, baik secara 
-          langsung, melalui telepon, maupun secara daring.
-        </li>
-        <li>
-          <strong>Network Fundamentals:</strong> Pengetahuan dasar tentang TCP/IP, DHCP, DNS, VPN, serta kemampuan mengkonfigurasi router/switch 
-          kecil dan koneksi jaringan.
-        </li>
-        <li>
-          <strong>Hardware Maintenance & Installation:</strong> Mampu memasang, mengganti, dan merawat perangkat keras seperti RAM, hard drive, 
-          printer, scanner, dan peripheral lainnya.
-        </li>
+        @foreach($career->skills as $skill)
+        <li>{{ $skill }}</li>
+        @endforeach
       </ul>
     </div>
+    @endif
 
     <!-- Qualifications Section -->
+    @if($career->qualifications && count($career->qualifications) > 0)
     <div class="hnr-job-section">
       <h2 class="hnr-section-title">Qualification.</h2>
       <ul class="hnr-qualification-list">
-        <li>Minimal lulusan D3/S1 di bidang Teknik Informatika, Sistem Informasi, atau jurusan terkait.</li>
-        <li>Memiliki pengalaman kerja di bidang IT Support minimal 1 tahun (fresh graduate dipertimbangkan).</li>
-        <li>Menguasai troubleshooting perangkat keras dan perangkat lunak komputer.</li>
-        <li>Memahami dasar-dasar jaringan komputer (LAN/WAN, TCP/IP, DNS, DHCP).</li>
-        <li>Terbiasa menggunakan sistem operasi Windows dan Linux.</li>
+        @foreach($career->qualifications as $qualification)
+        <li>{{ $qualification }}</li>
+        @endforeach
       </ul>
     </div>
+    @endif
 
     <!-- Application Form Section -->
     <div class="hnr-application-section">
@@ -90,30 +77,29 @@
           <input type="tel" id="phoneNumber" name="phoneNumber" class="hnr-form-input" placeholder="Your active phone number" required>
         </div>
 
-        <!-- Career -->
+        <!-- Career (Auto-filled and readonly) -->
         <div class="hnr-form-group">
           <label for="career" class="hnr-form-label">Career<span class="hnr-required">*</span></label>
-          <select id="career" name="career" class="hnr-form-select" required>
-            <option value="" disabled selected>select career</option>
-            <option value="it-support">IT Support</option>
-            <option value="network-security">Network Security Specialist</option>
-            <option value="cloud-engineer">Cloud Computing Engineer</option>
-            <option value="software-developer">Software Developer</option>
-          </select>
+          <input type="text" id="career" name="career" class="hnr-form-input" value="{{ $career->position }}" readonly>
+          <input type="hidden" name="career_id" value="{{ $career->id }}">
         </div>
 
         <!-- Work Preference -->
         <div class="hnr-form-group">
           <label class="hnr-form-label">Work Preferences<span class="hnr-required">*</span></label>
           <div class="hnr-radio-group">
+            @if($career->type == 'Both' || $career->type == 'Full Time')
             <div class="hnr-radio-option">
-              <input type="radio" id="fullTime" name="workPreference" value="Full Time" required>
+              <input type="radio" id="fullTime" name="workPreference" value="Full Time" required {{ $career->type == 'Full Time' ? 'checked' : '' }}>
               <label for="fullTime">Full Time</label>
             </div>
+            @endif
+            @if($career->type == 'Both' || $career->type == 'Part Time')
             <div class="hnr-radio-option">
-              <input type="radio" id="partTime" name="workPreference" value="Part Time">
+              <input type="radio" id="partTime" name="workPreference" value="Part Time" {{ $career->type == 'Part Time' ? 'checked' : '' }}>
               <label for="partTime">Part Time</label>
             </div>
+            @endif
           </div>
         </div>
 

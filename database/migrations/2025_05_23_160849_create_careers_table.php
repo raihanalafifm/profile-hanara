@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('careers', function (Blueprint $table) {
+           Schema::create('careers', function (Blueprint $table) {
             $table->id();
+            $table->string('position');
+            $table->string('slug')->unique();
+            $table->enum('type', ['Full Time', 'Part Time', 'Both'])->default('Both');
+            $table->text('description');
+            $table->text('skills')->nullable(); // JSON format
+            $table->text('qualifications')->nullable(); // JSON format
+            $table->boolean('is_active')->default(true);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

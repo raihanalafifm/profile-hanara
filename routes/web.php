@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CareerController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');  
@@ -17,6 +18,11 @@ Route::prefix('backend')->name('backend.')->group(function () {
     Route::resource('articles', ArticleController::class);
     Route::patch('articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])
         ->name('articles.toggle-status');
+    
+    // Careers Management
+    Route::resource('careers', CareerController::class);
+    Route::patch('careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])
+        ->name('careers.toggle-status');
 });
 
 // Frontend Routes
@@ -28,13 +34,9 @@ Route::get('/contact-us', function(){
     return view('content.about.contact');
 })->name('contact-us');
 
-Route::get('/career', function(){
-    return view('content.about.career');
-})->name('career');
-
-Route::get('/career/it-support', function(){
-    return view('content.about.job-detail');
-})->name('career.it-support');
+// Career Routes
+Route::get('/career', [CareerController::class, 'frontIndex'])->name('career');
+Route::get('/career/{career}', [CareerController::class, 'frontShow'])->name('career.detail');
 
 Route::get('/instalasi-zimbra', function(){
     return view('content.zimbra.instalasi');

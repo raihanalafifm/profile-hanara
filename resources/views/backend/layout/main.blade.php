@@ -121,6 +121,31 @@
     const editModal = new bootstrap.Modal(document.getElementById('editModal'));
     editModal.show();
 }
+
+function editCareer(career) {
+    const form = document.getElementById('editCareerForm');
+    form.action = `/backend/careers/${career.id}`;
+    
+    document.getElementById('edit_position').value = career.position;
+    document.getElementById('edit_type').value = career.type;
+    document.getElementById('edit_description').value = career.description;
+    
+    // Convert array skills dan qualifications ke string dengan newline
+    if (career.skills && career.skills.length > 0) {
+        document.getElementById('edit_skills').value = career.skills.join('\n');
+    } else {
+        document.getElementById('edit_skills').value = '';
+    }
+    
+    if (career.qualifications && career.qualifications.length > 0) {
+        document.getElementById('edit_qualifications').value = career.qualifications.join('\n');
+    } else {
+        document.getElementById('edit_qualifications').value = '';
+    }
+    
+    const editModal = new bootstrap.Modal(document.getElementById('editCareerModal'));
+    editModal.show();
+}
 </script>
   </body>
 </html>

@@ -63,8 +63,8 @@
         </li>
         
         <!-- Career -->
-        <li class="menu-item">
-            <a href="#" class="menu-link">
+        <li class="menu-item {{ request()->routeIs('backend.careers.*') ? 'active' : '' }}">
+            <a href="{{ route('backend.careers.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-briefcase"></i>
                 <div data-i18n="Career">Career</div>
             </a>
