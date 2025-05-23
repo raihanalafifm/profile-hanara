@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-         $articles = Article::ordered()->paginate(10);
+        $articles = Article::ordered()->paginate(10);
         return view('backend.base.article', compact('articles'));
     }
 
@@ -32,7 +32,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'link' => 'nullable|url',
@@ -71,7 +71,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([
+         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'link' => 'nullable|url',
@@ -99,17 +99,22 @@ class ArticleController extends Controller
      */
     public function destroy(string $id)
     {
-        if ($article->image) {
-            Storage::disk('public')->delete($article->image);
-        }
-        
-        $article->delete();
-
-        return redirect()->route('backend.articles.index')
-            ->with('success', 'Artikel berhasil dihapus!');
+         $article = Article::findOrFail($id);
+    
+    if ($article->image) {
+        Storage::disk('public')->delete($article->image);
     }
+    
+    $article->delete();
+
+    return redirect()->route('backend.articles.index')
+        ->with('success', 'Artikel berhasil dihapus!');
+        
+    }
+    
      public function toggleStatus(Article $article)
     {
+       
         $article->update(['is_active' => !$article->is_active]);
         
         return redirect()->route('backend.articles.index')

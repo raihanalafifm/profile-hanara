@@ -1,3 +1,5 @@
+@extends('backend.layout.main')
+
 @section('backend')
 <!-- Hoverable Table rows -->
 <div class="card">
@@ -207,4 +209,5 @@
             </form>
         </div>
     </div>
-    @endsection
+</div>
+@endsection
