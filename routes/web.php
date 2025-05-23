@@ -4,14 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');  
 
-// Backend Routes
-Route::prefix('backend')->name('backend.')->group(function () {
+// Backend Routes (Protected with Auth)
+Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', function(){
-        return view('backend.layout.main');
+        return view('backend.base.home');
     })->name('dashboard');
     
     // Articles Management
@@ -23,9 +24,14 @@ Route::prefix('backend')->name('backend.')->group(function () {
     Route::resource('careers', CareerController::class);
     Route::patch('careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])
         ->name('careers.toggle-status');
+    
+    // Users Management
+    Route::resource('users', UserController::class);
+    Route::patch('users/{user}/toggle-status', [UserController::class, 'toggleStatus'])
+        ->name('users.toggle-status');
 });
 
-// Frontend Routes
+// Frontend Routes (Public)
 Route::get('/about-us', function(){
     return view('content.about.about');
 })->name('about-us');
@@ -85,3 +91,5 @@ Route::get('/nextcloud', function(){
 Route::get('/hcis', function(){
     return view('content.bisnis.hcm');
 })->name('hcis');
+
+require __DIR__.'/auth.php';

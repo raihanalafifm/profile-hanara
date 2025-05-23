@@ -69,5 +69,13 @@
                 <div data-i18n="Career">Career</div>
             </a>
         </li>
+        
+        <!-- Users -->
+        <li class="menu-item {{ request()->routeIs('backend.users.*') ? 'active' : '' }}">
+            <a href="{{ route('backend.users.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Users">Users</div>
+            </a>
+        </li>
     </ul>
 </aside>

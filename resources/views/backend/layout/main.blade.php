@@ -146,6 +146,19 @@ function editCareer(career) {
     const editModal = new bootstrap.Modal(document.getElementById('editCareerModal'));
     editModal.show();
 }
+
+function editUser(user) {
+    const form = document.getElementById('editUserForm');
+    form.action = `/backend/users/${user.id}`;
+    
+    document.getElementById('edit_name').value = user.name;
+    document.getElementById('edit_email').value = user.email;
+    document.getElementById('edit_password').value = '';
+    document.getElementById('edit_password_confirmation').value = '';
+    
+    const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+    editModal.show();
+}
 </script>
   </body>
 </html>
