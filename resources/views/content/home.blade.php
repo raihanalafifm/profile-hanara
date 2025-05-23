@@ -513,6 +513,7 @@
   </div>
 </section>
 <!-- Latest Blog Section with Dynamic Articles -->
+<!-- Latest Blog Section with Dynamic Articles -->
 <section class="latest-blog-section py-5">
   <div class="container">
     <div class="row text-center mb-4">
@@ -550,11 +551,11 @@
                   {{ Str::limit($article->description, 150) }}
                 </p>
                 @if($article->link)
-                <a href="{{ $article->link }}" class="blog-card-link" target="_blank">
+                <a href="{{ $article->link }}" class="blog-card-link" target="_blank" rel="noopener">
                   <i class="fas fa-arrow-right"></i> Read More
                 </a>
                 @else
-                <a href="#" class="blog-card-link">
+                <a href="javascript:void(0);" class="blog-card-link" onclick="return false;">
                   <i class="fas fa-arrow-right"></i> Read More
                 </a>
                 @endif
@@ -574,7 +575,7 @@
                 <p class="blog-card-text">
                   Zimbra Mail Server sendiri adalah software open source untuk email server dan kolaborasi (groupware) yang banyak digunakan diberbagai instalsi pemerintah
                 </p>
-                <a href="#" class="blog-card-link">
+                <a href="javascript:void(0);" class="blog-card-link" onclick="return false;">
                   <i class="fas fa-arrow-right"></i> Read More
                 </a>
               </div>

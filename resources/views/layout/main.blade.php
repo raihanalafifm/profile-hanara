@@ -104,89 +104,14 @@
         checkScroll();
     });
 // Clean Testimonial Slider JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-  // Get testimonial elements
-  const testimonialItems = document.querySelectorAll('.testimonial-clean-item');
-  const cleanDots = document.querySelectorAll('.clean-dot');
-  
-  let currentSlide = 0;
-  const totalSlides = testimonialItems.length;
-  let autoplayInterval;
-  
-  // Function to show a specific slide
-  function showSlide(index) {
-    // Remove active class from all slides and dots
-    testimonialItems.forEach(item => {
-      item.classList.remove('active');
-    });
-    
-    cleanDots.forEach(dot => {
-      dot.classList.remove('active');
-    });
-    
-    // Add active class to current slide and dot
-    currentSlide = (index + totalSlides) % totalSlides; // Ensure it wraps around
-    testimonialItems[currentSlide].classList.add('active');
-    cleanDots[currentSlide].classList.add('active');
-  }
-  
-  // Set up dot click handlers
-  cleanDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      showSlide(index);
-      resetAutoplay();
-    });
-  });
-  
-  // Function to start autoplay
-  function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 5000); // Change slide every 5 seconds
-  }
-  
-  // Function to reset autoplay
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    startAutoplay();
-  }
-  
-  // Initialize slider and start autoplay
-  showSlide(0);
-  startAutoplay();
-  
-  // Add swipe functionality for mobile
-  const slider = document.querySelector('.testimonial-clean-slider');
-  let touchStartX = 0;
-  let touchEndX = 0;
-  
-  slider.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-  
-  slider.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
-  
-  function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
-      // Swiped left - next slide
-      showSlide(currentSlide + 1);
-      resetAutoplay();
-    } else if (touchEndX > touchStartX + 50) {
-      // Swiped right - previous slide
-      showSlide(currentSlide - 1);
-      resetAutoplay();
-    }
-  }
-});
-// Blog Slider JavaScript with Mouse Drag (No Arrow Buttons)
+// Blog Slider JavaScript with Smooth Transitions
 document.addEventListener('DOMContentLoaded', function() {
   // Get slider elements
   const sliderContainer = document.querySelector('.blog-slider-container');
   const slides = document.querySelectorAll('.blog-card');
   const dots = document.querySelectorAll('.blog-slider-dot');
+  
+  if (!sliderContainer || slides.length === 0) return;
   
   let currentIndex = 0;
   let slideWidth = 0;
@@ -199,8 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let startPos = 0;
   let currentTranslate = 0;
   let prevTranslate = 0;
-  let animationID = 0;
-  let currentPosition = 0;
+  let animationID = null;
   
   // Calculate how many slides to show based on screen width
   function calculateSlidesPerView() {
@@ -212,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
       slidesPerView = 3; // Desktop
     }
     
-    // Recalculate slide width
     updateSlideWidth();
   }
   
@@ -220,15 +143,18 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateSlideWidth() {
     if (sliderContainer) {
       const containerWidth = sliderContainer.parentElement.clientWidth;
-      slideWidth = (containerWidth - (20 * (slidesPerView - 1))) / slidesPerView;
+      const gap = 20; // Gap between slides
+      slideWidth = (containerWidth - (gap * (slidesPerView - 1))) / slidesPerView;
       
       // Update CSS for each slide
       slides.forEach(slide => {
+        slide.style.flex = `0 0 ${slideWidth}px`;
         slide.style.minWidth = `${slideWidth}px`;
+        slide.style.maxWidth = `${slideWidth}px`;
       });
       
-      // Update container position to current slide
-      goToSlide(currentIndex, false); // false = no animation for initial setup
+      // Go to current slide without animation
+      goToSlide(currentIndex, false);
     }
   }
   
@@ -236,33 +162,32 @@ document.addEventListener('DOMContentLoaded', function() {
   function goToSlide(index, animate = true) {
     if (!sliderContainer) return;
     
-    // Limit the maximum slide
+    // Calculate maximum index
     const maxIndex = Math.max(0, totalSlides - slidesPerView);
     currentIndex = Math.min(Math.max(0, index), maxIndex);
     
     // Calculate offset
-    const offset = -currentIndex * (slideWidth + 20); // 20px is gap
+    const gap = 20;
+    const offset = -currentIndex * (slideWidth + gap);
     prevTranslate = offset;
     currentTranslate = offset;
     
-    // Apply transform with or without animation
+    // Apply transform with smooth transition
     if (animate) {
-      sliderContainer.style.transition = 'transform 0.3s ease-out';
+      sliderContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     } else {
       sliderContainer.style.transition = 'none';
     }
     
     sliderContainer.style.transform = `translateX(${offset}px)`;
-    currentPosition = offset;
     
-    // After transition, reset transition property
+    // Reset transition after animation
     if (animate) {
       setTimeout(() => {
         sliderContainer.style.transition = '';
-      }, 300);
+      }, 500);
     }
     
-    // Update active dot
     updateActiveDot();
   }
   
@@ -273,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Set up click events for dots
+  // Dot click events
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       goToSlide(index);
@@ -281,180 +206,129 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Mouse and Touch Events for Dragging
-  
-  // Mouse Events
-  if (sliderContainer) {
-    // Disable context menu on right click
-    sliderContainer.addEventListener('contextmenu', e => {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    });
-    
-    // Mouse Down
-    sliderContainer.addEventListener('mousedown', dragStart);
-    
-    // Mouse Move
-    window.addEventListener('mousemove', drag);
-    
-    // Mouse Up
-    window.addEventListener('mouseup', dragEnd);
-    
-    // Mouse Leave
-    window.addEventListener('mouseleave', dragEnd);
-    
-    // Touch Events
-    sliderContainer.addEventListener('touchstart', dragStart);
-    window.addEventListener('touchmove', drag);
-    window.addEventListener('touchend', dragEnd);
+  // Touch/Mouse Events
+  function getPositionX(event) {
+    return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
   }
   
-  // Functions for drag functionality
   function dragStart(e) {
+    if (e.type === 'mousedown' && e.button !== 0) return; // Only left mouse button
+    
     e.preventDefault();
+    isDragging = true;
+    startPos = getPositionX(e);
     
-    // Get starting position
-    if (e.type === 'touchstart') {
-      startPos = e.touches[0].clientX;
-    } else {
-      startPos = e.clientX;
-      
-      // For mouse events, add a "grabbing" cursor
-      sliderContainer.style.cursor = 'grabbing';
-    }
-    
-    // Clear autoplay while dragging
+    // Clear autoplay
     clearInterval(autoplayInterval);
     
-    // Set dragging to true
-    isDragging = true;
-    
-    // Start animation loop
-    animationID = requestAnimationFrame(animation);
-    
-    // Remove transition while dragging
+    // Disable transition during drag
     sliderContainer.style.transition = 'none';
+    sliderContainer.style.cursor = 'grabbing';
+    
+    // Start animation
+    animationID = requestAnimationFrame(animation);
   }
   
   function drag(e) {
     if (!isDragging) return;
+    e.preventDefault();
     
-    let currentX;
-    if (e.type === 'touchmove') {
-      currentX = e.touches[0].clientX;
-    } else {
-      currentX = e.clientX;
-    }
-    
-    // Calculate how much we moved
-    const diff = currentX - startPos;
-    currentTranslate = prevTranslate + diff;
+    const currentPosition = getPositionX(e);
+    currentTranslate = prevTranslate + currentPosition - startPos;
   }
   
   function dragEnd() {
     if (!isDragging) return;
     
-    // Cancel animation
+    isDragging = false;
     cancelAnimationFrame(animationID);
     
-    // End dragging state
-    isDragging = false;
-    
-    // Reset cursor
+    // Add smooth transition for snap
+    sliderContainer.style.transition = 'transform 0.3s ease-out';
     sliderContainer.style.cursor = '';
     
-    // Add transition back for snap effect
-    sliderContainer.style.transition = 'transform 0.3s ease-out';
-    
-    // Calculate which slide to snap to
     const movedBy = currentTranslate - prevTranslate;
     
-    if (movedBy < -100 && currentIndex < totalSlides - slidesPerView) {
-      // If dragged left enough, go to next slide
+    // Determine swipe direction with threshold
+    if (movedBy < -50 && currentIndex < totalSlides - slidesPerView) {
       currentIndex += 1;
-    } else if (movedBy > 100 && currentIndex > 0) {
-      // If dragged right enough, go to previous slide
+    } else if (movedBy > 50 && currentIndex > 0) {
       currentIndex -= 1;
     }
     
-    // Go to the determined slide
     goToSlide(currentIndex);
-    
-    // Restart autoplay
     startAutoplay();
   }
   
   function animation() {
     if (isDragging) {
       setSliderPosition();
-      requestAnimationFrame(animation);
+      animationID = requestAnimationFrame(animation);
     }
   }
   
   function setSliderPosition() {
-    // Limit how far user can drag
-    const maxTranslate = 0;
-    const minTranslate = -(totalSlides - slidesPerView) * (slideWidth + 20);
-    
-    if (currentTranslate > maxTranslate) {
-      currentTranslate = maxTranslate;
-    } else if (currentTranslate < minTranslate) {
-      currentTranslate = minTranslate;
-    }
-    
-    currentPosition = currentTranslate;
     sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
   }
   
-  // Start autoplay
+  // Event Listeners
+  if (sliderContainer) {
+    // Mouse events
+    sliderContainer.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', drag);
+    window.addEventListener('mouseup', dragEnd);
+    
+    // Touch events
+    sliderContainer.addEventListener('touchstart', dragStart, { passive: false });
+    window.addEventListener('touchmove', drag, { passive: false });
+    window.addEventListener('touchend', dragEnd);
+    
+    // Prevent default drag behavior
+    sliderContainer.addEventListener('dragstart', e => e.preventDefault());
+  }
+  
+  // Autoplay
   function startAutoplay() {
     autoplayInterval = setInterval(() => {
-      // If we're at the last possible slide, go back to the first
       if (currentIndex >= totalSlides - slidesPerView) {
         goToSlide(0);
       } else {
-        goToSlide(currentIndex + 1); // Go to next slide
+        goToSlide(currentIndex + 1);
       }
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
   }
   
-  // Reset autoplay
   function resetAutoplay() {
     clearInterval(autoplayInterval);
     startAutoplay();
   }
   
-  // Window resize handler
-  function handleResize() {
-    calculateSlidesPerView();
-    resetAutoplay();
-  }
-  
-  // Initialize slider
+  // Initialize
   function initSlider() {
     calculateSlidesPerView();
     startAutoplay();
     
-    // Stop autoplay on hover
+    // Pause on hover
     if (sliderContainer) {
       sliderContainer.addEventListener('mouseenter', () => {
         clearInterval(autoplayInterval);
       });
       
       sliderContainer.addEventListener('mouseleave', () => {
-        // Only restart if not dragging
-        if (!isDragging) {
-          startAutoplay();
-        }
+        if (!isDragging) startAutoplay();
       });
     }
     
-    // Handle window resize
-    window.addEventListener('resize', handleResize);
+    // Handle resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        calculateSlidesPerView();
+      }, 250);
+    });
   }
   
-  // Initialize
   initSlider();
 });
  // Initialize the map when document is ready
