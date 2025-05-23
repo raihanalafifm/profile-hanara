@@ -104,9 +104,8 @@
         checkScroll();
     });
 // Clean Testimonial Slider JavaScript
-// Blog Slider JavaScript with Smooth Transitions
+// Smooth Blog Slider JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-  // Get slider elements
   const sliderContainer = document.querySelector('.blog-slider-container');
   const slides = document.querySelectorAll('.blog-card');
   const dots = document.querySelectorAll('.blog-slider-dot');
@@ -117,78 +116,86 @@ document.addEventListener('DOMContentLoaded', function() {
   let slideWidth = 0;
   let totalSlides = slides.length;
   let autoplayInterval;
-  let slidesPerView = 3; // Default for desktop
+  let slidesPerView = 3;
+  let isTransitioning = false;
   
-  // Mouse/Touch tracking variables
+  // Mouse/Touch tracking
   let isDragging = false;
   let startPos = 0;
   let currentTranslate = 0;
   let prevTranslate = 0;
   let animationID = null;
+  let startTime = 0;
   
-  // Calculate how many slides to show based on screen width
+  // Calculate slides per view based on screen
   function calculateSlidesPerView() {
     if (window.innerWidth < 768) {
-      slidesPerView = 1; // Mobile
+      slidesPerView = 1;
     } else if (window.innerWidth < 992) {
-      slidesPerView = 2; // Tablet
+      slidesPerView = 2;
     } else {
-      slidesPerView = 3; // Desktop
+      slidesPerView = 3;
     }
     
     updateSlideWidth();
   }
   
-  // Calculate slide width
+  // Update slide width
   function updateSlideWidth() {
-    if (sliderContainer) {
-      const containerWidth = sliderContainer.parentElement.clientWidth;
-      const gap = 20; // Gap between slides
-      slideWidth = (containerWidth - (gap * (slidesPerView - 1))) / slidesPerView;
-      
-      // Update CSS for each slide
-      slides.forEach(slide => {
-        slide.style.flex = `0 0 ${slideWidth}px`;
-        slide.style.minWidth = `${slideWidth}px`;
-        slide.style.maxWidth = `${slideWidth}px`;
-      });
-      
-      // Go to current slide without animation
-      goToSlide(currentIndex, false);
-    }
-  }
-  
-  // Go to specific slide
-  function goToSlide(index, animate = true) {
     if (!sliderContainer) return;
     
-    // Calculate maximum index
-    const maxIndex = Math.max(0, totalSlides - slidesPerView);
-    currentIndex = Math.min(Math.max(0, index), maxIndex);
+    const containerWidth = sliderContainer.parentElement.clientWidth;
+    const gap = 20;
+    slideWidth = (containerWidth - (gap * (slidesPerView - 1))) / slidesPerView;
     
-    // Calculate offset
+    // Set slide dimensions
+    slides.forEach(slide => {
+      slide.style.flex = `0 0 ${slideWidth}px`;
+      slide.style.minWidth = `${slideWidth}px`;
+      slide.style.maxWidth = `${slideWidth}px`;
+    });
+    
+    // Reposition without animation
+    setSliderPosition(false);
+  }
+  
+  // Set slider position
+  function setSliderPosition(animate = true) {
+    if (isTransitioning && animate) return;
+    
     const gap = 20;
     const offset = -currentIndex * (slideWidth + gap);
-    prevTranslate = offset;
-    currentTranslate = offset;
     
-    // Apply transform with smooth transition
     if (animate) {
-      sliderContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      isTransitioning = true;
+      sliderContainer.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     } else {
       sliderContainer.style.transition = 'none';
     }
     
     sliderContainer.style.transform = `translateX(${offset}px)`;
+    prevTranslate = offset;
+    currentTranslate = offset;
     
-    // Reset transition after animation
     if (animate) {
       setTimeout(() => {
+        isTransitioning = false;
         sliderContainer.style.transition = '';
-      }, 500);
+      }, 600);
     }
     
     updateActiveDot();
+  }
+  
+  // Go to specific slide
+  function goToSlide(index, animate = true) {
+    if (isTransitioning) return;
+    
+    // Calculate max index (ensure last slides are visible)
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+    currentIndex = Math.min(Math.max(0, index), maxIndex);
+    
+    setSliderPosition(animate);
   }
   
   // Update active dot
@@ -198,7 +205,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Dot click events
+  // Next slide
+  function nextSlide() {
+    if (currentIndex >= totalSlides - slidesPerView) {
+      goToSlide(0);
+    } else {
+      goToSlide(currentIndex + 1);
+    }
+  }
+  
+  // Previous slide
+  function prevSlide() {
+    if (currentIndex <= 0) {
+      goToSlide(totalSlides - slidesPerView);
+    } else {
+      goToSlide(currentIndex - 1);
+    }
+  }
+  
+  // Dot navigation
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       goToSlide(index);
@@ -206,96 +231,105 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Touch/Mouse Events
+  // Touch/Mouse handling
   function getPositionX(event) {
-    return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
   }
   
-  function dragStart(e) {
-    if (e.type === 'mousedown' && e.button !== 0) return; // Only left mouse button
+  function touchStart(e) {
+    if (isTransitioning) return;
+    if (e.type === 'mousedown' && e.button !== 0) return;
     
-    e.preventDefault();
     isDragging = true;
     startPos = getPositionX(e);
-    
-    // Clear autoplay
-    clearInterval(autoplayInterval);
-    
-    // Disable transition during drag
-    sliderContainer.style.transition = 'none';
-    sliderContainer.style.cursor = 'grabbing';
-    
-    // Start animation
+    startTime = Date.now();
     animationID = requestAnimationFrame(animation);
+    
+    sliderContainer.style.cursor = 'grabbing';
+    sliderContainer.style.transition = 'none';
+    
+    clearInterval(autoplayInterval);
   }
   
-  function drag(e) {
+  function touchMove(e) {
     if (!isDragging) return;
-    e.preventDefault();
     
     const currentPosition = getPositionX(e);
     currentTranslate = prevTranslate + currentPosition - startPos;
+    
+    // Add resistance at edges
+    const maxTranslate = 0;
+    const minTranslate = -(totalSlides - slidesPerView) * (slideWidth + 20);
+    
+    if (currentTranslate > maxTranslate) {
+      currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.3;
+    } else if (currentTranslate < minTranslate) {
+      currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.3;
+    }
   }
   
-  function dragEnd() {
+  function touchEnd(e) {
     if (!isDragging) return;
     
     isDragging = false;
     cancelAnimationFrame(animationID);
     
-    // Add smooth transition for snap
-    sliderContainer.style.transition = 'transform 0.3s ease-out';
-    sliderContainer.style.cursor = '';
-    
     const movedBy = currentTranslate - prevTranslate;
+    const elapsedTime = Date.now() - startTime;
+    const velocity = Math.abs(movedBy) / elapsedTime;
     
-    // Determine swipe direction with threshold
-    if (movedBy < -50 && currentIndex < totalSlides - slidesPerView) {
-      currentIndex += 1;
-    } else if (movedBy > 50 && currentIndex > 0) {
-      currentIndex -= 1;
+    // Determine if we should change slides
+    if (velocity > 0.5 || Math.abs(movedBy) > slideWidth / 3) {
+      if (movedBy < 0 && currentIndex < totalSlides - slidesPerView) {
+        goToSlide(currentIndex + 1);
+      } else if (movedBy > 0 && currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      } else {
+        goToSlide(currentIndex);
+      }
+    } else {
+      goToSlide(currentIndex);
     }
     
-    goToSlide(currentIndex);
+    sliderContainer.style.cursor = '';
     startAutoplay();
   }
   
   function animation() {
     if (isDragging) {
-      setSliderPosition();
-      animationID = requestAnimationFrame(animation);
+      sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+      requestAnimationFrame(animation);
     }
   }
   
-  function setSliderPosition() {
-    sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
-  }
-  
-  // Event Listeners
+  // Event listeners
   if (sliderContainer) {
     // Mouse events
-    sliderContainer.addEventListener('mousedown', dragStart);
-    window.addEventListener('mousemove', drag);
-    window.addEventListener('mouseup', dragEnd);
+    sliderContainer.addEventListener('mousedown', touchStart);
+    window.addEventListener('mousemove', touchMove);
+    window.addEventListener('mouseup', touchEnd);
+    window.addEventListener('mouseleave', () => {
+      if (isDragging) touchEnd();
+    });
     
     // Touch events
-    sliderContainer.addEventListener('touchstart', dragStart, { passive: false });
-    window.addEventListener('touchmove', drag, { passive: false });
-    window.addEventListener('touchend', dragEnd);
+    sliderContainer.addEventListener('touchstart', touchStart, { passive: true });
+    sliderContainer.addEventListener('touchmove', touchMove, { passive: true });
+    sliderContainer.addEventListener('touchend', touchEnd);
     
-    // Prevent default drag behavior
+    // Prevent drag
     sliderContainer.addEventListener('dragstart', e => e.preventDefault());
+    
+    // Prevent text selection while dragging
+    sliderContainer.addEventListener('selectstart', e => {
+      if (isDragging) e.preventDefault();
+    });
   }
   
-  // Autoplay
+  // Autoplay functions
   function startAutoplay() {
-    autoplayInterval = setInterval(() => {
-      if (currentIndex >= totalSlides - slidesPerView) {
-        goToSlide(0);
-      } else {
-        goToSlide(currentIndex + 1);
-      }
-    }, 5000);
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextSlide, 4000); // 4 seconds
   }
   
   function resetAutoplay() {
@@ -303,33 +337,53 @@ document.addEventListener('DOMContentLoaded', function() {
     startAutoplay();
   }
   
-  // Initialize
-  function initSlider() {
-    calculateSlidesPerView();
-    startAutoplay();
+  // Pause on hover
+  if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
     
-    // Pause on hover
-    if (sliderContainer) {
-      sliderContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
-      });
-      
-      sliderContainer.addEventListener('mouseleave', () => {
-        if (!isDragging) startAutoplay();
-      });
-    }
-    
-    // Handle resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        calculateSlidesPerView();
-      }, 250);
+    sliderContainer.addEventListener('mouseleave', () => {
+      if (!isDragging) startAutoplay();
     });
   }
   
-  initSlider();
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      resetAutoplay();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      resetAutoplay();
+    }
+  });
+  
+  // Handle window resize with debounce
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      calculateSlidesPerView();
+      goToSlide(currentIndex, false);
+    }, 250);
+  });
+  
+  // Initialize
+  calculateSlidesPerView();
+  startAutoplay();
+  
+  // Ensure links in edge cards are clickable
+  const links = sliderContainer.querySelectorAll('.blog-card-link');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    
+    link.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+    });
+  });
 });
  // Initialize the map when document is ready
  document.addEventListener('DOMContentLoaded', function() {

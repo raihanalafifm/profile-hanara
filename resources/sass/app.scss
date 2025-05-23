@@ -1343,6 +1343,7 @@
 .latest-blog-section {
   background-color: #f8f9fb;
   padding: 80px 0;
+  overflow: hidden; /* Prevent horizontal scroll */
 }
 
 /* Blog Tags and Titles */
@@ -1382,6 +1383,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin: 0 auto;
 }
 
 .blog-slider-container {
@@ -1393,15 +1395,18 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  touch-action: pan-y; /* Allow vertical scroll, horizontal swipe */
   will-change: transform;
   -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0); /* Enable hardware acceleration */
+  backface-visibility: hidden;
 }
 
 .blog-slider-container:active {
   cursor: grabbing;
 }
 
-/* Prevent layout shift */
+/* Blog Card Styles */
 .blog-card {
   flex: 0 0 auto;
   background-color: #fff;
@@ -1411,23 +1416,67 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Prevent text selection during drag */
-.blog-slider-container.dragging {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.blog-slider-container.dragging * {
+/* Ensure content is not selectable during drag */
+.blog-slider-container.dragging .blog-card * {
   pointer-events: none;
+  user-select: none;
 }
 
-/* Fix for Read More link */
+/* Blog Card Image */
+.blog-card-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.blog-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-img img {
+  transform: scale(1.05);
+}
+
+/* Blog Card Content */
+.blog-card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.blog-card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+/* Blog Card Link - Enhanced for better clicking */
 .blog-card-link {
   display: inline-flex;
   align-items: center;
@@ -1437,12 +1486,10 @@
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
-  outline: none;
-}
-
-.blog-card-link:focus {
-  outline: none;
-  box-shadow: none;
+  position: relative;
+  z-index: 10;
+  padding: 5px 0;
+  margin-top: auto;
 }
 
 .blog-card-link:hover {
@@ -1450,41 +1497,63 @@
   text-decoration: none;
 }
 
-/* Prevent page jump on click */
-.blog-card-link[href="#"],
-.blog-card-link[href="javascript:void(0);"] {
-  cursor: default;
+.blog-card-link i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
 }
 
-.blog-card-link[target="_blank"] {
-  cursor: pointer;
+.blog-card-link:hover i {
+  transform: translateX(5px);
 }
 
-/* Smooth dots transition */
+/* Prevent link issues */
+.blog-card-link:focus {
+  outline: 2px solid #ff6700;
+  outline-offset: 2px;
+}
+
+/* Slider Navigation Dots */
+.blog-slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 10px 0;
+}
+
 .blog-slider-dot {
-  transition: all 0.3s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/* Performance optimization */
-.blog-slider-container {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+.blog-slider-dot:hover {
+  background-color: #bbb;
 }
 
-/* Responsive Styles */
+.blog-slider-dot.active {
+  background-color: #ff6700;
+  width: 25px;
+  border-radius: 10px;
+}
+
+/* Smooth transitions */
+.blog-slider-container:not(.dragging) {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Responsive adjustments */
 @media (max-width: 991px) {
   .latest-blog-section {
     padding: 60px 0;
   }
   
-  .blog-title {
-    font-size: 32px;
-  }
-  
   .blog-card {
-    min-width: calc(50% - 20px); /* Two cards per row */
+    min-width: calc(50% - 10px);
   }
 }
 
@@ -1493,12 +1562,27 @@
     padding: 50px 0;
   }
   
-  .blog-title {
-    font-size: 28px;
+  .blog-card {
+    min-width: 100%;
+  }
+  
+  .blog-slider-nav {
+    margin-top: 20px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .blog-slider-container {
+    transition: none !important;
   }
   
   .blog-card {
-    min-width: 100%; /* One card per row */
+    transition: none !important;
+  }
+  
+  .blog-card-img img {
+    transition: none !important;
   }
 }
 
