@@ -1,2 +1,13 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /backend/
+Disallow: /login
+Disallow: /register
+Disallow: /password
+Disallow: /api/
+
+# Crawl-delay untuk bot yang respect directive ini
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://hanara.id/sitemap.xml

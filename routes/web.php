@@ -6,13 +6,11 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\UserController;
 
-// Frontend Routes (Public)
+// Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Dashboard redirect untuk backward compatibility
-Route::get('/dashboard', function() {
-    return redirect()->route('backend.dashboard');
-})->name('dashboard')->middleware('auth');
+// Redirect dashboard (untuk backward compatibility)
+Route::redirect('/dashboard', '/')->name('dashboard');
 
 // Backend Routes (Protected with Auth)
 Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function () {

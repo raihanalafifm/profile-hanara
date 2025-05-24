@@ -12,13 +12,44 @@ class HomeController extends Controller
      */
    public function index(): View
     {
-        $pageTitle = 'PT Hanara Prima Solusindo - Solusi Digital Terdepan';
-        $metaDescription = 'Solusi teknologi informasi terpadu untuk kebutuhan bisnis Anda. Kami menyediakan layanan Zimbra, Web Development, CCTV, dan solusi digital lainnya.';
+       // SEO Data dari config
+        $seo = config('seo.pages.home');
+        $seoDefaults = config('seo.defaults');
+        
+        // Gabungkan dengan defaults
+        $seoData = [
+            'title' => $seo['title'] . $seoDefaults['title_suffix'],
+            'titleOnly' => $seo['title'], // tanpa suffix untuk OG
+            'description' => $seo['description'],
+            'keywords' => $seo['keywords'],
+            'author' => $seoDefaults['author'],
+            'robots' => $seoDefaults['robots'],
+            'ogTitle' => $seo['og_title'] ?? $seo['title'],
+            'ogDescription' => $seo['og_description'] ?? $seo['description'],
+            'ogImage' => asset($seoDefaults['og_image']),
+            'ogType' => $seoDefaults['og_type'],
+            'twitterCard' => $seoDefaults['twitter_card'],
+            'canonical' => route('home'),
+        ];
+        
+        // Schema.org data
+        $schemaOrg = config('seo.schema.organization');
         
         // Ambil artikel yang aktif dan terurut
-        $articles = Article::active()->ordered()->take(4)->get();
+        $articles = Article::active()
+                          ->ordered()
+                          ->take(4)
+                          ->get();
         
-        return view('content.home', compact('pageTitle', 'metaDescription', 'articles'));
+        // Data tambahan untuk homepage
+        $stats = [
+            'clients' => 100,
+            'projects' => 250,
+            'experience' => 5,
+            'team' => 20
+        ];
+        
+        return view('content.home', compact('seoData', 'schemaOrg', 'articles', 'stats'));
     }
 
     /**
