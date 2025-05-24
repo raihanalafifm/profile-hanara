@@ -104,6 +104,63 @@
         checkScroll();
     });
 // Clean Testimonial Slider JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Testimonial Slider
+    const testimonialItems = document.querySelectorAll('.testimonial-clean-item');
+    const testimonialDots = document.querySelectorAll('.clean-dot');
+    let currentTestimonial = 0;
+    let testimonialInterval;
+
+    function showTestimonial(index) {
+        // Hide all testimonials
+        testimonialItems.forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Remove active from all dots
+        testimonialDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show selected testimonial
+        if (testimonialItems[index]) {
+            testimonialItems[index].classList.add('active');
+        }
+        
+        // Activate corresponding dot
+        if (testimonialDots[index]) {
+            testimonialDots[index].classList.add('active');
+        }
+        
+        currentTestimonial = index;
+    }
+
+    // Click handlers for dots
+    testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+            resetTestimonialInterval();
+        });
+    });
+
+    // Auto-play testimonials
+    function startTestimonialInterval() {
+        testimonialInterval = setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        }, 5000); // Change every 5 seconds
+    }
+
+    function resetTestimonialInterval() {
+        clearInterval(testimonialInterval);
+        startTestimonialInterval();
+    }
+
+    // Start auto-play if testimonials exist
+    if (testimonialItems.length > 0) {
+        startTestimonialInterval();
+    }
+});
 // Smooth Blog Slider JavaScript
 document.addEventListener('DOMContentLoaded', function() {
   const sliderContainer = document.querySelector('.blog-slider-container');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Career;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CareerController extends Controller
 {
