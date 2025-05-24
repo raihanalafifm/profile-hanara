@@ -21,8 +21,27 @@ class CareerController extends Controller
      */
     public function frontIndex()
     {
+        $seo = config('seo.pages.career');
+        $seoDefaults = config('seo.defaults');
+        
+        $seoData = [
+            'title' => $seo['title'] . $seoDefaults['title_suffix'],
+            'titleOnly' => $seo['title'],
+            'description' => $seo['description'],
+            'keywords' => $seo['keywords'],
+            'author' => $seoDefaults['author'],
+            'robots' => $seoDefaults['robots'],
+            'ogTitle' => $seo['og_title'] ?? $seo['title'],
+            'ogDescription' => $seo['og_description'] ?? $seo['description'],
+            'ogImage' => asset('assets/images/gambar/career.png'),
+            'ogType' => $seoDefaults['og_type'],
+            'twitterCard' => $seoDefaults['twitter_card'],
+            'canonical' => route('career'),
+        ];
+        
         $careers = Career::active()->ordered()->get();
-        return view('content.about.career', compact('careers'));
+        
+        return view('content.about.career', compact('careers', 'seoData'));
     }
 
     /**
@@ -34,7 +53,45 @@ class CareerController extends Controller
             abort(404);
         }
         
-        return view('content.about.job-detail', compact('career'));
+        $seo = config('seo.pages.career_detail');
+        $seoDefaults = config('seo.defaults');
+        
+        // Replace placeholders
+        $title = str_replace('{position}', $career->position, $seo['title']);
+        $description = str_replace(
+            ['{position}', '{type}'],
+            [$career->position, $career->type],
+            $seo['description']
+        );
+        $keywords = str_replace(
+            ['{position}', '{type}'],
+            [Str::lower($career->position), Str::lower($career->type)],
+            $seo['keywords']
+        );
+        
+        $seoData = [
+            'title' => $title . $seoDefaults['title_suffix'],
+            'titleOnly' => $title,
+            'description' => $description,
+            'keywords' => $keywords,
+            'author' => $seoDefaults['author'],
+            'robots' => $seoDefaults['robots'],
+            'ogTitle' => $title,
+            'ogDescription' => Str::limit($career->description, 160),
+            'ogImage' => asset('assets/images/og-career.jpg'),
+            'ogType' => 'article',
+            'twitterCard' => $seoDefaults['twitter_card'],
+            'canonical' => route('career.detail', $career->slug),
+        ];
+        
+        // Get related careers
+        $relatedCareers = Career::active()
+            ->where('id', '!=', $career->id)
+            ->where('type', $career->type)
+            ->limit(3)
+            ->get();
+        
+        return view('content.about.job-detail', compact('career', 'seoData', 'relatedCareers'));
     }
 
     /**

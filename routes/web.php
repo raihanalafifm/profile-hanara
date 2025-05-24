@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PageController;
 
 // Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -34,18 +35,19 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
         ->name('users.toggle-status');
 });
 
-// Frontend Routes (Public) - continued
-Route::get('/about-us', function(){
-    return view('content.about.about');
-})->name('about-us');
-
-Route::get('/contact-us', function(){
-    return view('content.about.contact');
-})->name('contact-us');
+// About Pages
+Route::get('/tentang-kami', [PageController::class, 'about'])->name('about-us');
+Route::get('/hubungi-kami', [PageController::class, 'contact'])->name('contact-us');
 
 // Career Routes
-Route::get('/career', [CareerController::class, 'frontIndex'])->name('career');
-Route::get('/career/{career}', [CareerController::class, 'frontShow'])->name('career.detail');
+Route::get('/karir', [CareerController::class, 'frontIndex'])->name('career');
+Route::get('/karir/{career:slug}', [CareerController::class, 'frontShow'])->name('career.detail');
+
+// Redirects dari URL lama (untuk SEO)
+Route::redirect('/about-us', '/tentang-kami', 301);
+Route::redirect('/contact-us', '/hubungi-kami', 301);
+Route::redirect('/career', '/karir', 301);
+
 
 Route::get('/instalasi-zimbra', function(){
     return view('content.zimbra.instalasi');

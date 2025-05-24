@@ -1,9 +1,63 @@
 @extends('layout.main')
 
+@section('schema')
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "{{ route('home') }}"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Tentang Kami",
+    "item": "{{ route('about-us') }}"
+  }]
+}
+</script>
+
+<!-- About Page Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "PT Hanara Prima Solusindo",
+    "description": "{{ $seoData['description'] }}",
+    "foundingDate": "2018",
+    "founder": {
+      "@type": "Person",
+      "name": "Founder Hanara"
+    },
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 10,
+      "maxValue": 50
+    }
+  }
+}
+</script>
+@endsection
+
 @section('container')
+<!-- Breadcrumb -->
+{{-- <nav aria-label="breadcrumb" class="mt-3">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
+    </ol>
+  </div>
+</nav> --}}
+
 <section class="about-page-section">
     <div class="container">
-      <!-- Header -->
+      <!-- Header dengan H1 untuk SEO -->
       <div class="row text-center mb-5">
         <div class="col-lg-12">
           <div class="about-page-header">
@@ -13,23 +67,28 @@
         </div>
       </div>
       
-      <!-- Team Image -->
+      <!-- Team Image dengan alt text SEO -->
       <div class="row justify-content-center mb-5">
         <div class="col-lg-10">
           <div class="about-team-image">
-            <img src="{{ asset('assets/images/gambar/bw-meet.png') }}" alt="Team Meeting" class="img-fluid rounded">
+            <img src="{{ asset('assets/images/gambar/bw-meet.png') }}" 
+                 alt="Tim PT Hanara Prima Solusindo - IT Solution Provider" 
+                 class="img-fluid rounded"
+                 width="1000"
+                 height="600"
+                 loading="eager">
           </div>
         </div>
       </div>
       
-      <!-- About Us Text Section -->
+      <!-- About Us Text Section dengan semantic HTML -->
       <div class="row mb-5">
         <div class="col-lg-3">
           <h2 class="about-section-title">About Us</h2>
         </div>
         <div class="col-lg-9">
           <div class="about-description">
-            <p>PT Hanara Prima Solusindo (Hanara) adalah perusahaan yang bergerak di bidang IT Solution Provider, berkomitmen untuk meningkatkan efektivitas dan produktivitas bisnis di era digital saat ini. Kami menyadari bahwa teknologi informasi memegang peranan penting sebagai partner bisnis IT yang handal dan siap untuk menghadapi tantangan industri dalam dunia digital dan teknologi informasi.</p>
+            <p><strong>PT Hanara Prima Solusindo (Hanara)</strong> adalah perusahaan yang bergerak di bidang <em>IT Solution Provider</em>, berkomitmen untuk meningkatkan efektivitas dan produktivitas bisnis di era digital saat ini. Kami menyadari bahwa teknologi informasi memegang peranan penting sebagai partner bisnis IT yang handal dan siap untuk menghadapi tantangan industri dalam dunia digital dan teknologi informasi.</p>
             <p>Dengan tim profesional yang berpengalaman, Hanara berfikir pada pengembangan solusi yang disesuaikan dengan kebutuhan dibidang software, untuk mencapai tujuan dan target perusahaan klien kami.</p>
           </div>
         </div>
@@ -47,79 +106,41 @@
         </div>
       </div>
       
-      <!-- Mission Section -->
+      <!-- Mission Section dengan structured data -->
       <div class="row mb-5">
         <div class="col-lg-3">
           <h2 class="about-section-title">Misi</h2>
         </div>
         <div class="col-lg-9">
-          <!-- Mission Cards -->
+          <!-- Mission Cards dengan semantic HTML -->
           <div class="row mission-cards">
-            <!-- Mission Card 1 -->
-            <div class="col-md-6 mb-4">
-              <div class="mission-card">
-                <div class="mission-icon orange-bg">
-                  <span class="mission-number">01</span>
-                </div>
-                <h3 class="mission-title">Layanan Berkualitas Terbaik</h3>
-                <p class="mission-text">Platform kolaborasi modern yang dirancang untuk meningkatkan efisiensi kerja tim melalui akses data yang aman dan fleksibel.</p>
-              </div>
-            </div>
+            @php
+            $missions = [
+                [
+                    'number' => '01',
+                    'title' => 'Layanan Berkualitas Terbaik',
+                    'description' => 'Platform kolaborasi modern yang dirancang untuk meningkatkan efisiensi kerja tim melalui akses data yang aman dan fleksibel.'
+                ],
+                [
+                    'number' => '02', 
+                    'title' => 'Solusi Bisnis Inovatif',
+                    'description' => 'Solusi email server yang handal, aman, dan mudah digunakan, untuk memastikan komunikasi bisnis lancar tanpa hambatan.'
+                ],
+                // ... tambahkan misi lainnya
+            ];
+            @endphp
             
-            <!-- Mission Card 2 -->
+            @foreach($missions as $mission)
             <div class="col-md-6 mb-4">
-              <div class="mission-card">
+              <article class="mission-card">
                 <div class="mission-icon orange-bg">
-                  <span class="mission-number">02</span>
+                  <span class="mission-number">{{ $mission['number'] }}</span>
                 </div>
-                <h3 class="mission-title">Solusi Bisnis Inovatif</h3>
-                <p class="mission-text">Solusi email server yang handal, aman, dan mudah digunakan, untuk memastikan komunikasi bisnis lancar tanpa hambatan.</p>
-              </div>
+                <h3 class="mission-title">{{ $mission['title'] }}</h3>
+                <p class="mission-text">{{ $mission['description'] }}</p>
+              </article>
             </div>
-            
-            <!-- Mission Card 3 -->
-            <div class="col-md-6 mb-4">
-              <div class="mission-card">
-                <div class="mission-icon orange-bg">
-                  <span class="mission-number">03</span>
-                </div>
-                <h3 class="mission-title">Teknologi Andal dan Efisien</h3>
-                <p class="mission-text">Layanan instalasi dan pemeliharaan dengan respon cepat guna menjaga fungsi infrastruktur teknis anda berjalan optimal.</p>
-              </div>
-            </div>
-            
-            <!-- Mission Card 4 -->
-            <div class="col-md-6 mb-4">
-              <div class="mission-card">
-                <div class="mission-icon orange-bg">
-                  <span class="mission-number">04</span>
-                </div>
-                <h3 class="mission-title">Pengembangan Tim Unggul</h3>
-                <p class="mission-text">Dirancang untuk membantu perusahaan membangun citra positif dan memperkuat branding di platform media sosial.</p>
-              </div>
-            </div>
-            
-            <!-- Mission Card 5 -->
-            <div class="col-md-6 mb-4">
-              <div class="mission-card">
-                <div class="mission-icon orange-bg">
-                  <span class="mission-number">05</span>
-                </div>
-                <h3 class="mission-title">Produk dengan Nilai Tambah</h3>
-                <p class="mission-text">Solusi komunikasi industri yang mendukung operasional bisnis dengan kebutuhan komunikasi real-time.</p>
-              </div>
-            </div>
-            
-            <!-- Mission Card 6 -->
-            <div class="col-md-6 mb-4">
-              <div class="mission-card">
-                <div class="mission-icon orange-bg">
-                  <span class="mission-number">06</span>
-                </div>
-                <h3 class="mission-title">Pivot untuk Inovasi Digital</h3>
-                <p class="mission-text">HCM merupakan platform berbasis web yang terintegrasi dengan berbagai fitur esensial untuk efisiensi dan produktivitas pengelolaan SDM di perusahaan.</p>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

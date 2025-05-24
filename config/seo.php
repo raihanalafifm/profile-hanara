@@ -46,7 +46,35 @@ return [
             'keywords' => 'maintenance zimbra, support zimbra, jasa maintenance email server, zimbra troubleshooting',
         ],
         
-        // Add more pages...
+                'about' => [
+                    'title' => 'Tentang Kami - Profil PT Hanara Prima Solusindo',
+                    'description' => 'PT Hanara Prima Solusindo adalah perusahaan IT Solution Provider terpercaya sejak 2018. Berkomitmen meningkatkan efektivitas bisnis di era digital dengan solusi teknologi inovatif.',
+                    'keywords' => 'tentang hanara, profil perusahaan IT, IT solution provider Indonesia, perusahaan teknologi Bengkulu, software house bengkulu, jasa IT bengkulu',
+                    'og_title' => 'Tentang PT Hanara Prima Solusindo - Partner Teknologi Terpercaya',
+                    'og_description' => 'Kenali lebih dekat Hanara, perusahaan IT Solution Provider dengan tim profesional berpengalaman. Visi: Menjadi mitra terpercaya dalam solusi teknologi inovatif.',
+                ],
+
+                'contact' => [
+                    'title' => 'Hubungi Kami - Konsultasi Gratis IT Solution',
+                    'description' => 'Hubungi PT Hanara Prima Solusindo untuk konsultasi gratis. Alamat: Jl. Batang Hari, Bengkulu. Telp: (0736) 7050-202, WA: 0897-5000-805. Response cepat!',
+                    'keywords' => 'kontak hanara, alamat hanara bengkulu, konsultasi IT gratis, hubungi kami, jasa IT bengkulu, nomor telepon hanara',
+                    'og_title' => 'Hubungi PT Hanara Prima Solusindo - Konsultasi Gratis',
+                    'og_description' => 'Ada pertanyaan tentang layanan IT? Hubungi kami sekarang! WA: 0897-5000-805 atau kunjungi kantor kami di Bengkulu.',
+                ],
+
+                'career' => [
+                    'title' => 'Lowongan Kerja IT - Karir di PT Hanara Prima Solusindo',
+                    'description' => 'Bergabunglah dengan tim Hanara! Cari lowongan kerja IT terbaru: Web Developer, Mobile Developer, IT Support, dan posisi lainnya. Kirim lamaran Anda sekarang!',
+                    'keywords' => 'lowongan kerja IT bengkulu, karir hanara, job vacancy IT, lowongan web developer, lowongan programmer bengkulu, career IT bengkulu',
+                    'og_title' => 'Lowongan Kerja - Bergabung dengan Tim IT Hanara',
+                    'og_description' => 'Kembangkan karir Anda bersama Hanara. Berbagai posisi IT tersedia dengan benefit menarik. Apply sekarang!',
+                ],
+
+                'career_detail' => [
+                    'title' => '{position} - Lowongan Kerja di PT Hanara Prima Solusindo',
+                    'description' => 'Lowongan {position} di PT Hanara Prima Solusindo. {type}. Kirim CV dan portfolio Anda sekarang untuk bergabung dengan tim IT profesional kami.',
+                    'keywords' => 'lowongan {position}, karir IT bengkulu, job {position} bengkulu, {type} job',
+],
     ],
     
     // Schema.org structured data templates
