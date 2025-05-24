@@ -6,8 +6,13 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\UserController;
 
+// Frontend Routes (Public)
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');  
+
+// Dashboard redirect untuk backward compatibility
+Route::get('/dashboard', function() {
+    return redirect()->route('backend.dashboard');
+})->name('dashboard')->middleware('auth');
 
 // Backend Routes (Protected with Auth)
 Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function () {
@@ -31,7 +36,7 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
         ->name('users.toggle-status');
 });
 
-// Frontend Routes (Public)
+// Frontend Routes (Public) - continued
 Route::get('/about-us', function(){
     return view('content.about.about');
 })->name('about-us');
