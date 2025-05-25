@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+
 class BusinessSolutionController extends Controller
 {
     public function nextcloud(): View
@@ -11,8 +12,7 @@ class BusinessSolutionController extends Controller
         $seo = config('seo.pages.nextcloud');
         $seoDefaults = config('seo.defaults');
         
-           $seoData = [
-             $seoData = [
+        $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
             'description' => $seo['description'],
@@ -24,8 +24,7 @@ class BusinessSolutionController extends Controller
             'ogImage' => asset($seo['og_image'] ?? 'assets/images/icon/nextcloud-icon.png'),
             'ogType' => $seoDefaults['og_type'],
             'twitterCard' => $seoDefaults['twitter_card'],
-            'canonical' => route('cctv'),
-             ]
+            'canonical' => route('nextcloud'), // FIXED: was route('cctv')
         ];
         
         // Get Business Solution Service Schema
@@ -99,8 +98,7 @@ class BusinessSolutionController extends Controller
         $seo = config('seo.pages.hcm');
         $seoDefaults = config('seo.defaults');
         
-         $seoData = [
-             $seoData = [
+        $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
             'description' => $seo['description'],
@@ -112,8 +110,7 @@ class BusinessSolutionController extends Controller
             'ogImage' => asset($seo['og_image'] ?? 'assets/images/icon/hcm.png'),
             'ogType' => $seoDefaults['og_type'],
             'twitterCard' => $seoDefaults['twitter_card'],
-            'canonical' => route('cctv'),
-             ]
+            'canonical' => route('hcis'), // FIXED: was route('cctv')
         ];
         
         // Get Business Solution Service Schema

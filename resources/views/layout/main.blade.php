@@ -5,36 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="@yield('meta_description', 'PT Hanara Prima Solusindo - Solusi Digital Terdepan untuk Bisnis Anda')">
-    <meta name="keywords" content="@yield('meta_keywords', 'IT Solution, Web Development, Zimbra, CCTV, Motorola, Cloud Services')">
+    <!-- Primary Meta Tags -->
+    <title>{{ isset($seoData['title']) ? $seoData['title'] : '@yield("page_title", "PT Hanara Prima Solusindo - Solusi Digital Terdepan")' }}</title>
+    <meta name="title" content="{{ isset($seoData['title']) ? $seoData['title'] : 'PT Hanara Prima Solusindo' }}">
+    <meta name="description" content="{{ isset($seoData['description']) ? $seoData['description'] : '@yield("meta_description", "PT Hanara Prima Solusindo - Solusi Digital Terdepan untuk Bisnis Anda")' }}">
+    <meta name="keywords" content="{{ isset($seoData['keywords']) ? $seoData['keywords'] : '@yield("meta_keywords", "IT Solution, Web Development, Zimbra, CCTV, Motorola, Cloud Services")' }}">
+    <meta name="author" content="{{ isset($seoData['author']) ? $seoData['author'] : 'PT Hanara Prima Solusindo' }}">
+    <meta name="robots" content="{{ isset($seoData['robots']) ? $seoData['robots'] : 'index, follow' }}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ isset($seoData['canonical']) ? $seoData['canonical'] : url()->current() }}" />
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og_title', 'PT Hanara Prima Solusindo')">
-    <meta property="og:description" content="@yield('og_description', 'Solusi Digital Terdepan untuk Bisnis Anda')">
-    <meta property="og:image" content="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}">
+    <meta property="og:type" content="{{ isset($seoData['ogType']) ? $seoData['ogType'] : 'website' }}">
+    <meta property="og:url" content="{{ isset($seoData['canonical']) ? $seoData['canonical'] : url()->current() }}">
+    <meta property="og:title" content="{{ isset($seoData['ogTitle']) ? $seoData['ogTitle'] : (isset($seoData['title']) ? $seoData['title'] : '@yield("og_title", "PT Hanara Prima Solusindo")') }}">
+    <meta property="og:description" content="{{ isset($seoData['ogDescription']) ? $seoData['ogDescription'] : (isset($seoData['description']) ? $seoData['description'] : '@yield("og_description", "Solusi Digital Terdepan untuk Bisnis Anda")') }}">
+    <meta property="og:image" content="{{ isset($seoData['ogImage']) ? $seoData['ogImage'] : asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}">
+    <meta property="og:site_name" content="PT Hanara Prima Solusindo">
+    <meta property="og:locale" content="id_ID">
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="@yield('twitter_title', 'PT Hanara Prima Solusindo')">
-    <meta name="twitter:description" content="@yield('twitter_description', 'Solusi Digital Terdepan untuk Bisnis Anda')">
-    <meta name="twitter:image" content="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}">
-
-    <title>@yield('page_title', 'PT Hanara Prima Solusindo - Solusi Digital Terdepan')</title>
-
-    <!-- Canonical Link -->
-    <link rel="canonical" href="{{ url()->current() }}" />
+    <meta name="twitter:card" content="{{ isset($seoData['twitterCard']) ? $seoData['twitterCard'] : 'summary_large_image' }}">
+    <meta name="twitter:url" content="{{ isset($seoData['canonical']) ? $seoData['canonical'] : url()->current() }}">
+    <meta name="twitter:title" content="{{ isset($seoData['ogTitle']) ? $seoData['ogTitle'] : (isset($seoData['title']) ? $seoData['title'] : '@yield("twitter_title", "PT Hanara Prima Solusindo")') }}">
+    <meta name="twitter:description" content="{{ isset($seoData['ogDescription']) ? $seoData['ogDescription'] : (isset($seoData['description']) ? $seoData['description'] : '@yield("twitter_description", "Solusi Digital Terdepan untuk Bisnis Anda")') }}">
+    <meta name="twitter:image" content="{{ isset($seoData['ogImage']) ? $seoData['ogImage'] : asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}">
+    
+    <!-- Additional SEO Tags -->
+    <meta name="theme-color" content="#FF6B00">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Schema.org Structured Data -->
+    @if(isset($schemaOrg))
+    <script type="application/ld+json">
+    {!! json_encode($schemaOrg, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaService))
+    <script type="application/ld+json">
+    {!! json_encode($schemaService, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaProduct))
+    <script type="application/ld+json">
+    {!! json_encode($schemaProduct, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaFAQ))
+    <script type="application/ld+json">
+    {!! json_encode($schemaFAQ, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaSoftware))
+    <script type="application/ld+json">
+    {!! json_encode($schemaSoftware, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaLocalBusiness))
+    <script type="application/ld+json">
+    {!! json_encode($schemaLocalBusiness, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaBreadcrumb))
+    <script type="application/ld+json">
+    {!! json_encode($schemaBreadcrumb, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaWebPage))
+    <script type="application/ld+json">
+    {!! json_encode($schemaWebPage, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaPricing))
+    <script type="application/ld+json">
+    {!! json_encode($schemaPricing, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaHCM))
+    <script type="application/ld+json">
+    {!! json_encode($schemaHCM, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaNextcloud))
+    <script type="application/ld+json">
+    {!! json_encode($schemaNextcloud, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaWebDev))
+    <script type="application/ld+json">
+    {!! json_encode($schemaWebDev, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    @if(isset($schemaProducts))
+    <script type="application/ld+json">
+    {!! json_encode($schemaProducts, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endif
+    
+    <!-- Multiple schemas support -->
+    @if(isset($schemas) && is_array($schemas))
+        @foreach($schemas as $schema)
+        <script type="application/ld+json">
+        {!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+        </script>
+        @endforeach
+    @endif
+    
+    <!-- Stack for additional schemas from views -->
+    @stack('schema-org')
 
     @vite(['resources/js/app.js'])
+    
     <!-- Preload critical assets -->
-<link rel="preload" href="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" as="image">
-<link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="preload" href="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" as="image">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="dns-prefetch" href="https://fonts.bunny.net">
 
-<!-- Defer non-critical CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" media="print" onload="this.media='all'">
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" media="print" onload="this.media='all'">
+    
+    <!-- Favicon (tambahkan jika ada) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    
+    @stack('styles')
 </head>
 <body>
     @include('components.navbar')
@@ -47,7 +155,8 @@
         </div>
     </div>
     @include('components.footer')
-</body>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Tambahkan JS untuk Scroll Down Button -->
 <script>
@@ -603,4 +712,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+@stack('scripts')
+</body>
 </html>

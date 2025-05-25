@@ -59,7 +59,10 @@ class ZimbraController extends Controller
             'canonical' => route('maintenance-zimbra'),
         ];
         
-        return view('content.zimbra.maintenance', compact('seoData'));
+        // Schema.org untuk Service
+        $schemaService = config('seo.schema.zimbra_service');
+        
+        return view('content.zimbra.maintenance', compact('seoData', 'schemaService'));
     }
     
     /**
@@ -85,10 +88,13 @@ class ZimbraController extends Controller
             'canonical' => route('troubleshooting-zimbra'),
         ];
         
-        // FAQ Schema untuk troubleshooting
-        $faqSchema = $this->generateFAQSchema();
+        // Schema.org untuk Service
+        $schemaService = config('seo.schema.zimbra_service');
         
-        return view('content.zimbra.troubleshooting', compact('seoData', 'faqSchema'));
+        // FAQ Schema untuk troubleshooting
+        $schemaFAQ = $this->generateFAQSchema();
+        
+        return view('content.zimbra.troubleshooting', compact('seoData', 'schemaService', 'schemaFAQ'));
     }
     
     /**
@@ -114,10 +120,13 @@ class ZimbraController extends Controller
             'canonical' => route('cloud-zimbra'),
         ];
         
-        // Product schema untuk pricing
-        $productSchema = $this->generateProductSchema();
+        // Schema.org untuk Service
+        $schemaService = config('seo.schema.zimbra_service');
         
-        return view('content.zimbra.cloud', compact('seoData', 'productSchema'));
+        // Product schema untuk pricing
+        $schemaProduct = $this->generateProductSchema();
+        
+        return view('content.zimbra.cloud', compact('seoData', 'schemaService', 'schemaProduct'));
     }
     
     /**
@@ -143,7 +152,10 @@ class ZimbraController extends Controller
             'canonical' => route('server-zimbra'),
         ];
         
-        return view('content.zimbra.server', compact('seoData'));
+        // Schema.org untuk Service
+        $schemaService = config('seo.schema.zimbra_service');
+        
+        return view('content.zimbra.server', compact('seoData', 'schemaService'));
     }
     
     /**

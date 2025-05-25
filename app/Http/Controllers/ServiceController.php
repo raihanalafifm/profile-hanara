@@ -13,7 +13,6 @@ class ServiceController extends Controller
         $seoDefaults = config('seo.defaults');
         
         $seoData = [
-             $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
             'description' => $seo['description'],
@@ -22,12 +21,11 @@ class ServiceController extends Controller
             'robots' => $seoDefaults['robots'],
             'ogTitle' => $seo['og_title'] ?? $seo['title'],
             'ogDescription' => $seo['og_description'] ?? $seo['description'],
-            'ogImage' => asset($seo['og_image'] ?? 'assets/images/icon/zimbra-instalasi.png'),
+            'ogImage' => asset($seo['og_image'] ?? 'assets/images/icon/cctv-icon.png'), // FIXED: wrong image
             'ogType' => $seoDefaults['og_type'],
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('cctv'),
-             ]
-    ];
+        ];
         
         // Get Hardware Service Schema
         $schemaService = config('seo.schema.hardware_service');
@@ -40,7 +38,7 @@ class ServiceController extends Controller
             '@context' => 'https://schema.org',
             '@type' => 'LocalBusiness',
             'name' => 'Jasa Pasang CCTV Bengkulu - PT Hanara Prima Solusindo',
-            'image' => asset('assets/images/icon/cctv icon.png'),
+            'image' => asset('assets/images/icon/cctv-icon.png'),
             '@id' => route('cctv'),
             'url' => route('cctv'),
             'telephone' => '+62-736-7050202',
@@ -48,9 +46,7 @@ class ServiceController extends Controller
             'geo' => config('seo.schema.professional_service.geo'),
             'openingHoursSpecification' => config('seo.schema.professional_service.openingHoursSpecification'),
             'priceRange' => '$$',
-            'servesCuisine' => 'CCTV Installation Service', // bisa diganti dengan service type lain
             'acceptsReservations' => 'True',
-            'menu' => route('cctv') . '#pricing', // link ke section pricing
             'hasMap' => 'https://maps.app.goo.gl/FTxacZPBbKNzovbX8'
         ];
         
@@ -68,7 +64,6 @@ class ServiceController extends Controller
         $seoDefaults = config('seo.defaults');
         
         $seoData = [
-             $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
             'description' => $seo['description'],
@@ -81,20 +76,37 @@ class ServiceController extends Controller
             'ogType' => $seoDefaults['og_type'],
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('motorola'),
-             ]
-    ];
+        ];
         
         // Get Hardware Service Schema
         $schemaService = config('seo.schema.hardware_service');
         
-        // Get CCTV Products Schema
-        $schemaProducts = config('seo.schema.cctv_products');
+        // Specific schema untuk Motorola
+        $schemaProduct = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Product',
+            'name' => 'Motorola Two-Way Radio',
+            'description' => 'Professional radio communication equipment from Motorola',
+            'brand' => [
+                '@type' => 'Brand',
+                'name' => 'Motorola'
+            ],
+            'offers' => [
+                '@type' => 'AggregateOffer',
+                'priceCurrency' => 'IDR',
+                'availability' => 'https://schema.org/InStock',
+                'seller' => [
+                    '@type' => 'Organization',
+                    'name' => 'PT Hanara Prima Solusindo'
+                ]
+            ]
+        ];
         
-        // Local Business Schema untuk CCTV Service
+        // Local Business Schema untuk Motorola Service
         $schemaLocalBusiness = [
             '@context' => 'https://schema.org',
             '@type' => 'LocalBusiness',
-            'name' => 'Jasa installasi motorola - PT Hanara Prima Solusindo',
+            'name' => 'Distributor Radio Motorola Bengkulu - PT Hanara Prima Solusindo',
             'image' => asset('assets/images/icon/motorola-icon.png'),
             '@id' => route('motorola'),
             'url' => route('motorola'),
@@ -103,16 +115,14 @@ class ServiceController extends Controller
             'geo' => config('seo.schema.professional_service.geo'),
             'openingHoursSpecification' => config('seo.schema.professional_service.openingHoursSpecification'),
             'priceRange' => '$$',
-            'servesCuisine' => 'motorola Installation Service', // bisa diganti dengan service type lain
             'acceptsReservations' => 'True',
-            'menu' => route('motorola') . '#pricing', // link ke section pricing
             'hasMap' => 'https://maps.app.goo.gl/FTxacZPBbKNzovbX8'
         ];
         
         return view('content.motorola.motorola', compact(
             'seoData',
             'schemaService',
-            'schemaProducts',
+            'schemaProduct',
             'schemaLocalBusiness'
         ));
     }
