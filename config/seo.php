@@ -190,40 +190,381 @@ return [
         ],
         
         // Service schema for Zimbra
-        'zimbra_service' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'Service',
-            'serviceType' => 'Email Server Installation and Maintenance',
-            'provider' => [
-                '@type' => 'Organization',
-                'name' => 'PT Hanara Prima Solusindo'
-            ],
-            'areaServed' => [
-                '@type' => 'Country',
-                'name' => 'Indonesia'
-            ],
-            'hasOfferCatalog' => [
-                '@type' => 'OfferCatalog',
-                'name' => 'Zimbra Services',
-                'itemListElement' => [
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Zimbra Installation',
-                            'description' => 'Professional Zimbra Mail Server installation service'
+       'zimbra_service' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'serviceType' => 'Email Server Installation and Maintenance',
+        'provider' => [
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo'
+        ],
+        'areaServed' => [
+            '@type' => 'Country',
+            'name' => 'Indonesia'
+        ],
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name' => 'Zimbra Services',
+            'itemListElement' => [
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Zimbra Installation',
+                        'description' => 'Professional Zimbra Mail Server installation service'
+                    ]
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Zimbra Maintenance',
+                        'description' => '24/7 monitoring and maintenance service'
+                    ]
+                ]
+            ]
+        ]
+    ],
+    
+    // Software House Service Schema
+    'software_house_service' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'serviceType' => 'Software Development Services',
+        'provider' => [
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo',
+            'url' => 'https://hanara.id',
+            'logo' => 'https://hanara.id/assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png'
+        ],
+        'areaServed' => [
+            '@type' => 'Country',
+            'name' => 'Indonesia'
+        ],
+        'availableChannel' => [
+            '@type' => 'ServiceChannel',
+            'serviceUrl' => 'https://hanara.id/software-house',
+            'servicePhone' => '+62-736-7050202',
+            'availableLanguage' => ['Indonesian', 'English']
+        ],
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name' => 'Software Development Services',
+            'itemListElement' => [
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Web Development',
+                        'description' => 'Custom website development with modern technologies',
+                        'category' => 'Web Development',
+                        'provider' => [
+                            '@type' => 'Organization',
+                            'name' => 'PT Hanara Prima Solusindo'
                         ]
                     ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Zimbra Maintenance',
-                            'description' => '24/7 monitoring and maintenance service'
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => '3000000',
+                        'priceCurrency' => 'IDR',
+                        'minPrice' => '3000000',
+                        'maxPrice' => '50000000'
+                    ]
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Web Application Development',
+                        'description' => 'Enterprise web application and system development',
+                        'category' => 'Software Development'
+                    ],
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => 'Custom Quote',
+                        'priceCurrency' => 'IDR'
+                    ]
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Website Maintenance',
+                        'description' => 'Monthly website maintenance and support',
+                        'category' => 'IT Support'
+                    ],
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => '500000',
+                        'priceCurrency' => 'IDR',
+                        'minPrice' => '500000',
+                        'unitText' => 'MONTH'
+                    ]
+                ]
+            ]
+        ],
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '4.8',
+            'reviewCount' => '127',
+            'bestRating' => '5',
+            'worstRating' => '1'
+        ]
+    ],
+    
+    // CCTV & Motorola Service Schema
+    'hardware_service' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'serviceType' => 'Security and Communication Hardware Installation',
+        'provider' => [
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo'
+        ],
+        'areaServed' => [
+            '@type' => 'AdministrativeArea',
+            'name' => 'Bengkulu',
+            'containedIn' => [
+                '@type' => 'Country',
+                'name' => 'Indonesia'
+            ]
+        ],
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name' => 'Hardware Installation Services',
+            'itemListElement' => [
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'CCTV Installation',
+                        'description' => 'Professional CCTV installation with Hikvision and Dahua products',
+                        'brand' => [
+                            ['@type' => 'Brand', 'name' => 'Hikvision'],
+                            ['@type' => 'Brand', 'name' => 'Dahua']
+                        ],
+                        'serviceOutput' => 'Complete CCTV system with warranty'
+                    ],
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => '1500000',
+                        'priceCurrency' => 'IDR',
+                        'minPrice' => '1500000',
+                        'unitText' => 'per camera'
+                    ],
+                    'warranty' => [
+                        '@type' => 'WarrantyPromise',
+                        'durationOfWarranty' => [
+                            '@type' => 'QuantitativeValue',
+                            'value' => '1',
+                            'unitText' => 'year'
+                        ],
+                        'warrantyScope' => 'Product and installation warranty'
+                    ]
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Motorola Radio Supply & Service',
+                        'description' => 'Official Motorola two-way radio distributor and service center',
+                        'brand' => [
+                            '@type' => 'Brand',
+                            'name' => 'Motorola'
+                        ]
+                    ],
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => 'Quote on Request',
+                        'priceCurrency' => 'IDR'
+                    ]
+                ]
+            ]
+        ]
+    ],
+    
+    // Business Solution Service Schema
+    'business_solution_service' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'serviceType' => 'Enterprise Business Solutions',
+        'provider' => [
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo'
+        ],
+        'areaServed' => [
+            '@type' => 'Country',
+            'name' => 'Indonesia'
+        ],
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name' => 'Business Solution Services',
+            'itemListElement' => [
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'Nextcloud Implementation',
+                        'description' => 'Private cloud storage solution for enterprises',
+                        'category' => 'Cloud Solutions',
+                        'serviceType' => 'SoftwareApplication',
+                        'applicationCategory' => 'BusinessApplication',
+                        'operatingSystem' => 'Cross-platform'
+                    ],
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => '50000',
+                        'priceCurrency' => 'IDR',
+                        'minPrice' => '50000',
+                        'unitText' => 'per user per month'
+                    ],
+                    'eligibleQuantity' => [
+                        '@type' => 'QuantitativeValue',
+                        'minValue' => 10,
+                        'unitText' => 'users'
+                    ]
+                ],
+                [
+                    '@type' => 'Offer',
+                    'itemOffered' => [
+                        '@type' => 'Service',
+                        'name' => 'HCM & HRIS System',
+                        'description' => 'Complete Human Capital Management and HR Information System',
+                        'category' => 'HR Solutions',
+                        'serviceType' => 'SoftwareApplication'
+                    ],
+                    'priceSpecification' => [
+                        '@type' => 'PriceSpecification',
+                        'price' => 'Custom Quote',
+                        'priceCurrency' => 'IDR',
+                        'description' => 'Pricing based on number of employees and modules'
+                    ],
+                    'includesObject' => [
+                        [
+                            '@type' => 'TypeAndQuantityNode',
+                            'typeOfGood' => [
+                                '@type' => 'Service',
+                                'name' => 'Implementation & Training'
+                            ]
+                        ],
+                        [
+                            '@type' => 'TypeAndQuantityNode',
+                            'typeOfGood' => [
+                                '@type' => 'Service',
+                                'name' => '1 Year Support'
+                            ]
                         ]
                     ]
                 ]
             ]
         ]
-    ]
+    ],
+    
+    // Product Schema untuk CCTV Products
+    'cctv_products' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'Product',
+        'name' => 'CCTV Security Systems',
+        'description' => 'Professional CCTV systems from Hikvision and Dahua',
+        'category' => 'Security Equipment',
+        'brand' => [
+            ['@type' => 'Brand', 'name' => 'Hikvision'],
+            ['@type' => 'Brand', 'name' => 'Dahua']
+        ],
+        'offers' => [
+            '@type' => 'AggregateOffer',
+            'priceCurrency' => 'IDR',
+            'lowPrice' => '1500000',
+            'highPrice' => '25000000',
+            'offerCount' => '50+',
+            'availability' => 'https://schema.org/InStock',
+            'seller' => [
+                '@type' => 'Organization',
+                'name' => 'PT Hanara Prima Solusindo'
+            ]
+        ]
+    ],
+    
+    // Software Application Schema untuk Custom Software
+    'custom_software' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'SoftwareApplication',
+        'name' => 'Custom Business Software Solutions',
+        'applicationCategory' => 'BusinessApplication',
+        'operatingSystem' => 'Web-based, Cross-platform',
+        'offers' => [
+            '@type' => 'Offer',
+            'price' => '0',
+            'priceCurrency' => 'IDR',
+            'description' => 'Free consultation and custom pricing'
+        ],
+        'featureList' => [
+            'Custom development based on business needs',
+            'Modern technology stack',
+            'Scalable architecture',
+            'API integration',
+            'Mobile responsive',
+            'Cloud ready'
+        ],
+        'softwareRequirements' => 'Modern web browser',
+        'provider' => [
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo'
+        ]
+    ],
+    
+    // Professional Service Schema
+    'professional_service' => [
+        '@context' => 'https://schema.org',
+        '@type' => 'ProfessionalService',
+        'name' => 'PT Hanara Prima Solusindo - IT Solutions Provider',
+        'description' => 'Professional IT services including software development, system integration, and IT infrastructure',
+        'url' => 'https://hanara.id',
+        'telephone' => '+62-736-7050202',
+        'email' => 'info@hanara.id',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'Jl. Batang Hari, RT.011/RW.003, Nusa Indah',
+            'addressLocality' => 'Bengkulu',
+            'addressRegion' => 'Bengkulu',
+            'postalCode' => '38223',
+            'addressCountry' => 'ID'
+        ],
+        'geo' => [
+            '@type' => 'GeoCoordinates',
+            'latitude' => '-3.8123',
+            'longitude' => '102.2995'
+        ],
+        'openingHoursSpecification' => [
+            '@type' => 'OpeningHoursSpecification',
+            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            'opens' => '08:00',
+            'closes' => '17:00'
+        ],
+        'priceRange' => '$$',
+        'paymentAccepted' => 'Cash, Bank Transfer, Credit Card',
+        'currenciesAccepted' => 'IDR',
+        'areaServed' => [
+            '@type' => 'Country',
+            'name' => 'Indonesia'
+        ],
+        'hasOfferCatalog' => [
+            '@type' => 'OfferCatalog',
+            'name' => 'IT Services',
+            'itemListElement' => [
+                '@type' => 'OfferCatalog',
+                'name' => 'Our Services',
+                'itemListElement' => [
+                    'Zimbra Mail Server',
+                    'Web Development', 
+                    'Web Application',
+                    'CCTV Installation',
+                    'Motorola Radio',
+                    'Nextcloud',
+                    'HCM & HRIS'
+                    ]
+                ]
+            ]
+        ]
+    ]   
 ];

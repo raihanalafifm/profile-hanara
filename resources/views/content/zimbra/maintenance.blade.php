@@ -7,7 +7,7 @@
       <!-- Logo/Image Section -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="hnr-maint-logo-container">
-          <img src="{{ asset('assets/images/icon/maintenance-zimbra.png') }}" alt="Maintenance Zimbra" class="hnr-maint-logo">
+          <img src="{{ asset('assets/images/icon/maintenance-zimbra.png') }}" alt="Maintenance Zimbra" class="hnr-maint-logo" loading="lazy">
         </div>
       </div>
       
@@ -44,7 +44,7 @@
               <div class="hnr-manfaat-item">
                 <div class="hnr-manfaat-icon-container">
                   <div class="hnr-manfaat-icon">
-                    <img src="{{ asset('assets/images/icon/icon-card-maintenance1.png') }}" alt="Sistem Operasi">
+                    <img src="{{ asset('assets/images/icon/icon-card-maintenance1.png') }}" alt="Sistem Operasi" loading="lazy">
                   </div>
                 </div>
                 <h3 class="hnr-manfaat-item-title">Pemeliharaan Sistem Operasi</h3>

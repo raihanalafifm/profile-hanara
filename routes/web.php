@@ -6,6 +6,10 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ZimbraController;
+use App\Http\Controllers\SoftwareHouseController;
+use App\Http\Controllers\BusinessSolutionController;
+use App\Http\Controllers\ServiceController;
 
 // Homepage
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -48,53 +52,33 @@ Route::redirect('/about-us', '/tentang-kami', 301);
 Route::redirect('/contact-us', '/hubungi-kami', 301);
 Route::redirect('/career', '/karir', 301);
 
+// Zimbra Routes dengan Controller
+Route::prefix('zimbra')->group(function () {
+    Route::get('/instalasi', [ZimbraController::class, 'instalasi'])->name('instalasi-zimbra');
+    Route::get('/maintenance', [ZimbraController::class, 'maintenance'])->name('maintenance-zimbra');
+    Route::get('/troubleshooting', [ZimbraController::class, 'troubleshooting'])->name('troubleshooting-zimbra');
+    Route::get('/cloud', [ZimbraController::class, 'cloud'])->name('cloud-zimbra');
+    Route::get('/server', [ZimbraController::class, 'server'])->name('server-zimbra');
+});
 
-Route::get('/instalasi-zimbra', function(){
-    return view('content.zimbra.instalasi');
-})->name('instalasi-zimbra');
+// Software House Routes
+Route::prefix('software-house')->group(function () {
+    Route::get('/web-development', [SoftwareHouseController::class, 'webDevelopment'])->name('develop-web');
+    Route::get('/web-application', [SoftwareHouseController::class, 'webApplication'])->name('web-application');
+    Route::get('/maintenance', [SoftwareHouseController::class, 'maintenance'])->name('maintenance-web');
+});
 
-Route::get('/maintenance-zimbra', function(){
-    return view('content.zimbra.maintenance');
-})->name('maintenance-zimbra');
+// Other Services
+Route::get('/cctv', [ServiceController::class, 'cctv'])->name('cctv');
+Route::get('/motorola', [ServiceController::class, 'motorola'])->name('motorola');
 
-Route::get('/troubleshooting-zimbra', function(){
-    return view('content.zimbra.troubleshooting');
-})->name('troubleshooting-zimbra');
+// Business Solution Routes
+Route::prefix('business-solution')->group(function () {
+    Route::get('/nextcloud', [BusinessSolutionController::class, 'nextcloud'])->name('nextcloud');
+    Route::get('/hcm-hcis', [BusinessSolutionController::class, 'hcmHcis'])->name('hcis');
+});
 
-Route::get('/cloud-zimbra', function(){
-    return view('content.zimbra.cloud');
-})->name('cloud-zimbra');
-
-Route::get('/server-zimbra', function(){
-    return view('content.zimbra.server');
-})->name('server-zimbra');
-
-Route::get('/maintenance-web', function(){
-    return view('content.house.maintenance');
-})->name('maintenance-web');
-
-Route::get('/develop-web', function(){
-    return view('content.house.web');
-})->name('develop-web');
-
-Route::get('/web-application', function(){
-    return view('content.house.webapp');
-})->name('web-application');
-
-Route::get('/cctv', function(){
-    return view('content.cctv.cctv');
-})->name('cctv');
-
-Route::get('/motorola', function(){
-    return view('content.motorola.motorola');
-})->name('motorola');
-
-Route::get('/nextcloud', function(){
-    return view('content.bisnis.nextcloud');
-})->name('nextcloud');
-
-Route::get('/hcis', function(){
-    return view('content.bisnis.hcm');
-})->name('hcis');
+// Sitemap Route (untuk SEO)
+Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 
 require __DIR__.'/auth.php';
