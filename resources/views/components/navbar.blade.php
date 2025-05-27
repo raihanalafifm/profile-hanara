@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-default">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
         <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara" class="logo">
@@ -63,29 +63,183 @@
     </div>
   </nav>
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.innerWidth >= 992) {
+    document.addEventListener('DOMContentLoaded', function() {
+  // Create span element for hamburger menu animation
+  const togglerIcon = document.querySelector('.navbar-toggler-icon');
+  if (togglerIcon && !togglerIcon.querySelector('span')) {
+    const span = document.createElement('span');
+    togglerIcon.appendChild(span);
+  }
+  
+  // Navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  let lastScroll = 0;
+  
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+      navbar.classList.remove('navbar-default');
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+      navbar.classList.add('navbar-default');
+    }
+    
+    lastScroll = currentScroll;
+  });
+  
+  // Check if mobile or desktop
+  function isMobile() {
+    return window.innerWidth < 992;
+  }
+  
+  // Mobile dropdown handling
+  if (isMobile()) {
+    setupMobileNav();
+  } else {
+    setupDesktopNav();
+  }
+  
+  // Setup mobile navigation
+  function setupMobileNav() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+      // Remove any existing event listeners
+      const newToggle = toggle.cloneNode(true);
+      toggle.parentNode.replaceChild(newToggle, toggle);
+      
+      newToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const dropdownMenu = this.nextElementSibling;
+        const isOpen = dropdownMenu.classList.contains('show');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.remove('show');
+        });
+        
+        document.querySelectorAll('.dropdown-toggle').forEach(t => {
+          t.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Toggle current dropdown
+        if (!isOpen) {
+          dropdownMenu.classList.add('show');
+          this.setAttribute('aria-expanded', 'true');
+        } else {
+          dropdownMenu.classList.remove('show');
+          this.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.remove('show');
+        });
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+    
+    // Handle navbar collapse on link click
+    const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+          // Use Bootstrap's collapse method if available
+          if (window.bootstrap && window.bootstrap.Collapse) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          } else {
+            // Fallback method
+            navbarToggler.click();
+          }
+        }
+      });
+    });
+  }
+  
+  // Setup desktop navigation
+  function setupDesktopNav() {
     document.querySelectorAll('.navbar .dropdown').forEach(function(dropdown) {
       dropdown.addEventListener('mouseenter', function() {
-        // Tambahkan preventDefault() untuk mencegah fokus default
         const dropdownToggle = this.querySelector('.dropdown-toggle');
+        
+        // Prevent default click behavior on desktop
         dropdownToggle.addEventListener('click', function(e) {
           e.preventDefault();
         });
         
-        dropdownToggle.click();
+        // Show dropdown
+        const dropdownMenu = this.querySelector('.dropdown-menu');
         dropdownToggle.classList.add('show');
-        this.querySelector('.dropdown-menu').classList.add('show');
+        dropdownMenu.classList.add('show');
+        dropdownToggle.setAttribute('aria-expanded', 'true');
         
-        // Hapus fokus setelah klik
+        // Remove focus
         dropdownToggle.blur();
       });
       
       dropdown.addEventListener('mouseleave', function() {
-        this.querySelector('.dropdown-toggle').classList.remove('show');
-        this.querySelector('.dropdown-menu').classList.remove('show');
+        const dropdownToggle = this.querySelector('.dropdown-toggle');
+        const dropdownMenu = this.querySelector('.dropdown-menu');
+        
+        dropdownToggle.classList.remove('show');
+        dropdownMenu.classList.remove('show');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
+  
+  // Handle window resize
+  let resizeTimer;
+  let wasMobile = isMobile();
+  
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      const isNowMobile = isMobile();
+      
+      // Only re-setup if we've crossed the mobile/desktop boundary
+      if (wasMobile !== isNowMobile) {
+        // Reset all dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.remove('show');
+        });
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Setup appropriate navigation
+        if (isNowMobile) {
+          setupMobileNav();
+        } else {
+          setupDesktopNav();
+        }
+        
+        wasMobile = isNowMobile;
+      }
+    }, 250);
+  });
+  
+  // Prevent navbar from closing when clicking inside dropdown
+  document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
+    dropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
 });
-    </script>
+  </script>
