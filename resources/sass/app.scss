@@ -80,10 +80,7 @@
 .navbar {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   padding: 10px 0;
-  transition: all 0.3s ease;
-  z-index: 1030;
 }
-
 /* Navbar sebelum scroll */
 .navbar.navbar-default {
   background-color: transparent !important;
@@ -105,7 +102,6 @@
 .navbar-scrolled .navbar-brand img {
   height: 35px; /* Logo mengecil saat scroll */
 }
-
 .logo {
   height: 35px;
   width: auto;
@@ -120,23 +116,20 @@
   font-weight: 500;
   font-size: 15px;
   padding: 8px 12px !important;
-  transition: all 0.2s ease-in-out;
-  position: relative;
 }
+
 
 /* Navbar Active Link Styles */
 .navbar-nav .nav-link.active {
-  color: #ff6700 !important;
-  font-weight: 600;
+  color: #ff6700 !important; /* Warna orange sesuai desain Anda */
 }
 
 .navbar-nav .dropdown-item.active {
-  background-color: rgba(255, 103, 0, 0.1);
+  background-color: rgba(255, 103, 0, 0.1); /* Background ringan saat aktif */
   color: #ff6700 !important;
-  font-weight: 600;
 }
 
-/* Hover effects untuk desktop */
+/* Tambahan hover effect untuk konsistensi */
 .navbar-nav .nav-link:hover {
   color: #ff6700 !important;
 }
@@ -146,11 +139,9 @@
   color: #ff6700 !important;
 }
 
-/* Dropdown styling */
 .dropdown-toggle::after {
   vertical-align: middle;
   margin-left: 5px;
-  transition: transform 0.3s ease;
 }
 
 .dropdown-menu {
@@ -158,267 +149,43 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border: none;
   padding: 8px 0;
-  z-index: 1031;
 }
 
 .dropdown-item {
   padding: 8px 16px;
   font-size: 14px;
-  transition: all 0.2s ease-in-out;
 }
 
-.dropdown-item:hover, 
-.dropdown-item:focus {
-  background-color: rgba(255, 103, 0, 0.1);
-  color: #ff6700 !important;
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: rgba(243, 156, 18, 0.1);
+  color: #f39c12;
 }
 
-/* Navbar Toggler Improvements */
-.navbar-toggler {
-  border: 1px solid rgba(0,0,0,.1);
-  padding: 6px 10px;
-  background-color: transparent;
-  cursor: pointer;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-  z-index: 1051;
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(255, 103, 0, 0.25);
-  outline: none;
-}
-
-.navbar-toggler:hover {
-  background-color: rgba(255, 103, 0, 0.05);
-}
-
-/* Desktop hover dropdown functionality */
-@media (min-width: 992px) {
-  /* Remove the CSS-only hover since we're using JavaScript */
-  .navbar .dropdown:hover > .dropdown-menu {
-    display: none; /* Disable CSS hover, use JS instead */
-  }
-  
-  /* Style for JavaScript-controlled dropdowns */
-  .dropdown-menu.show {
-    display: block;
-    animation: fadeInDropdown 0.3s ease;
-    margin-top: 0;
-  }
-  
-  @keyframes fadeInDropdown {
-    from { 
-      opacity: 0; 
-      transform: translateY(-10px); 
-    }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
-    }
-  }
-  
-  /* Prevent dropdown toggle click on desktop */
-  .dropdown-toggle {
-    cursor: pointer;
-  }
-}
-
-/* Mobile navbar styles */
 @media (max-width: 991px) {
   .navbar-collapse {
     padding: 15px 0;
-    background-color: #fff;
-    border-top: 1px solid rgba(0,0,0,.05);
-    margin-top: 10px;
-    position: relative;
-    z-index: 1050;
-    transition: height 0.35s ease;
   }
   
   .navbar-nav {
     gap: 0;
   }
-  
-  /* Mobile nav items */
-  .navbar-nav .nav-item {
-    width: 100%;
-  }
-  
-  .navbar-nav .nav-link {
-    padding: 12px 0 !important;
-    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+/* CSS untuk dropdown muncul saat hover */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
     display: block;
-    width: 100%;
-    color: #333 !important;
-    font-weight: 500;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link:focus {
-    color: #ff6700 !important;
-    background-color: rgba(255, 103, 0, 0.05);
-  }
-  
-  .navbar-nav .nav-link.active {
-    color: #ff6700 !important;
-    background-color: rgba(255, 103, 0, 0.1);
-    font-weight: 600;
-  }
-  
-  /* Mobile dropdown styles */
-  .navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
-    width: 100%;
     margin-top: 0;
-    background-color: #f8f9fa;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
   }
   
-  .navbar-nav .dropdown-item {
-    padding: 10px 20px;
-    color: #555;
-    border-bottom: 1px solid rgba(0,0,0,.05);
-    white-space: normal;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+  .dropdown-menu {
+    animation: fadeIn 0.3s;
+    margin-top: 0;
   }
   
-  .navbar-nav .dropdown-item:hover,
-  .navbar-nav .dropdown-item:focus {
-    color: #ff6700;
-    background-color: rgba(255, 103, 0, 0.05);
-  }
-  
-  .navbar-nav .dropdown-item.active {
-    color: #ff6700;
-    background-color: rgba(255, 103, 0, 0.1);
-    font-weight: 600;
-  }
-  
-  /* Remove last border */
-  .navbar-nav .nav-link:last-child,
-  .navbar-nav .dropdown-item:last-child {
-    border-bottom: none;
-  }
-  
-  /* Mobile dropdown toggle arrow */
-  .navbar-nav .dropdown-toggle::after {
-    transition: transform 0.3s ease;
-    margin-left: 10px;
-  }
-  
-  .navbar-nav .dropdown-toggle[aria-expanded="true"]::after {
-    transform: rotate(180deg);
-  }
-  
-  /* Touch improvements */
-  .navbar-toggler,
-  .navbar-nav .nav-link,
-  .navbar-nav .dropdown-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-  }
-}
-
-/* Better focus styles for accessibility */
-.navbar-nav .nav-link:focus,
-.navbar-nav .dropdown-item:focus {
-  outline: 2px solid #ff6700;
-  outline-offset: 2px;
-}
-
-/* Fix for sticky navbar on mobile */
-@media (max-width: 991px) {
-  .navbar.sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-  }
-}
-
-/* Smooth collapse animation */
-.navbar-collapse.collapsing {
-  height: auto;
-  transition: height 0.35s ease;
-}
-
-/* Loading state for navbar toggler */
-.navbar-toggler.loading {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* Enhanced active state indicator */
-.navbar-nav .nav-link.active::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
-  background-color: #ff6700;
-  border-radius: 1px;
-}
-
-@media (max-width: 991px) {
-  .navbar-nav .nav-link.active::before {
-    display: none;
-  }
-  
-  .navbar-nav .nav-link.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 20px;
-    background-color: #ff6700;
-    border-radius: 0 2px 2px 0;
-  }
-}
-
-/* Fix for iOS safari */
-@supports (-webkit-overflow-scrolling: touch) {
-  .navbar-collapse {
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-/* Dark mode considerations */
-@media (prefers-color-scheme: dark) {
-  .navbar-collapse {
-    background-color: #1a1a1a;
-    border-color: rgba(255,255,255,.1);
-  }
-  
-  .navbar-nav .dropdown-menu {
-    background-color: #2a2a2a;
-  }
-  
-  .navbar-nav .nav-link {
-    color: #e0e0e0 !important;
-  }
-  
-  .navbar-nav .dropdown-item {
-    color: #ccc;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
 

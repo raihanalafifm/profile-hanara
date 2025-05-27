@@ -62,99 +62,30 @@
       </div>
     </div>
   </nav>
-
-<script>
+  <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Fungsi untuk mendeteksi device
-  function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  }
-
-  // Hanya jalankan hover script untuk desktop yang bukan touch device
-  if (window.innerWidth >= 992 && !isTouchDevice()) {
+  if (window.innerWidth >= 992) {
     document.querySelectorAll('.navbar .dropdown').forEach(function(dropdown) {
-      let isHovered = false;
-      
       dropdown.addEventListener('mouseenter', function() {
-        isHovered = true;
+        // Tambahkan preventDefault() untuk mencegah fokus default
         const dropdownToggle = this.querySelector('.dropdown-toggle');
-        const dropdownMenu = this.querySelector('.dropdown-menu');
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+        });
         
-        // Tampilkan dropdown
+        dropdownToggle.click();
         dropdownToggle.classList.add('show');
-        dropdownMenu.classList.add('show');
-        dropdownToggle.setAttribute('aria-expanded', 'true');
+        this.querySelector('.dropdown-menu').classList.add('show');
+        
+        // Hapus fokus setelah klik
+        dropdownToggle.blur();
       });
       
       dropdown.addEventListener('mouseleave', function() {
-        isHovered = false;
-        const dropdownToggle = this.querySelector('.dropdown-toggle');
-        const dropdownMenu = this.querySelector('.dropdown-menu');
-        
-        // Sembunyikan dropdown
-        setTimeout(() => {
-          if (!isHovered) {
-            dropdownToggle.classList.remove('show');
-            dropdownMenu.classList.remove('show');
-            dropdownToggle.setAttribute('aria-expanded', 'false');
-          }
-        }, 100);
-      });
-      
-      // Prevent default click pada desktop hover
-      dropdown.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
-        if (!isTouchDevice()) {
-          e.preventDefault();
-        }
+        this.querySelector('.dropdown-toggle').classList.remove('show');
+        this.querySelector('.dropdown-menu').classList.remove('show');
       });
     });
   }
-
-  // Auto-close navbar setelah klik menu item pada mobile
-  const navbarCollapse = document.getElementById('navbarNav');
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  
-  if (navbarCollapse && navbarToggler) {
-    // Close navbar ketika klik di luar navbar pada mobile
-    document.addEventListener('click', function(e) {
-      if (window.innerWidth < 992) {
-        const isClickInsideNav = navbarCollapse.contains(e.target) || navbarToggler.contains(e.target);
-        
-        if (!isClickInsideNav && navbarCollapse.classList.contains('show')) {
-          navbarToggler.click();
-        }
-      }
-    });
-    
-    // Close navbar ketika klik menu item (bukan dropdown toggle) pada mobile
-    navbarCollapse.addEventListener('click', function(e) {
-      if (window.innerWidth < 992) {
-        const target = e.target;
-        
-        // Jika yang diklik adalah dropdown item atau nav-link (bukan dropdown-toggle)
-        if (target.classList.contains('dropdown-item') || 
-           (target.classList.contains('nav-link') && !target.classList.contains('dropdown-toggle'))) {
-          setTimeout(() => {
-            if (navbarCollapse.classList.contains('show')) {
-              navbarToggler.click();
-            }
-          }, 150);
-        }
-      }
-    });
-  }
-
-  // Handle window resize
-  window.addEventListener('resize', function() {
-    // Reset semua dropdown state saat resize
-    document.querySelectorAll('.navbar .dropdown-toggle').forEach(function(toggle) {
-      toggle.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-    
-    document.querySelectorAll('.navbar .dropdown-menu').forEach(function(menu) {
-      menu.classList.remove('show');
-    });
-  });
 });
-</script>
+    </script>

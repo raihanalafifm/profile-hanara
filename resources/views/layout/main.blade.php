@@ -158,633 +158,562 @@
     </div>
     @include('components.footer')
 
-    <!-- Bootstrap JS - PINDAHKAN KE ATAS SEBELUM SCRIPT LAIN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core JavaScript Functions -->
-    <script>
-        // Namespace untuk menghindari konflik
-        window.HanaraApp = window.HanaraApp || {};
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Tambahkan JS untuk Scroll Down Button -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollButton = document.querySelector('.scroll-down-button');
+        const scrollContainer = document.querySelector('.scroll-down-container');
         
-        // Utility Functions
-        HanaraApp.utils = {
-            // Debounce function
-            debounce: function(func, wait) {
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                };
-            },
+        // Fungsi untuk cek posisi scroll
+        function checkScroll() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
             
-            // Check if touch device
-            isTouchDevice: function() {
-                return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-            },
-            
-            // Safe querySelector
-            $: function(selector) {
-                return document.querySelector(selector);
-            },
-            
-            // Safe querySelectorAll
-            $$: function(selector) {
-                return document.querySelectorAll(selector);
+            // Tampilkan button jika sudah scroll ke bawah sedikit
+            if (scrollPosition > 300) {
+                scrollContainer.classList.add('visible');
+            } else {
+                scrollContainer.classList.remove('visible');
             }
-        };
-
-        // Navbar functionality
-        HanaraApp.navbar = {
-            init: function() {
-                const navbarCollapse = HanaraApp.utils.$('#navbarNav');
-                const navbarToggler = HanaraApp.utils.$('.navbar-toggler');
-                
-                if (!navbarCollapse || !navbarToggler) return;
-                
-                this.setupDesktopHover();
-                this.setupMobileHandlers(navbarCollapse, navbarToggler);
-                this.setupResizeHandler();
-            },
             
-            setupDesktopHover: function() {
-                // Hanya setup hover untuk desktop non-touch
-                if (window.innerWidth >= 992 && !HanaraApp.utils.isTouchDevice()) {
-                    const dropdowns = HanaraApp.utils.$$('.navbar .dropdown');
-                    
-                    dropdowns.forEach(dropdown => {
-                        let isHovered = false;
-                        
-                        dropdown.addEventListener('mouseenter', () => {
-                            isHovered = true;
-                            const toggle = dropdown.querySelector('.dropdown-toggle');
-                            const menu = dropdown.querySelector('.dropdown-menu');
-                            
-                            if (toggle && menu) {
-                                toggle.classList.add('show');
-                                menu.classList.add('show');
-                                toggle.setAttribute('aria-expanded', 'true');
-                            }
-                        });
-                        
-                        dropdown.addEventListener('mouseleave', () => {
-                            isHovered = false;
-                            const toggle = dropdown.querySelector('.dropdown-toggle');
-                            const menu = dropdown.querySelector('.dropdown-menu');
-                            
-                            setTimeout(() => {
-                                if (!isHovered && toggle && menu) {
-                                    toggle.classList.remove('show');
-                                    menu.classList.remove('show');
-                                    toggle.setAttribute('aria-expanded', 'false');
-                                }
-                            }, 100);
-                        });
-                        
-                        // Prevent default click pada desktop hover
-                        const toggle = dropdown.querySelector('.dropdown-toggle');
-                        if (toggle) {
-                            toggle.addEventListener('click', (e) => {
-                                if (!HanaraApp.utils.isTouchDevice()) {
-                                    e.preventDefault();
-                                }
-                            });
-                        }
-                    });
-                }
-            },
-            
-            setupMobileHandlers: function(navbarCollapse, navbarToggler) {
-                // Auto-close navbar ketika klik di luar
-                document.addEventListener('click', (e) => {
-                    if (window.innerWidth < 992) {
-                        const isClickInsideNav = navbarCollapse.contains(e.target) || navbarToggler.contains(e.target);
-                        
-                        if (!isClickInsideNav && navbarCollapse.classList.contains('show')) {
-                            navbarToggler.click();
-                        }
-                    }
-                });
-                
-                // Auto-close setelah klik menu item
-                navbarCollapse.addEventListener('click', (e) => {
-                    if (window.innerWidth < 992) {
-                        const target = e.target;
-                        
-                        if (target.classList.contains('dropdown-item') || 
-                           (target.classList.contains('nav-link') && !target.classList.contains('dropdown-toggle'))) {
-                            setTimeout(() => {
-                                if (navbarCollapse.classList.contains('show')) {
-                                    navbarToggler.click();
-                                }
-                            }, 150);
-                        }
-                    }
-                });
-            },
-            
-            setupResizeHandler: function() {
-                window.addEventListener('resize', HanaraApp.utils.debounce(() => {
-                    // Reset dropdown states
-                    const toggles = HanaraApp.utils.$$('.navbar .dropdown-toggle');
-                    const menus = HanaraApp.utils.$$('.navbar .dropdown-menu');
-                    
-                    toggles.forEach(toggle => {
-                        toggle.classList.remove('show');
-                        toggle.setAttribute('aria-expanded', 'false');
-                    });
-                    
-                    menus.forEach(menu => {
-                        menu.classList.remove('show');
-                    });
-                    
-                    // Re-init untuk setup ulang berdasarkan ukuran layar baru
-                    this.setupDesktopHover();
-                }, 250));
+            // Ganti arah arrow berdasarkan posisi scroll
+            if (scrollPosition + windowHeight >= documentHeight - 100) {
+                scrollButton.classList.remove('down');
+                scrollButton.classList.add('up');
+            } else {
+                scrollButton.classList.remove('up');
+                scrollButton.classList.add('down');
             }
-        };
-
-        // Scroll Down Button
-        HanaraApp.scrollButton = {
-            init: function() {
-                const scrollButton = HanaraApp.utils.$('.scroll-down-button');
-                const scrollContainer = HanaraApp.utils.$('.scroll-down-container');
-                
-                if (!scrollButton || !scrollContainer) return;
-                
-                this.setupScrollHandler(scrollButton, scrollContainer);
-                this.setupClickHandler(scrollButton);
-            },
+        }
+        
+        // Fungsi untuk handle click button
+        scrollButton.addEventListener('click', function() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
             
-            setupScrollHandler: function(scrollButton, scrollContainer) {
-                const checkScroll = () => {
-                    const scrollPosition = window.scrollY;
-                    const windowHeight = window.innerHeight;
-                    const documentHeight = document.documentElement.scrollHeight;
-                    
-                    // Show/hide button
-                    if (scrollPosition > 300) {
-                        scrollContainer.classList.add('visible');
-                    } else {
-                        scrollContainer.classList.remove('visible');
-                    }
-                    
-                    // Change direction
-                    if (scrollPosition + windowHeight >= documentHeight - 100) {
-                        scrollButton.classList.remove('down');
-                        scrollButton.classList.add('up');
-                    } else {
-                        scrollButton.classList.remove('up');
-                        scrollButton.classList.add('down');
-                    }
-                };
-                
-                window.addEventListener('scroll', HanaraApp.utils.debounce(checkScroll, 10));
-                checkScroll(); // Initial check
-            },
-            
-            setupClickHandler: function(scrollButton) {
-                scrollButton.addEventListener('click', () => {
-                    const scrollPosition = window.scrollY;
-                    const windowHeight = window.innerHeight;
-                    const documentHeight = document.documentElement.scrollHeight;
-                    
-                    if (scrollPosition + windowHeight >= documentHeight - 100) {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                        window.scrollTo({ top: scrollPosition + 500, behavior: 'smooth' });
-                    }
+            if (scrollPosition + windowHeight >= documentHeight - 100) {
+                // Scroll ke atas jika di bawah halaman
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
-            }
-        };
-
-        // Testimonial Slider
-        HanaraApp.testimonialSlider = {
-            init: function() {
-                const items = HanaraApp.utils.$$('.testimonial-clean-item');
-                const dots = HanaraApp.utils.$$('.clean-dot');
-                
-                if (items.length === 0) return;
-                
-                this.currentIndex = 0;
-                this.items = items;
-                this.dots = dots;
-                this.interval = null;
-                
-                this.setupDotHandlers();
-                this.startAutoplay();
-            },
-            
-            showTestimonial: function(index) {
-                this.items.forEach(item => item.classList.remove('active'));
-                this.dots.forEach(dot => dot.classList.remove('active'));
-                
-                if (this.items[index]) this.items[index].classList.add('active');
-                if (this.dots[index]) this.dots[index].classList.add('active');
-                
-                this.currentIndex = index;
-            },
-            
-            setupDotHandlers: function() {
-                this.dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        this.showTestimonial(index);
-                        this.resetInterval();
-                    });
+            } else {
+                // Scroll ke bawah jika tidak di bawah halaman
+                window.scrollTo({
+                    top: scrollPosition + 500,
+                    behavior: 'smooth'
                 });
-            },
-            
-            startAutoplay: function() {
-                this.interval = setInterval(() => {
-                    this.currentIndex = (this.currentIndex + 1) % this.items.length;
-                    this.showTestimonial(this.currentIndex);
-                }, 5000);
-            },
-            
-            resetInterval: function() {
-                clearInterval(this.interval);
-                this.startAutoplay();
-            }
-        };
-
-        // Blog Slider
-        HanaraApp.blogSlider = {
-            init: function() {
-                const container = HanaraApp.utils.$('.blog-slider-container');
-                const slides = HanaraApp.utils.$$('.blog-card');
-                const dots = HanaraApp.utils.$$('.blog-slider-dot');
-                
-                if (!container || slides.length === 0) return;
-                
-                this.container = container;
-                this.slides = slides;
-                this.dots = dots;
-                this.currentIndex = 0;
-                this.slideWidth = 0;
-                this.totalSlides = slides.length;
-                this.slidesPerView = 3;
-                this.autoplayInterval = null;
-                this.isTransitioning = false;
-                
-                // Touch/drag properties
-                this.isDragging = false;
-                this.startPos = 0;
-                this.currentTranslate = 0;
-                this.prevTranslate = 0;
-                
-                this.calculateSlidesPerView();
-                this.setupEventListeners();
-                this.startAutoplay();
-            },
-            
-            calculateSlidesPerView: function() {
-                if (window.innerWidth < 768) {
-                    this.slidesPerView = 1;
-                } else if (window.innerWidth < 992) {
-                    this.slidesPerView = 2;
-                } else {
-                    this.slidesPerView = 3;
-                }
-                this.updateSlideWidth();
-            },
-            
-            updateSlideWidth: function() {
-                const containerWidth = this.container.parentElement.clientWidth;
-                const gap = 20;
-                this.slideWidth = (containerWidth - (gap * (this.slidesPerView - 1))) / this.slidesPerView;
-                
-                this.slides.forEach(slide => {
-                    slide.style.flex = `0 0 ${this.slideWidth}px`;
-                    slide.style.minWidth = `${this.slideWidth}px`;
-                    slide.style.maxWidth = `${this.slideWidth}px`;
-                });
-                
-                this.setSliderPosition(false);
-            },
-            
-            setSliderPosition: function(animate = true) {
-                if (this.isTransitioning && animate) return;
-                
-                const gap = 20;
-                const offset = -this.currentIndex * (this.slideWidth + gap);
-                
-                if (animate) {
-                    this.isTransitioning = true;
-                    this.container.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                } else {
-                    this.container.style.transition = 'none';
-                }
-                
-                this.container.style.transform = `translateX(${offset}px)`;
-                this.prevTranslate = offset;
-                this.currentTranslate = offset;
-                
-                if (animate) {
-                    setTimeout(() => {
-                        this.isTransitioning = false;
-                        this.container.style.transition = '';
-                    }, 600);
-                }
-                
-                this.updateActiveDot();
-            },
-            
-            goToSlide: function(index, animate = true) {
-                if (this.isTransitioning) return;
-                
-                const maxIndex = Math.max(0, this.totalSlides - this.slidesPerView);
-                this.currentIndex = Math.min(Math.max(0, index), maxIndex);
-                this.setSliderPosition(animate);
-            },
-            
-            updateActiveDot: function() {
-                this.dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === this.currentIndex);
-                });
-            },
-            
-            nextSlide: function() {
-                if (this.currentIndex >= this.totalSlides - this.slidesPerView) {
-                    this.goToSlide(0);
-                } else {
-                    this.goToSlide(this.currentIndex + 1);
-                }
-            },
-            
-            setupEventListeners: function() {
-                // Dot navigation
-                this.dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        this.goToSlide(index);
-                        this.resetAutoplay();
-                    });
-                });
-                
-                // Touch/Mouse events
-                this.container.addEventListener('mousedown', this.touchStart.bind(this));
-                window.addEventListener('mousemove', this.touchMove.bind(this));
-                window.addEventListener('mouseup', this.touchEnd.bind(this));
-                
-                this.container.addEventListener('touchstart', this.touchStart.bind(this), { passive: true });
-                this.container.addEventListener('touchmove', this.touchMove.bind(this), { passive: true });
-                this.container.addEventListener('touchend', this.touchEnd.bind(this));
-                
-                // Prevent drag
-                this.container.addEventListener('dragstart', e => e.preventDefault());
-                
-                // Hover pause
-                this.container.addEventListener('mouseenter', () => {
-                    clearInterval(this.autoplayInterval);
-                });
-                
-                this.container.addEventListener('mouseleave', () => {
-                    if (!this.isDragging) this.startAutoplay();
-                });
-                
-                // Resize handler
-                window.addEventListener('resize', HanaraApp.utils.debounce(() => {
-                    this.calculateSlidesPerView();
-                    this.goToSlide(this.currentIndex, false);
-                }, 250));
-            },
-            
-            getPositionX: function(event) {
-                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-            },
-            
-            touchStart: function(e) {
-                if (this.isTransitioning) return;
-                if (e.type === 'mousedown' && e.button !== 0) return;
-                
-                this.isDragging = true;
-                this.startPos = this.getPositionX(e);
-                this.container.style.cursor = 'grabbing';
-                this.container.style.transition = 'none';
-                clearInterval(this.autoplayInterval);
-            },
-            
-            touchMove: function(e) {
-                if (!this.isDragging) return;
-                
-                const currentPosition = this.getPositionX(e);
-                this.currentTranslate = this.prevTranslate + currentPosition - this.startPos;
-                
-                // Add resistance at edges
-                const maxTranslate = 0;
-                const minTranslate = -(this.totalSlides - this.slidesPerView) * (this.slideWidth + 20);
-                
-                if (this.currentTranslate > maxTranslate) {
-                    this.currentTranslate = maxTranslate + (this.currentTranslate - maxTranslate) * 0.3;
-                } else if (this.currentTranslate < minTranslate) {
-                    this.currentTranslate = minTranslate + (this.currentTranslate - minTranslate) * 0.3;
-                }
-                
-                this.container.style.transform = `translateX(${this.currentTranslate}px)`;
-            },
-            
-            touchEnd: function(e) {
-                if (!this.isDragging) return;
-                
-                this.isDragging = false;
-                const movedBy = this.currentTranslate - this.prevTranslate;
-                
-                if (Math.abs(movedBy) > this.slideWidth / 3) {
-                    if (movedBy < 0 && this.currentIndex < this.totalSlides - this.slidesPerView) {
-                        this.goToSlide(this.currentIndex + 1);
-                    } else if (movedBy > 0 && this.currentIndex > 0) {
-                        this.goToSlide(this.currentIndex - 1);
-                    } else {
-                        this.goToSlide(this.currentIndex);
-                    }
-                } else {
-                    this.goToSlide(this.currentIndex);
-                }
-                
-                this.container.style.cursor = '';
-                this.startAutoplay();
-            },
-            
-            startAutoplay: function() {
-                clearInterval(this.autoplayInterval);
-                this.autoplayInterval = setInterval(() => {
-                    this.nextSlide();
-                }, 4000);
-            },
-            
-            resetAutoplay: function() {
-                clearInterval(this.autoplayInterval);
-                this.startAutoplay();
-            }
-        };
-
-        // FAQ functionality
-        HanaraApp.faq = {
-            init: function() {
-                const faqHeaders = HanaraApp.utils.$$('.hnr-faq-header, .hnr-nextcloud-faq-header');
-                
-                faqHeaders.forEach(header => {
-                    header.addEventListener('click', () => {
-                        const faqItem = header.parentElement;
-                        const isActive = faqItem.classList.contains('active');
-                        
-                        // Optional: Close all other FAQs
-                        // document.querySelectorAll('.hnr-faq-item, .hnr-nextcloud-faq-item').forEach(item => {
-                        //     if (item !== faqItem) item.classList.remove('active');
-                        // });
-                        
-                        faqItem.classList.toggle('active', !isActive);
-                    });
-                });
-            }
-        };
-
-        // Cloud package toggle
-        HanaraApp.cloudPackage = {
-            init: function() {
-                const toggleButtons = HanaraApp.utils.$$('.hnr-cloud-toggle-btn');
-                
-                toggleButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const packageCard = button.closest('.hnr-cloud-package-card');
-                        const isExpanded = packageCard.classList.toggle('expanded');
-                        
-                        button.innerHTML = isExpanded 
-                            ? 'Tutup fitur <i class="bi bi-chevron-up"></i>'
-                            : 'Lihat semua fitur <i class="bi bi-chevron-down"></i>';
-                    });
-                });
-            }
-        };
-
-        // Career functionality
-        HanaraApp.career = {
-            init: function() {
-                // Job toggle
-                const jobToggles = HanaraApp.utils.$$('.hnr-job-toggle');
-                jobToggles.forEach(toggle => {
-                    toggle.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetId = toggle.getAttribute('data-target');
-                        const targetDetails = document.getElementById(targetId);
-                        
-                        if (targetDetails) {
-                            toggle.classList.toggle('collapsed');
-                            targetDetails.classList.toggle('collapsed');
-                        }
-                    });
-                });
-                
-                // File input handling
-                const fileInputs = HanaraApp.utils.$$('.hnr-file-input');
-                fileInputs.forEach(input => {
-                    input.addEventListener('change', function() {
-                        const textElement = this.nextElementSibling?.querySelector('.hnr-file-input-text');
-                        if (textElement) {
-                            textElement.textContent = this.files.length > 0 
-                                ? this.files[0].name 
-                                : 'No file chosen';
-                        }
-                    });
-                });
-                
-                // Form submission
-                const form = HanaraApp.utils.$('#jobApplicationForm');
-                if (form) {
-                    form.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                        alert('Your application has been submitted successfully!');
-                        // Add your AJAX form submission code here
-                    });
-                }
-            }
-        };
-
-        // Initialize all components when DOM is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                // Initialize core components
-                HanaraApp.navbar.init();
-                HanaraApp.scrollButton.init();
-                HanaraApp.testimonialSlider.init();
-                HanaraApp.blogSlider.init();
-                HanaraApp.faq.init();
-                HanaraApp.cloudPackage.init();
-                HanaraApp.career.init();
-                
-                console.log('Hanara App initialized successfully');
-            } catch (error) {
-                console.error('Error initializing Hanara App:', error);
             }
         });
+        
+        // Jalankan checkScroll saat scroll dan saat load
+        window.addEventListener('scroll', checkScroll);
+        checkScroll();
+    });
+// Clean Testimonial Slider JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Testimonial Slider
+    const testimonialItems = document.querySelectorAll('.testimonial-clean-item');
+    const testimonialDots = document.querySelectorAll('.clean-dot');
+    let currentTestimonial = 0;
+    let testimonialInterval;
 
-        // Google Maps initialization (if needed)
-        window.initMap = function() {
-            try {
-                const officeLocation = { lat: -3.8123, lng: 102.2995 };
-                const mapElement = HanaraApp.utils.$('#contactMap');
-                
-                if (!mapElement) return;
-                
-                const map = new google.maps.Map(mapElement, {
-                    zoom: 15,
-                    center: officeLocation,
-                    mapTypeControl: false,
-                    streetViewControl: false,
-                    fullscreenControl: true,
-                    zoomControl: true,
-                });
-                
-                const marker = new google.maps.Marker({
-                    position: officeLocation,
-                    map: map,
-                    title: 'PT Hanara Prima Solusindo'
-                });
-                
-                const infoWindow = new google.maps.InfoWindow({
-                    content: `
-                        <div class="map-info-window">
-                            <h5>PT Hanara Prima Solusindo</h5>
-                            <p>Jl. Batang Hari, RT.011/RW.003, Nusa Indah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu 38223</p>
-                            <a href="tel:+627367050202">(0736) 7050-202</a>
-                        </div>
-                    `
-                });
-                
-                marker.addListener('click', function() {
-                    infoWindow.open(map, marker);
-                });
-                
-                infoWindow.open(map, marker);
-            } catch (error) {
-                console.error('Error initializing Google Maps:', error);
-            }
-        };
-
-        // Error handling for external scripts
-        window.addEventListener('error', function(e) {
-            if (e.filename && e.filename.includes('bootstrap')) {
-                console.warn('Bootstrap script error:', e.message);
-            }
+    function showTestimonial(index) {
+        // Hide all testimonials
+        testimonialItems.forEach(item => {
+            item.classList.remove('active');
         });
-
-        // Fallback for older browsers
-        if (!window.requestAnimationFrame) {
-            window.requestAnimationFrame = function(callback) {
-                return setTimeout(callback, 1000 / 60);
-            };
+        
+        // Remove active from all dots
+        testimonialDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // Show selected testimonial
+        if (testimonialItems[index]) {
+            testimonialItems[index].classList.add('active');
         }
-
-        if (!window.cancelAnimationFrame) {
-            window.cancelAnimationFrame = function(id) {
-                clearTimeout(id);
-            };
+        
+        // Activate corresponding dot
+        if (testimonialDots[index]) {
+            testimonialDots[index].classList.add('active');
         }
-    </script>
+        
+        currentTestimonial = index;
+    }
 
-    <!-- Page specific scripts -->
-    @stack('scripts')
+    // Click handlers for dots
+    testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+            resetTestimonialInterval();
+        });
+    });
+
+    // Auto-play testimonials
+    function startTestimonialInterval() {
+        testimonialInterval = setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+            showTestimonial(currentTestimonial);
+        }, 5000); // Change every 5 seconds
+    }
+
+    function resetTestimonialInterval() {
+        clearInterval(testimonialInterval);
+        startTestimonialInterval();
+    }
+
+    // Start auto-play if testimonials exist
+    if (testimonialItems.length > 0) {
+        startTestimonialInterval();
+    }
+});
+// Smooth Blog Slider JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderContainer = document.querySelector('.blog-slider-container');
+  const slides = document.querySelectorAll('.blog-card');
+  const dots = document.querySelectorAll('.blog-slider-dot');
+  
+  if (!sliderContainer || slides.length === 0) return;
+  
+  let currentIndex = 0;
+  let slideWidth = 0;
+  let totalSlides = slides.length;
+  let autoplayInterval;
+  let slidesPerView = 3;
+  let isTransitioning = false;
+  
+  // Mouse/Touch tracking
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = null;
+  let startTime = 0;
+  
+  // Calculate slides per view based on screen
+  function calculateSlidesPerView() {
+    if (window.innerWidth < 768) {
+      slidesPerView = 1;
+    } else if (window.innerWidth < 992) {
+      slidesPerView = 2;
+    } else {
+      slidesPerView = 3;
+    }
+    
+    updateSlideWidth();
+  }
+  
+  // Update slide width
+  function updateSlideWidth() {
+    if (!sliderContainer) return;
+    
+    const containerWidth = sliderContainer.parentElement.clientWidth;
+    const gap = 20;
+    slideWidth = (containerWidth - (gap * (slidesPerView - 1))) / slidesPerView;
+    
+    // Set slide dimensions
+    slides.forEach(slide => {
+      slide.style.flex = `0 0 ${slideWidth}px`;
+      slide.style.minWidth = `${slideWidth}px`;
+      slide.style.maxWidth = `${slideWidth}px`;
+    });
+    
+    // Reposition without animation
+    setSliderPosition(false);
+  }
+  
+  // Set slider position
+  function setSliderPosition(animate = true) {
+    if (isTransitioning && animate) return;
+    
+    const gap = 20;
+    const offset = -currentIndex * (slideWidth + gap);
+    
+    if (animate) {
+      isTransitioning = true;
+      sliderContainer.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    } else {
+      sliderContainer.style.transition = 'none';
+    }
+    
+    sliderContainer.style.transform = `translateX(${offset}px)`;
+    prevTranslate = offset;
+    currentTranslate = offset;
+    
+    if (animate) {
+      setTimeout(() => {
+        isTransitioning = false;
+        sliderContainer.style.transition = '';
+      }, 600);
+    }
+    
+    updateActiveDot();
+  }
+  
+  // Go to specific slide
+  function goToSlide(index, animate = true) {
+    if (isTransitioning) return;
+    
+    // Calculate max index (ensure last slides are visible)
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+    currentIndex = Math.min(Math.max(0, index), maxIndex);
+    
+    setSliderPosition(animate);
+  }
+  
+  // Update active dot
+  function updateActiveDot() {
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+  
+  // Next slide
+  function nextSlide() {
+    if (currentIndex >= totalSlides - slidesPerView) {
+      goToSlide(0);
+    } else {
+      goToSlide(currentIndex + 1);
+    }
+  }
+  
+  // Previous slide
+  function prevSlide() {
+    if (currentIndex <= 0) {
+      goToSlide(totalSlides - slidesPerView);
+    } else {
+      goToSlide(currentIndex - 1);
+    }
+  }
+  
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      goToSlide(index);
+      resetAutoplay();
+    });
+  });
+  
+  // Touch/Mouse handling
+  function getPositionX(event) {
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+  }
+  
+  function touchStart(e) {
+    if (isTransitioning) return;
+    if (e.type === 'mousedown' && e.button !== 0) return;
+    
+    isDragging = true;
+    startPos = getPositionX(e);
+    startTime = Date.now();
+    animationID = requestAnimationFrame(animation);
+    
+    sliderContainer.style.cursor = 'grabbing';
+    sliderContainer.style.transition = 'none';
+    
+    clearInterval(autoplayInterval);
+  }
+  
+  function touchMove(e) {
+    if (!isDragging) return;
+    
+    const currentPosition = getPositionX(e);
+    currentTranslate = prevTranslate + currentPosition - startPos;
+    
+    // Add resistance at edges
+    const maxTranslate = 0;
+    const minTranslate = -(totalSlides - slidesPerView) * (slideWidth + 20);
+    
+    if (currentTranslate > maxTranslate) {
+      currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.3;
+    } else if (currentTranslate < minTranslate) {
+      currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.3;
+    }
+  }
+  
+  function touchEnd(e) {
+    if (!isDragging) return;
+    
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+    
+    const movedBy = currentTranslate - prevTranslate;
+    const elapsedTime = Date.now() - startTime;
+    const velocity = Math.abs(movedBy) / elapsedTime;
+    
+    // Determine if we should change slides
+    if (velocity > 0.5 || Math.abs(movedBy) > slideWidth / 3) {
+      if (movedBy < 0 && currentIndex < totalSlides - slidesPerView) {
+        goToSlide(currentIndex + 1);
+      } else if (movedBy > 0 && currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      } else {
+        goToSlide(currentIndex);
+      }
+    } else {
+      goToSlide(currentIndex);
+    }
+    
+    sliderContainer.style.cursor = '';
+    startAutoplay();
+  }
+  
+  function animation() {
+    if (isDragging) {
+      sliderContainer.style.transform = `translateX(${currentTranslate}px)`;
+      requestAnimationFrame(animation);
+    }
+  }
+  
+  // Event listeners
+  if (sliderContainer) {
+    // Mouse events
+    sliderContainer.addEventListener('mousedown', touchStart);
+    window.addEventListener('mousemove', touchMove);
+    window.addEventListener('mouseup', touchEnd);
+    window.addEventListener('mouseleave', () => {
+      if (isDragging) touchEnd();
+    });
+    
+    // Touch events
+    sliderContainer.addEventListener('touchstart', touchStart, { passive: true });
+    sliderContainer.addEventListener('touchmove', touchMove, { passive: true });
+    sliderContainer.addEventListener('touchend', touchEnd);
+    
+    // Prevent drag
+    sliderContainer.addEventListener('dragstart', e => e.preventDefault());
+    
+    // Prevent text selection while dragging
+    sliderContainer.addEventListener('selectstart', e => {
+      if (isDragging) e.preventDefault();
+    });
+  }
+  
+  // Autoplay functions
+  function startAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextSlide, 4000); // 4 seconds
+  }
+  
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+  
+  // Pause on hover
+  if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
+    
+    sliderContainer.addEventListener('mouseleave', () => {
+      if (!isDragging) startAutoplay();
+    });
+  }
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      resetAutoplay();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      resetAutoplay();
+    }
+  });
+  
+  // Handle window resize with debounce
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      calculateSlidesPerView();
+      goToSlide(currentIndex, false);
+    }, 250);
+  });
+  
+  // Initialize
+  calculateSlidesPerView();
+  startAutoplay();
+  
+  // Ensure links in edge cards are clickable
+  const links = sliderContainer.querySelectorAll('.blog-card-link');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    
+    link.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+    });
+  });
+});
+ // Initialize the map when document is ready
+ document.addEventListener('DOMContentLoaded', function() {
+      initMap();
+    });
+
+    function initMap() {
+      // Coordinates for Jl. Batang Hari, Bengkulu
+      const officeLocation = { lat: -3.8123, lng: 102.2995 };
+      
+      // Create map centered at office location
+      const map = new google.maps.Map(document.getElementById('contactMap'), {
+        zoom: 15,
+        center: officeLocation,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        zoomControl: true,
+      });
+      
+      
+      // Add info window with company details
+      const infoWindow = new google.maps.InfoWindow({
+        content: `
+          <div class="map-info-window">
+            <h5>PT Hanara Prima Solusindo</h5>
+            <p>Jl. Batang Hari, RT.011/RW.003, Nusa Indah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu 38223</p>
+            <a href="tel:+627367050202">(0736) 7050-202</a>
+          </div>
+        `
+      });
+      
+      // Open info window when marker is clicked
+      marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+      });
+      
+      // Initially open the info window
+      infoWindow.open(map, marker);
+    }
+
+   //kareeer 
+    document.addEventListener('DOMContentLoaded', function() {
+  // Toggle job details when the header is clicked
+  const jobToggles = document.querySelectorAll('.hnr-job-toggle');
+  
+  jobToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get the target job details element
+      const targetId = this.getAttribute('data-target');
+      const targetDetails = document.getElementById(targetId);
+      
+      // Toggle the collapsed class
+      this.classList.toggle('collapsed');
+      targetDetails.classList.toggle('collapsed');
+    });
+  });
+});
+//job detail
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle file input display text change
+  const fileInputs = document.querySelectorAll('.hnr-file-input');
+  
+  fileInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const textElement = this.nextElementSibling.querySelector('.hnr-file-input-text');
+      
+      if (this.files.length > 0) {
+        textElement.textContent = this.files[0].name;
+      } else {
+        textElement.textContent = 'No file chosen';
+      }
+    });
+  });
+  
+  // Form submission handling
+  const form = document.getElementById('jobApplicationForm');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // You would add your AJAX form submission code here
+    alert('Your application has been submitted successfully!');
+    // form.reset(); // Uncomment to reset form after submission
+  });
+});
+// JavaScript untuk Fungsi FAQ - KODE JS DIPERBAIKI
+document.addEventListener('DOMContentLoaded', function() {
+  // Dapatkan semua header FAQ
+  const faqHeaders = document.querySelectorAll('.hnr-faq-header');
+  
+  // Tambahkan event listener untuk tiap header FAQ
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Dapatkan parent item
+      const faqItem = this.parentElement;
+      
+      // Toggle class active pada item yang diklik
+      const isActive = faqItem.classList.contains('active');
+      
+      // Opsional: Tutup semua FAQ terlebih dahulu
+      // document.querySelectorAll('.hnr-faq-item').forEach(item => {
+      //   item.classList.remove('active');
+      // });
+      
+      // Toggle active class
+      if (isActive) {
+        faqItem.classList.remove('active');
+      } else {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+});
+// Fungsi untuk toggle semua fitur
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButtons = document.querySelectorAll('.hnr-cloud-toggle-btn');
+  
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const packageCard = this.closest('.hnr-cloud-package-card');
+      
+      // Toggle expanded class
+      packageCard.classList.toggle('expanded');
+      
+      // Change button text and icon based on state
+      if (packageCard.classList.contains('expanded')) {
+        this.innerHTML = 'Tutup fitur <i class="bi bi-chevron-up"></i>';
+      } else {
+        this.innerHTML = 'Lihat semua fitur <i class="bi bi-chevron-down"></i>';
+      }
+    });
+  });
+});
+// JavaScript for FAQ Section
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all FAQ headers
+  const faqHeaders = document.querySelectorAll('.hnr-nextcloud-faq-header');
+  
+  // Add click event listener to each header
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Get parent item
+      const faqItem = this.parentElement;
+      
+      // Toggle active class
+      const isActive = faqItem.classList.contains('active');
+      
+      // Optional: Close all FAQs first
+      document.querySelectorAll('.hnr-nextcloud-faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Toggle active class
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+@stack('scripts')
 </body>
 </html>
