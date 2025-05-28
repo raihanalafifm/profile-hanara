@@ -1,18 +1,19 @@
+<!-- Navbar HTML tetap sama, tapi pastikan tidak ada data-bs-toggle -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-default">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
         <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara" class="logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{ request()->routeIs('about.*') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <a class="nav-link dropdown-toggle {{ request()->routeIs('about.*') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" aria-expanded="false">
               About
             </a>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
@@ -22,7 +23,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{ request()->routeIs('zimbra.*') ? 'active' : '' }}" href="#" id="zimbraDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <a class="nav-link dropdown-toggle {{ request()->routeIs('zimbra.*') ? 'active' : '' }}" href="#" id="zimbraDropdown" role="button" aria-expanded="false">
               Zimbra
             </a>
             <ul class="dropdown-menu" aria-labelledby="zimbraDropdown">
@@ -34,7 +35,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{ request()->routeIs('house.*') ? 'active' : '' }}" href="#" id="softwareDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <a class="nav-link dropdown-toggle {{ request()->routeIs('house.*') ? 'active' : '' }}" href="#" id="softwareDropdown" role="button" aria-expanded="false">
               Software House
             </a>
             <ul class="dropdown-menu" aria-labelledby="softwareDropdown">
@@ -44,7 +45,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{ request()->routeIs('business.*') ? 'active' : '' }}" href="#" id="businessDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <a class="nav-link dropdown-toggle {{ request()->routeIs('business.*') ? 'active' : '' }}" href="#" id="businessDropdown" role="button" aria-expanded="false">
               Business Solution
             </a>
             <ul class="dropdown-menu" aria-labelledby="businessDropdown">
@@ -61,69 +62,75 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  // Create span element for hamburger menu animation
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create hamburger animation span
   const togglerIcon = document.querySelector('.navbar-toggler-icon');
   if (togglerIcon && !togglerIcon.querySelector('span')) {
     const span = document.createElement('span');
     togglerIcon.appendChild(span);
   }
   
-  // Navbar scroll effect
+  // Get elements
+  const toggler = document.querySelector('.navbar-toggler');
+  const collapse = document.querySelector('.navbar-collapse');
   const navbar = document.querySelector('.navbar');
-  let lastScroll = 0;
   
-  window.addEventListener('scroll', function() {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-      navbar.classList.remove('navbar-default');
-      navbar.classList.add('navbar-scrolled');
-    } else {
-      navbar.classList.remove('navbar-scrolled');
-      navbar.classList.add('navbar-default');
-    }
-    
-    lastScroll = currentScroll;
-  });
-  
-  // Check if mobile or desktop
+  // Check if mobile
   function isMobile() {
     return window.innerWidth < 992;
   }
   
-  // Mobile dropdown handling
-  if (isMobile()) {
-    setupMobileNav();
-  } else {
-    setupDesktopNav();
+  // Toggle navbar manually
+  toggler.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    collapse.classList.toggle('show');
+    const isOpen = collapse.classList.contains('show');
+    toggler.setAttribute('aria-expanded', isOpen);
+    toggler.classList.toggle('collapsed', !isOpen);
+  });
+  
+  // Close navbar function
+  function closeNavbar() {
+    if (isMobile()) {
+      collapse.classList.remove('show');
+      toggler.setAttribute('aria-expanded', 'false');
+      toggler.classList.add('collapsed');
+      
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+        menu.classList.remove('show');
+      });
+      document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
   }
   
-  // Setup mobile navigation
-  function setupMobileNav() {
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    
-    dropdownToggles.forEach(toggle => {
-      // Remove any existing event listeners
-      const newToggle = toggle.cloneNode(true);
-      toggle.parentNode.replaceChild(newToggle, toggle);
+  // Handle dropdown toggles
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       
-      newToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
+      if (isMobile()) {
         const dropdownMenu = this.nextElementSibling;
         const isOpen = dropdownMenu.classList.contains('show');
         
-        // Close all other dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          menu.classList.remove('show');
+        // Close other dropdowns
+        document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+          if (menu !== dropdownMenu) {
+            menu.classList.remove('show');
+          }
         });
-        
         document.querySelectorAll('.dropdown-toggle').forEach(t => {
-          t.setAttribute('aria-expanded', 'false');
+          if (t !== this) {
+            t.setAttribute('aria-expanded', 'false');
+          }
         });
         
         // Toggle current dropdown
@@ -134,112 +141,117 @@
           dropdownMenu.classList.remove('show');
           this.setAttribute('aria-expanded', 'false');
         }
-      });
-    });
-    
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          menu.classList.remove('show');
-        });
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-          toggle.setAttribute('aria-expanded', 'false');
-        });
       }
     });
-    
-    // Handle navbar collapse on link click
-    const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-          // Use Bootstrap's collapse method if available
-          if (window.bootstrap && window.bootstrap.Collapse) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse) {
-              bsCollapse.hide();
-            }
-          } else {
-            // Fallback method
-            navbarToggler.click();
-          }
-        }
-      });
-    });
-  }
+  });
   
-  // Setup desktop navigation
-  function setupDesktopNav() {
-    document.querySelectorAll('.navbar .dropdown').forEach(function(dropdown) {
+  // Close navbar when clicking nav links (non-dropdown)
+  document.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', function() {
+      closeNavbar();
+    });
+  });
+  
+  // Close navbar when clicking dropdown items
+  document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+      setTimeout(closeNavbar, 100);
+    });
+  });
+  
+  // Close navbar when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.navbar')) {
+      closeNavbar();
+    }
+  });
+  
+  // Scroll effect
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 100) {
+      navbar.classList.remove('navbar-default');
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+      navbar.classList.add('navbar-default');
+    }
+  });
+  
+  // Desktop hover effect
+  if (!isMobile()) {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
       dropdown.addEventListener('mouseenter', function() {
-        const dropdownToggle = this.querySelector('.dropdown-toggle');
+        const toggle = this.querySelector('.dropdown-toggle');
+        const menu = this.querySelector('.dropdown-menu');
         
-        // Prevent default click behavior on desktop
-        dropdownToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-        });
-        
-        // Show dropdown
-        const dropdownMenu = this.querySelector('.dropdown-menu');
-        dropdownToggle.classList.add('show');
-        dropdownMenu.classList.add('show');
-        dropdownToggle.setAttribute('aria-expanded', 'true');
-        
-        // Remove focus
-        dropdownToggle.blur();
+        toggle.classList.add('show');
+        menu.classList.add('show');
+        toggle.setAttribute('aria-expanded', 'true');
       });
       
       dropdown.addEventListener('mouseleave', function() {
-        const dropdownToggle = this.querySelector('.dropdown-toggle');
-        const dropdownMenu = this.querySelector('.dropdown-menu');
+        const toggle = this.querySelector('.dropdown-toggle');
+        const menu = this.querySelector('.dropdown-menu');
         
-        dropdownToggle.classList.remove('show');
-        dropdownMenu.classList.remove('show');
-        dropdownToggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('show');
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
   
   // Handle window resize
   let resizeTimer;
-  let wasMobile = isMobile();
-  
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-      const isNowMobile = isMobile();
+      // Close everything on resize
+      closeNavbar();
       
-      // Only re-setup if we've crossed the mobile/desktop boundary
-      if (wasMobile !== isNowMobile) {
-        // Reset all dropdowns
-        document.querySelectorAll('.dropdown-menu').forEach(menu => {
-          menu.classList.remove('show');
+      // Re-setup desktop hover if needed
+      if (!isMobile()) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          toggle.removeEventListener('click', null);
         });
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-          toggle.setAttribute('aria-expanded', 'false');
-        });
-        
-        // Setup appropriate navigation
-        if (isNowMobile) {
-          setupMobileNav();
-        } else {
-          setupDesktopNav();
-        }
-        
-        wasMobile = isNowMobile;
       }
     }, 250);
   });
-  
-  // Prevent navbar from closing when clicking inside dropdown
-  document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
-    dropdown.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  });
 });
-  </script>
+</script>
+
+<!-- Tambahkan CSS ini untuk memastikan dropdown bekerja dengan baik -->
+<style>
+/* Mobile dropdown fix */
+@media (max-width: 991px) {
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: #f8f9fa;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+  
+  .dropdown-menu.show {
+    display: block !important;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .navbar-collapse {
+    transition: none !important;
+  }
+  
+  .navbar-collapse:not(.show) {
+    display: none !important;
+  }
+  
+  .navbar-collapse.show {
+    display: block !important;
+  }
+}
+</style>
