@@ -19,12 +19,12 @@
           <h4 class="footer-heading">Navigasi</h4>
           <ul class="footer-links">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/about') }}">About</a></li>
-            <li><a href="{{ url('/zimbra') }}">Zimbra</a></li>
-            <li><a href="{{ url('/motorola') }}">Motorola</a></li>
-            <li><a href="{{ url('/software-house') }}">Software House</a></li>
-            <li><a href="{{ url('/business-solution') }}">Business Solution</a></li>
-            <li><a href="{{ url('/cctv') }}">CCTV</a></li>
+            <li><a href="{{ route('about-us') }}">About</a></li>
+            <li><a href="{{ route('cloud-zimbra') }}">Zimbra</a></li>
+            <li><a href="{{ route('motorola') }}">Motorola</a></li>
+            <li><a href="{{ route('develop-web') }}">Software House</a></li>
+            <li><a href="{{ route('develop-web') }}">Business Solution</a></li>
+            <li><a href="{{ route('cctv') }}">CCTV</a></li>
           </ul>
         </div>
         

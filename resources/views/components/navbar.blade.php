@@ -1,22 +1,43 @@
-<!-- Navbar HTML tetap sama, tapi pastikan tidak ada data-bs-toggle -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-default">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top navbar-default" 
+     role="navigation" 
+     aria-label="Main navigation">
     <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara" class="logo">
-      </a>
-      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a class="navbar-brand" href="{{ url('/') }}" aria-label="Hanara - Home">
+            <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" 
+                 alt="Hanara Logo" 
+                 class="logo"
+                 width="120" 
+                 height="40">
+        </a>
+      <button class="navbar-toggler" 
+                type="button" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle main navigation">
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle {{ request()->routeIs('about.*') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" aria-expanded="false">
-              About
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <ul class="navbar-nav ms-auto" role="menubar">
+                <li class="nav-item" role="none">
+                    <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" 
+                       href="{{ route('dashboard') }}"
+                       role="menuitem"
+                       {{ request()->routeIs('home') ? 'aria-current="page"' : '' }}>
+                        Home
+                    </a>
+                </li>
+           <li class="nav-item dropdown" role="none">
+             <a class="nav-link dropdown-toggle {{ request()->routeIs('about.*') ? 'active' : '' }}" 
+                       href="#" 
+                       id="aboutDropdown" 
+                       role="menuitem"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        About
+                    </a>
+            <ul class="dropdown-menu" 
+                        aria-labelledby="aboutDropdown"
+                        role="menu">
               <li><a class="dropdown-item {{ request()->routeIs('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}">About Us</a></li>
               <li><a class="dropdown-item {{ request()->routeIs('contact-us') ? 'active' : '' }}" href="{{ route('contact-us') }}">Contact Us</a></li>
               <li><a class="dropdown-item {{ request()->routeIs('career') ? 'active' : '' }}" href="{{ route('career') }}">Career</a></li>
@@ -220,7 +241,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- Tambahkan CSS ini untuk memastikan dropdown bekerja dengan baik -->
 <style>
 /* Mobile dropdown fix */
 @media (max-width: 991px) {
