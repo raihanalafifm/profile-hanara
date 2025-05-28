@@ -2,7 +2,7 @@
 
 @section('container')
 <section class="hnr-job-detail-section">
-  <div class="container">
+  <div class="container reveal-section">
     <!-- Back Button -->
     <div class="hnr-back-link-container">
       <a href="{{ route('career') }}" class="hnr-back-link">

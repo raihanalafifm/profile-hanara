@@ -1,76 +1,14 @@
 @extends('layout.main')
 
-@section('schema')
-<!-- Additional Schema for Homepage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "{{ $seoData['titleOnly'] }}",
-  "description": "{{ $seoData['description'] }}",
-  "url": "{{ $seoData['canonical'] }}",
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ route('home') }}"
-    }]
-  }
-}
-</script>
-
-<!-- Service Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Layanan PT Hanara Prima Solusindo",
-  "itemListElement": [
-    {
-      "@type": "Service",
-      "position": 1,
-      "name": "Zimbra Mail Server",
-      "description": "Solusi email server profesional untuk bisnis",
-      "provider": {
-        "@type": "Organization",
-        "name": "PT Hanara Prima Solusindo"
-      }
-    },
-    {
-      "@type": "Service", 
-      "position": 2,
-      "name": "Web Development",
-      "description": "Jasa pembuatan website dan aplikasi web custom",
-      "provider": {
-        "@type": "Organization",
-        "name": "PT Hanara Prima Solusindo"
-      }
-    },
-    {
-      "@type": "Service",
-      "position": 3,
-      "name": "CCTV Installation",
-      "description": "Instalasi dan maintenance sistem keamanan CCTV",
-      "provider": {
-        "@type": "Organization",
-        "name": "PT Hanara Prima Solusindo"
-      }
-    }
-  ]
-}
-</script>
-@endsection
 
 @section('container')
 <!-- Hero Section dengan SEO Optimization -->
-<div class="reveal-section">
+
 <section class="hero-section">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row align-items-center ">
         <!-- Left Content -->
-        <div class="col-lg-6 hero-content">
+        <div class="col-lg-6 hero-content reveal-section">
           <!-- Ganti div dengan h1 untuk SEO -->
           <h1 class="company-name-hero">PT HANARA PRIMA SOLUSINDO</h1>
           <h2 class="hero-title">
@@ -82,7 +20,7 @@
           </p>
           
           <!-- Service Cards dengan semantic HTML -->
-          <div class="service-cards" role="list">
+          <div class="service-cards reveal-section" role="list">
             <article class="service-card" role="listitem">
               <div class="service-icon">
                 <img src="{{ asset('assets/images/icon/icon-card-hero-1.png') }}" 
@@ -129,7 +67,7 @@
         
         <div class="col-lg-6 hero-image">
             <!-- Main device image dengan alt text SEO -->
-            <div class="device-image">
+            <div class="device-image reveal-section">
               <img src="{{ asset('assets/images/icon/icon-hero.png') }}" 
                    alt="Digital Innovation Solutions by PT Hanara Prima Solusindo" 
                    class="img-fluid main-device"
@@ -140,15 +78,15 @@
       </div>
     </div>
 </section>
-</div>
+
 
 <!-- Update sections lainnya dengan struktur heading yang benar -->
-<div class="reveal-section">
+
 <section class="about-section">
     <div class="container">
       <div class="row align-items-center">
         <!-- Left Image Content -->
-        <div class="col-lg-6 about-images">
+        <div class="col-lg-6 about-images reveal-section">
           <div class="about-image-wrapper">
             <div class="certificate-logo">
               <img src="{{ asset('assets/images/icon/sertifikat.png') }}" 
@@ -170,7 +108,7 @@
         </div>
         
         <!-- Right Text Content dengan semantic HTML -->
-        <div class="col-lg-6 about-content">
+        <div class="col-lg-6 about-content reveal-section">
           <div class="section-heading">
             <span class="section-tag">• About Us •</span>
             <!-- Gunakan h2 karena h1 sudah dipakai di hero -->
@@ -186,14 +124,14 @@
       </div>
     </div>
 </section>
-</div>
+
 
 <!-- Services Section -->
-<div class="reveal-section">
+
 <section class="awesome-services-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-6 reveal-section">
         <div class="awesome-section-heading">
           <span class="section-tag">• Awesome Service •</span>
           <h2 class="section-title">Our Awesome <span class="text-primary">services</span><br>to give you success.</h2>
@@ -204,7 +142,7 @@
     
     <div class="row mt-5">
       <!-- Nextcloud Card -->
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 reveal-section">
         <div class="solution-card">
           <div class="solution-icon blue-icon">
             <img src="{{ asset('assets/images/icon/nextcloud.png') }}" alt="Nextcloud">
@@ -220,7 +158,7 @@
       </div>
       
       <!-- Zimbra Mail Server Card -->
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 reveal-section">
         <div class="solution-card">
           <div class="solution-icon orange-icon">
             <img src="{{ asset('assets/images/icon/zimbra.png') }}" alt="Zimbra Mail Server">
@@ -236,7 +174,7 @@
       </div>
       
       <!-- IT Support Card -->
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 reveal-section">
         <div class="solution-card">
           <div class="solution-icon dark-icon">
             <img src="{{ asset('assets/images/icon/itsupport.png') }}" alt="IT Support">
@@ -252,7 +190,7 @@
       </div>
       
       <!-- Social Media Management Card -->
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 reveal-section">
         <div class="solution-card">
           <div class="solution-icon purple-icon">
             <img src="{{ asset('assets/images/icon/sosmed.png') }}" alt="Social Media Management">
@@ -268,7 +206,7 @@
       </div>
       
       <!-- Motorola Card -->
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 reveal-section">
         <div class="solution-card">
           <div class="solution-icon blue-dark-icon">
             <img src="{{ asset('assets/images/icon/motorola.png') }}" alt="Motorola">
@@ -284,7 +222,7 @@
       </div>
       
       <!-- Web Developer Card -->
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 reveal-section">
         <div class="solution-card">
           <div class="solution-icon pink-icon">
             <img src="{{ asset('assets/images/icon/web.png') }}" alt="Web Developer">
@@ -305,15 +243,15 @@
   <div class="services-bg-element services-bg-circle-1"></div>
   <div class="services-bg-element services-bg-circle-2"></div>
 </section>
-</div>
+
 
 <!-- Why Choose Us Section -->
-<div class="reveal-section">
+
 <section class="why-choose-section">
   <div class="container">
     <div class="row align-items-center">
       <!-- Left Content - 3D Character -->
-      <div class="col-lg-6 character-column">
+      <div class="col-lg-6 character-column reveal-section">
         <div class="character-container">
           <img src="{{ asset('assets/images/icon/whychoose.png') }}" alt="IT Support Character" class="main-character">
         </div>
@@ -321,14 +259,14 @@
       
       <!-- Right Content - Features -->
       <div class="col-lg-6 features-column">
-        <div class="section-heading-alt">
+        <div class="section-heading-alt reveal-section">
           <span class="section-tag-alt">• Why Choose Us •</span>
           <h2 class="section-title-alt">Choose <span class="text-primary-alt">The Best</span> IT Service Company</h2>
         </div>
         
         <div class="features-list">
           <!-- Feature 1 -->
-          <div class="feature-item">
+          <div class="feature-item reveal-section">
             <div class="feature-icon">
               <img src="{{ asset('assets/images/icon/choose1.png') }}" alt="Tim Professional">
             </div>
@@ -339,7 +277,7 @@
           </div>
           
           <!-- Feature 2 -->
-          <div class="feature-item">
+          <div class="feature-item reveal-section">
             <div class="feature-icon">
               <img src="{{ asset('assets/images/icon/choose2.png') }}" alt="Layanan 24/7">
             </div>
@@ -350,7 +288,7 @@
           </div>
           
           <!-- Feature 3 -->
-          <div class="feature-item">
+          <div class="feature-item reveal-section">
             <div class="feature-icon">
               <img src="{{ asset('assets/images/icon/choose3.png') }}" alt="Keamanan & Keandalan">
             </div>
@@ -361,7 +299,7 @@
           </div>
           
           <!-- Feature 4 -->
-          <div class="feature-item">
+          <div class="feature-item reveal-section">
             <div class="feature-icon">
               <img src="{{ asset('assets/images/icon/choose4.png') }}" alt="Solusi yang Disesuaikan">
             </div>
@@ -372,7 +310,7 @@
           </div>
           
           <!-- Feature 5 -->
-          <div class="feature-item">
+          <div class="feature-item reveal-section">
             <div class="feature-icon">
               <img src="{{ asset('assets/images/icon/choose5.png') }}" alt="Efisiensi & Inovasi">
             </div>
@@ -386,12 +324,11 @@
     </div>
   </div>
 </section>
-</div>
 
 <!-- Testimonial Section with Consistent Company Icon -->
-<div class="reveal-section">
+
 <section class="testimonial-clean-section">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="row justify-content-center">
       <div class="col-lg-10 text-center">
         <div class="testimonial-clean-heading">
@@ -450,12 +387,12 @@
     </div>
   </div>
 </section>
-</div>
+
 
 <!-- Our Clients Section -->
-<div class="reveal-section">
+
 <section class="trusted-clients-section">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <div class="trusted-clients-heading">
@@ -537,12 +474,12 @@
     </div>
   </div>
 </section>
-</div>
+
 
 <!-- Our Application Products Section - HP Outside Cards -->
-<div class="reveal-section">
+
 <section class="product-gallery-section py-5">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="row mb-5">
       <div class="col-lg-12">
         <h2 class="product-gallery-title"><span class="text-product-orange">OUR</span> APPLICATION<br>PRODUCTS.</h2>
@@ -621,12 +558,12 @@
     </div>
   </div>
 </section>
-</div>
+
 
 <!-- Latest Blog Section with Dynamic Articles -->
-<div class="reveal-section">
+
 <section class="latest-blog-section py-5">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="row text-center mb-4">
       <div class="col-lg-12">
         <span class="blog-tag">• Our Latest Blog •</span>
@@ -707,5 +644,5 @@
     </div>
   </div>
 </section>
-</div>
+
 @endsection

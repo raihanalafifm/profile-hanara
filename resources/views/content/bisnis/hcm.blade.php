@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <section class="hcm-hero-section">
         <div class="container py-5">
-            <div class="row align-items-center">
+            <div class="row align-items-center reveal-section">
                 <div class="col-md-6">
                     <div class="hcm-header-text">
                         <h6 class="text-dark">HCM - HUMAN CAPITAL MANAGEMENT</h6>
@@ -39,7 +39,7 @@
     <!-- About Section -->
     <section class="hcm-about-section">
         <div class="container py-5">
-            <div class="row align-items-center">
+            <div class="row align-items-center reveal-section">
                 <div class="col-md-5">
                     <div class="hcm-illustration-container">
                         <img src="{{ asset('assets/images/icon/hcm-icon.png') }}" class="img-fluid" alt="HR Illustration">
@@ -62,7 +62,7 @@
 
     <!-- Services Section -->
     <section class="hcm-services-section">
-        <div class="container py-5">
+        <div class="container py-5 reveal-section">
             <div class="text-center mb-5">
                 <h5 class="hcm-section-subtitle">• Awesome Service •</h5>
                 <h2 class="hcm-section-title-dark">Kami Menyediakan</h2>
@@ -181,7 +181,7 @@
 
     <!-- Testimonial Section -->
     <section class="testimonial-clean-section">
-        <div class="container">
+        <div class="container reveal-section">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <div class="testimonial-clean-heading">
@@ -243,7 +243,7 @@
 
     <!-- Trusted Clients Section -->
     <section class="trusted-clients-section">
-        <div class="container">
+        <div class="container reveal-section">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <div class="trusted-clients-heading">
@@ -328,7 +328,7 @@
   
     <!-- Pricing Section -->
  <section class="hcm-pricing-section">
-        <div class="container py-5">
+        <div class="container py-5 reveal-section">
             <div class="text-center mb-5">
                 <h2 class="hcm-pricing-title"><span class="hcm-orange">Paket</span> Terbaik untuk Bisnis Anda</h2>
                 <p class="hcm-pricing-subtitle">Dapatkan penawaran paket HR Management yang terbaik dari PT. Hanara Prima Solusindo</p>
@@ -472,12 +472,12 @@
     </section>
 
     <!-- Contact Component -->
-    <div class="container mt-5">
+    <div class="container mt-5 reveal-section">
         @include('components.contact')
     </div>
 
     <!-- Map Section -->
-    <section class="contact-section">
+    <section class="contact-section reveal-section">
         <div class="container">
             <h4 class="map-title">Lokasi Kami</h4>
             <iframe 

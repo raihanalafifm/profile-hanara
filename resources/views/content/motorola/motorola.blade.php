@@ -3,7 +3,7 @@
 @section('container')
 <!-- Motorola Hero Section -->
 <section class="hnr-motorola-hero-section">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="row align-items-center">
       <!-- Motorola Image -->
       <div class="col-lg-5 mb-4 mb-lg-0">
@@ -33,7 +33,7 @@
 
 <!-- Product Categories Section -->
 <section class="hnr-motorola-categories-section">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="hnr-motorola-section-title text-center">
       <h2 class="hnr-motorola-title-heading">
         <span class="hnr-motorola-title-orange">Broadband</span> devices & apps
@@ -86,7 +86,7 @@
 
 <!-- VHF Products Section -->
 <section class="hnr-motorola-products-section">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="hnr-motorola-section-title text-center">
       <h2 class="hnr-motorola-title-heading">
        Radio<span class="hnr-motorola-title-orange"> Mobil</span>
@@ -151,7 +151,7 @@
 
 <!-- UHF Products Section -->
 <section class="hnr-motorola-products-section hnr-motorola-section-alt">
-  <div class="container">
+  <div class="container reveal-section">
     <div class="hnr-motorola-section-title text-center">
       <h2 class="hnr-motorola-title-heading">
         Radio <span class="hnr-motorola-title-orange">Portable</span>
@@ -232,7 +232,7 @@
 </section>
 
 <!-- Contact Section -->
-  <div class="container">
+  <div class="container reveal-section">
     @include('components.contact')
   </div>
 @endsection

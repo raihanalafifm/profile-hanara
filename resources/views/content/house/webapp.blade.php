@@ -2,18 +2,18 @@
 
 @section('container')
 <section class="hnr-webapp-section">
-  <div class="container">
+  <div class="container ">
     <!-- Header Section - Web Application -->
     <div class="row align-items-center mb-5">
       <!-- Web App Image -->
-      <div class="col-lg-5 mb-4 mb-lg-0">
+      <div class="col-lg-5 mb-4 mb-lg-0 reveal-section">
         <div class="hnr-webapp-img-container">
           <img src="{{ asset('assets/images/icon/web app.png') }}" alt="Web Application" class="hnr-webapp-img">
         </div>
       </div>
       
       <!-- Description Section -->
-      <div class="col-lg-7">
+      <div class="col-lg-7 reveal-section">
         <div class="hnr-webapp-content">
           <h1 class="hnr-webapp-title">
             <span class="hnr-webapp-title-orange">JASA</span> PEMBUATAN<br>
@@ -51,7 +51,7 @@
     </div>
     
     <!-- Best Framework Section -->
-    <div class="row mt-5 mb-5 text-center">
+    <div class="row mt-5 mb-5 text-center reveal-section">
       <div class="col-12">
         <h2 class="hnr-webapp-framework-title">
           <span class="hnr-webapp-title-orange">Best</span> Framework Untuk
@@ -64,7 +64,7 @@
     </div>
     
     <!-- Framework Laravel -->
-    <div class="row mb-5 align-items-center">
+    <div class="row mb-5 align-items-center reveal-section">
       <div class="col-md-3 text-center mb-4 mb-md-0">
         <div class="hnr-webapp-framework-logo">
           <img src="{{ asset('assets/images/icon/laravel.png') }}" alt="Laravel" class="img-fluid">
@@ -87,7 +87,7 @@
     </div>
     
     <!-- Framework DevXpress -->
-    <div class="row mb-5 align-items-center">
+    <div class="row mb-5 align-items-center reveal-section">
       <div class="col-md-9 order-md-1 order-2">
         <h3 class="hnr-webapp-framework-name">DEVXPRESS</h3>
         <p class="hnr-webapp-framework-desc">
@@ -110,7 +110,7 @@
     </div>
     
     <!-- Framework CodeIgniter -->
-    <div class="row mb-5 align-items-center">
+    <div class="row mb-5 align-items-center reveal-section">
       <div class="col-md-3 text-center mb-4 mb-md-0">
         <div class="hnr-webapp-framework-logo">
           <img src="{{ asset('assets/images/icon/codeigniter.png') }}" alt="CodeIgniter" class="img-fluid">
@@ -133,7 +133,7 @@
     </div>
     
     <!-- Why Choose Us Section -->
-    <div class="row mt-5 mb-5 text-center">
+    <div class="row mt-5 mb-5 text-center reveal-section">
       <div class="col-12">
         <h2 class="hnr-webapp-why-title">
           <span class="hnr-webapp-title-orange">Kenapa</span> Harus Membuat
@@ -146,7 +146,7 @@
     </div>
     
     <!-- Benefits Grid -->
-    <div class="row mt-4 mb-5">
+    <div class="row mt-4 mb-5 reveal-section">
       <!-- Benefit 1 -->
       <div class="col-md-4 mb-4">
         <div class="hnr-webapp-benefit-card">
@@ -226,8 +226,9 @@
       </div>
     </div>
     
-    <!-- Contact Section -->
+    <div class="reveal-section">
     @include('components.contact')
+    </div>
   </div>
 </section>
 @endsection

@@ -1,64 +1,12 @@
 @extends('layout.main')
 
-@section('schema')
-<!-- Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "{{ route('home') }}"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Tentang Kami",
-    "item": "{{ route('about-us') }}"
-  }]
-}
-</script>
-
-<!-- About Page Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "PT Hanara Prima Solusindo",
-    "description": "{{ $seoData['description'] }}",
-    "foundingDate": "2018",
-    "founder": {
-      "@type": "Person",
-      "name": "Founder Hanara"
-    },
-    "numberOfEmployees": {
-      "@type": "QuantitativeValue",
-      "minValue": 10,
-      "maxValue": 50
-    }
-  }
-}
-</script>
-@endsection
 
 @section('container')
-<!-- Breadcrumb -->
-{{-- <nav aria-label="breadcrumb" class="mt-3">
-  <div class="container">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
-    </ol>
-  </div>
-</nav> --}}
 
 <section class="about-page-section">
     <div class="container">
       <!-- Header dengan H1 untuk SEO -->
-      <div class="row text-center mb-5">
+      <div class="row text-center mb-5 reveal-section">
         <div class="col-lg-12">
           <div class="about-page-header">
             <h1 class="about-page-title"><span class="about-orange">PT</span> HANARA<br>PRIMA SOLUSINDO</h1>
@@ -68,7 +16,7 @@
       </div>
       
       <!-- Team Image dengan alt text SEO -->
-      <div class="row justify-content-center mb-5">
+      <div class="row justify-content-center mb-5 reveal-section">
         <div class="col-lg-10">
           <div class="about-team-image">
             <img src="{{ asset('assets/images/gambar/bw-meet.png') }}" 
@@ -82,7 +30,7 @@
       </div>
       
       <!-- About Us Text Section dengan semantic HTML -->
-      <div class="row mb-5">
+      <div class="row mb-5 reveal-section">
         <div class="col-lg-3">
           <h2 class="about-section-title">About Us</h2>
         </div>
@@ -95,7 +43,7 @@
       </div>
       
       <!-- Vision Section -->
-      <div class="row mb-5">
+      <div class="row mb-5 reveal-section">
         <div class="col-lg-3">
           <h2 class="about-section-title">Visi</h2>
         </div>
@@ -107,7 +55,7 @@
       </div>
       
       <!-- Mission Section dengan structured data -->
-      <div class="row mb-5">
+      <div class="row mb-5 reveal-section">
         <div class="col-lg-3">
           <h2 class="about-section-title">Misi</h2>
         </div>

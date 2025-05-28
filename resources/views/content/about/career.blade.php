@@ -1,58 +1,12 @@
 @extends('layout.main')
 
-@section('schema')
-<!-- JobPosting Schema for all careers -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Lowongan Kerja PT Hanara Prima Solusindo",
-  "itemListElement": [
-    @foreach($careers as $index => $career)
-    {
-      "@type": "JobPosting",
-      "@id": "{{ route('career.detail', $career->slug) }}",
-      "position": {{ $index + 1 }},
-      "title": "{{ $career->position }}",
-      "description": "{{ Str::limit($career->description, 200) }}",
-      "datePosted": "{{ $career->created_at->toIso8601String() }}",
-      "employmentType": "{{ $career->type }}",
-      "hiringOrganization": {
-        "@type": "Organization",
-        "name": "PT Hanara Prima Solusindo",
-        "sameAs": "{{ url('/') }}"
-      },
-      "jobLocation": {
-        "@type": "Place",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Bengkulu",
-          "addressRegion": "Bengkulu",
-          "addressCountry": "ID"
-        }
-      }
-    }{{ !$loop->last ? ',' : '' }}
-    @endforeach
-  ]
-}
-</script>
-@endsection
 
 @section('container')
-<!-- Breadcrumb -->
-{{-- <nav aria-label="breadcrumb" class="mt-3">
-  <div class="container">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Karir</li>
-    </ol>
-  </div>
-</nav> --}}
 
 <section class="hnr-career-section">
-    <div class="container">
+    <div class="container ">
       <!-- Header Section dengan H1 untuk SEO -->
-      <div class="hnr-career-header">
+      <div class="hnr-career-header reveal-section">
         <h1 class="hnr-career-title">
           <span class="hnr-career-title-orange">JOIN OUR TEAM OF TALENTS</span>
           <span class="hnr-career-title-black">DISCOVER ROLES AND ELEVATE<br>YOUR CAREER TODAY.</span>
@@ -61,7 +15,7 @@
       </div>
   
       <!-- Career Banner Image dengan alt text -->
-      <div class="hnr-career-banner">
+      <div class="hnr-career-banner reveal-section">
         <img src="{{ asset('assets/images/gambar/career.png') }}" 
              alt="Bergabung dengan Tim IT PT Hanara Prima Solusindo" 
              class="hnr-career-banner-img"
@@ -71,12 +25,12 @@
       </div>
   
       <!-- Career Tagline -->
-      <div class="hnr-career-tagline">
+      <div class="hnr-career-tagline reveal-section">
         <h2 class="hnr-career-tagline-text">Mari tumbuh dan berkolaborasi bersama talenta terbaik.</h2>
       </div>
   
       <!-- Job Listings Section dengan semantic HTML -->
-      <div class="hnr-career-jobs">
+      <div class="hnr-career-jobs reveal-section">
         @forelse($careers as $index => $career)
         <article class="hnr-job-card" itemscope itemtype="https://schema.org/JobPosting">
           <div class="hnr-job-header">

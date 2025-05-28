@@ -4,7 +4,7 @@
 <section class="hnr-house-web-section">
   <div class="container">
     <!-- Header Section -->
-    <div class="row align-items-center">
+    <div class="row align-items-center reveal-section">
       <!-- Web Design Image -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="hnr-house-web-img-container">
@@ -50,7 +50,7 @@
     </div>
     
     <!-- Why Choose Us Section -->
-    <div class="row mt-5 text-center">
+    <div class="row mt-5 text-center reveal-section">
       <div class="col-12">
         <h2 class="hnr-house-web-section-title">
         <span class="hnr-house-web-title-orange">Mengapa</span> <span class="hnr-house-web-title-bold">Harus Kami Yang</span>
@@ -61,7 +61,7 @@
     </div>
     
     <!-- Features Grid - Row 1 -->
-    <div class="row mt-4">
+    <div class="row mt-4 reveal-section">
       <!-- Feature 1: Sudah Tersedia Domain -->
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
@@ -103,7 +103,7 @@
     </div>
     
     <!-- Features Grid - Row 2 -->
-    <div class="row">
+    <div class="row reveal-section">
       <!-- Feature 4: Interaktif -->
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
@@ -145,7 +145,7 @@
     </div>
     
     <!-- Features Grid - Row 3 -->
-    <div class="row">
+    <div class="row reveal-section">
       <!-- Feature 7: Membantu Memahami Marketing Strategy -->
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
@@ -187,7 +187,7 @@
     </div>
     
     <!-- Features Grid - Row 4 -->
-    <div class="row">
+    <div class="row reveal-section">
       <!-- Feature 10: Dibuatkan Social Media -->
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
@@ -229,7 +229,7 @@
     </div>
     
     <!-- Features Grid - Row 5 -->
-    <div class="row">
+    <div class="row reveal-section">
       <!-- Feature 13: Realtime Chat -->
       <div class="col-md-4 mb-4">
         <div class="hnr-house-web-feature-card">
@@ -271,7 +271,7 @@
     </div>
     
    <!-- Modified Features Grid - Row 6 with centered content -->
-        <div class="row">
+        <div class="row reveal-section">
             <div class="col-md-8 mx-auto">
                 <div class="row">
                     <!-- Feature 16: BONUS Whatsapp -->
@@ -305,14 +305,14 @@
     
     <!-- Pricing Section -->
    <!-- Pricing Section -->
-<div class="row mt-5 mb-5 text-center">
+<div class="row mt-5 mb-5 text-center reveal-section">
   <div class="col-12">
     <h2 class="hnr-house-web-pricing-title"><span class="hnr-house-web-title-orange">Paket </span> Website Terbaik Kami</h2>
     <p class="hnr-house-web-pricing-subtitle">Dapatkan penawaran paket website terbaik dan tepat. Harga Mulai 3.000.000 Web Discovery</p>
   </div>
 </div>
 
-<div class="row mb-5">
+<div class="row mb-5 reveal-section">
   <!-- Package 1: Web Startup (Ekonomis) -->
   <div class="col-md-4 mb-4">
     <div class="hnr-house-web-pricing-card">
@@ -667,7 +667,7 @@
   </div>
 </div>
 <!-- Tools Section - Place this after package selection and before contact -->
-<div class="row mt-5 mb-5">
+<div class="row mt-5 mb-5 reveal-section">
   <div class="col-12 text-center">
     <h2 class="hnr-tools-title">
       <span class="hnr-tools-title-orange">Tools</span> Yang Akan Mendukung 
@@ -681,7 +681,7 @@
   </div>
 </div>
 
-<div class="hnr-tools-container mb-5">
+<div class="hnr-tools-container mb-5 reveal-section">
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="hnr-tools-logos">
@@ -714,8 +714,9 @@
   </div>
 </div>
 
-<!-- Contact Section would be placed here -->
-@include('components.contact')
+    <div class="reveal-section">
+    @include('components.contact')
+    </div>
   </div>
 </section>
 @endsection

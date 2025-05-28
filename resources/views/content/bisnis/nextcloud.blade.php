@@ -4,7 +4,7 @@
 <section class="hnr-nextcloud-section">
   <div class="container">
     <!-- Header Section with Logo and Description -->
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center mb-5 reveal-section">
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="hnr-nextcloud-logo-container">
           <img src="{{ asset('assets/images/icon/nextcloud-icon.png') }}" alt="Nextcloud" class="hnr-nextcloud-logo img-fluid">
@@ -30,7 +30,7 @@
     </div>
     
     <!-- Nextcloud Interface Section -->
-    <div class="row text-center mb-5">
+    <div class="row text-center mb-5 reveal-section">
       <div class="col-12">
         <h2 class="hnr-nextcloud-section-title">
           <span class="hnr-nextcloud-title-orange">Tampilan</span> Nextcloud
@@ -46,7 +46,7 @@
     </div>
     
     <!-- Services Section -->
-    <div class="row text-center mb-5">
+    <div class="row text-center mb-5 reveal-section">
       <div class="col-12">
         <h2 class="hnr-nextcloud-section-title">
           <span class="hnr-nextcloud-title-orange">Layanan</span> Kami
@@ -59,7 +59,7 @@
     
     <div class="row mb-5">
       <!-- Service 1: Konsultasi & Implementasi -->
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6 mb-4 reveal-section">
         <div class="hnr-nextcloud-service-card">
           <div class="hnr-nextcloud-service-icon">
             <img src="{{ asset('assets/images/icon/layanan1.png') }}" alt="Konsultasi dan Implementasi" class="img-fluid">
@@ -74,7 +74,7 @@
       </div>
       
       <!-- Service 2: Migrasi Data -->
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6 mb-4 reveal-section">
         <div class="hnr-nextcloud-service-card">
           <div class="hnr-nextcloud-service-icon">
             <img src="{{ asset('assets/images/icon/layanan2.png') }}" alt="Migrasi Data" class="img-fluid">
@@ -90,7 +90,7 @@
       
       <!-- Service 3: Pemeliharaan dan Dukungan -->
       <div class="col-md-6 mb-4">
-        <div class="hnr-nextcloud-service-card">
+        <div class="hnr-nextcloud-service-card reveal-section">
           <div class="hnr-nextcloud-service-icon">
             <img src="{{ asset('assets/images/icon/layanan3.png') }}" alt="Pemeliharaan dan Dukungan" class="img-fluid">
           </div>
@@ -105,7 +105,7 @@
       
       <!-- Service 4: Pelatihan -->
       <div class="col-md-6 mb-4">
-        <div class="hnr-nextcloud-service-card">
+        <div class="hnr-nextcloud-service-card reveal-section">
           <div class="hnr-nextcloud-service-icon">
             <img src="{{ asset('assets/images/icon/layanan4.png') }}" alt="Pelatihan dan Edukasi" class="img-fluid">
           </div>
@@ -121,7 +121,7 @@
     
     <!-- FAQ Section -->
     <div class="row mb-5">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center reveal-section">
         <h2 class="hnr-nextcloud-section-title mb-4"><span class="hnr-nextcloud-title-orange">FAQ</span></h2>
         <p class="hnr-nextcloud-section-subtitle mb-5">Frequently Asked Questions (FAQ)</p>
         
@@ -256,7 +256,9 @@
     </div>
     
     <!-- Contact Us Section -->
+    <div class="reveal-section">
     @include('components.contact')
+    </div>
   </div>
 </section>
 @endsection

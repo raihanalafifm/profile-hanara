@@ -4,7 +4,7 @@
 
 <section class="hnr-house-maint-section">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center reveal-section">
       <!-- Logo/Image Section -->
       <div class="col-lg-5 mb-4 mb-lg-0">
         <div class="hnr-house-maint-logo-container">
@@ -29,7 +29,7 @@
     <!-- Benefits Section -->
     <div class="row mt-5">
       <div class="col-12">
-        <div class="hnr-house-benefit-section">
+        <div class="hnr-house-benefit-section reveal-section">
           <h2 class="hnr-house-benefit-title"><span class="hnr-house-benefit-title-orange">Mengapa</span> Maintenance Penting?</h2>
           <p class="hnr-house-benefit-subtitle">Maintenance rutin menjaga website tetap aman, cepat, dan bebas masalah</p>
           
@@ -101,7 +101,7 @@
     <!-- Expertise Section -->
     <div class="row mt-5 mb-5">
       <div class="col-12">
-        <div class="hnr-house-expertise-section">
+        <div class="hnr-house-expertise-section reveal-section">
           <h2 class="hnr-house-expertise-title"><span class="hnr-house-expertise-title-orange">Kenapa</span> Memilih Kami?</h2>
           <p class="hnr-house-expertise-subtitle">Cepat, aman, dan andal. Website Anda berjalan dan siap melayani</p>
           
@@ -169,8 +169,9 @@
         </div>
       </div>
     </div>
-
+    <div class="reveal-section">
     @include('components.contact')
+    </div>
   </div>
 </section>
 
