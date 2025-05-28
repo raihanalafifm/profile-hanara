@@ -6933,3 +6933,45 @@
         left: 50%;
         transform: translate(-50%, -60%) rotate(45deg);
     }
+
+    /* Animasi Reveal */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay untuk animasi bertahap */
+.reveal-section:nth-child(2) { transition-delay: 0.1s; }
+.reveal-section:nth-child(3) { transition-delay: 0.2s; }
+.reveal-section:nth-child(4) { transition-delay: 0.3s; }
+
+.service-card, .feature-item, .testimonial-clean-item, .product-item {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.reveal-section.active .service-card,
+.reveal-section.active .feature-item,
+.reveal-section.active .testimonial-clean-item,
+.reveal-section.active .product-item {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Delay bertahap untuk elemen dalam section */
+.reveal-section.active .service-card:nth-child(1),
+.reveal-section.active .feature-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.reveal-section.active .service-card:nth-child(2),
+.reveal-section.active .feature-item:nth-child(2) {
+    transition-delay: 0.2s;
+}

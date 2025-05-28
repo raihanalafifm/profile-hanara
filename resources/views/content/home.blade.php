@@ -65,6 +65,7 @@
 
 @section('container')
 <!-- Hero Section dengan SEO Optimization -->
+<div class="reveal-section">
 <section class="hero-section">
     <div class="container">
       <div class="row align-items-center">
@@ -139,8 +140,10 @@
       </div>
     </div>
 </section>
+</div>
 
 <!-- Update sections lainnya dengan struktur heading yang benar -->
+<div class="reveal-section">
 <section class="about-section">
     <div class="container">
       <div class="row align-items-center">
@@ -183,7 +186,10 @@
       </div>
     </div>
 </section>
+</div>
+
 <!-- Services Section -->
+<div class="reveal-section">
 <section class="awesome-services-section">
   <div class="container">
     <div class="row">
@@ -299,8 +305,10 @@
   <div class="services-bg-element services-bg-circle-1"></div>
   <div class="services-bg-element services-bg-circle-2"></div>
 </section>
+</div>
 
 <!-- Why Choose Us Section -->
+<div class="reveal-section">
 <section class="why-choose-section">
   <div class="container">
     <div class="row align-items-center">
@@ -378,7 +386,10 @@
     </div>
   </div>
 </section>
+</div>
+
 <!-- Testimonial Section with Consistent Company Icon -->
+<div class="reveal-section">
 <section class="testimonial-clean-section">
   <div class="container">
     <div class="row justify-content-center">
@@ -439,7 +450,10 @@
     </div>
   </div>
 </section>
+</div>
+
 <!-- Our Clients Section -->
+<div class="reveal-section">
 <section class="trusted-clients-section">
   <div class="container">
     <div class="row justify-content-center">
@@ -523,7 +537,10 @@
     </div>
   </div>
 </section>
+</div>
+
 <!-- Our Application Products Section - HP Outside Cards -->
+<div class="reveal-section">
 <section class="product-gallery-section py-5">
   <div class="container">
     <div class="row mb-5">
@@ -604,8 +621,10 @@
     </div>
   </div>
 </section>
+</div>
+
 <!-- Latest Blog Section with Dynamic Articles -->
-<!-- Latest Blog Section with Dynamic Articles -->
+<div class="reveal-section">
 <section class="latest-blog-section py-5">
   <div class="container">
     <div class="row text-center mb-4">
@@ -688,4 +707,5 @@
     </div>
   </div>
 </section>
+</div>
 @endsection

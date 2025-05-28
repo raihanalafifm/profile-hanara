@@ -1,6 +1,7 @@
 @extends('layout.main')
 
 @section('container')
+
 <section class="hnr-house-maint-section">
   <div class="container">
     <div class="row align-items-center">
@@ -172,4 +173,5 @@
     @include('components.contact')
   </div>
 </section>
+
 @endsection

@@ -136,7 +136,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    {{-- <!-- Team Section -->
     <section class="hcm-team-section">
         <div class="container py-5">
             <div class="text-center mb-5">
@@ -177,7 +177,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Testimonial Section -->
     <section class="testimonial-clean-section">

@@ -2,6 +2,7 @@
 
 @section('container')
 <!-- CCTV Hero Section -->
+<div class="reveal-section">
 <section class="hnr-cctv-hero-section">
   <div class="container">
     <div class="row align-items-center">
@@ -30,8 +31,11 @@
     </div>
   </div>
 </section>
+</div>
+
 
 <!-- Why Choose Us Section -->
+<div class="reveal-section">
 <section class="hnr-cctv-why-section">
   <div class="container">
     <div class="hnr-cctv-section-title text-center">
@@ -127,8 +131,9 @@
     </div>
   </div>
 </section>
-
+</div>
 <!-- Product Section -->
+<div class="reveal-section">
 <section class="hnr-cctv-product-section">
   <div class="container">
     <div class="hnr-cctv-section-title text-center">
@@ -160,6 +165,7 @@
     </div>
   </div>
 </section>
+</div>
   <div class="container">
     @include('components.contact')
   </div>

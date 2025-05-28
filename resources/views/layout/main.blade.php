@@ -713,6 +713,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Animasi reveal on scroll
+    const revealSections = document.querySelectorAll('.reveal-section');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // Optional: Unobserve setelah animasi terjadi sekali
+                // revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealSections.forEach(section => {
+        revealObserver.observe(section);
+    });
+
+    // Animasi untuk elemen dalam section (opsional)
+    const animateElements = (section) => {
+        const elements = section.querySelectorAll('.solution-card, .feature-item, .testimonial-clean-item');
+        
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    };
+
+    // Jalankan animasi elemen saat section masuk viewport
+    revealSections.forEach(section => {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateElements(entry.target);
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sectionObserver.observe(section);
+    });
+});
 </script>
 @stack('scripts')
 </body>
