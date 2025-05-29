@@ -65,7 +65,7 @@
     <!-- Contact Form Column -->
     <div class="col-lg-7">
       <div class="contact-form-container">
-        <form id="contactForm" class="contact-form" method="POST" action="#">
+        <form id="contactForm" class="contact-form" method="POST" action="{{ route('contact.submit') }}">
           @csrf
           
           <div class="row">
