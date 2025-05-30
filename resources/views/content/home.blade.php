@@ -12,11 +12,10 @@
           <!-- Ganti div dengan h1 untuk SEO -->
           <h1 class="company-name-hero">PT HANARA PRIMA SOLUSINDO</h1>
           <h2 class="hero-title">
-            <span class="text-primary">Digital</span> Innovation
-            For Your Future
+            <span class="text-primary">Your Partner</span>  for Smarter IT Solution
           </h2>
           <p class="hero-description">
-            Solusi digital terdepan untuk bisnis Anda. Kami menyediakan layanan teknologi informasi terbaik untuk semua kebutuhan bisnis Anda.
+            Empowering businesses with secure servers, email systems, and IT-managed services you can rely on.
           </p>
           
           <!-- Service Cards dengan semantic HTML -->
@@ -112,12 +111,18 @@
           <div class="section-heading">
             <span class="section-tag">• About Us •</span>
             <!-- Gunakan h2 karena h1 sudah dipakai di hero -->
-            <h2 class="company-name"><span class="text-primary">PT </span>HANARA<br>PRIMA SOLUTION</h2>
+            <h2 class="company-name"><span class="text-primary">Your Partner </span> <br>for Smarter IT Solution</h2>
           </div>
           
           <div class="about-description">
             <p>
-              PT Hanara Prima Solusindo adalah mitra inovasi teknologi terpercaya yang menyediakan solusi IT komprehensif untuk menjawab tantangan dunia bisnis di era digital. Dengan layanan seperti <strong>Nextcloud</strong>, <strong>Zimbra Mail Server</strong>, dukungan IT 24/7, serta aplikasi berbasis web dan mobile yang dikembangkan in-house, Hanara berkomitmen menghadirkan solusi yang handal dan disesuaikan dengan kebutuhan strategis klien untuk mengoptimalkan produktivitas bisnis mereka.
+              PT Hanara Prima Solusindo adalah penyedia solusi teknologi informasi yang membantu perusahaan menghadapi tantangan era digital dengan layanan yang fleksibel, aman, dan efisien.
+            </p>
+            <p>
+                Kami menawarkan sistem kolaborasi seperti Nextcloud, layanan email berbasis Zimbra Mail Server, serta pengembangan aplikasi web dan mobile yang disesuaikan dengan kebutuhan bisnis Anda.
+            </p>
+            <p>
+                Dengan dukungan IT 24/7 dan tim profesional in-house, kami berkomitmen menghadirkan layanan yang handal untuk mendukung transformasi digital dan meningkatkan produktivitas Anda.
             </p>
           </div>
         </div>
@@ -133,9 +138,9 @@
     <div class="row">
       <div class="col-lg-6 reveal-section">
         <div class="awesome-section-heading">
-          <span class="section-tag">• Awesome Service •</span>
-          <h2 class="section-title">Our Awesome <span class="text-primary">services</span><br>to give you success.</h2>
-          <p class="section-description">We switch all the channels on ya get into people's hands, homes, and minds to radicaly shift behavior</p>
+          <span class="section-tag">• Layanan Unggulan Hanara •</span>
+          <h2 class="section-title"><span class="text-primary">Smarter </span>IT Solutions <br>for Modern Business</h2>
+          <p class="section-description">Kami menyediakan berbagai layanan IT terbaik seperti Zimbra Mail Server, Nextcloud, pengembangan aplikasi web, komunikasi Motorola, hingga sistem keamanan CCTV, untuk mendukung transformasi digital dan efisiensi bisnis Anda.</p>
         </div>
       </div>
     </div>
@@ -149,9 +154,9 @@
           </div>
           <h3 class="solution-title">Nextcloud</h3>
           <p class="solution-description">
-            Platform kolaborasi modern yang dirancang untuk meningkatkan efisiensi kerja tim melalui akses data yang aman dan fleksibel.
+           Solusi file sharing & kolaborasi berbasis cloud untuk tim Anda. <br> Akses data dengan aman, fleksibel, dan efisien di mana saja.
           </p>
-          <a href="#" class="solution-link">
+          <a href="{{ route('nextcloud') }}" class="solution-link">
             <i class="fas fa-arrow-right"></i> Read More
           </a>
         </div>
@@ -165,9 +170,9 @@
           </div>
           <h3 class="solution-title">Zimbra Mail Server</h3>
           <p class="solution-description">
-            Solusi email server yang handal, aman, dan mudah digunakan, untuk memastikan komunikasi bisnis lancar tanpa hambatan.
+              Layanan email server yang aman, stabil, dan mudah dikelola. <br> Ideal untuk perusahaan yang membutuhkan komunikasi bisnis tanpa hambatan.
           </p>
-          <a href="#" class="solution-link">
+          <a href="{{ route('instalasi-zimbra') }}" class="solution-link">
             <i class="fas fa-arrow-right"></i> Read More
           </a>
         </div>
@@ -181,7 +186,7 @@
           </div>
           <h3 class="solution-title">IT Support</h3>
           <p class="solution-description">
-            Layanan instalasi dan pemeliharaan dengan respon cepat guna menjaga fungsi infrastruktur bisnis anda berjalan optimal
+            Dukungan teknis untuk instalasi, maintenance, dan troubleshooting IT. <br>Respon cepat untuk menjaga kelancaran sistem dan infrastruktur Anda.
           </p>
           <a href="#" class="solution-link">
             <i class="fas fa-arrow-right"></i> Read More
@@ -197,7 +202,7 @@
           </div>
           <h3 class="solution-title">Social Media Management</h3>
           <p class="solution-description">
-            Dirancang untuk membantu perusahaan membangun citra positif dan memperkuat branding di platform media sosial.
+            Bangun reputasi bisnis Anda secara profesional di platform digital. <br> Kami bantu kelola strategi konten, interaksi, hingga laporan performa.
           </p>
           <a href="#" class="solution-link">
             <i class="fas fa-arrow-right"></i> Read More
@@ -213,9 +218,9 @@
           </div>
           <h3 class="solution-title">Motorola</h3>
           <p class="solution-description">
-            Solusi komunikasi industri yang mendukung operasional bisnis dengan kebutuhan komunikasi real-time.
+            Solusi perangkat komunikasi RIG & HT untuk industri, logistik, dan keamanan. <br>Komunikasi real-time yang kuat dan andal di lapangan.
           </p>
-          <a href="#" class="solution-link">
+          <a href="{{ route('motorola') }}" class="solution-link">
             <i class="fas fa-arrow-right"></i> Read More
           </a>
         </div>
@@ -229,9 +234,9 @@
           </div>
           <h3 class="solution-title">Web Developer</h3>
           <p class="solution-description">
-            HCM merupakan platform berbasis web yang terintegrasi dengan berbagai fitur esensial untuk efisiensi dan produktivitas pengelolaan SDM di perusahaan.
+            Sistem berbasis web seperti HCM & HCIS untuk manajemen SDM, absensi, dan payroll. <br> Kustomisasi sesuai kebutuhan operasional perusahaan Anda.
           </p>
-          <a href="#" class="solution-link">
+          <a href="{{ route('develop-web') }}" class="solution-link">
             <i class="fas fa-arrow-right"></i> Read More
           </a>
         </div>
@@ -260,8 +265,8 @@
       <!-- Right Content - Features -->
       <div class="col-lg-6 features-column">
         <div class="section-heading-alt reveal-section">
-          <span class="section-tag-alt">• Why Choose Us •</span>
-          <h2 class="section-title-alt">Choose <span class="text-primary-alt">The Best</span> IT Service Company</h2>
+          <span class="section-tag-alt">• Kenapa Memilih Hanara? •</span>
+          <h2 class="section-title-alt">Your <span class="text-primary-alt">Reliable Partner</span> in Smart IT Solutions</h2>
         </div>
         
         <div class="features-list">
@@ -272,7 +277,7 @@
             </div>
             <div class="feature-content">
               <h4 class="feature-title">Tim Professional</h4>
-              <p class="feature-description">Tenaga ahli berpengalaman yang siap membantu Anda mencapai tujuan bisnis dengan solusi andal.</p>
+              <p class="feature-description">Dipandu oleh tenaga ahli berpengalaman di bidang infrastruktur server, aplikasi bisnis, dan sistem komunikasi industri.</p>
             </div>
           </div>
           
@@ -283,7 +288,7 @@
             </div>
             <div class="feature-content">
               <h4 class="feature-title">Layanan 24/7</h4>
-              <p class="feature-description">Dukungan penuh kapan saja untuk memastikan kelancaran dan produktivitas bisnis Anda.</p>
+              <p class="feature-description">Kami siap memberikan bantuan teknis kapan saja untuk menjaga layanan Anda tetap stabil dan produktif.</p>
             </div>
           </div>
           
@@ -294,7 +299,7 @@
             </div>
             <div class="feature-content">
               <h4 class="feature-title">Keamanan & Keandalan</h4>
-              <p class="feature-description">Kami mengintegrasikan teknologi up-to-date untuk menjamin keamanan dan keandalan layanan Anda.</p>
+              <p class="feature-description">Solusi kami dilengkapi proteksi data, enkripsi, dan teknologi terkini untuk memastikan keamanan sistem IT Anda.</p>
             </div>
           </div>
           
@@ -305,7 +310,7 @@
             </div>
             <div class="feature-content">
               <h4 class="feature-title">Solusi yang Disesuaikan</h4>
-              <p class="feature-description">Setiap layanan kami dioptimalkan agar sesuai dengan kebutuhan dan tujuan strategis bisnis Anda</p>
+              <p class="feature-description">Layanan kami dirancang fleksibel sesuai kebutuhan industri, skala bisnis, dan strategi pertumbuhan klien.</p>
             </div>
           </div>
           
@@ -316,7 +321,7 @@
             </div>
             <div class="feature-content">
               <h4 class="feature-title">Efisiensi & Inovasi</h4>
-              <p class="feature-description">Meningkatkan produktivitas bisnis Anda melalui solusi teknologi yang efektif dan inovatif.</p>
+              <p class="feature-description">Kami mengutamakan efisiensi biaya dan kemudahan integrasi sistem, tanpa mengorbankan performa dan kemajuan teknologi.</p>
             </div>
           </div>
         </div>
@@ -397,9 +402,9 @@
       <div class="col-lg-8 text-center">
         <div class="trusted-clients-heading">
           <span class="trusted-clients-tag">• Our Client •</span>
-          <h2 class="trusted-clients-title">Kami telah dipercaya oleh banyak klien dan perusahaan</h2>
+          <h2 class="trusted-clients-title">Dipercaya oleh Berbagai Klien dari Beragam Industri</h2>
           <p class="trusted-clients-subtitle">
-            Kami memiliki beberapa keahlian untuk bekerja sama dengan perusahaan dan organisasi terkemuka di Indonesia. Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
+            Beberapa perusahaan dan organisasi ternama di Indonesia telah mempercayakan solusi IT mereka kepada Hanara. Kami terus berkomitmen memberikan layanan terbaik sesuai kebutuhan klien.
           </p>
         </div>
       </div>
