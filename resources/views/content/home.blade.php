@@ -589,11 +589,11 @@
             <!-- Blog Card -->
             <div class="blog-card">
               <div class="blog-card-img">
-                @if($article->image)
-                  <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}">
-                @else
-                  <img src="{{ asset('assets/images/default-blog.jpg') }}" alt="{{ $article->title }}">
-                @endif
+               @if($article->image)
+                      <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}">
+               @else
+                    <img src="{{ asset('assets/images/default-blog.jpg') }}" alt="{{ $article->title }}">
+               @endif
                 <div class="blog-card-overlay">
                   <h3 class="blog-card-headline">{{ strtoupper(Str::limit($article->title, 40)) }}</h3>
                 </div>
