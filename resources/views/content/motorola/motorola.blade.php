@@ -24,7 +24,7 @@
             PT Hanara Prima Solusindo sebagai pusat distributor handy talky dan RIG untuk merek Motorola. Motorola terkenal untuk satu nama handal untuk Handy Talky dan menghadirkan berbagai tipe yang memenuhi standar kualitas untuk komunikasi radio baik HT VHF/UHF baik alat operasi pihak depan mendukung kinerja pekerjaan maupun balik layar untuk industri. Handy Talky dan RIG Motorola hadir dalam beragam pilihan sesuai kebutuhan dengan ragam varian dan kelas.
           </p>
           
-          <a href="#contact" class="hnr-motorola-button">Pesan Sekarang!</a>
+          <a href="{{ url('https://shop.hanara.id') }}" class="hnr-motorola-button">Pesan Sekarang!</a>
         </div>
       </div>
     </div>

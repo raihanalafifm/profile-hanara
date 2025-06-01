@@ -7,16 +7,18 @@ return [
         'author' => 'PT Hanara Prima Solusindo',
         'robots' => 'index, follow',
         'og_type' => 'website',
-        'og_image' => '/assets/images/og-default.jpg',
+        'og_image' => 'assets/images/icon/icon hanara.png',
         'twitter_card' => 'summary_large_image',
     ],
     
     // SEO settings per halaman
     'pages' => [
         'home' => [
-            'title' => 'Solusi IT Terpadu untuk Transformasi Digital Bisnis Anda',
-            'description' => 'PT Hanara Prima Solusindo menyediakan layanan IT solution lengkap: Zimbra Mail Server, Web Development, CCTV, Motorola Radio, dan Cloud Services. Konsultasi gratis!',
-            'keywords' => 'IT solution Indonesia, zimbra mail server, web development, jasa pembuatan website, CCTV installation, motorola radio, cloud services, software house Bengkulu',
+            'title' => 'Your Partner for Smarter IT Solution',
+            'description' => 'PT Hanara Prima Solusindo adalah penyedia solusi teknologi informasi yang membantu perusahaan menghadapi tantangan era digital dengan layanan yang fleksibel, aman, dan efisien. 
+                                Kami menawarkan sistem kolaborasi seperti Nextcloud, layanan email berbasis Zimbra Mail Server, serta pengembangan aplikasi web dan mobile yang disesuaikan dengan kebutuhan bisnis Anda.
+                                Dengan dukungan IT 24/7 dan tim profesional in-house, kami berkomitmen menghadirkan layanan yang handal untuk mendukung transformasi digital dan meningkatkan produktivitas Anda.',
+            'keywords' => 'IT solution, zimbra mail server, web development, jasa pembuatan website, CCTV installation, motorola radio, cloud services, software house Bengkulu',
             'og_title' => 'Transformasi Digital Bisnis Anda Bersama Hanara Prima Solusindo',
             'og_description' => 'Partner teknologi terpercaya dengan layanan lengkap: Zimbra, Web Development, CCTV & Motorola. Hub: 0897-5000-805',
         ],

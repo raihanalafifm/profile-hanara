@@ -25,7 +25,7 @@
             Hanara CCTV adalah unit bisnis PT Hanara Prima Solusindo dalam bidang CCTV yang didedikasikan khusus untuk memberikan solusi keamanan terbaik kepada pelanggan kami dengan teknologi CCTV yang canggih dengan pengalaman yang tepat dengan kebutuhan anda.
           </p>
           
-          <a href="#contact" class="hnr-cctv-button">Ayok Hubungi!</a>
+          <a href="#kontak" class="hnr-cctv-button">Ayok Hubungi!</a>
         </div>
       </div>
     </div>
@@ -166,7 +166,7 @@
   </div>
 </section>
 </div>
-  <div class="container">
+  <div class="container" id="kontak">
     @include('components.contact')
   </div>
 @endsection

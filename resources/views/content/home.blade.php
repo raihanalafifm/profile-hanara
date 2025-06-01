@@ -608,8 +608,8 @@
                   <i class="fas fa-arrow-right"></i> Read More
                 </a>
                 @else
-                <a href="javascript:void(0);" class="blog-card-link" onclick="return false;">
-                  <i class="fas fa-arrow-right"></i> Read More
+                <a href="{{ route('articles.show', Str::slug($article->title) . '-' . $article->id) }}" class="blog-card-link">
+                    <i class="fas fa-arrow-right"></i> Read More
                 </a>
                 @endif
               </div>

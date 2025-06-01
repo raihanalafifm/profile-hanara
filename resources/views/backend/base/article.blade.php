@@ -1,6 +1,22 @@
 @extends('backend.layout.main')
 
 @section('backend')
+<style>
+    .note-editor.note-frame {
+        border: 1px solid #ddd !important;
+        border-radius: 4px !important;
+    }
+    
+    .note-toolbar {
+        background-color: #f8f9fa !important;
+        border-bottom: 1px solid #ddd !important;
+    }
+    
+    .note-btn-group {
+        margin-right: 5px !important;
+    }
+</style>
+
 <!-- Hoverable Table rows -->
 <div class="card">
     <div class="card-header">
@@ -9,7 +25,6 @@
                 <h5 class="card-title mb-0">Manajemen Artikel</h5>
             </div>
             <div class="col-lg-4 text-end">
-                <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
                     <i class="bx bx-plus"></i> Tambah Artikel
                 </button>
@@ -31,7 +46,8 @@
                     <th>No</th>
                     <th>Judul</th>
                     <th>Foto</th>
-                    <th>Link</th>
+                    <th>Kategori</th>
+                    <th>Tanggal Publish</th>
                     <th>Deskripsi</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -51,14 +67,9 @@
                         @endif
                     </td>
                     <td>
-                        @if($article->link)
-                            <a href="{{ $article->link }}" target="_blank" class="btn btn-sm btn-link">
-                                <i class="bx bx-link-external"></i>
-                            </a>
-                        @else
-                            -
-                        @endif
+                        <span class="badge bg-label-primary">{{ ucfirst($article->category) }}</span>
                     </td>
+                    <td>{{ $article->published_at ? $article->published_at->format('d M Y') : '-' }}</td>
                     <td>{{ Str::limit($article->description, 50) }}</td>
                     <td>
                         <form action="{{ route('backend.articles.toggle-status', $article) }}" method="POST" class="d-inline">
@@ -75,8 +86,10 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);" 
-                                   onclick="editArticle({{ $article->toJson() }})">
+                                <a class="dropdown-item edit-article" href="javascript:void(0)" 
+                                   data-id="{{ $article->id }}"
+                                   data-bs-toggle="modal" 
+                                   data-bs-target="#editModal">
                                     <i class="bx bx-edit-alt me-1"></i> Edit
                                 </a>
                                 <form action="{{ route('backend.articles.destroy', $article) }}" method="POST" 
@@ -93,14 +106,13 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" class="text-center">Belum ada artikel</td>
+                    <td colspan="8" class="text-center">Belum ada artikel</td>
                 </tr>
                 @endforelse
             </tbody>
         </table>
     </div>
     
-    <!-- Pagination -->
     <div class="card-footer">
         {{ $articles->links() }}
     </div>
@@ -108,52 +120,65 @@
 
 <!-- Modal Add Article -->
 <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <form action="{{ route('backend.articles.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Tambah Artikel</h5>
+                    <h5 class="modal-title">Tambah Artikel</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col mb-3">
+                        <div class="col-md-8 mb-3">
                             <label for="title" class="form-label">Judul Artikel <span class="text-danger">*</span></label>
-                            <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" 
-                                   placeholder="Masukkan judul artikel" required>
-                            @error('title')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <input type="text" id="title" name="title" class="form-control" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="category" class="form-label">Kategori <span class="text-danger">*</span></label>
+                            <select name="category" id="category" class="form-select" required>
+                                <option value="csr">CSR & Lingkungan</option>
+                                <option value="news">Berita</option>
+                                <option value="event">Event</option>
+                                <option value="tech">Teknologi</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="row g-2">
-                        <div class="col mb-3">
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
                             <label for="image" class="form-label">Upload Gambar</label>
-                            <input class="form-control @error('image') is-invalid @enderror" type="file" 
-                                   id="image" name="image" accept="image/*">
+                            <input class="form-control" type="file" id="image" name="image" accept="image/*" onchange="previewImage(this)">
                             <small class="text-muted">Format: JPG, PNG, GIF. Max: 2MB</small>
-                            @error('image')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
                         </div>
-                        <div class="col mb-3">
-                            <label for="link" class="form-label">Link</label>
-                            <input type="url" id="link" name="link" class="form-control @error('link') is-invalid @enderror" 
-                                   placeholder="https://example.com">
-                            @error('link')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                        <div class="col-md-4 mb-3">
+                            <label for="published_at" class="form-label">Tanggal Publish</label>
+                            <input type="datetime-local" id="published_at" name="published_at" class="form-control" value="{{ now()->format('Y-m-d\TH:i') }}">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="link" class="form-label">Link Eksternal</label>
+                            <input type="url" id="link" name="link" class="form-control" placeholder="https://example.com">
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="description" class="form-label">Deskripsi <span class="text-danger">*</span></label>
-                            <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror" 
-                                      rows="4" placeholder="Masukkan deskripsi artikel" required></textarea>
-                            @error('description')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <label for="description" class="form-label">Deskripsi Singkat <span class="text-danger">*</span></label>
+                            <textarea id="description" name="description" class="form-control" rows="3" maxlength="200" required></textarea>
+                            <small class="text-muted">Deskripsi ini akan muncul di preview artikel</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="content" class="form-label">Konten Artikel</label>
+                            <textarea id="content" name="content" class="form-control summernote"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="image-preview" class="mt-2"></div>
                         </div>
                     </div>
                 </div>
@@ -168,7 +193,7 @@
 
 <!-- Modal Edit Article -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <form id="editForm" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -179,26 +204,51 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col mb-3">
+                        <div class="col-md-8 mb-3">
                             <label for="edit_title" class="form-label">Judul Artikel <span class="text-danger">*</span></label>
                             <input type="text" id="edit_title" name="title" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="row g-2">
-                        <div class="col mb-3">
-                            <label for="edit_image" class="form-label">Upload Gambar Baru</label>
-                            <input class="form-control" type="file" id="edit_image" name="image" accept="image/*">
-                            <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
+                        <div class="col-md-4 mb-3">
+                            <label for="edit_category" class="form-label">Kategori <span class="text-danger">*</span></label>
+                            <select name="category" id="edit_category" class="form-select" required>
+                                <option value="csr">CSR & Lingkungan</option>
+                                <option value="news">Berita</option>
+                                <option value="event">Event</option>
+                                <option value="tech">Teknologi</option>
+                            </select>
                         </div>
-                        <div class="col mb-3">
-                            <label for="edit_link" class="form-label">Link</label>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="edit_image" class="form-label">Upload Gambar Baru</label>
+                            <input class="form-control" type="file" id="edit_image" name="image" accept="image/*" onchange="previewEditImage(this)">
+                            <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
+                            <div id="current-image" class="mt-2"></div>
+                            <div id="edit-image-preview" class="mt-2"></div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="edit_published_at" class="form-label">Tanggal Publish</label>
+                            <input type="datetime-local" id="edit_published_at" name="published_at" class="form-control">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="edit_link" class="form-label">Link Eksternal</label>
                             <input type="url" id="edit_link" name="link" class="form-control" placeholder="https://example.com">
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="edit_description" class="form-label">Deskripsi <span class="text-danger">*</span></label>
-                            <textarea id="edit_description" name="description" class="form-control" rows="4" required></textarea>
+                            <label for="edit_description" class="form-label">Deskripsi Singkat <span class="text-danger">*</span></label>
+                            <textarea id="edit_description" name="description" class="form-control" rows="3" maxlength="200" required></textarea>
+                            <small class="text-muted">Deskripsi ini akan muncul di preview artikel</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="edit_content" class="form-label">Konten Artikel</label>
+                            <textarea id="edit_content" name="content" class="form-control"></textarea>
                         </div>
                     </div>
                 </div>
@@ -210,4 +260,162 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function() {
+    // Test summernote loading
+    console.log('jQuery loaded:', typeof $ !== 'undefined');
+    console.log('Summernote loaded:', typeof $.fn.summernote !== 'undefined');
+    
+    // Initialize Summernote for add form dengan delay untuk memastikan DOM ready
+    setTimeout(function() {
+        $('#content').summernote({
+            height: 400,
+            placeholder: 'Tulis konten artikel di sini...',
+            tabsize: 2,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    }, 100);
+
+    // Handle edit button click
+    $('.edit-article').on('click', function(e) {
+        e.preventDefault();
+        
+        const articleId = $(this).data('id');
+        
+        // Show loading state
+        $('#editModal .modal-body').prepend('<div class="loading-spinner text-center py-3"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+        
+        // Fetch article data via AJAX
+        $.ajax({
+            url: `/backend/articles/${articleId}`,
+            method: 'GET',
+            success: function(article) {
+                // Remove loading spinner
+                $('#editModal .loading-spinner').remove();
+                
+                // Set form action
+                $('#editForm').attr('action', `/backend/articles/${article.id}`);
+                
+                // Fill form fields
+                $('#edit_title').val(article.title);
+                $('#edit_category').val(article.category);
+                $('#edit_description').val(article.description);
+                $('#edit_link').val(article.link || '');
+                
+                // Handle published date
+                if (article.published_at) {
+                    const date = new Date(article.published_at);
+                    const localDate = date.toISOString().slice(0, 16);
+                    $('#edit_published_at').val(localDate);
+                }
+                
+                // Handle current image display
+                if (article.image) {
+                    const imagePath = article.image.startsWith('articles/') ? `/storage/${article.image}` : article.image;
+                    $('#current-image').html(`
+                        <p class="mb-1">Gambar saat ini:</p>
+                        <img src="${imagePath}" class="img-thumbnail" style="max-height: 200px;">
+                    `);
+                } else {
+                    $('#current-image').html('');
+                }
+                
+                // Clear new image preview
+                $('#edit-image-preview').html('');
+                
+                // Initialize Summernote for edit form with content
+                $('#edit_content').summernote({
+                    height: 400,
+                    placeholder: 'Tulis konten artikel di sini...',
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'italic', 'underline', 'clear']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['view', ['fullscreen', 'codeview', 'help']]
+                    ],
+                    callbacks: {
+                        onInit: function() {
+                            // Set content after initialization
+                            $('#edit_content').summernote('code', article.content || '');
+                        }
+                    }
+                });
+            },
+            error: function(xhr, status, error) {
+                // Remove loading spinner
+                $('#editModal .loading-spinner').remove();
+                
+                alert('Error loading article data. Please try again.');
+                console.error('Error:', error);
+                $('#editModal').modal('hide');
+            }
+        });
+    });
+    
+    // Clean up Summernote when edit modal closes
+    $('#editModal').on('hidden.bs.modal', function() {
+        // Destroy Summernote instance
+        if ($('#edit_content').data('summernote')) {
+            $('#edit_content').summernote('destroy');
+        }
+        
+        // Clear form
+        $('#editForm')[0].reset();
+        $('#current-image').html('');
+        $('#edit-image-preview').html('');
+    });
+    
+    // Clean up add modal
+    $('#basicModal').on('hidden.bs.modal', function() {
+        $('#image-preview').html('');
+    });
+});
+
+// Image preview functions
+function previewImage(input) {
+    const preview = document.getElementById('image-preview');
+    preview.innerHTML = '';
+    
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.innerHTML = `<img src="${e.target.result}" class="img-thumbnail" style="max-height: 200px;">`;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function previewEditImage(input) {
+    const preview = document.getElementById('edit-image-preview');
+    preview.innerHTML = '';
+    
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.innerHTML = `
+                <p class="mb-1 mt-2">Gambar baru:</p>
+                <img src="${e.target.result}" class="img-thumbnail" style="max-height: 200px;">
+            `;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
 @endsection

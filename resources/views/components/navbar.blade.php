@@ -40,6 +40,7 @@
                         role="menu">
               <li><a class="dropdown-item {{ request()->routeIs('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}">About Us</a></li>
               <li><a class="dropdown-item {{ request()->routeIs('contact-us') ? 'active' : '' }}" href="{{ route('contact-us') }}">Contact Us</a></li>
+              <li><a class="dropdown-item {{ request()->routeIs('articles.*') ? 'active' : '' }}" href="{{ route('articles.index') }}">Artikels</a></li>
               <li><a class="dropdown-item {{ request()->routeIs('career') ? 'active' : '' }}" href="{{ route('career') }}">Career</a></li>
             </ul>
           </li>

@@ -40,8 +40,10 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+    <!-- Summernote CSS - Load before page loads -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
     <!-- Page CSS -->
 
@@ -109,56 +111,63 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-<script>
+
+    <!-- Summernote JS - Load after jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <!-- Page specific scripts -->
+    @yield('scripts')
+
+    <script>
     function editArticle(article) {
-    const form = document.getElementById('editForm');
-    form.action = `/backend/articles/${article.id}`;
-    
-    document.getElementById('edit_title').value = article.title;
-    document.getElementById('edit_link').value = article.link || '';
-    document.getElementById('edit_description').value = article.description;
-    
-    const editModal = new bootstrap.Modal(document.getElementById('editModal'));
-    editModal.show();
-}
-
-function editCareer(career) {
-    const form = document.getElementById('editCareerForm');
-    form.action = `/backend/careers/${career.id}`;
-    
-    document.getElementById('edit_position').value = career.position;
-    document.getElementById('edit_type').value = career.type;
-    document.getElementById('edit_description').value = career.description;
-    
-    // Convert array skills dan qualifications ke string dengan newline
-    if (career.skills && career.skills.length > 0) {
-        document.getElementById('edit_skills').value = career.skills.join('\n');
-    } else {
-        document.getElementById('edit_skills').value = '';
+        const form = document.getElementById('editForm');
+        form.action = `/backend/articles/${article.id}`;
+        
+        document.getElementById('edit_title').value = article.title;
+        document.getElementById('edit_link').value = article.link || '';
+        document.getElementById('edit_description').value = article.description;
+        
+        const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+        editModal.show();
     }
-    
-    if (career.qualifications && career.qualifications.length > 0) {
-        document.getElementById('edit_qualifications').value = career.qualifications.join('\n');
-    } else {
-        document.getElementById('edit_qualifications').value = '';
-    }
-    
-    const editModal = new bootstrap.Modal(document.getElementById('editCareerModal'));
-    editModal.show();
-}
 
-function editUser(user) {
-    const form = document.getElementById('editUserForm');
-    form.action = `/backend/users/${user.id}`;
-    
-    document.getElementById('edit_name').value = user.name;
-    document.getElementById('edit_email').value = user.email;
-    document.getElementById('edit_password').value = '';
-    document.getElementById('edit_password_confirmation').value = '';
-    
-    const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
-    editModal.show();
-}
-</script>
+    function editCareer(career) {
+        const form = document.getElementById('editCareerForm');
+        form.action = `/backend/careers/${career.id}`;
+        
+        document.getElementById('edit_position').value = career.position;
+        document.getElementById('edit_type').value = career.type;
+        document.getElementById('edit_description').value = career.description;
+        
+        // Convert array skills dan qualifications ke string dengan newline
+        if (career.skills && career.skills.length > 0) {
+            document.getElementById('edit_skills').value = career.skills.join('\n');
+        } else {
+            document.getElementById('edit_skills').value = '';
+        }
+        
+        if (career.qualifications && career.qualifications.length > 0) {
+            document.getElementById('edit_qualifications').value = career.qualifications.join('\n');
+        } else {
+            document.getElementById('edit_qualifications').value = '';
+        }
+        
+        const editModal = new bootstrap.Modal(document.getElementById('editCareerModal'));
+        editModal.show();
+    }
+
+    function editUser(user) {
+        const form = document.getElementById('editUserForm');
+        form.action = `/backend/users/${user.id}`;
+        
+        document.getElementById('edit_name').value = user.name;
+        document.getElementById('edit_email').value = user.email;
+        document.getElementById('edit_password').value = '';
+        document.getElementById('edit_password_confirmation').value = '';
+        
+        const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+        editModal.show();
+    }
+    </script>
   </body>
 </html>

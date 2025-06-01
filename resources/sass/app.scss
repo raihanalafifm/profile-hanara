@@ -1,3 +1,4 @@
+// scss-lint:disable VendorPrefix
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
@@ -6,6 +7,10 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+html {
+  scroll-behavior: smooth;
+}
 
 /* Scroll Down Animation CSS */
  .scroll-down-container {
@@ -1561,10 +1566,11 @@ h2.company-name{
   }
 }
 /* Latest Blog Section Styles (No Arrow Buttons) */
+/* Latest Blog Section Styles - PERBAIKAN UNTUK TINGGI CARD SAMA */
 .latest-blog-section {
   background-color: #f8f9fb;
   padding: 80px 0;
-  overflow: hidden; /* Prevent horizontal scroll */
+  overflow: hidden;
 }
 
 /* Blog Tags and Titles */
@@ -1598,8 +1604,7 @@ h2.company-name{
   margin-right: auto;
 }
 
-/* Blog Slider */
-/* Blog Slider Smooth Transition Fix */
+/* Blog Slider Container */
 .blog-slider {
   position: relative;
   overflow: hidden;
@@ -1616,20 +1621,22 @@ h2.company-name{
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  touch-action: pan-y; /* Allow vertical scroll, horizontal swipe */
+  touch-action: pan-y;
   will-change: transform;
   -webkit-tap-highlight-color: transparent;
-  transform: translateZ(0); /* Enable hardware acceleration */
+  transform: translateZ(0);
   backface-visibility: hidden;
+  min-height: 450px; /* Tinggi minimum untuk container */
 }
 
 .blog-slider-container:active {
   cursor: grabbing;
 }
 
-/* Blog Card Styles */
+/* PERBAIKAN UTAMA: Blog Card dengan Tinggi Sama */
 .blog-card {
   flex: 0 0 auto;
+  width: 350px; /* Lebar tetap untuk konsistensi */
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -1638,7 +1645,7 @@ h2.company-name{
   user-select: none;
   -webkit-user-select: none;
   position: relative;
-  height: 100%;
+  height: 420px; /* TINGGI TETAP UNTUK SEMUA CARD */
   display: flex;
   flex-direction: column;
 }
@@ -1648,18 +1655,12 @@ h2.company-name{
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure content is not selectable during drag */
-.blog-slider-container.dragging .blog-card * {
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Blog Card Image */
+/* Blog Card Image - Tinggi Tetap */
 .blog-card-img {
   position: relative;
-  height: 200px;
+  height: 180px; /* Tinggi tetap untuk gambar */
   overflow: hidden;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Tidak mengecil */
 }
 
 .blog-card-img img {
@@ -1673,12 +1674,31 @@ h2.company-name{
   transform: scale(1.05);
 }
 
-/* Blog Card Content */
+.blog-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  padding: 15px;
+  color: white;
+}
+
+.blog-card-headline {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+/* Blog Card Content - Mengisi ruang yang tersisa */
 .blog-card-content {
   padding: 20px;
-  flex: 1;
+  flex: 1; /* Mengisi ruang yang tersisa */
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Distribusi ruang merata */
 }
 
 .blog-card-title {
@@ -1687,6 +1707,12 @@ h2.company-name{
   color: #333;
   margin-bottom: 10px;
   line-height: 1.4;
+  min-height: 50px; /* Tinggi minimum untuk judul */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Maksimal 2 baris */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .blog-card-text {
@@ -1694,10 +1720,16 @@ h2.company-name{
   line-height: 1.6;
   color: #666;
   margin-bottom: 15px;
-  flex: 1;
+  flex: 1; /* Mengisi ruang yang tersisa */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Maksimal 4 baris */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 88px; /* 4 baris x 22px line-height */
 }
 
-/* Blog Card Link - Enhanced for better clicking */
+/* Blog Card Link - Selalu di bottom */
 .blog-card-link {
   display: inline-flex;
   align-items: center;
@@ -1710,7 +1742,8 @@ h2.company-name{
   position: relative;
   z-index: 10;
   padding: 5px 0;
-  margin-top: auto;
+  margin-top: auto; /* Push ke bottom */
+  align-self: flex-start; /* Align ke kiri */
 }
 
 .blog-card-link:hover {
@@ -1727,10 +1760,15 @@ h2.company-name{
   transform: translateX(5px);
 }
 
-/* Prevent link issues */
 .blog-card-link:focus {
   outline: 2px solid #ff6700;
   outline-offset: 2px;
+}
+
+/* Prevent content selection during drag */
+.blog-slider-container.dragging .blog-card * {
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Slider Navigation Dots */
@@ -1768,13 +1806,47 @@ h2.company-name{
 }
 
 /* Responsive adjustments */
+@media (max-width: 1199px) {
+  .blog-card {
+    width: 320px;
+    height: 400px;
+  }
+  
+  .blog-card-img {
+    height: 160px;
+  }
+  
+  .blog-card-text {
+    min-height: 80px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
 @media (max-width: 991px) {
   .latest-blog-section {
     padding: 60px 0;
   }
   
   .blog-card {
-    min-width: calc(50% - 10px);
+    width: 300px;
+    height: 380px;
+  }
+  
+  .blog-card-img {
+    height: 150px;
+  }
+  
+  .blog-card-title {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  
+  .blog-card-text {
+    font-size: 13px;
+    min-height: 72px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 }
 
@@ -1784,11 +1856,51 @@ h2.company-name{
   }
   
   .blog-card {
-    min-width: 100%;
+    width: 280px;
+    height: 360px;
+  }
+  
+  .blog-card-img {
+    height: 140px;
+  }
+  
+  .blog-card-content {
+    padding: 15px;
+  }
+  
+  .blog-card-title {
+    font-size: 15px;
+    min-height: 40px;
+  }
+  
+  .blog-card-text {
+    font-size: 12px;
+    min-height: 64px;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
   
   .blog-slider-nav {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-card {
+    width: 260px;
+    height: 340px;
+  }
+  
+  .blog-card-img {
+    height: 130px;
+  }
+  
+  .blog-card-title {
+    min-height: 36px;
+  }
+  
+  .blog-card-text {
+    min-height: 60px;
   }
 }
 
@@ -1807,6 +1919,37 @@ h2.company-name{
   }
 }
 
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .latest-blog-section {
+    background-color: #161615;
+  }
+  
+  .blog-card {
+    background-color: #232323;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .blog-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  .blog-card-title {
+    color: #e0e0e0;
+  }
+  
+  .blog-card-text {
+    color: #aaa;
+  }
+  
+  .blog-slider-dot {
+    background-color: #555;
+  }
+  
+  .blog-slider-dot:hover {
+    background-color: #777;
+  }
+}
 /* About Page Styles - Add to your existing CSS or create a new CSS file */
 
 /* About Page Section */
@@ -7123,7 +7266,7 @@ h2.company-name{
 }
 
 .hnr-article-category {
-    background-color: #28a745;
+    background-color: #ff6700;
     color: #fff;
     padding: 5px 15px;
     font-size: 12px;
@@ -7140,7 +7283,7 @@ h2.company-name{
 }
 
 .hnr-article-date {
-    color: #28a745;
+    color: #ff6700;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -7167,7 +7310,7 @@ h2.company-name{
 .hnr-article-link {
     display: inline-flex;
     align-items: center;
-    color: #28a745;
+    color: #ff6700;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
@@ -7176,7 +7319,7 @@ h2.company-name{
 }
 
 .hnr-article-link:hover {
-    color: #1e7e34;
+    color: #FF4500;
 }
 
 .hnr-article-link i {
@@ -7315,7 +7458,7 @@ h2.company-name{
 
 .hnr-article-category-badge {
     display: inline-block;
-    background-color: #28a745;
+    background-color: #ff6700;
     color: #fff;
     padding: 5px 20px;
     font-size: 12px;

@@ -28,9 +28,13 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
     })->name('dashboard');
     
     // Articles Management
-    Route::resource('articles', ArticleController::class);
-    Route::patch('articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])
-        ->name('articles.toggle-status');
+    Route::get('/articles', [ArticleController::class, 'adminIndex'])->name('articles.index');
+    Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
+    Route::put('/articles/{article}', [ArticleController::class, 'update'])->name('articles.update');
+    Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+    Route::get('/articles/{article}', [ArticleController::class, 'edit'])->name('articles.edit');
+    Route::patch('/articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])->name('articles.toggle-status');
+
     
     // Careers Management
     Route::resource('careers', CareerController::class);
@@ -59,6 +63,10 @@ Route::get('/karir/{career:slug}', [CareerController::class, 'frontShow'])->name
 Route::redirect('/about-us', '/tentang-kami', 301);
 Route::redirect('/contact-us', '/hubungi-kami', 301);
 Route::redirect('/career', '/karir', 301);
+
+//article
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
 
 // Zimbra Routes dengan Controller
 Route::prefix('zimbra')->group(function () {
@@ -91,67 +99,67 @@ Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 
 require __DIR__.'/auth.php';
 
-Route::get('/test-contact-email', function () {
-    // Data sesuai dengan input form Anda
-    $testData = [
-        'name' => 'Raihan',
-        'email' => 'ezcreammm@gmail.com',
-        'company' => 'asdsad',
-        'address' => 'cde',
-        'whatsapp' => '1312123123',
-        'preferred_time' => 'Pagi',
-        'message' => 'asdsadadsada'
-    ];
+// Route::get('/test-contact-email', function () {
+//     // Data sesuai dengan input form Anda
+//     $testData = [
+//         'name' => 'Raihan',
+//         'email' => 'ezcreammm@gmail.com',
+//         'company' => 'asdsad',
+//         'address' => 'cde',
+//         'whatsapp' => '1312123123',
+//         'preferred_time' => 'Pagi',
+//         'message' => 'asdsadadsada'
+//     ];
     
-    try {
-        // Test kirim email
-        Mail::to('raihann.almuyassarr@gmail.com')->send(new ContactFormMail($testData));
+//     try {
+//         // Test kirim email
+//         Mail::to('raihann.almuyassarr@gmail.com')->send(new ContactFormMail($testData));
         
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Email berhasil dikirim ke Mailtrap!',
-            'check_inbox' => 'https://mailtrap.io/inboxes',
-            'data_sent' => $testData
-        ]);
+//         return response()->json([
+//             'status' => 'success',
+//             'message' => 'Email berhasil dikirim ke Mailtrap!',
+//             'check_inbox' => 'https://mailtrap.io/inboxes',
+//             'data_sent' => $testData
+//         ]);
         
-    } catch (\Exception $e) {
-        return response()->json([
-            'status' => 'error',
-            'message' => $e->getMessage(),
-            'file' => $e->getFile(),
-            'line' => $e->getLine(),
-            'trace' => $e->getTraceAsString()
-        ], 500);
-    }
-});
+//     } catch (\Exception $e) {
+//         return response()->json([
+//             'status' => 'error',
+//             'message' => $e->getMessage(),
+//             'file' => $e->getFile(),
+//             'line' => $e->getLine(),
+//             'trace' => $e->getTraceAsString()
+//         ], 500);
+//     }
+// });
 
-// Debug konfigurasi mail
-Route::get('/debug-mail-config', function () {
-    return [
-        'default' => config('mail.default'),
-        'smtp_config' => config('mail.mailers.smtp'),
-        'from' => config('mail.from'),
-        'env_check' => [
-            'MAIL_MAILER' => env('MAIL_MAILER'),
-            'MAIL_HOST' => env('MAIL_HOST'),
-            'MAIL_PORT' => env('MAIL_PORT'),
-            'MAIL_USERNAME' => substr(env('MAIL_USERNAME'), 0, 5) . '***',
-            'MAIL_ENCRYPTION' => env('MAIL_ENCRYPTION'),
-        ]
-    ];
-});
+// // Debug konfigurasi mail
+// Route::get('/debug-mail-config', function () {
+//     return [
+//         'default' => config('mail.default'),
+//         'smtp_config' => config('mail.mailers.smtp'),
+//         'from' => config('mail.from'),
+//         'env_check' => [
+//             'MAIL_MAILER' => env('MAIL_MAILER'),
+//             'MAIL_HOST' => env('MAIL_HOST'),
+//             'MAIL_PORT' => env('MAIL_PORT'),
+//             'MAIL_USERNAME' => substr(env('MAIL_USERNAME'), 0, 5) . '***',
+//             'MAIL_ENCRYPTION' => env('MAIL_ENCRYPTION'),
+//         ]
+//     ];
+// });
 
-// Test view email
-Route::get('/preview-email', function () {
-    $data = [
-        'name' => 'Raihan',
-        'email' => 'ezcreammm@gmail.com',
-        'company' => 'asdsad',
-        'address' => 'cde',
-        'whatsapp' => '1312123123',
-        'preferred_time' => 'Pagi',
-        'message' => 'asdsadadsada'
-    ];
+// // Test view email
+// Route::get('/preview-email', function () {
+//     $data = [
+//         'name' => 'Raihan',
+//         'email' => 'ezcreammm@gmail.com',
+//         'company' => 'asdsad',
+//         'address' => 'cde',
+//         'whatsapp' => '1312123123',
+//         'preferred_time' => 'Pagi',
+//         'message' => 'asdsadadsada'
+//     ];
     
-    return view('emails.contact-form', compact('data'));
-});
+//     return view('emails.contact-form', compact('data'));
+// });

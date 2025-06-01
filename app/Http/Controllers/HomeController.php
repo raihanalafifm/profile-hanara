@@ -36,9 +36,11 @@ class HomeController extends Controller
         $schemaOrg = config('seo.schema.organization');
         
         // Ambil artikel yang aktif dan terurut
-        $articles = Article::active()
-                          ->ordered()
-                          ->take(4)
+       $articles = Article::where('is_active', true)
+                          ->whereNotNull('published_at')
+                          ->where('published_at', '<=', now())
+                          ->orderBy('published_at', 'desc')
+                          ->limit(5)
                           ->get();
         
         // Data tambahan untuk homepage
