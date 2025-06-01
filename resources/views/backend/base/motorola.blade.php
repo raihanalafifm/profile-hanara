@@ -287,30 +287,91 @@
 
 @section('scripts')
 <script>
-function editMotorolaProduct(product) {
-    const form = document.getElementById('editMotorolaForm');
-    form.action = `/backend/motorola/${product.id}`;
-    
-    document.getElementById('edit_name').value = product.name;
-    document.getElementById('edit_model_number').value = product.model_number || '';
-    document.getElementById('edit_category').value = product.category;
-    document.getElementById('edit_type').value = product.type;
-    document.getElementById('edit_price').value = product.price || '';
-    document.getElementById('edit_description').value = product.description || '';
-    
-    // Convert specifications object to string format
-    if (product.specifications) {
-        let specsText = '';
-        for (const [key, value] of Object.entries(product.specifications)) {
-            specsText += `${key}: ${value}\n`;
-        }
-        document.getElementById('edit_specifications').value = specsText.trim();
-    } else {
-        document.getElementById('edit_specifications').value = '';
+    function editArticle(article) {
+        const form = document.getElementById('editForm');
+        form.action = `/backend/articles/${article.id}`;
+        
+        document.getElementById('edit_title').value = article.title;
+        document.getElementById('edit_link').value = article.link || '';
+        document.getElementById('edit_description').value = article.description;
+        
+        const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+        editModal.show();
     }
-    
-    const editModal = new bootstrap.Modal(document.getElementById('editMotorolaModal'));
-    editModal.show();
-}
-</script>
+
+    function editCareer(career) {
+        const form = document.getElementById('editCareerForm');
+        form.action = `/backend/careers/${career.id}`;
+        
+        document.getElementById('edit_position').value = career.position;
+        document.getElementById('edit_type').value = career.type;
+        document.getElementById('edit_description').value = career.description;
+        
+        // Convert array skills dan qualifications ke string dengan newline
+        if (career.skills && career.skills.length > 0) {
+            document.getElementById('edit_skills').value = career.skills.join('\n');
+        } else {
+            document.getElementById('edit_skills').value = '';
+        }
+        
+        if (career.qualifications && career.qualifications.length > 0) {
+            document.getElementById('edit_qualifications').value = career.qualifications.join('\n');
+        } else {
+            document.getElementById('edit_qualifications').value = '';
+        }
+        
+        const editModal = new bootstrap.Modal(document.getElementById('editCareerModal'));
+        editModal.show();
+    }
+
+    function editUser(user) {
+        const form = document.getElementById('editUserForm');
+        form.action = `/backend/users/${user.id}`;
+        
+        document.getElementById('edit_name').value = user.name;
+        document.getElementById('edit_email').value = user.email;
+        document.getElementById('edit_password').value = '';
+        document.getElementById('edit_password_confirmation').value = '';
+        
+        const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+        editModal.show();
+    }
+
+    function editMotorolaProduct(product) {
+        // Parse product data jika masih string
+        if (typeof product === 'string') {
+            try {
+                product = JSON.parse(product);
+            } catch (e) {
+                console.error('Error parsing product data:', e);
+                return;
+            }
+        }
+        
+        const form = document.getElementById('editMotorolaForm');
+        form.action = `/backend/motorola/${product.id}`;
+        
+        // Set form values
+        document.getElementById('edit_name').value = product.name || '';
+        document.getElementById('edit_model_number').value = product.model_number || '';
+        document.getElementById('edit_category').value = product.category || '';
+        document.getElementById('edit_type').value = product.type || '';
+        document.getElementById('edit_description').value = product.description || '';
+        
+        // Convert specifications object to string format
+        if (product.specifications && typeof product.specifications === 'object') {
+            let specsText = '';
+            for (const [key, value] of Object.entries(product.specifications)) {
+                specsText += `${key}: ${value}\n`;
+            }
+            document.getElementById('edit_specifications').value = specsText.trim();
+        } else {
+            document.getElementById('edit_specifications').value = '';
+        }
+        
+        // Show modal
+        const editModal = new bootstrap.Modal(document.getElementById('editMotorolaModal'));
+        editModal.show();
+    }
+    </script>
 @endsection
