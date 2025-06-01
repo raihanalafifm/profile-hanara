@@ -44,10 +44,12 @@
             <div class="col-lg-4">
                 <select class="form-select hnr-category-filter" onchange="filterByCategory(this.value)">
                     <option value="all" {{ request('category') == 'all' ? 'selected' : '' }}>Semua Kategori</option>
-                    <option value="csr" {{ request('category') == 'csr' ? 'selected' : '' }}>CSR & Lingkungan</option>
-                    <option value="news" {{ request('category') == 'news' ? 'selected' : '' }}>Berita</option>
-                    <option value="event" {{ request('category') == 'event' ? 'selected' : '' }}>Event</option>
-                    <option value="tech" {{ request('category') == 'tech' ? 'selected' : '' }}>Teknologi</option>
+                    <option value="solusi" {{ request('category') == 'solusi' ? 'selected' : '' }}>Solusi Teknologi Bisnis</option>
+                    <option value="kasus" {{ request('category') == 'kasus' ? 'selected' : '' }}>Studi Kasus Klien</option>
+                    <option value="tips" {{ request('category') == 'tips' ? 'selected' : '' }}>Tips & Panduan IT</option>
+                    <option value="tech" {{ request('category') == 'tech' ? 'selected' : '' }}>Tren Teknologi</option>
+                    <option value="hnr" {{ request('category') == 'hnr' ? 'selected' : '' }}>Layanan Hanara</option>
+                    <option value="faq" {{ request('category') == 'faq' ? 'selected' : '' }}>FAQ Teknologi</option>
                 </select>
             </div>
         </div>
@@ -66,17 +68,23 @@
                         <div class="hnr-article-overlay">
                             <span class="hnr-article-category">
                                 @switch($article->category)
-                                    @case('csr')
-                                        CSR NEWS
+                                    @case('solusi')
+                                        Solusi Teknologi Bisnis
                                         @break
-                                    @case('news')
-                                        BERITA
+                                    @case('kasus')
+                                        Studi Kasus Klien
                                         @break
-                                    @case('event')
-                                        EVENT
+                                    @case('tips')
+                                        Tips & Panduan IT
                                         @break
                                     @case('tech')
-                                        TEKNOLOGI
+                                        Tren Teknologi
+                                        @break
+                                    @case('hnr')
+                                        Layanan Hanara
+                                        @break
+                                    @case('faq')
+                                        FAQ Teknologi
                                         @break
                                     @default
                                         ARTIKEL

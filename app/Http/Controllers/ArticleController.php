@@ -109,7 +109,7 @@ class ArticleController extends Controller
             'link' => 'nullable|url',
             'description' => 'required|string|max:200',
             'content' => 'nullable|string',
-            'category' => 'required|string|in:csr,news,event,tech',
+            'category' => 'required|string|in:solusi,kasus,tips,tech,hnr,faq',
             'published_at' => 'nullable|date',
         ]);
 
@@ -143,7 +143,7 @@ class ArticleController extends Controller
             'link' => 'nullable|url',
             'description' => 'required|string|max:200',
             'content' => 'nullable|string',
-            'category' => 'required|string|in:csr,news,event,tech',
+            'category' => 'required|string|in:solusi,kasus,tips,tech,hnr,faq',
             'published_at' => 'nullable|date',
         ]);
 

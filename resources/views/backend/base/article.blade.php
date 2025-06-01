@@ -137,10 +137,12 @@
                         <div class="col-md-4 mb-3">
                             <label for="category" class="form-label">Kategori <span class="text-danger">*</span></label>
                             <select name="category" id="category" class="form-select" required>
-                                <option value="csr">CSR & Lingkungan</option>
-                                <option value="news">Berita</option>
-                                <option value="event">Event</option>
-                                <option value="tech">Teknologi</option>
+                                <option value="solusi">Solusi Teknologi Bisnis</option>
+                                <option value="kasus">Studi Kasus Klien</option>
+                                <option value="tips">Tips & Panduan IT</option>
+                                <option value="tech">Tren Teknologi</option>
+                                <option value="hnr">Layanan Hanara</option>
+                                <option value="faq">FAQ Teknologi</option>
                             </select>
                         </div>
                     </div>
@@ -211,10 +213,12 @@
                         <div class="col-md-4 mb-3">
                             <label for="edit_category" class="form-label">Kategori <span class="text-danger">*</span></label>
                             <select name="category" id="edit_category" class="form-select" required>
-                                <option value="csr">CSR & Lingkungan</option>
-                                <option value="news">Berita</option>
-                                <option value="event">Event</option>
-                                <option value="tech">Teknologi</option>
+                                <option value="solusi">Solusi Teknologi Bisnis</option>
+                                <option value="kasus">Studi Kasus Klien</option>
+                                <option value="tips">Tips & Panduan IT</option>
+                                <option value="tech">Tren Teknologi</option>
+                                <option value="hnr">Layanan Hanara</option>
+                                <option value="faq">FAQ Teknologi</option>
                             </select>
                         </div>
                     </div>
