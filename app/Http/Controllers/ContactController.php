@@ -37,7 +37,7 @@ class ContactController extends Controller
             Log::info('Validated data', $validated);
             
             // Kirim email ke Gmail Anda (akan masuk ke Mailtrap)
-            Mail::to('raihann.almuyassarr@gmail.com')->send(new ContactFormMail($validated));
+            Mail::to('info@hanara.id')->send(new ContactFormMail($validated));
             
             Log::info('Email sent successfully');
             
