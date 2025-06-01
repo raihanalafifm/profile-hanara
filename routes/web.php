@@ -11,6 +11,7 @@ use App\Http\Controllers\SoftwareHouseController;
 use App\Http\Controllers\BusinessSolutionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MotorolaController;
 use App\Mail\ContactFormMail;
 use Illuminate\Support\Facades\Mail;
 
@@ -45,6 +46,14 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
     Route::resource('users', UserController::class);
     Route::patch('users/{user}/toggle-status', [UserController::class, 'toggleStatus'])
         ->name('users.toggle-status');
+
+         // Motorola Products Management
+    Route::get('/motorola', [MotorolaController::class, 'adminIndex'])->name('motorola.index');
+    Route::post('/motorola', [MotorolaController::class, 'store'])->name('motorola.store');
+    Route::put('/motorola/{motorola}', [MotorolaController::class, 'update'])->name('motorola.update');
+    Route::delete('/motorola/{motorola}', [MotorolaController::class, 'destroy'])->name('motorola.destroy');
+    Route::patch('/motorola/{motorola}/toggle-status', [MotorolaController::class, 'toggleStatus'])
+        ->name('motorola.toggle-status');
 });
 
 
@@ -86,7 +95,10 @@ Route::prefix('software-house')->group(function () {
 
 // Other Services
 Route::get('/cctv', [ServiceController::class, 'cctv'])->name('cctv');
-Route::get('/motorola', [ServiceController::class, 'motorola'])->name('motorola');
+
+// Motorola Routes
+Route::get('/motorola', [MotorolaController::class, 'index'])->name('motorola');
+Route::get('/motorola/{slug}', [MotorolaController::class, 'show'])->name('motorola.detail');
 
 // Business Solution Routes
 Route::prefix('business-solution')->group(function () {

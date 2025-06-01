@@ -39,6 +39,12 @@
                 <div data-i18n="Career">Career</div>
             </a>
         </li>
+            <li class="menu-item {{ request()->routeIs('backend.motorola.*') ? 'active' : '' }}">
+            <a href="{{ route('backend.motorola.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-radio"></i>
+                <div data-i18n="Motorola">Motorola Products</div>
+            </a>
+        </li>
         
         <!-- Users -->
         <li class="menu-item {{ request()->routeIs('backend.users.*') ? 'active' : '' }}">

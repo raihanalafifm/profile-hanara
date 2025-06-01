@@ -31,7 +31,8 @@
   </div>
 </section>
 
-<!-- Product Categories Section -->
+@if(isset($products['Broadband']) && $products['Broadband']->count() > 0)
+<!-- Broadband Section -->
 <section class="hnr-motorola-categories-section">
   <div class="container reveal-section">
     <div class="hnr-motorola-section-title text-center">
@@ -41,50 +42,30 @@
     </div>
     
     <div class="row mt-5">
-      <!-- Category 1 -->
+      @foreach($products['Broadband'] as $product)
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-category-card text-center">
           <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/fulcrum-mash-up.png') }}" alt="Handy Talky & Radio RIG Motorola VHF">
+            @if($product->image)
+              <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
+            @else
+              <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/fulcrum-mash-up.png') }}" alt="{{ $product->name }}">
+            @endif
           </div>
-          <h3 class="hnr-motorola-category-title">HANDY TALKY & RADIO RIG MOTOROLA VHF</h3>
+          <h3 class="hnr-motorola-category-title">{{ $product->name }}</h3>
+          <a href="{{ route('motorola.detail', $product->slug) }}" class="hnr-motorola-readmore-btn">
+            Read More <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-      
-      <!-- Category 2 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-category-card text-center">
-          <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/rg170_V2.png') }}" alt="Handy Talky & Radio RIG Motorola UHF">
-          </div>
-          <h3 class="hnr-motorola-category-title">HANDY TALKY & RADIO RIG MOTOROLA UHF</h3>
-        </div>
-      </div>
-      
-      <!-- Category 3 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-category-card text-center">
-          <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/TLK_Series.png') }}" alt="Battery, Antena, Dan Cable">
-          </div>
-          <h3 class="hnr-motorola-category-title">BATTERY, ANTENA, DAN CABLE</h3>
-        </div>
-      </div>
-      
-      <!-- Category 4 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-category-card text-center">
-          <div class="hnr-motorola-category-icon">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/Broadband/TLK110_WavePTX_Radio_FRONT.png') }}" alt="Repeater">
-          </div>
-          <h3 class="hnr-motorola-category-title">REPEATER</h3>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
+@endif
 
-<!-- VHF Products Section -->
+@if(isset($products['Radio Mobil']) && $products['Radio Mobil']->count() > 0)
+<!-- Radio Mobil Section -->
 <section class="hnr-motorola-products-section">
   <div class="container reveal-section">
     <div class="hnr-motorola-section-title text-center">
@@ -94,62 +75,33 @@
     </div>
     
     <div class="row mt-4">
-      <!-- Product 1 -->
+      @foreach($products['Radio Mobil'] as $product)
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
             <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/MOTOTRBO XiR M3688 Mobile Radio/xir_m3688_lg.png') }}" alt="XIR P3688">
+            @if($product->image)
+              <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
+            @else
+              <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/MOTOTRBO XiR M3688 Mobile Radio/xir_m3688_lg.png') }}" alt="{{ $product->name }}">
+            @endif
           </div>
-          <h3 class="hnr-motorola-product-title">XIR P3688 136-174 5W LKR(16)</h3>
+          <h3 class="hnr-motorola-product-title">{{ $product->name }}</h3>
+          <a href="{{ route('motorola.detail', $product->slug) }}" class="hnr-motorola-readmore-btn">
+            Read More <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-      
-      <!-- Product 2 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/XiR M6660 Digital Mobile/xir_m6660_lg.png') }}" alt="XIR P6620I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P6620I 136-174 5W LKP</h3>
-        </div>
-      </div>
-      
-      <!-- Product 3 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/XiR M8600i Series/m8620i_28i.png') }}" alt="XIR P8608I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P8608I 136-174 5W NKP</h3>
-        </div>
-      </div>
-      
-      <!-- Product 4 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Mobil/XiR M8600i Series/m8660i_68i.png') }}" alt="XIR P8668I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P8668i 136-174 5W FKP GPS BT WIFI</h3>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
+@endif
 
-<!-- UHF Products Section -->
+@if(isset($products['Radio Portable']) && $products['Radio Portable']->count() > 0)
+<!-- Radio Portable Section -->
 <section class="hnr-motorola-products-section hnr-motorola-section-alt">
   <div class="container reveal-section">
     <div class="hnr-motorola-section-title text-center">
@@ -159,80 +111,82 @@
     </div>
     
     <div class="row mt-4">
-      <!-- Product 1 -->
+      @foreach($products['Radio Portable'] as $product)
       <div class="col-6 col-md-3 mb-4">
         <div class="hnr-motorola-product-card text-center">
           <div class="hnr-motorola-product-badge">
             <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
           </div>
           <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/R2/R2.png') }}" alt="TDR 4400HZ">
+            @if($product->image)
+              <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
+            @else
+              <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/R2/R2.png') }}" alt="{{ $product->name }}">
+            @endif
           </div>
-          <h3 class="hnr-motorola-product-title">TDR 4400HZ 350-400MHz 403-527 4W LKP</h3>
+          <h3 class="hnr-motorola-product-title">{{ $product->name }}</h3>
+          <a href="{{ route('motorola.detail', $product->slug) }}" class="hnr-motorola-readmore-btn">
+            Read More <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-      
-      <!-- Product 2 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/R7/r7.png') }}" alt="TDR 4400HZ">
-          </div>
-          <h3 class="hnr-motorola-product-title">TDR 4400HZ 403-440MHz 403-527 4W LKP(16A)</h3>
-        </div>
-      </div>
-      
-      <!-- Additional Products (3-8) -->
-      <!-- Add similar blocks for each product in the UHF section -->
-      <!-- I'm showing just two examples to keep the response shorter -->
-
-      <!-- Product 3 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/SL1M Portable Two-Way Radio/sl1m.png') }}" alt="XIR P8608I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P8608I 350-400MHz 403-527 4W NKP</h3>
-        </div>
-      </div>
-      
-      <!-- Product 4 -->
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/XiR C2660-C2620-C1200 Series/XiR-C2660.png') }}" alt="XIR P8668I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P8668i 350-400MHz 403-527 4W NKP F16</h3>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <div class="hnr-motorola-product-card text-center">
-          <div class="hnr-motorola-product-badge">
-            <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Motorola">
-          </div>
-          <div class="hnr-motorola-product-image">
-            <img src="{{ asset('assets/images/gambar/PRODUK MOTOROLA/DMR Radio/Radio Portable/XiR P6600i Series/XPR3000e.png') }}" alt="XIR P8668I">
-          </div>
-          <h3 class="hnr-motorola-product-title">XIR P8668i 350-400MHz 403-527 4W NKP F16</h3>
-        </div>
-      </div>
-      
-      <!-- Add more products as needed -->
+      @endforeach
     </div>
   </div>
 </section>
+@endif
 
 <!-- Contact Section -->
-  <div class="container reveal-section">
-    @include('components.contact')
-  </div>
+<div class="container reveal-section">
+  @include('components.contact')
+</div>
 @endsection
+
+@push('styles')
+<style>
+/* Read More Button Styles */
+.hnr-motorola-readmore-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: transparent;
+  color: #FF6B00;
+  border: 1px solid #FF6B00;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hnr-motorola-readmore-btn:hover {
+  background-color: #FF6B00;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.hnr-motorola-readmore-btn i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hnr-motorola-readmore-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Adjust card styles */
+.hnr-motorola-category-card,
+.hnr-motorola-product-card {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hnr-motorola-category-title,
+.hnr-motorola-product-title {
+  margin-bottom: 10px;
+}
+</style>
+@endpush

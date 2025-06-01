@@ -7657,3 +7657,283 @@ h2.company-name{
         justify-content: center;
     }
 }
+
+.hnr-motorola-detail-section {
+  padding: 80px 0;
+  background-color: #f9f9fb;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb-item a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  color: #FF6B00;
+}
+
+/* Product Image */
+.hnr-product-image-container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.hnr-product-main-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.hnr-product-category-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #FF6B00;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Product Info */
+.hnr-product-info {
+  padding-left: 30px;
+}
+
+.hnr-product-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hnr-product-model {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.hnr-product-type-badges {
+  margin-bottom: 20px;
+}
+
+.hnr-product-type-badges .badge {
+  margin-right: 10px;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.hnr-product-price {
+  margin-bottom: 25px;
+}
+
+.hnr-product-price h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FF6B00;
+}
+
+.hnr-product-description {
+  margin-bottom: 30px;
+}
+
+.hnr-product-description h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.hnr-product-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Action Buttons */
+.hnr-product-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hnr-order-button,
+.hnr-whatsapp-button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hnr-order-button {
+  background-color: #FF6B00;
+  color: #fff;
+  border: 2px solid #FF6B00;
+}
+
+.hnr-order-button:hover {
+  background-color: #e55600;
+  border-color: #e55600;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.hnr-whatsapp-button {
+  background-color: #25D366;
+  color: #fff;
+  border: 2px solid #25D366;
+}
+
+.hnr-whatsapp-button:hover {
+  background-color: #128C7E;
+  border-color: #128C7E;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Specifications Section */
+.hnr-specifications-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hnr-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.hnr-specifications-table .table {
+  margin-bottom: 0;
+}
+
+.hnr-specifications-table .spec-label {
+  font-weight: 600;
+  color: #555;
+  width: 40%;
+  background-color: #f8f9fa;
+}
+
+.hnr-specifications-table .spec-value {
+  color: #333;
+}
+
+/* Related Products */
+.hnr-related-product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.hnr-related-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hnr-related-product-image {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.hnr-related-product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hnr-related-product-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+.hnr-related-product-link {
+  color: #FF6B00;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.hnr-related-product-link:hover {
+  color: #e55600;
+}
+
+.hnr-related-product-link i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hnr-related-product-link:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hnr-product-info {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+  
+  .hnr-product-title {
+    font-size: 28px;
+  }
+  
+  .hnr-product-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hnr-motorola-detail-section {
+    padding: 60px 0;
+  }
+  
+  .hnr-product-title {
+    font-size: 24px;
+  }
+  
+  .hnr-product-price h3 {
+    font-size: 24px;
+  }
+  
+  .hnr-order-button,
+  .hnr-whatsapp-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hnr-specifications-table .spec-label {
+    width: 50%;
+  }
+}
