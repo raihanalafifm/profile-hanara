@@ -155,10 +155,10 @@
                             <label for="published_at" class="form-label">Tanggal Publish</label>
                             <input type="datetime-local" id="published_at" name="published_at" class="form-control" value="{{ now()->format('Y-m-d\TH:i') }}">
                         </div>
-                        <div class="col-md-4 mb-3">
+                        {{-- <div class="col-md-4 mb-3">
                             <label for="link" class="form-label">Link Eksternal</label>
                             <input type="url" id="link" name="link" class="form-control" placeholder="https://example.com">
-                        </div>
+                        </div> --}}
                     </div>
                     
                     <div class="row">
@@ -231,10 +231,10 @@
                             <label for="edit_published_at" class="form-label">Tanggal Publish</label>
                             <input type="datetime-local" id="edit_published_at" name="published_at" class="form-control">
                         </div>
-                        <div class="col-md-4 mb-3">
+                        {{-- <div class="col-md-4 mb-3">
                             <label for="edit_link" class="form-label">Link Eksternal</label>
                             <input type="url" id="edit_link" name="link" class="form-control" placeholder="https://example.com">
-                        </div>
+                        </div> --}}
                     </div>
                     
                     <div class="row">
