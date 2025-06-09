@@ -13,7 +13,7 @@ class ContactController extends Controller
     {
         // Log incoming request
         Log::info('Contact form submission', $request->all());
-        
+
         // Validasi sesuai dengan field di form Anda
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -35,15 +35,14 @@ class ContactController extends Controller
         try {
             // Log validated data
             Log::info('Validated data', $validated);
-            
+
             // Kirim email ke Gmail Anda (akan masuk ke Mailtrap)
             Mail::to('info@hanara.id')->send(new ContactFormMail($validated));
-            
+
             Log::info('Email sent successfully');
-            
+
             // Jika berhasil, redirect dengan pesan sukses
             return redirect()->back()->with('success', 'Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.');
-            
         } catch (\Exception $e) {
             // Log error detail
             Log::error('Contact form error', [
@@ -52,14 +51,14 @@ class ContactController extends Controller
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString()
             ]);
-            
+
             // Untuk development, tampilkan error detail
             if (config('app.debug')) {
                 return redirect()->back()
                     ->withInput()
                     ->with('error', 'Error: ' . $e->getMessage());
             }
-            
+
             // Untuk production
             return redirect()->back()
                 ->withInput()

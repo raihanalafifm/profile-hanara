@@ -14,7 +14,7 @@ class ZimbraController extends Controller
     {
         $seo = config('seo.pages.zimbra_instalasi');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -29,13 +29,13 @@ class ZimbraController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('instalasi-zimbra'),
         ];
-        
+
         // Schema.org untuk Service
         $schemaService = config('seo.schema.zimbra_service');
-        
+
         return view('content.zimbra.instalasi', compact('seoData', 'schemaService'));
     }
-    
+
     /**
      * Display Zimbra maintenance page
      */
@@ -43,7 +43,7 @@ class ZimbraController extends Controller
     {
         $seo = config('seo.pages.zimbra_maintenance');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -58,13 +58,13 @@ class ZimbraController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('maintenance-zimbra'),
         ];
-        
+
         // Schema.org untuk Service
         $schemaService = config('seo.schema.zimbra_service');
-        
+
         return view('content.zimbra.maintenance', compact('seoData', 'schemaService'));
     }
-    
+
     /**
      * Display Zimbra troubleshooting page
      */
@@ -72,7 +72,7 @@ class ZimbraController extends Controller
     {
         $seo = config('seo.pages.zimbra_troubleshooting');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -87,16 +87,16 @@ class ZimbraController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('troubleshooting-zimbra'),
         ];
-        
+
         // Schema.org untuk Service
         $schemaService = config('seo.schema.zimbra_service');
-        
+
         // FAQ Schema untuk troubleshooting
         $schemaFAQ = $this->generateFAQSchema();
-        
+
         return view('content.zimbra.troubleshooting', compact('seoData', 'schemaService', 'schemaFAQ'));
     }
-    
+
     /**
      * Display Zimbra cloud page
      */
@@ -104,7 +104,7 @@ class ZimbraController extends Controller
     {
         $seo = config('seo.pages.zimbra_cloud');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -119,16 +119,16 @@ class ZimbraController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('cloud-zimbra'),
         ];
-        
+
         // Schema.org untuk Service
         $schemaService = config('seo.schema.zimbra_service');
-        
+
         // Product schema untuk pricing
         $schemaProduct = $this->generateProductSchema();
-        
+
         return view('content.zimbra.cloud', compact('seoData', 'schemaService', 'schemaProduct'));
     }
-    
+
     /**
      * Display Zimbra server page
      */
@@ -136,7 +136,7 @@ class ZimbraController extends Controller
     {
         $seo = config('seo.pages.zimbra_server');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -151,13 +151,13 @@ class ZimbraController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('server-zimbra'),
         ];
-        
+
         // Schema.org untuk Service
         $schemaService = config('seo.schema.zimbra_service');
-        
+
         return view('content.zimbra.server', compact('seoData', 'schemaService'));
     }
-    
+
     /**
      * Generate FAQ Schema for troubleshooting page
      */
@@ -194,7 +194,7 @@ class ZimbraController extends Controller
             ]
         ];
     }
-    
+
     /**
      * Generate Product Schema for cloud pricing
      */

@@ -11,7 +11,7 @@ class BusinessSolutionController extends Controller
     {
         $seo = config('seo.pages.nextcloud');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -26,10 +26,10 @@ class BusinessSolutionController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('nextcloud'), // FIXED: was route('cctv')
         ];
-        
+
         // Get Business Solution Service Schema
         $schemaService = config('seo.schema.business_solution_service');
-        
+
         // Specific schema untuk Nextcloud
         $schemaNextcloud = [
             '@context' => 'https://schema.org',
@@ -60,7 +60,7 @@ class BusinessSolutionController extends Controller
                 'GDPR compliant'
             ]
         ];
-        
+
         // FAQ Schema untuk Nextcloud
         $schemaFAQ = [
             '@context' => 'https://schema.org',
@@ -84,7 +84,7 @@ class BusinessSolutionController extends Controller
                 ]
             ]
         ];
-        
+
         return view('content.bisnis.nextcloud', compact(
             'seoData',
             'schemaService',
@@ -92,12 +92,12 @@ class BusinessSolutionController extends Controller
             'schemaFAQ'
         ));
     }
-    
+
     public function hcmHcis(): View
     {
         $seo = config('seo.pages.hcm');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -112,10 +112,10 @@ class BusinessSolutionController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('hcis'), // FIXED: was route('cctv')
         ];
-        
+
         // Get Business Solution Service Schema
         $schemaService = config('seo.schema.business_solution_service');
-        
+
         // Specific schema untuk HCM & HCIS
         $schemaHCM = [
             '@context' => 'https://schema.org',
@@ -154,7 +154,7 @@ class BusinessSolutionController extends Controller
             'datePublished' => '2020-01-01',
             'dateModified' => date('Y-m-d')
         ];
-        
+
         return view('content.bisnis.hcm', compact(
             'seoData',
             'schemaService',

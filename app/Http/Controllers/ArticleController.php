@@ -13,7 +13,7 @@ class ArticleController extends Controller
     /**
      * Frontend Methods
      */
-    
+
     // Menampilkan halaman kumpulan artikel (Frontend)
     public function index(Request $request)
     {
@@ -22,27 +22,27 @@ class ArticleController extends Controller
             $articles = Article::ordered()->paginate(10);
             return view('backend.base.article', compact('articles'));
         }
-        
+
         // Frontend logic
         $query = Article::where('is_active', true)
             ->whereNotNull('published_at')
             ->where('published_at', '<=', now()->endOfDay());
-    
+
         // Filter berdasarkan kategori
         if ($request->has('category') && $request->category != 'all') {
             $query->where('category', $request->category);
         }
-        
+
         // Pencarian
         if ($request->has('search')) {
             $searchTerm = $request->search;
-            $query->where(function($q) use ($searchTerm) {
+            $query->where(function ($q) use ($searchTerm) {
                 $q->where('title', 'like', '%' . $searchTerm . '%')
-                  ->orWhere('description', 'like', '%' . $searchTerm . '%')
-                  ->orWhere('content', 'like', '%' . $searchTerm . '%');
+                    ->orWhere('description', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('content', 'like', '%' . $searchTerm . '%');
             });
         }
-            
+
         $articles = $query->orderBy('published_at', 'desc')->paginate(9);
 
         // SEO Data
@@ -51,31 +51,31 @@ class ArticleController extends Controller
             'description' => 'Kumpulan artikel, berita, dan kegiatan CSR PT Hanara Prima Solusindo',
             'keywords' => 'artikel, berita, CSR, kegiatan perusahaan, PT Hanara Prima Solusindo',
         ];
-        
+
         return view('content.artikel.articles', compact('articles', 'seoData'));
     }
-    
+
     // Menampilkan detail artikel (Frontend)
     public function show($slug)
     {
         // Extract ID from slug (format: title-slug-id)
         $parts = explode('-', $slug);
         $id = end($parts);
-        
+
         $article = Article::where('id', $id)
-                         ->where('is_active', true)
-                         ->whereNotNull('published_at')
-                         ->where('published_at', '<=', now())
-                         ->firstOrFail();
-        
+            ->where('is_active', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now())
+            ->firstOrFail();
+
         $relatedArticles = Article::where('category', $article->category)
-                                  ->where('id', '!=', $article->id)
-                                  ->where('is_active', true)
-                                  ->whereNotNull('published_at')
-                                  ->where('published_at', '<=', now())
-                                  ->limit(3)
-                                  ->get();
-        
+            ->where('id', '!=', $article->id)
+            ->where('is_active', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now())
+            ->limit(3)
+            ->get();
+
         // SEO Data
         $seoData = [
             'title' => $article->title . ' - PT Hanara Prima Solusindo',
@@ -85,14 +85,14 @@ class ArticleController extends Controller
             'ogDescription' => $article->description,
             'ogImage' => $article->image ? Storage::url($article->image) : null,
         ];
-        
+
         return view('content.artikel.article-detail', compact('article', 'relatedArticles', 'seoData'));
     }
-    
+
     /**
      * Backend Methods
      */
-    
+
     // Menampilkan halaman manajemen artikel (Backend)
     public function adminIndex()
     {
@@ -159,11 +159,11 @@ class ArticleController extends Controller
         if (!isset($validated['published_at']) && !$article->published_at) {
             $validated['published_at'] = now();
         }
-        
+
         if ($request->has('published_at') && $request->published_at) {
             $validated['published_at'] = Carbon::parse($request->published_at)->setTimezone('Asia/Jakarta');
         }
-        
+
         $article->update($validated);
 
         return redirect()->route('backend.articles.index')
@@ -176,18 +176,18 @@ class ArticleController extends Controller
         if ($article->image) {
             Storage::disk('public')->delete($article->image);
         }
-        
+
         $article->delete();
 
         return redirect()->route('backend.articles.index')
             ->with('success', 'Artikel berhasil dihapus!');
     }
-    
+
     // Toggle status artikel (Backend)
     public function toggleStatus(Article $article)
     {
         $article->update(['is_active' => !$article->is_active]);
-        
+
         return redirect()->route('backend.articles.index')
             ->with('success', 'Status artikel berhasil diubah!');
     }
@@ -196,9 +196,9 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::findOrFail($id);
-        
-      
-        
+
+
+
         // Return all article data as JSON
         return response()->json([
             'id' => $article->id,

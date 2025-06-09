@@ -14,7 +14,7 @@ class PageController extends Controller
     {
         $seo = config('seo.pages.about');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -29,7 +29,7 @@ class PageController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('about-us'),
         ];
-        
+
         // Schema untuk About Page
         $schemaOrg = array_merge(
             config('seo.schema.organization'),
@@ -40,10 +40,10 @@ class PageController extends Controller
                 'hasMap' => 'https://maps.app.goo.gl/FTxacZPBbKNzovbX8',
             ]
         );
-        
+
         return view('content.about.about', compact('seoData', 'schemaOrg'));
     }
-    
+
     /**
      * Display Contact Us page
      */
@@ -51,7 +51,7 @@ class PageController extends Controller
     {
         $seo = config('seo.pages.contact');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -66,7 +66,7 @@ class PageController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('contact-us'),
         ];
-        
+
         return view('content.about.contact', compact('seoData'));
     }
 }

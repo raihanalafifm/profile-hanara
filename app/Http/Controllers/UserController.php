@@ -46,7 +46,7 @@ class UserController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$user->id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
         ]);
 
         // Update password jika diisi
@@ -93,7 +93,7 @@ class UserController extends Controller
     {
         // Optional: Add is_active column to users table if needed
         // $user->update(['is_active' => !$user->is_active]);
-        
+
         return redirect()->route('backend.users.index')
             ->with('success', 'Status user berhasil diubah!');
     }

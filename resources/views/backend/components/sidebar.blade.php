@@ -2,7 +2,8 @@
     <div class="app-brand demo">
         <a href="{{ route('backend.dashboard') }}" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Icon Hanara" style="width: 25px; height: auto;" />
+                <img src="{{ asset('assets/images/icon/icon hanara.png') }}" alt="Icon Hanara"
+                    style="width: 25px; height: auto;" />
 
             </span>
             <span class="app-brand-text demo menu-text fw-bolder ms-2">Hanara Admin</span>
@@ -23,7 +24,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
-        
+
         <!-- Artikel -->
         <li class="menu-item {{ request()->routeIs('backend.articles.*') ? 'active' : '' }}">
             <a href="{{ route('backend.articles.index') }}" class="menu-link">
@@ -31,7 +32,7 @@
                 <div data-i18n="Artikel">Artikel</div>
             </a>
         </li>
-        
+
         <!-- Career -->
         <li class="menu-item {{ request()->routeIs('backend.careers.*') ? 'active' : '' }}">
             <a href="{{ route('backend.careers.index') }}" class="menu-link">
@@ -39,13 +40,13 @@
                 <div data-i18n="Career">Career</div>
             </a>
         </li>
-            <li class="menu-item {{ request()->routeIs('backend.motorola.*') ? 'active' : '' }}">
+        <li class="menu-item {{ request()->routeIs('backend.motorola.*') ? 'active' : '' }}">
             <a href="{{ route('backend.motorola.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-radio"></i>
                 <div data-i18n="Motorola">Motorola Products</div>
             </a>
         </li>
-        
+
         <!-- Users -->
         <li class="menu-item {{ request()->routeIs('backend.users.*') ? 'active' : '' }}">
             <a href="{{ route('backend.users.index') }}" class="menu-link">

@@ -13,15 +13,20 @@
                             <span class="hcm-orange">HR Applications</span>
                             <span class="text-dark"> In One Place</span>
                         </h1>
-                        <p class="text-dark">Mengatur Data Karyawan, Absensi Karyawan, Penggajian Karyawan dengan lebih mudah dan efisien.</p>
-                        
+                        <p class="text-dark">Mengatur Data Karyawan, Absensi Karyawan, Penggajian Karyawan dengan lebih
+                            mudah dan efisien.</p>
+
                         <div class="d-flex gap-3 mt-4">
-                            <a href="{{ url('https://apps.apple.com/id/app/hcis-mobile/id6443559171?l=id') }}" class="btn hcm-app-store-btn">
-                                <img src="{{ asset('assets/images/icon/appstore.png') }}" width="24" alt="App Store Icon">
+                            <a href="{{ url('https://apps.apple.com/id/app/hcis-mobile/id6443559171?l=id') }}"
+                                class="btn hcm-app-store-btn">
+                                <img src="{{ asset('assets/images/icon/appstore.png') }}" width="24"
+                                    alt="App Store Icon">
                                 Available on App Store
                             </a>
-                            <a href="{{ url('https://play.google.com/store/apps/details?id=com.aakmining.hcismobile') }}" class="btn hcm-play-store-btn">
-                                <img src="{{ asset('assets/images/icon/playstore.png') }}" width="24" alt="Play Store Icon">
+                            <a href="{{ url('https://play.google.com/store/apps/details?id=com.aakmining.hcismobile') }}"
+                                class="btn hcm-play-store-btn">
+                                <img src="{{ asset('assets/images/icon/playstore.png') }}" width="24"
+                                    alt="Play Store Icon">
                                 Available on Play Store
                             </a>
                         </div>
@@ -50,9 +55,15 @@
                         <h5 class="hcm-section-subtitle">• About Us •</h5>
                         <h2 class="hcm-section-title">HUMAN CAPITAL MANAGEMENT</h2>
                         <div class="hcm-description">
-                            <p>Solusi tepat untuk perusahaan yang ingin memiliki Aplikasi untuk memudahkan menyimpan informasi karyawan, mengelola fungsi umum SDM, Absensi, dan menjalankan aktivitas SDM penting seperti memproses gaji, mengelola tunjangan, pajak, THR, dan berbagai macam laporan yang diperlukan untuk payroll.</p>
-                            
-                            <p>HCM tersedia dalam 2 platform, Website untuk Administrasi HRD, team Payroll dan team Pajak di Perusahaan Anda, serta Mobile Apps (iOS & Android) untuk Karyawan melakukan absen, cuti, izin, melihat laporan kehadiran, laporan gaji dan berbagai macam fitur yang diperlukan untuk memudahkan Perusahaan Anda mengelola karyawan dan payroll.</p>
+                            <p>Solusi tepat untuk perusahaan yang ingin memiliki Aplikasi untuk memudahkan menyimpan
+                                informasi karyawan, mengelola fungsi umum SDM, Absensi, dan menjalankan aktivitas SDM
+                                penting seperti memproses gaji, mengelola tunjangan, pajak, THR, dan berbagai macam laporan
+                                yang diperlukan untuk payroll.</p>
+
+                            <p>HCM tersedia dalam 2 platform, Website untuk Administrasi HRD, team Payroll dan team Pajak di
+                                Perusahaan Anda, serta Mobile Apps (iOS & Android) untuk Karyawan melakukan absen, cuti,
+                                izin, melihat laporan kehadiran, laporan gaji dan berbagai macam fitur yang diperlukan untuk
+                                memudahkan Perusahaan Anda mengelola karyawan dan payroll.</p>
                         </div>
                     </div>
                 </div>
@@ -67,9 +78,10 @@
                 <h5 class="hcm-section-subtitle">• Awesome Service •</h5>
                 <h2 class="hcm-section-title-dark">Kami Menyediakan</h2>
                 <h2 class="hcm-section-title-orange">Aplikasi HR yang Anda Butuhkan</h2>
-                <p class="hcm-services-desc">We switch all the channels on yo get into people's<br>hands, homes, and minds to radically shift behavior</p>
+                <p class="hcm-services-desc">We switch all the channels on yo get into people's<br>hands, homes, and minds
+                    to radically shift behavior</p>
             </div>
-            
+
             <div class="row g-4">
                 <!-- First row of services -->
                 <div class="col-md-4">
@@ -81,7 +93,7 @@
                         <p class="hcm-service-desc">Kelola database karyawan di perusahaan Anda secara online</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="hcm-service-card text-center">
                         <div class="hcm-service-icon">
@@ -91,7 +103,7 @@
                         <p class="hcm-service-desc">Memudahkan proses absensi secara online (Manual/Finger/Mobile Apps)</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="hcm-service-card text-center">
                         <div class="hcm-service-icon">
@@ -101,7 +113,7 @@
                         <p class="hcm-service-desc">Memudahkan proses penggajian karyawan di perusahaan Anda</p>
                     </div>
                 </div>
-                
+
                 <!-- Second row of services -->
                 <div class="col-md-4">
                     <div class="hcm-service-card text-center">
@@ -112,7 +124,7 @@
                         <p class="hcm-service-desc">HCM menyediakan fitur loan ke perusahaan</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="hcm-service-card text-center">
                         <div class="hcm-service-icon">
@@ -122,7 +134,7 @@
                         <p class="hcm-service-desc">Memudahkan proses pengajuan izin</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="hcm-service-card text-center">
                         <div class="hcm-service-icon">
@@ -188,48 +200,56 @@
                         <span class="testimonial-clean-tag">• Client's Testimonial •</span>
                         <h2 class="testimonial-clean-title">Our Clients Feedback</h2>
                     </div>
-                    
+
                     <div class="testimonial-clean-slider">
                         <!-- Testimonial 1 -->
                         <div class="testimonial-clean-item active">
                             <div class="testimonial-clean-text">
-                                " Keputusan untuk bekerja sama dengan tim Hanara adalah salah satu keputusan terbaik yang pernah saya buat. Mereka tidak hanya menunjukkan dedikasi yang luar biasa terhadap proyek ini, tetapi juga menghasilkan kualitas kerja yang sangat memuaskan."            
+                                " Keputusan untuk bekerja sama dengan tim Hanara adalah salah satu keputusan terbaik yang
+                                pernah saya buat. Mereka tidak hanya menunjukkan dedikasi yang luar biasa terhadap proyek
+                                ini, tetapi juga menghasilkan kualitas kerja yang sangat memuaskan."
                             </div>
                             <div class="testimonial-clean-company">
                                 <div class="company-logo-wrapper">
-                                    <img src="{{ asset('assets/images/icon/cde-logo.png') }}" alt="PT. Cakrawala Dinamika Energi" class="company-logo">
+                                    <img src="{{ asset('assets/images/icon/cde-logo.png') }}"
+                                        alt="PT. Cakrawala Dinamika Energi" class="company-logo">
                                 </div>
                                 <p class="company-name">PT. Cakrawala Dinamika Energi</p>
                             </div>
                         </div>
-                        
+
                         <!-- Testimonial 2 -->
                         <div class="testimonial-clean-item">
                             <div class="testimonial-clean-text">
-                                "Kerja tim Hanara tidak hanya mengagumkan tetapi juga melebihi ekspektasi saya yang tertinggi. Mereka tidak hanya menghadirkan solusi kreatif dan inovatif, tetapi juga menjaga tingkat akurasi dan profesionalisme yang tinggi. "            
+                                "Kerja tim Hanara tidak hanya mengagumkan tetapi juga melebihi ekspektasi saya yang
+                                tertinggi. Mereka tidak hanya menghadirkan solusi kreatif dan inovatif, tetapi juga menjaga
+                                tingkat akurasi dan profesionalisme yang tinggi. "
                             </div>
                             <div class="testimonial-clean-company">
                                 <div class="company-logo-wrapper">
-                                    <img src="{{ asset('assets/images/icon/spn-logo.png') }}" alt="PT. Global Tech Indonesia" class="company-logo">
+                                    <img src="{{ asset('assets/images/icon/spn-logo.png') }}"
+                                        alt="PT. Global Tech Indonesia" class="company-logo">
                                 </div>
                                 <p class="company-name">PT. SPN</p>
                             </div>
                         </div>
-                        
+
                         <!-- Testimonial 3 -->
                         <div class="testimonial-clean-item">
                             <div class="testimonial-clean-text">
-                                " Saya merasa sungguh beruntung dapat bekerja dengan tim Hanara yang luar biasa ini. Kerja keras mereka benar-benar terbayar dengan hasil yang luar biasa"
+                                " Saya merasa sungguh beruntung dapat bekerja dengan tim Hanara yang luar biasa ini. Kerja
+                                keras mereka benar-benar terbayar dengan hasil yang luar biasa"
                             </div>
                             <div class="testimonial-clean-company">
                                 <div class="company-logo-wrapper">
-                                    <img src="{{ asset('assets/images/icon/JYL.png') }}" alt="PT. Mitra Solusi Digital" class="company-logo">
+                                    <img src="{{ asset('assets/images/icon/JYL.png') }}" alt="PT. Mitra Solusi Digital"
+                                        class="company-logo">
                                 </div>
                                 <p class="company-name">PT. JYL</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Navigation Dots -->
                     <div class="testimonial-clean-dots">
                         <span class="clean-dot active" data-slide="0"></span>
@@ -250,12 +270,13 @@
                         <span class="trusted-clients-tag">• Our Client •</span>
                         <h2 class="trusted-clients-title">Kami telah dipercaya oleh banyak klien dan perusahaan</h2>
                         <p class="trusted-clients-subtitle">
-                            Kami memiliki beberapa keahlian untuk bekerja sama dengan perusahaan dan organisasi terkemuka di Indonesia. Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
+                            Kami memiliki beberapa keahlian untuk bekerja sama dengan perusahaan dan organisasi terkemuka di
+                            Indonesia. Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
                         </p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="row trusted-clients-logos">
                 <!-- Row 1 -->
                 <div class="col-6 col-md-3 trusted-client-logo-wrap">
@@ -278,7 +299,7 @@
                         <img src="{{ asset('assets/images/icon/yacoonn.png') }}" alt="Yacoon">
                     </div>
                 </div>
-                
+
                 <!-- Row 2 -->
                 <div class="col-6 col-md-3 trusted-client-logo-wrap">
                     <div class="trusted-client-logo">
@@ -300,7 +321,7 @@
                         <img src="{{ asset('assets/images/icon/mitra plus.png') }}" alt="Mitra Plus">
                     </div>
                 </div>
-                
+
                 <!-- Row 3 -->
                 <div class="col-6 col-md-3 trusted-client-logo-wrap">
                     <div class="trusted-client-logo">
@@ -325,15 +346,16 @@
             </div>
         </div>
     </section>
-  
+
     <!-- Pricing Section -->
- <section class="hcm-pricing-section">
+    <section class="hcm-pricing-section">
         <div class="container py-5 reveal-section">
             <div class="text-center mb-5">
                 <h2 class="hcm-pricing-title"><span class="hcm-orange">Paket</span> Terbaik untuk Bisnis Anda</h2>
-                <p class="hcm-pricing-subtitle">Dapatkan penawaran paket HR Management yang terbaik dari PT. Hanara Prima Solusindo</p>
+                <p class="hcm-pricing-subtitle">Dapatkan penawaran paket HR Management yang terbaik dari PT. Hanara Prima
+                    Solusindo</p>
             </div>
-            
+
             <div class="row g-4">
                 <!-- Tier 1 -->
                 <div class="col-lg-3 col-md-6">
@@ -344,15 +366,15 @@
                             </div>
                             <h4>Tier 1</h4>
                         </div>
-                        
+
                         <div class="hcm-pricing-amount">
                             <h2>Rp30k<span>/monthly</span></h2>
                         </div>
-                        
+
                         <a href="#" class="btn hcm-pricing-btn">Beli Paket</a>
-                        
+
                         <hr class="hcm-pricing-divider">
-                        
+
                         <div class="hcm-pricing-features">
                             <h6>What's included</h6>
                             <ul class="hcm-feature-list">
@@ -367,7 +389,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Tier 2 -->
                 <div class="col-lg-3 col-md-6">
                     <div class="hcm-pricing-card">
@@ -377,15 +399,15 @@
                             </div>
                             <h4>Tier 2</h4>
                         </div>
-                        
+
                         <div class="hcm-pricing-amount">
                             <h2>Rp50k<span>/monthly</span></h2>
                         </div>
-                        
+
                         <a href="#" class="btn hcm-pricing-btn">Beli Paket</a>
-                        
+
                         <hr class="hcm-pricing-divider">
-                        
+
                         <div class="hcm-pricing-features">
                             <h6>What's included</h6>
                             <ul class="hcm-feature-list">
@@ -400,7 +422,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Tier 3 -->
                 <div class="col-lg-3 col-md-6">
                     <div class="hcm-pricing-card">
@@ -410,15 +432,15 @@
                             </div>
                             <h4>Tier 3</h4>
                         </div>
-                        
+
                         <div class="hcm-pricing-amount">
                             <h2>Rp70k<span>/monthly</span></h2>
                         </div>
-                        
+
                         <a href="#" class="btn hcm-pricing-btn">Beli Paket</a>
-                        
+
                         <hr class="hcm-pricing-divider">
-                        
+
                         <div class="hcm-pricing-features">
                             <h6>What's included</h6>
                             <ul class="hcm-feature-list">
@@ -433,7 +455,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Tier 4 - Popular -->
                 <div class="col-lg-3 col-md-6">
                     <div class="hcm-pricing-card hcm-pricing-popular">
@@ -444,15 +466,15 @@
                             </div>
                             <h4>Tier 4</h4>
                         </div>
-                        
+
                         <div class="hcm-pricing-amount">
                             <h2>Rp90k<span>/monthly</span></h2>
                         </div>
-                        
+
                         <a href="#" class="btn hcm-pricing-btn hcm-pricing-btn-popular">Beli Paket</a>
-                        
+
                         <hr class="hcm-pricing-divider">
-                        
+
                         <div class="hcm-pricing-features">
                             <h6>What's included</h6>
                             <ul class="hcm-feature-list">
@@ -480,13 +502,9 @@
     <section class="contact-section reveal-section">
         <div class="container">
             <h4 class="map-title">Lokasi Kami</h4>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.1088071562257!2d102.29693!3d-3.81233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b18431b2b9c7%3A0x8a6d7f5183f7c773!2sJl.%20Batang%20Hari%2C%20Nusa%20Indah%2C%20Kec.%20Ratu%20Agung%2C%20Kota%20Bengkulu%2C%20Bengkulu%2038223!5e0!3m2!1sid!2sid!4v1715382540125!5m2!1sid!2sid" 
-                width="100%" 
-                height="250" 
-                style="border:0; border-radius:10px;" 
-                allowfullscreen="" 
-                loading="lazy" 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.1088071562257!2d102.29693!3d-3.81233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b18431b2b9c7%3A0x8a6d7f5183f7c773!2sJl.%20Batang%20Hari%2C%20Nusa%20Indah%2C%20Kec.%20Ratu%20Agung%2C%20Kota%20Bengkulu%2C%20Bengkulu%2038223!5e0!3m2!1sid!2sid!4v1715382540125!5m2!1sid!2sid"
+                width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
             <div class="map-actions mt-2">

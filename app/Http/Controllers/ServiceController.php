@@ -11,7 +11,7 @@ class ServiceController extends Controller
     {
         $seo = config('seo.pages.cctv');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -26,13 +26,13 @@ class ServiceController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('cctv'),
         ];
-        
+
         // Get Hardware Service Schema
         $schemaService = config('seo.schema.hardware_service');
-        
+
         // Get CCTV Products Schema
         $schemaProducts = config('seo.schema.cctv_products');
-        
+
         // Local Business Schema untuk CCTV Service
         $schemaLocalBusiness = [
             '@context' => 'https://schema.org',
@@ -49,7 +49,7 @@ class ServiceController extends Controller
             'acceptsReservations' => 'True',
             'hasMap' => 'https://maps.app.goo.gl/FTxacZPBbKNzovbX8'
         ];
-        
+
         return view('content.cctv.cctv', compact(
             'seoData',
             'schemaService',
@@ -62,7 +62,7 @@ class ServiceController extends Controller
     {
         $seo = config('seo.pages.motorola');
         $seoDefaults = config('seo.defaults');
-        
+
         $seoData = [
             'title' => $seo['title'] . $seoDefaults['title_suffix'],
             'titleOnly' => $seo['title'],
@@ -77,10 +77,10 @@ class ServiceController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('motorola'),
         ];
-        
+
         // Get Hardware Service Schema
         $schemaService = config('seo.schema.hardware_service');
-        
+
         // Specific schema untuk Motorola
         $schemaProduct = [
             '@context' => 'https://schema.org',
@@ -101,7 +101,7 @@ class ServiceController extends Controller
                 ]
             ]
         ];
-        
+
         // Local Business Schema untuk Motorola Service
         $schemaLocalBusiness = [
             '@context' => 'https://schema.org',
@@ -118,7 +118,7 @@ class ServiceController extends Controller
             'acceptsReservations' => 'True',
             'hasMap' => 'https://maps.app.goo.gl/FTxacZPBbKNzovbX8'
         ];
-        
+
         return view('content.motorola.motorola', compact(
             'seoData',
             'schemaService',
