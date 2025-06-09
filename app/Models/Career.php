@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Career extends Model
 {
-     use HasFactory;
+    use HasFactory;
     protected $fillable = [
         'position',
         'slug',
-        'type',
+        // 'type',
         'description',
         'skills',
         'qualifications',
@@ -47,7 +48,7 @@ class Career extends Model
     {
         $slug = str()->slug($position);
         $count = static::where('slug', 'like', "{$slug}%")->count();
-        
+
         return $count ? "{$slug}-{$count}" : $slug;
     }
 

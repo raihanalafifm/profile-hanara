@@ -24,10 +24,10 @@ Route::redirect('/dashboard', '/')->name('dashboard');
 
 // Backend Routes (Protected with Auth)
 Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function(){
+    Route::get('/dashboard', function () {
         return view('backend.base.home');
     })->name('dashboard');
-    
+
     // Articles Management
     Route::get('/articles', [ArticleController::class, 'adminIndex'])->name('articles.index');
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
@@ -36,18 +36,17 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
     Route::get('/articles/{article}', [ArticleController::class, 'edit'])->name('articles.edit');
     Route::patch('/articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])->name('articles.toggle-status');
 
-    
+
     // Careers Management
     Route::resource('careers', CareerController::class);
-    Route::patch('careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])
-        ->name('careers.toggle-status');
-    
+    Route::patch('careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])->name('careers.toggle-status');
+
     // Users Management
     Route::resource('users', UserController::class);
     Route::patch('users/{user}/toggle-status', [UserController::class, 'toggleStatus'])
         ->name('users.toggle-status');
 
-         // Motorola Products Management
+    // Motorola Products Management
     Route::get('/motorola', [MotorolaController::class, 'adminIndex'])->name('motorola.index');
     Route::post('/motorola', [MotorolaController::class, 'store'])->name('motorola.store');
     Route::put('/motorola/{motorola}', [MotorolaController::class, 'update'])->name('motorola.update');
@@ -109,7 +108,7 @@ Route::prefix('business-solution')->group(function () {
 // Sitemap Route (untuk SEO)
 Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // Route::get('/test-contact-email', function () {
 //     // Data sesuai dengan input form Anda
