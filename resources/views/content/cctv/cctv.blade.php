@@ -171,7 +171,9 @@
             </div>
         </section>
     </div>
-    <div class="container" id="kontak">
-        @include('components.contact')
-    </div>
+    <section class="hnr-contact-section">
+        <div class="container">
+            @include('components.contact')
+        </div>
+    </section>
 @endsection

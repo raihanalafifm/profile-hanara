@@ -145,9 +145,11 @@
     @endif
 
     <!-- Contact Section -->
-    <div class="container reveal-section">
-        @include('components.contact')
-    </div>
+    <section class="hnr-contact-section">
+        <div class="container">
+            @include('components.contact')
+        </div>
+    </section>
 @endsection
 
 @push('styles')

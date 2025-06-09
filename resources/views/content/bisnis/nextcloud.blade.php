@@ -323,9 +323,11 @@
             </div>
 
             <!-- Contact Us Section -->
-            <div class="reveal-section">
-                @include('components.contact')
-            </div>
+            <section class="hnr-contact-section">
+                <div class="container">
+                    @include('components.contact')
+                </div>
+            </section>
         </div>
     </section>
 @endsection

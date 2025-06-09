@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <div class="about-page-header">
                         <h1 class="about-page-title"><span class="about-orange">PT</span> HANARA<br>PRIMA SOLUSINDO</h1>
-                        <p class="about-page-tagline">Built on trust. Growing with vision.</p>
+                        <p class="about-page-tagline">Your Partner for Smarter IT Solution.</p>
                     </div>
                 </div>
             </div>
@@ -32,14 +32,20 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="about-description">
-                        <p><strong>PT Hanara Prima Solusindo (Hanara)</strong> adalah perusahaan yang bergerak di bidang
-                            <em>IT Solution Provider</em>, berkomitmen untuk meningkatkan efektivitas dan produktivitas
-                            bisnis di era digital saat ini. Kami menyadari bahwa teknologi informasi memegang peranan
-                            penting sebagai partner bisnis IT yang handal dan siap untuk menghadapi tantangan industri dalam
-                            dunia digital dan teknologi informasi.</p>
-                        <p>Dengan tim profesional yang berpengalaman, Hanara berfikir pada pengembangan solusi yang
-                            disesuaikan dengan kebutuhan dibidang software, untuk mencapai tujuan dan target perusahaan
-                            klien kami.</p>
+                        <p> <strong> Hanara Prima Solusindo (Hanara) </strong> adalah perusahaan penyedia solusi IT yang
+                            berfokus pada pengembangan sistem berbasis kebutuhan nyata di lapangan.
+                        <p>
+                            Kami berkomitmen untuk membantu perusahaan meningkatkan efektivitas dan produktivitas melalui
+                            solusi teknologi yang adaptif, efisien, dan berkelanjutan.
+                        </p>
+                        <p>Kami percaya bahwa teknologi informasi bukan sekadar alat, melainkan mitra strategis dalam
+                            menghadapi tantangan bisnis di era digital.
+                        </p>
+                        <p>Didukung oleh tim profesional yang berpengalaman di bidang infrastruktur, pengembangan software,
+                            dan layanan kreatif digital, Hanara hadir untuk membangun solusi yang relevan dan berdampak
+                            nyata bagi setiap klien.
+                        </p>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -51,8 +57,8 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="about-description">
-                        <p>Menjadi mitra terpercaya dalam menyediakan solusi teknologi inovatif melalui produk dan layanan
-                            unggulan untuk mendukung pertumbuhan dan kesuksesan pelanggan.</p>
+                        <p>Menjadi mitra terpercaya dalam menyediakan solusi teknologi yang inovatif dan berdampak, demi
+                            mendukung pertumbuhan dan keberhasilan bisnis pelanggan.</p>
                     </div>
                 </div>
             </div>
@@ -69,22 +75,40 @@
                             $missions = [
                                 [
                                     'number' => '01',
-                                    'title' => 'Layanan Berkualitas Terbaik',
+                                    'title' => 'Menyediakan Layanan Berkualitas Tinggi',
                                     'description' =>
-                                        'Platform kolaborasi modern yang dirancang untuk meningkatkan efisiensi kerja tim melalui akses data yang aman dan fleksibel.',
+                                        'Kami menghadirkan sistem dan platform kolaborasi yang efisien, aman, dan fleksibel untuk menunjang produktivitas kerja di berbagai sektor.',
                                 ],
                                 [
                                     'number' => '02',
-                                    'title' => 'Solusi Bisnis Inovatif',
+                                    'title' => 'Membangun Solusi Bisnis yang Inovatif',
+                                    'description' =>
+                                        'Kami merancang solusi berbasis teknologi seperti email server, cloud, dan tools kolaborasi yang mudah digunakan, andal, dan sesuai dengan kebutuhan bisnis modern.',
+                                ],
+                                [
+                                    'number' => '03',
+                                    'title' => 'Menjadi Mitra Transformasi Digital',
                                     'description' =>
                                         'Solusi email server yang handal, aman, dan mudah digunakan, untuk memastikan komunikasi bisnis lancar tanpa hambatan.',
+                                ],
+                                [
+                                    'number' => '04',
+                                    'title' => 'Mengedepankan Adaptasi Teknologi Open-Source',
+                                    'description' =>
+                                        'Kami mengintegrasikan teknologi terbuka (open-source) yang hemat biaya dan mudah dikustomisasi agar solusi kami lebih fleksibel dan berdaya guna.',
+                                ],
+                                [
+                                    'number' => '05',
+                                    'title' => 'Membangun Tim Internal yang Tangguh dan Kolaboratif',
+                                    'description' =>
+                                        'Kami percaya kekuatan solusi dimulai dari tim yang solid. Hanara terus berinvestasi dalam pengembangan SDM dan budaya kerja kolaboratif.',
                                 ],
                                 // ... tambahkan misi lainnya
                             ];
                         @endphp
 
-                        @foreach ($missions as $mission)
-                            <div class="col-md-6 mb-4">
+                        @foreach ($missions as $index => $mission)
+                            <div class="col-md-6 mb-4 {{ $index == 4 ? 'offset-md-3' : '' }}">
                                 <article class="mission-card">
                                     <div class="mission-icon orange-bg">
                                         <span class="mission-number">{{ $mission['number'] }}</span>

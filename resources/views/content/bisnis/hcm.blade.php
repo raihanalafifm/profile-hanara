@@ -494,9 +494,11 @@
     </section>
 
     <!-- Contact Component -->
-    <div class="container mt-5 reveal-section">
-        @include('components.contact')
-    </div>
+    <section class="hnr-contact-section">
+        <div class="container">
+            @include('components.contact')
+        </div>
+    </section>
 
     <!-- Map Section -->
     <section class="contact-section reveal-section">

@@ -1,10 +1,14 @@
 @extends('layout.main')
 
 @section('container')
+    <section class="hnr-contact-section contact-section">
+        <div class="container">
+            @include('components.contact')
+        </div>
+    </section>
     <section class="contact-section">
         <div class="container reveal-section">
-            <h1 class="visually-hidden">Hubungi PT Hanara Prima Solusindo</h1>
-            @include('components.contact')
+            <h1 class="visually-hidden">Silakan isi formulir berikut, tim kami akan menghubungi Anda</h1>
 
             <!-- Map Section dengan proper heading -->
             <div class="map-section mt-5">

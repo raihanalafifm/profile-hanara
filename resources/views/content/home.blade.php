@@ -595,12 +595,11 @@
             <div class="row text-center mb-4">
                 <div class="col-lg-12">
                     <span class="blog-tag">• Our Latest Blog •</span>
-                    <h2 class="blog-title">Connect with us for experiencing<br>the best <span class="text-blog-orange">IT
-                            Solutions</span></h2>
+                    <h2 class="blog-title">Discover Innovative <span class="text-blog-orange">IT Solutions</span> <br>from
+                        Hanara </h2>
                     <p class="blog-subtitle">
-                        Kami memiliki beberapa kesempatan untuk bekerja sama dengan perusahaan dan organisasi ternama di
-                        Indonesia.<br>
-                        Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
+                        Temukan insight dan pengalaman lapangan dari berbagai implementasi teknologi yang telah kami
+                        jalankan untuk klien di seluruh Indonesia.
                     </p>
                 </div>
             </div>

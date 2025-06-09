@@ -42,7 +42,7 @@ class ContactController extends Controller
             Log::info('Email sent successfully');
 
             // Jika berhasil, redirect dengan pesan sukses
-            return redirect()->back()->with('success', 'Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.');
+            return redirect()->back()->with('success', 'Pesan berhasil dikirim, tim Kami akan segera menghubungi Anda');
         } catch (\Exception $e) {
             // Log error detail
             Log::error('Contact form error', [

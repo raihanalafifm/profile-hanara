@@ -12,6 +12,49 @@ html {
     scroll-behavior: smooth;
 }
 
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    fill: #ffffff; /* Putih biar kontras */
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.contact-info {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #f5bd56;
+}
+
+.contact-info li:hover .contact-icon {
+    color: #f5bd56;
+}
+
+address {
+    font-style: normal;
+    display: inline;
+    color: #ffffff;
+}
+
 /* Scroll Down Animation CSS */
 .scroll-down-container {
     position: fixed;
