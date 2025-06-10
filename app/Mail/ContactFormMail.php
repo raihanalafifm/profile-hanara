@@ -17,15 +17,18 @@ class ContactFormMail extends Mailable
 
     public function __construct($data)
     {
-        // PENTING: Ini yang harus diperbaiki!
         $this->data = $data;
     }
 
     public function envelope(): Envelope
     {
+        // Gunakan email dari config, bukan hardcode
+        $fromEmail = config('mail.from.address', 'noreply@hanara.id');
+        $fromName = config('mail.from.name', 'PT Hanara Prima Solusindo');
+
         return new Envelope(
             subject: 'Pesan Kontak Baru dari ' . ($this->data['name'] ?? 'Unknown'),
-            from: new Address('raihann.almuyassarr@gmail.com', 'Profile Hanara'),
+            from: new Address($fromEmail, $fromName),
             replyTo: [
                 new Address(
                     $this->data['email'] ?? 'noreply@example.com',
@@ -40,8 +43,13 @@ class ContactFormMail extends Mailable
         return new Content(
             view: 'emails.contact-form',
             with: [
-                'data' => $this->data  // Pass data to view
+                'data' => $this->data
             ]
         );
+    }
+
+    public function attachments(): array
+    {
+        return [];
     }
 }
