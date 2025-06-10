@@ -171,7 +171,7 @@
             </div>
         </section>
     </div>
-    <section class="hnr-contact-section">
+    <section id="kontak" class="hnr-contact-section">
         <div class="container">
             @include('components.contact')
         </div>
