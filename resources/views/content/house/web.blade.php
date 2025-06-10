@@ -362,7 +362,9 @@
                                 <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 1 Tahun</p>
                             </div>
                             <div class="hnr-house-web-pricing-price">Rp 3.990.000</div>
-                            <a href="#" class="hnr-house-web-pricing-btn">Beli Paket</a>
+                            <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-ekonomi/') }}"
+                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
+                                Paket</a>
                         </div>
 
                         <div class="hnr-house-web-pricing-features">
@@ -460,7 +462,9 @@
                                 <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 1 Tahun</p>
                             </div>
                             <div class="hnr-house-web-pricing-price">Rp 5.990.000</div>
-                            <a href="#" class="hnr-house-web-pricing-btn hnr-house-web-pricing-btn-popular">Beli
+                            <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-best-seller/') }}"
+                                target="_blank" rel="noopener noreferrer"
+                                class="hnr-house-web-pricing-btn hnr-house-web-pricing-btn-popular">Beli
                                 Paket</a>
                         </div>
 
@@ -585,8 +589,10 @@
                                 <h3 class="hnr-house-web-pricing-name">Paket Web Startup (Lebih Hemat)</h3>
                                 <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 3 Tahun</p>
                             </div>
-                            <div class="hnr-house-web-pricing-price">Rp 12.900.000</div>
-                            <a href="#" class="hnr-house-web-pricing-btn">Beli Paket</a>
+                            <div class="hnr-house-web-pricing-price">Rp 12.990.000</div>
+                            <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-lebih-hemat/ ') }}"
+                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
+                                Paket</a>
                         </div>
 
                         <div class="hnr-house-web-pricing-features">

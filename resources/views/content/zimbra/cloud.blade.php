@@ -820,7 +820,9 @@
                             </h3> --}}
                             <span class="hnr-cloud-price-period" style="font-size:14px">Kapasitas 5 GB per
                                 akun. Cocok untuk UKM, sekolah, komunitas, dan tim kecil.</span>
-                            <a href="#" class="hnr-cloud-order-btn hnr-cloud-order-btn-popular">Beli Paket</a>
+                            <a href="{{ url('https://shop.hanara.id/product/zimbra-cloud-ose/ ') }}" target="_blank"
+                                rel="noopener noreferrer" class="hnr-cloud-order-btn hnr-cloud-order-btn-popular">Beli
+                                Paket</a>
                         </div>
 
                         <div class="hnr-cloud-package-content">
