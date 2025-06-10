@@ -29,7 +29,8 @@
                             hadir dalam beragam pilihan sesuai kebutuhan dengan ragam varian dan kelas.
                         </p>
 
-                        <a href="{{ url('https://shop.hanara.id') }}" class="hnr-motorola-button">Pesan Sekarang!</a>
+                        <a href="{{ url('https://shop.hanara.id/brands/motorola/ ') }}" target="_blank"
+                            rel="noopener noreferrer" class="hnr-motorola-button">Pesan Sekarang!</a>
                     </div>
                 </div>
             </div>
