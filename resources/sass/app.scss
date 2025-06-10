@@ -9910,3 +9910,131 @@ h2.company-name {
         color: #ff8533;
     }
 }
+/* Career Status Badge Styles */
+.hnr-job-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.hnr-status-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.hnr-status-text {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Status Open - Green/Success */
+.hnr-status-open {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.hnr-status-open:hover {
+    background-color: #c3e6cb;
+}
+
+/* Status Closed - Red/Danger */
+.hnr-status-closed {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.hnr-status-closed:hover {
+    background-color: #f5c6cb;
+}
+
+/* Status On Hold - Yellow/Warning */
+.hnr-status-onhold {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.hnr-status-onhold:hover {
+    background-color: #ffeaa7;
+}
+
+/* Apply Button Disabled */
+.hnr-apply-button-disabled {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 1px solid #ccc;
+    color: #999;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Job Header Adjustments */
+.hnr-job-title-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .hnr-status-open {
+        background-color: #1e3a2e;
+        color: #6fcf97;
+        border-color: #2d5940;
+    }
+
+    .hnr-status-closed {
+        background-color: #3d1a1a;
+        color: #ff6b6b;
+        border-color: #5a2626;
+    }
+
+    .hnr-status-onhold {
+        background-color: #3d3514;
+        color: #ffd93d;
+        border-color: #5a4e1f;
+    }
+
+    .hnr-apply-button-disabled {
+        border-color: #555;
+        color: #777;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .hnr-job-status-badge {
+        font-size: 11px;
+        padding: 3px 10px;
+        margin-left: 10px;
+    }
+
+    .hnr-status-icon {
+        font-size: 12px;
+    }
+
+    .hnr-job-title-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .hnr-job-status-badge {
+        margin-left: 0;
+    }
+}

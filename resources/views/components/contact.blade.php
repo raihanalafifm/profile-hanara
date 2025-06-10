@@ -190,7 +190,7 @@
                 </div>
 
                 <!-- reCAPTCHA (optional but recommended for SEO and security) -->
-                @if (config('services.recaptcha.site_key'))
+                {{-- @if (config('services.recaptcha.site_key'))
                     <div class="row mb-4">
                         <div class="col-12">
                             <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
@@ -200,7 +200,7 @@
                             @enderror
                         </div>
                     </div>
-                @endif
+                @endif --}}
 
                 <!-- Submit Button -->
                 <div class="row">

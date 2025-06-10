@@ -40,6 +40,7 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
     // Careers Management
     Route::resource('careers', CareerController::class);
     Route::patch('careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])->name('careers.toggle-status');
+    Route::patch('careers/{career}/update-status', [CareerController::class, 'updateStatus'])->name('careers.update-status');
 
     // Users Management
     Route::resource('users', UserController::class);

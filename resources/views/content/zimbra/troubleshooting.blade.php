@@ -21,13 +21,19 @@
                         </h1>
 
                         <p class="hnr-troubleshoot-description">
-                            Jasa Pemecahan Masalah dan Perbaikan Zimbra Mail Server: Layanan troubleshooter yang tinggi
-                            untuk Zimbra Mail Server, sebagai solusi atas segala jenis email server mengalami gangguan.
-                            Meliputi kemampuan penyelesaian kode komputer bahasa instalasi, bahasa setting, bahasa script,
-                            bahasa database, bahasa aplikasi dan think lebih mengarah pada masalanya email, error pada
-                            service tersebut, hingga masalah platform sistem. Dengan tim ahli yang berpengalaman dan
-                            memiliki teknik yang handalan melakukan troubleshooting dengan terukur, cepat memperbaiki setiap
-                            kasus kendala koneksi email pengguna layanan.
+                            Jasa Troubleshooting Zimbra adalah layanan pemulihan dan perbaikan Zimbra Mail Server untuk Anda
+                            yang mengalami kendala teknis, error sistem, atau gangguan layanan email. Layanan ini ditujukan
+                            untuk klien yang belum berlangganan support, namun membutuhkan solusi cepat dan tepat dari tim
+                            profesional.
+                            <br><br>
+                            Tim Hanara siap membantu menyelesaikan berbagai jenis permasalahan, seperti error login webmail,
+                            layanan Zimbra yang tidak aktif, service tidak jalan, pengaturan DNS yang bermasalah, hingga
+                            error pada database atau konfigurasi internal server.
+                            <br><br>
+                            Dengan pengalaman menangani berbagai kasus Zimbra baik OSE maupun Network Edition kami dapat
+                            melakukan troubleshooting secara remote maupun onsite, tergantung tingkat kesulitan dan kondisi
+                            sistem. Setiap proses dilakukan secara terukur, terdokumentasi, dan fokus pada pemulihan sistem
+                            secara aman tanpa risiko kehilangan data.
                         </p>
                     </div>
                 </div>
@@ -58,10 +64,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting1.png') }}"
                                 alt="Email Bisa Mengirim" class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Email Bisa Mengirim Email</h3>
+                        <h3 class="hnr-service-title">Email Tidak Bisa Mengirim</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra menerima email namun tidak bisa mengirim email. Bisa karena domain
-                            email tidak ter-konfirmasi atau masalah DNS records yang tidak konfigurasi dengan benar.
+                            Mengatasi Zimbra yang gagal mengirim email meskipun bisa menerima. Umumnya disebabkan oleh
+                            kesalahan konfigurasi SMTP, DNS records, atau domain yang tidak terverifikasi.
                         </p>
                     </div>
                 </div>
@@ -73,10 +79,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting2.png') }}"
                                 alt="Tidak Bisa Terima Email" class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Tidak Bisa Terima Email</h3>
+                        <h3 class="hnr-service-title">Tidak Bisa Menerima Email</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra mampu mengirim email namun tidak bisa terima email, bisa jadi masalah
-                            konfigurasi MX records tidak lengkap atau masalah domain.
+                            Zimbra bisa mengirim tapi gagal menerima email masuk? Bisa jadi masalah ada pada MX records,
+                            domain expired, atau filter email yang salah konfigurasi.
                         </p>
                     </div>
                 </div>
@@ -88,10 +94,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting3.png') }}"
                                 alt="Service Not Running" class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Service Zimbra Not Running</h3>
+                        <h3 class="hnr-service-title">Service Zimbra Tidak Berjalan</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra dengan service tersebut tidak aktif, bisa karena Zimbra tidak running,
-                            perbaiki service yang tidak running.
+                            Menangani kondisi saat service Zimbra (seperti MTA, LDAP, atau Mailbox) tidak aktif. Kami bantu
+                            mengidentifikasi dan mengaktifkan service yang bermasalah.
                         </p>
                     </div>
                 </div>
@@ -103,10 +109,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting8.png') }}" alt="Email Delay"
                                 class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Pengiriman Email Outgoing Delay</h3>
+                        <h3 class="hnr-service-title">Pengiriman Email Terlambat</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra dengan kondisi pengiriman email sangat lama untuk sampai ke tujuan
-                            meski sudah running.
+                            Zimbra bisa mengirim email, tapi butuh waktu lama hingga diterima? Biasanya terkait antrian
+                            email, DNS, atau performa server yang tidak optimal.
                         </p>
                     </div>
                 </div>
@@ -118,10 +124,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting4.png') }}" alt="Email Spam"
                                 class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Email Kena Dikenali Spam</h3>
+                        <h3 class="hnr-service-title"> Email Ditandai sebagai Spam</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra pada email yang dikirim dikenali Spam oleh sisi penerima, padahal email
-                            bukan termasuk kategori spam.
+                            Mengatasi email Zimbra yang masuk ke folder spam penerima, meski isinya valid. Kami bantu
+                            perbaiki reputasi IP/domain dan konfigurasi email agar tidak dianggap spam.
                         </p>
                     </div>
                 </div>
@@ -133,10 +139,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting5.png') }}" alt="Spam Filter"
                                 class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Banyak Terima Email Spam</h3>
+                        <h3 class="hnr-service-title">Terlalu Banyak Email Spam Masuk</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra dengan kondisi terlalu banyak email spam yang masuk, solusi
-                            menghilangkan spam dan mengkonfigurasi email Anda.
+                            Mengatasi kondisi inbox dipenuhi spam. Kami bantu mengatur filter spam, RBL, atau integrasi
+                            antispam yang lebih efektif.
                         </p>
                     </div>
                 </div>
@@ -148,9 +154,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting6.png') }}" alt="Access Issues"
                                 class="hnr-icon-image">
                         </div>
-                        <h3 class="hnr-service-title">Uninstall Tidak Bisa Diakses</h3>
+                        <h3 class="hnr-service-title">Gagal Akses Setelah Uninstall</h3>
                         <p class="hnr-service-text">
-                            Mengatasi masalah Zimbra kondisi webmail tidak bisa di akses saat server aktif, kembal operasi.
+                            Zimbra tidak bisa diakses setelah proses uninstall atau update gagal? Kami bantu restore service
+                            dan konfigurasi agar server kembali berjalan.
                         </p>
                     </div>
                 </div>
@@ -164,8 +171,8 @@
                         </div>
                         <h3 class="hnr-service-title">Masalah Lainya</h3>
                         <p class="hnr-service-text">
-                            Konsultasikan masalah lainnya yang tidak dalam daftar, beri tahu kami masalah dan kami yang
-                            memberikan masalah.
+                            Tidak menemukan masalah Anda di daftar ini? Hubungi kami dan tim Hanara akan bantu analisa serta
+                            memberikan solusi terbaik untuk kondisi Zimbra Anda.
                         </p>
                     </div>
                 </div>
@@ -192,11 +199,11 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting9.png') }}"
                                 alt="Qualified Staff" class="hnr-advantage-img">
                         </div>
-                        <h3 class="hnr-advantage-title">Staff yang Qualified dan Berpengalaman</h3>
+                        <h3 class="hnr-advantage-title">Staff Berpengalaman dan Tersertifikasi</h3>
                         <p class="hnr-advantage-text">
-                            Anda tidak perlu ragu dengan kemampuan, kualifikasi dalam mengani sistem operasi Linux dan
-                            Zimbra Mail Server, kami sudah terbiasa dan memiliki pengalaman troubleshooting Email
-                            Server/Linux/Zimbra Mail Server.
+                            Tim Hanara memiliki pengalaman luas dalam menangani Zimbra Mail Server dan sistem operasi Linux.
+                            Kami terbiasa menyelesaikan berbagai jenis kendala, dari konfigurasi ringan hingga error
+                            kompleks.
                         </p>
                     </div>
                 </div>
@@ -208,11 +215,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting10.png') }}"
                                 alt="Fast Response" class="hnr-advantage-img">
                         </div>
-                        <h3 class="hnr-advantage-title">Respon yang Cepat</h3>
+                        <h3 class="hnr-advantage-title">Respon Cepat dan Terukur</h3>
                         <p class="hnr-advantage-text">
-                            Kami menyadari bahwa SLA untuk email server merupakan hal yang sangat penting email server down
-                            permasalahan tidak boleh dibiarkan, kami sering sekali memberikan pertolongan dan menyelesaikan
-                            pengajaran dan kualitas yang menakjubkan.
+                            Kami memahami bahwa downtime email bisa berdampak besar pada bisnis. Karena itu, kami memberikan
+                            respon cepat dan terstruktur sesuai kebutuhan dan tingkat urgensi masalah.
                         </p>
                     </div>
                 </div>
@@ -224,10 +230,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting11.png') }}"
                                 alt="Expert Solutions" class="hnr-advantage-img">
                         </div>
-                        <h3 class="hnr-advantage-title">Penyelesaian yang Cepat</h3>
+                        <h3 class="hnr-advantage-title">Solusi Tuntas, Bukan Tambal Sulam</h3>
                         <p class="hnr-advantage-text">
-                            Kami Kami, siapkan bantuan cepat untuk permasalahan email Zimbra melalui group online, bahkan
-                            respon solusi cepat, tindakan terbaik fix semua masalah dan selalu menyebarluaskan masalah.
+                            Setiap penanganan tidak hanya difokuskan pada perbaikan sementara, tapi juga pada identifikasi
+                            akar masalah dan pencegahan agar tidak terulang kembali.
                         </p>
                     </div>
                 </div>
@@ -239,11 +245,10 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting12.png') }}"
                                 alt="Data Recovery" class="hnr-advantage-img">
                         </div>
-                        <h3 class="hnr-advantage-title">Rehabilitasi Waktu</h3>
+                        <h3 class="hnr-advantage-title">Efisiensi Waktu Perbaikan</h3>
                         <p class="hnr-advantage-text">
-                            Kami tidak hanya sekadar memperbaiki, tetapi akan memastikan bahwa Zimbra Anda berfungsi dengan
-                            benar, solusi hangout kemi pasti tepat yang sudah terbukti dengan layanan kami. Anda yang
-                            mengingat jam kerja kami.
+                            Kami bantu Anda meminimalkan waktu pemulihan sistem. Dengan pengalaman dan pendekatan yang tepat
+                            sasaran, masalah Zimbra bisa diselesaikan lebih cepat tanpa banyak trial-error.
                         </p>
                     </div>
                 </div>
@@ -257,9 +262,8 @@
                         </div>
                         <h3 class="hnr-advantage-title">Laporan Troubleshooting</h3>
                         <p class="hnr-advantage-text">
-                            Melaporkan hal yang sudah selesai bekubu dokumen yang sudah diaggap selesai kami, selling kami
-                            kami memberikan dokumentasi email server, kami juga mengajurkan pengalaman dan solusi yang sudah
-                            dilakukan.
+                            Setiap penanganan akan didokumentasikan dalam laporan singkat yang menjelaskan penyebab, solusi,
+                            dan langkah-langkah yang telah diambil. Cocok untuk arsip internal IT Anda.
                         </p>
                     </div>
                 </div>
@@ -271,16 +275,163 @@
                             <img src="{{ asset('assets/images/icon/icon-card-troubleshooting14.png') }}" alt="Monitoring"
                                 class="hnr-advantage-img">
                         </div>
-                        <h3 class="hnr-advantage-title">Monitoring</h3>
+                        <h3 class="hnr-advantage-title"> Monitoring Pasca Perbaikan</h3>
                         <p class="hnr-advantage-text">
-                            Kami berharap di masalah selesai, setelah Zimbra Anda kembali normal, kami tetap dan terus
-                            pantau dengan barang kami melaukan monitoring by jangka waktu tertentu dan tetap memantau apakah
-                            setiap data tetap aman berjak baik untuk future layanan.
+                            KKami tetap memantau sistem setelah masalah selesai. Hal ini memastikan sistem Zimbra Anda
+                            benar-benar stabil dan tidak ada efek samping dari penanganan yang dilakukan.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+        <section class="row mt-5 mb-5">
+            <div class="col-12">
+                <div class="hnr-faq-section">
+                    <h2 class="hnr-faq-title">FAQ</h2>
+                    <p class="hnr-faq-subtitle">Frequently Asked Questions (FAQ)</p>
+
+                    <div class="hnr-faq-container" itemscope itemtype="https://schema.org/FAQPage">
+                        <!-- FAQ items here dengan proper schema markup -->
+                        <!-- Question 1 -->
+                        <div class="hnr-faq-item active">
+                            <div class="hnr-faq-header">
+                                <div class="hnr-faq-number">01</div>
+                                <h3 class="hnr-faq-question">Apakah saya bisa menggunakan layanan troubleshooting jika
+                                    Zimbra saya bukan dari Hanara?</h3>
+                                <div class="hnr-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-faq-body">
+                                <h4 class="hnr-faq-subtitle">Description</h4>
+                                <p class="hnr-faq-answer">
+                                    Bisa. Kami melayani perbaikan Zimbra dari berbagai sumber pemasangan, baik dari vendor
+                                    lain maupun internal Anda sendiri.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="hnr-faq-item">
+                            <div class="hnr-faq-header">
+                                <div class="hnr-faq-number">02</div>
+                                <h3 class="hnr-faq-question">Apakah bisa dilakukan secara remote?</h3>
+                                <div class="hnr-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-faq-body">
+                                <h4 class="hnr-faq-subtitle">Description</h4>
+                                <p class="hnr-faq-answer">
+                                    Ya. Banyak kasus troubleshooting Zimbra yang dapat diselesaikan via remote access. Namun
+                                    untuk kondisi tertentu, kami juga menyediakan opsi onsite (dengan penyesuaian biaya dan
+                                    jadwal).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="hnr-faq-item">
+                            <div class="hnr-faq-header">
+                                <div class="hnr-faq-number">03</div>
+                                <h3 class="hnr-faq-question">Apakah data email saya akan aman saat proses troubleshooting?
+                                </h3>
+                                <div class="hnr-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-faq-body">
+                                <h4 class="hnr-faq-subtitle">Description</h4>
+                                <p class="hnr-faq-answer">
+                                    Tentu. Kami sangat menjaga integritas data. Setiap tindakan akan dilakukan dengan
+                                    hati-hati dan terdokumentasi. Jika dibutuhkan backup, kami akan koordinasikan terlebih
+                                    dahulu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="hnr-faq-item">
+                            <div class="hnr-faq-header">
+                                <div class="hnr-faq-number">04</div>
+                                <h3 class="hnr-faq-question">Berapa lama proses penanganan masalah biasanya?</h3>
+                                <div class="hnr-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-faq-body">
+                                <h4 class="hnr-faq-subtitle">Description</h4>
+                                <p class="hnr-faq-answer">
+                                    Waktu penyelesaian tergantung pada jenis masalah dan kondisi sistem. Beberapa kasus bisa
+                                    selesai dalam hitungan jam, sementara kasus kompleks mungkin memerlukan penjadwalan
+                                    lebih lanjut.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="hnr-faq-item">
+                            <div class="hnr-faq-header">
+                                <div class="hnr-faq-number">05</div>
+                                <h3 class="hnr-faq-question"> Apakah saya akan mendapatkan laporan setelah masalah
+                                    ditangani?</h3>
+                                <div class="hnr-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-faq-body">
+                                <h4 class="hnr-faq-subtitle">Description</h4>
+                                <p class="hnr-faq-answer">
+                                    Ya. Kami memberikan ringkasan troubleshooting dalam bentuk laporan teknis yang mencakup
+                                    penyebab masalah, solusi yang diambil, serta saran pencegahan ke depan.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hnr-faq-item">
+                            <div class="hnr-faq-header">
+                                <div class="hnr-faq-number">06</div>
+                                <h3 class="hnr-faq-question">Bagaimana cara saya memulai proses troubleshooting dengan
+                                    Hanara?</h3>
+                                <div class="hnr-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-faq-body">
+                                <h4 class="hnr-faq-subtitle">Description</h4>
+                                <p class="hnr-faq-answer">
+                                    Cukup hubungi kami melalui WhatsApp, email, atau formulir kontak di halaman ini. Tim
+                                    kami akan segera menghubungi Anda untuk analisa awal dan langkah selanjutnya.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="hnr-contact-section">
             <div class="container">
                 @include('components.contact')

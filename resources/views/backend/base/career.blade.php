@@ -32,6 +32,7 @@
                         <th>Position</th>
                         <th>Description</th>
                         <th>Status</th>
+                        <th>Active</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -41,6 +42,22 @@
                             <td>{{ $loop->iteration + ($careers->currentPage() - 1) * $careers->perPage() }}</td>
                             <td>{{ $career->position }}</td>
                             <td>{{ Str::limit($career->description, 50) }}</td>
+                            <td>
+                                <form action="{{ route('backend.careers.update-status', $career) }}" method="POST"
+                                    class="d-inline">
+                                    @csrf
+                                    @method('PATCH')
+                                    <select name="status" class="form-select form-select-sm status-select"
+                                        onchange="this.form.submit()" style="width: auto; display: inline-block;">
+                                        <option value="open" {{ $career->status == 'open' ? 'selected' : '' }}
+                                            class="text-success">✅ Open</option>
+                                        <option value="closed" {{ $career->status == 'closed' ? 'selected' : '' }}
+                                            class="text-danger">❌ Closed</option>
+                                        <option value="on_hold" {{ $career->status == 'on_hold' ? 'selected' : '' }}
+                                            class="text-warning">🕓 On Hold</option>
+                                    </select>
+                                </form>
+                            </td>
                             <td>
                                 <form action="{{ route('backend.careers.toggle-status', $career) }}" method="POST"
                                     class="d-inline">
@@ -78,7 +95,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">Belum ada career</td>
+                            <td colspan="6" class="text-center">Belum ada career</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -103,13 +120,27 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="col-md-8 mb-3">
                                 <label for="position" class="form-label">Position <span class="text-danger">*</span></label>
                                 <input type="text" id="position" name="position"
                                     class="form-control @error('position') is-invalid @enderror"
                                     placeholder="e.g. IT Support, Software Developer" value="{{ old('position') }}"
                                     required>
                                 @error('position')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+                                <select id="status" name="status"
+                                    class="form-select @error('status') is-invalid @enderror" required>
+                                    <option value="open" {{ old('status') == 'open' ? 'selected' : '' }}>✅ Open</option>
+                                    <option value="closed" {{ old('status') == 'closed' ? 'selected' : '' }}>❌ Closed
+                                    </option>
+                                    <option value="on_hold" {{ old('status') == 'on_hold' ? 'selected' : '' }}>🕓 On Hold
+                                    </option>
+                                </select>
+                                @error('status')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -137,8 +168,8 @@
 
                         <div class="mb-3">
                             <label for="qualifications" class="form-label">Qualifications</label>
-                            <textarea id="qualifications" name="qualifications" class="form-control @error('qualifications') is-invalid @enderror"
-                                rows="5"
+                            <textarea id="qualifications" name="qualifications"
+                                class="form-control @error('qualifications') is-invalid @enderror" rows="5"
                                 placeholder="Satu kualifikasi per baris:&#10;Minimal D3/S1 Teknik Informatika&#10;Pengalaman minimal 1 tahun">{{ old('qualifications') }}</textarea>
                             <small class="text-muted">Masukkan satu kualifikasi per baris</small>
                             @error('qualifications')
@@ -168,10 +199,19 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col mb-3">
+                            <div class="col-md-8 mb-3">
                                 <label for="edit_position" class="form-label">Position <span
                                         class="text-danger">*</span></label>
                                 <input type="text" id="edit_position" name="position" class="form-control" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="edit_status" class="form-label">Status <span
+                                        class="text-danger">*</span></label>
+                                <select id="edit_status" name="status" class="form-select" required>
+                                    <option value="open">✅ Open</option>
+                                    <option value="closed">❌ Closed</option>
+                                    <option value="on_hold">🕓 On Hold</option>
+                                </select>
                             </div>
                         </div>
 
@@ -225,6 +265,7 @@
             // Fill form fields
             document.getElementById('edit_position').value = career.position || '';
             document.getElementById('edit_description').value = career.description || '';
+            document.getElementById('edit_status').value = career.status || 'open';
 
             // Handle skills array
             if (career.skills && Array.isArray(career.skills) && career.skills.length > 0) {
@@ -277,4 +318,14 @@
             @endif
         });
     </script>
+
+    <style>
+        .status-select {
+            min-width: 120px;
+        }
+
+        .status-select option {
+            padding: 5px;
+        }
+    </style>
 @endsection

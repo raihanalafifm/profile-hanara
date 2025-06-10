@@ -1,6 +1,5 @@
 @extends('layout.main')
 
-
 @section('container')
     <section class="hnr-career-section">
         <div class="container ">
@@ -33,14 +32,19 @@
                             <div class="hnr-job-title-container">
                                 <span class="hnr-job-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}.</span>
                                 <h3 class="hnr-job-title" itemprop="title">{{ $career->position }}</h3>
+                                <!-- Status Badge -->
+                                <span class="hnr-job-status-badge {{ $career->status_badge_class }}">
+                                    <span class="hnr-status-icon">{{ $career->status_icon }}</span>
+                                    <span class="hnr-status-text">{{ $career->status_label }}</span>
+                                </span>
                             </div>
                             <div class="hnr-job-tags">
                                 @if ($career->type == 'Both' || $career->type == 'Full Time')
                                     <span class="hnr-job-tag hnr-tag-fulltime" itemprop="employmentType">Full Time</span>
                                 @endif
-                                @if ($career->type == 'Both' || $career->type == 'Part Time')
+                                {{-- @if ($career->type == 'Both' || $career->type == 'Part Time')
                                     <span class="hnr-job-tag hnr-tag-parttime" itemprop="employmentType">Part Time</span>
-                                @endif
+                                @endif --}}
                             </div>
                             <button class="hnr-job-toggle {{ $index > 0 ? 'collapsed' : '' }}"
                                 aria-label="Toggle job details" data-target="job-{{ $career->id }}"
@@ -57,15 +61,21 @@
                                 <h4 class="hnr-job-section-title">Description</h4>
                                 <p class="hnr-job-description-text" itemprop="description">{{ $career->description }}</p>
                                 <div class="hnr-apply-button-container">
-                                    <a href="{{ route('career.detail', $career->slug) }}" class="hnr-apply-button"
-                                        itemprop="url">
-                                        Apply this role
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="9 18 15 12 9 6"></polyline>
-                                        </svg>
-                                    </a>
+                                    @if ($career->status === 'open')
+                                        <a href="{{ route('career.detail', $career->slug) }}" class="hnr-apply-button"
+                                            itemprop="url">
+                                            Apply this role
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                    @else
+                                        <span class="hnr-apply-button-disabled">
+                                            This position is {{ $career->status_label }}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                         </div>

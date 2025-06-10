@@ -113,6 +113,7 @@ class CareerController extends Controller
             'description' => 'required|string',
             'skills' => 'nullable|string',
             'qualifications' => 'nullable|string',
+            'status' => 'required|in:open,closed,on_hold',
         ]);
 
         // Convert skills dan qualifications ke array
@@ -145,6 +146,7 @@ class CareerController extends Controller
                 'description' => $career->description,
                 'skills' => $career->skills,
                 'qualifications' => $career->qualifications,
+                'status' => $career->status,
                 'is_active' => $career->is_active
             ]);
         } catch (\Exception $e) {
@@ -165,6 +167,7 @@ class CareerController extends Controller
                 'description' => $career->description,
                 'skills' => $career->skills,
                 'qualifications' => $career->qualifications,
+                'status' => $career->status,
                 'is_active' => $career->is_active
             ]);
         }
@@ -186,6 +189,7 @@ class CareerController extends Controller
                 'description' => 'required|string',
                 'skills' => 'nullable|string',
                 'qualifications' => 'nullable|string',
+                'status' => 'required|in:open,closed,on_hold',
                 'is_active' => 'nullable|boolean',
             ]);
 
@@ -246,5 +250,20 @@ class CareerController extends Controller
 
         return redirect()->route('backend.careers.index')
             ->with('success', 'Status career berhasil diubah!');
+    }
+
+    /**
+     * Update career status (Open/Closed/On Hold)
+     */
+    public function updateStatus(Request $request, Career $career)
+    {
+        $validated = $request->validate([
+            'status' => 'required|in:open,closed,on_hold'
+        ]);
+
+        $career->update(['status' => $validated['status']]);
+
+        return redirect()->route('backend.careers.index')
+            ->with('success', 'Status career berhasil diperbarui!');
     }
 }
