@@ -505,15 +505,16 @@
         <div class="container">
             <h4 class="map-title">Lokasi Kami</h4>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.1088071562257!2d102.29693!3d-3.81233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b18431b2b9c7%3A0x8a6d7f5183f7c773!2sJl.%20Batang%20Hari%2C%20Nusa%20Indah%2C%20Kec.%20Ratu%20Agung%2C%20Kota%20Bengkulu%2C%20Bengkulu%2038223!5e0!3m2!1sid!2sid!4v1715382540125!5m2!1sid!2sid"
-                width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.0159552467626!2d102.27860847374916!3d-3.806629743572537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b161ec6a6a83%3A0x1e1175c4144610e0!2sJanji%20Jiwa%20%26%20Jiwa%20Tea%20Jilid%20485%20-%20Tanah%20Patah%2C%20Bengkulu!5e0!3m2!1sid!2sid!4v1749526258441!5m2!1sid!2sid"
+                width="100%" height="400" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Lokasi PT Hanara Prima Solusindo">
             </iframe>
-            <div class="map-actions mt-2">
-                <a href="https://maps.app.goo.gl/FTxacZPBbKNzovbX8" target="_blank" class="btn btn-submit">
-                    Petunjuk Arah
+            <<div class="map-actions mt-3">
+                <a href="https://maps.app.goo.gl/AcRriEcVffyzCCrk7" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-submit">
+                    <i class="bi bi-geo-alt-fill"></i> Petunjuk Arah
                 </a>
-            </div>
+        </div>
         </div>
     </section>
 @endsection

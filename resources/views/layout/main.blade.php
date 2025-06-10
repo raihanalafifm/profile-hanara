@@ -608,7 +608,7 @@
                 content: `
               <div class="map-info-window">
                 <h5>PT Hanara Prima Solusindo</h5>
-                <p>Jl. Batang Hari, RT.011/RW.003, Nusa Indah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu 38223</p>
+                <p>Jl. Sutoyo No.8, Tanah Patah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu 38224</p>
                 <a href="tel:+627367050202">(0736) 7050-202</a>
               </div>
             `

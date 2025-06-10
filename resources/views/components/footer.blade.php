@@ -83,9 +83,8 @@
                                 fill="currentColor" />
                         </svg>
                         <address>
-                            <a href="https://maps.app.goo.gl/6fuM1ZwoJAMzPxtp6">
-                                Jl. Batang Hari, RT.01/RW.003, Nusa Indah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu
-                                38223
+                            <a href="https://maps.app.goo.gl/AcRriEcVffyzCCrk7">
+                                Jl. Sutoyo No.8, Tanah Patah, Kec. Ratu Agung, Kota Bengkulu, Bengkulu 38224
                             </a>
                         </address>
                     </li>
