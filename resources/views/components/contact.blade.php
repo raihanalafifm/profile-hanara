@@ -54,10 +54,10 @@
                             height="40" loading="lazy">
                     </div>
                     <div class="contact-text">
-                        <span itemprop="streetAddress">Jl. Batang Hari, RT.011/RW.003, Nusa Indah</span>,
+                        <span itemprop="streetAddress">Jl. Sutoyo No.8, Tanah Patah</span>,
                         <span itemprop="addressLocality">Kec. Ratu Agung</span>,
                         <span itemprop="addressRegion">Kota Bengkulu, Bengkulu</span>
-                        <span itemprop="postalCode">38223</span>
+                        <span itemprop="postalCode">38224</span>
                         <meta itemprop="addressCountry" content="ID">
                     </div>
                 </div>
