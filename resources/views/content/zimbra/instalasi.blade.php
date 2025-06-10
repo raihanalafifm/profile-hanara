@@ -29,7 +29,8 @@
                         <h2 class="hnr-zimbra-subtitle">ZIMBRA MAIL SERVER</h2>
 
                         <p class="hnr-zimbra-description">
-                            <strong>Zimbra Mail Server</strong> aplatform email server yang powerful dan telah digunakan
+                            <strong>Zimbra Mail Server</strong> adalah platform email server yang powerful dan telah
+                            digunakan
                             oleh berbagai instansi pemerintahan, lembaga pendidikan, perbankan, hingga perusahaan swasta.
                             Untuk memastikan sistem email berjalan optimal sejak awal, Hanara menyediakan layanan instalasi
                             Zimbra secara profesional — baik untuk versi Open Source Edition (OSE) maupun Network Edition
