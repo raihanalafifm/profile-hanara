@@ -28,7 +28,8 @@
                                 teknologi CCTV yang canggih dengan pengalaman yang tepat dengan kebutuhan anda.
                             </p>
 
-                            <a href="#kontak" class="hnr-cctv-button">Ayok Hubungi!</a>
+                            <a href="{{ url('https://shop.hanara.id/product-category/cctv/') }}" target="_blank"
+                                rel="noopener noreferrer" class="hnr-cctv-button">Pesan Sekarang !!!</a>
                         </div>
                     </div>
                 </div>

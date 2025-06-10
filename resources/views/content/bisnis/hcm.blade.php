@@ -18,13 +18,13 @@
 
                         <div class="d-flex gap-3 mt-4">
                             <a href="{{ url('https://apps.apple.com/id/app/hcis-mobile/id6443559171?l=id') }}"
-                                class="btn hcm-app-store-btn">
+                                target="_blank" rel="noopener noreferrer" class="btn hcm-app-store-btn">
                                 <img src="{{ asset('assets/images/icon/appstore.png') }}" width="24"
                                     alt="App Store Icon">
                                 Available on App Store
                             </a>
                             <a href="{{ url('https://play.google.com/store/apps/details?id=com.aakmining.hcismobile') }}"
-                                class="btn hcm-play-store-btn">
+                                target="_blank" rel="noopener noreferrer" class="btn hcm-play-store-btn">
                                 <img src="{{ asset('assets/images/icon/playstore.png') }}" width="24"
                                     alt="Play Store Icon">
                                 Available on Play Store
