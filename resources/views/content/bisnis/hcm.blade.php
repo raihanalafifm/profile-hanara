@@ -509,12 +509,12 @@
                 width="100%" height="400" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade" title="Lokasi PT Hanara Prima Solusindo">
             </iframe>
-            <<div class="map-actions mt-3">
+            <div class="map-actions mt-3">
                 <a href="https://maps.app.goo.gl/AcRriEcVffyzCCrk7" target="_blank" rel="noopener noreferrer"
                     class="btn btn-submit">
                     <i class="bi bi-geo-alt-fill"></i> Petunjuk Arah
                 </a>
-        </div>
+            </div>
         </div>
     </section>
 @endsection
