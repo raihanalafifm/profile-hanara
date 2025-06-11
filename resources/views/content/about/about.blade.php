@@ -2,23 +2,6 @@
 
 
 @section('container')
-    <nav aria-label="breadcrumb" class="breadcrumb-section">
-        <div class="container">
-            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a href="{{ route('home') }}" itemprop="item">
-                        <span itemprop="name"></span>
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </li>
-                <li class="breadcrumb-item active" itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem" aria-current="page">
-                    <span itemprop="name"></span>
-                    <meta itemprop="position" content="2" />
-                </li>
-            </ol>
-        </div>
-    </nav>
     <section class="about-page-section">
         <div class="container">
             <!-- Header dengan H1 untuk SEO -->
