@@ -88,7 +88,7 @@ Route::prefix('zimbra')->group(function () {
 
 // Software House Routes
 Route::prefix('software-house')->group(function () {
-    Route::get('/web-development', [SoftwareHouseController::class, 'webDevelopment'])->name('develop-web');
+    Route::get('/website-company-profile', [SoftwareHouseController::class, 'webDevelopment'])->name('develop-web');
     Route::get('/web-application', [SoftwareHouseController::class, 'webApplication'])->name('web-application');
     Route::get('/maintenance', [SoftwareHouseController::class, 'maintenance'])->name('maintenance-web');
 });

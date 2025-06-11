@@ -17,16 +17,29 @@
                 <div class="col-lg-7">
                     <div class="hnr-house-web-content">
                         <h1 class="hnr-house-web-title">
-                            <span class="hnr-house-web-title-orange">JASA</span> PEMBUATAN WEBSITE
+                            <span class="hnr-house-web-title-orange">JASA</span> PEMBUATAN WEBSITE COMPANY PROFILE
+
                         </h1>
 
                         <p class="hnr-house-web-description">
-                            Solusi ++ bagi Anda yang ingin membuat website, baik itu website untuk perusahaan, website
-                            company profile, website UMKM, website sekolah, website toko online, website portfolio maupun
-                            website landing page. Layanan meliputi design domain, hosting, domain, training hingga fitur
-                            kelas online, integrasi dengan payment gateway, dan berbagai macam fitur lainnya. Temukan juga
-                            bonus website Anda akan kami optimalkan dengan teknik SEO secara berkala dan berjalan ke posisi
-                            terbaik Google, dan bisa berfungsi maksimal tanpa hentinya.
+                            Kami menyediakan layanan pembuatan website company profile yang dirancang khusus untuk
+                            memperkuat citra profesional organisasi Anda secara online.
+                            Cocok untuk perusahaan, sekolah, instansi pemerintah, organisasi, yayasan, maupun personal
+                            branding profesional.
+                            <br>
+                            Website yang kami bangun memiliki desain modern, cepat diakses, dan ramah perangkat mobile,
+                            serta dioptimalkan dengan teknik SEO on-page untuk mendukung kemunculan di hasil pencarian
+                            Google.
+                            <br>
+                            Layanan kami mencakup:
+                            <br>
+                            ✅ Desain responsif dan elegan
+                            <br>
+                            ✅ Struktur halaman yang informatif (profil, layanan, kontak, galeri, dll)
+                            <br>
+                            ✅ Integrasi WhatsApp, Google Maps, dan media sosial
+                            <br>
+                            ✅ Fitur tambahan sesuai kebutuhan seperti form pendaftaran, blog, atau download dokumen
                         </p>
 
                         <!-- Achievement Stats -->
@@ -76,11 +89,10 @@
                         <div class="hnr-house-web-feature-icon">
                             <img src="{{ asset('assets/images/icon/icon-card-web1.png') }}" alt="Domain">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Sudah Termasuk Domain</h3>
+                        <h3 class="hnr-house-web-feature-title"> Dasar Website yang Lengkap
+                            Termasuk Domain Profesional</h3>
                         <p class="hnr-house-web-feature-text">
-                            Anda tidak perlu pusing harus membeli domain, karena kami telah menyediakan domain selama 1
-                            tahun, domain yang cocok untuk bisnis Anda dan mudah diingat customer (dengan 1 domain email
-                            profesional).
+                            Gratis domain .com/.id selama 1 tahun, kami bantu pilih nama yang kredibel dan mudah diingat.
                         </p>
                     </div>
                 </div>
@@ -91,11 +103,11 @@
                         <div class="hnr-house-web-feature-icon">
                             <img src="{{ asset('assets/images/icon/icon-card-web2.png') }}" alt="Hosting">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Sudah Termasuk Hosting</h3>
+                        <h3 class="hnr-house-web-feature-title">
+                            Termasuk Hosting Cepat & Aman
+                        </h3>
                         <p class="hnr-house-web-feature-text">
-                            Tempat penyimpanan website yang powerful, bandwidth unlimited, auto backup dan resource kapsitas
-                            dan keamanan website Anda, semua kami perhatikan website ssuatu dengan hosting yang handal dan
-                            aman.
+                            Hosting stabil dengan bandwidth besar, sistem backup harian, dan dukungan keamanan tinggi.
                         </p>
                     </div>
                 </div>
@@ -106,11 +118,10 @@
                         <div class="hnr-house-web-feature-icon">
                             <img src="{{ asset('assets/images/icon/icon-card-web3.png') }}" alt="Customization">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Sesuai Kebutuhan Anda</h3>
+                        <h3 class="hnr-house-web-feature-title">Desain Sesuai Kebutuhan Anda
+                        </h3>
                         <p class="hnr-house-web-feature-text">
-                            Pilihan jenis website website yang tepat karena disesuaikan dengan usaha Anda. Misalnya jasa,
-                            Service, paket website khusus, dan paket website Designer, towing masing masing kami kembangkan
-                            untuk Anda.
+                            Bisa disesuaikan untuk perusahaan, sekolah, organisasi, UMKM, hingga yayasan.
                         </p>
                     </div>
                 </div>
@@ -118,20 +129,6 @@
 
             <!-- Features Grid - Row 2 -->
             <div class="row reveal-section">
-                <!-- Feature 4: Interaktif -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web4.png') }}" alt="Interaktif">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Interaktif</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Website adalah jembatan komunikasi Anda, dan harus itu bisa targast sempurnakan dalam dan
-                            pengalaman user Anda. Dengan kami selalu melalukan anti tampillan hasil, untuk berkomunikasi
-                            expert from contact us, email dan real time chat.
-                        </p>
-                    </div>
-                </div>
 
                 <!-- Feature 5: Responsif -->
                 <div class="col-md-4 mb-4">
@@ -139,11 +136,11 @@
                         <div class="hnr-house-web-feature-icon">
                             <img src="{{ asset('assets/images/icon/icon-card-web5.png') }}" alt="Responsif">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Responsif</h3>
+                        <h3 class="hnr-house-web-feature-title">Performa dan Pengalaman Pengguna
+                            Responsif (Mobile Friendly)
+                        </h3>
                         <p class="hnr-house-web-feature-text">
-                            Kami tidak ragu-ragu untuk membuat penampilan website, berikan versi handphone yang tampil baik,
-                            perilaku website yang sudah terbukti dan menjamin Anda dapat dengan nyaman dan responsif yang
-                            bisa dibuka dari semua devices website.
+                            Tampil optimal di semua perangkat—smartphone, tablet, dan desktop.
                         </p>
                     </div>
                 </div>
@@ -156,15 +153,26 @@
                         </div>
                         <h3 class="hnr-house-web-feature-title">SEO Friendly</h3>
                         <p class="hnr-house-web-feature-text">
-                            Bangun web design Anda yang terbukti praktik terbaik analistik SEO, lalu bersama kami Anda akan
-                            mudah didapatkan oleh search engine konisumer Google dapi sikap Anda, dapatkan lebih banyak
-                            visitor.
+                            Struktur dan konten website dioptimalkan agar mudah ditemukan di Google.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 4: Interaktif -->
+                <div class="col-md-4 mb-4">
+                    <div class="hnr-house-web-feature-card">
+                        <div class="hnr-house-web-feature-icon">
+                            <img src="{{ asset('assets/images/icon/icon-card-web4.png') }}" alt="Interaktif">
+                        </div>
+                        <h3 class="hnr-house-web-feature-title">Interaktif & Modern
+                        </h3>
+                        <p class="hnr-house-web-feature-text">
+                            Fitur kontak, chat, galeri, hingga form online untuk pengalaman pengguna yang dinamis.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Features Grid - Row 3 -->
+            {{-- <!-- Features Grid - Row 3 -->
             <div class="row reveal-section">
                 <!-- Feature 7: Membantu Memahami Marketing Strategy -->
                 <div class="col-md-4 mb-4">
@@ -207,7 +215,7 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Features Grid - Row 4 -->
             <div class="row reveal-section">
@@ -215,13 +223,14 @@
                 <div class="col-md-4 mb-4">
                     <div class="hnr-house-web-feature-card">
                         <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web10.png') }}" alt="Social Media">
+                            <img src="{{ asset('assets/images/icon/icon-card-web14.png') }}" alt="WhatsApp">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Dibuatkan Social Media</h3>
+                        <h3 class="hnr-house-web-feature-title"> Integrasi & Dukungan Digital
+                            Integrasi WhatsApp & Media Sosial
+                        </h3>
                         <p class="hnr-house-web-feature-text">
-                            Social media adalah pilarr tersendiri di dalam internet yang sangat krusial, untuk memperkuat
-                            bisnis terbukti menarik pelanggan organic & selesai target pasar terintegrasi dengan website
-                            Anda.
+                            Pengunjung bisa langsung terhubung ke WhatsApp atau sosial media Anda.
+
                         </p>
                     </div>
                 </div>
@@ -232,10 +241,10 @@
                         <div class="hnr-house-web-feature-icon">
                             <img src="{{ asset('assets/images/icon/icon-card-web11.png') }}" alt="Email">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Email Perusahaan</h3>
+                        <h3 class="hnr-house-web-feature-title">Email Bisnis (@namadomain.com)
+                        </h3>
                         <p class="hnr-house-web-feature-text">
-                            Anda akan mendapatkan email perusahaan sesuai dengan domain yang dipilih, untuk lebih elegan dan
-                            trusted dari customer dan silahkan mengirimkan email dari smartphone Anda.
+                            Meningkatkan profesionalisme komunikasi dengan email khusus domain Anda.
                         </p>
                     </div>
                 </div>
@@ -246,16 +255,16 @@
                         <div class="hnr-house-web-feature-icon">
                             <img src="{{ asset('assets/images/icon/icon-card-web12.png') }}" alt="Analytics">
                         </div>
-                        <h3 class="hnr-house-web-feature-title">Analytics Tools</h3>
+                        <h3 class="hnr-house-web-feature-title">Analytics & Monitoring
+                        </h3>
                         <p class="hnr-house-web-feature-text">
-                            Monitoring traffic website Anda mudah dielement tools analytics, sehingga bisa mendapatkan data
-                            pengunjung atau visitor website Anda akan berhasil melihat website Anda satiap bulan 24/7.
+                            Pantau pengunjung dan performa website dengan Google Analytics & tools lainnya.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Features Grid - Row 5 -->
+            {{-- <!-- Features Grid - Row 5 -->
             <div class="row reveal-section">
                 <!-- Feature 13: Realtime Chat -->
                 <div class="col-md-4 mb-4">
@@ -335,20 +344,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Pricing Section -->
             <!-- Pricing Section -->
-            <div class="row mt-5 mb-5 text-center reveal-section">
+            <div class="row mt-5 mb-1 text-center reveal-section">
                 <div class="col-12">
                     <h2 class="hnr-house-web-pricing-title"><span class="hnr-house-web-title-orange">Paket </span> Website
                         Terbaik Kami</h2>
-                    <p class="hnr-house-web-pricing-subtitle">Dapatkan penawaran paket website terbaik dan tepat. Harga
-                        Mulai 3.000.000 Web Discovery</p>
+                    <p class="hnr-house-web-pricing-subtitle">Pilih Paket Website yang Sesuai Kebutuhan Anda
+                        Semua paket sudah termasuk domain, hosting, desain profesional, dan fitur lengkap untuk membangun
+                        website company profile yang kredibel.
+                    </p>
                 </div>
             </div>
 
             <div class="row mb-5 reveal-section">
+                <p
+                    style="color: #555;font-size: 0.9rem;font-style: italic;background-color: #f9f9f9; padding: 8px 12px;border-left: 3px solid #ff8800;margin-top: 10px;border-radius: 4px;">
+                    Harga belum termasuk PPN.
+                    Setiap website dibuat khusus sesuai kebutuhan Anda. Waktu pengerjaan berkisar 7 hingga 30 hari
+                    kerja, tergantung tingkat kompleksitas, revisi dan materi.
+                </p>
                 <!-- Package 1: Web Startup (Ekonomis) -->
                 <div class="col-md-4 mb-4">
                     <div class="hnr-house-web-pricing-card">
@@ -362,6 +379,9 @@
                                 <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 1 Tahun</p>
                             </div>
                             <div class="hnr-house-web-pricing-price">Rp 3.990.000</div>
+                            <p style="color:#636363; font-family:'Poppins', sans-serif; font-size:12px; font-weight:600;">
+                                Cocok untuk bisnis kecil &amp; personal branding
+                            </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-ekonomi/') }}"
                                 target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
                                 Paket</a>
@@ -462,6 +482,9 @@
                                 <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 1 Tahun</p>
                             </div>
                             <div class="hnr-house-web-pricing-price">Rp 5.990.000</div>
+                            <p style="color:#636363; font-family:'Poppins', sans-serif; font-size:12px; font-weight:600;">
+                                Rekomendasi terbaik untuk UKM &amp; lembaga
+                            </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-best-seller/') }}"
                                 target="_blank" rel="noopener noreferrer"
                                 class="hnr-house-web-pricing-btn hnr-house-web-pricing-btn-popular">Beli
@@ -590,6 +613,9 @@
                                 <p class="hnr-house-web-pricing-subtext">Include Domain & Hosting 3 Tahun</p>
                             </div>
                             <div class="hnr-house-web-pricing-price">Rp 12.990.000</div>
+                            <p style="color:#636363; font-family:'Poppins', sans-serif; font-size:12px; font-weight:600;">
+                                Solusi lengkap untuk perusahaan besar &amp; instansi
+                            </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-lebih-hemat/ ') }}"
                                 target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
                                 Paket</a>
@@ -719,11 +745,21 @@
                         <span class="hnr-tools-title-orange">Tools</span> Yang Akan Mendukung
                         <span class="d-block">Website Anda</span>
                     </h2>
+
                     <p class="hnr-tools-description">
-                        Untuk memberikan layanan terbaik bagi anda, hosting kami sudah terpasang software software terbaik
-                        dan terpdate seperti Nginx WebServer, WordPress, Fail2ban, SSL, WP Accelerator dan software
-                        pendukung lainnya untuk performa terbaik, kenyamanan mengelola dan keamanan website anda
+                        Untuk memastikan performa dan keamanan terbaik, website Anda didukung berbagai software profesional
+                        di server kami. <br>
+                        Kami menggunakan teknologi terkini seperti Nginx WebServer, WordPress, cPanel, SSL Let's Encrypt, WP
+                        Accelerator, dan Fail2ban. <br>
+                        Semua tools ini dirancang untuk memberikan:
                     </p>
+
+                    <ul class="hnr-tools-list">
+                        <li> Performa website yang cepat dan stabil</li>
+                        <li> Pengelolaan mudah melalui cPanel</li>
+                        <li> Keamanan optimal dari serangan siber</li>
+                        <li> Dukungan SEO dan pengembangan berkelanjutan</li>
+                    </ul>
                 </div>
             </div>
 

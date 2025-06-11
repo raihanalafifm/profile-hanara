@@ -5148,11 +5148,34 @@ h2.company-name {
 }
 
 .hnr-house-web-title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: #222;
     margin-bottom: 15px;
     line-height: 1.2;
+}
+.hnr-tools-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hnr-tools-list li {
+    // display: flex; /* Agar isi bisa dirapikan dengan fleksibel */
+    align-items: center; /* Tengah secara vertikal */
+    gap: 0.5rem; /* Jarak antara ikon dan teks */
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.hnr-tools-list li::before {
+    content: "✔"; /* Ikon custom */
+    color: #ff6600;
+    font-weight: bold;
 }
 
 .hnr-house-web-title-orange {
