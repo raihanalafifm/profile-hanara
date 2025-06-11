@@ -9,7 +9,15 @@
             <div class="row align-items-center ">
                 <!-- Left Content -->
                 <div class="col-lg-6 hero-content reveal-section">
-                    <!-- Ganti div dengan h1 untuk SEO -->
+                    <nav aria-label="breadcrumb" class="d-none">
+                        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <span itemprop="name"></span>
+                                <meta itemprop="position" content="1" />
+                            </li>
+                        </ol>
+                    </nav>
                     <h1 class="company-name-hero">PT HANARA PRIMA SOLUSINDO</h1>
                     <h2 class="hero-title">
                         <span class="text-primary">Your Partner</span> for Smarter IT Solution
@@ -65,9 +73,6 @@
                 </div>
             </div>
     </section>
-
-
-    <!-- Update sections lainnya dengan struktur heading yang benar -->
 
     <section class="about-section">
         <div class="container">
@@ -681,3 +686,57 @@
     </section>
 
 @endsection
+@push('schema-org')
+    <!-- Homepage Specific Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "{{ url('/') }}",
+    "name": "PT Hanara Prima Solusindo",
+    "description": "Penyedia solusi IT terpercaya di Indonesia",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ url('/') }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PT Hanara Prima Solusindo",
+    "image": "{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}",
+    "@id": "{{ url('/') }}",
+    "url": "{{ url('/') }}",
+    "telephone": "+62-736-7050202",
+    "priceRange": "$$",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Sutoyo No.8, Tanah Patah",
+        "addressLocality": "Bengkulu",
+        "addressRegion": "Bengkulu",
+        "postalCode": "38224",
+        "addressCountry": "ID"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -3.806629743572537,
+        "longitude": 102.27860847374916
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+    },
+    "sameAs": [
+        "https://www.instagram.com/hanaraprimasolusindo",
+        "https://www.linkedin.com/company/hanaraprimasolusindo"
+    ]
+}
+</script>
+@endpush

@@ -2,6 +2,23 @@
 
 
 @section('container')
+    <nav aria-label="breadcrumb" class="breadcrumb-section">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="{{ route('home') }}" itemprop="item">
+                        <span itemprop="name"></span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="breadcrumb-item active" itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem" aria-current="page">
+                    <span itemprop="name"></span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </div>
+    </nav>
     <section class="about-page-section">
         <div class="container">
             <!-- Header dengan H1 untuk SEO -->
@@ -124,3 +141,87 @@
         </div>
     </section>
 @endsection
+@push('schema-org')
+    <!-- Organization Schema dengan complete info -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PT Hanara Prima Solusindo",
+    "alternateName": "Hanara",
+    "url": "{{ url()->current() }}",
+    "logo": "{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}",
+    "description": "Perusahaan penyedia solusi IT terpercaya di Indonesia sejak 2018",
+    "foundingDate": "2018",
+    "founders": [{
+        "@type": "Person",
+        "name": "Founder Hanara"
+    }],
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Sutoyo No.8, Tanah Patah",
+        "addressLocality": "Bengkulu",
+        "addressRegion": "Bengkulu",
+        "postalCode": "38224",
+        "addressCountry": "ID"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-736-7050202",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"]
+    },
+    "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 20
+    },
+    "sameAs": [
+        "https://www.instagram.com/hanaraprimasolusindo",
+        "https://www.linkedin.com/company/hanaraprimasolusindo"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "name": "Zimbra Mail Server",
+                "description": "Enterprise email solution"
+            },
+            {
+                "@type": "Service", 
+                "name": "Web Development",
+                "description": "Custom website and application development"
+            },
+            {
+                "@type": "Service",
+                "name": "CCTV Installation", 
+                "description": "Security camera system installation"
+            }
+        ]
+    }
+}
+</script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ route('home') }}"
+        },
+        {
+            "@type": "ListItem", 
+            "position": 2,
+            "name": "Tentang Kami",
+            "item": "{{ url()->current() }}"
+        }
+    ]
+}
+</script>
+@endpush
