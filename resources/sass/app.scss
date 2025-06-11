@@ -6609,50 +6609,125 @@ h2.company-name {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* ===================================
+   WEB APPLICATION CARD SPACING FIXES
+   =================================== */
+
+/* Mengurangi margin bottom pada container card */
+.hnr-webapp-section .row.mb-5 {
+    margin-bottom: 2rem !important; /* Dari 3rem (mb-5) ke 2rem */
+}
+
+/* Mengurangi margin bottom pada setiap kolom card */
+.hnr-webapp-section .col-md-6.mb-5 {
+    margin-bottom: 1.5rem !important; /* Dari 3rem (mb-5) ke 1.5rem */
+}
+
+/* Alternatif: Menggunakan custom class untuk lebih spesifik */
+.hnr-webdev-services-row {
+    row-gap: 1.5rem; /* Jarak vertikal antar baris */
+}
+
+.hnr-webdev-services-row .col-md-6 {
+    margin-bottom: 0 !important; /* Reset margin bottom */
+}
+
+/* Penyesuaian padding pada card untuk tampilan lebih compact */
 .hnr-webdev-service-card {
     display: flex;
     background-color: #fff;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px; /* Dari 10px ke 15px untuk keseimbangan */
     height: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center; /* Vertically center content */
 }
 
-.hnr-nextcloud-service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
+/* Penyesuaian icon container */
 .hnr-nextcloud-service-icon {
     flex-shrink: 0;
-    width: 80px;
-    height: 80px;
+    width: 70px; /* Sedikit dikecilkan dari 80px */
+    height: 70px;
     margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.hnr-nextcloud-service-content {
-    flex: 1;
-}
-.hnr-webdev-service-content {
-    flex: 1;
-}
-
-.hnr-nextcloud-service-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ff6b00;
-    margin-bottom: 10px;
-}
+/* Penyesuaian title untuk alignment yang lebih baik */
 .hnr-webdev-service-title {
     font-size: 18px;
     font-weight: 600;
-    color: grey;
-    margin-bottom: 10px;
-    margin-top: 26px;
+    color: #666;
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-top: 0; /* Reset top margin */
+    line-height: 1.4;
+    display: flex;
+    align-items: center; /* Vertically center text */
+    height: 100%; /* Take full height of parent */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .hnr-webapp-section .col-md-6 {
+        margin-bottom: 1rem !important;
+    }
+
+    .hnr-webdev-service-card {
+        padding: 12px;
+    }
+
+    .hnr-nextcloud-service-icon {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
+
+    .hnr-webdev-service-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hnr-webapp-section .col-md-6 {
+        margin-bottom: 0.75rem !important;
+    }
+
+    .hnr-webdev-services-row {
+        row-gap: 0.75rem;
+    }
+
+    .hnr-webdev-service-card {
+        padding: 10px;
+    }
+
+    .hnr-nextcloud-service-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 12px;
+    }
+
+    .hnr-webdev-service-title {
+        font-size: 14px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .hnr-webdev-service-card {
+        background-color: #232323;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hnr-webdev-service-card:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .hnr-webdev-service-title {
+        color: #e0e0e0;
+    }
 }
 
 .hnr-nextcloud-service-desc {

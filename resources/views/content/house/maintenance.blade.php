@@ -20,10 +20,31 @@
                         </h1>
 
                         <p class="hnr-house-maint-description">
-                            Layanan kami, sebagai website membukakan maintenance berkala guna memaksimalkan dan menjaga
-                            performa website tetap optimal, sehingga membuat seluruh halaman website terjaga dengan baik.
-                            Kami juga memastikan performa website Anda karena kami akan melakukan maintenance kode, update
-                            fitur, maintenance framework, update konten, dan meningkatkan artisel dan lain lain.
+                            Website yang tidak dirawat secara rutin berisiko mengalami error, penurunan performa, hingga
+                            gangguan keamanan. <br>
+                            Layanan maintenance website dari Hanara dirancang untuk memastikan situs Anda selalu optimal,
+                            aman, dan terupdate sesuai kebutuhan bisnis.<br>
+                            Kami menangani berbagai jenis website, mulai dari WordPress, Laravel, CodeIgniter, hingga
+                            platform custom lainnya.
+                            <br><br>
+                            🔧 Layanan maintenance mencakup:
+                            <br>
+                            - Update kode & plugin untuk menjaga keamanan
+                            <br>
+                            - Perbaikan bug & error halaman
+                            <br>
+                            - Optimasi kecepatan dan performa website
+                            <br>
+                            - Maintenance framework (Laravel/CI)
+                            <br>
+                            - Update konten halaman dan artikel
+                            <br>
+                            - Backup rutin dan pemulihan data
+                            <br>
+                            - Monitoring uptime & laporan teknis berkala
+                            <br><br>
+                            Dengan tim teknis berpengalaman, Hanara memastikan website Anda tidak hanya aktif, tetapi juga
+                            memberikan pengalaman terbaik bagi pengguna setiap saat.
                         </p>
                     </div>
                 </div>
@@ -35,8 +56,8 @@
                     <div class="hnr-house-benefit-section reveal-section">
                         <h2 class="hnr-house-benefit-title"><span class="hnr-house-benefit-title-orange">Mengapa</span>
                             Maintenance Penting?</h2>
-                        <p class="hnr-house-benefit-subtitle">Maintenance rutin menjaga website tetap aman, cepat, dan bebas
-                            masalah</p>
+                        <p class="hnr-house-benefit-subtitle">Perawatan rutin menjaga website tetap aman, cepat, dan selalu
+                            relevan bagi pengunjung.</p>
 
                         <div class="row mt-4">
                             <!-- Item 1: Software & Plugin Outdated -->
@@ -50,8 +71,9 @@
                                     </div>
                                     <h3 class="hnr-house-benefit-item-title">Software & Plugin Outdated</h3>
                                     <p class="hnr-house-benefit-item-text">
-                                        Software dan plugin yang outdated membuat website Anda beresiko pada performa
-                                        website dalam mengakibati. Bisa dan mulai komponen website membuat.
+                                        Komponen website seperti CMS, plugin, atau library yang tidak diperbarui dapat
+                                        menyebabkan error, celah keamanan, dan penurunan performa.
+                                        Maintenance rutin mencegah risiko teknis akibat sistem yang usang.
                                     </p>
                                 </div>
                             </div>
@@ -65,10 +87,11 @@
                                                 alt="Performa Website">
                                         </div>
                                     </div>
-                                    <h3 class="hnr-house-benefit-item-title">Performa Website Tidak Optimal</h3>
+                                    <h3 class="hnr-house-benefit-item-title">Performa Website Menurun</h3>
                                     <p class="hnr-house-benefit-item-text">
-                                        Masalah performa website seperti lambatnya loading website yang buruk? Bukti yang
-                                        dirasakan oleh para user dan membuat enggan untuk kembali mengakses website Anda.
+                                        Loading lama, error saat akses, atau tampilan yang rusak dapat membuat pengunjung
+                                        enggan membuka website Anda. <br>
+                                        Maintenance akan membantu optimasi kecepatan dan stabilitas website.
                                     </p>
                                 </div>
                             </div>
@@ -82,11 +105,12 @@
                                                 alt="Konten Outdated">
                                         </div>
                                     </div>
-                                    <h3 class="hnr-house-benefit-item-title">Konten Website Sudah Outdated</h3>
+                                    <h3 class="hnr-house-benefit-item-title">Konten Website Tidak Update
+                                    </h3>
                                     <p class="hnr-house-benefit-item-text">
-                                        User akan meninggal website Anda setelah tidak aktif jika melihat konten website
-                                        yang terlalu lama tidak di-update. Membuat Anda kehilangan kepercayaan mendapatkan
-                                        user atau customer baru.
+                                        Website dengan informasi lama, berita tidak relevan, atau tampilan tidak diperbarui
+                                        bisa mengurangi kepercayaan pengunjung.
+                                        Dengan maintenance, konten tetap segar dan mendukung citra profesional.
                                     </p>
                                 </div>
                             </div>
@@ -100,11 +124,12 @@
                                                 alt="Data Hilang">
                                         </div>
                                     </div>
-                                    <h3 class="hnr-house-benefit-item-title">Data Website Hilang</h3>
+                                    <h3 class="hnr-house-benefit-item-title">Risiko Kehilangan Data
+                                    </h3>
                                     <p class="hnr-house-benefit-item-text">
-                                        Sayang sekali jika Anda harus kehilangan data penting client, customer, atau
-                                        informasi lainnya karena sesuatu. Segala usaha bisnis Anda akan hilang bisa terhenti
-                                        seketika.
+                                        Tanpa backup rutin, data penting seperti customer, transaksi, atau file bisa hilang
+                                        dalam sekejap karena error atau serangan.
+                                        Maintenance menjamin perlindungan dan pemulihan data yang andal.
                                     </p>
                                 </div>
                             </div>
@@ -118,9 +143,11 @@
                 <div class="col-12">
                     <div class="hnr-house-expertise-section reveal-section">
                         <h2 class="hnr-house-expertise-title"><span class="hnr-house-expertise-title-orange">Kenapa</span>
-                            Memilih Kami?</h2>
-                        <p class="hnr-house-expertise-subtitle">Cepat, aman, dan andal. Website Anda berjalan dan siap
-                            melayani</p>
+                            Harus Maintenance Website Anda Bersama Hanara?
+                        </h2>
+                        <p class="hnr-house-expertise-subtitle">Cepat, aman, dan andal. Website Anda tetap aktif dan siap
+                            melayani pelanggan kapan saja.
+                        </p>
 
                         <div class="row mt-4">
                             <!-- Expertise 1 -->
@@ -133,8 +160,11 @@
                                     <div class="hnr-house-expertise-content">
                                         <h3 class="hnr-house-expertise-card-title">Tim Professional</h3>
                                         <p class="hnr-house-expertise-card-text">
-                                            Hanya memilih dan menggunakan software & plugin terbaik dan cocok untuk website
-                                            anda guna meningkatkan performa dan kecepatan.
+                                            Website Anda ditangani oleh tim teknis berpengalaman yang hanya menggunakan
+                                            software dan plugin terpercaya. <br>
+                                            Kami pastikan setiap tindakan maintenance dilakukan secara tepat, cepat, dan
+                                            aman.
+
                                         </p>
                                     </div>
                                 </div>
@@ -150,8 +180,9 @@
                                     <div class="hnr-house-expertise-content">
                                         <h3 class="hnr-house-expertise-card-title">Optimalisasi Performa Website</h3>
                                         <p class="hnr-house-expertise-card-text">
-                                            Mengoptimalkan dan menyempurnakan performa website dalam hal kecepatan akan
-                                            memberikan dan hangout dapat mendongkrak performa bisnis anda.
+                                            Kami membantu meningkatkan kecepatan loading dan kestabilan website Anda. <br>
+                                            Performa yang lebih cepat akan meningkatkan pengalaman pengguna dan mendukung
+                                            pencapaian target bisnis.
                                         </p>
                                     </div>
                                 </div>
@@ -167,9 +198,10 @@
                                     <div class="hnr-house-expertise-content">
                                         <h3 class="hnr-house-expertise-card-title">Fast Support Response</h3>
                                         <p class="hnr-house-expertise-card-text">
-                                            Kami berkomitmen untuk memberikan respon cepat dalam 30 menit saat Anda
-                                            mengalami masalah dengan website Anda.
-                                        </p>
+                                            Masalah pada website bisa datang kapan saja. <br>
+                                            berkomitmen memberikan respon teknis cepat dalam waktu kurang dari 30 menit*
+                                            saat terjadi kendala
+                                            (*di jam layanan). </p>
                                     </div>
                                 </div>
                             </div>
@@ -182,10 +214,12 @@
                                             alt="Security Updates">
                                     </div>
                                     <div class="hnr-house-expertise-content">
-                                        <h3 class="hnr-house-expertise-card-title">Security Updates</h3>
+                                        <h3 class="hnr-house-expertise-card-title">Pembaruan Keamanan Berkala
+                                            Keamanan adalah prioritas.
+                                        </h3>
                                         <p class="hnr-house-expertise-card-text">
-                                            Keamanan website Anda adalah prioritas kami. Kami secara rutin memperbarui dan
-                                            memantau aspek keamanan website Anda.
+                                            Tim kami melakukan security patch, update plugin, serta pemantauan rutin untuk
+                                            mencegah celah keamanan dan gangguan.
                                         </p>
                                     </div>
                                 </div>
