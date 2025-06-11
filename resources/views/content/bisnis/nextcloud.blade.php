@@ -20,18 +20,17 @@
                         </h1>
 
                         <p class="hnr-nextcloud-description">
-                            Nextcloud adalah solusi penyimpanan cloud yang mudah, aman, dan fleksibel, dirancang khusus
-                            untuk membantu perusahaan dalam mengelola data secara efektif. Kami menyediakan jasa instalasi
-                            dan konfigurasi Nextcloud untuk memberikan sistem berbagi dokumen yang aman dan dapat dikelola
-                            sesuai dengan kebutuhan bisnis Anda.
+                            Nextcloud adalah solusi cloud storage yang aman, fleksibel, dan dapat disesuaikan untuk
+                            kebutuhan bisnis modern. Hanara menyediakan jasa instalasi dan konfigurasi Nextcloud, baik untuk
+                            sistem on-premise maupun private cloud, agar perusahaan Anda dapat berbagi dan mengelola dokumen
+                            dengan efisien, tanpa bergantung pada layanan cloud publik.
                         </p>
 
                         <p class="hnr-nextcloud-description">
-                            Dengan Nextcloud, Anda dapat menyimpan, berbagi, dan mengakses file dari mana saja, kapan saja,
-                            dengan keamanan tinggi dan kontrol penuh atas data perusahaan Anda. Layanan ini sangat cocok
-                            untuk perusahaan yang mengutamakan Privasi data dengan sistem on-premise atau private cloud.
-                            Kolaborasi tim yang efisien dengan berbagai fitur Nextcloud. Pengelolaan file terpusat untuk
-                            meningkatkan produktivitas.
+                            Dengan Nextcloud, Anda dapat menyimpan, mengakses, dan membagikan file secara real-time dari
+                            berbagai perangkat, kapan saja, di mana saja. Sistem ini dirancang dengan keamanan tingkat
+                            tinggi dan kontrol penuh atas data, cocok untuk perusahaan, institusi pendidikan, dan organisasi
+                            yang mengutamakan privasi dan produktivitas.
                         </p>
                     </div>
                 </div>
@@ -44,8 +43,9 @@
                         <span class="hnr-nextcloud-title-orange">Tampilan</span> Nextcloud
                     </h2>
                     <p class="hnr-nextcloud-section-subtitle">
-                        Berikut merupakan tampilan dari Nextcloud, platform penyimpanan dan kolaborasi file yang dirancang
-                        untuk meningkatkan produktivitas secara online.
+                        Inilah tampilan antarmuka Nextcloud—platform penyimpanan cloud yang mendukung kolaborasi tim,
+                        berbagi file secara aman, dan akses dokumen dari mana saja. Nextcloud hadir dengan fitur lengkap
+                        untuk mendukung kerja jarak jauh dan produktivitas digital perusahaan Anda.
                     </p>
 
                     <div class="hnr-nextcloud-interface-container mt-4">
@@ -59,11 +59,108 @@
             <div class="row text-center mb-5 reveal-section">
                 <div class="col-12">
                     <h2 class="hnr-nextcloud-section-title">
+                        <span class="hnr-nextcloud-title-orange">Mengapa </span>Memilih Nextcloud dari Hanara?
+                    </h2>
+                    <p class="hnr-nextcloud-section-subtitle">
+                        Hanara tidak hanya menyediakan instalasi, tetapi juga memberikan solusi menyeluruh untuk memastikan
+                        Nextcloud berjalan optimal di lingkungan bisnis Anda. Berikut keunggulan layanan kami:
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <!-- Service 1: Konsultasi & Implementasi -->
+                <div class="col-md-6 mb-4 reveal-section">
+                    <div class="hnr-nextcloud-service-card">
+                        <div class="hnr-nextcloud-service-icon">
+                            <img src="{{ asset('assets/images/icon/icon-fitur-2.png') }}" alt="Privasi & Keamanan Tinggi"
+                                class="img-fluid">
+                        </div>
+                        <div class="hnr-nextcloud-service-content">
+                            <h3 class="hnr-nextcloud-service-title">Privasi & Keamanan Tinggi</h3>
+                            <p class="hnr-nextcloud-service-desc">
+                                Data Anda tersimpan di server pribadi, bukan di cloud publik—sepenuhnya di bawah kendali
+                                Anda.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Migrasi Data -->
+                <div class="col-md-6 mb-4 reveal-section">
+                    <div class="hnr-nextcloud-service-card">
+                        <div class="hnr-nextcloud-service-icon">
+                            <img src="{{ asset('assets/images/icon/icon-fitur-6.png') }}" alt="kustomisasi fleksibel"
+                                class="img-fluid">
+                        </div>
+                        <div class="hnr-nextcloud-service-content">
+                            <h3 class="hnr-nextcloud-service-title">Kustomisasi Fleksibel</h3>
+                            <p class="hnr-nextcloud-service-desc">
+                                Bisa diintegrasikan dengan sistem internal seperti LDAP, Zimbra, atau OnlyOffice sesuai
+                                kebutuhan perusahaan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Pemeliharaan dan Dukungan -->
+                <div class="col-md-6 mb-4">
+                    <div class="hnr-nextcloud-service-card reveal-section">
+                        <div class="hnr-nextcloud-service-icon">
+                            <img src="{{ asset('assets/images/icon/icon-fitur-5.png') }}" alt="akses mudah"
+                                class="img-fluid">
+                        </div>
+                        <div class="hnr-nextcloud-service-content">
+                            <h3 class="hnr-nextcloud-service-title">Akses Mudah dari Mana Saja</h3>
+                            <p class="hnr-nextcloud-service-desc">
+                                Tersedia aplikasi Nextcloud untuk Windows, macOS, Android, dan iOS, memudahkan kolaborasi
+                                lintas perangkat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Pelatihan -->
+                <div class="col-md-6 mb-4">
+                    <div class="hnr-nextcloud-service-card reveal-section">
+                        <div class="hnr-nextcloud-service-icon">
+                            <img src="{{ asset('assets/images/icon/icon-fitur-3.png') }}" alt="instalasi teknis"
+                                class="img-fluid">
+                        </div>
+                        <div class="hnr-nextcloud-service-content">
+                            <h3 class="hnr-nextcloud-service-title">Instalasi & Dukungan Teknis Profesional</h3>
+                            <p class="hnr-nextcloud-service-desc">
+                                Tim Hanara berpengalaman dalam deployment Nextcloud baik di cloud maupun on-premise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="display: flex; justify-content: center;">
+                    <div class="col-md-6 mb-4">
+                        <div class="hnr-nextcloud-service-card reveal-section">
+                            <div class="hnr-nextcloud-service-icon">
+                                <img src="{{ asset('assets/images/icon/icon-fitur-1.png') }}" alt="skalabilitas"
+                                    class="img-fluid">
+                            </div>
+                            <div class="hnr-nextcloud-service-content">
+                                <h3 class="hnr-nextcloud-service-title">Skalabilitas untuk Semua Skala Usaha</h3>
+                                <p class="hnr-nextcloud-service-desc">
+                                    Cocok untuk UMKM, sekolah, hingga perusahaan besar dengan kebutuhan storage dan user
+                                    yang berkembang.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center mb-5 reveal-section">
+                <div class="col-12">
+                    <h2 class="hnr-nextcloud-section-title">
                         <span class="hnr-nextcloud-title-orange">Layanan</span> Kami
                     </h2>
                     <p class="hnr-nextcloud-section-subtitle">
-                        PT Hanara Prima Solusindo menyediakan berbagai layanan untuk mendukung implementasi dan penggunaan
-                        Nextcloud di perusahaan Anda:
+                        PT Hanara Prima Solusindo menyediakan beragam layanan profesional untuk mendukung implementasi,
+                        pengelolaan, dan optimalisasi Nextcloud di lingkungan perusahaan Anda.
                     </p>
                 </div>
             </div>
@@ -77,10 +174,11 @@
                                 class="img-fluid">
                         </div>
                         <div class="hnr-nextcloud-service-content">
-                            <h3 class="hnr-nextcloud-service-title">KONSULTASI DAN IMPLEMENTASI</h3>
+                            <h3 class="hnr-nextcloud-service-title">Konsultasi dan Implementasi</h3>
                             <p class="hnr-nextcloud-service-desc">
-                                Analisis kebutuhan bisnis dan perencanaan implementasi Nextcloud yang optimal. Instalasi dan
-                                konfigurasi Nextcloud sesuai dengan standar terbaik industri.
+                                Kami menganalisis kebutuhan bisnis Anda secara menyeluruh dan merancang implementasi
+                                Nextcloud yang optimal. Tim kami akan melakukan instalasi dan konfigurasi sistem sesuai
+                                standar terbaik di industri, baik untuk server lokal maupun cloud.
                             </p>
                         </div>
                     </div>
@@ -93,10 +191,11 @@
                             <img src="{{ asset('assets/images/icon/layanan2.png') }}" alt="Migrasi Data" class="img-fluid">
                         </div>
                         <div class="hnr-nextcloud-service-content">
-                            <h3 class="hnr-nextcloud-service-title">MIGRASI DATA</h3>
+                            <h3 class="hnr-nextcloud-service-title">Migrasi Data</h3>
                             <p class="hnr-nextcloud-service-desc">
-                                Analisis kebutuhan bisnis dan perencanaan implementasi Nextcloud yang optimal. Instalasi dan
-                                konfigurasi Nextcloud sesuai dengan standar terbaik industri.
+                                Layanan migrasi data dari sistem lama ke Nextcloud tanpa gangguan operasional. Kami menjamin
+                                proses migrasi yang aman, cepat, dan minim downtime, termasuk integrasi dengan sistem file
+                                atau platform lain.
                             </p>
                         </div>
                     </div>
@@ -110,10 +209,10 @@
                                 class="img-fluid">
                         </div>
                         <div class="hnr-nextcloud-service-content">
-                            <h3 class="hnr-nextcloud-service-title">PEMELIHARAAN DAN DUKUNGAN TEKNIS</h3>
+                            <h3 class="hnr-nextcloud-service-title">Pemeliharaan dan Dukungan Teknis</h3>
                             <p class="hnr-nextcloud-service-desc">
-                                Dukungan teknis 24/7 untuk memastikan Nextcloud berjalan dengan lancar. Pembaruan sistem dan
-                                peningkatan rutin untuk mengoptimalkan kinerja dan keamanan.
+                                Kami menyediakan dukungan teknis 24/7 untuk memastikan Nextcloud berjalan stabil dan aman.
+                                Termasuk pembaruan sistem berkala, troubleshooting, dan penguatan sistem keamanan.
                             </p>
                         </div>
                     </div>
@@ -127,10 +226,10 @@
                                 class="img-fluid">
                         </div>
                         <div class="hnr-nextcloud-service-content">
-                            <h3 class="hnr-nextcloud-service-title">PELATIHAN DAN EDUKASI</h3>
+                            <h3 class="hnr-nextcloud-service-title">Pelatihan dan Edukasi</h3>
                             <p class="hnr-nextcloud-service-desc">
-                                Pelatihan untuk tim IT dan pengguna akhir agar dapat memanfaatkan Nextcloud dengan maksimal.
-                                Sesi edukasi tentang best practices dalam penggunaan Nextcloud.
+                                Sesi pelatihan bagi tim IT dan end-user agar dapat menggunakan Nextcloud secara maksimal.
+                                Kami juga memberikan panduan best practices dan pengelolaan data yang efisien.
                             </p>
                         </div>
                     </div>
@@ -148,7 +247,8 @@
                         <div class="hnr-nextcloud-faq-item active">
                             <div class="hnr-nextcloud-faq-header">
                                 <div class="hnr-nextcloud-faq-number">01</div>
-                                <h3 class="hnr-nextcloud-faq-question">Apa itu Nextcloud?</h3>
+                                <h3 class="hnr-nextcloud-faq-question">Apa itu Nextcloud dan kenapa berbeda dari Google
+                                    Drive atau Dropbox?</h3>
                                 <div class="hnr-nextcloud-faq-toggle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -159,10 +259,10 @@
                             </div>
                             <div class="hnr-nextcloud-faq-body">
                                 <p class="hnr-nextcloud-faq-answer">
-                                    Nextcloud adalah platform penyimpanan dan kolaborasi file self-hosted yang memungkinkan
-                                    pengguna menyimpan, menyimpan, dan berbagi file dengan aman. Ini adalah solusi
-                                    penyimpanan cloud yang dapat di-host sendiri, memberikan kontrol penuh atas data Anda
-                                    dan memastikan privasi dan keamanan data perusahaan.
+                                    Nextcloud adalah platform cloud storage self-hosted yang memungkinkan Anda memiliki
+                                    server penyimpanan sendiri. Berbeda dari Google Drive atau Dropbox, data Nextcloud tidak
+                                    tersimpan di server publik, melainkan di server pribadi atau milik perusahaan Anda
+                                    sendiri, sehingga privasi dan keamanan data lebih terjamin.
                                 </p>
                             </div>
                         </div>
@@ -171,106 +271,7 @@
                         <div class="hnr-nextcloud-faq-item">
                             <div class="hnr-nextcloud-faq-header">
                                 <div class="hnr-nextcloud-faq-number">02</div>
-                                <h3 class="hnr-nextcloud-faq-question">Bagaimana Nextcloud berbeda dari penyimpanan cloud
-                                    lainnya?</h3>
-                                <div class="hnr-nextcloud-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-nextcloud-faq-body">
-                                <p class="hnr-nextcloud-faq-answer">
-                                    Nextcloud berbeda dari layanan penyimpanan cloud publik seperti Dropbox, Google Drive,
-                                    atau OneDrive karena dihosting secara lokal di server Anda sendiri. Ini memberikan
-                                    keunggulan berupa kontrol penuh atas data, privasi yang lebih baik, tidak ada biaya
-                                    langganan per pengguna, penyesuaian yang lebih fleksibel, dan integrasi yang lebih mudah
-                                    dengan sistem perusahaan yang ada.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 3 -->
-                        <div class="hnr-nextcloud-faq-item">
-                            <div class="hnr-nextcloud-faq-header">
-                                <div class="hnr-nextcloud-faq-number">03</div>
-                                <h3 class="hnr-nextcloud-faq-question">Mengapa Nextcloud cocok untuk bisnis?</h3>
-                                <div class="hnr-nextcloud-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-nextcloud-faq-body">
-                                <p class="hnr-nextcloud-faq-answer">
-                                    Nextcloud sangat cocok untuk bisnis karena menawarkan kontrol penuh atas data, keamanan
-                                    tingkat enterprise, kolaborasi tim yang efisien, integrasi dengan perangkat lunak bisnis
-                                    lainnya, dan biaya yang lebih rendah dalam jangka panjang. Fitur-fitur seperti berbagi
-                                    file, kalender bersama, manajemen tugas, dan kontrol akses yang detail menjadikannya
-                                    solusi lengkap untuk kebutuhan penyimpanan dan kolaborasi data perusahaan.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 4 -->
-                        <div class="hnr-nextcloud-faq-item">
-                            <div class="hnr-nextcloud-faq-header">
-                                <div class="hnr-nextcloud-faq-number">04</div>
-                                <h3 class="hnr-nextcloud-faq-question">Apa yang diperlukan untuk menginstal Nextcloud?</h3>
-                                <div class="hnr-nextcloud-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-nextcloud-faq-body">
-                                <p class="hnr-nextcloud-faq-answer">
-                                    Untuk menginstal Nextcloud, Anda memerlukan server (fisik atau virtual) dengan sistem
-                                    operasi Linux, webserver (Apache atau Nginx), database (MySQL/MariaDB, PostgreSQL), dan
-                                    PHP. Spesifikasi minimal tergantung pada jumlah pengguna dan volume data, tetapi umumnya
-                                    dimulai dengan 2GB RAM, prosesor dual-core, dan ruang penyimpanan minimal 10GB untuk
-                                    instalasi dasar. Tim kami akan membantu menentukan spesifikasi yang tepat berdasarkan
-                                    kebutuhan bisnis Anda.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 5 -->
-                        <div class="hnr-nextcloud-faq-item">
-                            <div class="hnr-nextcloud-faq-header">
-                                <div class="hnr-nextcloud-faq-number">05</div>
-                                <h3 class="hnr-nextcloud-faq-question">Apakah Nextcloud dapat diintegrasikan dengan
-                                    aplikasi lain?</h3>
-                                <div class="hnr-nextcloud-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-nextcloud-faq-body">
-                                <p class="hnr-nextcloud-faq-answer">
-                                    Ya, Nextcloud sangat fleksibel dalam hal integrasi. Nextcloud dapat diintegrasikan
-                                    dengan berbagai aplikasi dan layanan seperti Microsoft Office, Slack, aplikasi email,
-                                    kalender, layanan autentikasi (LDAP/Active Directory), dan banyak lagi. Nextcloud juga
-                                    memiliki App Store dengan ratusan aplikasi yang dapat diinstal untuk memperluas
-                                    fungsionalitasnya. Tim kami dapat membantu mengkonfigurasi integrasi yang Anda butuhkan.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- FAQ Item 6 -->
-                        <div class="hnr-nextcloud-faq-item">
-                            <div class="hnr-nextcloud-faq-header">
-                                <div class="hnr-nextcloud-faq-number">06</div>
-                                <h3 class="hnr-nextcloud-faq-question">Bagaimana cara memastikan keamanan data di
+                                <h3 class="hnr-nextcloud-faq-question">Apakah saya harus punya server sendiri untuk memakai
                                     Nextcloud?</h3>
                                 <div class="hnr-nextcloud-faq-toggle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -282,23 +283,25 @@
                             </div>
                             <div class="hnr-nextcloud-faq-body">
                                 <p class="hnr-nextcloud-faq-answer">
-                                    Nextcloud menawarkan berbagai fitur keamanan tingkat lanjut, termasuk enkripsi
-                                    end-to-end, enkripsi penyimpanan, autentikasi dua faktor, kebijakan kata sandi yang
-                                    kuat, pembatasan akses IP, dan audit logging. Sebagai layanan self-hosted, data Anda
-                                    tetap berada di infrastruktur Anda sendiri, yang mengurangi risiko kebocoran data. Tim
-                                    kami menerapkan praktik terbaik keamanan selama instalasi dan konfigurasi, serta
-                                    menyediakan panduan tentang cara menjaga keamanan instalasi Nextcloud Anda secara
-                                    berkelanjutan.
+                                    Tidak harus. Hanara menyediakan dua pilihan:
+                                </p>
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Instalasi di server milik Anda (on-premise)
+                                </p>
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Nextcloud berbasis cloud (pakai server Hanara)
+                                </p>
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Keduanya bisa disesuaikan dengan kebutuhan dan anggaran perusahaan Anda.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- FAQ Item 7 -->
+                        <!-- FAQ Item 3 -->
                         <div class="hnr-nextcloud-faq-item">
                             <div class="hnr-nextcloud-faq-header">
-                                <div class="hnr-nextcloud-faq-number">07</div>
-                                <h3 class="hnr-nextcloud-faq-question">Apakah disini disediakan layanan migrasi dari
-                                    penyimpanan cloud lain?</h3>
+                                <div class="hnr-nextcloud-faq-number">03</div>
+                                <h3 class="hnr-nextcloud-faq-question">Siapa saja yang cocok menggunakan Nextcloud?</h3>
                                 <div class="hnr-nextcloud-faq-toggle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -309,12 +312,131 @@
                             </div>
                             <div class="hnr-nextcloud-faq-body">
                                 <p class="hnr-nextcloud-faq-answer">
-                                    Ya, kami menyediakan layanan migrasi lengkap untuk memindahkan data dari penyimpanan
-                                    cloud lain seperti Google Drive, Dropbox, OneDrive, atau penyimpanan lainnya ke
-                                    Nextcloud Anda. Proses migrasi kami dirancang untuk meminimalkan gangguan bisnis,
-                                    memastikan integritas data, dan memastikan semua hak akses dan struktur folder
-                                    ditransfer dengan benar. Tim kami akan merencanakan, menguji, dan melaksanakan migrasi
-                                    dengan cermat untuk memastikan transisi yang lancar.
+                                    Nextcloud cocok digunakan oleh:
+                                </p>
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Perusahaan swasta yang ingin menyimpan data internal secara aman
+                                    <br>
+                                    Instansi pendidikan untuk penyimpanan & distribusi materi
+                                    <br>
+                                    Pemerintahan yang memerlukan kontrol penuh atas file sensitif
+                                    <br>
+                                    UKM yang ingin beralih dari Google Drive namun tetap hemat biaya
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="hnr-nextcloud-faq-item">
+                            <div class="hnr-nextcloud-faq-header">
+                                <div class="hnr-nextcloud-faq-number">04</div>
+                                <h3 class="hnr-nextcloud-faq-question">Bisa diakses dari HP? Atau hanya di PC?</h3>
+                                <div class="hnr-nextcloud-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-nextcloud-faq-body">
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Bisa. Nextcloud memiliki aplikasi resmi untuk: Android & iOS Windows, MacOS, dan Linux
+                                    Semua file bisa disinkronkan otomatis dan diakses kapan pun, di mana pun.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="hnr-nextcloud-faq-item">
+                            <div class="hnr-nextcloud-faq-header">
+                                <div class="hnr-nextcloud-faq-number">05</div>
+                                <h3 class="hnr-nextcloud-faq-question">
+                                    Apakah Nextcloud mendukung kolaborasi dokumen seperti Google Docs?</h3>
+                                <div class="hnr-nextcloud-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-nextcloud-faq-body">
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Ya, dengan integrasi seperti OnlyOffice atau Collabora Online, pengguna bisa membuat,
+                                    mengedit, dan berkolaborasi secara real-time pada dokumen Word, Excel, dan PowerPoint
+                                    langsung di browser.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="hnr-nextcloud-faq-item">
+                            <div class="hnr-nextcloud-faq-header">
+                                <div class="hnr-nextcloud-faq-number">06</div>
+                                <h3 class="hnr-nextcloud-faq-question">Bagaimana kalau saya sudah punya data lama, apakah
+                                    bisa dipindahkan ke Nextcloud?</h3>
+                                <div class="hnr-nextcloud-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-nextcloud-faq-body">
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Bisa. Kami menyediakan layanan migrasi data dari penyimpanan lama ke Nextcloud, baik
+                                    dari Google Drive, Dropbox, maupun file server lokal.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div class="hnr-nextcloud-faq-item">
+                            <div class="hnr-nextcloud-faq-header">
+                                <div class="hnr-nextcloud-faq-number">07</div>
+                                <h3 class="hnr-nextcloud-faq-question">Apakah Hanara memberikan garansi atau support
+                                    pasca-instalasi?</h3>
+                                <div class="hnr-nextcloud-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-nextcloud-faq-body">
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Ya. Kami menyediakan:
+                                    <br>
+                                    Garansi instalasi & konfigurasi
+                                    <br>
+                                    Dukungan teknis 24/7
+                                    <br>
+                                    Layanan maintenance bulanan atau tahunan
+                                    <br>
+                                    Monitoring uptime & patching keamanan rutin
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hnr-nextcloud-faq-item">
+                            <div class="hnr-nextcloud-faq-header">
+                                <div class="hnr-nextcloud-faq-number">08</div>
+                                <h3 class="hnr-nextcloud-faq-question">Berapa biaya layanan Nextcloud dari Hanara?</h3>
+                                <div class="hnr-nextcloud-faq-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="hnr-nextcloud-faq-body">
+                                <p class="hnr-nextcloud-faq-answer">
+                                    Biaya tergantung pada skala penggunaan (jumlah user, kapasitas storage), lokasi server
+                                    (on-premise atau cloud), serta fitur tambahan yang diinginkan. Hubungi tim Hanara untuk
+                                    penawaran terbaik sesuai kebutuhan Anda.
                                 </p>
                             </div>
                         </div>
