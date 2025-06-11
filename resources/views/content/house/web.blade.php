@@ -59,7 +59,7 @@
                                     <img src="{{ asset('assets/images/icon/calender.png') }}" alt="Experience">
                                 </div>
                                 <div class="hnr-house-web-stat-content">
-                                    <h3 class="hnr-house-web-stat-number">5 +</h3>
+                                    <h3 class="hnr-house-web-stat-number">10 +</h3>
                                     <p class="hnr-house-web-stat-text">Year of Experience Web Project</p>
                                 </div>
                             </div>

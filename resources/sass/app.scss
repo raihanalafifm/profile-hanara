@@ -6609,6 +6609,15 @@ h2.company-name {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.hnr-webdev-service-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 .hnr-nextcloud-service-card:hover {
     transform: translateY(-5px);
@@ -6628,12 +6637,22 @@ h2.company-name {
 .hnr-nextcloud-service-content {
     flex: 1;
 }
+.hnr-webdev-service-content {
+    flex: 1;
+}
 
 .hnr-nextcloud-service-title {
     font-size: 18px;
     font-weight: 600;
     color: #ff6b00;
     margin-bottom: 10px;
+}
+.hnr-webdev-service-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: grey;
+    margin-bottom: 10px;
+    margin-top: 26px;
 }
 
 .hnr-nextcloud-service-desc {
