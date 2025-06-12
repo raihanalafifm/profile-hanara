@@ -443,13 +443,26 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <div class="cloud-banner-wrapper reveal-section mb-5">
+        <div class="cloud-banner" style="background-image: url('{{ asset('assets/images/gambar/cloud.jpg') }}')">
+            <div class="cloud-banner-content">
+                <h1>Siap Bangun Sistem Cloud Sendiri untuk Bisnis Anda?</h1>
+                <p class="highlight"><strong>Gunakan Nextcloud - solusi cloud privat yang aman & fleksibel untuk perusahaan
+                        Anda.</strong></p>
+                <p>Tim Hanara siap membantu Anda dari tahap awal: konsultasi, instalasi, hingga perawatan Nextcloud yang
+                    optimal.</p>
+                <p class="cta">Sampaikan kebutuhan Anda lewat formulir di bawah, dan kami akan menghubungi Anda
+                    secepatnya.</p>
+            </div>
+        </div>
+    </div>
 
-            <!-- Contact Us Section -->
-            <section class="hnr-contact-section">
-                <div class="container">
-                    @include('components.contact')
-                </div>
-            </section>
+    <!-- Contact Us Section -->
+    <section class="hnr-contact-section">
+        <div class="container">
+            @include('components.contact')
         </div>
     </section>
 @endsection

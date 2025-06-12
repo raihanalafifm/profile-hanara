@@ -10605,3 +10605,182 @@ h2.company-name {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 }
+
+.email-promo-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+.email-promo-bg {
+    background: linear-gradient(135deg, #fef6e4 0%, #fdfdfd 100%);
+    width: 100%;
+}
+
+.email-promo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.email-promo-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.email-promo-title {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.email-promo-subtitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.email-promo-title strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.email-promo-button {
+    display: inline-block;
+    background-color: #f7931e;
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    text-decoration: none;
+}
+
+.email-promo-highlight {
+    color: #f7931e;
+    font-weight: bold;
+}
+
+.email-promo-note {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+@media (max-width: 576px) {
+    .email-promo-title {
+        font-size: 1.2rem;
+    }
+
+    .email-promo-subtitle {
+        font-size: 1rem;
+    }
+}
+.full-width-cloud-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* CSS untuk Cloud Banner */
+.cloud-banner-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.cloud-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 60vh; /* Menggunakan viewport height untuk penyesuaian otomatis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.cloud-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cloud-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.cloud-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.cloud-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cloud-banner .highlight {
+    font-size: 1.3rem;
+    margin: 25px 0;
+}
+
+.cloud-banner .cta {
+    margin-top: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cloud-banner {
+        min-height: 70vh;
+        padding: 30px 15px;
+    }
+
+    .cloud-banner h1 {
+        font-size: 2rem;
+    }
+
+    .cloud-banner p {
+        font-size: 1rem;
+    }
+
+    .cloud-banner .highlight {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cloud-banner h1 {
+        font-size: 1.7rem;
+    }
+
+    .cloud-banner-content {
+        width: 95%;
+        padding: 20px 10px;
+    }
+}

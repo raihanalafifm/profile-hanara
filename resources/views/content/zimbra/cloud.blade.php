@@ -1097,25 +1097,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-12 m-5">
-                        <h5>🎯 Mulai Gunakan Email Bisnis Anda Hari Ini! <br>
-                            Hanya <strong> Rp25.000 </strong> per akun per bulan <br> hemat, stabil, dan langsung siap
-                            pakai.
 
-                        </h5>
-                        <h5>
-                            🎁 Promo Setup Zimbra Cloud
-                            Cukup bayar Rp500.000 untuk setup awal!! <br> langsung dapat bonus domain .com selama 1 tahun!
-                            <br>Termasuk konfigurasi awal, setting email, dan panduan pemakaian dari tim Hanara.
-                        </h5>
-                        <h6>*Syarat & ketentuan berlaku. Domain dapat dipilih selama masih tersedia.</h6>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
+    <div class="email-promo-container">
+        <div class="email-promo-bg">
+            <img src="{{ asset('assets/images/gambar/bgcloud.jpg') }}" alt="" class="email-promo-image">
+            <div class="email-promo-content">
+                <h5 class="email-promo-title">🎯 Mulai Gunakan Email Bisnis Anda Hari Ini! <br>
+                    Hanya <strong>Rp25.000</strong> per akun per bulan <br> hemat, stabil, dan langsung siap
+                    pakai.
+                </h5>
 
+                <h2 class="email-promo-button">🎁 Promo Setup Zimbra Cloud</h2>
+
+                <h5 class="email-promo-subtitle">
+                    Cukup bayar <span class="email-promo-highlight">Rp500.000</span> untuk setup awal!! <br>
+                    langsung dapat bonus domain .com selama <span class="email-promo-highlight">1 tahun!</span>
+                    <br>
+                    Termasuk konfigurasi awal, setting email, dan panduan pemakaian dari tim Hanara.
+                </h5>
+
+                <h6 class="email-promo-note">*Syarat & ketentuan berlaku. Domain dapat dipilih selama masih
+                    tersedia.</h6>
+            </div>
+        </div>
+    </div>
     <!-- Contact Us Section -->
     <section class="hnr-contact-section">
         <div class="container">

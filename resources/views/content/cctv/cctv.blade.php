@@ -178,9 +178,18 @@
                             <span class="hnr-webapp-title-orange">Layanan
                             </span> Jasa Pemasangan <br>CCTV Hanara
                         </h2>
+                        <p class="hnr-cctv-title-description">
+                            Hanara melayani jasa pemasangan CCTV untuk rumah, kantor, sekolah, fasilitas industri, hingga
+                            area publik. <br> Kami menawarkan instalasi sistem CCTV lengkap dengan konfigurasi online,
+                            pemantauan
+                            jarak jauh, serta pelatihan penggunaan bagi pengguna. <br>Anda tidak perlu repot—semua
+                            dikerjakan
+                            oleh tim profesional kami.
+
+                        </p>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container mt-5">
                     <div class="row hnr-webdev-services-row">
                         <!-- Service 1: Aplikasi internal perusahaan -->
                         <div class="col-md-6 mb-3 reveal-section">
