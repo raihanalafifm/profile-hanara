@@ -3,13 +3,14 @@
     <div class="container">
         <div class="row">
             <!-- Logo dan Copyright -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="footer-logo">
                     <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara">
                 </div>
                 <p>Your Partner for Smarter IT Solutions </p>
                 <p class="copyright">© 2025 PT Hanara Prima Solusindo. <br>All rights reserved.</p>
                 <div class="social-icons">
+                    <p>Follow Us</p>
                     <a href="https://www.instagram.com/hanaraprimasolusindo?igsh=MWpja2JwejNtOWE1Zg=="
                         class="social-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -29,8 +30,8 @@
             </div>
 
             <!-- Navigasi -->
-            <div class="col-md-4">
-                <h4 class="footer-heading">Navigasi</h4>
+            <div class="col-md-3">
+                <h4 class="footer-heading">Navigation</h4>
                 <ul class="footer-links">
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ route('about-us') }}">About</a></li>
@@ -41,10 +42,20 @@
                     <li><a href="{{ route('cctv') }}">CCTV</a></li>
                 </ul>
             </div>
-
+            <!--other link-->
+            <div class="col-md-3">
+                <h4 class="footer-heading">Other Links</h4>
+                <ul class="footer-links">
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://portal.hanara.id">Portal</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://sikerja.hanara.id">siKerja</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://drive.hanara.id">Drive</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://mail.hanara.id">Email</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://asav.hanara.id">ASAV</a></li>
+                </ul>
+            </div>
             <!-- Kontak Kami -->
-            <div class="col-md-4">
-                <h4 class="footer-heading">Kontak Kami</h4>
+            <div class="col-md-3">
+                <h4 class="footer-heading">Contact Us</h4>
                 <ul class="contact-info">
                     <li>
                         <!-- Email Icon -->
@@ -90,6 +101,7 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
 </footer>
