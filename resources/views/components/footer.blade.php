@@ -7,7 +7,7 @@
                 <div class="footer-logo">
                     <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara">
                 </div>
-                <p>Your Partner for Smarter IT Solutions </p>
+                <p class="footer-paragrap">Your Partner for Smarter IT Solutions </p>
                 <p class="copyright">© 2025 PT Hanara Prima Solusindo. <br>All rights reserved.</p>
                 <div class="social-icons">
                     <p>Follow Us</p>

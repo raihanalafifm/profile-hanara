@@ -126,8 +126,9 @@
 
     <section class="awesome-services-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 reveal-section">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-12 reveal-section">
                     <div class="awesome-section-heading">
                         <span class="section-tag">• Layanan Unggulan Hanara •</span>
                         <h2 class="section-title"><span class="text-primary">Smarter </span>IT Solutions <br>for Modern
@@ -138,6 +139,7 @@
                     </div>
                 </div>
             </div>
+
 
             <div class="row mt-5">
                 <!-- Nextcloud Card -->
@@ -182,7 +184,7 @@
                         </div>
                         <h3 class="solution-title">IT Support</h3>
                         <p class="solution-description">
-                            Dukungan teknis untuk instalasi, maintenance, dan troubleshooting IT. <br>Respon cepat untuk
+                            Dukungan teknis untuk instalasi, maintenance, dan troubleshooting IT. Respon cepat untuk
                             menjaga kelancaran sistem dan infrastruktur Anda.
                         </p>
                         <a href="#" class="solution-link">
@@ -358,7 +360,7 @@
                             </div>
                             <div class="testimonial-clean-company">
                                 <div class="company-logo-wrapper">
-                                    <img src="{{ asset('assets/images/icon/cde-logo.png') }}"
+                                    <img src="{{ asset('assets/images/LOGO PERUSAHAAN/cde.png') }}"
                                         alt="PT. Cakrawala Dinamika Energi" class="company-logo">
                                 </div>
                                 <p class="company-name">PT. Cakrawala Dinamika Energi</p>

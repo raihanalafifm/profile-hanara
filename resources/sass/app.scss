@@ -993,21 +993,6 @@ address {
     }
 }
 
-.section-tag {
-    display: block;
-    color: #ff6700;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-align: center;
-
-    @media (min-width: 768px) {
-        font-size: 14px;
-        margin-bottom: 15px;
-        text-align: left;
-    }
-}
-
 .company-name {
     font-size: 24px;
     font-weight: 800;
@@ -1015,7 +1000,7 @@ address {
     line-height: 1.2;
     text-transform: uppercase;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: start;
 
     @media (min-width: 576px) {
         font-size: 26px;
@@ -1045,6 +1030,7 @@ address {
 
     @media (min-width: 768px) {
         text-align: center;
+        margin-left: 40px;
     }
 
     p {
@@ -1117,6 +1103,10 @@ address {
 /* Section Heading */
 .awesome-section-heading {
     margin-bottom: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-tag {
@@ -1125,9 +1115,12 @@ address {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
+    text-align: start;
+    margin-left: 35px;
 }
 h2.company-name {
     font-size: 20px;
+    margin-left: 40px;
 }
 
 .section-title {
@@ -1136,6 +1129,7 @@ h2.company-name {
     color: #000;
     line-height: 1.3;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .section-title .text-primary {
@@ -1147,6 +1141,8 @@ h2.company-name {
     font-size: 16px;
     line-height: 1.6;
     max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 /* Solution Card */
@@ -1162,36 +1158,24 @@ h2.company-name {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .solution-icon {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
 .solution-icon img {
     width: 100%;
     height: auto;
     object-fit: contain;
-}
-
-.solution-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 15px;
-}
-
-.solution-description {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    flex-grow: 1;
 }
 
 .solution-link {
@@ -1492,13 +1476,6 @@ h2.company-name {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-}
-
-.company-name {
-    font-size: 16px;
-    color: #666;
-    margin: 0;
-    text-align: center;
 }
 
 /* Navigation Dots */
@@ -3498,52 +3475,16 @@ h2.company-name {
 
 .hnr-check-icon,
 .hnr-cross-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
     margin-right: 10px;
-    position: relative;
     flex-shrink: 0;
 }
 
-.hnr-check-icon {
-    background-color: #00c853;
-}
-
-.hnr-check-icon:before {
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 10px;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: rotate(45deg);
-    top: 3px;
-    left: 7px;
-}
-
-.hnr-cross-icon {
-    background-color: #ff4d4d;
-}
-
-.hnr-cross-icon:before,
-.hnr-cross-icon:after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 2px;
-    background-color: white;
-    top: 9px;
-    left: 4px;
-}
-
-.hnr-cross-icon:before {
-    transform: rotate(45deg);
-}
-
-.hnr-cross-icon:after {
-    transform: rotate(-45deg);
+.hnr-check-icon svg,
+.hnr-cross-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* Email Protocol Styles - KODE CSS YANG DIPERBARUI */
@@ -8484,6 +8425,80 @@ h2.company-name {
         background-color: #1a1a1a;
         border-top: 1px solid #333;
     }
+    /* CSS untuk footer paragraph yang responsif */
+    .footer-paragrap {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: normal;
+        line-height: 1.5;
+        width: 100%;
+        display: block;
+
+        /* Default style untuk desktop - rata kiri */
+        text-align: left;
+    }
+
+    /* Media query untuk tablet dan mobile */
+    @media screen and (max-width: 768px) {
+        .footer-paragrap {
+            text-align: center !important;
+            font-size: 14px;
+            margin: 10px auto;
+            width: 100%;
+            display: block;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+    }
+
+    /* Media query khusus untuk mobile kecil */
+    @media screen and (max-width: 480px) {
+        .footer-paragrap {
+            text-align: center !important;
+            font-size: 13px;
+            margin: 15px auto;
+            padding: 0 20px;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+        }
+    }
+
+    /* Media query untuk mobile sangat kecil */
+    @media screen and (max-width: 320px) {
+        .footer-paragrap {
+            text-align: center !important;
+            font-size: 12px;
+            margin: 12px auto;
+            padding: 0 15px;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+        }
+    }
+
+    /* Jika Anda ingin membuat teks lebih prominent di mobile */
+    @media screen and (max-width: 768px) {
+        .footer-paragrap {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-align: center !important;
+        }
+
+        /* Pastikan parent container juga center */
+        .footer-paragrap * {
+            text-align: center !important;
+        }
+    }
+
+    /* Untuk layar yang sangat besar */
+    @media screen and (min-width: 1200px) {
+        .footer-paragrap {
+            font-size: 18px;
+        }
+    }
 
     .social-icon {
         background-color: rgba(255, 255, 255, 0.1);
@@ -10489,11 +10504,13 @@ h2.company-name {
 }
 
 .solution-title {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
     color: #1a1a1a;
+    text-align: center;
+    min-height: 30px;
 }
 
 .title-line-1 {
@@ -11248,6 +11265,7 @@ section {
 
     .section-tag {
         font-size: 11px !important;
+        text-align: center;
     }
 
     .company-name {
@@ -11255,6 +11273,7 @@ section {
         line-height: 1.2 !important;
         word-break: break-word !important;
         text-align: center !important;
+        margin-right: 40px;
     }
 
     .company-name br {

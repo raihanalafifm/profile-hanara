@@ -140,9 +140,9 @@
                             <img src="{{ asset('assets/images/icon/hcm-service4.png') }}" alt="Pinjaman">
                         </div>
                         <h4 class="hcm-service-title">Pinjaman Karyawan</h4>
-                        <p class="hcm-service-desc">Hitung gaji otomatis berdasarkan absensi, lembur, potongan, pinjaman,
-                            dan tunjangan.
-                            Sudah termasuk fitur slip gaji digital & export laporan.
+                        <p class="hcm-service-desc">Fitur pengelolaan pinjaman internal karyawan yang terhubung ke sistem
+                            payroll, lengkap dengan tenor, cicilan, dan riwayat angsuran.
+
                         </p>
                     </div>
                 </div>

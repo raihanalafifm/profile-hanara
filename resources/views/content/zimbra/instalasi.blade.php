@@ -240,11 +240,23 @@
                                 @foreach ($comparisons as $comparison)
                                     <div class="hnr-comparison-row">
                                         <div class="hnr-zimbra-feature">
-                                            <span class="hnr-check-icon">✓</span>
+                                            <span class="hnr-check-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <circle cx="10" cy="10" r="10" fill="#00c853" />
+                                                    <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </span>
                                             {{ $comparison['zimbra'] }}
                                         </div>
                                         <div class="hnr-hosting-feature">
-                                            <span class="hnr-cross-icon">✗</span>
+                                            <span class="hnr-cross-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <circle cx="10" cy="10" r="10" fill="#ff4d4d" />
+                                                    <path d="M6 6l8 8M14 6l-8 8" stroke="white" stroke-width="2"
+                                                        stroke-linecap="round" />
+                                                </svg>
+                                            </span>
                                             {{ $comparison['hosting'] }}
                                         </div>
                                     </div>

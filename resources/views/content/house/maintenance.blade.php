@@ -199,7 +199,8 @@
                                         <h3 class="hnr-house-expertise-card-title">Fast Support Response</h3>
                                         <p class="hnr-house-expertise-card-text">
                                             Masalah pada website bisa datang kapan saja. <br>
-                                            berkomitmen memberikan respon teknis cepat dalam waktu kurang dari 30 menit*
+                                            Kami berkomitmen memberikan respon teknis cepat dalam waktu kurang dari 30
+                                            menit*
                                             saat terjadi kendala
                                             (*di jam layanan). </p>
                                     </div>
@@ -215,9 +216,10 @@
                                     </div>
                                     <div class="hnr-house-expertise-content">
                                         <h3 class="hnr-house-expertise-card-title">Pembaruan Keamanan Berkala
-                                            Keamanan adalah prioritas.
+
                                         </h3>
                                         <p class="hnr-house-expertise-card-text">
+                                            Keamanan adalah prioritas. <br>
                                             Tim kami melakukan security patch, update plugin, serta pemantauan rutin untuk
                                             mencegah celah keamanan dan gangguan.
                                         </p>
