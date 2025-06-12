@@ -51,6 +51,9 @@
                     <li><a target="_blank" rel="noopener noreferrer" href="https://drive.hanara.id">Drive</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://mail.hanara.id">Email</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://asav.hanara.id">ASAV</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://shop.hanara.id">Hanara Shop</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://hanara.id/about.pdf ">Company
+                            Profile</a></li>
                 </ul>
             </div>
             <!-- Kontak Kami -->

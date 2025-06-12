@@ -185,7 +185,10 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
-                    <h2 class="hnr-advantages-title">Keunggulan <span class="hnr-title-bold">Kami</span></h2>
+                    <h2 class="hnr-advantages-title">Keunggulan <span class="hnr-title-bold"> Layanan Troubleshooting <br>
+                            Zimbra
+                            Hanara
+                        </span></h2>
                     <p class="hnr-advantages-subtitle">Kepuasan pelanggan Anda terjaga mendobrak masalah yang terjadi ketika
                         tim kami cepat mendobrak permasalahan Anda</p>
                 </div>
@@ -277,7 +280,7 @@
                         </div>
                         <h3 class="hnr-advantage-title"> Monitoring Pasca Perbaikan</h3>
                         <p class="hnr-advantage-text">
-                            KKami tetap memantau sistem setelah masalah selesai. Hal ini memastikan sistem Zimbra Anda
+                            Kami tetap memantau sistem setelah masalah selesai. Hal ini memastikan sistem Zimbra Anda
                             benar-benar stabil dan tidak ada efek samping dari penanganan yang dilakukan.
                         </p>
                     </div>
