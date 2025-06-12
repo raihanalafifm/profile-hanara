@@ -53,17 +53,25 @@
                 <div class="col-md-7">
                     <div class="hcm-about-content">
                         <h5 class="hcm-section-subtitle">• About Us •</h5>
-                        <h2 class="hcm-section-title">HUMAN CAPITAL MANAGEMENT</h2>
+                        <h2 class="hcm-section-title">HUMAN CAPITAL MANAGEMENT (HCM)</h2>
                         <div class="hcm-description">
-                            <p>Solusi tepat untuk perusahaan yang ingin memiliki Aplikasi untuk memudahkan menyimpan
-                                informasi karyawan, mengelola fungsi umum SDM, Absensi, dan menjalankan aktivitas SDM
-                                penting seperti memproses gaji, mengelola tunjangan, pajak, THR, dan berbagai macam laporan
-                                yang diperlukan untuk payroll.</p>
-
-                            <p>HCM tersedia dalam 2 platform, Website untuk Administrasi HRD, team Payroll dan team Pajak di
-                                Perusahaan Anda, serta Mobile Apps (iOS & Android) untuk Karyawan melakukan absen, cuti,
-                                izin, melihat laporan kehadiran, laporan gaji dan berbagai macam fitur yang diperlukan untuk
-                                memudahkan Perusahaan Anda mengelola karyawan dan payroll.</p>
+                            <p>Aplikasi dengan sistem lengkap untuk HR (Human Resource) / HRD dari Hanara yang berfungsi
+                                untuk mengelola proses SDM secara digital, dari absensi hingga penggajian.
+                            </p>
+                            <p>
+                                Solusi ini terdiri dari dua modul terintegrasi:s
+                            </p>
+                            <ol>
+                                <li>HCM (Web Dashboard): Digunakan oleh tim HR, Finance, dan Payroll untuk mengelola
+                                    database
+                                    karyawan, jadwal kerja, cuti, penggajian, BPJS, hingga pelaporan SPT Tahunan.</li>
+                                <li>HCIS (Mobile App): Digunakan oleh karyawan untuk absensi online, pengajuan cuti/izin,
+                                    melihat slip gaji, serta notifikasi HR secara langsung melalui smartphone.</li>
+                            </ol>
+                            <p>
+                                Dengan sistem berbasis web dan mobile yang saling terhubung, aplikasi HCM Hanara memudahkan
+                                perusahaan mengelola SDM secara efisien dan real-time.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -76,10 +84,13 @@
         <div class="container py-5 reveal-section">
             <div class="text-center mb-5">
                 <h5 class="hcm-section-subtitle">• Awesome Service •</h5>
-                <h2 class="hcm-section-title-dark">Kami Menyediakan</h2>
-                <h2 class="hcm-section-title-orange">Aplikasi HR yang Anda Butuhkan</h2>
-                <p class="hcm-services-desc">We switch all the channels on yo get into people's<br>hands, homes, and minds
-                    to radically shift behavior</p>
+                <h2 class="hcm-section-title-dark">Fitur Aplikasi HR</h2>
+                <h2 class="hcm-section-title-orange">
+                    Lengkap dan Terintegrasi
+                </h2>
+                <p class="hcm-services-desc">Semua kebutuhan pengelolaan SDM tersedia dalam satu sistem, dari database
+                    karyawan hingga pelaporan gaji dan BPJS.
+                </p>
             </div>
 
             <div class="row g-4">
@@ -90,7 +101,9 @@
                             <img src="{{ asset('assets/images/icon/hcm-service1.png') }}" alt="Manajemen Karyawan">
                         </div>
                         <h4 class="hcm-service-title">Manajemen Karyawan</h4>
-                        <p class="hcm-service-desc">Kelola database karyawan di perusahaan Anda secara online</p>
+                        <p class="hcm-service-desc">Kelola data karyawan secara digital, termasuk jabatan, divisi, status
+                            kontrak, riwayat kerja, dan dokumen penting lainnya.
+                        </p>
                     </div>
                 </div>
 
@@ -100,7 +113,9 @@
                             <img src="{{ asset('assets/images/icon/hcm-service2.png') }}" alt="Manajemen Absensi">
                         </div>
                         <h4 class="hcm-service-title">Manajemen Absensi</h4>
-                        <p class="hcm-service-desc">Memudahkan proses absensi secara online (Manual/Finger/Mobile Apps)</p>
+                        <p class="hcm-service-desc">Catat absensi harian secara online melalui metode manual, fingerprint,
+                            atau aplikasi mobile (dengan GPS & selfie check-in).
+                        </p>
                     </div>
                 </div>
 
@@ -109,8 +124,12 @@
                         <div class="hcm-service-icon">
                             <img src="{{ asset('assets/images/icon/hcm-service3.png') }}" alt="Manajemen Penggajian">
                         </div>
-                        <h4 class="hcm-service-title">Manajemen Penggajian</h4>
-                        <p class="hcm-service-desc">Memudahkan proses penggajian karyawan di perusahaan Anda</p>
+                        <h4 class="hcm-service-title">Manajemen Penggajian (Payroll)
+                        </h4>
+                        <p class="hcm-service-desc">Hitung gaji otomatis berdasarkan absensi, lembur, potongan, pinjaman,
+                            dan tunjangan.
+                            Sudah termasuk fitur slip gaji digital & export laporan.
+                        </p>
                     </div>
                 </div>
 
@@ -120,8 +139,11 @@
                         <div class="hcm-service-icon">
                             <img src="{{ asset('assets/images/icon/hcm-service4.png') }}" alt="Pinjaman">
                         </div>
-                        <h4 class="hcm-service-title">Pinjaman</h4>
-                        <p class="hcm-service-desc">HCM menyediakan fitur loan ke perusahaan</p>
+                        <h4 class="hcm-service-title">Pinjaman Karyawan</h4>
+                        <p class="hcm-service-desc">Hitung gaji otomatis berdasarkan absensi, lembur, potongan, pinjaman,
+                            dan tunjangan.
+                            Sudah termasuk fitur slip gaji digital & export laporan.
+                        </p>
                     </div>
                 </div>
 
@@ -130,8 +152,11 @@
                         <div class="hcm-service-icon">
                             <img src="{{ asset('assets/images/icon/hcm-service5.png') }}" alt="Pengajuan Izin">
                         </div>
-                        <h4 class="hcm-service-title">Pengajuan Izin</h4>
-                        <p class="hcm-service-desc">Memudahkan proses pengajuan izin</p>
+                        <h4 class="hcm-service-title">Pengajuan Izin &amp; Cuti</h4>
+                        <p class="hcm-service-desc">Karyawan bisa mengajukan cuti, izin sakit, atau dinas secara mandiri
+                            melalui aplikasi mobile. <br>
+                            Pengajuan dapat disetujui langsung oleh atasan terkait.
+                        </p>
                     </div>
                 </div>
 
@@ -140,8 +165,10 @@
                         <div class="hcm-service-icon">
                             <img src="{{ asset('assets/images/icon/hcm-service6.png') }}" alt="BPJS">
                         </div>
-                        <h4 class="hcm-service-title">BPJS</h4>
-                        <p class="hcm-service-desc">Payroll sudah ada fitur BPJS</p>
+                        <h4 class="hcm-service-title">Integrasi BPJS Kesehatan &amp; Ketenagakerjaan
+                        </h4>
+                        <p class="hcm-service-desc">Data payroll terhubung langsung dengan perhitungan BPJS secara otomatis,
+                            mendukung pelaporan reguler ke instansi terkait.</p>
                     </div>
                 </div>
             </div>
@@ -261,231 +288,121 @@
         </div>
     </section>
 
-    <!-- Trusted Clients Section -->
-    <section class="trusted-clients-section">
-        <div class="container reveal-section">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="trusted-clients-heading">
-                        <span class="trusted-clients-tag">• Our Client •</span>
-                        <h2 class="trusted-clients-title">Kami telah dipercaya oleh banyak klien dan perusahaan</h2>
-                        <p class="trusted-clients-subtitle">
-                            Kami memiliki beberapa keahlian untuk bekerja sama dengan perusahaan dan organisasi terkemuka di
-                            Indonesia. Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien kami.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- Custom Solution Section - Menggantikan Pricing Section -->
+    <section class="hcm-custom-solution-section reveal-section">
+        <div class="container">
+            <div class="custom-solution-wrapper">
+                <!-- Background decoration elements -->
+                <div class="bg-decoration-1"></div>
+                <div class="bg-decoration-2"></div>
+                <div class="bg-decoration-3"></div>
 
-            <div class="row trusted-clients-logos">
-                <!-- Row 1 -->
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/cde-coal.png') }}" alt="CDE Coal">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/ces-coal.png') }}" alt="CES Coal">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/mpp.png') }}" alt="MPP">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/yacoonn.png') }}" alt="Yacoon">
-                    </div>
-                </div>
+                <div class="row align-items-center">
+                    <!-- Content Column -->
+                    <div class="col-lg-7">
+                        <div class="custom-solution-content">
+                            <h2 class="solution-title">
+                                <span class="title-line-1">Setiap Perusahaan Punya</span>
+                                <span class="title-line-2">Kebutuhan HR yang <span
+                                        class="text-gradient">Berbeda</span></span>
+                            </h2>
 
-                <!-- Row 2 -->
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/chm.png') }}" alt="CHM">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/spn-logo.png') }}" alt="Sindo Prima Niaga">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/ef bengkulu.png') }}" alt="Branch Kota Bengkulu">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/mitra plus.png') }}" alt="Mitra Plus">
-                    </div>
-                </div>
+                            <h3 class="solution-subtitle">
+                                Kami bantu rancang solusi HCM yang sesuai untuk Anda.
+                            </h3>
 
-                <!-- Row 3 -->
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/msk.png') }}" alt="MSK">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/tek.png') }}" alt="TEK">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/sac.png') }}" alt="Asia Capital">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 trusted-client-logo-wrap">
-                    <div class="trusted-client-logo">
-                        <img src="{{ asset('assets/images/icon/mavix.png') }}" alt="Mavix">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                            <p class="solution-description">
+                                Fitur dan modul dalam sistem HCM Hanara dapat disesuaikan berdasarkan skala bisnis,
+                                jumlah karyawan, dan alur kerja HR di perusahaan Anda.
+                            </p>
 
-    <!-- Pricing Section -->
-    <section class="hcm-pricing-section">
-        <div class="container py-5 reveal-section">
-            <div class="text-center mb-5">
-                <h2 class="hcm-pricing-title"><span class="hcm-orange">Paket</span> Terbaik untuk Bisnis Anda</h2>
-                <p class="hcm-pricing-subtitle">Dapatkan penawaran paket HR Management yang terbaik dari PT. Hanara Prima
-                    Solusindo</p>
-            </div>
+                            <p class="solution-cta-text">
+                                Hubungi tim kami untuk mendapatkan penawaran terbaik, lengkap dengan
+                                <span class="highlight-text">demo dan konsultasi tanpa biaya.</span>
+                            </p>
 
-            <div class="row g-4">
-                <!-- Tier 1 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="hcm-pricing-card">
-                        <div class="hcm-pricing-icon-container">
-                            <div class="hcm-pricing-icon">
-                                <img src="{{ asset('assets/images/icon/icon-paket-cloud.png') }}" alt="Tier 1">
+                            <div class="cta-button-wrapper">
+                                <a href="#contact-section" class="btn-consult-now">
+                                    <span class="btn-text">Konsultasi Sekarang</span>
+                                    <span class="btn-arrow">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                </a>
+
+                                <!-- Floating badges -->
+                                {{-- <div class="floating-badge badge-1">
+                                    <i class="bi bi-check-circle-fill"></i> Free Demo
+                                </div>
+                                <div class="floating-badge badge-2">
+                                    <i class="bi bi-headset"></i> Konsultasi Gratis
+                                </div> --}}
                             </div>
-                            <h4>Tier 1</h4>
-                        </div>
-
-                        <div class="hcm-pricing-amount">
-                            <h2>Rp30k<span>/monthly</span></h2>
-                        </div>
-
-                        <a href="#" class="btn hcm-pricing-btn">Beli Paket</a>
-
-                        <hr class="hcm-pricing-divider">
-
-                        <div class="hcm-pricing-features">
-                            <h6>What's included</h6>
-                            <ul class="hcm-feature-list">
-                                <li><span class="hcm-check-icon"></span> HCIS Mobile</li>
-                                <li><span class="hcm-check-icon"></span> Custom Domain</li>
-                                <li><span class="hcm-check-icon"></span> Modul Asset Management</li>
-                                <li><span class="hcm-check-icon"></span> Database Karyawan</li>
-                                <li><span class="hcm-check-icon"></span> Modul Absensi</li>
-                                <li><span class="hcm-check-icon"></span> Modul Penggajian</li>
-                                <li><span class="hcm-check-icon"></span> Modul Cuti</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
 
-                <!-- Tier 2 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="hcm-pricing-card">
-                        <div class="hcm-pricing-icon-container">
-                            <div class="hcm-pricing-icon">
-                                <img src="{{ asset('assets/images/icon/icon-paket-cloud2.png') }}" alt="Tier 2">
+                    <!-- Illustration Column -->
+                    <div class="col-lg-5">
+                        <div class="solution-illustration">
+                            <div class="illustration-wrapper">
+                                <!-- Animated circles -->
+                                <div class="animated-circle circle-1"></div>
+                                <div class="animated-circle circle-2"></div>
+                                <div class="animated-circle circle-3"></div>
+
+                                <!-- Feature cards floating around -->
+                                {{-- <div class="feature-card card-1">
+                                    <i class="bi bi-gear-fill"></i>
+                                    <span>Customizable</span>
+                                </div>
+                                <div class="feature-card card-2">
+                                    <i class="bi bi-graph-up"></i>
+                                    <span>Scalable</span>
+                                </div>
+                                <div class="feature-card card-3">
+                                    <i class="bi bi-shield-check"></i>
+                                    <span>Secure</span>
+                                </div> --}}
+
+                                <!-- Main illustration using image or custom graphics -->
+                                <div class="main-illustration">
+                                    <!-- Bisa menggunakan gambar existing atau SVG custom -->
+                                    <img src="#" alt="HCM Customization" class="img-fluid"
+                                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+                                    <!-- Fallback SVG jika gambar tidak ada -->
+                                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                        style="display:none;">
+                                        <!-- Building blocks representing customization -->
+                                        <rect x="100" y="250" width="80" height="80" rx="8"
+                                            fill="#FF6B00" opacity="0.9" />
+                                        <rect x="140" y="210" width="80" height="80" rx="8"
+                                            fill="#FF8533" opacity="0.9" />
+                                        <rect x="180" y="170" width="80" height="80" rx="8"
+                                            fill="#FFA366" opacity="0.9" />
+                                        <rect x="220" y="130" width="80" height="80" rx="8"
+                                            fill="#FFC299" opacity="0.9" />
+
+                                        <!-- Connecting lines -->
+                                        <path d="M140 290 L220 210" stroke="#333" stroke-width="2"
+                                            stroke-dasharray="5,5" />
+                                        <path d="M180 250 L260 170" stroke="#333" stroke-width="2"
+                                            stroke-dasharray="5,5" />
+
+                                        <!-- Icons on blocks -->
+                                        <text x="140" y="295" font-size="24" fill="white"
+                                            text-anchor="middle">📊</text>
+                                        <text x="180" y="255" font-size="24" fill="white"
+                                            text-anchor="middle">👥</text>
+                                        <text x="220" y="215" font-size="24" fill="white"
+                                            text-anchor="middle">⚙️</text>
+                                        <text x="260" y="175" font-size="24" fill="white"
+                                            text-anchor="middle">📱</text>
+                                    </svg>
+                                </div>
                             </div>
-                            <h4>Tier 2</h4>
-                        </div>
-
-                        <div class="hcm-pricing-amount">
-                            <h2>Rp50k<span>/monthly</span></h2>
-                        </div>
-
-                        <a href="#" class="btn hcm-pricing-btn">Beli Paket</a>
-
-                        <hr class="hcm-pricing-divider">
-
-                        <div class="hcm-pricing-features">
-                            <h6>What's included</h6>
-                            <ul class="hcm-feature-list">
-                                <li><span class="hcm-check-icon"></span> HCIS Mobile</li>
-                                <li><span class="hcm-check-icon"></span> Custom Domain</li>
-                                <li><span class="hcm-check-icon"></span> Modul Asset Management</li>
-                                <li><span class="hcm-check-icon"></span> Database Karyawan</li>
-                                <li><span class="hcm-check-icon"></span> Modul Absensi</li>
-                                <li><span class="hcm-check-icon"></span> Modul Penggajian</li>
-                                <li><span class="hcm-check-icon"></span> Modul Cuti</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tier 3 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="hcm-pricing-card">
-                        <div class="hcm-pricing-icon-container">
-                            <div class="hcm-pricing-icon">
-                                <img src="{{ asset('assets/images/icon/icon-paket-cloud3.png') }}" alt="Tier 3">
-                            </div>
-                            <h4>Tier 3</h4>
-                        </div>
-
-                        <div class="hcm-pricing-amount">
-                            <h2>Rp70k<span>/monthly</span></h2>
-                        </div>
-
-                        <a href="#" class="btn hcm-pricing-btn">Beli Paket</a>
-
-                        <hr class="hcm-pricing-divider">
-
-                        <div class="hcm-pricing-features">
-                            <h6>What's included</h6>
-                            <ul class="hcm-feature-list">
-                                <li><span class="hcm-check-icon"></span> HCIS Mobile</li>
-                                <li><span class="hcm-check-icon"></span> Custom Domain</li>
-                                <li><span class="hcm-check-icon"></span> Modul Asset Management</li>
-                                <li><span class="hcm-check-icon"></span> Database Karyawan</li>
-                                <li><span class="hcm-check-icon"></span> Modul Absensi</li>
-                                <li><span class="hcm-check-icon"></span> Modul Penggajian</li>
-                                <li><span class="hcm-check-icon"></span> Modul Cuti</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tier 4 - Popular -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="hcm-pricing-card hcm-pricing-popular">
-                        <div class="hcm-popular-badge">Paling Popular</div>
-                        <div class="hcm-pricing-icon-container">
-                            <div class="hcm-pricing-icon">
-                                <img src="{{ asset('assets/images/icon/icon-paket-cloud4.png') }}" alt="Tier 4">
-                            </div>
-                            <h4>Tier 4</h4>
-                        </div>
-
-                        <div class="hcm-pricing-amount">
-                            <h2>Rp90k<span>/monthly</span></h2>
-                        </div>
-
-                        <a href="#" class="btn hcm-pricing-btn hcm-pricing-btn-popular">Beli Paket</a>
-
-                        <hr class="hcm-pricing-divider">
-
-                        <div class="hcm-pricing-features">
-                            <h6>What's included</h6>
-                            <ul class="hcm-feature-list">
-                                <li><span class="hcm-check-icon"></span> HCIS Mobile</li>
-                                <li><span class="hcm-check-icon"></span> Custom Domain</li>
-                                <li><span class="hcm-check-icon"></span> Modul Asset Management</li>
-                                <li><span class="hcm-check-icon"></span> Database Karyawan</li>
-                                <li><span class="hcm-check-icon"></span> Modul Absensi</li>
-                                <li><span class="hcm-check-icon"></span> Modul Penggajian</li>
-                                <li><span class="hcm-check-icon"></span> Modul Cuti</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -493,28 +410,10 @@
         </div>
     </section>
 
-    <!-- Contact Component -->
-    <section class="hnr-contact-section">
+    <!-- Contact Component dengan ID untuk scroll -->
+    <section class="hnr-contact-section mt-5" id="contact-section">
         <div class="container">
             @include('components.contact')
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="contact-section reveal-section">
-        <div class="container">
-            <h4 class="map-title">Lokasi Kami</h4>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.0159552467626!2d102.27860847374916!3d-3.806629743572537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b161ec6a6a83%3A0x1e1175c4144610e0!2sJanji%20Jiwa%20%26%20Jiwa%20Tea%20Jilid%20485%20-%20Tanah%20Patah%2C%20Bengkulu!5e0!3m2!1sid!2sid!4v1749526258441!5m2!1sid!2sid"
-                width="100%" height="400" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" title="Lokasi PT Hanara Prima Solusindo">
-            </iframe>
-            <div class="map-actions mt-3">
-                <a href="https://maps.app.goo.gl/AcRriEcVffyzCCrk7" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-submit">
-                    <i class="bi bi-geo-alt-fill"></i> Petunjuk Arah
-                </a>
-            </div>
         </div>
     </section>
 @endsection

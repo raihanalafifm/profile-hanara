@@ -90,7 +90,7 @@ Route::prefix('zimbra')->group(function () {
 Route::prefix('software-house')->group(function () {
     Route::get('/website-company-profile', [SoftwareHouseController::class, 'webDevelopment'])->name('develop-web');
     Route::get('/web-application', [SoftwareHouseController::class, 'webApplication'])->name('web-application');
-    Route::get('/maintenance', [SoftwareHouseController::class, 'maintenance'])->name('maintenance-web');
+    Route::get('/maintenance-website', [SoftwareHouseController::class, 'maintenance'])->name('maintenance-web');
 });
 
 // Other Services

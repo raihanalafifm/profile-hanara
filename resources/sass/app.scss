@@ -10155,3 +10155,453 @@ h2.company-name {
         margin-left: 0;
     }
 }
+
+.hcm-custom-solution-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #fff8f2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Wrapper */
+.custom-solution-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Background Decorations */
+.bg-decoration-1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 107, 0, 0.1) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    top: -150px;
+    left: -150px;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.bg-decoration-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 163, 102, 0.08) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    bottom: -200px;
+    right: -200px;
+    animation: pulse 5s ease-in-out infinite;
+}
+
+.bg-decoration-3 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 133, 51, 0.06) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 6s ease-in-out infinite;
+}
+
+/* Content Styles */
+.custom-solution-content {
+    padding-right: 50px;
+}
+
+.solution-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.title-line-1 {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.title-line-2 {
+    display: block;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.solution-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.solution-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.solution-cta-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.highlight-text {
+    font-weight: 600;
+    color: #ff6b00;
+}
+
+/* CTA Button */
+.cta-button-wrapper {
+    position: relative;
+}
+
+.btn-consult-now {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-consult-now::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.6s;
+}
+
+.btn-consult-now:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 107, 0, 0.4);
+    color: white;
+}
+
+.btn-consult-now:hover::before {
+    left: 100%;
+}
+
+.btn-arrow {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.btn-consult-now:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
+    color: #333;
+}
+
+.floating-badge i {
+    margin-right: 5px;
+    color: #ff6b00;
+}
+
+.badge-1 {
+    top: -20px;
+    right: 100px;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    bottom: -20px;
+    left: 200px;
+    animation-delay: 1.5s;
+}
+
+/* Illustration Styles */
+.solution-illustration {
+    position: relative;
+    height: 500px;
+}
+
+.illustration-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Animated Circles */
+.animated-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.circle-1 {
+    width: 150px;
+    height: 150px;
+    background: #ff6b00;
+    top: 20px;
+    right: 50px;
+    animation: rotate 20s linear infinite;
+}
+
+.circle-2 {
+    width: 100px;
+    height: 100px;
+    background: #ff8533;
+    bottom: 50px;
+    left: 20px;
+    animation: rotate 15s linear infinite reverse;
+}
+
+.circle-3 {
+    width: 80px;
+    height: 80px;
+    background: #ffa366;
+    top: 50%;
+    right: 30%;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Feature Cards */
+.feature-card {
+    position: absolute;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    animation: float 4s ease-in-out infinite;
+}
+
+.feature-card i {
+    font-size: 18px;
+    color: #ff6b00;
+}
+
+.card-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 40%;
+    right: 5%;
+    animation-delay: 1.3s;
+}
+
+.card-3 {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 2.6s;
+}
+
+/* Main Illustration */
+.main-illustration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+}
+
+.main-illustration svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* Animations */
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .custom-solution-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .solution-title {
+        font-size: 36px;
+    }
+
+    .title-line-1 {
+        font-size: 28px;
+    }
+
+    .solution-subtitle {
+        font-size: 20px;
+    }
+
+    .solution-illustration {
+        height: 400px;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .hcm-custom-solution-section {
+        padding: 60px 0;
+    }
+
+    .solution-title {
+        font-size: 28px;
+    }
+
+    .title-line-1 {
+        font-size: 22px;
+    }
+
+    .solution-subtitle {
+        font-size: 18px;
+    }
+
+    .solution-description,
+    .solution-cta-text {
+        font-size: 16px;
+    }
+
+    .btn-consult-now {
+        font-size: 16px;
+        padding: 15px 30px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .solution-illustration {
+        height: 300px;
+    }
+
+    .feature-card {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .main-illustration {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .hcm-custom-solution-section {
+        background: linear-gradient(
+            135deg,
+            #0a0a0a 0%,
+            #1a1a1a 50%,
+            #0f0f0f 100%
+        );
+    }
+
+    .solution-title,
+    .solution-subtitle {
+        color: #e0e0e0;
+    }
+
+    .title-line-1 {
+        color: #999;
+    }
+
+    .solution-description,
+    .solution-cta-text {
+        color: #aaa;
+    }
+
+    .feature-card {
+        background: #232323;
+        color: #e0e0e0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .floating-badge {
+        background: #232323;
+        color: #e0e0e0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+}

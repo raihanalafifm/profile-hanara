@@ -22,17 +22,43 @@
                         </h1>
 
                         <p class="hnr-motorola-description">
-                            PT Hanara Prima Solusindo sebagai pusat distributor handy talky dan RIG untuk merek Motorola.
-                            Motorola terkenal untuk satu nama handal untuk Handy Talky dan menghadirkan berbagai tipe yang
-                            memenuhi standar kualitas untuk komunikasi radio baik HT VHF/UHF baik alat operasi pihak depan
-                            mendukung kinerja pekerjaan maupun balik layar untuk industri. Handy Talky dan RIG Motorola
-                            hadir dalam beragam pilihan sesuai kebutuhan dengan ragam varian dan kelas.
+                            PT Hanara Prima Solusindo adalah distributor resmi perangkat komunikasi dua arah merk Motorola,
+                            meliputi Handy Talky (HT) dan RIG untuk kebutuhan operasional di lapangan maupun industri.
+                            <br>
+                            Motorola dikenal sebagai brand terpercaya di dunia komunikasi radio, dengan kualitas sinyal
+                            kuat, daya tahan tinggi, dan jangkauan luas.
+                            Kami menyediakan berbagai tipe HT dan RIG VHF/UHF yang cocok digunakan oleh sektor pertambangan,
+                            logistik, keamanan, perkebunan, hingga pemerintahan.
+                            <br>
+                            Perangkat tersedia dalam berbagai varian kelas — dari entry-level hingga model industri —
+                            lengkap dengan dukungan aftersales dan pengaturan lisensi frekuensi jika dibutuhkan.
                         </p>
 
-                        <a href="{{ url('https://shop.hanara.id/brands/motorola/ ') }}" target="_blank"
-                            rel="noopener noreferrer" class="hnr-motorola-button">Pesan Sekarang!</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hnr-motorola-find-product-section">
+        <div class="container reveal-section">
+            <div class="hnr-find-product-content">
+                <div class="hnr-find-product-icon">
+                    <i class="bi bi-search"></i>
+                </div>
+                <h2 class="hnr-find-product-title">
+                    Temukan Produk Handy Talky & RIG Motorola yang Sesuai Kebutuhan Anda
+                </h2>
+                <p class="hnr-find-product-description">
+                    Lihat katalog lengkap HT dan RIG Motorola yang tersedia di toko online resmi Hanara.
+                    Tersedia berbagai model: digital/analog, VHF/UHF, single/dual band, hingga RIG mobil & base station.
+                    Semua unit baru & bergaransi.
+                </p>
+                <a href="https://shop.hanara.id/brands/motorola/" target="_blank" rel="noopener noreferrer"
+                    class="hnr-catalog-button">
+                    <i class="bi bi-shop"></i>
+                    Lihat Katalog di Shop Hanara
+                </a>
             </div>
         </div>
     </section>
@@ -145,6 +171,20 @@
         </section>
     @endif
 
+    <section class="hnr-motorola-discussion-section">
+        <div class="container reveal-section">
+            <div class="hnr-discussion-content">
+                <div class="hnr-discussion-icon">
+                    <i class="bi bi-chat-dots"></i>
+                </div>
+                <h2 class="hnr-discussion-title">
+                    Ingin berdiskusi lebih lanjut mengenai perangkat komunikasi seperti Handy Talky atau RIG Motorola yang
+                    sesuai untuk kebutuhan lapangan atau industri Anda?
+                </h2>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="hnr-contact-section">
         <div class="container">
@@ -198,6 +238,245 @@
         .hnr-motorola-category-title,
         .hnr-motorola-product-title {
             margin-bottom: 10px;
+        }
+
+        /* Find Product Section Styles */
+        .hnr-motorola-find-product-section {
+            background-color: #fff;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hnr-find-product-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hnr-find-product-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff3e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: pulse 2s infinite;
+        }
+
+        .hnr-find-product-icon i {
+            font-size: 36px;
+            color: #FF6B00;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+            }
+        }
+
+        .hnr-find-product-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hnr-find-product-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .hnr-catalog-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background-color: #FF6B00;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .hnr-catalog-button:hover {
+            background-color: #e55600;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+            text-decoration: none;
+        }
+
+        .hnr-catalog-button i {
+            font-size: 20px;
+        }
+
+        /* Discussion Section Styles */
+        .hnr-motorola-discussion-section {
+            background-color: #f9f9fb;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .hnr-discussion-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hnr-discussion-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #FF6B00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .hnr-discussion-icon i {
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .hnr-discussion-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Background decoration for Find Product section */
+        .hnr-motorola-find-product-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 107, 0, 0.05);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hnr-motorola-find-product-section::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 107, 0, 0.03);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .hnr-motorola-find-product-section {
+                padding: 60px 0;
+            }
+
+            .hnr-find-product-title {
+                font-size: 28px;
+            }
+
+            .hnr-find-product-description {
+                font-size: 16px;
+            }
+
+            .hnr-discussion-title {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hnr-motorola-find-product-section {
+                padding: 50px 0;
+            }
+
+            .hnr-find-product-title {
+                font-size: 24px;
+            }
+
+            .hnr-find-product-description {
+                font-size: 15px;
+                padding: 0 15px;
+            }
+
+            .hnr-catalog-button {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+
+            .hnr-motorola-discussion-section {
+                padding: 50px 0;
+            }
+
+            .hnr-discussion-title {
+                font-size: 20px;
+                padding: 0 15px;
+            }
+
+            .hnr-discussion-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .hnr-discussion-icon i {
+                font-size: 28px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .hnr-motorola-find-product-section {
+                background-color: #0a0a0a;
+            }
+
+            .hnr-find-product-icon {
+                background-color: #3d2a14;
+            }
+
+            .hnr-find-product-title {
+                color: #e0e0e0;
+            }
+
+            .hnr-find-product-description {
+                color: #b0b0b0;
+            }
+
+            .hnr-motorola-discussion-section {
+                background-color: #1a1a1a;
+            }
+
+            .hnr-discussion-title {
+                color: #e0e0e0;
+            }
+
+            .hnr-motorola-find-product-section::before,
+            .hnr-motorola-find-product-section::after {
+                background-color: rgba(255, 107, 0, 0.02);
+            }
         }
     </style>
 @endpush

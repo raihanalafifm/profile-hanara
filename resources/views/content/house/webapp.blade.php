@@ -62,8 +62,8 @@
             <br>
             <div class="row text-center reveal-section">
                 <div class="col-12">
-                    <h2 class="hnr-nextcloud-section-title">
-                        <span class="hnr-nextcloud-title-orange">Layanan </span> ini cocok untuk:
+                    <h2 class="hnr-webapp-framework-title">
+                        <span class="hnr-webapp-title-orange">Layanan</span> Ini Cocok Untuk:
                     </h2>
                 </div>
             </div>
