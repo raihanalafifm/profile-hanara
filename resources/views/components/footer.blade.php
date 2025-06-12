@@ -62,7 +62,7 @@
                 <ul class="contact-info">
                     <li>
                         <!-- Email Icon -->
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg class="contact-icon-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
                                 d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                         </svg>
@@ -71,7 +71,7 @@
 
                     <li>
                         <!-- WhatsApp Icon -->
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <svg class="contact-icon-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                             <path
                                 d="M16 3C9.383 3 4 8.383 4 15c0 2.658 0.867 5.121 2.332 7.12L4 29l7.129-2.332A11.894 11.894 0 0 0 16 27c6.617 0 12-5.383 12-12S22.617 3 16 3zm0 22c-1.883 0-3.621-.516-5.113-1.402l-.367-.214-4.243 1.385 1.391-4.121-.237-.386A9.933 9.933 0 0 1 6 15c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.078-7.594c-.281-.141-1.66-.816-1.918-.91-.258-.094-.445-.14-.633.14s-.727.91-.89 1.098c-.164.188-.328.211-.609.07-.281-.14-1.188-.438-2.262-1.398-.836-.746-1.398-1.664-1.562-1.945-.164-.282-.018-.434.123-.574.125-.125.281-.328.422-.492.141-.164.188-.281.281-.469.094-.187.047-.352-.023-.492-.07-.141-.633-1.527-.867-2.09-.227-.547-.457-.469-.633-.477-.164-.008-.352-.008-.539-.008-.187 0-.492.07-.75.352s-.984.961-.984 2.34c0 1.375 1.008 2.703 1.148 2.891.141.187 1.984 3.031 4.805 4.25.672.289 1.195.461 1.602.59.672.211 1.281.18 1.758.109.539-.082 1.66-.676 1.895-1.328.234-.648.234-1.203.164-1.328-.07-.125-.258-.188-.539-.328z"
                                 fill="currentColor" />
@@ -81,7 +81,7 @@
 
                     <li>
                         <!-- Telephone Icon -->
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg class="contact-icon-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
                                 d="M6.62 10.79a15.91 15.91 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 12.36 12.36 0 004.52.86 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 12.36 12.36 0 00.86 4.52 1 1 0 01-.21 1.11l-2.2 2.2z"
                                 fill="currentColor" />
@@ -91,7 +91,7 @@
 
                     <li>
                         <!-- Location Icon -->
-                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg class="contact-icon-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
                                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                                 fill="currentColor" />
@@ -108,3 +108,35 @@
         </div>
     </div>
 </footer>
+<style>
+    /* Footer responsive fixes */
+    @media (max-width: 767px) {
+        .footer .col-md-3 {
+            text-align: center !important;
+        }
+
+        .footer-paragrap {
+            text-align: center !important;
+            margin: 10px auto !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .footer-logo {
+            text-align: center !important;
+        }
+
+        .footer-logo img {
+            margin: 0 auto 15px !important;
+        }
+
+        .copyright {
+            text-align: center !important;
+        }
+
+        .social-icons {
+            justify-content: center !important;
+            margin-bottom: 30px !important;
+        }
+    }
+</style>
