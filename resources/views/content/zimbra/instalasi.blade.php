@@ -150,7 +150,7 @@
                                     ],
                                     [
                                         'icon' => 'icon-fitur-6.png',
-                                        'title' => 'CBPOLICYCD',
+                                        'title' => 'CBPolicyD',
                                         'description' =>
                                             'Atur kebijakan pengiriman dan penerimaan email secara fleksibel dengan dukungan CBPolicyD berbasis web.',
                                     ],
