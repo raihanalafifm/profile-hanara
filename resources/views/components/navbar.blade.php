@@ -32,7 +32,7 @@
                         <li><a class="dropdown-item {{ request()->routeIs('career') ? 'active' : '' }}"
                                 href="{{ route('career') }}">Career</a></li>
                         <li><a class="dropdown-item ? 'active' : ''" target="_blank" rel="noopener noreferrer"
-                                href="{{ url('https://hanara.id/About.pdf ') }}">Company
+                                href="{{ url('https://hanara.id/about.pdf') }}">Company
                                 Profile</a></li>
                     </ul>
                 </li>
