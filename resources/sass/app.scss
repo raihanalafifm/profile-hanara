@@ -1044,7 +1044,7 @@ address {
     text-align: center;
 
     @media (min-width: 768px) {
-        text-align: left;
+        text-align: center;
     }
 
     p {
@@ -2337,7 +2337,8 @@ h2.company-name {
     line-height: 1.8;
     color: #444;
     margin-bottom: 20px;
-    margin-right: 90px;
+    margin-right: 50px;
+    max-width: 100%;
 }
 
 /* Mission Cards */
@@ -2422,6 +2423,7 @@ h2.company-name {
         font-size: 22px;
         text-align: center;
         margin-bottom: 15px;
+        margin-left: auto;
     }
 
     .mission-card {
@@ -11264,6 +11266,7 @@ section {
         line-height: 1.4 !important;
         text-align: justify !important;
         margin-bottom: 10px !important;
+        margin-left: 50px !important;
     }
 }
 
@@ -11275,5 +11278,6 @@ section {
 
     .about-description p {
         font-size: 11px !important;
+        text-align: justify !important;
     }
 }
