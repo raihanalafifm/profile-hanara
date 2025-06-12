@@ -10,6 +10,81 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px; // Base font size untuk rem calculations
+}
+
+body {
+    overflow-x: hidden; // Prevent horizontal scroll
+    width: 100%;
+}
+
+// Container max-width untuk konsistensi
+.container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}
+
+// Responsive Typography
+h1,
+.h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    @media (min-width: 1200px) {
+        font-size: 2.5rem;
+    }
+}
+
+h2,
+.h2 {
+    font-size: calc(1.325rem + 0.9vw);
+    @media (min-width: 1200px) {
+        font-size: 2rem;
+    }
+}
+
+h3,
+.h3 {
+    font-size: calc(1.3rem + 0.6vw);
+    @media (min-width: 1200px) {
+        font-size: 1.75rem;
+    }
+}
+
+h4,
+.h4 {
+    font-size: calc(1.275rem + 0.3vw);
+    @media (min-width: 1200px) {
+        font-size: 1.5rem;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+}
+h6,
+.h6 {
+    font-size: 1rem;
 }
 
 .contact-icon {
@@ -18,7 +93,7 @@ html {
     margin-right: 12px;
     margin-top: 2px;
     flex-shrink: 0;
-    fill: #ffffff; /* Putih biar kontras */
+    fill: #ffffff;
     color: #ffffff;
     transition: color 0.3s ease;
 }
@@ -33,12 +108,14 @@ html {
     align-items: flex-start;
     margin-bottom: 12px;
     line-height: 1.5;
+    flex-wrap: wrap; // TAMBAHAN untuk mobile
 }
 
 .contact-info a {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
+    word-break: break-word; // TAMBAHAN - Prevent long emails breaking layout
 }
 
 .contact-info a:hover {
@@ -58,12 +135,17 @@ address {
 /* Scroll Down Animation CSS */
 .scroll-down-container {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 20px; // GANTI dari 40px
+    right: 20px; // GANTI dari 40px
     z-index: 999;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
+
+    @media (min-width: 768px) {
+        bottom: 40px;
+        right: 40px;
+    }
 }
 
 .scroll-down-container.visible {
@@ -72,8 +154,8 @@ address {
 }
 
 .scroll-down-button {
-    width: 50px;
-    height: 50px;
+    width: 40px; // GANTI dari 50px
+    height: 40px; // GANTI dari 50px
     background-color: #ff6700;
     border-radius: 50%;
     display: flex;
@@ -82,6 +164,11 @@ address {
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+
+    @media (min-width: 768px) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .scroll-down-button:hover {
@@ -100,27 +187,15 @@ address {
 }
 
 .scroll-arrow {
-    width: 12px;
-    height: 12px;
+    width: 10px; // GANTI dari 12px
+    height: 10px; // GANTI dari 12px
     border-right: 3px solid #fff;
     border-bottom: 3px solid #fff;
     transition: all 0.3s ease;
-}
 
-@media (max-width: 767px) {
-    .scroll-down-container {
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .scroll-down-button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .scroll-arrow {
-        width: 10px;
-        height: 10px;
+    @media (min-width: 768px) {
+        width: 12px;
+        height: 12px;
     }
 }
 
@@ -131,6 +206,7 @@ address {
     position: relative;
     z-index: 1030;
     transition: all 0.3s ease;
+    width: 100%; // TAMBAHAN
 }
 
 /* Navbar sebelum scroll */
@@ -147,28 +223,50 @@ address {
 }
 
 .navbar-brand img {
-    height: 40px;
+    height: 35px; // GANTI dari 40px
+    max-width: 150px; // TAMBAHAN
     transition: all 0.3s ease;
+
+    @media (min-width: 768px) {
+        height: 40px;
+    }
 }
 
 .navbar-scrolled .navbar-brand img {
-    height: 35px; /* Logo mengecil saat scroll */
+    height: 30px; // GANTI dari 35px
+
+    @media (min-width: 768px) {
+        height: 35px;
+    }
 }
 
 .logo {
-    height: 35px;
+    height: 30px; // GANTI dari 35px
     width: auto;
+
+    @media (min-width: 768px) {
+        height: 35px;
+    }
 }
 
 .navbar-nav {
-    gap: 12px;
+    gap: 8px; // GANTI dari 12px
+
+    @media (min-width: 992px) {
+        gap: 12px;
+    }
 }
 
 .nav-link {
     color: #333 !important;
     font-weight: 500;
-    font-size: 15px;
-    padding: 8px 12px !important;
+    font-size: 14px; // GANTI dari 15px
+    padding: 8px 10px !important; // GANTI dari 8px 12px
+
+    @media (min-width: 768px) {
+        font-size: 15px;
+        padding: 8px 12px !important;
+    }
 }
 
 /* Navbar Active Link Styles */
@@ -250,8 +348,9 @@ address {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         max-height: calc(100vh - 60px);
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        -webkit-overflow-scrolling: touch;
         padding: 0;
+        width: 100%; // TAMBAHAN
     }
 
     .navbar-collapse.show {
@@ -272,10 +371,12 @@ address {
     .navbar-nav {
         padding: 15px 0;
         gap: 0;
+        width: 100%; // TAMBAHAN
     }
 
     .nav-item {
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        width: 100%; // TAMBAHAN
     }
 
     .nav-item:last-child {
@@ -590,32 +691,53 @@ address {
 
 /* Hero Section CSS */
 .hero-section {
-    padding: 80px 0;
+    padding: 60px 0; // GANTI dari 80px
     background: linear-gradient(135deg, #ffcbb6 0%, #ffa35f 100%);
-    min-height: 600px;
+    min-height: 500px; // GANTI dari 600px
     position: relative;
     overflow: hidden;
+
+    @media (min-width: 768px) {
+        padding: 80px 0;
+        min-height: 600px;
+    }
 }
 
 .hero-content {
-    padding-right: 30px;
+    padding-right: 15px; // GANTI dari 30px
+
+    @media (min-width: 992px) {
+        padding-right: 30px;
+    }
 }
 
 .company-name-hero {
-    font-size: 20px;
+    font-size: 18px; // GANTI dari 20px
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 1px;
     margin-bottom: 2px;
     color: #333;
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 .hero-title {
-    font-size: 60px;
+    font-size: calc(2rem + 1.5vw); // GANTI dari 60px
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
     color: #000;
+
+    @media (min-width: 768px) {
+        font-size: calc(2.5rem + 1vw);
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 60px;
+    }
 }
 
 .hero-title .text-primary {
@@ -623,27 +745,42 @@ address {
 }
 
 .hero-description {
-    font-size: 16px;
+    font-size: 14px; // GANTI dari 16px
     color: #ffffff;
-    margin-bottom: 30px;
-    max-width: 500px;
+    margin-bottom: 25px; // GANTI dari 30px
+    max-width: 100%; // GANTI dari 500px
     line-height: 1.6;
     mix-blend-mode: lighten;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        margin-bottom: 30px;
+        max-width: 500px;
+    }
 }
 
 /* Service Cards */
 .service-cards {
     display: flex;
-    gap: 12px;
-    margin-top: 25px;
+    gap: 10px; // GANTI dari 12px
+    margin-top: 20px; // GANTI dari 25px
     justify-content: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; // GANTI dari nowrap
+
+    @media (min-width: 576px) {
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 25px;
+    }
 }
 
 .service-card {
     background-color: #fff;
     border-radius: 12px;
-    padding: 12px 15px;
+    padding: 10px 12px; // GANTI dari 12px 15px
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -651,8 +788,19 @@ address {
     transition: all 0.3s ease;
     width: auto;
     flex: 1;
-    max-width: 180px; /* Ukuran yang lebih kecil */
+    min-width: 140px; // TAMBAHAN
+    max-width: 180px;
     border: 1px solid #f2f2f2;
+
+    @media (min-width: 480px) {
+        padding: 12px 15px;
+    }
+
+    @media (max-width: 575px) {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
 }
 
 .service-card:hover {
@@ -768,9 +916,28 @@ address {
 
 /* About Section Styles */
 .about-section {
-    padding: 80px 0;
+    padding: 40px 0;
     background-color: #fff;
     position: relative;
+    overflow: hidden; // Prevent overflow
+
+    @media (min-width: 768px) {
+        padding: 60px 0;
+    }
+
+    @media (min-width: 992px) {
+        padding: 80px 0;
+    }
+}
+.about-section .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+
+    @media (max-width: 359px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 /* Image Area Styling */
@@ -809,42 +976,157 @@ address {
 
 /* Content Area Styling */
 .about-content {
-    padding-left: 40px;
+    padding: 0 15px;
+    width: 100%;
+
+    @media (max-width: 575px) {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    @media (min-width: 992px) {
+        padding-left: 40px;
+        padding-right: 15px;
+    }
 }
 
 .section-heading {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .section-tag {
     display: block;
-    color: #ff6700; /* Oranye yang lebih terang */
-    font-size: 14px;
+    color: #ff6700;
+    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 15px;
-    text-align: left;
+    margin-bottom: 10px;
+    text-align: center;
+
+    @media (min-width: 576px) {
+        font-size: 13px;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
 }
 
 .company-name {
-    font-size: 30px;
-    font-weight: 800; /* Extra bold */
+    font-size: 24px;
+    font-weight: 800;
     color: #000;
     line-height: 1.2;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+
+    @media (min-width: 576px) {
+        font-size: 26px;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    br {
+        display: none; // Hide line break on mobile
+
+        @media (min-width: 576px) {
+            display: inline; // Show line break on larger screens
+        }
+    }
 }
+
+.company-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    line-height: 1.3;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+
+    @media (min-width: 360px) {
+        font-size: 22px;
+    }
+
+    @media (min-width: 480px) {
+        font-size: 24px;
+    }
+
+    @media (min-width: 576px) {
+        font-size: 26px;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 28px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 992px) {
+        font-size: 30px;
+    }
+
+    // Handle line breaks properly
+    br {
+        display: none;
+
+        @media (min-width: 576px) {
+            display: inline;
+        }
+    }
+}
+
 .company-name .text-primary {
     color: #ff8100 !important;
+    display: inline-block;
 }
 
-.about-description p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 0;
-    text-align: justify;
-}
+/* About Description - Mobile Optimized */
+.about-description {
+    width: 100%;
+    max-width: 100%;
 
+    p {
+        color: #666;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        text-align: justify;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+
+        @media (min-width: 360px) {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 480px) {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
 /* Responsive Styles */
 @media (max-width: 991px) {
     .about-content {
@@ -860,24 +1142,25 @@ address {
 
 @media (max-width: 767px) {
     .about-section {
-        padding: 60px 0;
+        .container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 
-    .about-image-wrapper {
-        margin-bottom: 30px;
+    .about-content {
+        margin-top: 30px;
     }
 
-    .company-name {
-        font-size: 26px;
-    }
+    // Ensure proper spacing on very small screens
+    @media (max-width: 375px) {
+        .company-name {
+            font-size: 22px;
+        }
 
-    .section-tag {
-        text-align: center;
-    }
-
-    .company-name,
-    .about-description p {
-        text-align: center;
+        .about-description p {
+            font-size: 13px;
+        }
     }
 }
 /* Awesome Services Section Styles */
@@ -1633,8 +1916,12 @@ h2.company-name {
 /* Latest Blog Section Styles - PERBAIKAN UNTUK TINGGI CARD SAMA */
 .latest-blog-section {
     background-color: #f8f9fb;
-    padding: 80px 0;
+    padding: 60px 0; // GANTI dari 80px
     overflow: hidden;
+
+    @media (min-width: 768px) {
+        padding: 80px 0;
+    }
 }
 
 /* Blog Tags and Titles */
@@ -1690,7 +1977,7 @@ h2.company-name {
     -webkit-tap-highlight-color: transparent;
     transform: translateZ(0);
     backface-visibility: hidden;
-    min-height: 450px; /* Tinggi minimum untuk container */
+    min-height: 450px;
 }
 
 .blog-slider-container:active {
@@ -1700,7 +1987,7 @@ h2.company-name {
 /* PERBAIKAN UTAMA: Blog Card dengan Tinggi Sama */
 .blog-card {
     flex: 0 0 auto;
-    width: 350px; /* Lebar tetap untuk konsistensi */
+    width: 260px; // GANTI dari 350px
     background-color: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -1709,9 +1996,29 @@ h2.company-name {
     user-select: none;
     -webkit-user-select: none;
     position: relative;
-    height: 420px; /* TINGGI TETAP UNTUK SEMUA CARD */
+    height: 340px; // GANTI dari 420px
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 576px) {
+        width: 280px;
+        height: 360px;
+    }
+
+    @media (min-width: 768px) {
+        width: 300px;
+        height: 380px;
+    }
+
+    @media (min-width: 992px) {
+        width: 320px;
+        height: 400px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 350px;
+        height: 420px;
+    }
 }
 
 .blog-card:hover {
@@ -1722,9 +2029,25 @@ h2.company-name {
 /* Blog Card Image - Tinggi Tetap */
 .blog-card-img {
     position: relative;
-    height: 180px; /* Tinggi tetap untuk gambar */
+    height: 130px; // GANTI dari 180px
     overflow: hidden;
-    flex-shrink: 0; /* Tidak mengecil */
+    flex-shrink: 0;
+
+    @media (min-width: 576px) {
+        height: 140px;
+    }
+
+    @media (min-width: 768px) {
+        height: 150px;
+    }
+
+    @media (min-width: 992px) {
+        height: 160px;
+    }
+
+    @media (min-width: 1200px) {
+        height: 180px;
+    }
 }
 
 .blog-card-img img {
@@ -10782,5 +11105,233 @@ h2.company-name {
     .cloud-banner-content {
         width: 95%;
         padding: 20px 10px;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Prevent horizontal scroll
+section {
+    overflow: hidden;
+    position: relative;
+}
+
+// Responsive spacing utilities
+.section-padding {
+    padding: 60px 0;
+
+    @media (min-width: 768px) {
+        padding: 80px 0;
+    }
+
+    @media (min-width: 992px) {
+        padding: 100px 0;
+    }
+}
+
+// Form elements responsive
+.form-control {
+    font-size: 14px;
+    padding: 10px 12px;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+}
+
+.btn {
+    font-size: 14px;
+    padding: 10px 20px;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+// Table responsive
+.table-responsive {
+    -webkit-overflow-scrolling: touch;
+
+    .table {
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+            font-size: 16px;
+        }
+    }
+}
+
+// Text truncation utilities
+.text-truncate-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.text-truncate-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+// Performance - Disable animations on mobile
+@media (max-width: 767px) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .scroll-down-container,
+    .blog-card,
+    .product-item-card {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+// Accessibility - Reduced motion
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// Landscape mobile fixes
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 400px;
+        padding: 40px 0;
+    }
+
+    .navbar-collapse {
+        max-height: calc(100vh - 50px);
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+}
+
+// Z-index management
+.z-0 {
+    z-index: 0;
+}
+.z-10 {
+    z-index: 10;
+}
+.z-20 {
+    z-index: 20;
+}
+.z-30 {
+    z-index: 30;
+}
+.z-40 {
+    z-index: 40;
+}
+.z-50 {
+    z-index: 50;
+}
+
+// Ensure full width sections don't break container
+.full-width-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow-x: hidden;
+}
+
+// Print styles
+@media print {
+    .navbar,
+    .footer,
+    .scroll-down-container,
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+}
+@media (max-width: 480px) {
+    .about-section {
+        padding: 30px 0 !important;
+        overflow: hidden !important;
+    }
+
+    .about-section .container {
+        padding: 0 10px !important;
+    }
+
+    .about-content {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .section-tag {
+        font-size: 11px !important;
+    }
+
+    .company-name {
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+        word-break: break-word !important;
+        text-align: center !important;
+    }
+
+    .company-name br {
+        display: none !important;
+    }
+
+    .about-description p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        text-align: justify !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* 320px devices */
+@media (max-width: 359px) {
+    .company-name {
+        font-size: 16px !important;
+    }
+
+    .about-description p {
+        font-size: 11px !important;
     }
 }
