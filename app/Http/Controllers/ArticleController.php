@@ -19,7 +19,7 @@ class ArticleController extends Controller
     {
         // Jika request dari backend
         if ($request->is('backend/*')) {
-            $articles = Article::ordered()->paginate(10);
+            $articles = Article::with('user')->ordered()->paginate(10);
             return view('backend.base.article', compact('articles'));
         }
 
@@ -62,7 +62,8 @@ class ArticleController extends Controller
         $parts = explode('-', $slug);
         $id = end($parts);
 
-        $article = Article::where('id', $id)
+        $article = Article::with('user')
+            ->where('id', $id)
             ->where('is_active', true)
             ->whereNotNull('published_at')
             ->where('published_at', '<=', now())
@@ -96,7 +97,7 @@ class ArticleController extends Controller
     // Menampilkan halaman manajemen artikel (Backend)
     public function adminIndex()
     {
-        $articles = Article::select('*')->latest()->paginate(10);
+        $articles = Article::with('user')->latest()->paginate(10);
         return view('backend.base.article', compact('articles'));
     }
 
@@ -127,6 +128,9 @@ class ArticleController extends Controller
 
         // Set is_active to true by default for new articles
         $validated['is_active'] = true;
+
+        // Tambahkan user_id dari user yang sedang login
+        $validated['user_id'] = auth()->id();
 
         Article::create($validated);
 
@@ -196,8 +200,6 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::findOrFail($id);
-
-
 
         // Return all article data as JSON
         return response()->json([

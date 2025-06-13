@@ -11,6 +11,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <!-- Back Button -->
+                    <div class="mb-4">
+                        <a href="{{ route('articles.index') }}" class="hnr-back-button">
+                            <i class="bi bi-arrow-left"></i> Kembali ke Artikel
+                        </a>
+                    </div>
+
                     <!-- Article Header -->
                     <div class="hnr-article-header">
                         <span class="hnr-article-category-badge">
@@ -62,6 +69,40 @@
                             <p>{{ $article->description }}</p>
                         @endif
                     </div>
+
+                    <!-- Author Profile -->
+                    @if ($article->user)
+                        <div style="border-top: 1px solid #e5e5e5; padding-top: 2rem; margin-top: 3rem;">
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="margin-right: 1rem;">
+                                    @if ($article->user->avatar)
+                                        <img src="{{ asset('storage/' . $article->user->avatar) }}"
+                                            alt="{{ $article->user->name }}"
+                                            style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #f0f0f0;">
+                                    @else
+                                        <img src="https://ui-avatars.com/api/?name={{ urlencode($article->user->name) }}&background=FF6B00&color=fff"
+                                            alt="{{ $article->user->name }}"
+                                            style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #f0f0f0;">
+                                    @endif
+                                </div>
+                                <div style="flex: 1;">
+                                    <h5 style="font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.25rem 0;">
+                                        {{ $article->user->name }}</h5>
+                                    <p style="font-size: 0.95rem; color: #666; margin: 0 0 0.5rem 0;">
+                                        {{ $article->user->position ?: 'Penulis' }}</p>
+                                    @if ($article->user->bio)
+                                        <p style="font-size: 0.9rem; color: #555; line-height: 1.6; margin: 0;">
+                                            {{ $article->user->bio }}</p>
+                                    @else
+                                        <p style="font-size: 0.9rem; color: #555; line-height: 1.6; margin: 0;">
+                                            Penulis artikel di PT Hanara Prima Solusindo. Memiliki ketertarikan dalam
+                                            teknologi informasi dan solusi digital untuk bisnis.
+                                        </p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    @endif
 
                     {{-- <!-- Share Buttons -->
                 <div class="hnr-article-share">
@@ -140,4 +181,65 @@
             </div>
         </section>
     @endif
+
+
+
+    <style>
+        /* Back Button Style */
+        .hnr-back-button {
+            display: inline-block;
+            padding: 2px 10px;
+            background-color: #FF6B00;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #FF6B00;
+        }
+
+        .hnr-back-button:hover {
+            background-color: #fd7e2a;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+            color: white !important;
+        }
+
+        .hnr-back-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(255, 107, 0, 0.3);
+        }
+
+        .hnr-back-button i {
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .hnr-back-button:hover i {
+            transform: translateX(-3px);
+        }
+
+        /* Alternative: Outline Style */
+        .hnr-back-button-outline {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: transparent;
+            color: #FF6B00 !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid #FF6B00;
+        }
+
+        .hnr-back-button-outline:hover {
+            background-color: #FF6B00;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+        }
+    </style>
 @endsection

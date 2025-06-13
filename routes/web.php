@@ -44,6 +44,7 @@ Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function
 
     // Users Management
     Route::resource('users', UserController::class);
+    Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::patch('users/{user}/toggle-status', [UserController::class, 'toggleStatus'])
         ->name('users.toggle-status');
 

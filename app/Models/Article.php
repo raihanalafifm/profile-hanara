@@ -10,6 +10,7 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'slug',
         'description',
@@ -25,6 +26,12 @@ class Article extends Model
         'published_at' => 'datetime',
         'is_active' => 'boolean',
     ];
+
+    // Relasi dengan User
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     // Scope untuk artikel yang sudah dipublish
     public function scopePublished($query)

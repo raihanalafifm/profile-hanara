@@ -62,7 +62,7 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="javascript:void(0);"
-                                            onclick="editUser({{ $user->toJson() }})">
+                                            onclick="editUser({{ $user->id }})">
                                             <i class="bx bx-edit-alt me-1"></i> Edit
                                         </a>
                                         @if ($user->id !== auth()->id())
@@ -98,7 +98,7 @@
     <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="{{ route('backend.users.store') }}" method="POST">
+                <form action="{{ route('backend.users.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title">Tambah User</h5>
@@ -126,10 +126,29 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="position" class="form-label">Position/Jabatan</label>
+                            <input type="text" id="position" name="position" class="form-control"
+                                placeholder="Contoh: Content Writer & Digital Marketing Team"
+                                value="{{ old('position') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bio" class="form-label">Bio/Deskripsi Singkat</label>
+                            <textarea id="bio" name="bio" class="form-control" rows="3"
+                                placeholder="Deskripsi singkat tentang user">{{ old('bio') }}</textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="avatar" class="form-label">Avatar/Foto Profil</label>
+                            <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*">
+                            <small class="text-muted">Format: JPG, PNG. Max: 2MB</small>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                             <input type="password" id="password" name="password"
-                                class="form-control @error('password') is-invalid @enderror" placeholder="Min. 8 characters"
-                                required>
+                                class="form-control @error('password') is-invalid @enderror"
+                                placeholder="Min. 8 characters" required>
                             @error('password')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -155,7 +174,7 @@
     <div class="modal fade" id="editUserModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="editUserForm" method="POST">
+                <form id="editUserForm" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="modal-header">
@@ -171,6 +190,27 @@
                         <div class="mb-3">
                             <label for="edit_email" class="form-label">Email <span class="text-danger">*</span></label>
                             <input type="email" id="edit_email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edit_position" class="form-label">Position/Jabatan</label>
+                            <input type="text" id="edit_position" name="position" class="form-control"
+                                placeholder="Contoh: Content Writer & Digital Marketing Team">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edit_bio" class="form-label">Bio/Deskripsi Singkat</label>
+                            <textarea id="edit_bio" name="bio" class="form-control" rows="3"
+                                placeholder="Deskripsi singkat tentang Anda"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edit_avatar" class="form-label">Avatar/Foto Profil</label>
+                            <input type="file" id="edit_avatar" name="avatar" class="form-control"
+                                accept="image/*">
+                            <small class="text-muted">Format: JPG, PNG. Max: 2MB. Kosongkan jika tidak ingin
+                                mengubah</small>
+                            <div id="current-avatar" class="mt-2"></div>
                         </div>
 
                         <hr>

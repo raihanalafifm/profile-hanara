@@ -165,17 +165,39 @@
             editModal.show();
         }
 
-        function editUser(user) {
-            const form = document.getElementById('editUserForm');
-            form.action = `/backend/users/${user.id}`;
+        function editUser(userId) {
+            // Fetch user data via AJAX
+            $.ajax({
+                url: `/backend/users/${userId}/edit`,
+                method: 'GET',
+                success: function(user) {
+                    const form = document.getElementById('editUserForm');
+                    form.action = `/backend/users/${user.id}`;
 
-            document.getElementById('edit_name').value = user.name;
-            document.getElementById('edit_email').value = user.email;
-            document.getElementById('edit_password').value = '';
-            document.getElementById('edit_password_confirmation').value = '';
+                    document.getElementById('edit_name').value = user.name;
+                    document.getElementById('edit_email').value = user.email;
+                    document.getElementById('edit_position').value = user.position || '';
+                    document.getElementById('edit_bio').value = user.bio || '';
+                    document.getElementById('edit_password').value = '';
+                    document.getElementById('edit_password_confirmation').value = '';
 
-            const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
-            editModal.show();
+                    // Show current avatar
+                    if (user.avatar) {
+                        document.getElementById('current-avatar').innerHTML = `
+                    <p class="mb-1">Avatar saat ini:</p>
+                    <img src="${user.avatar_url}" class="img-thumbnail" style="max-height: 100px;">
+                `;
+                    } else {
+                        document.getElementById('current-avatar').innerHTML = '';
+                    }
+
+                    const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+                    editModal.show();
+                },
+                error: function() {
+                    alert('Error loading user data');
+                }
+            });
         }
 
         // Handle error validation saat page load untuk modal Career
