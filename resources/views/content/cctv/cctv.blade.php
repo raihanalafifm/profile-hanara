@@ -182,7 +182,7 @@
                             Hanara melayani jasa pemasangan CCTV untuk rumah, kantor, sekolah, fasilitas industri, hingga
                             area publik. <br> Kami menawarkan instalasi sistem CCTV lengkap dengan konfigurasi online,
                             pemantauan
-                            jarak jauh, serta pelatihan penggunaan bagi pengguna. <br>Anda tidak perlu repot—semua
+                            jarak jauh, serta pelatihan penggunaan bagi pengguna. Anda tidak perlu repot—semua
                             dikerjakan
                             oleh tim profesional kami.
 
