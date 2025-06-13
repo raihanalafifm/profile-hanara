@@ -146,7 +146,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
                         <div class="solution-icon blue-icon">
-                            <img src="{{ asset('assets/images/icon/nextcloud.png') }}" alt="Nextcloud">
+                            <img src="{{ asset('assets/images/svg/ncc.svg') }}" alt="Nextcloud">
                         </div>
                         <h3 class="solution-title">Nextcloud</h3>
                         <p class="solution-description">
@@ -163,7 +163,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
                         <div class="solution-icon orange-icon">
-                            <img src="{{ asset('assets/images/icon/zimbra.png') }}" alt="Zimbra Mail Server">
+                            <img src="{{ asset('assets/images/svg/zimbra.svg') }}" alt="Zimbra Mail Server">
                         </div>
                         <h3 class="solution-title">Zimbra Mail Server</h3>
                         <p class="solution-description">
@@ -180,7 +180,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
                         <div class="solution-icon dark-icon">
-                            <img src="{{ asset('assets/images/icon/itsupport.png') }}" alt="IT Support">
+                            <img src="{{ asset('assets/images/svg/itsupport.svg') }}" alt="IT Support">
                         </div>
                         <h3 class="solution-title">IT Support</h3>
                         <p class="solution-description">
@@ -197,7 +197,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
                         <div class="solution-icon purple-icon">
-                            <img src="{{ asset('assets/images/icon/sosmed.png') }}" alt="Social Media Management">
+                            <img src="{{ asset('assets/images/svg/sosmed.svg') }}" alt="Social Media Management">
                         </div>
                         <h3 class="solution-title">Social Media Management</h3>
                         <p class="solution-description">
@@ -214,7 +214,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
                         <div class="solution-icon blue-dark-icon">
-                            <img src="{{ asset('assets/images/icon/motorola.png') }}" alt="Motorola">
+                            <img src="{{ asset('assets/images/svg/motorola.svg') }}" alt="Motorola">
                         </div>
                         <h3 class="solution-title">Motorola</h3>
                         <p class="solution-description">
@@ -231,7 +231,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
                         <div class="solution-icon pink-icon">
-                            <img src="{{ asset('assets/images/icon/web.png') }}" alt="Web Developer">
+                            <img src="{{ asset('assets/images/svg/web.svg') }}" alt="Web Developer">
                         </div>
                         <h3 class="solution-title">Web Developer</h3>
                         <p class="solution-description">
