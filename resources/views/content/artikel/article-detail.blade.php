@@ -49,7 +49,7 @@
                                 {{ $article->published_at ? $article->published_at->translatedFormat('l, d F Y') : $article->created_at->translatedFormat('l, d F Y') }}
                             </span>
                             <span class="hnr-article-author">
-                                <i class="bi bi-person"></i> Admin
+                                <i class="bi bi-person"></i> {{ $article->user->name ?? 'admin' }}
                             </span>
                         </div>
                     </div>
