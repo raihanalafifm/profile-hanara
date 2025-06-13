@@ -181,5 +181,196 @@
             </div>
         </section>
     @endif
+    <style>
+        /* Related Articles Section - Updated for Better Proportions */
+        .hnr-related-articles {
+            background-color: #f9f9fb;
+            padding: 40px 0;
+            /* Reduced from 60px */
+        }
 
+        .hnr-related-title {
+            font-size: 24px;
+            /* Reduced from 28px */
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 25px;
+            /* Reduced from 30px */
+            text-align: center;
+        }
+
+        /* Article Card - More Compact Design */
+        .hnr-related-articles .hnr-article-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hnr-related-articles .hnr-article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Article Image - Smaller Height */
+        .hnr-related-articles .hnr-article-image {
+            position: relative;
+            height: 180px;
+            /* Reduced from 250px */
+            overflow: hidden;
+        }
+
+        .hnr-related-articles .hnr-article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .hnr-related-articles .hnr-article-card:hover .hnr-article-image img {
+            transform: scale(1.1);
+        }
+
+        /* Article Content - More Compact */
+        .hnr-related-articles .hnr-article-content {
+            padding: 20px;
+            /* Reduced from 25px */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hnr-related-articles .hnr-article-date {
+            color: #ff6700;
+            font-size: 12px;
+            /* Reduced from 14px */
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .hnr-related-articles .hnr-article-title {
+            font-size: 16px;
+            /* Reduced from 20px */
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            min-height: 42px;
+            /* Reduced from 56px */
+        }
+
+        .hnr-related-articles .hnr-article-excerpt {
+            color: #666;
+            font-size: 14px;
+            /* Reduced from 15px */
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .hnr-related-articles .hnr-article-link {
+            display: inline-flex;
+            align-items: center;
+            color: #ff6700;
+            font-size: 13px;
+            /* Reduced from 14px */
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .hnr-related-articles .hnr-article-link:hover {
+            color: #ff4500;
+        }
+
+        .hnr-related-articles .hnr-article-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .hnr-related-articles .hnr-article-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .hnr-related-articles {
+                padding: 35px 0;
+            }
+
+            .hnr-related-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .hnr-related-articles .hnr-article-image {
+                height: 160px;
+            }
+
+            .hnr-related-articles .hnr-article-title {
+                font-size: 15px;
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hnr-related-articles {
+                padding: 30px 0;
+            }
+
+            .hnr-related-title {
+                font-size: 20px;
+            }
+
+            .hnr-related-articles .hnr-article-image {
+                height: 150px;
+            }
+
+            .hnr-related-articles .hnr-article-content {
+                padding: 15px;
+            }
+
+            .hnr-related-articles .hnr-article-title {
+                font-size: 14px;
+            }
+
+            .hnr-related-articles .hnr-article-excerpt {
+                font-size: 13px;
+            }
+        }
+
+        /* Dark Mode Support for Related Articles */
+        @media (prefers-color-scheme: dark) {
+            .hnr-related-articles {
+                background-color: #1a1a1a;
+            }
+
+            .hnr-related-title {
+                color: #e0e0e0;
+            }
+
+            .hnr-related-articles .hnr-article-card {
+                background-color: #232323;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .hnr-related-articles .hnr-article-card:hover {
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .hnr-related-articles .hnr-article-title {
+                color: #e0e0e0;
+            }
+
+            .hnr-related-articles .hnr-article-excerpt {
+                color: #b0b0b0;
+            }
+        }
+    </style>
 @endsection
