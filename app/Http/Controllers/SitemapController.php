@@ -24,107 +24,107 @@ class SitemapController extends Controller
         // Static pages
         $urls = [
             [
-                'loc' => route('home'),
+                'loc' => 'https://hanara.id',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'daily',
                 'priority' => '1.0'
             ],
             [
-                'loc' => route('about-us'),
+                'loc' => 'https://hanara.id/about-us',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('contact-us'),
+                'loc' => 'https://hanara.id/contact-us',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('career'),
+                'loc' => 'https://hanara.id/career',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'weekly',
                 'priority' => '0.7'
             ],
             [
-                'loc' => route('articles.index'),
+                'loc' => 'https://hanara.id/articles',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'daily',
                 'priority' => '0.9'
             ],
             // Zimbra Pages
             [
-                'loc' => route('instalasi-zimbra'),
+                'loc' => 'https://hanara.id/zimbra/instalasi',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('maintenance-zimbra'),
+                'loc' => 'https://hanara.id/zimbra/maintenance',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('troubleshooting-zimbra'),
+                'loc' => 'https://hanara.id/zimbra/troubleshooting',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('cloud-zimbra'),
+                'loc' => 'https://hanara.id/zimbra/cloud',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('server-zimbra'),
+                'loc' => 'https://hanara.id/zimbra/server',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             // Software House Pages
             [
-                'loc' => route('develop-web'),
+                'loc' => 'https://hanara.id/software-house/website-development',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('web-application'),
+                'loc' => 'https://hanara.id/software-house/web-application',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('maintenance-web'),
+                'loc' => 'https://hanara.id/software-house/maintenance',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             // Hardware Pages
             [
-                'loc' => route('cctv'),
+                'loc' => 'https://hanara.id/hardware/cctv',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('motorola'),
+                'loc' => 'https://hanara.id/hardware/motorola',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'weekly',
                 'priority' => '0.8'
             ],
             // Business Solution Pages
             [
-                'loc' => route('nextcloud'),
+                'loc' => 'https://hanara.id/business-solution/nextcloud',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
             ],
             [
-                'loc' => route('hcis'),
+                'loc' => 'https://hanara.id/business-solution/hcm-hris',
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'monthly',
                 'priority' => '0.8'
@@ -134,17 +134,24 @@ class SitemapController extends Controller
         // Add dynamic articles
         foreach ($articles as $article) {
             $urls[] = [
-                'loc' => route('articles.show', Str::slug($article->title) . '-' . $article->id),
+                'loc' => 'https://hanara.id/articles/' . Str::slug($article->title) . '-' . $article->id,
                 'lastmod' => $article->updated_at->toAtomString(),
                 'changefreq' => 'weekly',
-                'priority' => '0.7'
+                'priority' => '0.7',
+                'images' => $article->image ? [
+                    [
+                        'loc' => 'https://hanara.id/storage/' . $article->image,
+                        'title' => $article->title,
+                        'caption' => $article->description
+                    ]
+                ] : []
             ];
         }
 
         // Add careers
         foreach ($careers as $career) {
             $urls[] = [
-                'loc' => route('career.detail', $career->slug),
+                'loc' => 'https://hanara.id/career/' . $career->slug,
                 'lastmod' => $career->updated_at->toAtomString(),
                 'changefreq' => 'weekly',
                 'priority' => '0.6'
@@ -154,15 +161,47 @@ class SitemapController extends Controller
         // Add Motorola products
         foreach ($products as $product) {
             $urls[] = [
-                'loc' => route('motorola.detail', $product->slug),
+                'loc' => 'https://hanara.id/hardware/motorola/' . $product->slug,
                 'lastmod' => $product->updated_at->toAtomString(),
                 'changefreq' => 'monthly',
-                'priority' => '0.6'
+                'priority' => '0.6',
+                'images' => $product->image ? [
+                    [
+                        'loc' => 'https://hanara.id/storage/' . $product->image,
+                        'title' => $product->name,
+                        'caption' => $product->description
+                    ]
+                ] : []
             ];
         }
 
         return response()->view('sitemap.index', compact('urls'))
             ->header('Content-Type', 'text/xml');
+    }
+
+    /**
+     * Generate robots.txt
+     */
+    public function robots()
+    {
+        $content = "User-agent: *\n";
+        $content .= "Allow: /\n";
+        $content .= "Disallow: /backend/\n";
+        $content .= "Disallow: /admin/\n";
+        $content .= "Disallow: /login\n";
+        $content .= "Disallow: /register\n";
+        $content .= "Disallow: /password\n";
+        $content .= "Disallow: /api/\n";
+        $content .= "Disallow: /storage/\n";
+        $content .= "Disallow: /*.pdf$\n";
+        $content .= "\n";
+        $content .= "Sitemap: https://hanara.id/sitemap.xml\n";
+        $content .= "\n";
+        $content .= "# Crawl-delay for responsible crawling\n";
+        $content .= "Crawl-delay: 1\n";
+
+        return response($content, 200)
+            ->header('Content-Type', 'text/plain');
     }
 
     /**
@@ -175,37 +214,41 @@ class SitemapController extends Controller
             'description' => 'Peta situs lengkap PT Hanara Prima Solusindo. Temukan semua halaman layanan kami: Zimbra, Web Development, CCTV, dan solusi IT lainnya.',
             'keywords' => 'sitemap, peta situs, hanara, navigasi website',
             'robots' => 'index, follow',
-            'canonical' => route('sitemap.html')
+            'canonical' => 'https://hanara.id/sitemap',
+            'ogTitle' => 'Sitemap - Navigasi Lengkap Hanara',
+            'ogDescription' => 'Temukan semua layanan IT kami dalam satu halaman. Navigasi mudah untuk solusi IT bisnis Anda.',
+            'ogUrl' => 'https://hanara.id/sitemap',
+            'ogType' => 'website'
         ];
 
         // Group pages by category
         $pages = [
             'Halaman Utama' => [
-                ['title' => 'Beranda', 'url' => route('home')],
-                ['title' => 'Tentang Kami', 'url' => route('about-us')],
-                ['title' => 'Hubungi Kami', 'url' => route('contact-us')],
-                ['title' => 'Karir', 'url' => route('career')],
-                ['title' => 'Artikel', 'url' => route('articles.index')],
+                ['title' => 'Beranda', 'url' => 'https://hanara.id'],
+                ['title' => 'Tentang Kami', 'url' => 'https://hanara.id/about-us'],
+                ['title' => 'Hubungi Kami', 'url' => 'https://hanara.id/contact-us'],
+                ['title' => 'Karir', 'url' => 'https://hanara.id/career'],
+                ['title' => 'Artikel', 'url' => 'https://hanara.id/articles'],
             ],
             'Layanan Zimbra' => [
-                ['title' => 'Instalasi Zimbra', 'url' => route('instalasi-zimbra')],
-                ['title' => 'Maintenance Zimbra', 'url' => route('maintenance-zimbra')],
-                ['title' => 'Troubleshooting Zimbra', 'url' => route('troubleshooting-zimbra')],
-                ['title' => 'Zimbra Cloud', 'url' => route('cloud-zimbra')],
-                ['title' => 'Zimbra Server', 'url' => route('server-zimbra')],
+                ['title' => 'Instalasi Zimbra', 'url' => 'https://hanara.id/zimbra/instalasi'],
+                ['title' => 'Maintenance Zimbra', 'url' => 'https://hanara.id/zimbra/maintenance'],
+                ['title' => 'Troubleshooting Zimbra', 'url' => 'https://hanara.id/zimbra/troubleshooting'],
+                ['title' => 'Zimbra Cloud', 'url' => 'https://hanara.id/zimbra/cloud'],
+                ['title' => 'Zimbra Server', 'url' => 'https://hanara.id/zimbra/server'],
             ],
             'Software House' => [
-                ['title' => 'Pembuatan Website', 'url' => route('develop-web')],
-                ['title' => 'Aplikasi Web', 'url' => route('web-application')],
-                ['title' => 'Maintenance Website', 'url' => route('maintenance-web')],
+                ['title' => 'Pembuatan Website', 'url' => 'https://hanara.id/software-house/website-development'],
+                ['title' => 'Aplikasi Web', 'url' => 'https://hanara.id/software-house/web-application'],
+                ['title' => 'Maintenance Website', 'url' => 'https://hanara.id/software-house/maintenance'],
             ],
             'Hardware & Infrastruktur' => [
-                ['title' => 'Pasang CCTV', 'url' => route('cctv')],
-                ['title' => 'Radio Motorola', 'url' => route('motorola')],
+                ['title' => 'Pasang CCTV', 'url' => 'https://hanara.id/hardware/cctv'],
+                ['title' => 'Radio Motorola', 'url' => 'https://hanara.id/hardware/motorola'],
             ],
             'Business Solution' => [
-                ['title' => 'Nextcloud', 'url' => route('nextcloud')],
-                ['title' => 'HCM & HCIS', 'url' => route('hcis')],
+                ['title' => 'Nextcloud', 'url' => 'https://hanara.id/business-solution/nextcloud'],
+                ['title' => 'HCM & HRIS', 'url' => 'https://hanara.id/business-solution/hcm-hris'],
             ],
         ];
 
@@ -227,6 +270,37 @@ class SitemapController extends Controller
             ->limit(10)
             ->get();
 
-        return view('sitemap.html', compact('seoData', 'pages', 'articles', 'careers', 'products'));
+        // Schema for sitemap page
+        $schemaSitemap = [
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => 'Sitemap PT Hanara Prima Solusindo',
+            'description' => 'Peta situs lengkap untuk navigasi website Hanara',
+            'url' => 'https://hanara.id/sitemap',
+            'isPartOf' => [
+                '@type' => 'WebSite',
+                'name' => 'Hanara IT Solution',
+                'url' => 'https://hanara.id'
+            ],
+            'breadcrumb' => [
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 1,
+                        'name' => 'Home',
+                        'item' => 'https://hanara.id'
+                    ],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 2,
+                        'name' => 'Sitemap',
+                        'item' => 'https://hanara.id/sitemap'
+                    ]
+                ]
+            ]
+        ];
+
+        return view('sitemap.html', compact('seoData', 'pages', 'articles', 'careers', 'products', 'schemaSitemap'));
     }
 }

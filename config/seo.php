@@ -7,7 +7,7 @@ return [
         'author' => 'PT Hanara Prima Solusindo',
         'robots' => 'index, follow',
         'og_type' => 'website',
-        'og_image' => 'assets/images/icon/icon-hanara.png',
+        'og_image' => 'https://hanara.id/assets/images/icon/icon-hanara.png',
         'twitter_card' => 'summary_large_image',
         'og_site_name' => 'Hanara IT Solution',
         'og_locale' => 'id_ID',
@@ -32,7 +32,7 @@ return [
             'keywords' => 'tentang hanara, perusahaan IT indonesia, jasa IT professional',
             'og_title' => 'Tentang Hanara - Partner Solusi IT Terpercaya',
             'og_description' => 'Perusahaan IT dengan tim bersertifikat. Spesialis Zimbra Mail Server, Web Development & Infrastructure.',
-            'og_image' => '/assets/images/gambar/bw-meet.png',
+            'og_image' => 'https://hanara.id/assets/images/gambar/bw-meet.png',
         ],
 
         'contact' => [
@@ -78,6 +78,7 @@ return [
             'keywords' => 'instalasi zimbra, zimbra mail server, email server indonesia',
             'og_title' => 'Instalasi Zimbra - Tim Bersertifikat Hanara',
             'og_description' => 'Instalasi Zimbra cepat & aman dengan garansi. Free training & lifetime support.',
+            'og_image' => 'https://hanara.id/assets/images/icon/zimbra-instalasi.png',
         ],
 
         'zimbra_maintenance' => [
@@ -86,6 +87,7 @@ return [
             'keywords' => 'maintenance zimbra, support zimbra, jasa pemeliharaan server',
             'og_title' => 'Maintenance Zimbra 24/7 - Zero Downtime',
             'og_description' => 'Monitoring 24/7 & response cepat. Jaga email server tetap optimal dengan maintenance rutin.',
+            'og_image' => 'https://hanara.id/assets/images/icon/maintenance-zimbra.png',
         ],
 
         'zimbra_troubleshooting' => [
@@ -94,6 +96,7 @@ return [
             'keywords' => 'troubleshooting zimbra, zimbra error, perbaikan email server',
             'og_title' => 'Troubleshooting Zimbra - Atasi Error Cepat',
             'og_description' => 'Tim expert siap bantu 24/7. Response cepat untuk semua masalah Zimbra Anda.',
+            'og_image' => 'https://hanara.id/assets/images/icon/zimbra-troubleshoot.png',
         ],
 
         'zimbra_cloud' => [
@@ -102,6 +105,7 @@ return [
             'keywords' => 'zimbra cloud, email bisnis, cloud email indonesia',
             'og_title' => 'Zimbra Cloud - Email Bisnis Tanpa Ribet',
             'og_description' => 'Email professional mulai 25rb/user. Tanpa investasi server, langsung pakai!',
+            'og_image' => 'https://hanara.id/assets/images/icon/zimbra-cloud.png',
         ],
 
         'zimbra_server' => [
@@ -110,6 +114,7 @@ return [
             'keywords' => 'zimbra network edition, lisensi zimbra, zimbra NE indonesia',
             'og_title' => 'Zimbra NE - Distributor Resmi Indonesia',
             'og_description' => 'Lisensi Zimbra NE dengan harga terbaik. Free instalasi & training untuk enterprise.',
+            'og_image' => 'https://hanara.id/assets/images/icon/zimbra-server.png',
         ],
 
         // Software House Services
@@ -119,6 +124,7 @@ return [
             'keywords' => 'jasa website bengkulu, web development, bikin website murah',
             'og_title' => 'Jasa Website Professional - Design Modern',
             'og_description' => 'Website custom dengan teknologi terkini. Garansi 1 tahun & free maintenance 3 bulan.',
+            'og_image' => 'https://hanara.id/assets/images/icon/jasa-pembuatan-website.png',
         ],
 
         'software_webapp' => [
@@ -127,6 +133,7 @@ return [
             'keywords' => 'aplikasi web custom, sistem informasi, software development',
             'og_title' => 'Web Application Development - Hanara',
             'og_description' => 'Solusi digital untuk efisiensi bisnis. Teknologi modern, scalable & user friendly.',
+            'og_image' => 'https://hanara.id/assets/images/icon/web-app.png',
         ],
 
         'software_maintenance' => [
@@ -135,6 +142,7 @@ return [
             'keywords' => 'maintenance website, jasa kelola website, support website',
             'og_title' => 'Maintenance Website & Aplikasi - Hanara',
             'og_description' => 'Jaga website selalu optimal. Update, backup & monitoring professional.',
+            'og_image' => 'https://hanara.id/assets/images/icon/maintenance-web.png',
         ],
 
         // Other Services
@@ -144,6 +152,7 @@ return [
             'keywords' => 'pasang cctv bengkulu, hikvision, dahua, jasa cctv',
             'og_title' => 'CCTV Bengkulu - Distributor Resmi',
             'og_description' => 'CCTV berkualitas, harga terbaik. Garansi resmi & after sales terjamin.',
+            'og_image' => 'https://hanara.id/assets/images/icon/cctv-icon.png',
         ],
 
         'motorola' => [
@@ -152,6 +161,7 @@ return [
             'keywords' => 'motorola bengkulu, radio ht, two way radio',
             'og_title' => 'Motorola Radio - Distributor & Service Center',
             'og_description' => 'Radio Motorola original, garansi resmi. Service center tersedia.',
+            'og_image' => 'https://hanara.id/assets/images/icon/motorola-icon.png',
         ],
 
         'nextcloud' => [
@@ -160,6 +170,7 @@ return [
             'keywords' => 'nextcloud indonesia, private cloud, file sharing',
             'og_title' => 'Nextcloud - Cloud Storage Aman',
             'og_description' => 'Kontrol penuh atas data bisnis. Kolaborasi mudah, akses dimana saja.',
+            'og_image' => 'https://hanara.id/assets/images/icon/nextcloud-icon.png',
         ],
 
         'hcm' => [
@@ -168,13 +179,12 @@ return [
             'keywords' => 'hcm system, hris indonesia, sistem payroll',
             'og_title' => 'HCM & HRIS - Digitalisasi SDM',
             'og_description' => 'Kelola SDM lebih efisien. Payroll otomatis, absensi digital, employee self service.',
+            'og_image' => 'https://hanara.id/assets/images/icon/hcm.png',
         ],
     ],
 
     // Schema.org structured data templates
     'schema' => [
-
-
         // Service schema for Zimbra
         'zimbra_service' => [
             '@context' => 'https://schema.org',
@@ -182,7 +192,8 @@ return [
             'serviceType' => 'Email Server Installation and Maintenance',
             'provider' => [
                 '@type' => 'Organization',
-                'name' => 'PT Hanara Prima Solusindo'
+                'name' => 'PT Hanara Prima Solusindo',
+                'url' => 'https://hanara.id'
             ],
             'areaServed' => [
                 '@type' => 'Country',
@@ -190,23 +201,18 @@ return [
             ],
             'hasOfferCatalog' => [
                 '@type' => 'OfferCatalog',
-                'name' => 'Zimbra Services',
+                'name' => 'IT Services',
                 'itemListElement' => [
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Zimbra Installation',
-                            'description' => 'Professional Zimbra Mail Server installation service'
-                        ]
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Zimbra Maintenance',
-                            'description' => '24/7 monitoring and maintenance service'
-                        ]
+                    '@type' => 'OfferCatalog',
+                    'name' => 'Our Services',
+                    'itemListElement' => [
+                        'Zimbra Mail Server',
+                        'Web Development',
+                        'Web Application',
+                        'CCTV Installation',
+                        'Motorola Radio',
+                        'Nextcloud',
+                        'HCM & HRIS'
                     ]
                 ]
             ]
@@ -221,7 +227,7 @@ return [
                 '@type' => 'Organization',
                 'name' => 'PT Hanara Prima Solusindo',
                 'url' => 'https://hanara.id',
-                'logo' => 'https://hanara.id/assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png'
+                'logo' => 'https://hanara.id/assets/images/LOGO-PERUSAHAAN/HANARA.ID-2023.-II.png'
             ],
             'areaServed' => [
                 '@type' => 'Country',
@@ -232,351 +238,6 @@ return [
                 'serviceUrl' => 'https://hanara.id/software-house',
                 'servicePhone' => '+62-736-7050202',
                 'availableLanguage' => ['Indonesian', 'English']
-            ],
-            'hasOfferCatalog' => [
-                '@type' => 'OfferCatalog',
-                'name' => 'Software Development Services',
-                'itemListElement' => [
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Web Development',
-                            'description' => 'Custom website development with modern technologies',
-                            'category' => 'Web Development',
-                            'provider' => [
-                                '@type' => 'Organization',
-                                'name' => 'PT Hanara Prima Solusindo'
-                            ]
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => '3000000',
-                            'priceCurrency' => 'IDR',
-                            'minPrice' => '3000000',
-                            'maxPrice' => '50000000'
-                        ]
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Web Application Development',
-                            'description' => 'Enterprise web application and system development',
-                            'category' => 'Software Development'
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => 'Custom Quote',
-                            'priceCurrency' => 'IDR'
-                        ]
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Website Maintenance',
-                            'description' => 'Monthly website maintenance and support',
-                            'category' => 'IT Support'
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => '500000',
-                            'priceCurrency' => 'IDR',
-                            'minPrice' => '500000',
-                            'unitText' => 'MONTH'
-                        ]
-                    ]
-                ]
-            ],
-            'aggregateRating' => [
-                '@type' => 'AggregateRating',
-                'ratingValue' => '4.8',
-                'reviewCount' => '127',
-                'bestRating' => '5',
-                'worstRating' => '1'
-            ]
-        ],
-
-        // CCTV & Motorola Service Schema
-        'hardware_service' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'Service',
-            'serviceType' => 'Security and Communication Hardware Installation',
-            'provider' => [
-                '@type' => 'Organization',
-                'name' => 'PT Hanara Prima Solusindo'
-            ],
-            'areaServed' => [
-                '@type' => 'AdministrativeArea',
-                'name' => 'Bengkulu',
-                'containedIn' => [
-                    '@type' => 'Country',
-                    'name' => 'Indonesia'
-                ]
-            ],
-            'hasOfferCatalog' => [
-                '@type' => 'OfferCatalog',
-                'name' => 'Hardware Installation Services',
-                'itemListElement' => [
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'CCTV Installation',
-                            'description' => 'Professional CCTV installation with Hikvision and Dahua products',
-                            'brand' => [
-                                ['@type' => 'Brand', 'name' => 'Hikvision'],
-                                ['@type' => 'Brand', 'name' => 'Dahua']
-                            ],
-                            'serviceOutput' => 'Complete CCTV system with warranty'
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => '1500000',
-                            'priceCurrency' => 'IDR',
-                            'minPrice' => '1500000',
-                            'unitText' => 'per camera'
-                        ],
-                        'warranty' => [
-                            '@type' => 'WarrantyPromise',
-                            'durationOfWarranty' => [
-                                '@type' => 'QuantitativeValue',
-                                'value' => '1',
-                                'unitText' => 'year'
-                            ],
-                            'warrantyScope' => 'Product and installation warranty'
-                        ]
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Motorola Radio Supply & Service',
-                            'description' => 'Official Motorola two-way radio distributor and service center',
-                            'brand' => [
-                                '@type' => 'Brand',
-                                'name' => 'Motorola'
-                            ]
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => 'Quote on Request',
-                            'priceCurrency' => 'IDR'
-                        ]
-                    ]
-                ]
-            ]
-        ],
-
-        // Business Solution Service Schema
-        'business_solution_service' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'Service',
-            'serviceType' => 'Enterprise Business Solutions',
-            'provider' => [
-                '@type' => 'Organization',
-                'name' => 'PT Hanara Prima Solusindo'
-            ],
-            'areaServed' => [
-                '@type' => 'Country',
-                'name' => 'Indonesia'
-            ],
-            'hasOfferCatalog' => [
-                '@type' => 'OfferCatalog',
-                'name' => 'Business Solution Services',
-                'itemListElement' => [
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Nextcloud Implementation',
-                            'description' => 'Private cloud storage solution for enterprises',
-                            'category' => 'Cloud Solutions',
-                            'serviceType' => 'SoftwareApplication',
-                            'applicationCategory' => 'BusinessApplication',
-                            'operatingSystem' => 'Cross-platform'
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => '50000',
-                            'priceCurrency' => 'IDR',
-                            'minPrice' => '50000',
-                            'unitText' => 'per user per month'
-                        ],
-                        'eligibleQuantity' => [
-                            '@type' => 'QuantitativeValue',
-                            'minValue' => 10,
-                            'unitText' => 'users'
-                        ]
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'HCM & HRIS System',
-                            'description' => 'Complete Human Capital Management and HR Information System',
-                            'category' => 'HR Solutions',
-                            'serviceType' => 'SoftwareApplication'
-                        ],
-                        'priceSpecification' => [
-                            '@type' => 'PriceSpecification',
-                            'price' => 'Custom Quote',
-                            'priceCurrency' => 'IDR',
-                            'description' => 'Pricing based on number of employees and modules'
-                        ],
-                        'includesObject' => [
-                            [
-                                '@type' => 'TypeAndQuantityNode',
-                                'typeOfGood' => [
-                                    '@type' => 'Service',
-                                    'name' => 'Implementation & Training'
-                                ]
-                            ],
-                            [
-                                '@type' => 'TypeAndQuantityNode',
-                                'typeOfGood' => [
-                                    '@type' => 'Service',
-                                    'name' => '1 Year Support'
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ],
-
-        // Product Schema untuk CCTV Products
-        'cctv_products' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'Product',
-            'name' => 'CCTV Security Systems',
-            'description' => 'Professional CCTV systems from Hikvision and Dahua',
-            'category' => 'Security Equipment',
-            'brand' => [
-                ['@type' => 'Brand', 'name' => 'Hikvision'],
-                ['@type' => 'Brand', 'name' => 'Dahua']
-            ],
-            'offers' => [
-                '@type' => 'AggregateOffer',
-                'priceCurrency' => 'IDR',
-                'lowPrice' => '1500000',
-                'highPrice' => '25000000',
-                'offerCount' => '50+',
-                'availability' => 'https://schema.org/InStock',
-                'seller' => [
-                    '@type' => 'Organization',
-                    'name' => 'PT Hanara Prima Solusindo'
-                ]
-            ]
-        ],
-
-        // Software Application Schema untuk Custom Software
-        'custom_software' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'SoftwareApplication',
-            'name' => 'Custom Business Software Solutions',
-            'applicationCategory' => 'BusinessApplication',
-            'operatingSystem' => 'Web-based, Cross-platform',
-            'offers' => [
-                '@type' => 'Offer',
-                'price' => '0',
-                'priceCurrency' => 'IDR',
-                'description' => 'Free consultation and custom pricing'
-            ],
-            'featureList' => [
-                'Custom development based on business needs',
-                'Modern technology stack',
-                'Scalable architecture',
-                'API integration',
-                'Mobile responsive',
-                'Cloud ready'
-            ],
-            'softwareRequirements' => 'Modern web browser',
-            'provider' => [
-                '@type' => 'Organization',
-                'name' => 'PT Hanara Prima Solusindo'
-            ]
-        ],
-        'website' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'WebSite',
-            'name' => 'Hanara IT Solution',
-            'url' => 'https://hanara.id',
-            'potentialAction' => [
-                '@type' => 'SearchAction',
-                'target' => [
-                    '@type' => 'EntryPoint',
-                    'urlTemplate' => 'https://hanara.id/search?q={search_term_string}'
-                ],
-                'query-input' => 'required name=search_term_string'
-            ]
-        ],
-        'organization' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            'name' => 'PT Hanara Prima Solusindo',
-            'alternateName' => 'Hanara',
-            'url' => 'https://hanara.id',
-            'logo' => 'https://hanara.id/assets/images/logo-hanara.png',
-            'description' => 'Penyedia solusi IT terpadu di Indonesia',
-            'foundingDate' => '2018',
-            'address' => [
-                '@type' => 'PostalAddress',
-                'streetAddress' => 'Jl. Batang Hari, RT.011/RW.003, Nusa Indah',
-                'addressLocality' => 'Bengkulu',
-                'addressRegion' => 'Bengkulu',
-                'postalCode' => '38223',
-                'addressCountry' => 'ID'
-            ],
-            'contactPoint' => [
-                '@type' => 'ContactPoint',
-                'telephone' => '+62-736-7050202',
-                'contactType' => 'customer service',
-                'areaServed' => 'ID',
-                'availableLanguage' => ['Indonesian', 'English']
-            ],
-            'sameAs' => [
-
-                'https://www.instagram.com/hanaraprimasolusindo/',
-                'https://www.linkedin.com/company/hanaraprimasolusindo/'
-            ]
-        ],
-
-        // Professional Service Schema
-        'professional_service' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'ProfessionalService',
-            'name' => 'PT Hanara Prima Solusindo - IT Solutions Provider',
-            'description' => 'Professional IT services including software development, system integration, and IT infrastructure',
-            'url' => 'https://hanara.id',
-            'telephone' => '+62-736-7050202',
-            'email' => 'info@hanara.id',
-            'address' => [
-                '@type' => 'PostalAddress',
-                'streetAddress' => 'Jl. Batang Hari, RT.011/RW.003, Nusa Indah',
-                'addressLocality' => 'Bengkulu',
-                'addressRegion' => 'Bengkulu',
-                'postalCode' => '38223',
-                'addressCountry' => 'ID'
-            ],
-            'geo' => [
-                '@type' => 'GeoCoordinates',
-                'latitude' => '-3.8123',
-                'longitude' => '102.2995'
-            ],
-            'openingHoursSpecification' => [
-                '@type' => 'OpeningHoursSpecification',
-                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                'opens' => '08:00',
-                'closes' => '17:00'
-            ],
-            'priceRange' => '$$',
-            'paymentAccepted' => 'Cash, Bank Transfer, Credit Card',
-            'currenciesAccepted' => 'IDR',
-            'areaServed' => [
-                '@type' => 'Country',
-                'name' => 'Indonesia'
             ],
             'hasOfferCatalog' => [
                 '@type' => 'OfferCatalog',
