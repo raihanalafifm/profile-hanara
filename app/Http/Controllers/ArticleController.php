@@ -86,8 +86,27 @@ class ArticleController extends Controller
             'ogDescription' => $article->description,
             'ogImage' => $article->image ? Storage::url($article->image) : null,
         ];
+        $schemaArticle = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Article',
+            'headline' => $article->title,
+            'description' => $article->description,
+            'image' => $article->image ? Storage::url($article->image) : asset('assets/images/default-article.jpg'),
+            'datePublished' => $article->published_at?->toIso8601String() ?? $article->created_at->toIso8601String(),
+            'dateModified' => $article->updated_at->toIso8601String(),
+            'author' => [
+                '@type' => 'Person',
+                'name' => $article->user->name ?? 'Admin',
+                'url' => route('home')
+            ],
+            'publisher' => config('seo.schema.organization'),
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => request()->url()
+            ]
+        ];
 
-        return view('content.artikel.article-detail', compact('article', 'relatedArticles', 'seoData'));
+        return view('content.artikel.article-detail', compact('article', 'relatedArticles', 'seoData', 'schemaArticle'));
     }
 
     /**

@@ -23,4 +23,4 @@ Allow: /*.webp$
 Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://laravel.hanara.id/sitemap.xml
+Sitemap: https://hanara.id/sitemap.xml

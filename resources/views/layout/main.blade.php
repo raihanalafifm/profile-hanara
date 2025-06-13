@@ -157,6 +157,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/icon/icon hanara.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/icon/icon hanara.png') }}">
 
+    {{-- Tambahkan hreflang untuk multi-bahasa --}}
+    <link rel="alternate" hreflang="id" href="{{ url()->current() }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}" />
+
+    {{-- Tambahkan preconnect untuk performa --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+    {{-- Perbaiki meta viewport --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+    {{-- Tambahkan verification tags jika ada --}}
+    <meta name="google-site-verification" content="your-verification-code" />
     @stack('styles')
 </head>
 

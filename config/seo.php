@@ -3,204 +3,177 @@
 return [
     // Default SEO settings
     'defaults' => [
-        'title_suffix' => ' - PT Hanara Prima Solusindo',
+        'title_suffix' => ' - Hanara IT Solution',
         'author' => 'PT Hanara Prima Solusindo',
         'robots' => 'index, follow',
         'og_type' => 'website',
-        'og_image' => 'assets/images/icon/icon hanara.png',
+        'og_image' => 'assets/images/icon/icon-hanara.png',
         'twitter_card' => 'summary_large_image',
+        'og_site_name' => 'Hanara IT Solution',
+        'og_locale' => 'id_ID',
+        'twitter_site' => '@hanaraid',
+        'og_locale_alternate' => 'en_US',
+        'twitter_creator' => '@hanara_id',
     ],
 
-    // SEO settings per halaman
+    // SEO settings per halaman (maksimal 60 karakter untuk title)
     'pages' => [
         'home' => [
-            'title' => 'Jasa IT Solution Bengkulu - Zimbra, Web Development, CCTV | Hanara',
-            'description' => 'PT Hanara Prima Solusindo - Penyedia solusi IT terpercaya di Bengkulu. Layanan Zimbra Mail Server, pembuatan website, instalasi CCTV, radio Motorola. Konsultasi gratis ☎ 0897-5000-805',
-            'keywords' => 'IT solution Bengkulu, jasa pembuatan website Bengkulu, instalasi zimbra, pasang CCTV Bengkulu, radio motorola, software house Bengkulu, cloud services Indonesia',
-            'og_title' => 'Hanara - Partner IT Terpercaya untuk Transformasi Digital Bisnis Anda',
-            'og_description' => 'Solusi IT lengkap: Zimbra Mail Server, Web Development, CCTV, Motorola Radio. Tim profesional dengan 10+ tahun pengalaman. Hubungi: 0897-5000-805',
+            'title' => 'IT Solution Bengkulu - Zimbra, Web & CCTV',
+            'description' => 'Hanara menyediakan solusi IT terpercaya di Bengkulu. Spesialis Zimbra Mail Server, pembuatan website, CCTV, dan radio Motorola. Konsultasi gratis: 0897-5000-805',
+            'keywords' => 'IT solution Bengkulu, zimbra mail server, jasa website, pasang CCTV, radio motorola',
+            'og_title' => 'Hanara - Partner IT Terpercaya untuk Bisnis Anda',
+            'og_description' => 'Solusi IT lengkap dari tim berpengalaman 10+ tahun. Zimbra, Web Development, CCTV & Motorola Radio.',
         ],
 
         'about' => [
-            'title' => 'Tentang Hanara – Partner Solusi IT Profesional di Indonesia',
-            'description' => 'Hanara adalah perusahaan teknologi yang menyediakan solusi IT seperti Zimbra, Nextcloud, dan layanan dukungan server. Kenali visi dan tim profesional kami di sini.',
-            'keywords' => 'hanara, tentang hanara, perusahaan it indonesia, jasa it profesional, solusi it, zimbra',
-            'og_title' => 'Tentang Hanara – Partner Solusi IT Profesional di Indonesia',
-            'og_description' => 'Perusahaan IT solution dengan tim bersertifikat & berpengalaman 10+ tahun. Spesialis Zimbra Mail Server, Web Development & Infrastructure.',
+            'title' => 'Tentang Hanara - IT Solution Professional',
+            'description' => 'Hanara adalah perusahaan IT yang menyediakan solusi Zimbra, Nextcloud, dan layanan server. Tim bersertifikat dengan pengalaman 10+ tahun.',
+            'keywords' => 'tentang hanara, perusahaan IT indonesia, jasa IT professional',
+            'og_title' => 'Tentang Hanara - Partner Solusi IT Terpercaya',
+            'og_description' => 'Perusahaan IT dengan tim bersertifikat. Spesialis Zimbra Mail Server, Web Development & Infrastructure.',
             'og_image' => '/assets/images/gambar/bw-meet.png',
         ],
 
         'contact' => [
-            'title' => 'Hubungi hanara - Konsultasi dan layanan it profesional',
-            'description' => 'Ingin kerja sama atau konsultasi layanan IT seperti Zimbra & Nextcloud? Hubungi tim Hanara melalui formulir atau kontak kami yang tersedia di halaman ini.',
-            'keywords' => 'hubungi hanara, konsultasi it, layanan it, kontak hanara, jasa zimbra, jasa nextcloud, layanan server, it support indonesia',
-            'og_title' => 'Hubungi hanara - Konsultasi dan layanan it profesional',
-            'og_description' => 'ngin kerja sama atau konsultasi layanan IT seperti Zimbra & Nextcloud? Hubungi tim Hanara melalui formulir atau kontak kami yang tersedia di halaman ini.',
+            'title' => 'Hubungi Hanara - Konsultasi IT Gratis',
+            'description' => 'Butuh solusi IT? Hubungi Hanara untuk konsultasi Zimbra, Nextcloud & layanan IT lainnya. Respon cepat via WA: 0897-5000-805',
+            'keywords' => 'kontak hanara, konsultasi IT, jasa zimbra, jasa nextcloud',
+            'og_title' => 'Hubungi Hanara - Konsultasi IT Professional',
+            'og_description' => 'Konsultasi gratis untuk solusi IT bisnis Anda. Tim siap membantu via WA: 0897-5000-805',
         ],
 
         'career' => [
-            'title' => 'Karir di Hanara – Lowongan IT & Peluang Berkembang',
-            'description' => 'Bergabunglah dengan Hanara, perusahaan IT yang membuka peluang karir di bidang teknologi, server, cloud, dan layanan digital untuk tim profesional.',
-            'keywords' => 'karir hanara, lowongan it, kerja di hanara, pelang karis teknologi, digital talent, lowongan nextcloud, lowongan zimbra, perusahaan it',
-            'og_title' => 'Lowongan Kerja - Bergabung dengan Tim IT Hanara',
-            'og_description' => 'Kembangkan karir Anda bersama Hanara. Berbagai posisi IT tersedia dengan benefit menarik. Apply sekarang!',
+            'title' => 'Karir di Hanara - Lowongan IT Bengkulu',
+            'description' => 'Bergabung dengan Hanara untuk karir di bidang IT. Posisi developer, network engineer, dan digital marketing tersedia. Benefit menarik!',
+            'keywords' => 'karir hanara, lowongan IT bengkulu, kerja IT, digital talent',
+            'og_title' => 'Lowongan Kerja IT - Bergabung dengan Hanara',
+            'og_description' => 'Kembangkan karir IT Anda bersama Hanara. Berbagai posisi tersedia dengan benefit menarik.',
         ],
 
         'career_detail' => [
-            'title' => '{position} - Lowongan Kerja di PT Hanara Prima Solusindo',
-            'description' => 'Lowongan {position} di PT Hanara Prima Solusindo. {type}. Kirim CV dan portfolio Anda sekarang untuk bergabung dengan tim IT profesional kami.',
-            'keywords' => 'lowongan {position}, karir IT bengkulu, job {position} bengkulu, {type} job, lowongan kerja IT {position}',
-        ],
-        'article' => [
-            'title' => 'Artikel Hanara – Tips & Insight Seputar Solusi IT dan Server',
-            'description' => 'Baca berbagai artikel dari Hanara seputar solusi IT, server, cloud, Zimbra, Nextcloud, hingga tips teknologi untuk bisnis Anda. Update rutin setiap minggu.',
-            'keywords' => 'artikel hanara, tips it, insight teknologi, solusi it, zimbra, nextcloud, server cloud, blog hanara, artikel teknologi, it support',
-            'og_title' => 'artikel hanara - tips dan trik solusi IT dan server',
-            'og_description' => 'Baca berbagai artikel dari Hanara seputar solusi IT, server, cloud, Zimbra, Nextcloud, hingga tips teknologi untuk bisnis Anda. Update rutin setiap minggu.',
-        ],
-        'article_detail' => [
-            'title' => '{article} - Tips & Insight Seputar Solusi IT dan Server',
-            'description' => 'baca {article} di PT Hanara Prima Solusindo. {kategori}. ',
-            'keywords' => 'baca {article}, IT bengkulu, kumpulan {article} bengkulu, {kategori} baca, kumpulan IT {article}',
+            'title' => '{position} - Lowongan di Hanara',
+            'description' => 'Lowongan {position} di Hanara. {type}. Kirim CV sekarang untuk bergabung dengan tim IT professional kami.',
+            'keywords' => 'lowongan {position}, karir IT bengkulu, {type} job',
         ],
 
-        // Zimbra Services - Complete SEO Configuration
+        'article' => [
+            'title' => 'Artikel Hanara - Tips IT & Teknologi',
+            'description' => 'Artikel seputar solusi IT, Zimbra, Nextcloud, tips teknologi untuk bisnis. Update rutin dari tim expert Hanara.',
+            'keywords' => 'artikel IT, tips teknologi, zimbra tutorial, nextcloud guide',
+            'og_title' => 'Artikel Hanara - Insight Teknologi Terkini',
+            'og_description' => 'Tips dan panduan IT dari expert. Zimbra, Nextcloud, Web Development & solusi teknologi bisnis.',
+        ],
+
+        'article_detail' => [
+            'title' => '{article}',
+            'description' => '{description}',
+            'keywords' => '{keywords}',
+        ],
+
+        // Zimbra Services
         'zimbra_instalasi' => [
-            'title' => 'instalasi Zimbra Mail Server – Layanan Profesional Hanara',
-            'description' => 'Hanara menyediakan jasa instalasi Zimbra Mail Server untuk kebutuhan perusahaan dan lembaga Anda, lengkap dengan konfigurasi optimal dan dukungan teknis ahli.',
-            'keywords' => 'instalasi zimbra, install zimbra server, jasa zimbra indonesia, zimbra mail server, konfigurasi zimbra, email server profesional, hanara',
-            'og_title' => 'Instalasi Zimbra Mail Server - Tim Profesional Bersertifikat',
-            'og_description' => 'Instalasi Zimbra cepat & aman dengan garansi. Free training & support. Hub: 0897-5000-805',
-            'og_image' => '/assets/images/og-zimbra-instalasi.jpg',
+            'title' => 'Instalasi Zimbra Mail Server - Hanara',
+            'description' => 'Jasa instalasi Zimbra Mail Server professional. Konfigurasi optimal, training gratis, dan support teknis. Hubungi: 0897-5000-805',
+            'keywords' => 'instalasi zimbra, zimbra mail server, email server indonesia',
+            'og_title' => 'Instalasi Zimbra - Tim Bersertifikat Hanara',
+            'og_description' => 'Instalasi Zimbra cepat & aman dengan garansi. Free training & lifetime support.',
         ],
 
         'zimbra_maintenance' => [
-            'title' => 'Jasa Maintenance Zimbra – Zimbra Local Support',
-            'description' => 'Layanan maintenance Zimbra dari Hanara mencakup monitoring, backup, update, troubleshooting, dan support untuk memastikan server email Anda berjalan optimal.',
-            'keywords' => 'zimbra maintenance, support tahunan zimbra, jasa pemeliharaan server, backup zimbra, monitoring zimbra, hanara, zimbra indonesia',
-            'og_title' => 'Maintenance Zimbra 24/7 - Jaga Email Server Tetap Optimal',
-            'og_description' => 'Maintenance zimbra dengan monitoring 24/7 & response cepat. Cegah downtime dengan preventive maintenance rutin.',
-            'og_image' => '/assets/images/og-zimbra-maintenance.jpg',
+            'title' => 'Maintenance Zimbra - Support 24/7',
+            'description' => 'Layanan maintenance Zimbra mencakup monitoring, backup, update & troubleshooting. Cegah downtime dengan preventive maintenance rutin.',
+            'keywords' => 'maintenance zimbra, support zimbra, jasa pemeliharaan server',
+            'og_title' => 'Maintenance Zimbra 24/7 - Zero Downtime',
+            'og_description' => 'Monitoring 24/7 & response cepat. Jaga email server tetap optimal dengan maintenance rutin.',
         ],
 
         'zimbra_troubleshooting' => [
-            'title' => 'Troubleshooting Zimbra – Solusi Cepat untuk Server Bermasalah',
-            'description' => 'Zimbra Anda bermasalah? Tim Hanara siap membantu troubleshooting Zimbra, pemulihan email server, pengecekan log, dan solusi error Zimbra secara cepat dan aman.',
-            'keywords' => 'troubleshooting zimbra, zimbra error, pemulihan zimbra, jasa perbaikan email server, zimbra bermasalah, hanara, support zimbra',
-            'og_title' => 'Troubleshooting Zimbra - Atasi Masalah Email Server Cepat',
-            'og_description' => 'Email bermasalah? Tim expert kami siap bantu. Response time <30 menit.',
-            'og_image' => '/assets/images/og-zimbra-troubleshooting.jpg',
+            'title' => 'Troubleshooting Zimbra - Solusi Cepat',
+            'description' => 'Email bermasalah? Tim expert siap atasi error Zimbra, pemulihan data, dan optimasi server. Response time <30 menit.',
+            'keywords' => 'troubleshooting zimbra, zimbra error, perbaikan email server',
+            'og_title' => 'Troubleshooting Zimbra - Atasi Error Cepat',
+            'og_description' => 'Tim expert siap bantu 24/7. Response cepat untuk semua masalah Zimbra Anda.',
         ],
 
         'zimbra_cloud' => [
-            'title' => 'Zimbra Cloud – Email Bisnis Tanpa Ribet Server Sendiri',
-            'description' => 'Gunakan Zimbra Cloud dari Hanara untuk email bisnis profesional tanpa perlu server sendiri. Praktis, aman, hemat biaya, dan siap pakai untuk perusahaan Anda.',
-            'keywords' => 'zimbra cloud, email bisnis, jasa zimbra cloud, sewa zimbra, server email indonesia, cloud email server, hanara, zimbra indonesia',
-            'og_title' => 'Zimbra Cloud – Email Bisnis Tanpa Ribet Server Sendiri',
-            'og_description' => 'Gunakan Zimbra Cloud dari Hanara untuk email bisnis profesional tanpa perlu server sendiri. Praktis, aman, hemat biaya, dan siap pakai untuk perusahaan Anda.',
-            'og_image' => '/assets/images/og-zimbra-cloud.jpg',
+            'title' => 'Zimbra Cloud - Email Bisnis Hemat',
+            'description' => 'Email bisnis professional tanpa ribet server. Zimbra Cloud dari Hanara, mulai 25rb/user/bulan. Setup mudah, langsung pakai!',
+            'keywords' => 'zimbra cloud, email bisnis, cloud email indonesia',
+            'og_title' => 'Zimbra Cloud - Email Bisnis Tanpa Ribet',
+            'og_description' => 'Email professional mulai 25rb/user. Tanpa investasi server, langsung pakai!',
         ],
 
         'zimbra_server' => [
-            'title' => 'Zimbra Network Edition – Lisensi Resmi & Dukungan Penuh',
-            'description' => 'Dapatkan lisensi resmi Zimbra Network Edition dari Hanara. Solusi email premium untuk perusahaan dengan fitur lengkap, dukungan teknis, dan stabilitas tinggi.',
-            'keywords' => 'zimbra network edition, lisensi zimbra resmi, zimbra server, zimbra NE indonesia, email server premium, hanara, dukungan zimbra',
-            'og_title' => 'Lisensi Zimbra Network Edition - Distributor Resmi Indonesia',
-            'og_description' => 'Lisensi Zimbra NE dengan harga kompetitif. Free instalasi & training.',
-            'og_image' => '/assets/images/og-zimbra-server.jpg',
+            'title' => 'Zimbra Network Edition - Lisensi Resmi',
+            'description' => 'Distributor resmi Zimbra Network Edition. Fitur premium untuk enterprise dengan support official. Harga kompetitif!',
+            'keywords' => 'zimbra network edition, lisensi zimbra, zimbra NE indonesia',
+            'og_title' => 'Zimbra NE - Distributor Resmi Indonesia',
+            'og_description' => 'Lisensi Zimbra NE dengan harga terbaik. Free instalasi & training untuk enterprise.',
         ],
 
         // Software House Services
         'software_web' => [
-            'title' => 'Jasa Pembuatan Website Professional - Custom & Responsive',
-            'description' => 'Jasa pembuatan website custom dengan teknologi terkini. Website company profile, toko online, sistem informasi. Garansi 1 tahun & free maintenance 3 bulan.',
-            'keywords' => 'jasa pembuatan website, web development bengkulu, website company profile, toko online, jasa bikin website murah, web developer professional',
-            'og_title' => 'Jasa Pembuatan Website - Design Modern & SEO Friendly',
-            'og_description' => 'Website professional mulai 3 juta. Responsive, SEO friendly, loading cepat. Portofolio 200+ website.',
+            'title' => 'Jasa Pembuatan Website - Hanara',
+            'description' => 'Website professional mulai 3 juta. Company profile, toko online, custom system. Responsive, SEO friendly & fast loading.',
+            'keywords' => 'jasa website bengkulu, web development, bikin website murah',
+            'og_title' => 'Jasa Website Professional - Design Modern',
+            'og_description' => 'Website custom dengan teknologi terkini. Garansi 1 tahun & free maintenance 3 bulan.',
         ],
 
         'software_webapp' => [
-            'title' => 'Jasa Pembuatan Aplikasi Web - Sistem Informasi Custom',
-            'description' => 'Pengembangan aplikasi web custom untuk kebutuhan bisnis. ERP, CRM, HR System, Inventory, dan sistem informasi lainnya. Teknologi modern & scalable.',
-            'keywords' => 'jasa pembuatan aplikasi web, web application development, sistem informasi custom, aplikasi bisnis, software custom, aplikasi inventory',
-            'og_title' => 'Web Application Development - Solusi Digital Bisnis Anda',
-            'og_description' => 'Aplikasi web custom sesuai kebutuhan bisnis. Teknologi modern, user friendly, full support. Konsultasi gratis!',
+            'title' => 'Pembuatan Aplikasi Web - Custom System',
+            'description' => 'Aplikasi web custom untuk bisnis. ERP, CRM, HR System dengan teknologi modern. Konsultasi gratis!',
+            'keywords' => 'aplikasi web custom, sistem informasi, software development',
+            'og_title' => 'Web Application Development - Hanara',
+            'og_description' => 'Solusi digital untuk efisiensi bisnis. Teknologi modern, scalable & user friendly.',
         ],
 
         'software_maintenance' => [
-            'title' => 'Jasa Maintenance Website & Aplikasi - Update & Support',
-            'description' => 'Layanan maintenance website dan aplikasi profesional. Update konten, backup rutin, monitoring uptime, fix bug, dan optimasi performa. Paket mulai 500rb/bulan.',
-            'keywords' => 'maintenance website, jasa maintenance aplikasi, update website, website support, maintenance bulanan, kelola website',
-            'og_title' => 'Maintenance Website & Aplikasi - Jaga Performa Optimal',
-            'og_description' => 'Maintenance website mulai 500rb/bulan. Update rutin, backup, monitoring 24/7. Website selalu optimal!',
+            'title' => 'Maintenance Website - Update & Support',
+            'description' => 'Maintenance website mulai 500rb/bulan. Update rutin, backup, monitoring 24/7. Jaga performa website tetap optimal!',
+            'keywords' => 'maintenance website, jasa kelola website, support website',
+            'og_title' => 'Maintenance Website & Aplikasi - Hanara',
+            'og_description' => 'Jaga website selalu optimal. Update, backup & monitoring professional.',
         ],
 
         // Other Services
         'cctv' => [
-            'title' => 'Jasa Pasang CCTV Bengkulu - Hikvision & Dahua Resmi',
-            'description' => 'Jasa instalasi CCTV profesional di Bengkulu. Produk original Hikvision & Dahua, garansi resmi, free maintenance 1 tahun. Survey lokasi gratis.',
-            'keywords' => 'pasang cctv bengkulu, jasa cctv bengkulu, hikvision bengkulu, dahua bengkulu, instalasi cctv, harga cctv bengkulu',
-            'og_title' => 'Pasang CCTV Bengkulu - Distributor Resmi Hikvision & Dahua',
-            'og_description' => 'CCTV berkualitas dengan harga terbaik. Garansi resmi, teknisi berpengalaman, after sales terjamin. Survey gratis!',
+            'title' => 'Pasang CCTV Bengkulu - Hikvision & Dahua',
+            'description' => 'Jasa pasang CCTV Bengkulu dengan produk original Hikvision & Dahua. Garansi resmi, teknisi berpengalaman. Survey gratis!',
+            'keywords' => 'pasang cctv bengkulu, hikvision, dahua, jasa cctv',
+            'og_title' => 'CCTV Bengkulu - Distributor Resmi',
+            'og_description' => 'CCTV berkualitas, harga terbaik. Garansi resmi & after sales terjamin.',
         ],
 
         'motorola' => [
-            'title' => 'Radio Motorola Bengkulu - Distributor Resmi Two Way Radio',
-            'description' => 'Distributor resmi radio komunikasi Motorola di Bengkulu. Jual HT Motorola, repeater, dan aksesoris. Service center resmi dengan teknisi tersertifikat.',
-            'keywords' => 'motorola bengkulu, radio motorola, jual ht motorola, two way radio, repeater motorola, service motorola bengkulu',
-            'og_title' => 'Motorola Radio Bengkulu - Distributor & Service Center Resmi',
-            'og_description' => 'Radio Motorola original dengan garansi resmi. Ready stock, harga kompetitif, service center tersedia.',
+            'title' => 'Radio Motorola Bengkulu - Distributor Resmi',
+            'description' => 'Jual HT Motorola, repeater & aksesoris. Service center resmi dengan teknisi tersertifikat. Ready stock!',
+            'keywords' => 'motorola bengkulu, radio ht, two way radio',
+            'og_title' => 'Motorola Radio - Distributor & Service Center',
+            'og_description' => 'Radio Motorola original, garansi resmi. Service center tersedia.',
         ],
 
         'nextcloud' => [
-            'title' => 'Nextcloud Indonesia - Private Cloud Storage untuk Bisnis',
-            'description' => 'Implementasi Nextcloud untuk private cloud storage perusahaan. File sharing aman, kolaborasi tim, sync multi-device. On-premise atau cloud hosting.',
-            'keywords' => 'nextcloud Indonesia, private cloud storage, file sharing perusahaan, cloud storage lokal, nextcloud installation, self hosted cloud',
-            'og_title' => 'Nextcloud - Solusi Private Cloud Storage Aman untuk Bisnis',
-            'og_description' => 'Private cloud storage dengan kontrol penuh. Data aman, kolaborasi mudah, akses dimana saja. Demo gratis!',
+            'title' => 'Nextcloud - Private Cloud Storage',
+            'description' => 'Private cloud storage untuk bisnis. File sharing aman, sync multi-device. On-premise atau cloud. Demo gratis!',
+            'keywords' => 'nextcloud indonesia, private cloud, file sharing',
+            'og_title' => 'Nextcloud - Cloud Storage Aman',
+            'og_description' => 'Kontrol penuh atas data bisnis. Kolaborasi mudah, akses dimana saja.',
         ],
 
         'hcm' => [
-            'title' => 'HCM & HRIS System - Solusi HR Digital Terintegrasi',
-            'description' => 'Sistem HCM (Human Capital Management) dan HRIS terintegrasi. Kelola payroll, absensi, cuti, performance, dan recruitment dalam satu platform.',
-            'keywords' => 'hcm system, hris Indonesia, human capital management, sistem payroll, aplikasi hr, software hrd, attendance system',
-            'og_title' => 'HCM & HRIS - Digitalisasi Manajemen SDM Perusahaan',
-            'og_description' => 'Sistem HR terintegrasi untuk efisiensi pengelolaan SDM. Payroll otomatis, absensi digital, employee self service.',
+            'title' => 'HCM & HRIS - Sistem HR Digital',
+            'description' => 'Sistem HR terintegrasi untuk payroll, absensi, cuti & performance. Efisiensi pengelolaan SDM dalam satu platform.',
+            'keywords' => 'hcm system, hris indonesia, sistem payroll',
+            'og_title' => 'HCM & HRIS - Digitalisasi SDM',
+            'og_description' => 'Kelola SDM lebih efisien. Payroll otomatis, absensi digital, employee self service.',
         ],
     ],
 
     // Schema.org structured data templates
     'schema' => [
-        'organization' => [
-            '@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            'name' => 'PT Hanara Prima Solusindo',
-            'alternateName' => 'Hanara',
-            'url' => 'https://hanara.id',
-            'logo' => 'https://hanara.id/assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png',
-            'description' => 'Penyedia solusi IT terpadu di Indonesia',
-            'foundingDate' => '2018',
-            'address' => [
-                '@type' => 'PostalAddress',
-                'streetAddress' => 'Jl. Batang Hari, RT.011/RW.003, Nusa Indah',
-                'addressLocality' => 'Bengkulu',
-                'addressRegion' => 'Bengkulu',
-                'postalCode' => '38223',
-                'addressCountry' => 'ID'
-            ],
-            'contactPoint' => [
-                '@type' => 'ContactPoint',
-                'telephone' => '+62-736-7050202',
-                'contactType' => 'customer service',
-                'areaServed' => 'ID',
-                'availableLanguage' => ['Indonesian', 'English']
-            ],
-            'sameAs' => [
-                'https://www.facebook.com/hanaraprima',
-                'https://www.instagram.com/hanaraprima',
-                'https://www.linkedin.com/company/hanara-prima-solusindo'
-            ]
-        ],
+
 
         // Service schema for Zimbra
         'zimbra_service' => [
@@ -523,6 +496,50 @@ return [
             'provider' => [
                 '@type' => 'Organization',
                 'name' => 'PT Hanara Prima Solusindo'
+            ]
+        ],
+        'website' => [
+            '@context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'name' => 'Hanara IT Solution',
+            'url' => 'https://hanara.id',
+            'potentialAction' => [
+                '@type' => 'SearchAction',
+                'target' => [
+                    '@type' => 'EntryPoint',
+                    'urlTemplate' => 'https://hanara.id/search?q={search_term_string}'
+                ],
+                'query-input' => 'required name=search_term_string'
+            ]
+        ],
+        'organization' => [
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo',
+            'alternateName' => 'Hanara',
+            'url' => 'https://hanara.id',
+            'logo' => 'https://hanara.id/assets/images/logo-hanara.png',
+            'description' => 'Penyedia solusi IT terpadu di Indonesia',
+            'foundingDate' => '2018',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Jl. Batang Hari, RT.011/RW.003, Nusa Indah',
+                'addressLocality' => 'Bengkulu',
+                'addressRegion' => 'Bengkulu',
+                'postalCode' => '38223',
+                'addressCountry' => 'ID'
+            ],
+            'contactPoint' => [
+                '@type' => 'ContactPoint',
+                'telephone' => '+62-736-7050202',
+                'contactType' => 'customer service',
+                'areaServed' => 'ID',
+                'availableLanguage' => ['Indonesian', 'English']
+            ],
+            'sameAs' => [
+
+                'https://www.instagram.com/hanaraprimasolusindo/',
+                'https://www.linkedin.com/company/hanaraprimasolusindo/'
             ]
         ],
 
