@@ -134,7 +134,7 @@
     "alternateName": "Hanara",
     "url": "{{ url()->current() }}",
     "logo": "{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}",
-    "description": "Perusahaan penyedia solusi IT terpercaya di Indonesia sejak 2018",
+    "description": "Hanara adalah perusahaan teknologi yang menyediakan solusi IT seperti Zimbra, Nextcloud, dan layanan dukungan server. Kenali visi dan tim profesional kami di sini.",
     "foundingDate": "2018",
     "founders": [{
         "@type": "Person",

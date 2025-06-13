@@ -37,7 +37,7 @@ class PageController extends Controller
                 '@type' => ['Organization', 'LocalBusiness'],
                 'priceRange' => '$$',
                 'image' => asset('assets/images/gambar/bw-meet.png'),
-                'hasMap' => 'https://maps.app.goo.gl/FTxacZPBbKNzovbX8',
+                'hasMap' => 'https://maps.app.goo.gl/uYzrn7BUobtDcrWn8',
             ]
         );
 
@@ -61,12 +61,20 @@ class PageController extends Controller
             'robots' => $seoDefaults['robots'],
             'ogTitle' => $seo['og_title'] ?? $seo['title'],
             'ogDescription' => $seo['og_description'] ?? $seo['description'],
-            'ogImage' => asset('assets/images/og-contact.jpg'),
+            // 'ogImage' => asset('assets/images/og-contact.jpg'),
             'ogType' => $seoDefaults['og_type'],
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('contact-us'),
         ];
-
-        return view('content.about.contact', compact('seoData'));
+        $schemaOrg = array_merge(
+            config('seo.schema.organization'),
+            [
+                '@type' => ['Organization', 'LocalBusiness'],
+                'priceRange' => '$$',
+                // 'image' => asset('assets/images/gambar/bw-meet.png'),
+                'hasMap' => 'https://maps.app.goo.gl/uYzrn7BUobtDcrWn8',
+            ]
+        );
+        return view('content.about.contact', compact('seoData', 'schemaOrg'));
     }
 }

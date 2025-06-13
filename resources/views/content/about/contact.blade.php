@@ -30,3 +30,66 @@
         </div>
     </section>
 @endsection
+@push('schema-org')
+    <!-- Organization Schema dengan complete info -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PT Hanara Prima Solusindo",
+    "alternateName": "Hanara",
+    "url": "{{ url()->current() }}",
+    "logo": "{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}",
+    "description": "Perusahaan penyedia solusi IT terpercaya di Indonesia sejak 2018",
+    "foundingDate": "2018",
+    "founders": [{
+        "@type": "Person",
+        "name": "Founder Hanara"
+    }],
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Sutoyo No.8, Tanah Patah",
+        "addressLocality": "Bengkulu",
+        "addressRegion": "Bengkulu",
+        "postalCode": "38224",
+        "addressCountry": "ID"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-736-7050202",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["Indonesian", "English"]
+    },
+    "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 20
+    },
+    "sameAs": [
+        "https://www.instagram.com/hanaraprimasolusindo",
+        "https://www.linkedin.com/company/hanaraprimasolusindo"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "name": "Zimbra Mail Server",
+                "description": "Enterprise email solution"
+            },
+            {
+                "@type": "Service", 
+                "name": "Web Development",
+                "description": "Custom website and application development"
+            },
+            {
+                "@type": "Service",
+                "name": "CCTV Installation", 
+                "description": "Security camera system installation"
+            }
+        ]
+    }
+}
+</script>
+@endpush
