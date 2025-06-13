@@ -12,6 +12,7 @@ use App\Http\Controllers\BusinessSolutionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MotorolaController;
+use App\Http\Controllers\SitemapController;
 use App\Mail\ContactFormMail;
 use Illuminate\Support\Facades\Mail;
 
@@ -108,71 +109,6 @@ Route::prefix('business-solution')->group(function () {
 });
 
 // Sitemap Route (untuk SEO)
-Route::get('/sitemap.xml', [PageController::class, 'sitemap'])->name('sitemap');
-
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.xml');
+Route::get('/sitemap', [SitemapController::class, 'html'])->name('sitemap.html');
 require __DIR__ . '/auth.php';
-
-// Route::get('/test-contact-email', function () {
-//     // Data sesuai dengan input form Anda
-//     $testData = [
-//         'name' => 'Raihan',
-//         'email' => 'ezcreammm@gmail.com',
-//         'company' => 'asdsad',
-//         'address' => 'cde',
-//         'whatsapp' => '1312123123',
-//         'preferred_time' => 'Pagi',
-//         'message' => 'asdsadadsada'
-//     ];
-    
-//     try {
-//         // Test kirim email
-//         Mail::to('raihann.almuyassarr@gmail.com')->send(new ContactFormMail($testData));
-        
-//         return response()->json([
-//             'status' => 'success',
-//             'message' => 'Email berhasil dikirim ke Mailtrap!',
-//             'check_inbox' => 'https://mailtrap.io/inboxes',
-//             'data_sent' => $testData
-//         ]);
-        
-//     } catch (\Exception $e) {
-//         return response()->json([
-//             'status' => 'error',
-//             'message' => $e->getMessage(),
-//             'file' => $e->getFile(),
-//             'line' => $e->getLine(),
-//             'trace' => $e->getTraceAsString()
-//         ], 500);
-//     }
-// });
-
-// // Debug konfigurasi mail
-// Route::get('/debug-mail-config', function () {
-//     return [
-//         'default' => config('mail.default'),
-//         'smtp_config' => config('mail.mailers.smtp'),
-//         'from' => config('mail.from'),
-//         'env_check' => [
-//             'MAIL_MAILER' => env('MAIL_MAILER'),
-//             'MAIL_HOST' => env('MAIL_HOST'),
-//             'MAIL_PORT' => env('MAIL_PORT'),
-//             'MAIL_USERNAME' => substr(env('MAIL_USERNAME'), 0, 5) . '***',
-//             'MAIL_ENCRYPTION' => env('MAIL_ENCRYPTION'),
-//         ]
-//     ];
-// });
-
-// // Test view email
-// Route::get('/preview-email', function () {
-//     $data = [
-//         'name' => 'Raihan',
-//         'email' => 'ezcreammm@gmail.com',
-//         'company' => 'asdsad',
-//         'address' => 'cde',
-//         'whatsapp' => '1312123123',
-//         'preferred_time' => 'Pagi',
-//         'message' => 'asdsadadsada'
-//     ];
-    
-//     return view('emails.contact-form', compact('data'));
-// });
