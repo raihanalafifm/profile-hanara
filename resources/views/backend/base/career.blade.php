@@ -104,7 +104,9 @@
 
         <!-- Pagination -->
         <div class="card-footer">
-            {{ $careers->links() }}
+            <div class="pagination-wrapper">
+                {{ $careers->links('vendor.pagination.custom') }}
+            </div>
         </div>
     </div>
 

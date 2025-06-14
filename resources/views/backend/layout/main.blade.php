@@ -22,8 +22,9 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
 
-    <!-- Icons. Uncomment required icon fonts -->
+    <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/fonts/boxicons.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iconify-icons@1.0.7/dist/iconify-icons.min.css" />
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/css/core.css') }}"
@@ -31,21 +32,130 @@
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/css/theme-default.css') }}"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('assets/assets1/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/css/custom-pagination.css') }}" />
+
+    <!-- Custom styles -->
+    <style>
+        /* Table styles */
+        .table-responsive {
+            margin-bottom: 0;
+        }
+
+        .card-footer {
+            background: transparent;
+            border-top: 1px solid #d9dee3;
+            padding: 1rem;
+        }
+
+        /* Pagination styles */
+        .pagination-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem;
+            gap: 1rem;
+        }
+
+        .pagination {
+            display: inline-flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 0.25rem;
+        }
+
+        .pagination .page-item .page-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            border: 1px solid #d9dee3;
+            background-color: #fff;
+            color: #697a8d;
+            min-width: 2rem;
+            min-height: 2rem;
+            border-radius: 0.375rem;
+            transition: all 0.15s ease-in-out;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        /* Style khusus untuk tombol Previous/Next */
+        .pagination .page-item:first-child .page-link,
+        .pagination .page-item:last-child .page-link {
+            font-size: 0.8125rem;
+            padding: 0.375rem 0.75rem;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        /* .pagination .page-item:first-child .page-link::before {
+            content: "Previous";
+        }
+
+        .pagination .page-item:last-child .page-link::before {
+            content: "Next";
+        } */
+
+        /* Sembunyikan simbol < dan > */
+        .pagination .page-item:first-child .page-link svg,
+        .pagination .page-item:last-child .page-link svg,
+        .pagination .page-item:first-child .page-link span,
+        .pagination .page-item:last-child .page-link span {
+            display: none;
+        }
+
+        .pagination .page-item.active .page-link {
+            z-index: 3;
+            color: #fff;
+            background-color: #eb7a01;
+            border-color: #aaacff;
+        }
+
+        .pagination .page-item.disabled .page-link {
+            color: #a5acb5;
+            pointer-events: none;
+            background-color: #f6f7f8;
+            border-color: #d9dee3;
+        }
+
+        .pagination .page-item .page-link:hover:not(.active):not(.disabled) {
+            color: #dc6e00;
+            background-color: #f0f2f4;
+            border-color: #d9dee3;
+        }
+
+        .pagination .page-item .page-link:focus {
+            box-shadow: none;
+            outline: 0;
+        }
+
+        /* Text info di bawah pagination */
+        .pagination-info {
+            text-align: center;
+            color: #697a8d;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    </style>
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/assets1/vendor/libs/apex-charts/apex-charts.css') }}" />
 
-    <!-- Summernote CSS - Load before page loads -->
+    <!-- Summernote CSS -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
     <!-- Page CSS -->
+    @stack('page-css')
 
     <!-- Helpers -->
     <script src="{{ asset('assets/assets1/vendor/js/helpers.js') }}"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('assets/assets1/js/config.js') }}"></script>
 </head>
 
@@ -59,12 +169,9 @@
 
             <!-- Layout container -->
             <div class="layout-page">
-                <!-- Navbar -->
-
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
-
                     @yield('backend')
                     <!-- / Content -->
 
@@ -85,31 +192,29 @@
     <!-- / Layout wrapper -->
 
     <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
     <script src="{{ asset('assets/assets1/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('assets/assets1/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('assets/assets1/vendor/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/assets1/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-
     <script src="{{ asset('assets/assets1/vendor/js/menu.js') }}"></script>
-    <!-- endbuild -->
 
     <!-- Vendors JS -->
     <script src="{{ asset('assets/assets1/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 
     <!-- Main JS -->
     <script src="{{ asset('assets/assets1/js/main.js') }}"></script>
-
-    <!-- Page JS -->
     <script src="{{ asset('assets/assets1/js/dashboards-analytics.js') }}"></script>
 
-    <!-- Place this tag in your head or just before your close body tag. -->
+
+
+    <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <!-- Summernote JS - Load after jQuery -->
+    <!-- Summernote JS -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
-    <!-- Page specific scripts -->
+    <!-- Page Scripts -->
+    @stack('page-scripts')
     @yield('scripts')
 
     <script>
