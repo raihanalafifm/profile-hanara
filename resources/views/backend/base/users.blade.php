@@ -90,7 +90,9 @@
 
         <!-- Pagination -->
         <div class="card-footer">
-            {{ $users->links() }}
+            <div class="pagination-wrapper">
+                {{ $users->links('vendor.pagination.custom') }}
+            </div>
         </div>
     </div>
 

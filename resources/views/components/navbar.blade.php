@@ -102,9 +102,14 @@
                 </li>
             </ul>
         </div>
+        <div class="theme-toggle ms-3">
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
+                {{-- <i class="bi bi-sun-fill light-icon"></i>
+                <i class="bi bi-moon-fill dark-icon"></i> --}}
+            </button>
+        </div>
     </div>
 </nav>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Create hamburger animation span

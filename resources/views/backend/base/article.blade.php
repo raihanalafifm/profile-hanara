@@ -1,22 +1,6 @@
 @extends('backend.layout.main')
 
 @section('backend')
-    <style>
-        .note-editor.note-frame {
-            border: 1px solid #ddd !important;
-            border-radius: 4px !important;
-        }
-
-        .note-toolbar {
-            background-color: #f8f9fa !important;
-            border-bottom: 1px solid #ddd !important;
-        }
-
-        .note-btn-group {
-            margin-right: 5px !important;
-        }
-    </style>
-
     <!-- Hoverable Table rows -->
     <div class="card">
         <div class="card-header">
@@ -116,7 +100,9 @@
         </div>
 
         <div class="card-footer">
-            {{ $articles->links() }}
+            <div class="pagination-wrapper">
+                {{ $articles->links('vendor.pagination.custom') }}
+            </div>
         </div>
     </div>
 
@@ -366,7 +352,7 @@
                                 ['table', ['table']],
                                 ['insert', ['link', 'picture', 'video']],
                                 ['view', ['fullscreen', 'codeview', 'help']]
-                            ],
+                            },
                             callbacks: {
                                 onInit: function() {
                                     // Set content after initialization

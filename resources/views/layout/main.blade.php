@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -171,9 +171,11 @@
     {{-- Tambahkan verification tags jika ada --}}
     <meta name="google-site-verification" content="your-verification-code" />
     @stack('styles')
+
 </head>
 
 <body>
+
     <header role="banner">
         @include('components.navbar')
     </header>
@@ -192,7 +194,6 @@
             <div class="scroll-arrow"></div>
         </button>
     </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -815,6 +816,42 @@
         });
     </script>
     @stack('scripts')
+    <script>
+        // Dark Mode Toggle JavaScript
+        (function() {
+            // Check for saved theme preference or default to 'light' mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Apply the theme on initial load
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            // Wait for DOM to be ready
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeToggle = document.getElementById('themeToggle');
+
+                if (themeToggle) {
+                    // Handle theme toggle
+                    themeToggle.addEventListener('click', function() {
+                        const currentTheme = document.documentElement.getAttribute('data-theme');
+                        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                        // Update theme
+                        document.documentElement.setAttribute('data-theme', newTheme);
+
+                        // Save preference
+                        localStorage.setItem('theme', newTheme);
+
+                        // Dispatch custom event for other components
+                        window.dispatchEvent(new CustomEvent('themeChanged', {
+                            detail: {
+                                theme: newTheme
+                            }
+                        }));
+                    });
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>

@@ -103,11 +103,11 @@
                     @endforelse
                 </tbody>
             </table>
-        </div>
-
-        <!-- Pagination -->
+        </div> <!-- Pagination -->
         <div class="card-footer">
-            {{ $products->links() }}
+            <div class="pagination-wrapper">
+                {{ $products->links('vendor.pagination.custom') }}
+            </div>
         </div>
     </div>
 

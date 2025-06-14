@@ -74,6 +74,12 @@
             <form id="contactForm" class="contact-form" method="POST" action="{{ route('contact.submit') }}">
                 @csrf
 
+                @if ($errors->has('g-recaptcha-response'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ $errors->first('g-recaptcha-response') }}
+                    </div>
+                @endif
+
                 <div class="row">
                     <!-- Nama Anda -->
                     <div class="col-md-6 mb-3">
@@ -189,23 +195,13 @@
                     </div>
                 </div>
 
-                <!-- reCAPTCHA (optional but recommended for SEO and security) -->
-                {{-- @if (config('services.recaptcha.site_key'))
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
-                            </div>
-                            @error('g-recaptcha-response')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                    </div>
-                @endif --}}
 
                 <!-- Submit Button -->
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-submit" id="submitBtn">
+                        <button type="submit" id="submitBtn" class="g-recaptcha btn btn-submit"
+                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback='onSubmit'
+                            data-action='submit'>
                             <span class="spinner-border spinner-border-sm d-none" role="status"
                                 aria-hidden="true"></span>
                             <span class="btn-text">Kirim Pesan</span>
@@ -989,17 +985,12 @@
 <!-- Optional: Add confetti library for celebration effect -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<!-- Optional: Add reCAPTCHA script if using -->
-@if (config('services.recaptcha.site_key'))
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-@endif
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("contactForm").submit();
+    }
+</script>
 
-<!-- Temporary Test Buttons untuk debugging (hapus setelah testing) -->
-{{-- <div class="mt-4 text-center">
-    <button type="button" class="btn btn-success me-2" onclick="testSuccessModal()">
-        Test Success Modal
-    </button>
-    <button type="button" class="btn btn-danger" onclick="testErrorModal()">
-        Test Error Modal
-    </button> --}}
+
 </div>

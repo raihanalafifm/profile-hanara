@@ -6,6 +6,7 @@ use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
+use App\Rules\reCAPTCHA;
 
 class ContactController extends Controller
 {
@@ -13,7 +14,7 @@ class ContactController extends Controller
     {
         // Log incoming request
         Log::info('Contact form submission', $request->all());
-
+        // dd($request->all());
         // Validasi sesuai dengan field di form Anda
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -23,6 +24,7 @@ class ContactController extends Controller
             'whatsapp' => 'nullable|string|max:20',
             'preferred_time' => 'required|in:Pagi,Siang,Sore',
             'message' => 'required|string|min:10|max:5000',
+            'g-recaptcha-response' => [new reCAPTCHA()],
         ], [
             'name.required' => 'Nama harus diisi',
             'email.required' => 'Email harus diisi',
