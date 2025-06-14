@@ -3,7 +3,7 @@
 return [
     // Default SEO settings
     'defaults' => [
-        'title_suffix' => ' - Hanara IT Solution',
+        'title_suffix' => '',
         'author' => 'PT Hanara Prima Solusindo',
         'robots' => 'index, follow',
         'og_type' => 'website',
@@ -55,7 +55,7 @@ return [
         ],
 
         'career_detail' => [
-            'title' => '{position} - Lowongan di Hanara',
+            'title' => '{position} | Hanara ',
             'description' => 'Lowongan {position} di Hanara. {type}. Kirim CV sekarang untuk bergabung dengan tim IT professional kami.',
             'keywords' => 'lowongan {position}, karir IT bengkulu, {type} job',
         ],
@@ -123,66 +123,66 @@ return [
 
         // Software House Services
         'software_web' => [
-            'title' => 'Jasa Pembuatan Website - Hanara',
-            'description' => 'Website professional mulai 3 juta. Company profile, toko online, custom system. Responsive, SEO friendly & fast loading.',
+            'title' => 'Jasa Pembuatan Website & Web Aplikasi | Hanara',
+            'description' => 'Hanara siap bantu perusahaan Anda tampil profesional dengan website company profile yang elegan, cepat diakses, dan mudah dikelola.',
             'keywords' => 'jasa website bengkulu, web development, bikin website murah',
-            'og_title' => 'Jasa Website Professional - Design Modern',
-            'og_description' => 'Website custom dengan teknologi terkini. Garansi 1 tahun & free maintenance 3 bulan.',
+            'og_title' => 'Jasa Pembuatan Website & Web Aplikasi | Hanara',
+            'og_description' => 'Hanara siap bantu perusahaan Anda tampil profesional dengan website company profile yang elegan, cepat diakses, dan mudah dikelola.',
             'og_image' => 'https://hanara.id/assets/images/icon/jasa-pembuatan-website.png',
         ],
 
         'software_webapp' => [
-            'title' => 'Pembuatan Aplikasi Web - Custom System',
-            'description' => 'Aplikasi web custom untuk bisnis. ERP, CRM, HR System dengan teknologi modern. Konsultasi gratis!',
+            'title' => 'Jasa Pembuatan Website & Web Aplikasi | Hanara',
+            'description' => 'Hanara melayani pembuatan website dan web aplikasi sesuai kebutuhan bisnis Anda. Solusi digital berbasis web, responsif, aman, dan mudah dikembangkan.',
             'keywords' => 'aplikasi web custom, sistem informasi, software development',
-            'og_title' => 'Web Application Development - Hanara',
-            'og_description' => 'Solusi digital untuk efisiensi bisnis. Teknologi modern, scalable & user friendly.',
+            'og_title' => 'Jasa Pembuatan Website & Web Aplikasi | Hanara',
+            'og_description' => 'Hanara melayani pembuatan website dan web aplikasi sesuai kebutuhan bisnis Anda. Solusi digital berbasis web, responsif, aman, dan mudah dikembangkan.',
             'og_image' => 'https://hanara.id/assets/images/icon/web-app.png',
         ],
 
         'software_maintenance' => [
-            'title' => 'Maintenance Website - Update & Support',
-            'description' => 'Maintenance website mulai 500rb/bulan. Update rutin, backup, monitoring 24/7. Jaga performa website tetap optimal!',
+            'title' => 'Jasa Maintenance Website Profesional | Hanara',
+            'description' => 'Website sering error atau lambat? Hanara siap bantu maintenance website Anda agar tetap optimal, aman, dan selalu up-to-date tanpa gangguan.',
             'keywords' => 'maintenance website, jasa kelola website, support website',
-            'og_title' => 'Maintenance Website & Aplikasi - Hanara',
-            'og_description' => 'Jaga website selalu optimal. Update, backup & monitoring professional.',
+            'og_title' => 'Jasa Maintenance Website Profesional | Hanara',
+            'og_description' => 'Website sering error atau lambat? Hanara siap bantu maintenance website Anda agar tetap optimal, aman, dan selalu up-to-date tanpa gangguan.',
             'og_image' => 'https://hanara.id/assets/images/icon/maintenance-web.png',
         ],
 
         // Other Services
         'cctv' => [
-            'title' => 'Pasang CCTV Bengkulu - Hikvision & Dahua',
-            'description' => 'Jasa pasang CCTV Bengkulu dengan produk original Hikvision & Dahua. Garansi resmi, teknisi berpengalaman. Survey gratis!',
+            'title' => 'Jasa Instalasi CCTV Profesional | Hanara',
+            'description' => 'Butuh instal CCTV indoor/outdoor? Hanara siap pasang sistem CCTV lengkap, mulai dari survei, instalasi, setting & maintenance dengan garansi resmi.',
             'keywords' => 'pasang cctv bengkulu, hikvision, dahua, jasa cctv',
-            'og_title' => 'CCTV Bengkulu - Distributor Resmi',
-            'og_description' => 'CCTV berkualitas, harga terbaik. Garansi resmi & after sales terjamin.',
+            'og_title' => 'Jasa Instalasi CCTV Profesional | Hanara',
+            'og_description' => 'Butuh instal CCTV indoor/outdoor? Hanara siap pasang sistem CCTV lengkap, mulai dari survei, instalasi, setting & maintenance dengan garansi resmi.',
             'og_image' => 'https://hanara.id/assets/images/icon/cctv-icon.png',
         ],
 
         'motorola' => [
-            'title' => 'Radio Motorola Bengkulu - Distributor Resmi',
-            'description' => 'Jual HT Motorola, repeater & aksesoris. Service center resmi dengan teknisi tersertifikat. Ready stock!',
+            'title' => 'Radio HT Motorola | Handy Talkie & Digital Radio',
+            'description' => 'Tersedia radio HT Motorola original: digital & analog. Pilihan Xtended (XiR, CP, SL1M), garansi resmi, cocok untuk industri & komunikasi profesional.',
             'keywords' => 'motorola bengkulu, radio ht, two way radio',
-            'og_title' => 'Motorola Radio - Distributor & Service Center',
-            'og_description' => 'Radio Motorola original, garansi resmi. Service center tersedia.',
+            'og_title' => 'Radio HT Motorola | Handy Talkie & Digital Radio',
+            'og_description' => 'Tersedia radio HT Motorola original: digital & analog. Pilihan Xtended (XiR, CP, SL1M), garansi resmi, cocok untuk industri & komunikasi profesional.',
             'og_image' => 'https://hanara.id/assets/images/icon/motorola-icon.png',
         ],
 
         'nextcloud' => [
-            'title' => 'Nextcloud - Private Cloud Storage',
+            'title' => 'Jasa Implementasi Nextcloud Indonesia | Hanara',
             'description' => 'Private cloud storage untuk bisnis. File sharing aman, sync multi-device. On-premise atau cloud. Demo gratis!',
             'keywords' => 'nextcloud indonesia, private cloud, file sharing',
-            'og_title' => 'Nextcloud - Cloud Storage Aman',
-            'og_description' => 'Kontrol penuh atas data bisnis. Kolaborasi mudah, akses dimana saja.',
+            'og_title' => 'Jasa Implementasi Nextcloud Indonesia | Hanara',
+            'og_description' => 'Hanara menyediakan layanan implementasi Nextcloud untuk bisnis Anda. Akses data aman, cloud pribadi, file sharing, dan kolaborasi tanpa batas — server milik Anda.',
             'og_image' => 'https://hanara.id/assets/images/icon/nextcloud-icon.png',
         ],
 
         'hcm' => [
-            'title' => 'HCM & HRIS - Sistem HR Digital',
-            'description' => 'Sistem HR terintegrasi untuk payroll, absensi, cuti & performance. Efisiensi pengelolaan SDM dalam satu platform.',
+            'title' => 'Aplikasi HRIS & Payroll (HCM + HCIS Mobile) | Hanara',
+            'description' => 'Tingkatkan efisiensi HR Anda dengan HCM lengkap & HCIS Mobile. Hanara hadirkan aplikasi HR, payroll, absensi & mobile support—mudah, cepat, akurat.',
             'keywords' => 'hcm system, hris indonesia, sistem payroll',
-            'og_title' => 'HCM & HRIS - Digitalisasi SDM',
-            'og_description' => 'Kelola SDM lebih efisien. Payroll otomatis, absensi digital, employee self service.',
+            'og_title' => 'Aplikasi HRIS & Payroll (HCM + HCIS Mobile) | Hanara',
+            'og_description' => 'Tingkatkan efisiensi HR Anda dengan HCM lengkap & HCIS Mobile. Hanara hadirkan aplikasi HR, payroll, absensi & mobile support—mudah, cepat, akurat.',
             'og_image' => 'https://hanara.id/assets/images/icon/hcm.png',
         ],
     ],
