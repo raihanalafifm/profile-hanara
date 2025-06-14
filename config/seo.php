@@ -19,36 +19,39 @@ return [
     // SEO settings per halaman (maksimal 60 karakter untuk title)
     'pages' => [
         'home' => [
-            'title' => 'IT Solution Bengkulu - Zimbra, Web & CCTV',
-            'description' => 'Hanara menyediakan solusi IT terpercaya di Bengkulu. Spesialis Zimbra Mail Server, pembuatan website, CCTV, dan radio Motorola. Konsultasi gratis: 0897-5000-805',
-            'keywords' => 'IT solution Bengkulu, zimbra mail server, jasa website, pasang CCTV, radio motorola',
-            'og_title' => 'Hanara - Partner IT Terpercaya untuk Bisnis Anda',
-            'og_description' => 'Solusi IT lengkap dari tim berpengalaman 10+ tahun. Zimbra, Web Development, CCTV & Motorola Radio.',
+            'title' => 'Hanara – Jasa Zimbra, Nextcloud, dan IT Support Profesional',
+            'og_title' => 'Hanara – Jasa Zimbra, Nextcloud, dan IT Support Profesional',
+            'description' => 'Hanara adalah partner IT terpercaya untuk solusi Zimbra Mail Server, Nextcloud Cloud Storage, dan layanan dukungan server & jaringan bisnis Anda.',
+            'og_description' => 'Hanara adalah partner IT terpercaya untuk solusi Zimbra Mail Server, Nextcloud Cloud Storage, dan layanan dukungan server & jaringan bisnis Anda.',
+            'keywords' => 'hanara, jasa zimbra, cloud zimbra indonesia, nextcloud, it support, server maintenance, solusi it bisnis',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-hanara.png',
         ],
 
         'about' => [
-            'title' => 'Tentang Hanara - IT Solution Professional',
-            'description' => 'Hanara adalah perusahaan IT yang menyediakan solusi Zimbra, Nextcloud, dan layanan server. Tim bersertifikat dengan pengalaman 10+ tahun.',
-            'keywords' => 'tentang hanara, perusahaan IT indonesia, jasa IT professional',
-            'og_title' => 'Tentang Hanara - Partner Solusi IT Terpercaya',
-            'og_description' => 'Perusahaan IT dengan tim bersertifikat. Spesialis Zimbra Mail Server, Web Development & Infrastructure.',
+            'title' => 'Tentang Hanara – Partner Solusi IT Profesional di Indonesia',
+            'og_title' => 'Tentang Hanara – Partner Solusi IT Profesional di Indonesia',
+            'description' => 'Hanara adalah perusahaan teknologi yang menyediakan solusi IT seperti Zimbra, Nextcloud, dan layanan dukungan server. Kenali visi dan tim profesional kami di sini.',
+            'og_description' => 'Hanara adalah perusahaan teknologi yang menyediakan solusi IT seperti Zimbra, Nextcloud, dan layanan dukungan server. Kenali visi dan tim profesional kami di sini.',
+            'keywords' => 'hanara, tentang hanara, perusahaan it indonesia, jasa it profesional, solusi it, zimbra, nextcloud, dukungan server, profil perusahaan it',
             'og_image' => 'https://hanara.id/assets/images/gambar/bw-meet.png',
         ],
 
         'contact' => [
-            'title' => 'Hubungi Hanara - Konsultasi IT Gratis',
-            'description' => 'Butuh solusi IT? Hubungi Hanara untuk konsultasi Zimbra, Nextcloud & layanan IT lainnya. Respon cepat via WA: 0897-5000-805',
-            'keywords' => 'kontak hanara, konsultasi IT, jasa zimbra, jasa nextcloud',
-            'og_title' => 'Hubungi Hanara - Konsultasi IT Professional',
-            'og_description' => 'Konsultasi gratis untuk solusi IT bisnis Anda. Tim siap membantu via WA: 0897-5000-805',
+            'title' => 'Hubungi Hanara – Konsultasi & Layanan IT Profesional',
+            'og_title' => 'Hubungi Hanara – Konsultasi & Layanan IT Profesional',
+            'description' => 'Ingin kerja sama atau konsultasi layanan IT seperti Zimbra & Nextcloud? Hubungi tim Hanara melalui formulir atau kontak kami yang tersedia di halaman ini.',
+            'og_description' => 'Ingin kerja sama atau konsultasi layanan IT seperti Zimbra & Nextcloud? Hubungi tim Hanara melalui formulir atau kontak kami yang tersedia di halaman ini.',
+            'keywords' => 'hubungi hanara, konsultasi it, layanan it, kontak hanara, jasa zimbra, jasa nextcloud, layanan server, it support indonesia',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-hanara.png',
         ],
 
         'career' => [
-            'title' => 'Karir di Hanara - Lowongan IT Bengkulu',
-            'description' => 'Bergabung dengan Hanara untuk karir di bidang IT. Posisi developer, network engineer, dan digital marketing tersedia. Benefit menarik!',
-            'keywords' => 'karir hanara, lowongan IT bengkulu, kerja IT, digital talent',
-            'og_title' => 'Lowongan Kerja IT - Bergabung dengan Hanara',
-            'og_description' => 'Kembangkan karir IT Anda bersama Hanara. Berbagai posisi tersedia dengan benefit menarik.',
+            'title' => 'Karir di Hanara – Lowongan IT & Peluang Berkembang',
+            'og_title' => 'Karir di Hanara – Lowongan IT & Peluang Berkembang',
+            'description' => 'Bergabunglah dengan Hanara, perusahaan IT yang membuka peluang karir di bidang teknologi, server, cloud, dan layanan digital untuk tim profesional.',
+            'og_description' => 'Bergabunglah dengan Hanara, perusahaan IT yang membuka peluang karir di bidang teknologi, server, cloud, dan layanan digital untuk tim profesional.',
+            'keywords' => 'karir hanara, lowongan it, kerja di hanara, peluang karir teknologi, digital talent, lowongan nextcloud, lowongan zimbra, perusahaan IT',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-hanara.png',
         ],
 
         'career_detail' => [
@@ -58,11 +61,12 @@ return [
         ],
 
         'article' => [
-            'title' => 'Artikel Hanara - Tips IT & Teknologi',
-            'description' => 'Artikel seputar solusi IT, Zimbra, Nextcloud, tips teknologi untuk bisnis. Update rutin dari tim expert Hanara.',
-            'keywords' => 'artikel IT, tips teknologi, zimbra tutorial, nextcloud guide',
-            'og_title' => 'Artikel Hanara - Insight Teknologi Terkini',
-            'og_description' => 'Tips dan panduan IT dari expert. Zimbra, Nextcloud, Web Development & solusi teknologi bisnis.',
+            'title' => 'Artikel Hanara – Tips & Insight Seputar Solusi IT dan Server',
+            'og_title' => 'Artikel Hanara – Tips & Insight Seputar Solusi IT dan Server',
+            'description' => 'Baca berbagai artikel dari Hanara seputar solusi IT, server, cloud, Zimbra, Nextcloud, hingga tips teknologi untuk bisnis Anda. Update rutin setiap minggu.',
+            'og_description' => 'Baca berbagai artikel dari Hanara seputar solusi IT, server, cloud, Zimbra, Nextcloud, hingga tips teknologi untuk bisnis Anda. Update rutin setiap minggu.',
+            'keywords' => 'artikel hanara, tips it, insight teknologi, solusi it, zimbra, nextcloud, server cloud, blog hanara, artikel teknologi, it support',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-hanara.png',
         ],
 
         'article_detail' => [
@@ -73,47 +77,47 @@ return [
 
         // Zimbra Services
         'zimbra_instalasi' => [
-            'title' => 'Instalasi Zimbra Mail Server - Hanara',
-            'description' => 'Jasa instalasi Zimbra Mail Server professional. Konfigurasi optimal, training gratis, dan support teknis. Hubungi: 0897-5000-805',
-            'keywords' => 'instalasi zimbra, zimbra mail server, email server indonesia',
-            'og_title' => 'Instalasi Zimbra - Tim Bersertifikat Hanara',
-            'og_description' => 'Instalasi Zimbra cepat & aman dengan garansi. Free training & lifetime support.',
+            'title' => 'Instalasi Zimbra Mail Server – Layanan Profesional Hanara',
+            'og_title' => 'Instalasi Zimbra Mail Server – Layanan Profesional Hanara',
+            'description' => 'Hanara menyediakan jasa instalasi Zimbra Mail Server untuk kebutuhan perusahaan dan lembaga Anda, lengkap dengan konfigurasi optimal dan dukungan teknis ahli.',
+            'og_description' => 'Hanara menyediakan jasa instalasi Zimbra Mail Server untuk kebutuhan perusahaan dan lembaga Anda, lengkap dengan konfigurasi optimal dan dukungan teknis ahli.',
+            'keywords' => 'instalasi zimbra, install zimbra server, jasa zimbra indonesia, zimbra mail server, konfigurasi zimbra, email server profesional, hanara',
             'og_image' => 'https://hanara.id/assets/images/icon/zimbra-instalasi.png',
         ],
 
         'zimbra_maintenance' => [
-            'title' => 'Maintenance Zimbra - Support 24/7',
-            'description' => 'Layanan maintenance Zimbra mencakup monitoring, backup, update & troubleshooting. Cegah downtime dengan preventive maintenance rutin.',
-            'keywords' => 'maintenance zimbra, support zimbra, jasa pemeliharaan server',
-            'og_title' => 'Maintenance Zimbra 24/7 - Zero Downtime',
-            'og_description' => 'Monitoring 24/7 & response cepat. Jaga email server tetap optimal dengan maintenance rutin.',
+            'title' => 'Jasa Maintenance Zimbra – Zimbra Local Support',
+            'og_title' => 'Jasa Maintenance Zimbra – Zimbra Local Support',
+            'description' => 'Layanan maintenance Zimbra dari Hanara mencakup monitoring, backup, update, troubleshooting, dan support untuk memastikan server email Anda berjalan optimal.',
+            'og_description' => 'Layanan maintenance Zimbra dari Hanara mencakup monitoring, backup, update, troubleshooting, dan support untuk memastikan server email Anda berjalan optimal.',
+            'keywords' => 'zimbra maintenance, support tahunan zimbra, jasa pemeliharaan server, backup zimbra, monitoring zimbra, hanara, zimbra indonesia',
             'og_image' => 'https://hanara.id/assets/images/icon/maintenance-zimbra.png',
         ],
 
         'zimbra_troubleshooting' => [
-            'title' => 'Troubleshooting Zimbra - Solusi Cepat',
-            'description' => 'Email bermasalah? Tim expert siap atasi error Zimbra, pemulihan data, dan optimasi server. Response time <30 menit.',
-            'keywords' => 'troubleshooting zimbra, zimbra error, perbaikan email server',
-            'og_title' => 'Troubleshooting Zimbra - Atasi Error Cepat',
-            'og_description' => 'Tim expert siap bantu 24/7. Response cepat untuk semua masalah Zimbra Anda.',
+            'title' => 'Troubleshooting Zimbra – Solusi Cepat untuk Server Bermasalah',
+            'og_title' => 'Troubleshooting Zimbra – Solusi Cepat untuk Server Bermasalah',
+            'description' => 'Zimbra Anda bermasalah? Tim Hanara siap membantu troubleshooting Zimbra, pemulihan email server, pengecekan log, dan solusi error Zimbra secara cepat dan aman.',
+            'og_description' => 'Zimbra Anda bermasalah? Tim Hanara siap membantu troubleshooting Zimbra, pemulihan email server, pengecekan log, dan solusi error Zimbra secara cepat dan aman.',
+            'keywords' => 'troubleshooting zimbra, zimbra error, pemulihan zimbra, jasa perbaikan email server, zimbra bermasalah, hanara, support zimbra',
             'og_image' => 'https://hanara.id/assets/images/icon/zimbra-troubleshoot.png',
         ],
 
         'zimbra_cloud' => [
-            'title' => 'Zimbra Cloud - Email Bisnis Hemat',
-            'description' => 'Email bisnis professional tanpa ribet server. Zimbra Cloud dari Hanara, mulai 25rb/user/bulan. Setup mudah, langsung pakai!',
-            'keywords' => 'zimbra cloud, email bisnis, cloud email indonesia',
-            'og_title' => 'Zimbra Cloud - Email Bisnis Tanpa Ribet',
-            'og_description' => 'Email professional mulai 25rb/user. Tanpa investasi server, langsung pakai!',
+            'title' => 'Zimbra Cloud – Email Bisnis Tanpa Ribet Server Sendiri',
+            'og_title' => 'Zimbra Cloud – Email Bisnis Tanpa Ribet Server Sendiri',
+            'description' => 'Gunakan Zimbra Cloud dari Hanara untuk email bisnis profesional tanpa perlu server sendiri. Praktis, aman, hemat biaya, dan siap pakai untuk perusahaan Anda.',
+            'og_description' => 'Gunakan Zimbra Cloud dari Hanara untuk email bisnis profesional tanpa perlu server sendiri. Praktis, aman, hemat biaya, dan siap pakai untuk perusahaan Anda.',
+            'keywords' => 'zimbra cloud, email bisnis, jasa zimbra cloud, sewa zimbra, server email indonesia, cloud mail server, hanara, zimbra indonesia',
             'og_image' => 'https://hanara.id/assets/images/icon/zimbra-cloud.png',
         ],
 
         'zimbra_server' => [
-            'title' => 'Zimbra Network Edition - Lisensi Resmi',
-            'description' => 'Distributor resmi Zimbra Network Edition. Fitur premium untuk enterprise dengan support official. Harga kompetitif!',
-            'keywords' => 'zimbra network edition, lisensi zimbra, zimbra NE indonesia',
-            'og_title' => 'Zimbra NE - Distributor Resmi Indonesia',
-            'og_description' => 'Lisensi Zimbra NE dengan harga terbaik. Free instalasi & training untuk enterprise.',
+            'title' => 'Zimbra Network Edition – Lisensi Resmi & Dukungan Penuh',
+            'og_title' => 'Zimbra Network Edition – Lisensi Resmi & Dukungan Penuh',
+            'description' => 'Dapatkan lisensi resmi Zimbra Network Edition dari Hanara. Solusi email premium untuk perusahaan dengan fitur lengkap, dukungan teknis, dan stabilitas tinggi.',
+            'og_description' => 'Dapatkan lisensi resmi Zimbra Network Edition dari Hanara. Solusi email premium untuk perusahaan dengan fitur lengkap, dukungan teknis, dan stabilitas tinggi.',
+            'keywords' => 'zimbra network edition, lisensi zimbra resmi, zimbra server, zimbra NE indonesia, email server premium, hanara, dukungan zimbra',
             'og_image' => 'https://hanara.id/assets/images/icon/zimbra-server.png',
         ],
 
