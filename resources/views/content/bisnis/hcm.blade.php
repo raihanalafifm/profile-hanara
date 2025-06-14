@@ -238,7 +238,7 @@
                             </div>
                             <div class="testimonial-clean-company">
                                 <div class="company-logo-wrapper">
-                                    <img src="{{ asset('assets/images/icon/cde-logo.png') }}"
+                                    <img src="{{ asset('assets/images/LOGO PERUSAHAAN/cde.png') }}"
                                         alt="PT. Cakrawala Dinamika Energi" class="company-logo">
                                 </div>
                                 <p class="company-name">PT. Cakrawala Dinamika Energi</p>

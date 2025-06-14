@@ -2255,7 +2255,7 @@ h2.company-name {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .latest-blog-section {
         background-color: #161615;
     }
@@ -3515,7 +3515,7 @@ h2.company-name {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-zimbra-features-section {
         background-color: #0a0a0a;
     }
@@ -4065,7 +4065,7 @@ h2.company-name {
     color: #333;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-layanan-card {
         background-color: #161615;
     }
@@ -4304,7 +4304,7 @@ h2.company-name {
 }
 
 /* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-troubleshoot-section,
     .hnr-advantages-section {
         background-color: #161615;
@@ -4742,7 +4742,7 @@ h2.company-name {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-cloud-packages-section {
         background-color: #1a1a1a;
     }
@@ -4875,7 +4875,7 @@ h2.company-name {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-cloud-features-section {
         background-color: #1a1a1a;
     }
@@ -5153,7 +5153,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-zimserver-section {
         background-color: #161615;
     }
@@ -5439,7 +5439,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-house-services-card {
         background-color: #232323;
     }
@@ -5843,7 +5843,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-house-web-pricing-card {
         background-color: #232323;
         border-color: #333;
@@ -5994,7 +5994,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-tools-title {
         color: #e0e0e0;
     }
@@ -6288,7 +6288,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-webapp-section {
         background-color: #161615;
     }
@@ -6582,7 +6582,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-cctv-hero-section {
         background-color: #161615;
     }
@@ -6860,7 +6860,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-motorola-hero-section {
         background-color: #161615;
     }
@@ -7093,7 +7093,7 @@ h2.company-name {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-webdev-service-card {
         background-color: #232323;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -7241,7 +7241,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-nextcloud-section {
         background-color: #161615;
     }
@@ -8519,7 +8519,7 @@ h2.company-name {
    DARK MODE STYLES
    =================================== */
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     /* Base styles */
     body {
         background-color: #0a0a0a;
@@ -10578,7 +10578,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hnr-status-open {
         background-color: #1e3a2e;
         color: #6fcf97;
@@ -11041,7 +11041,7 @@ h2.company-name {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
     .hcm-custom-solution-section {
         background: linear-gradient(
             135deg,
@@ -11544,4 +11544,442 @@ section {
     color: white !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+}
+// Theme Toggle Button Styles
+/* Base Theme Toggle Styles */
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.theme-toggle-btn {
+    background-color: transparent;
+    border: 2px solid #ff6700;
+    border-radius: 50px;
+    width: 70px;
+    height: 35px;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box; /* Ensures border doesn't affect dimensions */
+}
+
+.theme-toggle-btn::before {
+    content: "";
+    position: absolute;
+    width: 25px; /* Slightly reduced for better fit */
+    height: 25px;
+    background-color: #ff6700;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+}
+
+.theme-toggle-btn i {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    pointer-events: none;
+}
+
+.light-icon {
+    margin-left: 10px;
+    color: #ff6700;
+    opacity: 1;
+}
+
+.dark-icon {
+    margin-right: 10px;
+    color: #fff;
+    opacity: 0;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .theme-toggle-btn::before {
+    transform: translate(35px, -50%);
+    background-color: #fff;
+}
+
+[data-theme="dark"] .light-icon {
+    opacity: 0;
+}
+
+[data-theme="dark"] .dark-icon {
+    opacity: 1;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991px) {
+    .theme-toggle {
+        position: static;
+        margin: 0 10px;
+    }
+
+    .theme-toggle-btn {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-toggle-btn::before {
+        width: 22px;
+        height: 22px;
+        left: 3px;
+    }
+
+    [data-theme="dark"] .theme-toggle-btn::before {
+        transform: translate(30px, -50%);
+    }
+
+    .light-icon,
+    .dark-icon {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .theme-toggle-btn {
+        width: 56px;
+        height: 28px;
+    }
+
+    .theme-toggle-btn::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    [data-theme="dark"] .theme-toggle-btn::before {
+        transform: translate(28px, -50%);
+    }
+}
+
+@media (max-width: 575px) {
+    .theme-toggle-btn {
+        width: 52px;
+        height: 26px;
+    }
+
+    .theme-toggle-btn::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    [data-theme="dark"] .theme-toggle-btn::before {
+        transform: translate(26px, -50%);
+    }
+}
+
+/* Perfect circle alignment technique */
+.theme-toggle-btn::before {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* Optional: adds subtle depth */
+    will-change: transform; /* Optimizes animation performance */
+}
+
+/* Read More Button Styles */
+.hnr-motorola-readmore-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: transparent;
+    color: #ff6b00;
+    border: 1px solid #ff6b00;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hnr-motorola-readmore-btn:hover {
+    background-color: #ff6b00;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.hnr-motorola-readmore-btn i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.hnr-motorola-readmore-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Adjust card styles */
+.hnr-motorola-category-card,
+.hnr-motorola-product-card {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hnr-motorola-category-title,
+.hnr-motorola-product-title {
+    margin-bottom: 10px;
+}
+
+/* Find Product Section Styles */
+.hnr-motorola-find-product-section {
+    background-color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hnr-find-product-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hnr-find-product-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #fff3e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    animation: pulse 2s infinite;
+}
+
+.hnr-find-product-icon i {
+    font-size: 36px;
+    color: #ff6b00;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 107, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+    }
+}
+
+.hnr-find-product-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hnr-find-product-description {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.hnr-catalog-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    background-color: #ff6b00;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+}
+
+.hnr-catalog-button:hover {
+    background-color: #e55600;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+    text-decoration: none;
+}
+
+.hnr-catalog-button i {
+    font-size: 20px;
+}
+
+/* Discussion Section Styles */
+.hnr-motorola-discussion-section {
+    background-color: #f9f9fb;
+    padding: 60px 0;
+    position: relative;
+}
+
+.hnr-discussion-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hnr-discussion-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #ff6b00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.hnr-discussion-icon i {
+    font-size: 32px;
+    color: #fff;
+}
+
+.hnr-discussion-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Background decoration for Find Product section */
+.hnr-motorola-find-product-section::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 107, 0, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hnr-motorola-find-product-section::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 107, 0, 0.03);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .hnr-motorola-find-product-section {
+        padding: 60px 0;
+    }
+
+    .hnr-find-product-title {
+        font-size: 28px;
+    }
+
+    .hnr-find-product-description {
+        font-size: 16px;
+    }
+
+    .hnr-discussion-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hnr-motorola-find-product-section {
+        padding: 50px 0;
+    }
+
+    .hnr-find-product-title {
+        font-size: 24px;
+    }
+
+    .hnr-find-product-description {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    .hnr-catalog-button {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+
+    .hnr-motorola-discussion-section {
+        padding: 50px 0;
+    }
+
+    .hnr-discussion-title {
+        font-size: 20px;
+        padding: 0 15px;
+    }
+
+    .hnr-discussion-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hnr-discussion-icon i {
+        font-size: 28px;
+    }
+}
+
+/* Dark mode support */
+[data-theme="dark"] {
+    .hnr-motorola-find-product-section {
+        background-color: #0a0a0a;
+    }
+    .hnr-catalog-button {
+        background-color: #ff6b00;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+    }
+
+    .hnr-catalog-button:hover {
+        background-color: #e55600;
+    }
+
+    .hnr-find-product-content {
+        color: #e0e0e0;
+    }
+
+    .hnr-find-product-icon i {
+        color: #ff6b00;
+    }
+    .hnr-find-product-icon {
+        background-color: #3d2a14;
+    }
+
+    .hnr-find-product-title {
+        color: #e0e0e0;
+    }
+
+    .hnr-find-product-description {
+        color: #b0b0b0;
+    }
+
+    .hnr-motorola-discussion-section {
+        background-color: #1a1a1a;
+    }
+
+    .hnr-discussion-title {
+        color: #e0e0e0;
+    }
+
+    .hnr-motorola-find-product-section::before,
+    .hnr-motorola-find-product-section::after {
+        background-color: rgba(255, 107, 0, 0.02);
+    }
 }
