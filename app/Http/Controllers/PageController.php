@@ -31,8 +31,21 @@ class PageController extends Controller
         ];
 
         // Schema untuk About Page
+        $schemaOrg = config('seo.schema.organization');
+
+        // Check if schemaOrg is null or empty
+        if (empty($schemaOrg)) {
+            $schemaOrg = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Organization',
+                'name' => 'PT Hanara Prima Solusindo',
+                'url' => 'https://hanara.id'
+            ];
+        }
+
+        // Merge additional data
         $schemaOrg = array_merge(
-            config('seo.schema.organization'),
+            $schemaOrg,
             [
                 '@type' => ['Organization', 'LocalBusiness'],
                 'priceRange' => '$$',
@@ -66,8 +79,23 @@ class PageController extends Controller
             'twitterCard' => $seoDefaults['twitter_card'],
             'canonical' => route('contact-us'),
         ];
+
+        // Get schema organization
+        $schemaOrg = config('seo.schema.organization');
+
+        // Check if schemaOrg is null or empty
+        if (empty($schemaOrg)) {
+            $schemaOrg = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Organization',
+                'name' => 'PT Hanara Prima Solusindo',
+                'url' => 'https://hanara.id'
+            ];
+        }
+
+        // Merge additional data
         $schemaOrg = array_merge(
-            config('seo.schema.organization'),
+            $schemaOrg,
             [
                 '@type' => ['Organization', 'LocalBusiness'],
                 'priceRange' => '$$',
@@ -75,6 +103,7 @@ class PageController extends Controller
                 'hasMap' => 'https://maps.app.goo.gl/uYzrn7BUobtDcrWn8',
             ]
         );
+
         return view('content.about.contact', compact('seoData', 'schemaOrg'));
     }
 }
