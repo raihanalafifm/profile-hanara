@@ -15,6 +15,14 @@ return [
         'og_locale_alternate' => 'en_US',
         'twitter_creator' => '@hanara_id',
     ],
+    // '404' => [
+    //     'title' => '404 - Halaman Tidak Ditemukan | PT Hanara Prima Solusindo',
+    //     'description' => 'Halaman yang Anda cari tidak ditemukan. Silakan kembali ke halaman utama PT Hanara Prima Solusindo.',
+    //     'keywords' => '404, error, halaman tidak ditemukan, hanara',
+    //     'og_title' => '404 - Halaman Tidak Ditemukan',
+    //     'og_description' => 'Halaman yang Anda cari tidak ditemukan di website PT Hanara Prima Solusindo.',
+    //     'robots' => 'noindex, follow',
+    // ],
 
     // SEO settings per halaman (maksimal 60 karakter untuk title)
     'pages' => [
