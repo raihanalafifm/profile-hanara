@@ -54,7 +54,7 @@
                                 <span class="badge bg-label-primary">{{ ucfirst($article->category) }}</span>
                             </td>
                             <td>{{ $article->published_at ? $article->published_at->format('d M Y') : '-' }}</td>
-                            <td>{{ Str::limit($article->description, 50) }}</td>
+                            <td>{!! Str::limit(strip_tags($article->description), 50) !!}</td>
                             <td>
                                 <form action="{{ route('backend.articles.toggle-status', $article) }}" method="POST"
                                     class="d-inline">
@@ -159,7 +159,8 @@
                                 <label for="description" class="form-label">Deskripsi Singkat <span
                                         class="text-danger">*</span></label>
                                 <textarea id="description" name="description" class="form-control" rows="3" maxlength="200" required></textarea>
-                                <small class="text-muted">Deskripsi ini akan muncul di preview artikel</small>
+                                <small class="text-muted">Deskripsi ini akan muncul di preview artikel (max 200
+                                    karakter)</small>
                             </div>
                         </div>
 
@@ -242,7 +243,8 @@
                                 <label for="edit_description" class="form-label">Deskripsi Singkat <span
                                         class="text-danger">*</span></label>
                                 <textarea id="edit_description" name="description" class="form-control" rows="3" maxlength="200" required></textarea>
-                                <small class="text-muted">Deskripsi ini akan muncul di preview artikel</small>
+                                <small class="text-muted">Deskripsi ini akan muncul di preview artikel (max 200
+                                    karakter)</small>
                             </div>
                         </div>
 
@@ -287,7 +289,13 @@
                         ['table', ['table']],
                         ['insert', ['link', 'picture', 'video']],
                         ['view', ['fullscreen', 'codeview', 'help']]
-                    ]
+                    ],
+                    callbacks: {
+                        onChange: function(contents, $editable) {
+                            // Update hidden textarea dengan konten
+                            $('#content').val(contents);
+                        }
+                    }
                 });
             }, 100);
 
@@ -348,16 +356,24 @@
                             toolbar: [
                                 ['style', ['style']],
                                 ['font', ['bold', 'italic', 'underline', 'clear']],
+                                ['fontname', ['fontname']],
+                                ['fontsize', ['fontsize']],
+                                ['color', ['color']],
                                 ['para', ['ul', 'ol', 'paragraph']],
+                                ['height', ['height']],
                                 ['table', ['table']],
                                 ['insert', ['link', 'picture', 'video']],
                                 ['view', ['fullscreen', 'codeview', 'help']]
-                            },
+                            ],
                             callbacks: {
                                 onInit: function() {
                                     // Set content after initialization
                                     $('#edit_content').summernote('code', article
                                         .content || '');
+                                },
+                                onChange: function(contents, $editable) {
+                                    // Update hidden textarea dengan konten
+                                    $('#edit_content').val(contents);
                                 }
                             }
                         });
@@ -389,6 +405,18 @@
             // Clean up add modal
             $('#basicModal').on('hidden.bs.modal', function() {
                 $('#image-preview').html('');
+            });
+
+            // Form submit handler untuk memastikan data Summernote terkirim
+            $('form').on('submit', function(e) {
+                // Update textarea dengan konten Summernote terbaru
+                if ($(this).find('.summernote').length) {
+                    $(this).find('.summernote').each(function() {
+                        const summernoteId = $(this).attr('id');
+                        const content = $(`#${summernoteId}`).summernote('code');
+                        $(this).val(content);
+                    });
+                }
             });
         });
 
