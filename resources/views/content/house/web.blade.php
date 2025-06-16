@@ -486,8 +486,7 @@
                                 Rekomendasi terbaik untuk UKM &amp; lembaga
                             </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-best-seller/') }}"
-                                target="_blank" rel="noopener noreferrer"
-                                class="hnr-house-web-pricing-btn hnr-house-web-pricing-btn-popular">Beli
+                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
                                 Paket</a>
                         </div>
 

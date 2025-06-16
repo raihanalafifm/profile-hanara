@@ -5844,6 +5844,14 @@ h2.company-name {
 
 /* Dark Mode Support */
 [data-theme="dark"] {
+    .hnr-tools-list li {
+        // display: flex; /* Agar isi bisa dirapikan dengan fleksibel */
+        align-items: center; /* Tengah secara vertikal */
+        gap: 0.5rem; /* Jarak antara ikon dan teks */
+        margin-bottom: 0.7rem;
+        font-size: 1rem;
+        color: #ffffff;
+    }
     .hnr-house-web-pricing-card {
         background-color: #232323;
         border-color: #333;
@@ -5995,6 +6003,9 @@ h2.company-name {
 
 /* Dark Mode Support */
 [data-theme="dark"] {
+    .btn-text {
+        color: #ffff;
+    }
     .hnr-tools-title {
         color: #e0e0e0;
     }
@@ -11981,5 +11992,100 @@ section {
     .hnr-motorola-find-product-section::before,
     .hnr-motorola-find-product-section::after {
         background-color: rgba(255, 107, 0, 0.02);
+    }
+}
+/* Contact Page Dark Mode - Text Color Fix */
+[data-theme="dark"] {
+    /* Contact Section Dark Mode */
+    .contact-section {
+        background-color: #0a0a0a;
+    }
+
+    .contact-title {
+        color: #e0e0e0 !important;
+    }
+
+    .contact-subtitle {
+        color: #b0b0b0 !important;
+    }
+
+    .contact-info-box {
+        background-color: #d9581f;
+        color: #ffffff !important;
+    }
+
+    .contact-info-title {
+        color: #ffffff !important;
+    }
+
+    .contact-info-subtitle {
+        color: #ffffff !important;
+    }
+
+    .contact-text {
+        color: #ffffff !important;
+    }
+
+    .contact-text a {
+        color: #ffffff !important;
+    }
+
+    .contact-text a:hover {
+        color: #f5bd56 !important;
+    }
+
+    .contact-detail-item {
+        color: #ffffff !important;
+    }
+
+    /* Form Labels and Text */
+    .contact-form label {
+        color: #e0e0e0 !important;
+    }
+
+    .contact-form .form-control {
+        background-color: #232323;
+        border: 1px solid #444;
+        color: #e0e0e0 !important;
+    }
+
+    .contact-form .form-control:focus {
+        border-color: #ff6700;
+        background-color: #2a2a2a;
+        color: #e0e0e0 !important;
+    }
+
+    .contact-form .form-control::placeholder {
+        color: #888;
+    }
+
+    /* Radio button labels */
+    .form-check-label {
+        color: #e0e0e0 !important;
+    }
+
+    /* Optional text */
+    .contact-form small span {
+        color: #999 !important;
+    }
+
+    /* Submit Button */
+    .btn-submit {
+        background-color: #ff6700;
+        color: #fff !important;
+    }
+
+    .btn-submit:hover {
+        background-color: #e45c00;
+        color: #fff !important;
+    }
+
+    /* Map section */
+    .contact-map-container {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .map-title {
+        color: #e0e0e0 !important;
     }
 }

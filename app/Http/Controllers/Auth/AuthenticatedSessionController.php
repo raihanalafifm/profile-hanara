@@ -1,4 +1,5 @@
 <?php
+// File: app/Http/Controllers/Auth/AuthenticatedSessionController.php
 
 namespace App\Http\Controllers\Auth;
 
@@ -14,8 +15,13 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
+        // Jika user sudah login, redirect ke backend dashboard
+        if (Auth::check()) {
+            return redirect()->route('backend.dashboard');
+        }
+
         return view('auth.login');
     }
 
@@ -42,6 +48,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        // Redirect ke halaman login setelah logout
+        return redirect()->route('login');
     }
 }
