@@ -70,11 +70,14 @@
     </script>
     @endif
 
-    @if (isset($schemaFAQ))
+    {{-- Removed FAQPage JSON-LD script block to avoid duplicate FAQPage structured data --}}
+    {{--
+    @if (isset($schemaFAQ) && !empty($schemaFAQ))
         <script type="application/ld+json">
     {!! json_encode($schemaFAQ, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
     </script>
     @endif
+    --}}
 
     @if (isset($schemaSoftware))
         <script type="application/ld+json">

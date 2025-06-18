@@ -80,6 +80,21 @@
                             </div>
                         </div>
                         <meta itemprop="datePosted" content="{{ $career->created_at->toIso8601String() }}">
+                        <div itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization">
+                            <meta itemprop="name" content="PT Hanara Prima Solusindo" />
+                            <meta itemprop="sameAs" content="https://hanara.id" />
+                            <meta itemprop="logo"
+                                content="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" />
+                        </div>
+                        <div itemprop="jobLocation" itemscope itemtype="https://schema.org/Place">
+                            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                <meta itemprop="streetAddress" content="Jl. Sutoyo No.8, Tanah Patah" />
+                                <meta itemprop="addressLocality" content="Kec. Ratu Agung" />
+                                <meta itemprop="addressRegion" content="Kota Bengkulu" />
+                                <meta itemprop="postalCode" content="38224" />
+                                <meta itemprop="addressCountry" content="ID" />
+                            </div>
+                        </div>
                     </article>
                 @empty
                     <div class="text-center py-5">
