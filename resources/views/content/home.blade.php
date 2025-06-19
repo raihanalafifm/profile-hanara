@@ -179,7 +179,7 @@
                 <!-- IT Support Card -->
                 <div class="col-lg-4 col-md-6 mb-4 reveal-section">
                     <div class="solution-card">
-                        <div class="solution-icon dark-icon">
+                        <div class="solution-icon">
                             <img src="{{ asset('assets/images/svg/itsupport.svg') }}" alt="IT Support">
                         </div>
                         <h3 class="solution-title">IT Support</h3>
