@@ -366,8 +366,10 @@
                     Setiap website dibuat khusus sesuai kebutuhan Anda. Waktu pengerjaan berkisar 7 hingga 30 hari
                     kerja, tergantung tingkat kompleksitas, revisi dan materi.
                 </p>
+                <br>
+                <br>
                 <!-- Package 1: Web Startup (Ekonomis) -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 mt-5">
                     <div class="hnr-house-web-pricing-card">
                         <div class="hnr-house-web-pricing-header">
                             <div class="hnr-house-web-pricing-type">
@@ -469,7 +471,7 @@
                 </div>
 
                 <!-- Package 2: Web Startup (Best Seller) -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 mt-5">
                     <div class="hnr-house-web-pricing-card popular">
                         <div class="hnr-house-web-pricing-badge">Paling Popular</div>
                         <div class="hnr-house-web-pricing-header">
@@ -600,7 +602,7 @@
                 </div>
 
                 <!-- Package 3: Web Startup (Lebih Hemat) -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 mt-5">
                     <div class="hnr-house-web-pricing-card">
                         <div class="hnr-house-web-pricing-header">
                             <div class="hnr-house-web-pricing-type">
