@@ -106,10 +106,11 @@ Route::get('/motorola/{slug}', [MotorolaController::class, 'show'])->name('motor
 Route::prefix('business-solution')->group(function () {
     Route::get('/nextcloud', [BusinessSolutionController::class, 'nextcloud'])->name('nextcloud');
     Route::get('/hcm-hcis', [BusinessSolutionController::class, 'hcmHcis'])->name('hcis');
+    Route::get('/sosmed', [BusinessSolutionController::class, 'SosMed'])->name('sosmed');
+    Route::get('/sikerja', [BusinessSolutionController::class, 'SiKerja'])->name('sikerja');
+    Route::get('/mit', [BusinessSolutionController::class, 'MIT'])->name('mit');
 });
-Route::get('/sosmed', function () {
-    return view('content.extra.sosmed');
-});
+
 // Sitemap Route (untuk SEO)
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.xml');
 Route::get('/sitemap', [SitemapController::class, 'html'])->name('sitemap.html');

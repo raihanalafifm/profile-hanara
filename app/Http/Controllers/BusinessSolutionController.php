@@ -161,4 +161,16 @@ class BusinessSolutionController extends Controller
             'schemaHCM'
         ));
     }
+    public function SosMed()
+    {
+        return view('content.bisnis.sosmed'); // 'my_view' adalah nama file view (my_view.blade.php)
+    }
+    public function SiKerja()
+    {
+        return view('content.bisnis.sikerja'); // 'my_view' adalah nama file view (my_view.blade.php)
+    }
+    public function MIT()
+    {
+        return view('content.bisnis.mit'); // 'my_view' adalah nama file view (my_view.blade.php)
+    }
 }

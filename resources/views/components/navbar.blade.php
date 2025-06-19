@@ -78,6 +78,12 @@
                                 href="{{ route('hcis') }}">HCM + HCIS</a></li>
                         <li><a class="dropdown-item {{ request()->routeIs('nextcloud') ? 'active' : '' }}"
                                 href="{{ route('nextcloud') }}">Nextcloud</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('sosmed') ? 'active' : '' }}"
+                                href="{{ route('sosmed') }}">Digital Marketing </a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('sikerja') ? 'active' : '' }}"
+                                href="{{ route('sikerja') }}">SiKerja</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('mit') ? 'active' : '' }}"
+                                href="{{ route('mit') }}">MIT</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
