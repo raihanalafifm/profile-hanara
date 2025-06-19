@@ -16661,3 +16661,422 @@ section {
                 border-radius: 15px;
             }
         }
+        /* ========================================
+   SIKERJA HERO SECTION STYLES
+   ======================================== */
+
+/* SiKerja Hero Section */
+.sikerja-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+/* Orange Decorative Shapes */
+.sikerja-shape-left {
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: #FF6B00;
+    border-radius: 50%;
+}
+
+.sikerja-shape-left-secondary {
+    position: absolute;
+    top: -20%;
+    left: 5%;
+    width: 400px;
+    height: 400px;
+    background: #FFE5CC;
+    border-radius: 50%;
+}
+
+.sikerja-shape-right {
+    position: absolute;
+    bottom: -40%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: #FF6B00;
+    border-radius: 50%;
+}
+
+/* Content Container */
+.sikerja-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Hero Text Content */
+.sikerja-hero-content {
+    padding-right: 2rem;
+}
+
+.sikerja-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #FF6B00;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.sikerja-subtitle {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.sikerja-description {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.sikerja-app-store-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.sikerja-app-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.sikerja-app-store-btn:hover {
+    background-color: #333333;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+/* Illustration Container */
+.sikerja-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+.sikerja-phone-mockup {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sikerja-content-wrapper {
+        padding: 0 2rem;
+    }
+    
+    .sikerja-title {
+        font-size: 3rem;
+    }
+    
+    .sikerja-subtitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .sikerja-hero-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .sikerja-title {
+        font-size: 2.5rem;
+    }
+
+    .sikerja-subtitle {
+        font-size: 2.2rem;
+    }
+
+    .sikerja-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sikerja-app-store-buttons {
+        justify-content: center;
+    }
+
+    .sikerja-shape-left {
+        width: 500px;
+        height: 500px;
+        top: -30%;
+        left: -15%;
+    }
+
+    .sikerja-shape-left-secondary {
+        width: 350px;
+        height: 350px;
+    }
+
+    .sikerja-shape-right {
+        width: 600px;
+        height: 600px;
+        bottom: -35%;
+        right: -20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sikerja-hero {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .sikerja-title {
+        font-size: 2rem;
+    }
+
+    .sikerja-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .sikerja-description {
+        font-size: 1rem;
+    }
+
+    .sikerja-app-store-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .sikerja-app-store-btn {
+        width: fit-content;
+    }
+
+    .sikerja-shape-left {
+        width: 200px;
+        height: 200px;
+        top: -100px;
+        left: -100px;
+    }
+
+    .sikerja-shape-left-secondary {
+        width: 150px;
+        height: 150px;
+    }
+
+    .sikerja-shape-right {
+        width: 250px;
+        height: 250px;
+        bottom: -125px;
+        right: -125px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sikerja-content-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .sikerja-title {
+        font-size: 1.75rem;
+    }
+
+    .sikerja-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .sikerja-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .sikerja-app-store-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .sikerja-phone-mockup {
+        max-height: 400px;
+    }
+}
+
+/* ========================================
+   SIKERJA DARK MODE SUPPORT
+   ======================================== */
+
+[data-theme="dark"] .sikerja-hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 25%, #2a2a2a 50%, #1f1f1f 75%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .sikerja-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 107, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 138, 51, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+[data-theme="dark"] .sikerja-content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .sikerja-shape-left,
+[data-theme="dark"] .sikerja-shape-right {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8a33 50%, #ffb366 100%);
+    opacity: 0.8;
+    box-shadow: 0 0 100px rgba(255, 107, 0, 0.3);
+}
+
+[data-theme="dark"] .sikerja-shape-left-secondary {
+    background: linear-gradient(135deg, #4d2600 0%, #663300 50%, #804000 100%);
+    opacity: 0.6;
+}
+
+[data-theme="dark"] .sikerja-title {
+    color: #ff8a33;
+    text-shadow: 0 0 20px rgba(255, 138, 51, 0.5);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .sikerja-subtitle {
+    color: #f5f5f5;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .sikerja-description {
+    color: #c0c0c0;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+[data-theme="dark"] .sikerja-app-store-btn {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8a33 100%);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+    border: 1px solid rgba(255, 138, 51, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sikerja-app-store-btn:hover {
+    background: linear-gradient(135deg, #ff8a33 0%, #ffb366 100%);
+    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.6);
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* ========================================
+   SIKERJA ADDITIONAL RESPONSIVE FIXES
+   ======================================== */
+
+/* Extra small devices (below 400px) */
+@media (max-width: 399px) {
+    .sikerja-hero-content {
+        padding-right: 0;
+    }
+
+    .sikerja-title {
+        font-size: 1.5rem;
+    }
+
+    .sikerja-subtitle {
+        font-size: 1.3rem;
+        line-height: 1.2;
+    }
+
+    .sikerja-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .sikerja-app-store-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .sikerja-phone-mockup {
+        max-height: 350px;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sikerja-hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .sikerja-title {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .sikerja-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .sikerja-description {
+        margin-bottom: 1rem;
+    }
+
+    .sikerja-phone-mockup {
+        max-height: 300px;
+    }
+}
+
+/* Prevent horizontal scroll */
+.sikerja-hero {
+    overflow-x: hidden;
+}
+
+/* Performance optimizations */
+.sikerja-shape-left,
+.sikerja-shape-left-secondary,
+.sikerja-shape-right {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.sikerja-app-store-btn {
+    will-change: transform;
+}
+
+.sikerja-phone-mockup {
+    will-change: filter;
+}

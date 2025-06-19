@@ -193,6 +193,30 @@ return [
             'og_description' => 'Tingkatkan efisiensi HR Anda dengan HCM lengkap & HCIS Mobile. Hanara hadirkan aplikasi HR, payroll, absensi & mobile support—mudah, cepat, akurat.',
             'og_image' => 'https://hanara.id/assets/images/icon/hcm.png',
         ],
+        'sikerja' => [
+            'title'         => 'siKerja – Smart Utility App by Hanara: QR & Barcode Scanner, Checklist, FinTrack, MIT Connect',
+            'og_title'      => 'siKerja – Smart Utility App by Hanara: QR & Barcode Scanner, Checklist, FinTrack, MIT Connect',
+            'description'   => 'siKerja adalah aplikasi mobile multifungsi buatan Hanara yang menggabungkan QR & Barcode Scanner, Timestamp Cam, Checklist Manager, Reminder Hub, Quick Notes, FinTrack, dan Scan Doc dalam satu antarmuka ringan. Dilengkapi MIT Connect untuk integrasi sistem proyek IT, cocok untuk individu hingga perusahaan.',
+            'og_description' => 'siKerja adalah aplikasi mobile multifungsi buatan Hanara yang menggabungkan QR & Barcode Scanner, Timestamp Cam, Checklist Manager, Reminder Hub, Quick Notes, FinTrack, dan Scan Doc dalam satu antarmuka ringan. Dilengkapi MIT Connect untuk integrasi sistem proyek IT, cocok untuk individu hingga perusahaan.',
+            'keywords'      => 'siKerja, aplikasi produktivitas, QR scanner, barcode scanner, timestamp cam, checklist manager, reminder, quick notes, financial tracker, scan doc, MIT Connect, Hanara',
+            'og_image'      => 'https://hanara.id/assets/images/icon/icon-sikerja.png',
+        ],
+        'mit' => [
+            'title' => 'MIT – Platform Manajemen Operasional IT Terintegrasi oleh Hanara',
+            'og_title' => 'MIT – Platform Manajemen Operasional IT Terintegrasi oleh Hanara',
+            'description' => 'MIT (Management Information Technology) adalah aplikasi web terintegrasi yang mendukung manajemen tugas, layanan tiket, pengelolaan infrastruktur, dan sistem informasi internal Departemen IT perusahaan secara digital, transparan, dan efisien.',
+            'og_description' => 'MIT (Management Information Technology) adalah aplikasi web terintegrasi yang mendukung manajemen tugas, layanan tiket, pengelolaan infrastruktur, dan sistem informasi internal Departemen IT perusahaan secara digital, transparan, dan efisien.',
+            'keywords' => 'MIT, manajemen tugas IT, task management IT, tiket IT, software helpdesk, HCM integrasi, pengelolaan infrastruktur IT, aplikasi internal IT, digitalisasi operasional IT, Hanara',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-mit.png',
+        ],
+        'sosmed' => [
+            'title' => 'Digital Marketing Hanara – Sosial Media, Iklan, dan Konten Profesional',
+            'og_title' => 'Digital Marketing Hanara – Sosial Media, Iklan, dan Konten Profesional',
+            'description' => 'Hanara menawarkan layanan digital marketing terpadu, mulai dari manajemen sosial media, iklan berbayar, desain visual, hingga produksi video dan konten TikTok. Solusi lengkap untuk branding digital bisnis Anda.',
+            'og_description' => 'Hanara menawarkan layanan digital marketing terpadu, mulai dari manajemen sosial media, iklan berbayar, desain visual, hingga produksi video dan konten TikTok. Solusi lengkap untuk branding digital bisnis Anda.',
+            'keywords' => 'digital marketing, jasa sosial media, iklan facebook, iklan google, manajemen instagram, konten tiktok, video promosi, jasa desain hanara, jasa copywriting, strategi digital bisnis',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-digitalmarketing.png',
+        ],
     ],
 
     // Schema.org structured data templates
