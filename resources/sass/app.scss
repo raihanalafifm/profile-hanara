@@ -18657,3 +18657,643 @@ section {
 [data-theme="dark"] .mit-dashboard-image {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+/* ========================================
+   MIT ABOUT SECTION STYLES - SESUAI GAMBAR
+   ======================================== */
+
+/* MIT About Section */
+.mit-about-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* About Image */
+.mit-about-image {
+    text-align: center;
+    padding: 20px;
+}
+
+.mit-about-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* About Content */
+.mit-about-content {
+    padding-left: 50px;
+}
+
+/* About Badge - Orange rounded badge "About Us" */
+.mit-about-badge {
+    display: inline-block;
+    background-color: #ffcbb6;
+    color: #ff8100;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+/* About Title */
+.mit-about-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* About Description */
+.mit-about-description {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+/* ========================================
+   MIT ABOUT RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .mit-about-content {
+        padding-left: 30px;
+    }
+
+    .mit-about-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mit-about-section {
+        padding: 80px 0;
+    }
+
+    .mit-about-content {
+        padding-left: 0;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .mit-about-title {
+        font-size: 32px;
+    }
+
+    .mit-about-description {
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mit-about-section {
+        padding: 60px 0;
+    }
+
+    .mit-about-title {
+        font-size: 28px;
+    }
+
+    .mit-about-description {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    .mit-about-badge {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mit-about-section {
+        padding: 50px 0;
+    }
+
+    .mit-about-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .mit-about-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* ========================================
+   MIT ABOUT DARK MODE SUPPORT
+   ======================================== */
+
+[data-theme="dark"] .mit-about-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .mit-about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 30% 70%,
+        rgba(255, 129, 0, 0.08) 0%,
+        transparent 50%
+    );
+    z-index: 1;
+}
+
+[data-theme="dark"] .mit-about-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .mit-about-badge {
+    background-color: #4d2600;
+    color: #ff8100;
+    box-shadow: 0 4px 15px rgba(77, 38, 0, 0.3);
+    text-shadow: none;
+}
+
+[data-theme="dark"] .mit-about-title {
+    color: #f8f8f8;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .mit-about-description {
+    color: #c0c0c0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-about-img {
+    filter: brightness(0.95) contrast(1.1);
+}
+/* ========================================
+   MIT FEATURES SECTION STYLES
+   ======================================== */
+
+/* MIT Features Section */
+.mit-features-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* Section Header (Centered) */
+.mit-section-header {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Section Tag */
+.mit-section-tag {
+    display: inline-block;
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Features Title */
+.mit-features-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.mit-orange {
+    color: #ff6b00;
+}
+
+/* Features Description */
+.mit-features-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   MIT TASK MANAGEMENT SECTION STYLES
+   ======================================== */
+
+/* MIT Task Section */
+.mit-task-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* Task Content */
+.mit-task-content {
+    padding-right: 30px;
+}
+
+/* Task Management Section */
+.mit-task-management {
+    margin-top: 20px;
+}
+
+.mit-task-subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.mit-task-desc {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Status List */
+.mit-status-list {
+    margin-top: 20px;
+}
+
+.mit-status-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.mit-status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mit-status-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.mit-status-text strong {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Task Image */
+.mit-task-image {
+    text-align: center;
+    padding: 20px;
+}
+
+.mit-task-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ========================================
+   MIT UNSCHEDULED TASK SECTION STYLES
+   ======================================== */
+
+/* MIT Unscheduled Task Section */
+.mit-unscheduled-section {
+    padding: 80px 0;
+    background-color: #f8f9fb;
+    position: relative;
+}
+
+/* Unscheduled Content */
+.mit-unscheduled-content {
+    padding-left: 30px;
+}
+
+/* Unscheduled Title */
+.mit-unscheduled-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+/* Unscheduled Subtitle */
+.mit-unscheduled-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Unscheduled Description */
+.mit-unscheduled-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+/* Unscheduled Image */
+.mit-unscheduled-image {
+    text-align: center;
+    padding: 20px;
+}
+
+.mit-unscheduled-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ========================================
+   MIT RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .mit-features-title,
+    .mit-unscheduled-title {
+        font-size: 36px;
+    }
+
+    .mit-task-content,
+    .mit-unscheduled-content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mit-features-section,
+    .mit-task-section,
+    .mit-unscheduled-section {
+        padding: 60px 0;
+    }
+
+    .mit-features-title,
+    .mit-unscheduled-title {
+        font-size: 32px;
+    }
+
+    .mit-unscheduled-subtitle {
+        font-size: 22px;
+    }
+
+    .mit-task-content,
+    .mit-unscheduled-content {
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .mit-task-desc,
+    .mit-unscheduled-description {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mit-features-section,
+    .mit-task-section,
+    .mit-unscheduled-section {
+        padding: 50px 0;
+    }
+
+    .mit-features-title,
+    .mit-unscheduled-title {
+        font-size: 28px;
+    }
+
+    .mit-unscheduled-subtitle {
+        font-size: 20px;
+    }
+
+    .mit-task-subtitle {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .mit-status-item {
+        margin-bottom: 12px;
+    }
+
+    .mit-status-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mit-features-section,
+    .mit-task-section,
+    .mit-unscheduled-section {
+        padding: 40px 0;
+    }
+
+    .mit-features-title,
+    .mit-unscheduled-title {
+        font-size: 24px;
+    }
+
+    .mit-unscheduled-subtitle {
+        font-size: 18px;
+    }
+
+    .mit-task-subtitle {
+        font-size: 16px;
+    }
+
+    .mit-features-description,
+    .mit-task-desc,
+    .mit-unscheduled-description {
+        font-size: 15px;
+    }
+
+    .mit-section-tag {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .mit-status-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .mit-status-text {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   MIT DARK MODE SUPPORT
+   ======================================== */
+
+[data-theme="dark"] .mit-features-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .mit-features-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 107, 0, 0.08) 0%,
+        transparent 50%
+    );
+    z-index: 1;
+}
+
+[data-theme="dark"] .mit-features-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .mit-task-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .mit-task-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            circle at 25% 25%,
+            rgba(255, 107, 0, 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 75% 75%,
+            rgba(255, 138, 51, 0.06) 0%,
+            transparent 50%
+        );
+    z-index: 1;
+}
+
+[data-theme="dark"] .mit-task-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .mit-unscheduled-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .mit-unscheduled-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            circle at 30% 70%,
+            rgba(255, 107, 0, 0.06) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(255, 138, 51, 0.04) 0%,
+            transparent 50%
+        );
+    z-index: 1;
+}
+
+[data-theme="dark"] .mit-unscheduled-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .mit-section-tag {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8a33 100%);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-features-title,
+[data-theme="dark"] .mit-unscheduled-title {
+    color: #f8f8f8;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .mit-orange {
+    background: linear-gradient(135deg, #ff6b00, #ff8a33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+}
+
+[data-theme="dark"] .mit-task-subtitle,
+[data-theme="dark"] .mit-unscheduled-subtitle {
+    color: #f0f0f0;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-features-description,
+[data-theme="dark"] .mit-task-desc,
+[data-theme="dark"] .mit-unscheduled-description {
+    color: #c8c8c8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-status-icon {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+[data-theme="dark"] .mit-status-text {
+    color: #d0d0d0;
+}
+
+[data-theme="dark"] .mit-status-text strong {
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .mit-task-img,
+[data-theme="dark"] .mit-unscheduled-img {
+    filter: brightness(0.95) contrast(1.05);
+}
