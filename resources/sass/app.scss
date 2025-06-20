@@ -18377,3 +18377,430 @@ section {
 .sikerja-mengapa-icon img {
     will-change: filter;
 }
+/* ========================================
+   MIT HERO SECTION STYLES
+   ======================================== */
+
+/* MIT Hero Section */
+.mit-hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Orange Decorative Shapes */
+.mit-shape-left {
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: #ff6b00;
+    border-radius: 50%;
+}
+
+.mit-shape-left-secondary {
+    position: absolute;
+    top: -20%;
+    left: 5%;
+    width: 400px;
+    height: 400px;
+    background: #ffe5cc;
+    border-radius: 50%;
+}
+
+.mit-shape-right {
+    position: absolute;
+    bottom: -40%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: #ff6b00;
+    border-radius: 50%;
+}
+
+/* Content Container */
+.mit-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Hero Text Content */
+.mit-hero-content {
+    padding-right: 2rem;
+}
+
+.mit-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ff6b00;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.mit-subtitle {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.mit-description {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.mit-cta-section {
+    margin-top: 2rem;
+}
+
+.mit-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2.5rem;
+    background-color: #ff6b00;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.mit-cta-btn:hover {
+    background-color: #e55a00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+    text-decoration: none;
+}
+
+/* Illustration Container */
+.mit-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+.mit-hero-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .mit-content-wrapper {
+        padding: 0 2rem;
+    }
+
+    .mit-title {
+        font-size: 3rem;
+    }
+
+    .mit-subtitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .mit-hero-content {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .mit-title {
+        font-size: 2.5rem;
+    }
+
+    .mit-subtitle {
+        font-size: 2.2rem;
+    }
+
+    .mit-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mit-cta-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mit-shape-left {
+        width: 500px;
+        height: 500px;
+        top: -30%;
+        left: -15%;
+    }
+
+    .mit-shape-left-secondary {
+        width: 350px;
+        height: 350px;
+    }
+
+    .mit-shape-right {
+        width: 600px;
+        height: 600px;
+        bottom: -35%;
+        right: -20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mit-hero {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .mit-title {
+        font-size: 2rem;
+    }
+
+    .mit-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .mit-description {
+        font-size: 1rem;
+    }
+
+    .mit-cta-btn {
+        width: fit-content;
+    }
+
+    .mit-shape-left {
+        width: 200px;
+        height: 200px;
+        top: -100px;
+        left: -100px;
+    }
+
+    .mit-shape-left-secondary {
+        width: 150px;
+        height: 150px;
+    }
+
+    .mit-shape-right {
+        width: 250px;
+        height: 250px;
+        bottom: -125px;
+        right: -125px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mit-content-wrapper {
+        padding: 0 1rem;
+    }
+
+    .mit-title {
+        font-size: 1.75rem;
+    }
+
+    .mit-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mit-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .mit-cta-btn {
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
+    }
+
+    .mit-hero-image {
+        max-height: 400px;
+    }
+}
+
+/* ========================================
+   MIT DARK MODE SUPPORT
+   ======================================== */
+
+[data-theme="dark"] .mit-hero {
+    background: linear-gradient(
+        135deg,
+        #0a0a0a 0%,
+        #1f1f1f 25%,
+        #2a2a2a 50%,
+        #1f1f1f 75%,
+        #0a0a0a 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .mit-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 107, 0, 0.15) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 70% 80%,
+            rgba(255, 138, 51, 0.1) 0%,
+            transparent 50%
+        );
+    z-index: 1;
+}
+
+[data-theme="dark"] .mit-content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .mit-shape-left,
+[data-theme="dark"] .mit-shape-right {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8a33 50%, #ffb366 100%);
+    opacity: 0.8;
+    box-shadow: 0 0 100px rgba(255, 107, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-shape-left-secondary {
+    background: linear-gradient(135deg, #4d2600 0%, #663300 50%, #804000 100%);
+    opacity: 0.6;
+}
+
+[data-theme="dark"] .mit-title {
+    color: #ff8a33;
+    text-shadow: 0 0 20px rgba(255, 138, 51, 0.5);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .mit-subtitle {
+    color: #f5f5f5;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .mit-description {
+    color: #c0c0c0;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+[data-theme="dark"] .mit-cta-btn {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8a33 100%);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+    border: 1px solid rgba(255, 138, 51, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-cta-btn:hover {
+    background: linear-gradient(135deg, #ff8a33 0%, #ffb366 100%);
+    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.6);
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* ========================================
+   MIT ADDITIONAL RESPONSIVE FIXES
+   ======================================== */
+
+/* Extra small devices (below 400px) */
+@media (max-width: 399px) {
+    .mit-hero-content {
+        padding-right: 0;
+    }
+
+    .mit-title {
+        font-size: 1.5rem;
+    }
+
+    .mit-subtitle {
+        font-size: 1.3rem;
+        line-height: 1.2;
+    }
+
+    .mit-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .mit-cta-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.8rem;
+    }
+
+    .mit-hero-image {
+        max-height: 350px;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .mit-hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .mit-title {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .mit-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mit-description {
+        margin-bottom: 1rem;
+    }
+
+    .mit-hero-image {
+        max-height: 300px;
+    }
+}
+
+/* Prevent horizontal scroll */
+.mit-hero {
+    overflow-x: hidden;
+}
+
+/* Performance optimizations */
+.mit-shape-left,
+.mit-shape-left-secondary,
+.mit-shape-right {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.mit-cta-btn {
+    will-change: transform;
+}
+
+.mit-hero-image {
+    will-change: filter;
+}
