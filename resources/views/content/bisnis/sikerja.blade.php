@@ -51,4 +51,202 @@
             </div>
         </div>
     </section>
+    <!-- Fitur Unggulan siKerja Section -->
+    <section class="sikerja-fitur-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="sikerja-fitur-header">
+                <h2 class="sikerja-fitur-title">Fitur <span class="sikerja-orange">Unggulan</span> siKerja</h2>
+                <p class="sikerja-fitur-subtitle">Kami memiliki beberapa kesempatan untuk bekerja sama dengan perusahaan dan
+                    organisasi ternama di Indonesia.</p>
+                <p class="sikerja-fitur-subtitle">Kami berusaha untuk memberikan pelayanan yang terbaik kepada semua klien
+                    kami.</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="row align-items-center">
+                <!-- Left: Phone Image -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="sikerja-phone-container">
+                        <img src="{{ asset('assets/images/sikerja/fitur.svg') }}" alt="siKerja Phone Mockup"
+                            class="sikerja-phone-mockup">
+                    </div>
+                </div>
+
+                <!-- Right: Features List -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="sikerja-features-list">
+                        <!-- QR Scanner -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/qr.svg') }}" alt="qr code">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">QR Scanner</h3>
+                                <p class="sikerja-feature-desc">Membaca barcode produk, inventaris, atau dokumen dengan
+                                    cepat dan akurat, cocok untuk pengguna logistik dan operasional.</p>
+                            </div>
+                        </div>
+
+                        <!-- Barcode Scanner -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/barcode.svg') }}" alt="scan barcode">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">Barcode Scanner</h3>
+                                <p class="sikerja-feature-desc">Membaca barcode produk, inventaris, atau dokumen dengan
+                                    cepat dan akurat, cocok untuk pengguna logistik dan operasional. </p>
+                            </div>
+                        </div>
+
+                        <!-- Timestamp Cam -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/timestamp.svg') }}" alt="timestamp cam">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">Timestamp Cam</h3>
+                                <p class="sikerja-feature-desc">Kamera dengan stempel waktu otomatis. Ideal untuk
+                                    dokumentasi pekerjaan lapangan, audit, atau laporan teknis. </p>
+                            </div>
+                        </div>
+
+                        <!-- Checklist Manager -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/check.svg') }}" alt="checklist manager">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">Checklist Manager</h3>
+                                <p class="sikerja-feature-desc">Buat, atur, dan selesaikan daftar tugas pribadi maupun
+                                    profesional Anda dengan tampilan yang praktis dan user-friendly. </p>
+                            </div>
+                        </div>
+
+                        <!-- Reminder Hub -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/reminder.svg') }}" alt="reminder hub">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">Reminder Hub</h3>
+                                <p class="sikerja-feature-desc">Pusat notifikasi & pengingat dari seluruh aktivitas penting
+                                    Anda. Semua hal krusial akan muncul di sini. </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Notes -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/notes.svg') }}" alt="quick notes">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">Quick Notes</h3>
+                                <p class="sikerja-feature-desc">Catatan singkat, cepat, dan instan. Cocok untuk menyimpan
+                                    ide, to-do list, atau poin penting saat rapat. </p>
+                            </div>
+                        </div>
+
+                        <!-- FinTrack -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/fintrack.svg') }}" alt="fintrack">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">FinTrack (Financial Tracker)</h3>
+                                <p class="sikerja-feature-desc">Monitor pengeluaran dan pemasukan harian. Bantu Anda
+                                    mengatur keuangan pribadi atau operasional tim kecil. </p>
+                            </div>
+                        </div>
+
+                        <!-- Scan Doc -->
+                        <div class="sikerja-feature-item">
+                            <div class="sikerja-feature-icon-circle">
+                                <img src="{{ asset('assets/images/sikerja/scan.svg') }}" alt="scan doc">
+                            </div>
+                            <div class="sikerja-feature-content">
+                                <h3 class="sikerja-feature-name">Scan Doc (Cam Scanner)</h3>
+                                <p class="sikerja-feature-desc">Fitur pemindai dokumen berbasis kamera. Ambil gambar dokumen
+                                    fisik dan konversi otomatis menjadi format PDF rapi, cocok untuk kebutuhan administrasi
+                                    digital. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MIT Connect Section -->
+    <section class="sikerja-mit-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="sikerja-mit-header">
+                <h2 class="sikerja-mit-title"><span class="sikerja-mit-orange">MIT</span> Connect (Fitur Tambahan Khusus)
+                </h2>
+                <p class="sikerja-mit-subtitle">Untuk pengguna internal Hanara & mitra resmi, tersedia fitur MIT Connect
+                    yang memungkinkan integrasi langsung ke sistem web MIT</p>
+                <p class="sikerja-mit-subtitle">(Management Information Technology). Fitur ini memudahkan pegawai internal
+                    untuk</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="row align-items-center">
+                <!-- Left: Features List -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="sikerja-mit-features">
+                        <!-- Feature 1 -->
+                        <div class="sikerja-mit-feature">
+                            <div class="sikerja-mit-check">
+                                <img src="{{ asset('assets/images/sikerja/checkils.svg') }}" alt="">
+                            </div>
+                            <span class="sikerja-mit-feature-text">Mengakses dan Memperbarui Task Terjadwal</span>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="sikerja-mit-feature">
+                            <div class="sikerja-mit-check">
+                                <img src="{{ asset('assets/images/sikerja/checkils.svg') }}" alt="">
+                            </div>
+                            <span class="sikerja-mit-feature-text">Menambah Unsheduled Task</span>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="sikerja-mit-feature">
+                            <div class="sikerja-mit-check">
+                                <img src="{{ asset('assets/images/sikerja/checkils.svg') }}" alt="">
+                            </div>
+                            <span class="sikerja-mit-feature-text">Melihat Laporan Mingguan</span>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="sikerja-mit-feature">
+                            <div class="sikerja-mit-check">
+                                <img src="{{ asset('assets/images/sikerja/checkils.svg') }}" alt="">
+                            </div>
+                            <span class="sikerja-mit-feature-text">Sinkronisasi Langsung ke Sistem Manajemen Proyek
+                                IT</span>
+                        </div>
+
+                        <!-- Feature 5 -->
+                        <div class="sikerja-mit-feature">
+                            <div class="sikerja-mit-check">
+                                <img src="{{ asset('assets/images/sikerja/checkils.svg') }}" alt="">
+                            </div>
+                            <span class="sikerja-mit-feature-text">MIT Connect hanya tersedia untuk pengguna
+                                terverifikasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Device Images -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="sikerja-mit-devices">
+                        <img src="{{ asset('assets/images/sikerja/laptop.svg') }}" alt="MIT Connect Devices"
+                            class="sikerja-mit-devices-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
