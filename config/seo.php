@@ -7,7 +7,7 @@ return [
         'author' => 'PT Hanara Prima Solusindo',
         'robots' => 'index, follow',
         'og_type' => 'website',
-        'og_image' => 'https://hanara.id/assets/images/icon/icon-hanara.png',
+        'og_image' => 'https://hanara.id/assets/images/icon1/hanara.png',
         'twitter_card' => 'summary_large_image',
         'og_site_name' => 'Hanara IT Solution',
         'og_locale' => 'id_ID',
@@ -193,14 +193,6 @@ return [
             'og_description' => 'Tingkatkan efisiensi HR Anda dengan HCM lengkap & HCIS Mobile. Hanara hadirkan aplikasi HR, payroll, absensi & mobile support—mudah, cepat, akurat.',
             'og_image' => 'https://hanara.id/assets/images/icon/hcm.png',
         ],
-        'sikerja' => [
-            'title'         => 'siKerja – Smart Utility App by Hanara: QR & Barcode Scanner, Checklist, FinTrack, MIT Connect',
-            'og_title'      => 'siKerja – Smart Utility App by Hanara: QR & Barcode Scanner, Checklist, FinTrack, MIT Connect',
-            'description'   => 'siKerja adalah aplikasi mobile multifungsi buatan Hanara yang menggabungkan QR & Barcode Scanner, Timestamp Cam, Checklist Manager, Reminder Hub, Quick Notes, FinTrack, dan Scan Doc dalam satu antarmuka ringan. Dilengkapi MIT Connect untuk integrasi sistem proyek IT, cocok untuk individu hingga perusahaan.',
-            'og_description' => 'siKerja adalah aplikasi mobile multifungsi buatan Hanara yang menggabungkan QR & Barcode Scanner, Timestamp Cam, Checklist Manager, Reminder Hub, Quick Notes, FinTrack, dan Scan Doc dalam satu antarmuka ringan. Dilengkapi MIT Connect untuk integrasi sistem proyek IT, cocok untuk individu hingga perusahaan.',
-            'keywords'      => 'siKerja, aplikasi produktivitas, QR scanner, barcode scanner, timestamp cam, checklist manager, reminder, quick notes, financial tracker, scan doc, MIT Connect, Hanara',
-            'og_image'      => 'https://hanara.id/assets/images/icon/icon-sikerja.png',
-        ],
         'mit' => [
             'title' => 'MIT – Platform Manajemen Operasional IT Terintegrasi oleh Hanara',
             'og_title' => 'MIT – Platform Manajemen Operasional IT Terintegrasi oleh Hanara',
@@ -209,6 +201,16 @@ return [
             'keywords' => 'MIT, manajemen tugas IT, task management IT, tiket IT, software helpdesk, HCM integrasi, pengelolaan infrastruktur IT, aplikasi internal IT, digitalisasi operasional IT, Hanara',
             'og_image' => 'https://hanara.id/assets/images/icon/icon-mit.png',
         ],
+
+        'sikerja' => [
+            'title' => 'siKerja – Smart Utility App by Hanara: QR & Barcode Scanner, Checklist, FinTrack, MIT Connect',
+            'og_title' => 'siKerja – Smart Utility App by Hanara: QR & Barcode Scanner, Checklist, FinTrack, MIT Connect',
+            'description' => 'siKerja adalah aplikasi mobile multifungsi buatan Hanara yang menggabungkan QR & Barcode Scanner, Timestamp Cam, Checklist Manager, Reminder Hub, Quick Notes, FinTrack, dan Scan Doc dalam satu antarmuka ringan. Dilengkapi MIT Connect untuk integrasi sistem proyek IT, cocok untuk individu hingga perusahaan.',
+            'og_description' => 'siKerja adalah aplikasi mobile multifungsi buatan Hanara yang menggabungkan QR & Barcode Scanner, Timestamp Cam, Checklist Manager, Reminder Hub, Quick Notes, FinTrack, dan Scan Doc dalam satu antarmuka ringan. Dilengkapi MIT Connect untuk integrasi sistem proyek IT, cocok untuk individu hingga perusahaan.',
+            'keywords' => 'siKerja, aplikasi produktivitas, QR scanner, barcode scanner, timestamp cam, checklist manager, reminder, quick notes, financial tracker, scan doc, MIT Connect, Hanara',
+            'og_image' => 'https://hanara.id/assets/images/icon/icon-sikerja.png',
+        ],
+
         'sosmed' => [
             'title' => 'Digital Marketing Hanara – Sosial Media, Iklan, dan Konten Profesional',
             'og_title' => 'Digital Marketing Hanara – Sosial Media, Iklan, dan Konten Profesional',
@@ -253,7 +255,66 @@ return [
                 ]
             ]
         ],
+        'organization' => [
+            '@type' => 'Organization',
+            'name' => 'PT Hanara Prima Solusindo',
+            'alternateName' => 'Hanara',
+            'url' => 'https://hanara.id',
+            'logo' => 'https://hanara.id/assets/images/LOGO-PERUSAHAAN/HANARA.ID-2023.-II.png',
+            'sameAs' => [
+                'https://www.instagram.com/hanara.id',
+                'https://www.linkedin.com/company/hanara',
+                'https://www.facebook.com/hanara.id'
+            ],
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Jl. Sutoyo No.8, Tanah Patah',
+                'addressLocality' => 'Kota Bengkulu',
+                'addressRegion' => 'Bengkulu',
+                'postalCode' => '38224',
+                'addressCountry' => 'ID'
+            ],
+            'contactPoint' => [
+                '@type' => 'ContactPoint',
+                'telephone' => '+62-736-7050202',
+                'contactType' => 'customer service',
+                'availableLanguage' => ['Indonesian', 'English']
+            ]
+        ],
 
+        // Update business_solution_service schema
+        'business_solution_service' => [
+            '@context' => 'https://schema.org',
+            '@type' => 'Service',
+            'serviceType' => 'Business Solution Services',
+            'provider' => [
+                '@type' => 'Organization',
+                'name' => 'PT Hanara Prima Solusindo',
+                'url' => 'https://hanara.id',
+                'logo' => 'https://hanara.id/assets/images/LOGO-PERUSAHAAN/HANARA.ID-2023.-II.png'
+            ],
+            'areaServed' => [
+                '@type' => 'Country',
+                'name' => 'Indonesia'
+            ],
+            'availableChannel' => [
+                '@type' => 'ServiceChannel',
+                'serviceUrl' => 'https://hanara.id/business-solution',
+                'servicePhone' => '+62-736-7050202',
+                'availableLanguage' => ['Indonesian', 'English']
+            ],
+            'hasOfferCatalog' => [
+                '@type' => 'OfferCatalog',
+                'name' => 'Business Solutions',
+                'itemListElement' => [
+                    'HCM & HCIS',
+                    'Nextcloud',
+                    'Digital Marketing',
+                    'SiKerja Mobile App',
+                    'MIT Platform'
+                ]
+            ]
+        ],
         // Software House Service Schema
         'software_house_service' => [
             '@context' => 'https://schema.org',

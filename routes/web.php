@@ -104,9 +104,9 @@ Route::get('/motorola/{slug}', [MotorolaController::class, 'show'])->name('motor
 
 // Business Solution Routes
 Route::prefix('business-solution')->group(function () {
-    Route::get('/nextcloud', [BusinessSolutionController::class, 'nextcloud'])->name('nextcloud');
     Route::get('/hcm-hcis', [BusinessSolutionController::class, 'hcmHcis'])->name('hcis');
-    Route::get('/sosmed', [BusinessSolutionController::class, 'SosMed'])->name('sosmed');
+    Route::get('/nextcloud', [BusinessSolutionController::class, 'nextcloud'])->name('nextcloud');
+    Route::get('/digital-marketing', [BusinessSolutionController::class, 'SosMed'])->name('sosmed');
     Route::get('/sikerja', [BusinessSolutionController::class, 'SiKerja'])->name('sikerja');
     Route::get('/mit', [BusinessSolutionController::class, 'MIT'])->name('mit');
 });

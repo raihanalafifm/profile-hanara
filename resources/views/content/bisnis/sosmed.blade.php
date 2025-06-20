@@ -1,5 +1,11 @@
 @extends('layout.main')
-
+@push('schema-org')
+    @if (isset($schemaDigitalMarketing))
+        <script type="application/ld+json">
+        {!! json_encode($schemaDigitalMarketing, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+        </script>
+    @endif
+@endpush
 @section('container')
     <section class="sosmed-hero">
         <!-- Orange Decorative Circles -->

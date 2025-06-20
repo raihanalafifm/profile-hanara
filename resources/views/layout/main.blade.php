@@ -854,6 +854,106 @@
                 }
             });
         })();
+
+        // Tambahkan ini di main.blade.php atau di file JavaScript terpisah
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logo transition handler
+            const navbarBrand = document.querySelector('.navbar-brand');
+            const logoImg = navbarBrand.querySelector('img');
+
+            // Store original logo info
+            const originalLogo = {
+                src: '{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}',
+                alt: 'Hanara Logo',
+                class: 'logo'
+            };
+
+            // Product logos mapping
+            const productLogos = {
+                'mit': {
+                    src: '{{ asset('assets/images/icon/logo-mit.png') }}',
+                    alt: 'MIT Logo',
+                    class: 'logo logo-mit'
+                },
+                'sikerja': {
+                    src: '{{ asset('assets/images/icon/logo-sikerja.png') }}',
+                    alt: 'SiKerja Logo',
+                    class: 'logo logo-sikerja'
+                }
+            };
+
+            // Handle logo change on navigation
+            document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+                link.addEventListener('mouseenter', function(e) {
+                    const href = this.getAttribute('href');
+                    if (!href) return;
+
+                    // Check if hovering over MIT or SiKerja links
+                    if (href.includes('/mit') || this.textContent.trim() === 'MIT') {
+                        preloadAndShowLogo(productLogos.mit);
+                    } else if (href.includes('/sikerja') || this.textContent.trim() === 'SiKerja') {
+                        preloadAndShowLogo(productLogos.sikerja);
+                    }
+                });
+
+                link.addEventListener('mouseleave', function(e) {
+                    // Only revert if not on the actual page
+                    const currentRoute = '{{ Route::currentRouteName() }}';
+                    if (currentRoute !== 'mit' && currentRoute !== 'sikerja') {
+                        revertToOriginalLogo();
+                    }
+                });
+            });
+
+            // Preload and show logo with smooth transition
+            function preloadAndShowLogo(logoInfo) {
+                const img = new Image();
+                img.onload = function() {
+                    logoImg.style.opacity = '0';
+                    setTimeout(() => {
+                        logoImg.src = logoInfo.src;
+                        logoImg.alt = logoInfo.alt;
+                        logoImg.className = logoInfo.class;
+                        logoImg.style.opacity = '1';
+                    }, 150);
+                };
+                img.src = logoInfo.src;
+            }
+
+            // Revert to original logo
+            function revertToOriginalLogo() {
+                logoImg.style.opacity = '0';
+                setTimeout(() => {
+                    logoImg.src = originalLogo.src;
+                    logoImg.alt = originalLogo.alt;
+                    logoImg.className = originalLogo.class;
+                    logoImg.style.opacity = '1';
+                }, 150);
+            }
+
+            // Add CSS for smooth transitions
+            const style = document.createElement('style');
+            style.textContent = `
+        .navbar-brand img {
+            transition: opacity 0.15s ease-in-out;
+        }
+        
+        .navbar-brand .logo-mit,
+        .navbar-brand .logo-sikerja {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-brand .logo-mit,
+            .navbar-brand .logo-sikerja {
+                height: 35px;
+            }
+        }
+    `;
+            document.head.appendChild(style);
+        });
     </script>
 </body>
 

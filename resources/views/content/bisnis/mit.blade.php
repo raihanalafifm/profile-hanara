@@ -1,4 +1,11 @@
 @extends('layout.main')
+@push('schema-org')
+    @if (isset($schemaMIT))
+        <script type="application/ld+json">
+        {!! json_encode($schemaMIT, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+        </script>
+    @endif
+@endpush
 
 @section('container')
     <!-- MIT Hero Section -->

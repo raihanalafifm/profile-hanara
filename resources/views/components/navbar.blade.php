@@ -2,8 +2,26 @@
     aria-label="Main navigation">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}" aria-label="Hanara - Home">
-            <img src="{{ asset('assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png') }}" alt="Hanara Logo" class="logo"
-                width="120" height="40">
+            @php
+                $currentRoute = Route::currentRouteName();
+                $logoPath = 'assets/images/LOGO PERUSAHAAN/HANARA.ID-2023.-II.png';
+                $logoAlt = 'Hanara Logo';
+                $logoClass = 'logo';
+
+                // Change logo based on current route
+                if ($currentRoute === 'mit') {
+                    $logoPath = 'assets/images/icon1/mit.png';
+                    $logoAlt = 'MIT Logo';
+                    $logoClass = 'logo logo-mit';
+                } elseif ($currentRoute === 'sikerja') {
+                    $logoPath = 'assets/images/icon1/sikerja.png';
+                    $logoAlt = 'SiKerja Logo';
+                    $logoClass = 'logo logo-sikerja';
+                }
+            @endphp
+
+            <img src="{{ asset($logoPath) }}" alt="{{ $logoAlt }}" class="{{ $logoClass }}" width="120"
+                height="40">
         </a>
         <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle main navigation">
@@ -37,7 +55,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->routeIs('zimbra.*') ? 'active' : '' }}"
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs('zimbra.*') || request()->routeIs('cloud-zimbra') || request()->routeIs('server-zimbra') || request()->routeIs('instalasi-zimbra') || request()->routeIs('maintenance-zimbra') || request()->routeIs('troubleshooting-zimbra') ? 'active' : '' }}"
                         href="#" id="zimbraDropdown" role="button" aria-expanded="false">
                         Zimbra
                     </a>
@@ -55,7 +73,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->routeIs('house.*') ? 'active' : '' }}"
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs('house.*') || request()->routeIs('develop-web') || request()->routeIs('web-application') || request()->routeIs('maintenance-web') ? 'active' : '' }}"
                         href="#" id="softwareDropdown" role="button" aria-expanded="false">
                         Software House
                     </a>
@@ -69,7 +87,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->routeIs('business.*') ? 'active' : '' }}"
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs('business.*') || request()->routeIs('hcis') || request()->routeIs('nextcloud') || request()->routeIs('sosmed') || request()->routeIs('sikerja') || request()->routeIs('mit') ? 'active' : '' }}"
                         href="#" id="businessDropdown" role="button" aria-expanded="false">
                         Business Solution
                     </a>
@@ -273,6 +291,36 @@
 </script>
 
 <style>
+    .navbar-brand .logo-mit {
+        max-height: 45px;
+        width: auto;
+    }
+
+    .navbar-brand .logo-sikerja {
+        max-height: 40px;
+        width: auto;
+    }
+
+    /* Smooth transition when changing pages */
+    .navbar-brand img {
+        transition: opacity 0.3s ease;
+    }
+
+    /* Optional: Add hover effect for product logos */
+    .navbar-brand:hover .logo-mit,
+    .navbar-brand:hover .logo-sikerja {
+        opacity: 0.8;
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+
+        .navbar-brand .logo-mit,
+        .navbar-brand .logo-sikerja {
+            max-height: 35px;
+        }
+    }
+
     /* Mobile dropdown fix */
     @media (max-width: 991px) {
         .dropdown-menu {

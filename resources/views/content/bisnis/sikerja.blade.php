@@ -1,5 +1,17 @@
 @extends('layout.main')
+@push('schema-org')
+    @if (isset($schemaSiKerja))
+        <script type="application/ld+json">
+        {!! json_encode($schemaSiKerja, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+        </script>
+    @endif
 
+    @if (isset($schemaFAQ))
+        <script type="application/ld+json">
+        {!! json_encode($schemaFAQ, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+        </script>
+    @endif
+@endpush
 @section('container')
     <section class="sikerja-hero">
         <!-- Orange Decorative Circles -->
