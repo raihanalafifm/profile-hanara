@@ -510,5 +510,46 @@
             </div>
         </div>
     </section>
+    <!-- MIT Security & Access Section -->
+    <section class="mit-security-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Column - Content -->
+                <div class="col-lg-6">
+                    <div class="mit-security-content">
+                        <!-- Security Badge -->
+                        <span class="mit-security-badge">Security & Access</span>
 
+                        <!-- Main Title -->
+                        <h2 class="mit-security-title">
+                            Keamanan & Hak Akses
+                        </h2>
+
+                        <!-- Description -->
+                        <p class="mit-security-description">
+                            MIT dilengkapi dengan sistem hak akses berbasis peran
+                            (role-based access), sehingga setiap pengguna hanya dapat
+                            mengakses menu sesuai otoritasnya. Aktivitas pengguna
+                            terekam dalam audit log untuk menjaga akuntabilitas
+                        </p>
+
+                        <!-- Security Icons Row -->
+                    </div>
+                </div>
+
+                <!-- Right Column - Image -->
+                <div class="col-lg-6">
+                    <div class="mit-security-image">
+                        <img src="{{ asset('assets/images/mit/cewe1.png') }}" alt="MIT Security Interface"
+                            class="mit-security-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hnr-contact-section">
+        <div class="container">
+            @include('components.contact')
+        </div>
+    </section>
 @endsection

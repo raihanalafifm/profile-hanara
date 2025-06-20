@@ -19297,3 +19297,254 @@ section {
 [data-theme="dark"] .mit-unscheduled-img {
     filter: brightness(0.95) contrast(1.05);
 }
+/* ========================================
+   MIT SECURITY SECTION STYLES
+   ======================================== */
+
+/* MIT Security Section */
+.mit-security-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* Security Content */
+.mit-security-content {
+    padding-right: 30px;
+}
+
+/* Security Badge */
+.mit-security-badge {
+    display: inline-block;
+    background-color: #ffcbb6;
+    color: #ff8100;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+/* Security Title */
+.mit-security-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* Security Description */
+.mit-security-description {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Security Icons Row */
+.mit-security-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.mit-security-icon-item {
+    flex-shrink: 0;
+}
+
+.mit-security-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ff8100;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mit-security-icon i {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.mit-security-icon:hover {
+    background-color: #e55600;
+    transform: scale(1.1);
+}
+
+/* Security Image */
+.mit-security-image {
+    text-align: center;
+    padding: 20px;
+}
+
+.mit-security-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ========================================
+   MIT SECURITY RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .mit-security-content {
+        padding-right: 20px;
+    }
+
+    .mit-security-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mit-security-section {
+        padding: 60px 0;
+    }
+
+    .mit-security-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .mit-security-title {
+        font-size: 32px;
+    }
+
+    .mit-security-description {
+        text-align: center;
+    }
+
+    .mit-security-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mit-security-section {
+        padding: 50px 0;
+    }
+
+    .mit-security-title {
+        font-size: 28px;
+    }
+
+    .mit-security-description {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+
+    .mit-security-badge {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+
+    .mit-security-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mit-security-icon i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mit-security-section {
+        padding: 40px 0;
+    }
+
+    .mit-security-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .mit-security-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .mit-security-icons {
+        gap: 15px;
+    }
+
+    .mit-security-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .mit-security-icon i {
+        font-size: 18px;
+    }
+}
+
+/* ========================================
+   MIT SECURITY DARK MODE SUPPORT
+   ======================================== */
+
+[data-theme="dark"] .mit-security-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .mit-security-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 30% 70%,
+        rgba(255, 129, 0, 0.08) 0%,
+        transparent 50%
+    );
+    z-index: 1;
+}
+
+[data-theme="dark"] .mit-security-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .mit-security-badge {
+    background-color: #4d2600;
+    color: #ff8100;
+    box-shadow: 0 4px 15px rgba(77, 38, 0, 0.3);
+    text-shadow: none;
+}
+
+[data-theme="dark"] .mit-security-title {
+    color: #f8f8f8;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .mit-security-description {
+    color: #c0c0c0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-security-icon {
+    background: linear-gradient(135deg, #ff8100 0%, #ff9533 100%);
+    box-shadow: 0 4px 15px rgba(255, 129, 0, 0.3);
+    border: 1px solid rgba(255, 129, 0, 0.3);
+}
+
+[data-theme="dark"] .mit-security-icon:hover {
+    background: linear-gradient(135deg, #ff9533 0%, #ffb366 100%);
+    box-shadow: 0 6px 20px rgba(255, 129, 0, 0.5);
+    transform: scale(1.15);
+}
+
+[data-theme="dark"] .mit-security-img {
+    filter: brightness(0.95) contrast(1.1);
+}
