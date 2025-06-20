@@ -249,4 +249,85 @@
             </div>
         </div>
     </section>
+    <!-- Mengapa siKerja Section - Tambahkan setelah section hero dan sebelum section fitur unggulan -->
+    <section class="sikerja-mengapa-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="sikerja-mengapa-header text-center">
+                <h2 class="sikerja-mengapa-title">Mengapa Harus Pakai <span class="sikerja-mengapa-orange">siKerja?</span>
+                </h2>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="row justify-content-center">
+                <!-- Card 1: Bisa digunakan siapa saja -->
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="sikerja-mengapa-card">
+                        <div class="sikerja-mengapa-icon">
+                            <img src="{{ asset('assets/images/sikerja/mengapa1.svg') }}" alt="Bisa digunakan siapa saja">
+                        </div>
+                        <h3 class="sikerja-mengapa-card-title">Bisa digunakan siapa saja</h3>
+                        <p class="sikerja-mengapa-card-desc">Nikmati berbagai fitur produktivitas tanpa membebani kinerja
+                            perangkat Anda, tetap ringan dan responsif.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Fitur lengkap dan ringan -->
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="sikerja-mengapa-card">
+                        <div class="sikerja-mengapa-icon">
+                            <img src="{{ asset('assets/images/sikerja/mengapa2.svg') }}" alt="Fitur lengkap dan ringan">
+                        </div>
+                        <h3 class="sikerja-mengapa-card-title">Fitur lengkap dan ringan</h3>
+                        <p class="sikerja-mengapa-card-desc">Nikmati berbagai fitur produktivitas tanpa membebani kinerja
+                            perangkat Anda, tetap ringan dan responsif.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Tampilan modern -->
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="sikerja-mengapa-card">
+                        <div class="sikerja-mengapa-icon">
+                            <img src="{{ asset('assets/images/sikerja/mengapa3.svg') }}" alt="Tampilan modern">
+                        </div>
+                        <h3 class="sikerja-mengapa-card-title">Tampilan modern</h3>
+                        <p class="sikerja-mengapa-card-desc">Desain antarmuka yang bersih dan intuitif memberikan
+                            pengalaman pengguna yang nyaman dan efisien.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Terintegrasi dengan sistem MIT & produk Hanara lainnya -->
+                <div class="col-lg-6 col-md-6 col-12 mb-4">
+                    <div class="sikerja-mengapa-card">
+                        <div class="sikerja-mengapa-icon">
+                            <img src="{{ asset('assets/images/sikerja/mengapa4.svg') }}"
+                                alt="Terintegrasi dengan sistem MIT">
+                        </div>
+                        <h3 class="sikerja-mengapa-card-title">Terintegrasi dengan sistem MIT & produk Hanara lainnya</h3>
+                        <p class="sikerja-mengapa-card-desc">Mendukung sinkronisasi otomatis dengan berbagai sistem Hanara
+                            untuk alur kerja yang lebih terhubung dan efisien.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Cocok untuk keperluan pribadi, kerja lapangan, admin kantor, atau supervisor -->
+                <div class="col-lg-6 col-md-6 col-12 mb-4">
+                    <div class="sikerja-mengapa-card">
+                        <div class="sikerja-mengapa-icon">
+                            <img src="{{ asset('assets/images/sikerja/mengapa5.svg') }}"
+                                alt="Cocok untuk berbagai keperluan">
+                        </div>
+                        <h3 class="sikerja-mengapa-card-title">Cocok untuk keperluan pribadi, kerja lapangan, admin kantor,
+                            atau supervisor</h3>
+                        <p class="sikerja-mengapa-card-desc">Solusi fleksibel untuk berbagai kebutuhan—dari penggunaan
+                            individu hingga tim kerja skala kecil maupun besar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hnr-contact-section">
+        <div class="container">
+            @include('components.contact')
+        </div>
+    </section>
 @endsection

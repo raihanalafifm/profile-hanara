@@ -17887,14 +17887,22 @@ section {
 }
 
 [data-theme="dark"] .sikerja-mit-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 25% 75%, rgba(40, 167, 69, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 75% 25%, rgba(255, 107, 0, 0.06) 0%, transparent 50%);
+    background: radial-gradient(
+            circle at 25% 75%,
+            rgba(40, 167, 69, 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(255, 107, 0, 0.06) 0%,
+            transparent 50%
+        );
     z-index: 1;
 }
 
@@ -17958,7 +17966,7 @@ section {
 
 /* Enhanced Visual Effects for Dark Mode */
 [data-theme="dark"] .sikerja-mit-feature::before {
-    content: '';
+    content: "";
     position: absolute;
     left: -15px;
     top: 0;
@@ -17982,7 +17990,11 @@ section {
 }
 
 [data-theme="dark"] .sikerja-mit-feature:hover {
-    background: linear-gradient(90deg, rgba(40, 167, 69, 0.05) 0%, transparent 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(40, 167, 69, 0.05) 0%,
+        transparent 100%
+    );
     transform: translateX(15px);
 }
 
@@ -17999,4 +18011,369 @@ section {
 
 .sikerja-mit-devices-img {
     will-change: transform, filter;
+}
+/* ========================================
+   SIKERJA MENGAPA SECTION STYLES
+   ======================================== */
+
+/* Mengapa siKerja Section */
+.sikerja-mengapa-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* Section Header */
+.sikerja-mengapa-header {
+    margin-bottom: 60px;
+}
+
+.sikerja-mengapa-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.sikerja-mengapa-orange {
+    color: #ff6b00;
+}
+
+/* Card Styles */
+.sikerja-mengapa-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 35px 25px;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sikerja-mengapa-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-color: #ff6b00;
+}
+
+/* Icon Styles */
+.sikerja-mengapa-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.sikerja-mengapa-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sikerja-mengapa-card:hover .sikerja-mengapa-icon {
+    transform: scale(1.1);
+}
+
+/* Card Title */
+.sikerja-mengapa-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Card Description */
+.sikerja-mengapa-card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sikerja-mengapa-section {
+        padding: 70px 0;
+    }
+
+    .sikerja-mengapa-title {
+        font-size: 36px;
+    }
+
+    .sikerja-mengapa-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sikerja-mengapa-section {
+        padding: 60px 0;
+    }
+
+    .sikerja-mengapa-title {
+        font-size: 32px;
+    }
+
+    .sikerja-mengapa-header {
+        margin-bottom: 50px;
+    }
+
+    .sikerja-mengapa-card {
+        margin-bottom: 20px;
+    }
+
+    .sikerja-mengapa-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+
+    .sikerja-mengapa-card-title {
+        font-size: 16px;
+        min-height: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sikerja-mengapa-section {
+        padding: 50px 0;
+    }
+
+    .sikerja-mengapa-title {
+        font-size: 28px;
+    }
+
+    .sikerja-mengapa-header {
+        margin-bottom: 40px;
+    }
+
+    .sikerja-mengapa-card {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+
+    .sikerja-mengapa-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 18px;
+    }
+
+    .sikerja-mengapa-card-title {
+        font-size: 15px;
+        min-height: 40px;
+        margin-bottom: 12px;
+    }
+
+    .sikerja-mengapa-card-desc {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sikerja-mengapa-section {
+        padding: 40px 0;
+    }
+
+    .sikerja-mengapa-title {
+        font-size: 24px;
+    }
+
+    .sikerja-mengapa-card {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+
+    .sikerja-mengapa-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 15px;
+    }
+
+    .sikerja-mengapa-card-title {
+        font-size: 14px;
+        min-height: 35px;
+        margin-bottom: 10px;
+    }
+
+    .sikerja-mengapa-card-desc {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+/* ========================================
+   SIKERJA MENGAPA DARK MODE SUPPORT
+   ======================================== */
+
+[data-theme="dark"] .sikerja-mengapa-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .sikerja-mengapa-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+            circle at 25% 25%,
+            rgba(255, 107, 0, 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 75% 75%,
+            rgba(255, 138, 51, 0.06) 0%,
+            transparent 50%
+        );
+    z-index: 1;
+}
+
+[data-theme="dark"] .sikerja-mengapa-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .sikerja-mengapa-title {
+    color: #f8f8f8;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .sikerja-mengapa-orange {
+    background: linear-gradient(135deg, #ff6b00, #ff8a33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+}
+
+[data-theme="dark"] .sikerja-mengapa-card {
+    background: linear-gradient(
+        135deg,
+        rgba(42, 42, 42, 0.9) 0%,
+        rgba(35, 35, 35, 0.9) 100%
+    );
+    border: 1px solid rgba(255, 107, 0, 0.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] .sikerja-mengapa-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b00 0%, #ff8a33 100%);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:hover::before {
+    transform: translateY(0);
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:hover {
+    background: linear-gradient(
+        135deg,
+        rgba(50, 50, 50, 0.95) 0%,
+        rgba(45, 45, 45, 0.95) 100%
+    );
+    border-color: rgba(255, 138, 51, 0.4);
+    box-shadow: 0 20px 50px rgba(255, 107, 0, 0.25),
+        0 0 30px rgba(255, 138, 51, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+}
+
+[data-theme="dark"] .sikerja-mengapa-card-title {
+    color: #f5f5f5;
+    font-weight: 700;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:hover .sikerja-mengapa-card-title {
+    color: #ff8a33;
+    text-shadow: 0 0 15px rgba(255, 138, 51, 0.5), 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sikerja-mengapa-card-desc {
+    color: #c8c8c8;
+    font-weight: 400;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:hover .sikerja-mengapa-card-desc {
+    color: #e0e0e0;
+}
+
+/* Enhanced Visual Effects for Dark Mode */
+[data-theme="dark"] .sikerja-mengapa-icon {
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:hover .sikerja-mengapa-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(255, 138, 51, 0.3));
+}
+
+/* Card Animation for Dark Mode */
+[data-theme="dark"] .sikerja-mengapa-card {
+    animation: mengapaCardFloat 6s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes mengapaCardFloat {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:nth-child(even) {
+    animation-delay: 1s;
+}
+
+[data-theme="dark"] .sikerja-mengapa-card:nth-child(3n) {
+    animation-delay: 2s;
+}
+
+/* Performance optimizations */
+.sikerja-mengapa-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.sikerja-mengapa-icon {
+    will-change: transform;
+}
+
+.sikerja-mengapa-icon img {
+    will-change: filter;
 }
