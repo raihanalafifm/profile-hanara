@@ -60,7 +60,7 @@ class ApprovalController extends Controller
 
         $articles = $query->latest()->paginate(10);
 
-        return view('backend.approval.article', compact('articles'));
+        return view('backend.approval.articles', compact('articles')); // FIXED: changed from 'article' to 'articles'
     }
 
     /**
@@ -77,7 +77,7 @@ class ApprovalController extends Controller
 
         $careers = $query->latest()->paginate(10);
 
-        return view('backend.approval.career', compact('careers'));
+        return view('backend.approval.careers', compact('careers')); // FIXED: changed from 'career' to 'careers'
     }
 
     /**
@@ -111,6 +111,7 @@ class ApprovalController extends Controller
             'approved_by' => auth()->id(),
             'approved_at' => now(),
             'approval_notes' => $request->approval_notes,
+            'is_active' => true, // Aktifkan setelah diapprove
         ]);
 
         return redirect()->back()->with('success', 'Article has been approved successfully.');
@@ -188,6 +189,7 @@ class ApprovalController extends Controller
             'approved_by' => auth()->id(),
             'approved_at' => now(),
             'approval_notes' => $request->approval_notes,
+            'is_active' => true, // Aktifkan setelah diapprove
         ]);
 
         return redirect()->back()->with('success', 'Product has been approved successfully.');

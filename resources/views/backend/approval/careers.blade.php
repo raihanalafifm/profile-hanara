@@ -256,9 +256,9 @@
                                     <p><strong>Created by:</strong> ${creator ? creator.name : 'Unknown'}</p>
                                     <p><strong>Created at:</strong> ${new Date(career.created_at).toLocaleDateString()}</p>
                                     ${approver ? `
-                                            <p><strong>Approved by:</strong> ${approver.name}</p>
-                                            <p><strong>Approved at:</strong> ${new Date(career.approved_at).toLocaleDateString()}</p>
-                                        ` : ''}
+                                                <p><strong>Approved by:</strong> ${approver.name}</p>
+                                                <p><strong>Approved at:</strong> ${new Date(career.approved_at).toLocaleDateString()}</p>
+                                            ` : ''}
                                     ${career.approval_notes ? `<p><strong>Notes:</strong> ${career.approval_notes}</p>` : ''}
                                 </div>
                             </div>
