@@ -10,9 +10,14 @@ class Motorola extends Model
 {
     use HasFactory;
 
-    protected $table = 'motorolas'; // atau 'motorola_products' sesuai nama tabel Anda
+    const APPROVAL_PENDING = 'pending';
+    const APPROVAL_APPROVED = 'approved';
+    const APPROVAL_REJECTED = 'rejected';
+
+    protected $table = 'motorolas';
 
     protected $fillable = [
+        'created_by',
         'name',
         'slug',
         'model_number',
@@ -22,14 +27,31 @@ class Motorola extends Model
         'description',
         'specifications',
         'price',
-        'is_active'
+        'is_active',
+        'approval_status',
+        'approved_by',
+        'approved_at',
+        'approval_notes'
     ];
 
     protected $casts = [
         'specifications' => 'array',
         'is_active' => 'boolean',
-        'price' => 'decimal:2'
+        'price' => 'decimal:2',
+        'approved_at' => 'datetime',
     ];
+
+    // Relasi dengan User yang membuat produk
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    // Relasi dengan User yang approve produk
+    public function approver()
+    {
+        return $this->belongsTo(User::class, 'approved_by');
+    }
 
     protected static function boot()
     {
@@ -46,7 +68,23 @@ class Motorola extends Model
 
     public function scopeActive($query)
     {
-        return $query->where('is_active', true);
+        return $query->where('is_active', true)
+            ->where('approval_status', self::APPROVAL_APPROVED);
+    }
+
+    public function scopePending($query)
+    {
+        return $query->where('approval_status', self::APPROVAL_PENDING);
+    }
+
+    public function scopeApproved($query)
+    {
+        return $query->where('approval_status', self::APPROVAL_APPROVED);
+    }
+
+    public function scopeRejected($query)
+    {
+        return $query->where('approval_status', self::APPROVAL_REJECTED);
     }
 
     public function scopeCategory($query, $category)
@@ -57,5 +95,39 @@ class Motorola extends Model
     public function scopeType($query, $type)
     {
         return $query->where('type', $type);
+    }
+
+    /**
+     * Get approval status options
+     */
+    public static function getApprovalStatusOptions(): array
+    {
+        return [
+            self::APPROVAL_PENDING => 'Pending',
+            self::APPROVAL_APPROVED => 'Approved',
+            self::APPROVAL_REJECTED => 'Rejected',
+        ];
+    }
+
+    /**
+     * Get approval status label
+     */
+    public function getApprovalStatusLabelAttribute(): string
+    {
+        $statuses = self::getApprovalStatusOptions();
+        return $statuses[$this->approval_status] ?? 'Unknown';
+    }
+
+    /**
+     * Get approval status badge class
+     */
+    public function getApprovalStatusBadgeClassAttribute(): string
+    {
+        return match ($this->approval_status) {
+            self::APPROVAL_PENDING => 'warning',
+            self::APPROVAL_APPROVED => 'success',
+            self::APPROVAL_REJECTED => 'danger',
+            default => 'secondary'
+        };
     }
 }

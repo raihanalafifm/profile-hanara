@@ -157,6 +157,136 @@
     <!-- Helpers -->
     <script src="{{ asset('assets/assets1/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('assets/assets1/js/config.js') }}"></script>
+    <style>
+        bisa ditambah ini han css summernotenya?
+
+        /* Umum */
+        .note-editable {
+            font-family: 'Segoe UI', 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.7;
+            font-size: 16px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        /* Heading */
+        .note-editable h1 {
+            font-size: 32px;
+            color: #1d3557;
+            font-weight: 700;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .note-editable h2 {
+            font-size: 28px;
+            color: #1d4e89;
+            font-weight: 600;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        .note-editable h3 {
+            font-size: 24px;
+            color: #277da1;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .note-editable h4 {
+            font-size: 20px;
+            color: #457b9d;
+            font-weight: 500;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .note-editable h5 {
+            font-size: 18px;
+            color: #4a4e69;
+            font-weight: 500;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+
+        .note-editable h6 {
+            font-size: 16px;
+            color: #6c757d;
+            font-weight: 500;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        /* Paragraph */
+        .note-editable p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 14px;
+        }
+
+        /* List */
+        .note-editable ul,
+        .note-editable ol {
+            padding-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .note-editable ul li,
+        .note-editable ol li {
+            margin-bottom: 6px;
+        }
+
+        /* Blockquote */
+        .note-editable blockquote {
+            border-left: 4px solid #a8dadc;
+            background-color: #f1faff;
+            color: #343a40;
+            padding: 12px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        /* Table */
+        .note-editable table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .note-editable table th,
+        .note-editable table td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .note-editable table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        /* Image */
+        .note-editable img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        /* Link */
+        .note-editable a {
+            color: #0077cc;
+            text-decoration: underline;
+        }
+
+        .note-editable a:hover {
+            color: #005999;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>

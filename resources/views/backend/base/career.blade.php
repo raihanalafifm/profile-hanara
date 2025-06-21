@@ -6,7 +6,12 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-lg-8">
-                    <h5 class="card-title mb-0">Manajemen Career</h5>
+                    <h5 class="card-title mb-0">
+                        Manajemen Career
+                        @if (auth()->user()->isUser())
+                            <small class="text-muted">(My Career Posts)</small>
+                        @endif
+                    </h5>
                 </div>
                 <div class="col-lg-4 text-end">
                     <!-- Button trigger modal -->
@@ -31,8 +36,14 @@
                         <th>No</th>
                         <th>Position</th>
                         <th>Description</th>
-                        <th>Status</th>
-                        <th>Active</th>
+                        @if (auth()->user()->isAdmin())
+                            <th>Created By</th>
+                        @endif
+                        <th>Approval Status</th>
+                        <th>Job Status</th>
+                        @if (auth()->user()->isAdmin())
+                            <th>Active</th>
+                        @endif
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -40,35 +51,66 @@
                     @forelse($careers as $career)
                         <tr>
                             <td>{{ $loop->iteration + ($careers->currentPage() - 1) * $careers->perPage() }}</td>
-                            <td>{{ $career->position }}</td>
+                            <td>
+                                <strong>{{ $career->position }}</strong>
+                                <br><small class="text-muted">{{ $career->created_at->format('d M Y H:i') }}</small>
+                            </td>
                             <td>{{ Str::limit($career->description, 50) }}</td>
+                            @if (auth()->user()->isAdmin())
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar avatar-xs me-2">
+                                            <img src="{{ $career->creator->avatar_url ?? 'https://ui-avatars.com/api/?name=' . urlencode($career->creator->name ?? 'Unknown') . '&background=FF6B00&color=fff' }}"
+                                                alt="Avatar" class="rounded-circle">
+                                        </div>
+                                        <span>{{ $career->creator->name ?? 'Unknown' }}</span>
+                                    </div>
+                                </td>
+                            @endif
                             <td>
-                                <form action="{{ route('backend.careers.update-status', $career) }}" method="POST"
-                                    class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <select name="status" class="form-select form-select-sm status-select"
-                                        onchange="this.form.submit()" style="width: auto; display: inline-block;">
-                                        <option value="open" {{ $career->status == 'open' ? 'selected' : '' }}
-                                            class="text-success">✅ Open</option>
-                                        <option value="closed" {{ $career->status == 'closed' ? 'selected' : '' }}
-                                            class="text-danger">❌ Closed</option>
-                                        <option value="on_hold" {{ $career->status == 'on_hold' ? 'selected' : '' }}
-                                            class="text-warning">🕓 On Hold</option>
-                                    </select>
-                                </form>
+                                <span class="badge bg-{{ $career->approval_status_badge_class }}">
+                                    {{ $career->approval_status_label }}
+                                </span>
+                                @if ($career->approval_status === 'rejected' && $career->approval_notes)
+                                    <br><small class="text-danger">{{ Str::limit($career->approval_notes, 30) }}</small>
+                                @endif
                             </td>
                             <td>
-                                <form action="{{ route('backend.careers.toggle-status', $career) }}" method="POST"
-                                    class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit"
-                                        class="btn btn-sm btn-{{ $career->is_active ? 'success' : 'secondary' }}">
-                                        {{ $career->is_active ? 'Active' : 'Inactive' }}
-                                    </button>
-                                </form>
+                                @if (auth()->user()->isAdmin())
+                                    <form action="{{ route('backend.careers.update-status', $career) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <select name="status" class="form-select form-select-sm status-select"
+                                            onchange="this.form.submit()" style="width: auto; display: inline-block;">
+                                            <option value="open" {{ $career->status == 'open' ? 'selected' : '' }}
+                                                class="text-success">✅ Open</option>
+                                            <option value="closed" {{ $career->status == 'closed' ? 'selected' : '' }}
+                                                class="text-danger">❌ Closed</option>
+                                            <option value="on_hold" {{ $career->status == 'on_hold' ? 'selected' : '' }}
+                                                class="text-warning">🕓 On Hold</option>
+                                        </select>
+                                    </form>
+                                @else
+                                    <span
+                                        class="badge bg-{{ $career->status === 'open' ? 'success' : ($career->status === 'closed' ? 'danger' : 'warning') }}">
+                                        {{ $career->status_icon }} {{ $career->status_label }}
+                                    </span>
+                                @endif
                             </td>
+                            @if (auth()->user()->isAdmin())
+                                <td>
+                                    <form action="{{ route('backend.careers.toggle-status', $career) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit"
+                                            class="btn btn-sm btn-{{ $career->is_active ? 'success' : 'secondary' }}">
+                                            {{ $career->is_active ? 'Active' : 'Inactive' }}
+                                        </button>
+                                    </form>
+                                </td>
+                            @endif
                             <td>
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -81,21 +123,29 @@
                                             data-bs-target="#editCareerModal">
                                             <i class="bx bx-edit-alt me-1"></i> Edit
                                         </a>
-                                        <form action="{{ route('backend.careers.destroy', $career) }}" method="POST"
-                                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus career ini?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="dropdown-item">
-                                                <i class="bx bx-trash me-1"></i> Delete
-                                            </button>
-                                        </form>
+                                        @if (auth()->user()->isAdmin() || $career->created_by === auth()->id())
+                                            <form action="{{ route('backend.careers.destroy', $career) }}" method="POST"
+                                                onsubmit="return confirm('Apakah Anda yakin ingin menghapus career ini?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item">
+                                                    <i class="bx bx-trash me-1"></i> Delete
+                                                </button>
+                                            </form>
+                                        @endif
                                     </div>
                                 </div>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="text-center">Belum ada career</td>
+                            <td colspan="{{ auth()->user()->isAdmin() ? '8' : '6' }}" class="text-center">
+                                @if (auth()->user()->isUser())
+                                    Anda belum membuat career posting
+                                @else
+                                    Belum ada career
+                                @endif
+                            </td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -178,10 +228,23 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
+                        @if (auth()->user()->isUser())
+                            <div class="alert alert-info">
+                                <i class="bx bx-info-circle me-2"></i>
+                                Career post akan menunggu persetujuan admin sebelum dipublikasikan.
+                            </div>
+                        @endif
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Simpan Career</button>
+                        <button type="submit" class="btn btn-primary">
+                            @if (auth()->user()->isAdmin())
+                                Simpan & Publish Career
+                            @else
+                                Submit untuk Approval
+                            @endif
+                        </button>
                     </div>
                 </form>
             </div>
@@ -235,19 +298,32 @@
                             <small class="text-muted">Masukkan satu kualifikasi per baris</small>
                         </div>
 
-                        <div class="mb-3">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="edit_is_active" name="is_active"
-                                    value="1">
-                                <label class="form-check-label" for="edit_is_active">
-                                    Active
-                                </label>
+                        @if (auth()->user()->isAdmin())
+                            <div class="mb-3">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="edit_is_active" name="is_active"
+                                        value="1">
+                                    <label class="form-check-label" for="edit_is_active">
+                                        Active
+                                    </label>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="alert alert-info">
+                                <i class="bx bx-info-circle me-2"></i>
+                                Perubahan akan menunggu persetujuan admin sebelum dipublikasikan.
+                            </div>
+                        @endif
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Update Career</button>
+                        <button type="submit" class="btn btn-primary">
+                            @if (auth()->user()->isAdmin())
+                                Update Career
+                            @else
+                                Submit Perubahan
+                            @endif
+                        </button>
                     </div>
                 </form>
             </div>
@@ -283,8 +359,13 @@
                 document.getElementById('edit_qualifications').value = '';
             }
 
-            // Handle checkbox is_active
-            document.getElementById('edit_is_active').checked = career.is_active ? true : false;
+            // Handle checkbox is_active (only for admin)
+            @if (auth()->user()->isAdmin())
+                const isActiveCheckbox = document.getElementById('edit_is_active');
+                if (isActiveCheckbox) {
+                    isActiveCheckbox.checked = career.is_active ? true : false;
+                }
+            @endif
         }
 
         // Handle validation errors on page load

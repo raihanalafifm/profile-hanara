@@ -30,7 +30,7 @@
                         Dari manajemen sosial media hingga kampanye iklan yang efektif, Hanara hadir membantu bisnis Anda
                         tumbuh secara digital—dengan konten profesional, strategi cerdas, dan dukungan talent kreatif.
                     </p>
-                    <a href="#" class="sosmed-cta-btn">Konsultasi Sekarang</a>
+                    <a href="#contact" class="sosmed-cta-btn">Konsultasi Sekarang</a>
                 </div>
             </div>
         </div>
@@ -457,7 +457,7 @@
         </div>
     </section>
     <section class="hnr-contact-section">
-        <div class="container">
+        <div class="container" id="contact">
             @include('components.contact')
         </div>
     </section>

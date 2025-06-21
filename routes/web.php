@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
@@ -24,39 +25,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::redirect('/dashboard', '/')->name('dashboard');
 
 // Backend Routes (Protected with Auth)
-Route::prefix('backend')->name('backend.')->middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('backend.base.home');
-    })->name('dashboard');
-
-    // Articles Management
-    Route::get('/articles', [ArticleController::class, 'adminIndex'])->name('articles.index');
-    Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
-    Route::put('/articles/{article}', [ArticleController::class, 'update'])->name('articles.update');
-    Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
-    Route::get('/articles/{article}', [ArticleController::class, 'edit'])->name('articles.edit');
-    Route::patch('/articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])->name('articles.toggle-status');
-
-
-    // Careers Management
-    Route::resource('careers', CareerController::class);
-    Route::patch('careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])->name('careers.toggle-status');
-    Route::patch('careers/{career}/update-status', [CareerController::class, 'updateStatus'])->name('careers.update-status');
-
-    // Users Management
-    Route::resource('users', UserController::class);
-    Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::patch('users/{user}/toggle-status', [UserController::class, 'toggleStatus'])
-        ->name('users.toggle-status');
-
-    // Motorola Products Management
-    Route::get('/motorola', [MotorolaController::class, 'adminIndex'])->name('motorola.index');
-    Route::post('/motorola', [MotorolaController::class, 'store'])->name('motorola.store');
-    Route::put('/motorola/{motorola}', [MotorolaController::class, 'update'])->name('motorola.update');
-    Route::delete('/motorola/{motorola}', [MotorolaController::class, 'destroy'])->name('motorola.destroy');
-    Route::patch('/motorola/{motorola}/toggle-status', [MotorolaController::class, 'toggleStatus'])
-        ->name('motorola.toggle-status');
-});
 
 
 //contact email
@@ -99,8 +67,8 @@ Route::prefix('software-house')->group(function () {
 Route::get('/cctv', [ServiceController::class, 'cctv'])->name('cctv');
 
 // Motorola Routes
-Route::get('/motorola', [MotorolaController::class, 'index'])->name('motorola');
-Route::get('/motorola/{slug}', [MotorolaController::class, 'show'])->name('motorola.detail');
+Route::get('/motorola', [MotorolaController::class, 'FrontendIndex'])->name('motorola');
+Route::get('/motorola/{slug}', [MotorolaController::class, 'FrontendShow'])->name('motorola.detail');
 
 // Business Solution Routes
 Route::prefix('business-solution')->group(function () {
@@ -115,3 +83,67 @@ Route::prefix('business-solution')->group(function () {
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.xml');
 Route::get('/sitemap', [SitemapController::class, 'html'])->name('sitemap.html');
 require __DIR__ . '/auth.php';
+Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function () {
+
+    // Dashboard - accessible by both admin and user
+    Route::get('/dashboard', function () {
+        return view('backend.base.home');
+    })->name('dashboard');
+
+    // Articles - accessible by both admin and user
+    Route::resource('articles', ArticleController::class);
+    Route::get('/articles/{id}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
+
+    // Careers - accessible by both admin and user
+    Route::resource('careers', CareerController::class);
+    Route::get('/careers/{id}/show', [CareerController::class, 'show'])->name('careers.show');
+    Route::get('/careers/{career}/edit', [CareerController::class, 'edit'])->name('careers.edit');
+
+    // Motorola - accessible by both admin and user
+    Route::get('/motorola', [MotorolaController::class, 'adminIndex'])->name('motorola.index');
+    Route::post('/motorola', [MotorolaController::class, 'store'])->name('motorola.store');
+    Route::get('/motorola/{motorola}', [MotorolaController::class, 'show'])->name('motorola.show');
+    Route::put('/motorola/{motorola}', [MotorolaController::class, 'update'])->name('motorola.update');
+    Route::delete('/motorola/{motorola}', [MotorolaController::class, 'destroy'])->name('motorola.destroy');
+    Route::get('/motorola/{id}/edit', [MotorolaController::class, 'edit'])->name('motorola.edit');
+
+    // Admin only routes
+    Route::middleware(['role:admin'])->group(function () {
+
+        // Toggle status routes (admin only)
+        Route::patch('/articles/{article}/toggle-status', [ArticleController::class, 'toggleStatus'])->name('articles.toggle-status');
+        Route::patch('/careers/{career}/toggle-status', [CareerController::class, 'toggleStatus'])->name('careers.toggle-status');
+        Route::patch('/careers/{career}/update-status', [CareerController::class, 'updateStatus'])->name('careers.update-status');
+        Route::patch('/motorola/{motorola}/toggle-status', [MotorolaController::class, 'toggleStatus'])->name('motorola.toggle-status');
+
+        // User management (admin only)
+        Route::resource('users', UserController::class);
+        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+
+        // Approval routes (admin only)
+        Route::prefix('approval')->name('approval.')->group(function () {
+            Route::get('/', [ApprovalController::class, 'index'])->name('index');
+            Route::get('/articles', [ApprovalController::class, 'articles'])->name('articles');
+            Route::get('/careers', [ApprovalController::class, 'careers'])->name('careers');
+            Route::get('/motorola', [ApprovalController::class, 'motorolaProducts'])->name('motorola');
+
+            // Approval actions
+            Route::post('/articles/{article}/approve', [ApprovalController::class, 'approveArticle'])->name('articles.approve');
+            Route::post('/articles/{article}/reject', [ApprovalController::class, 'rejectArticle'])->name('articles.reject');
+            Route::post('/careers/{career}/approve', [ApprovalController::class, 'approveCareer'])->name('careers.approve');
+            Route::post('/careers/{career}/reject', [ApprovalController::class, 'rejectCareer'])->name('careers.reject');
+            Route::post('/motorola/{product}/approve', [ApprovalController::class, 'approveMotorolaProduct'])->name('motorola.approve');
+            Route::post('/motorola/{product}/reject', [ApprovalController::class, 'rejectMotorolaProduct'])->name('motorola.reject');
+
+            // Get item details for modal
+            Route::get('/item-details/{type}/{id}', [ApprovalController::class, 'getItemDetails'])->name('item-details');
+        });
+    });
+});
+
+// Profile routes
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [UserController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [UserController::class, 'destroy'])->name('profile.destroy');
+});

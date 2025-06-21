@@ -32,7 +32,7 @@
 
                             <!-- CTA Button -->
                             <div class="mit-cta-section">
-                                <a href="#" class="mit-cta-btn">
+                                <a href="#contact" class="mit-cta-btn">
                                     Konsultasi Sekarang
                                 </a>
                             </div>
@@ -555,7 +555,7 @@
         </div>
     </section>
     <section class="hnr-contact-section">
-        <div class="container">
+        <div class="container" id="contact">
             @include('components.contact')
         </div>
     </section>

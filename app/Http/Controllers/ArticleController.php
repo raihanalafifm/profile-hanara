@@ -10,21 +10,29 @@ use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
+
+
     /**
      * Frontend Methods
      */
-
-    // Menampilkan halaman kumpulan artikel (Frontend)
     public function index(Request $request)
     {
         // Jika request dari backend
         if ($request->is('backend/*')) {
-            $articles = Article::with('user')->ordered()->paginate(10);
+            $query = Article::with(['user', 'creator']);
+
+            // Admin can see all, user only their own
+            if (auth()->user()->isUser()) {
+                $query->where('created_by', auth()->id());
+            }
+
+            $articles = $query->ordered()->paginate(10);
             return view('backend.base.article', compact('articles'));
         }
 
-        // Frontend logic
+        // Frontend logic - only show approved articles
         $query = Article::where('is_active', true)
+            ->where('approval_status', Article::STATUS_APPROVED)
             ->whereNotNull('published_at')
             ->where('published_at', '<=', now()->endOfDay());
 
@@ -55,7 +63,6 @@ class ArticleController extends Controller
         return view('content.artikel.articles', compact('articles', 'seoData'));
     }
 
-    // Menampilkan detail artikel (Frontend)
     public function show($slug)
     {
         // Extract ID from slug (format: title-slug-id)
@@ -65,6 +72,7 @@ class ArticleController extends Controller
         $article = Article::with('user')
             ->where('id', $id)
             ->where('is_active', true)
+            ->where('approval_status', Article::STATUS_APPROVED)
             ->whereNotNull('published_at')
             ->where('published_at', '<=', now())
             ->firstOrFail();
@@ -72,6 +80,7 @@ class ArticleController extends Controller
         $relatedArticles = Article::where('category', $article->category)
             ->where('id', '!=', $article->id)
             ->where('is_active', true)
+            ->where('approval_status', Article::STATUS_APPROVED)
             ->whereNotNull('published_at')
             ->where('published_at', '<=', now())
             ->limit(3)
@@ -86,6 +95,7 @@ class ArticleController extends Controller
             'ogDescription' => $article->description,
             'ogImage' => $article->image ? Storage::url($article->image) : null,
         ];
+
         $schemaArticle = [
             '@context' => 'https://schema.org',
             '@type' => 'Article',
@@ -112,15 +122,19 @@ class ArticleController extends Controller
     /**
      * Backend Methods
      */
-
-    // Menampilkan halaman manajemen artikel (Backend)
     public function adminIndex()
     {
-        $articles = Article::with('user')->latest()->paginate(10);
+        $query = Article::with(['user', 'creator']);
+
+        // Admin can see all, user only their own
+        if (auth()->user()->isUser()) {
+            $query->where('created_by', auth()->id());
+        }
+
+        $articles = $query->latest()->paginate(10);
         return view('backend.base.article', compact('articles'));
     }
 
-    // Menyimpan artikel baru (Backend)
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -145,21 +159,37 @@ class ArticleController extends Controller
             $validated['published_at'] = now();
         }
 
-        // Set is_active to true by default for new articles
-        $validated['is_active'] = true;
-
-        // Tambahkan user_id dari user yang sedang login
+        // Set default values
         $validated['user_id'] = auth()->id();
+        $validated['created_by'] = auth()->id();
+
+        // Auto approve for admin, pending for user
+        if (auth()->user()->isAdmin()) {
+            $validated['is_active'] = true;
+            $validated['approval_status'] = Article::STATUS_APPROVED;
+            $validated['approved_by'] = auth()->id();
+            $validated['approved_at'] = now();
+        } else {
+            $validated['is_active'] = false;
+            $validated['approval_status'] = Article::STATUS_PENDING;
+        }
 
         Article::create($validated);
 
-        return redirect()->route('backend.articles.index')
-            ->with('success', 'Artikel berhasil ditambahkan!');
+        $message = auth()->user()->isAdmin()
+            ? 'Artikel berhasil ditambahkan dan dipublish!'
+            : 'Artikel berhasil ditambahkan dan menunggu persetujuan admin.';
+
+        return redirect()->route('backend.articles.index')->with('success', $message);
     }
 
-    // Update artikel (Backend)
     public function update(Request $request, Article $article)
     {
+        // Check permission
+        if (auth()->user()->isUser() && $article->created_by !== auth()->id()) {
+            abort(403, 'You can only edit your own articles.');
+        }
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -187,15 +217,30 @@ class ArticleController extends Controller
             $validated['published_at'] = Carbon::parse($request->published_at)->setTimezone('Asia/Jakarta');
         }
 
+        // Reset approval status if content changed (except for admin)
+        if (auth()->user()->isUser()) {
+            $validated['approval_status'] = Article::STATUS_PENDING;
+            $validated['approved_by'] = null;
+            $validated['approved_at'] = null;
+            $validated['is_active'] = false;
+        }
+
         $article->update($validated);
 
-        return redirect()->route('backend.articles.index')
-            ->with('success', 'Artikel berhasil diperbarui!');
+        $message = auth()->user()->isAdmin()
+            ? 'Artikel berhasil diperbarui!'
+            : 'Artikel berhasil diperbarui dan menunggu persetujuan admin.';
+
+        return redirect()->route('backend.articles.index')->with('success', $message);
     }
 
-    // Hapus artikel (Backend)
     public function destroy(Article $article)
     {
+        // Check permission
+        if (auth()->user()->isUser() && $article->created_by !== auth()->id()) {
+            abort(403, 'You can only delete your own articles.');
+        }
+
         if ($article->image) {
             Storage::disk('public')->delete($article->image);
         }
@@ -206,31 +251,44 @@ class ArticleController extends Controller
             ->with('success', 'Artikel berhasil dihapus!');
     }
 
-    // Toggle status artikel (Backend)
     public function toggleStatus(Article $article)
     {
+        // Only admin can toggle status
+        if (auth()->user()->isUser()) {
+            abort(403, 'Only admin can change article status.');
+        }
+
         $article->update(['is_active' => !$article->is_active]);
 
         return redirect()->route('backend.articles.index')
             ->with('success', 'Status artikel berhasil diubah!');
     }
 
-    // Edit artikel - return JSON untuk AJAX
     public function edit($id)
     {
-        $article = Article::findOrFail($id);
+        try {
+            $article = Article::findOrFail($id);
 
-        // Return all article data as JSON
-        return response()->json([
-            'id' => $article->id,
-            'title' => $article->title,
-            'category' => $article->category,
-            'description' => $article->description,
-            'content' => $article->content,
-            'link' => $article->link,
-            'image' => $article->image,
-            'published_at' => $article->published_at,
-            'is_active' => $article->is_active
-        ]);
+            // Check permission - user hanya bisa edit artikel milik sendiri
+            if (auth()->user()->isUser() && $article->created_by !== auth()->id()) {
+                return response()->json(['error' => 'You can only edit your own articles'], 403);
+            }
+
+            return response()->json([
+                'id' => $article->id,
+                'title' => $article->title,
+                'category' => $article->category,
+                'description' => $article->description,
+                'content' => $article->content,
+                'link' => $article->link,
+                'image' => $article->image,
+                'published_at' => $article->published_at ? $article->published_at->format('Y-m-d\TH:i') : null,
+                'is_active' => $article->is_active,
+                'approval_status' => $article->approval_status
+            ]);
+        } catch (\Exception $e) {
+            \Log::error('Error loading article: ' . $e->getMessage());
+            return response()->json(['error' => 'Article not found'], 404);
+        }
     }
 }

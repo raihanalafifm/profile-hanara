@@ -7,27 +7,51 @@ use Illuminate\Database\Eloquent\Model;
 
 class Career extends Model
 {
+    use HasFactory;
+
     public const STATUS_OPEN = 'open';
     public const STATUS_CLOSED = 'closed';
     public const STATUS_ON_HOLD = 'on_hold';
-    use HasFactory;
+
+    const APPROVAL_PENDING = 'pending';
+    const APPROVAL_APPROVED = 'approved';
+    const APPROVAL_REJECTED = 'rejected';
+
     protected $fillable = [
+        'created_by',
         'position',
         'slug',
-        // 'type',
         'description',
         'skills',
         'qualifications',
         'is_active',
         'status',
-        'order'
+        'order',
+        'approval_status',
+        'approved_by',
+        'approved_at',
+        'approval_notes'
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
         'skills' => 'array',
         'qualifications' => 'array',
+        'approved_at' => 'datetime',
     ];
+
+    // Relasi dengan User yang membuat career
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    // Relasi dengan User yang approve career
+    public function approver()
+    {
+        return $this->belongsTo(User::class, 'approved_by');
+    }
+
     // Get all status options
     public static function getStatusOptions()
     {
@@ -38,11 +62,28 @@ class Career extends Model
         ];
     }
 
+    // Get approval status options
+    public static function getApprovalStatusOptions(): array
+    {
+        return [
+            self::APPROVAL_PENDING => 'Pending',
+            self::APPROVAL_APPROVED => 'Approved',
+            self::APPROVAL_REJECTED => 'Rejected',
+        ];
+    }
+
     // Get status label
     public function getStatusLabelAttribute()
     {
         $labels = self::getStatusOptions();
         return $labels[$this->status] ?? 'Unknown';
+    }
+
+    // Get approval status label
+    public function getApprovalStatusLabelAttribute(): string
+    {
+        $statuses = self::getApprovalStatusOptions();
+        return $statuses[$this->approval_status] ?? 'Unknown';
     }
 
     // Get status badge class
@@ -56,6 +97,17 @@ class Career extends Model
         };
     }
 
+    // Get approval status badge class
+    public function getApprovalStatusBadgeClassAttribute(): string
+    {
+        return match ($this->approval_status) {
+            self::APPROVAL_PENDING => 'warning',
+            self::APPROVAL_APPROVED => 'success',
+            self::APPROVAL_REJECTED => 'danger',
+            default => 'secondary'
+        };
+    }
+
     // Get status icon
     public function getStatusIconAttribute()
     {
@@ -66,10 +118,30 @@ class Career extends Model
             default => '❓'
         };
     }
-    // Scope untuk career yang aktif
+
+    // Scope untuk career yang aktif dan approved
     public function scopeActive($query)
     {
-        return $query->where('is_active', true);
+        return $query->where('is_active', true)
+            ->where('approval_status', self::APPROVAL_APPROVED);
+    }
+
+    // Scope untuk career yang pending approval
+    public function scopePending($query)
+    {
+        return $query->where('approval_status', self::APPROVAL_PENDING);
+    }
+
+    // Scope untuk career yang sudah diapprove
+    public function scopeApproved($query)
+    {
+        return $query->where('approval_status', self::APPROVAL_APPROVED);
+    }
+
+    // Scope untuk career yang ditolak
+    public function scopeRejected($query)
+    {
+        return $query->where('approval_status', self::APPROVAL_REJECTED);
     }
 
     // Scope untuk ordering

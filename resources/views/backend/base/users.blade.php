@@ -38,6 +38,8 @@
                         <th>No</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Role</th>
+                        <th>Position</th>
                         <th>Joined</th>
                         <th>Actions</th>
                     </tr>
@@ -47,12 +49,25 @@
                         <tr>
                             <td>{{ $loop->iteration + ($users->currentPage() - 1) * $users->perPage() }}</td>
                             <td>
-                                {{ $user->name }}
-                                @if ($user->id === auth()->id())
-                                    <span class="badge bg-info ms-1">You</span>
-                                @endif
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar avatar-xs me-2">
+                                        <img src="{{ $user->avatar_url }}" alt="Avatar" class="rounded-circle">
+                                    </div>
+                                    <div>
+                                        {{ $user->name }}
+                                        @if ($user->id === auth()->id())
+                                            <span class="badge bg-info ms-1">You</span>
+                                        @endif
+                                    </div>
+                                </div>
                             </td>
                             <td>{{ $user->email }}</td>
+                            <td>
+                                <span class="badge bg-{{ $user->isAdmin() ? 'danger' : 'primary' }}">
+                                    {{ $user->role_label }}
+                                </span>
+                            </td>
+                            <td>{{ $user->position ?? '-' }}</td>
                             <td>{{ $user->created_at->format('d M Y') }}</td>
                             <td>
                                 <div class="dropdown">
@@ -81,7 +96,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">Belum ada user</td>
+                            <td colspan="7" class="text-center">Belum ada user</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -123,6 +138,20 @@
                                 class="form-control @error('email') is-invalid @enderror" placeholder="user@example.com"
                                 required value="{{ old('email') }}">
                             @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
+                            <select id="role" name="role" class="form-select @error('role') is-invalid @enderror"
+                                required>
+                                <option value="">Select Role</option>
+                                <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+                                <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
+                            </select>
+                            <small class="text-muted">Admin: Full access, User: Content creation only</small>
+                            @error('role')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -195,6 +224,15 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="edit_role" class="form-label">Role <span class="text-danger">*</span></label>
+                            <select id="edit_role" name="role" class="form-select" required>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                            <small class="text-muted">Admin: Full access, User: Content creation only</small>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="edit_position" class="form-label">Position/Jabatan</label>
                             <input type="text" id="edit_position" name="position" class="form-control"
                                 placeholder="Contoh: Content Writer & Digital Marketing Team">
@@ -238,4 +276,44 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        function editUser(userId) {
+            // Fetch user data via AJAX
+            $.ajax({
+                url: `/backend/users/${userId}/edit`,
+                method: 'GET',
+                success: function(user) {
+                    const form = document.getElementById('editUserForm');
+                    form.action = `/backend/users/${user.id}`;
+
+                    document.getElementById('edit_name').value = user.name;
+                    document.getElementById('edit_email').value = user.email;
+                    document.getElementById('edit_role').value = user.role || 'user';
+                    document.getElementById('edit_position').value = user.position || '';
+                    document.getElementById('edit_bio').value = user.bio || '';
+                    document.getElementById('edit_password').value = '';
+                    document.getElementById('edit_password_confirmation').value = '';
+
+                    // Show current avatar
+                    if (user.avatar) {
+                        document.getElementById('current-avatar').innerHTML = `
+                        <p class="mb-1">Avatar saat ini:</p>
+                        <img src="${user.avatar_url}" class="img-thumbnail" style="max-height: 100px;">
+                    `;
+                    } else {
+                        document.getElementById('current-avatar').innerHTML = '';
+                    }
+
+                    const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+                    editModal.show();
+                },
+                error: function() {
+                    alert('Error loading user data');
+                }
+            });
+        }
+    </script>
 @endsection
