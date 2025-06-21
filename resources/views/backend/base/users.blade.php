@@ -177,9 +177,14 @@
 
                         <div class="mb-3">
                             <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
-                            <input type="password" id="password" name="password"
-                                class="form-control @error('password') is-invalid @enderror"
-                                placeholder="Min. 8 characters" required>
+                            <div class="input-group">
+                                <input type="password" id="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror"
+                                    placeholder="Min. 8 characters" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="bx bx-hide" id="togglePasswordIcon"></i>
+                                </button>
+                            </div>
                             @error('password')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -188,8 +193,17 @@
                         <div class="mb-3">
                             <label for="password_confirmation" class="form-label">Confirm Password <span
                                     class="text-danger">*</span></label>
-                            <input type="password" id="password_confirmation" name="password_confirmation"
-                                class="form-control" placeholder="Confirm password" required>
+                            <div class="input-group">
+                                <input type="password" id="password_confirmation" name="password_confirmation"
+                                    class="form-control @error('password') is-invalid @enderror"
+                                    placeholder="Confirm password" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePasswordConfirmation">
+                                    <i class="bx bx-hide" id="togglePasswordConfirmationIcon"></i>
+                                </button>
+                            </div>
+                            @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -258,14 +272,25 @@
 
                         <div class="mb-3">
                             <label for="edit_password" class="form-label">New Password</label>
-                            <input type="password" id="edit_password" name="password" class="form-control"
-                                placeholder="Min. 8 characters">
+                            <div class="input-group">
+                                <input type="password" id="edit_password" name="password" class="form-control"
+                                    placeholder="Min. 8 characters">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleEditPassword">
+                                    <i class="bx bx-hide" id="toggleEditPasswordIcon"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="edit_password_confirmation" class="form-label">Confirm New Password</label>
-                            <input type="password" id="edit_password_confirmation" name="password_confirmation"
-                                class="form-control" placeholder="Confirm password">
+                            <div class="input-group">
+                                <input type="password" id="edit_password_confirmation" name="password_confirmation"
+                                    class="form-control" placeholder="Confirm password">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    id="toggleEditPasswordConfirmation">
+                                    <i class="bx bx-hide" id="toggleEditPasswordConfirmationIcon"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -280,6 +305,60 @@
 
 @section('scripts')
     <script>
+        // Password toggle functionality for Add User Modal
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const icon = document.getElementById('togglePasswordIcon');
+
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.className = 'bx bx-show';
+            } else {
+                password.type = 'password';
+                icon.className = 'bx bx-hide';
+            }
+        });
+
+        document.getElementById('togglePasswordConfirmation').addEventListener('click', function() {
+            const passwordConfirmation = document.getElementById('password_confirmation');
+            const icon = document.getElementById('togglePasswordConfirmationIcon');
+
+            if (passwordConfirmation.type === 'password') {
+                passwordConfirmation.type = 'text';
+                icon.className = 'bx bx-show';
+            } else {
+                passwordConfirmation.type = 'password';
+                icon.className = 'bx bx-hide';
+            }
+        });
+
+        // Password toggle functionality for Edit User Modal
+        document.getElementById('toggleEditPassword').addEventListener('click', function() {
+            const password = document.getElementById('edit_password');
+            const icon = document.getElementById('toggleEditPasswordIcon');
+
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.className = 'bx bx-show';
+            } else {
+                password.type = 'password';
+                icon.className = 'bx bx-hide';
+            }
+        });
+
+        document.getElementById('toggleEditPasswordConfirmation').addEventListener('click', function() {
+            const passwordConfirmation = document.getElementById('edit_password_confirmation');
+            const icon = document.getElementById('toggleEditPasswordConfirmationIcon');
+
+            if (passwordConfirmation.type === 'password') {
+                passwordConfirmation.type = 'text';
+                icon.className = 'bx bx-show';
+            } else {
+                passwordConfirmation.type = 'password';
+                icon.className = 'bx bx-hide';
+            }
+        });
+
         function editUser(userId) {
             // Fetch user data via AJAX
             $.ajax({
@@ -291,7 +370,7 @@
 
                     document.getElementById('edit_name').value = user.name;
                     document.getElementById('edit_email').value = user.email;
-                    document.getElementById('edit_role').value = user.role || 'user';
+                    document.getElementById('edit_role').value = user.role || 'user'; // Make sure role is set
                     document.getElementById('edit_position').value = user.position || '';
                     document.getElementById('edit_bio').value = user.bio || '';
                     document.getElementById('edit_password').value = '';
@@ -315,5 +394,21 @@
                 }
             });
         }
+
+        // Show Add User Modal if there are validation errors
+        @if ($errors->any() && !old('_method'))
+            document.addEventListener('DOMContentLoaded', function() {
+                const addModal = new bootstrap.Modal(document.getElementById('addUserModal'));
+                addModal.show();
+            });
+        @endif
+
+        // Show Edit User Modal if there are validation errors for update
+        @if ($errors->any() && old('_method') == 'PUT')
+            document.addEventListener('DOMContentLoaded', function() {
+                const editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+                editModal.show();
+            });
+        @endif
     </script>
 @endsection

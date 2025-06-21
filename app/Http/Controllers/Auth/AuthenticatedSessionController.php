@@ -34,7 +34,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('backend.dashboard'));
+        // Create response with redirect
+        $response = redirect()->intended(route('backend.dashboard'));
+
+        // Add headers to disable password manager notifications
+        $response->header('Cache-Control', 'no-cache, no-store, must-revalidate, private');
+        $response->header('Pragma', 'no-cache');
+        $response->header('Expires', '0');
+
+        return $response;
     }
 
     /**
@@ -49,6 +57,13 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         // Redirect ke halaman login setelah logout
-        return redirect()->route('login');
+        $response = redirect()->route('login');
+
+        // Add headers to disable password manager notifications
+        $response->header('Cache-Control', 'no-cache, no-store, must-revalidate, private');
+        $response->header('Pragma', 'no-cache');
+        $response->header('Expires', '0');
+
+        return $response;
     }
 }

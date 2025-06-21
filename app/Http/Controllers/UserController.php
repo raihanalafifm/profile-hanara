@@ -26,15 +26,21 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'in:admin,user'], // Added role validation
             'position' => ['nullable', 'string', 'max:255'],
             'bio' => ['nullable', 'string'],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ], [
+            'password.confirmed' => 'Password konfirmasi tidak cocok dengan password.',
+            'role.required' => 'Role harus dipilih.',
+            'role.in' => 'Role yang dipilih tidak valid.',
         ]);
 
         $data = [
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role, // Make sure role is included
             'position' => $request->position,
             'bio' => $request->bio,
         ];
@@ -58,15 +64,22 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'role' => ['required', 'in:admin,user'], // Added role validation
             'position' => ['nullable', 'string', 'max:255'],
             'bio' => ['nullable', 'string'],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ], [
+            'password.confirmed' => 'Password konfirmasi tidak cocok dengan password.',
+            'role.required' => 'Role harus dipilih.',
+            'role.in' => 'Role yang dipilih tidak valid.',
         ]);
 
         // Update password jika diisi
         if ($request->filled('password')) {
             $request->validate([
                 'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ], [
+                'password.confirmed' => 'Password konfirmasi tidak cocok dengan password.',
             ]);
             $validated['password'] = Hash::make($request->password);
         }
@@ -125,6 +138,7 @@ class UserController extends Controller
             'id' => $user->id,
             'name' => $user->name,
             'email' => $user->email,
+            'role' => $user->role, // Make sure to include role
             'position' => $user->position,
             'bio' => $user->bio,
             'avatar' => $user->avatar,
