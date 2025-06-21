@@ -12,6 +12,7 @@ use App\Http\Controllers\SoftwareHouseController;
 use App\Http\Controllers\BusinessSolutionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\MotorolaController;
 use App\Http\Controllers\SitemapController;
 use App\Mail\ContactFormMail;
@@ -37,7 +38,7 @@ Route::get('/hubungi-kami', [PageController::class, 'contact'])->name('contact-u
 // Career Routes
 Route::get('/karir', [CareerController::class, 'frontIndex'])->name('career');
 Route::get('/karir/{career:slug}', [CareerController::class, 'frontShow'])->name('career.detail');
-
+Route::post('/job-application', [JobApplicationController::class, 'submit'])->name('job-application.submit');
 // Redirects dari URL lama (untuk SEO)
 Route::redirect('/about-us', '/tentang-kami', 301);
 Route::redirect('/contact-us', '/hubungi-kami', 301);

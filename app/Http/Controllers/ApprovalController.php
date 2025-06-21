@@ -149,6 +149,7 @@ class ApprovalController extends Controller
             'approved_by' => auth()->id(),
             'approved_at' => now(),
             'approval_notes' => $request->approval_notes,
+            'is_active' => true, // Aktifkan setelah diapprove
         ]);
 
         return redirect()->back()->with('success', 'Career has been approved successfully.');

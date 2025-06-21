@@ -61,27 +61,48 @@
                 <h2 class="hnr-application-title">Siap bergabung dengan perjalanan kami?</h2>
                 <h3 class="hnr-application-subtitle">Kirimkan Lamaran Anda di sini.</h3>
 
-                <form id="jobApplicationForm" class="hnr-application-form">
+                <form id="jobApplicationForm" class="hnr-application-form" method="POST"
+                    action="{{ route('job-application.submit') }}">
+                    @csrf
+
+                    @if ($errors->has('g-recaptcha-response'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ $errors->first('g-recaptcha-response') }}
+                        </div>
+                    @endif
+
                     <!-- Full Name -->
                     <div class="hnr-form-group">
                         <label for="fullName" class="hnr-form-label">Full Name<span class="hnr-required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" class="hnr-form-input"
-                            placeholder="Your full name" required>
+                        <input type="text" id="fullName" name="fullName"
+                            class="hnr-form-input @error('fullName') is-invalid @enderror" placeholder="Your full name"
+                            value="{{ old('fullName') }}" required>
+                        @error('fullName')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Email -->
                     <div class="hnr-form-group">
                         <label for="email" class="hnr-form-label">Email<span class="hnr-required">*</span></label>
-                        <input type="email" id="email" name="email" class="hnr-form-input"
-                            placeholder="Your active email" required>
+                        <input type="email" id="email" name="email"
+                            class="hnr-form-input @error('email') is-invalid @enderror" placeholder="Your active email"
+                            value="{{ old('email') }}" required>
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Phone Number -->
                     <div class="hnr-form-group">
                         <label for="phoneNumber" class="hnr-form-label">Phone Number<span
                                 class="hnr-required">*</span></label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" class="hnr-form-input"
-                            placeholder="Your active phone number" required>
+                        <input type="tel" id="phoneNumber" name="phoneNumber"
+                            class="hnr-form-input @error('phoneNumber') is-invalid @enderror"
+                            placeholder="Your active phone number" value="{{ old('phoneNumber') }}" required>
+                        @error('phoneNumber')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Career (Auto-filled and readonly) -->
@@ -92,65 +113,24 @@
                         <input type="hidden" name="career_id" value="{{ $career->id }}">
                     </div>
 
-                    <!-- Work Preference -->
-                    {{-- <div class="hnr-form-group">
-                        <label class="hnr-form-label">Work Preferences<span class="hnr-required">*</span></label>
-                        <div class="hnr-radio-group">
-                            @if ($career->type == 'Both' || $career->type == 'Full Time')
-                                <div class="hnr-radio-option">
-                                    <input type="radio" id="fullTime" name="workPreference" value="Full Time" required
-                                        {{ $career->type == 'Full Time' ? 'checked' : '' }}>
-                                    <label for="fullTime">Full Time</label>
-                                </div>
-                            @endif
-                            @if ($career->type == 'Both' || $career->type == 'Part Time')
-                                <div class="hnr-radio-option">
-                                    <input type="radio" id="partTime" name="workPreference" value="Part Time"
-                                        {{ $career->type == 'Part Time' ? 'checked' : '' }}>
-                                    <label for="partTime">Part Time</label>
-                                </div>
-                            @endif
-                        </div>
-                    </div> --}}
-
                     <!-- LinkedIn -->
                     <div class="hnr-form-group">
                         <label for="linkedin" class="hnr-form-label">LinkedIn</label>
-                        <input type="text" id="linkedin" name="linkedin" class="hnr-form-input"
-                            placeholder="Your linkedin username">
+                        <input type="text" id="linkedin" name="linkedin"
+                            class="hnr-form-input @error('linkedin') is-invalid @enderror"
+                            placeholder="Your linkedin username" value="{{ old('linkedin') }}">
+                        @error('linkedin')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
-
-                    <!-- CV Upload -->
-                    {{-- <div class="hnr-form-group">
-                        <label for="cv" class="hnr-form-label">CV<span class="hnr-required">*</span></label>
-                        <div class="hnr-file-input-container">
-                            <input type="file" id="cv" name="cv" class="hnr-file-input"
-                                accept=".pdf,.doc,.docx" required>
-                            <div class="hnr-file-input-custom">
-                                <span class="hnr-file-input-text">No file chosen</span>
-                                <label for="cv" class="hnr-file-input-button">Chose File</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Portfolio Upload -->
-                    <div class="hnr-form-group">
-                        <label for="portfolio" class="hnr-form-label">Portfolio<span
-                                class="hnr-required">*</span></label>
-                        <div class="hnr-file-input-container">
-                            <input type="file" id="portfolio" name="portfolio" class="hnr-file-input"
-                                accept=".pdf,.zip,.rar" required>
-                            <div class="hnr-file-input-custom">
-                                <span class="hnr-file-input-text">No file chosen</span>
-                                <label for="portfolio" class="hnr-file-input-button">Chose File</label>
-                            </div>
-                        </div>
-                    </div> --}}
 
                     <!-- Submit Button -->
                     <div class="hnr-form-submit">
-                        <button type="submit" class="hnr-submit-button">
-                            Send your application
+                        <button type="submit" id="submitBtn" class="g-recaptcha hnr-submit-button"
+                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback='onJobSubmit'
+                            data-action='submit'>
+                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            <span class="btn-text">Send your application</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                 fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -165,7 +145,8 @@
 <!-- Tambahkan ini di bagian akhir file job-detail.blade.php sebelum @endsection -->
 
 <!-- Success Modal untuk Job Application -->
-<div class="modal fade" id="jobSuccessModal" tabindex="-1" aria-labelledby="jobSuccessModalLabel" aria-hidden="true">
+<div class="modal fade" id="jobSuccessModal" tabindex="-1" aria-labelledby="jobSuccessModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content success-modal-content">
             <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
@@ -807,7 +788,8 @@
     }
 </style>
 
-<!-- JavaScript untuk Job Application Form Enhancement -->
+<!-- Ganti bagian JavaScript di job-detail.blade.php dengan ini -->
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const jobForm = document.getElementById('jobApplicationForm');
@@ -816,39 +798,10 @@
         // Form submission handling
         if (jobForm) {
             jobForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // Prevent default form submission for demo
-
                 // Show loading state
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = `
-                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                    Mengirim lamaran...
-                `;
-
-                // Simulate API call (replace with actual form submission logic)
-                setTimeout(function() {
-                    // Reset button state
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = `
-                        Send your application
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    `;
-
-                    // Simulate success response (you can change this based on your backend response)
-                    const isSuccess = Math.random() > 0.1; // 90% success rate for demo
-
-                    if (isSuccess) {
-                        showJobSuccessModal();
-                        // Reset form on success
-                        jobForm.reset();
-                    } else {
-                        showJobErrorModal();
-                    }
-                }, 2000); // 2 second delay for demo
+                submitBtn.querySelector('.spinner-border').classList.remove('d-none');
+                submitBtn.querySelector('.btn-text').textContent = 'Mengirim lamaran...';
             });
         }
 
@@ -862,93 +815,69 @@
             });
         }
 
-        // File input handling (jika Anda uncomment file inputs)
-        const fileInputs = document.querySelectorAll('.hnr-file-input');
-        fileInputs.forEach(input => {
-            input.addEventListener('change', function() {
-                const textElement = this.nextElementSibling.querySelector(
-                    '.hnr-file-input-text');
-                if (this.files.length > 0) {
-                    textElement.textContent = this.files[0].name;
-                } else {
-                    textElement.textContent = 'No file chosen';
-                }
-            });
-        });
-
-        // Function to show success modal
-        function showJobSuccessModal() {
-            try {
-                var successModalEl = document.getElementById('jobSuccessModal');
-                if (successModalEl) {
-                    var successModal = new bootstrap.Modal(successModalEl, {
-                        backdrop: 'static',
-                        keyboard: true,
-                        focus: true
-                    });
-
-                    // Force show modal
-                    successModal.show();
-
-                    // Ensure body has modal-open class
-                    document.body.classList.add('modal-open');
-
-                    // Scroll to top when modal opens
-                    window.scrollTo(0, 0);
-
-                    // Optional: Add confetti effect
-                    if (typeof confetti !== 'undefined') {
-                        setTimeout(() => {
-                            confetti({
-                                particleCount: 100,
-                                spread: 70,
-                                origin: {
-                                    y: 0.6
-                                }
-                            });
-                        }, 500);
-                    }
-                }
-            } catch (error) {
-                console.error('Error showing job success modal:', error);
-            }
-        }
-
-        // Function to show error modal
-        function showJobErrorModal() {
-            try {
-                var errorModalEl = document.getElementById('jobErrorModal');
-                if (errorModalEl) {
-                    var errorModal = new bootstrap.Modal(errorModalEl, {
-                        backdrop: 'static',
-                        keyboard: true,
-                        focus: true
-                    });
-
-                    // Force show modal
-                    errorModal.show();
-
-                    // Ensure body has modal-open class
-                    document.body.classList.add('modal-open');
-
-                    // Scroll to top when modal opens
-                    window.scrollTo(0, 0);
-                }
-            } catch (error) {
-                console.error('Error showing job error modal:', error);
-            }
-        }
-
-        // Auto show modal based on session flash messages (untuk integrasi dengan Laravel)
+        // Auto show modal based on session flash messages
         @if (session('job_success'))
             setTimeout(function() {
-                showJobSuccessModal();
+                try {
+                    var successModalEl = document.getElementById('jobSuccessModal');
+                    if (successModalEl) {
+                        var successModal = new bootstrap.Modal(successModalEl, {
+                            backdrop: 'static',
+                            keyboard: true,
+                            focus: true
+                        });
+
+                        // Force show modal
+                        successModal.show();
+
+                        // Ensure body has modal-open class
+                        document.body.classList.add('modal-open');
+
+                        // Scroll to top when modal opens
+                        window.scrollTo(0, 0);
+
+                        // Optional: Add confetti effect
+                        if (typeof confetti !== 'undefined') {
+                            setTimeout(() => {
+                                confetti({
+                                    particleCount: 100,
+                                    spread: 70,
+                                    origin: {
+                                        y: 0.6
+                                    }
+                                });
+                            }, 500);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error showing job success modal:', error);
+                }
             }, 100);
         @endif
 
         @if (session('job_error'))
             setTimeout(function() {
-                showJobErrorModal();
+                try {
+                    var errorModalEl = document.getElementById('jobErrorModal');
+                    if (errorModalEl) {
+                        var errorModal = new bootstrap.Modal(errorModalEl, {
+                            backdrop: 'static',
+                            keyboard: true,
+                            focus: true
+                        });
+
+                        // Force show modal
+                        errorModal.show();
+
+                        // Ensure body has modal-open class
+                        document.body.classList.add('modal-open');
+
+                        // Scroll to top when modal opens
+                        window.scrollTo(0, 0);
+                    }
+                } catch (error) {
+                    console.error('Error showing job error modal:', error);
+                }
             }, 100);
         @endif
 
@@ -981,6 +910,11 @@
         });
     });
 
+    // reCAPTCHA callback function untuk job application
+    function onJobSubmit(token) {
+        document.getElementById("jobApplicationForm").submit();
+    }
+
     // Test functions untuk debugging
     function testJobSuccessModal() {
         var modal = new bootstrap.Modal(document.getElementById('jobSuccessModal'));
@@ -1005,6 +939,9 @@
         modal.show();
     }
 </script>
+
+<!-- Load reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
 
 <!-- Optional: Add confetti library untuk efek celebration -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
