@@ -83,7 +83,9 @@ Route::prefix('business-solution')->group(function () {
 // Sitemap Route (untuk SEO)
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.xml');
 Route::get('/sitemap', [SitemapController::class, 'html'])->name('sitemap.html');
+
 require __DIR__ . '/auth.php';
+
 Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function () {
 
     // Dashboard - accessible by both admin and user
@@ -93,12 +95,9 @@ Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function
 
     // Articles - accessible by both admin and user
     Route::resource('articles', ArticleController::class);
-    Route::get('/articles/{id}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
 
     // Careers - accessible by both admin and user
     Route::resource('careers', CareerController::class);
-    Route::get('/careers/{id}/show', [CareerController::class, 'show'])->name('careers.show');
-    Route::get('/careers/{career}/edit', [CareerController::class, 'edit'])->name('careers.edit');
 
     // Motorola - accessible by both admin and user
     Route::get('/motorola', [MotorolaController::class, 'adminIndex'])->name('motorola.index');
@@ -106,7 +105,7 @@ Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function
     Route::get('/motorola/{motorola}', [MotorolaController::class, 'show'])->name('motorola.show');
     Route::put('/motorola/{motorola}', [MotorolaController::class, 'update'])->name('motorola.update');
     Route::delete('/motorola/{motorola}', [MotorolaController::class, 'destroy'])->name('motorola.destroy');
-    Route::get('/motorola/{id}/edit', [MotorolaController::class, 'edit'])->name('motorola.edit');
+    Route::get('/motorola/{motorola}/edit', [MotorolaController::class, 'edit'])->name('motorola.edit');
 
     // Admin only routes
     Route::middleware(['role:admin'])->group(function () {
@@ -119,7 +118,6 @@ Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function
 
         // User management (admin only)
         Route::resource('users', UserController::class);
-        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 
         // Approval routes (admin only)
         Route::prefix('approval')->name('approval.')->group(function () {
