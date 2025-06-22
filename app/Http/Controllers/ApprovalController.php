@@ -139,40 +139,54 @@ class ApprovalController extends Controller
     /**
      * Approve career
      */
-    public function approveCareer(Request $request, Career $career)
+    public function approveCareer(Request $request, $id)
     {
-        $request->validate([
-            'approval_notes' => 'nullable|string|max:1000'
-        ]);
+        try {
+            $career = Career::findOrFail($id);
 
-        $career->update([
-            'approval_status' => Career::APPROVAL_APPROVED,
-            'approved_by' => auth()->id(),
-            'approved_at' => now(),
-            'approval_notes' => $request->approval_notes,
-            'is_active' => true, // Aktifkan setelah diapprove
-        ]);
+            $request->validate([
+                'approval_notes' => 'nullable|string|max:1000'
+            ]);
 
-        return redirect()->back()->with('success', 'Career has been approved successfully.');
+            $career->update([
+                'approval_status' => Career::APPROVAL_APPROVED,
+                'approved_by' => auth()->id(),
+                'approved_at' => now(),
+                'approval_notes' => $request->approval_notes,
+                'is_active' => true,
+            ]);
+
+            return redirect()->route('backend.approval.careers')->with('success', 'Career has been approved successfully.');
+        } catch (\Exception $e) {
+            \Log::error('Error approving career: ' . $e->getMessage());
+            return redirect()->route('backend.approval.careers')->with('error', 'Error approving career: ' . $e->getMessage());
+        }
     }
 
     /**
      * Reject career
      */
-    public function rejectCareer(Request $request, Career $career)
+    public function rejectCareer(Request $request, $id)
     {
-        $request->validate([
-            'approval_notes' => 'required|string|max:1000'
-        ]);
+        try {
+            $career = Career::findOrFail($id);
 
-        $career->update([
-            'approval_status' => Career::APPROVAL_REJECTED,
-            'approved_by' => auth()->id(),
-            'approved_at' => now(),
-            'approval_notes' => $request->approval_notes,
-        ]);
+            $request->validate([
+                'approval_notes' => 'required|string|max:1000'
+            ]);
 
-        return redirect()->back()->with('success', 'Career has been rejected.');
+            $career->update([
+                'approval_status' => Career::APPROVAL_REJECTED,
+                'approved_by' => auth()->id(),
+                'approved_at' => now(),
+                'approval_notes' => $request->approval_notes,
+            ]);
+
+            return redirect()->route('backend.approval.careers')->with('success', 'Career has been rejected.');
+        } catch (\Exception $e) {
+            \Log::error('Error rejecting career: ' . $e->getMessage());
+            return redirect()->route('backend.approval.careers')->with('error', 'Error rejecting career: ' . $e->getMessage());
+        }
     }
 
     /**

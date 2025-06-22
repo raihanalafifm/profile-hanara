@@ -24,9 +24,6 @@
             </div>
         </div>
 
-        <!-- Alert Container for AJAX responses -->
-        <div id="alert-container"></div>
-
         @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show mx-3 mt-3" role="alert">
                 {{ session('success') }}
@@ -49,7 +46,7 @@
                 </thead>
                 <tbody class="table-border-bottom-0">
                     @forelse($careers as $career)
-                        <tr id="career-row-{{ $career->id }}">
+                        <tr>
                             <td>
                                 <div>
                                     <strong>{{ $career->position }}</strong>
@@ -73,12 +70,11 @@
                             </td>
                             <td>{{ $career->created_at->format('d M Y H:i') }}</td>
                             <td>
-                                <span class="badge bg-{{ $career->approval_status_badge_class }}"
-                                    id="status-badge-{{ $career->id }}">
+                                <span class="badge bg-{{ $career->approval_status_badge_class }}">
                                     {{ $career->approval_status_label }}
                                 </span>
                             </td>
-                            <td id="approver-cell-{{ $career->id }}">
+                            <td>
                                 @if ($career->approver)
                                     <small>{{ $career->approver->name }}</small><br>
                                     <small class="text-muted">{{ $career->approved_at->format('d M Y H:i') }}</small>
@@ -92,7 +88,7 @@
                                         data-bs-toggle="dropdown">
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
-                                    <div class="dropdown-menu" id="action-menu-{{ $career->id }}">
+                                    <div class="dropdown-menu">
                                         <a class="dropdown-item" href="javascript:void(0);"
                                             onclick="viewCareer({{ $career->id }})">
                                             <i class="bx bx-show me-1"></i> View Details
@@ -146,9 +142,8 @@
     <div class="modal fade" id="approveModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="approveForm" onsubmit="submitApproval(event)">
+                <form id="approveForm" method="POST">
                     @csrf
-                    <input type="hidden" id="approve-career-id" name="career_id">
                     <div class="modal-header">
                         <h5 class="modal-title">Approve Career</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -163,11 +158,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" id="approve-submit-btn">
-                            <span class="spinner-border spinner-border-sm d-none" role="status"
-                                aria-hidden="true"></span>
-                            Approve
-                        </button>
+                        <button type="submit" class="btn btn-success">Approve</button>
                     </div>
                 </form>
             </div>
@@ -178,9 +169,8 @@
     <div class="modal fade" id="rejectModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="rejectForm" onsubmit="submitRejection(event)">
+                <form id="rejectForm" method="POST">
                     @csrf
-                    <input type="hidden" id="reject-career-id" name="career_id">
                     <div class="modal-header">
                         <h5 class="modal-title">Reject Career</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -196,11 +186,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-danger" id="reject-submit-btn">
-                            <span class="spinner-border spinner-border-sm d-none" role="status"
-                                aria-hidden="true"></span>
-                            Reject
-                        </button>
+                        <button type="submit" class="btn btn-danger">Reject</button>
                     </div>
                 </form>
             </div>
@@ -210,32 +196,6 @@
 
 @section('scripts')
     <script>
-        // CSRF Token
-        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') ||
-            '{{ csrf_token() }}';
-
-        // Show alert function
-        function showAlert(message, type = 'success') {
-            const alertHtml = `
-                <div class="alert alert-${type} alert-dismissible fade show mx-3 mt-3" role="alert">
-                    ${message}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            `;
-
-            const alertContainer = document.getElementById('alert-container');
-            alertContainer.innerHTML = alertHtml;
-
-            // Auto dismiss after 5 seconds
-            setTimeout(() => {
-                const alert = alertContainer.querySelector('.alert');
-                if (alert) {
-                    alert.classList.remove('show');
-                    setTimeout(() => alert.remove(), 150);
-                }
-            }, 5000);
-        }
-
         function viewCareer(id) {
             // Load career details
             $.ajax({
@@ -296,9 +256,9 @@
                                     <p><strong>Created by:</strong> ${creator ? creator.name : 'Unknown'}</p>
                                     <p><strong>Created at:</strong> ${new Date(career.created_at).toLocaleDateString()}</p>
                                     ${approver ? `
-                                                    <p><strong>Approved by:</strong> ${approver.name}</p>
-                                                    <p><strong>Approved at:</strong> ${new Date(career.approved_at).toLocaleDateString()}</p>
-                                                ` : ''}
+                                                        <p><strong>Approved by:</strong> ${approver.name}</p>
+                                                        <p><strong>Approved at:</strong> ${new Date(career.approved_at).toLocaleDateString()}</p>
+                                                    ` : ''}
                                     ${career.approval_notes ? `<p><strong>Notes:</strong> ${career.approval_notes}</p>` : ''}
                                 </div>
                             </div>
@@ -310,148 +270,19 @@
                     $('#viewModal').modal('show');
                 },
                 error: function() {
-                    showAlert('Error loading career details', 'danger');
+                    alert('Error loading career details');
                 }
             });
         }
 
         function approveCareer(id) {
-            document.getElementById('approve-career-id').value = id;
-            document.getElementById('approval_notes').value = '';
+            $('#approveForm').attr('action', `/backend/approval/careers/${id}/approve`);
             $('#approveModal').modal('show');
         }
 
         function rejectCareer(id) {
-            document.getElementById('reject-career-id').value = id;
-            document.getElementById('reject_notes').value = '';
+            $('#rejectForm').attr('action', `/backend/approval/careers/${id}/reject`);
             $('#rejectModal').modal('show');
-        }
-
-        function submitApproval(event) {
-            event.preventDefault();
-
-            const careerId = document.getElementById('approve-career-id').value;
-            const notes = document.getElementById('approval_notes').value;
-            const submitBtn = document.getElementById('approve-submit-btn');
-            const spinner = submitBtn.querySelector('.spinner-border');
-
-            // Show loading state
-            submitBtn.disabled = true;
-            spinner.classList.remove('d-none');
-
-            // Send AJAX request
-            fetch(`/backend/approval/careers/${careerId}/approve`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken,
-                        'Accept': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify({
-                        approval_notes: notes
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Hide modal
-                    $('#approveModal').modal('hide');
-
-                    // Show success message
-                    showAlert('Career has been approved successfully.');
-
-                    // Update the UI
-                    updateCareerRow(careerId, 'approved');
-
-                    // Reset form
-                    document.getElementById('approveForm').reset();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    showAlert('An error occurred while approving the career.', 'danger');
-                })
-                .finally(() => {
-                    // Hide loading state
-                    submitBtn.disabled = false;
-                    spinner.classList.add('d-none');
-                });
-        }
-
-        function submitRejection(event) {
-            event.preventDefault();
-
-            const careerId = document.getElementById('reject-career-id').value;
-            const notes = document.getElementById('reject_notes').value;
-            const submitBtn = document.getElementById('reject-submit-btn');
-            const spinner = submitBtn.querySelector('.spinner-border');
-
-            // Show loading state
-            submitBtn.disabled = true;
-            spinner.classList.remove('d-none');
-
-            // Send AJAX request
-            fetch(`/backend/approval/careers/${careerId}/reject`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken,
-                        'Accept': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify({
-                        approval_notes: notes
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Hide modal
-                    $('#rejectModal').modal('hide');
-
-                    // Show success message
-                    showAlert('Career has been rejected.');
-
-                    // Update the UI
-                    updateCareerRow(careerId, 'rejected');
-
-                    // Reset form
-                    document.getElementById('rejectForm').reset();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    showAlert('An error occurred while rejecting the career.', 'danger');
-                })
-                .finally(() => {
-                    // Hide loading state
-                    submitBtn.disabled = false;
-                    spinner.classList.add('d-none');
-                });
-        }
-
-        function updateCareerRow(careerId, newStatus) {
-            // Update status badge
-            const statusBadge = document.getElementById(`status-badge-${careerId}`);
-            if (statusBadge) {
-                statusBadge.className = `badge bg-${newStatus === 'approved' ? 'success' : 'danger'}`;
-                statusBadge.textContent = newStatus.charAt(0).toUpperCase() + newStatus.slice(1);
-            }
-
-            // Update approver cell
-            const approverCell = document.getElementById(`approver-cell-${careerId}`);
-            if (approverCell) {
-                const now = new Date();
-                approverCell.innerHTML = `
-                    <small>{{ auth()->user()->name }}</small><br>
-                    <small class="text-muted">${now.toLocaleDateString('en-GB')} ${now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</small>
-                `;
-            }
-
-            // Remove approve/reject actions from dropdown
-            const actionMenu = document.getElementById(`action-menu-${careerId}`);
-            if (actionMenu) {
-                const approveRejectItems = actionMenu.querySelectorAll(
-                    '.dropdown-item.text-success, .dropdown-item.text-danger');
-                approveRejectItems.forEach(item => item.remove());
-            }
         }
     </script>
 @endsection

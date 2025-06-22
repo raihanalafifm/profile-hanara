@@ -158,133 +158,122 @@
     <script src="{{ asset('assets/assets1/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('assets/assets1/js/config.js') }}"></script>
     <style>
-        bisa ditambah ini han css summernotenya?
-
-        /* Umum */
+        /* Summernote custom style ala Tailwind */
         .note-editable {
-            font-family: 'Segoe UI', 'Open Sans', sans-serif;
-            color: #333;
-            line-height: 1.7;
-            font-size: 16px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #1f2937;
+            /* gray-800 */
+            line-height: 1.75;
+            background-color: #ffffff;
+            padding: 1.25rem;
         }
 
         /* Heading */
         .note-editable h1 {
-            font-size: 32px;
-            color: #1d3557;
+            font-size: 2.25rem;
+            /* text-4xl */
             font-weight: 700;
-            margin-top: 24px;
-            margin-bottom: 12px;
+            margin: 1.5rem 0 1rem;
+            color: #111827;
         }
 
         .note-editable h2 {
-            font-size: 28px;
-            color: #1d4e89;
-            font-weight: 600;
-            margin-top: 22px;
-            margin-bottom: 10px;
+            font-size: 1.875rem;
+            /* text-3xl */
+            font-weight: 700;
+            margin: 1.5rem 0 0.75rem;
+            color: #1f2937;
         }
 
         .note-editable h3 {
-            font-size: 24px;
-            color: #277da1;
+            font-size: 1.5rem;
+            /* text-2xl */
             font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 8px;
+            margin: 1.25rem 0 0.5rem;
+            color: #374151;
         }
 
         .note-editable h4 {
-            font-size: 20px;
-            color: #457b9d;
-            font-weight: 500;
-            margin-top: 18px;
-            margin-bottom: 8px;
+            font-size: 1.25rem;
+            /* text-xl */
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: #4b5563;
         }
 
         .note-editable h5 {
-            font-size: 18px;
-            color: #4a4e69;
-            font-weight: 500;
-            margin-top: 16px;
-            margin-bottom: 6px;
+            font-size: 1.125rem;
+            /* text-lg */
+            font-weight: 600;
+            margin: 0.75rem 0 0.5rem;
+            color: #4b5563;
         }
 
         .note-editable h6 {
-            font-size: 16px;
-            color: #6c757d;
-            font-weight: 500;
-            margin-top: 14px;
-            margin-bottom: 6px;
+            font-size: 1rem;
+            /* text-base */
+            font-weight: 600;
+            margin: 0.5rem 0 0.25rem;
+            color: #6b7280;
         }
 
         /* Paragraph */
         .note-editable p {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 14px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #374151;
         }
 
         /* List */
         .note-editable ul,
         .note-editable ol {
-            padding-left: 20px;
-            margin-bottom: 14px;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .note-editable ul li,
-        .note-editable ol li {
-            margin-bottom: 6px;
+        .note-editable li {
+            margin-bottom: 0.5rem;
         }
 
         /* Blockquote */
         .note-editable blockquote {
-            border-left: 4px solid #a8dadc;
-            background-color: #f1faff;
-            color: #343a40;
-            padding: 12px 20px;
-            margin: 20px 0;
+            border-left: 4px solid #3b82f6;
+            /* blue-500 */
+            padding-left: 1rem;
+            color: #6b7280;
+            /* gray-500 */
             font-style: italic;
-        }
-
-        /* Table */
-        .note-editable table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        .note-editable table th,
-        .note-editable table td {
-            border: 1px solid #dee2e6;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .note-editable table th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        }
-
-        /* Image */
-        .note-editable img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 10px 0;
+            margin: 1.5rem 0;
         }
 
         /* Link */
         .note-editable a {
-            color: #0077cc;
+            color: #2563eb;
             text-decoration: underline;
         }
 
         .note-editable a:hover {
-            color: #005999;
-            text-decoration: none;
+            color: #1d4ed8;
+        }
+
+        /* Code */
+        .note-editable code {
+            font-family: 'Fira Code', monospace;
+            background-color: #f3f4f6;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .note-editable pre {
+            font-family: 'Fira Code', monospace;
+            background-color: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            overflow-x: auto;
+            color: #111827;
+            font-size: 0.95rem;
         }
     </style>
 </head>
