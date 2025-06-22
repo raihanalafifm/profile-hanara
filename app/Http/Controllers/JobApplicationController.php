@@ -44,7 +44,7 @@ class JobApplicationController extends Controller
             Log::info('Job application validated data', $validated);
 
             // Kirim email ke HR (akan masuk ke Mailtrap)
-            Mail::to('career@hanara.id')->send(new JobApplicationMail($validated));
+            Mail::to('info@hanara.id')->send(new JobApplicationMail($validated));
 
             Log::info('Job application email sent successfully');
 
