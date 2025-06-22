@@ -124,7 +124,8 @@
     </div>
 
     <!-- Modal View Career -->
-    <div class="modal fade" id="viewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -139,7 +140,8 @@
     </div>
 
     <!-- Modal Approve -->
-    <div class="modal fade" id="approveModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="approveModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form id="approveForm" method="POST">
@@ -166,7 +168,8 @@
     </div>
 
     <!-- Modal Reject -->
-    <div class="modal fade" id="rejectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="rejectModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form id="rejectForm" method="POST">
@@ -256,9 +259,9 @@
                                     <p><strong>Created by:</strong> ${creator ? creator.name : 'Unknown'}</p>
                                     <p><strong>Created at:</strong> ${new Date(career.created_at).toLocaleDateString()}</p>
                                     ${approver ? `
-                                                        <p><strong>Approved by:</strong> ${approver.name}</p>
-                                                        <p><strong>Approved at:</strong> ${new Date(career.approved_at).toLocaleDateString()}</p>
-                                                    ` : ''}
+                                                                    <p><strong>Approved by:</strong> ${approver.name}</p>
+                                                                    <p><strong>Approved at:</strong> ${new Date(career.approved_at).toLocaleDateString()}</p>
+                                                                ` : ''}
                                     ${career.approval_notes ? `<p><strong>Notes:</strong> ${career.approval_notes}</p>` : ''}
                                 </div>
                             </div>

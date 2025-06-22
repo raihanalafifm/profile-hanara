@@ -161,7 +161,8 @@
     </div>
 
     <!-- Modal Add Career -->
-    <div class="modal fade" id="addCareerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="addCareerModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form action="{{ route('backend.careers.store') }}" method="POST">
@@ -183,7 +184,8 @@
                                 @enderror
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+                                <label for="status" class="form-label">Status <span
+                                        class="text-danger">*</span></label>
                                 <select id="status" name="status"
                                     class="form-select @error('status') is-invalid @enderror" required>
                                     <option value="open" {{ old('status') == 'open' ? 'selected' : '' }}>✅ Open</option>
@@ -252,7 +254,8 @@
     </div>
 
     <!-- Modal Edit Career -->
-    <div class="modal fade" id="editCareerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="editCareerModal" tabindex="-1" aria-hidden="true"data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form id="editCareerForm" method="POST" action="">

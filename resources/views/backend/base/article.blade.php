@@ -150,7 +150,8 @@
     </div>
 
     <!-- Modal Add Article -->
-    <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <form action="{{ route('backend.articles.store') }}" method="POST" enctype="multipart/form-data">
@@ -269,7 +270,8 @@
     </div>
 
     <!-- Modal Edit Article -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <form id="editForm" method="POST" enctype="multipart/form-data">

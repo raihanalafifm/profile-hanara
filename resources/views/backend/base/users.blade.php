@@ -112,7 +112,8 @@
     </div>
 
     <!-- Modal Add User -->
-    <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form action="{{ route('backend.users.store') }}" method="POST" enctype="multipart/form-data">
@@ -216,7 +217,8 @@
     </div>
 
     <!-- Modal Edit User -->
-    <div class="modal fade" id="editUserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form id="editUserForm" method="POST" enctype="multipart/form-data">

@@ -150,7 +150,8 @@
     </div>
 
     <!-- Modal Add Motorola Product -->
-    <div class="modal fade" id="addMotorolaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="addMotorolaModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form action="{{ route('backend.motorola.store') }}" method="POST" enctype="multipart/form-data">
@@ -272,7 +273,8 @@
     </div>
 
     <!-- Modal Edit Motorola Product -->
-    <div class="modal fade" id="editMotorolaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="editMotorolaModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form id="editMotorolaForm" method="POST" enctype="multipart/form-data">
