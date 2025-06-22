@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ZimbraController;
 use App\Http\Controllers\SoftwareHouseController;
@@ -86,6 +87,14 @@ Route::get('/sitemap', [SitemapController::class, 'html'])->name('sitemap.html')
 
 require __DIR__ . '/auth.php';
 
+// Profile routes (accessible by all authenticated users)
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'editProfile'])->name('profile.edit');
+    Route::patch('/profile', [UserController::class, 'updateProfile'])->name('profile.update');
+    Route::patch('/profile/password', [UserController::class, 'updatePassword'])->name('profile.update-password');
+    Route::delete('/profile/avatar', [UserController::class, 'deleteAvatar'])->name('profile.delete-avatar');
+});
+
 Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function () {
 
     // Dashboard - accessible by both admin and user
@@ -138,11 +147,4 @@ Route::middleware(['auth'])->prefix('backend')->name('backend.')->group(function
             Route::get('/item-details/{type}/{id}', [ApprovalController::class, 'getItemDetails'])->name('item-details');
         });
     });
-});
-
-// Profile routes
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [UserController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [UserController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [UserController::class, 'destroy'])->name('profile.destroy');
 });

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules;
 
 class UserController extends Controller
@@ -156,5 +157,95 @@ class UserController extends Controller
 
         return redirect()->route('backend.users.index')
             ->with('success', 'Status user berhasil diubah!');
+    }
+
+    // ============ PROFILE MANAGEMENT METHODS ============
+
+    /**
+     * Show the profile edit form.
+     */
+    public function editProfile()
+    {
+        $user = Auth::user();
+        return view('backend.profile.edit', compact('user'));
+    }
+
+    /**
+     * Update the user's profile information.
+     */
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
+            'position' => ['nullable', 'string', 'max:255'],
+            'bio' => ['nullable', 'string'],
+            'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ], [
+            'name.required' => 'Nama wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah digunakan oleh user lain.',
+            'avatar.image' => 'File harus berupa gambar.',
+            'avatar.mimes' => 'Avatar harus berformat: jpeg, png, jpg, gif.',
+            'avatar.max' => 'Ukuran avatar maksimal 2MB.',
+        ]);
+
+        // Handle avatar upload
+        if ($request->hasFile('avatar')) {
+            // Delete old avatar
+            if ($user->avatar) {
+                Storage::disk('public')->delete($user->avatar);
+            }
+            $validated['avatar'] = $request->file('avatar')->store('avatars', 'public');
+        }
+
+        $user->update($validated);
+
+        return redirect()->route('profile.edit')
+            ->with('success', 'Profil berhasil diperbarui!');
+    }
+
+    /**
+     * Update the user's password.
+     */
+    public function updatePassword(Request $request)
+    {
+        $user = Auth::user();
+
+        $validated = $request->validate([
+            'current_password' => ['required', 'current_password'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ], [
+            'current_password.required' => 'Password saat ini wajib diisi.',
+            'current_password.current_password' => 'Password saat ini tidak benar.',
+            'password.required' => 'Password baru wajib diisi.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+        ]);
+
+        $user->update([
+            'password' => Hash::make($validated['password']),
+        ]);
+
+        return redirect()->route('profile.edit')
+            ->with('success', 'Password berhasil diubah!');
+    }
+
+    /**
+     * Delete avatar
+     */
+    public function deleteAvatar()
+    {
+        $user = Auth::user();
+
+        if ($user->avatar) {
+            Storage::disk('public')->delete($user->avatar);
+            $user->update(['avatar' => null]);
+        }
+
+        return redirect()->route('profile.edit')
+            ->with('success', 'Avatar berhasil dihapus!');
     }
 }

@@ -143,6 +143,13 @@
                 @endif
             </a>
         </li>
+        <!-- Profile Menu (untuk semua user) -->
+        <li class="menu-item {{ request()->routeIs('profile.*') ? 'active' : '' }}">
+            <a href="{{ route('profile.edit') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Profile">Profile Saya</div>
+            </a>
+        </li>
 
         <!-- Admin Only: System Management -->
         @if (auth()->user()->isAdmin())
