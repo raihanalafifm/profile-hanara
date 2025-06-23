@@ -368,144 +368,30 @@
                         <h2 class="hnr-faq-title">FAQ</h2>
                         <p class="hnr-faq-subtitle">Frequently Asked Questions (FAQ)</p>
 
-                        <div class="hnr-faq-container" itemscope itemtype="https://schema.org/FAQPage">
-                            <!-- FAQ items here dengan proper schema markup -->
-                            <!-- Question 1 -->
-                            <div class="hnr-faq-item active">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">01</div>
-                                    <h3 class="hnr-faq-question">Apa yang dimaksud dengan layanan maintenance Zimbra di
-                                        Hanara?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="18 15 12 9 6 15"></polyline>
-                                        </svg>
+                        <!-- FAQ Container tanpa itemscope itemtype -->
+                        <div class="hnr-faq-container">
+                            @foreach ($faqData as $index => $faq)
+                                <!-- FAQ Item {{ $index + 1 }} -->
+                                <div class="hnr-faq-item {{ $index === 0 ? 'active' : '' }}">
+                                    <div class="hnr-faq-header">
+                                        <div class="hnr-faq-number">{{ sprintf('%02d', $index + 1) }}</div>
+                                        <h3 class="hnr-faq-question">{{ $faq['question'] }}</h3>
+                                        <div class="hnr-faq-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline
+                                                    points="{{ $index === 0 ? '18 15 12 9 6 15' : '6 9 12 15 18 9' }}">
+                                                </polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="hnr-faq-body">
+                                        <h4 class="hnr-faq-subtitle">Description</h4>
+                                        <p class="hnr-faq-answer">{!! nl2br(e($faq['answer'])) !!}</p>
                                     </div>
                                 </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Layanan maintenance Zimbra adalah dukungan teknis tahunan dari tim Hanara untuk
-                                        memastikan Zimbra Mail Server Anda tetap berjalan stabil. Layanan ini meliputi
-                                        patching, monitoring, preventive check, hingga troubleshooting saat dibutuhkan.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 2 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">02</div>
-                                    <h3 class="hnr-faq-question">Apakah Hanara hanya melayani maintenance untuk Zimbra yang
-                                        mereka instal?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Tidak. Kami juga melayani maintenance untuk Zimbra yang sudah lebih dulu terpasang,
-                                        termasuk dari vendor lain, selama sistemnya bisa diakses dan didukung.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 3 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">03</div>
-                                    <h3 class="hnr-faq-question">Apakah layanan maintenance mencakup perbaikan jika server
-                                        Zimbra mengalami error?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Ya. Jika Anda berlangganan paket support, tim kami akan membantu proses investigasi
-                                        dan pemulihan sistem, baik melalui remote maupun onsite (tergantung paket yang
-                                        dipilih).
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 4 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">04</div>
-                                    <h3 class="hnr-faq-question">Apa itu remote monitoring?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Remote monitoring adalah proses pemantauan performa dan layanan Zimbra dari jarak
-                                        jauh secara berkala. Kami bisa mendeteksi potensi masalah lebih awal, sebelum
-                                        berdampak pada operasional.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 5 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">05</div>
-                                    <h3 class="hnr-faq-question">Apakah saya bisa menyesuaikan jadwal preventive
-                                        maintenance?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Bisa. Untuk paket Standard dan Premium, jadwal preventive maintenance bisa
-                                        disepakati di awal dan disesuaikan kebutuhan.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">06</div>
-                                    <h3 class="hnr-faq-question">Berapa lama kontrak layanan maintenance ini berlaku?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Kontrak berlaku selama 1 tahun sejak tanggal aktivasi. Perpanjangan dapat dilakukan
-                                        secara otomatis atau manual sesuai perjanjian.
-                                    </p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -518,3 +404,6 @@
         </div>
     </section>
 @endsection
+@push('schema-org')
+    @include('components.faq-schema', ['faqItems' => $faqData])
+@endpush

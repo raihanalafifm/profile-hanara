@@ -293,144 +293,29 @@
                     <h2 class="hnr-faq-title">FAQ</h2>
                     <p class="hnr-faq-subtitle">Frequently Asked Questions (FAQ)</p>
 
-                    <div class="hnr-faq-container" itemscope itemtype="https://schema.org/FAQPage">
-                        <!-- FAQ items here dengan proper schema markup -->
-                        <!-- Question 1 -->
-                        <div class="hnr-faq-item active">
-                            <div class="hnr-faq-header">
-                                <div class="hnr-faq-number">01</div>
-                                <h3 class="hnr-faq-question">Apakah saya bisa menggunakan layanan troubleshooting jika
-                                    Zimbra saya bukan dari Hanara?</h3>
-                                <div class="hnr-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="18 15 12 9 6 15"></polyline>
-                                    </svg>
+                    <!-- FAQ Container tanpa itemscope itemtype -->
+                    <div class="hnr-faq-container">
+                        @foreach ($faqData as $index => $faq)
+                            <!-- FAQ Item {{ $index + 1 }} -->
+                            <div class="hnr-faq-item {{ $index === 0 ? 'active' : '' }}">
+                                <div class="hnr-faq-header">
+                                    <div class="hnr-faq-number">{{ sprintf('%02d', $index + 1) }}</div>
+                                    <h3 class="hnr-faq-question">{{ $faq['question'] }}</h3>
+                                    <div class="hnr-faq-toggle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="{{ $index === 0 ? '18 15 12 9 6 15' : '6 9 12 15 18 9' }}">
+                                            </polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="hnr-faq-body">
+                                    <h4 class="hnr-faq-subtitle">Description</h4>
+                                    <p class="hnr-faq-answer">{!! nl2br(e($faq['answer'])) !!}</p>
                                 </div>
                             </div>
-                            <div class="hnr-faq-body">
-                                <h4 class="hnr-faq-subtitle">Description</h4>
-                                <p class="hnr-faq-answer">
-                                    Bisa. Kami melayani perbaikan Zimbra dari berbagai sumber pemasangan, baik dari vendor
-                                    lain maupun internal Anda sendiri.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Question 2 -->
-                        <div class="hnr-faq-item">
-                            <div class="hnr-faq-header">
-                                <div class="hnr-faq-number">02</div>
-                                <h3 class="hnr-faq-question">Apakah bisa dilakukan secara remote?</h3>
-                                <div class="hnr-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-body">
-                                <h4 class="hnr-faq-subtitle">Description</h4>
-                                <p class="hnr-faq-answer">
-                                    Ya. Banyak kasus troubleshooting Zimbra yang dapat diselesaikan via remote access. Namun
-                                    untuk kondisi tertentu, kami juga menyediakan opsi onsite (dengan penyesuaian biaya dan
-                                    jadwal).
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="hnr-faq-item">
-                            <div class="hnr-faq-header">
-                                <div class="hnr-faq-number">03</div>
-                                <h3 class="hnr-faq-question">Apakah data email saya akan aman saat proses troubleshooting?
-                                </h3>
-                                <div class="hnr-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-body">
-                                <h4 class="hnr-faq-subtitle">Description</h4>
-                                <p class="hnr-faq-answer">
-                                    Tentu. Kami sangat menjaga integritas data. Setiap tindakan akan dilakukan dengan
-                                    hati-hati dan terdokumentasi. Jika dibutuhkan backup, kami akan koordinasikan terlebih
-                                    dahulu.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="hnr-faq-item">
-                            <div class="hnr-faq-header">
-                                <div class="hnr-faq-number">04</div>
-                                <h3 class="hnr-faq-question">Berapa lama proses penanganan masalah biasanya?</h3>
-                                <div class="hnr-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-body">
-                                <h4 class="hnr-faq-subtitle">Description</h4>
-                                <p class="hnr-faq-answer">
-                                    Waktu penyelesaian tergantung pada jenis masalah dan kondisi sistem. Beberapa kasus bisa
-                                    selesai dalam hitungan jam, sementara kasus kompleks mungkin memerlukan penjadwalan
-                                    lebih lanjut.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="hnr-faq-item">
-                            <div class="hnr-faq-header">
-                                <div class="hnr-faq-number">05</div>
-                                <h3 class="hnr-faq-question"> Apakah saya akan mendapatkan laporan setelah masalah
-                                    ditangani?</h3>
-                                <div class="hnr-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-body">
-                                <h4 class="hnr-faq-subtitle">Description</h4>
-                                <p class="hnr-faq-answer">
-                                    Ya. Kami memberikan ringkasan troubleshooting dalam bentuk laporan teknis yang mencakup
-                                    penyebab masalah, solusi yang diambil, serta saran pencegahan ke depan.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="hnr-faq-item">
-                            <div class="hnr-faq-header">
-                                <div class="hnr-faq-number">06</div>
-                                <h3 class="hnr-faq-question">Bagaimana cara saya memulai proses troubleshooting dengan
-                                    Hanara?</h3>
-                                <div class="hnr-faq-toggle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-body">
-                                <h4 class="hnr-faq-subtitle">Description</h4>
-                                <p class="hnr-faq-answer">
-                                    Cukup hubungi kami melalui WhatsApp, email, atau formulir kontak di halaman ini. Tim
-                                    kami akan segera menghubungi Anda untuk analisa awal dan langkah selanjutnya.
-                                </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -442,3 +327,6 @@
         </section>
     </section>
 @endsection
+@push('schema-org')
+    @include('components.faq-schema', ['faqItems' => $faqData])
+@endpush

@@ -3,15 +3,6 @@
 @section('container')
     <section class="hnr-zimbra-section">
         <div class="container">
-            {{-- <!-- Breadcrumb untuk navigasi dan SEO -->
-    <nav aria-label="breadcrumb" class="mb-4">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-        <li class="breadcrumb-item">Zimbra</li>
-        <li class="breadcrumb-item active" aria-current="page">Instalasi</li>
-      </ol>
-    </nav> --}}
-
             <div class="row align-items-center">
                 <!-- Zimbra Logo -->
                 <div class="col-lg-5 mb-4 mb-lg-0">
@@ -41,7 +32,6 @@
                             integrasi domain, hingga aktivasi akun dan pengujian fungsionalitas. Dengan pengalaman lebih
                             dari 10 tahun, kami pastikan server Zimbra Anda siap digunakan dengan stabil, aman, dan sesuai
                             kebutuhan bisnis.
-
                         </p>
                         <p>Zimbra bukan sekadar platform email, tapi juga menyediakan fitur-fitur kolaborasi yang mendukung
                             produktivitas, seperti:
@@ -62,7 +52,7 @@
                             </div>
                             <div class="hnr-zimbra-feature-item">
                                 <span class="hnr-feature-bullet">•</span> <strong>Folder Sharing:</strong> Kolaborasi file
-                                antar pengguna dalam satu organisasi.
+                                antar pengguna dalam satu organisasi.
                             </div>
                         </div>
 
@@ -71,16 +61,6 @@
                             juga memberikan kemudahan pengelolaan bagi administrator IT, sehingga
                             meningkatkan efisiensi dan produktivitas organisasi.
                         </p>
-
-                        {{-- <!-- CTA Button -->
-          <div class="mt-4">
-            <a href="{{ route('contact-us') }}" class="btn btn-primary btn-lg">
-              Konsultasi Gratis <i class="bi bi-arrow-right"></i>
-            </a>
-            <a href="https://wa.me/62897500805" class="btn btn-success btn-lg ms-2" target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-whatsapp"></i> WhatsApp Kami
-            </a>
-          </div> --}}
                     </div>
                 </div>
             </div>
@@ -92,7 +72,7 @@
                         <h2 class="hnr-interface-title"><span class="hnr-text-orange">Tampilan</span> Zimbra Mail</h2>
                         <p class="hnr-interface-description">
                             Zimbra Mail hadir dengan tampilan yang modern dan mudah dipahami, dirancang untuk mendukung
-                            aktivitas profesional secara efisien.
+                            aktivitas profesional secara efisien.
                         </p>
 
                         <div class="hnr-interface-image-container">
@@ -145,8 +125,8 @@
                                     [
                                         'icon' => 'icon-fitur-5.png',
                                         'title' => 'Mobile Device Management',
-                                        'description' => 'Amankan data email Anda saat perangkat hilang dengan fitur penghapusan jarak jauh melalui webmail.
-',
+                                        'description' =>
+                                            'Amankan data email Anda saat perangkat hilang dengan fitur penghapusan jarak jauh melalui webmail.',
                                     ],
                                     [
                                         'icon' => 'icon-fitur-6.png',
@@ -164,7 +144,7 @@
                                         'icon' => 'icon-fitur-8.png',
                                         'title' => 'Fitur Zimlet',
                                         'description' =>
-                                            'Tambahkan fungsionalitas ke Zimbra dengan Zimlet — plugin yang membantu mendukung pekerjaan harian Anda langsung dari webmail.',
+                                            'Tambahkan fungsionalitas ke Zimbra dengan Zimlet — plugin yang membantu mendukung pekerjaan harian Anda langsung dari webmail.',
                                     ],
                                 ];
                             @endphp
@@ -232,7 +212,7 @@
                                         ],
                                         [
                                             'zimbra' => ' Bisa trace/lacak email melalui log',
-                                            'hosting' => 'Tidak tersedia fitur pelacakan email',
+                                            'hosting' => 'Tidak tersedia fitur pelacakan email',
                                         ],
                                     ];
                                 @endphp
@@ -311,7 +291,7 @@
                                     [
                                         'number' => '06',
                                         'title' => 'IMAPS (Secure Internet Mail Application Protocol)',
-                                        'desc' => 'IMAP dengan koneksi terenkripsi SSL/TLS untuk keamanan tambahan.',
+                                        'desc' => 'IMAP dengan koneksi terenkripsi SSL/TLS untuk keamanan tambahan.',
                                     ],
                                 ];
                             @endphp
@@ -334,205 +314,43 @@
                 </div>
             </section>
 
-            <!-- FAQ Section dengan Schema Markup -->
+            <!-- FAQ Section tanpa schema attributes di HTML -->
             <section class="row mt-5 mb-5">
                 <div class="col-12">
                     <div class="hnr-faq-section">
                         <h2 class="hnr-faq-title">FAQ</h2>
                         <p class="hnr-faq-subtitle">Frequently Asked Questions (FAQ)</p>
 
-                        <div class="hnr-faq-container" itemscope itemtype="https://schema.org/FAQPage">
-                            <!-- FAQ items here dengan proper schema markup -->
-                            <!-- Question 1 -->
-                            <div class="hnr-faq-item active">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">01</div>
-                                    <h3 class="hnr-faq-question">Apa itu Zimbra Mail Server?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="18 15 12 9 6 15"></polyline>
-                                        </svg>
+                        <!-- FAQ Container tanpa itemscope itemtype -->
+                        <div class="hnr-faq-container">
+                            @foreach ($faqData as $index => $faq)
+                                <!-- FAQ Item {{ $index + 1 }} -->
+                                <div class="hnr-faq-item {{ $index === 0 ? 'active' : '' }}">
+                                    <div class="hnr-faq-header">
+                                        <div class="hnr-faq-number">{{ sprintf('%02d', $index + 1) }}</div>
+                                        <h3 class="hnr-faq-question">{{ $faq['question'] }}</h3>
+                                        <div class="hnr-faq-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline
+                                                    points="{{ $index === 0 ? '18 15 12 9 6 15' : '6 9 12 15 18 9' }}">
+                                                </polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="hnr-faq-body">
+                                        <h4 class="hnr-faq-subtitle">Description</h4>
+                                        <p class="hnr-faq-answer">{!! nl2br(e($faq['answer'])) !!}</p>
                                     </div>
                                 </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Zimbra Mail Server adalah sistem email bisnis yang powerful dan fleksibel, banyak
-                                        digunakan oleh perusahaan, institusi pendidikan, dan lembaga pemerintahan. Selain
-                                        layanan email, Zimbra juga dilengkapi fitur kolaborasi seperti kalender, task
-                                        management, penyimpanan file (briefcase), dan folder sharing.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 2 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">02</div>
-                                    <h3 class="hnr-faq-question">Berapa lama proses instalasi Zimbra Mail Server?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Durasi instalasi tergantung pada kebutuhan dan arsitektur sistem yang diinginkan.
-                                        Untuk setup standar dengan jumlah user terbatas, proses bisa berlangsung dalam
-                                        hitungan minggu. Namun untuk implementasi skala besar, termasuk migrasi data,
-                                        multi-server, atau integrasi khusus, proses bisa memakan waktu lebih panjang sesuai
-                                        tahapan yang disepakati bersama.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 3 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">03</div>
-                                    <h3 class="hnr-faq-question">Berapa biaya instalasi Zimbra di Hanara?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Biaya instalasi Zimbra disesuaikan dengan cakupan pekerjaan, seperti jumlah user,
-                                        kebutuhan arsitektur (single atau multi-server), sistem integrasi, serta migrasi
-                                        data. Hanara menawarkan layanan instalasi mulai dari paket dasar hingga
-                                        enterprise-grade. Untuk penawaran resmi, silakan hubungi tim kami untuk konsultasi
-                                        lebih lanjut.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 4 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">04</div>
-                                    <h3 class="hnr-faq-question">Apakah bisa menggunakan domain email sendiri?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Tentu. Anda dapat menggunakan nama domain perusahaan atau organisasi sendiri
-                                        (contoh: @namaperusahaan.com) untuk seluruh akun email. Kami bantu sepenuhnya dalam
-                                        proses konfigurasi DNS dan integrasi domain.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Question 5 -->
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">05</div>
-                                    <h3 class="hnr-faq-question">Apakah Zimbra mendukung akses dari perangkat mobile?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Ya. Zimbra mendukung protokol POP3/IMAP yang memungkinkan akses dari aplikasi email
-                                        di perangkat mobile seperti Outlook, K-9 Mail, dan Gmail. Untuk fitur sinkronisasi
-                                        otomatis kalender dan kontak, Zimbra Network Edition mendukung ActiveSync.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">06</div>
-                                    <h3 class="hnr-faq-question">Apa perbedaan Zimbra OSE dan Network Edition?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Zimbra OSE (Open Source Edition) merupakan versi gratis dengan fitur dasar, cocok
-                                        untuk internal atau non-critical email. Sementara Zimbra Network Edition menawarkan
-                                        fitur lengkap seperti ActiveSync, backup & restore, dan dukungan resmi. Hanara
-                                        melayani instalasi untuk kedua versi sesuai kebutuhan Anda.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">07</div>
-                                    <h3 class="hnr-faq-question">Bagaimana keamanan Zimbra Mail Server?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Zimbra mendukung koneksi terenkripsi menggunakan SSL/TLS pada SMTP, POP3, dan IMAP.
-                                        Anda juga bisa mengaktifkan fitur keamanan tambahan seperti antivirus, antispam,
-                                        serta two-factor authentication (2FA) untuk melindungi akun pengguna dan sistem
-                                        email secara menyeluruh.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="hnr-faq-item">
-                                <div class="hnr-faq-header">
-                                    <div class="hnr-faq-number">08</div>
-                                    <h3 class="hnr-faq-question"> Bagaimana jika hanya butuh email profesional tanpa
-                                        instalasi server?</h3>
-                                    <div class="hnr-faq-toggle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="hnr-faq-body">
-                                    <h4 class="hnr-faq-subtitle">Description</h4>
-                                    <p class="hnr-faq-answer">
-                                        Jika Anda hanya membutuhkan layanan email profesional tanpa perlu mengelola server
-                                        sendiri, kami juga menyediakan Zimbra Cloud Hanara — layanan email berbasis cloud
-                                        dengan harga terjangkau dan langsung siap digunakan, cocok untuk UKM dan tim kecil.
-                                    </p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Contact Section -->
             <section class="hnr-contact-section">
                 <div class="container">
                     @include('components.contact')
@@ -541,6 +359,11 @@
         </div>
     </section>
 @endsection
+
+<!-- Include FAQ Schema sebagai JSON-LD -->
+@push('schema-org')
+    @include('components.faq-schema', ['faqItems' => $faqData])
+@endpush
 
 @push('scripts')
     <!-- Additional scripts if needed -->
