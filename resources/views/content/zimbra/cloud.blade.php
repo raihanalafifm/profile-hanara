@@ -8,7 +8,7 @@
                 <!-- Zimbra Cloud Image -->
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="hnr-cloud-logo-container">
-                        <img src="{{ asset('assets/images/icon/zimbra cloud.png') }}" alt="Zimbra Cloud"
+                        <img src="{{ asset('assets/images/icon/zimbra-cloud.png') }}" alt="Zimbra Cloud"
                             class="hnr-cloud-logo">
                     </div>
                 </div>

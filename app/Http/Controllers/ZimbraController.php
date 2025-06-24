@@ -303,6 +303,9 @@ class ZimbraController extends Controller
     /**
      * Generate Product Schema for cloud pricing
      */
+    /**
+     * Generate Product Schema for cloud pricing
+     */
     private function generateProductSchema(): array
     {
         return [
@@ -314,6 +317,12 @@ class ZimbraController extends Controller
                 '@type' => 'Brand',
                 'name' => 'Zimbra'
             ],
+            // TAMBAHKAN FIELD IMAGE INI
+            'image' => [
+                'https://hanara.id/assets/images/icon/zimbra-cloud.png',
+                'https://hanara.id/assets/images/icon/zimbra cloud.png',
+                'https://hanara.id/assets/images/icon/icon-paket-cloud4.png'
+            ],
             'offers' => [
                 [
                     '@type' => 'Offer',
@@ -321,7 +330,9 @@ class ZimbraController extends Controller
                     'price' => '30000',
                     'priceCurrency' => 'IDR',
                     'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
-                    'availability' => 'https://schema.org/InStock'
+                    'availability' => 'https://schema.org/InStock',
+                    // Optional: tambahkan image untuk setiap offer juga
+                    'image' => 'https://hanara.id/assets/images/icon/icon-paket-cloud.png'
                 ],
                 [
                     '@type' => 'Offer',
@@ -329,7 +340,8 @@ class ZimbraController extends Controller
                     'price' => '50000',
                     'priceCurrency' => 'IDR',
                     'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
-                    'availability' => 'https://schema.org/InStock'
+                    'availability' => 'https://schema.org/InStock',
+                    'image' => 'https://hanara.id/assets/images/icon/icon-paket-cloud2.png'
                 ],
                 [
                     '@type' => 'Offer',
@@ -337,7 +349,8 @@ class ZimbraController extends Controller
                     'price' => '70000',
                     'priceCurrency' => 'IDR',
                     'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
-                    'availability' => 'https://schema.org/InStock'
+                    'availability' => 'https://schema.org/InStock',
+                    'image' => 'https://hanara.id/assets/images/icon/icon-paket-cloud3.png'
                 ],
                 [
                     '@type' => 'Offer',
@@ -345,7 +358,8 @@ class ZimbraController extends Controller
                     'price' => '90000',
                     'priceCurrency' => 'IDR',
                     'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
-                    'availability' => 'https://schema.org/InStock'
+                    'availability' => 'https://schema.org/InStock',
+                    'image' => 'https://hanara.id/assets/images/icon/icon-paket-cloud4.png'
                 ]
             ]
         ];
