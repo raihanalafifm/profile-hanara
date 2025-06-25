@@ -55,7 +55,7 @@
                     Semua unit baru & bergaransi.
                 </p>
                 <a href="https://shop.hanara.id/brands/motorola/" target="_blank" rel="noopener noreferrer"
-                    class="hnr-catalog-button">
+                    onclick="gtag_report_conversion('motorola-catalog')" class="hnr-catalog-button">
                     <i class="bi bi-shop"></i>
                     Lihat Katalog di Shop Hanara
                 </a>

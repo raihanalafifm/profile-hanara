@@ -128,10 +128,11 @@
 
                     <!-- Submit Button (sama persis seperti contact form) -->
                     <div class="hnr-form-submit">
-                        <button type="submit" id="submitBtn" class="g-recaptcha hnr-submit-button"
-                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback='onJobSubmit'
-                            data-action='submit'>
-                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        <button onclick="gtag_report_conversion('job-application')" type="submit" id="submitBtn"
+                            class="g-recaptcha hnr-submit-button" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                            data-callback='onJobSubmit' data-action='submit'>
+                            <span class="spinner-border spinner-border-sm d-none" role="status"
+                                aria-hidden="true"></span>
                             <span class="btn-text">Send your application</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                 fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"

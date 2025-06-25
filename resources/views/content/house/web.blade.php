@@ -172,50 +172,6 @@
                 </div>
             </div>
 
-            {{-- <!-- Features Grid - Row 3 -->
-            <div class="row reveal-section">
-                <!-- Feature 7: Membantu Memahami Marketing Strategy -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web7.png') }}" alt="Marketing">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Membantu Memahami Marketing Strategy Anda</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Kami selalu membicarakan target market website produk, dan jasa perusahaan Anda itu dibuat
-                            dikoloh pengunjung website sehingga pemasaran akan jauh lebih kuat mengunjungi customer.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Feature 8: Fitur Toko Online -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web8.png') }}" alt="Online Store">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Fitur Toko Online</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Solusi tepat untuk pembuatan toko UMKM yang ingin mudah dan pengunjung tidak perlu menunggu
-                            dengan fitur listing produk, katalog produk, fitur keranjang dari pengunjung.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Feature 9: Integrasi Dengan Payment Gateway -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web9.png') }}" alt="Payment">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Integrasi Dengan Payment Gateway</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Solusi untuk dapat langsung melakukan payment produk tanpa harus pelanggan melakukan transfer
-                            dengan metode pembayaran yang lengkap melului pembayaran mudah.
-                        </p>
-                    </div>
-                </div>
-            </div> --}}
 
             <!-- Features Grid - Row 4 -->
             <div class="row reveal-section">
@@ -264,90 +220,6 @@
                 </div>
             </div>
 
-            {{-- <!-- Features Grid - Row 5 -->
-            <div class="row reveal-section">
-                <!-- Feature 13: Realtime Chat -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web13.png') }}" alt="Chat">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Realtime Chat</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Anda dapat menjajaki dan merespond customer yang mengunjungi website Anda secara realtime,
-                            bahkan dalam masa pandemi, customer jangan sampai klik web visitor yang mengakses website Anda.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Feature 14: Connect Whatsapp -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web14.png') }}" alt="WhatsApp">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Connect WhatsApp</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Embadikan akses informasi bagi bisa Anda koneksikan dengan menggunakan nomor WhatsApp perusahaan
-                            Anda, semudah klik meningkatkan customer bisa langsung menghubungi Anda dengan cepat.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Feature 15: Android & Playstore -->
-                <div class="col-md-4 mb-4">
-                    <div class="hnr-house-web-feature-card">
-                        <div class="hnr-house-web-feature-icon">
-                            <img src="{{ asset('assets/images/icon/icon-card-web15.png') }}" alt="Android">
-                        </div>
-                        <h3 class="hnr-house-web-feature-title">Download ke Playstore</h3>
-                        <p class="hnr-house-web-feature-text">
-                            Untuk pembuatan paket website khusus dan Desember. Kerjasama Anda dapat paket yang cukup untuk
-                            anda membuat aplikasi Android Anda di download dari website.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modified Features Grid - Row 6 with centered content -->
-            <div class="row reveal-section">
-                <div class="col-md-8 mx-auto">
-                    <div class="row">
-                        <!-- Feature 16: BONUS Whatsapp -->
-                        <div class="col-md-6 mb-4">
-                            <div class="hnr-house-web-feature-card">
-                                <div class="hnr-house-web-feature-icon">
-                                    <img src="{{ asset('assets/images/icon/icon-card-web16.png') }}" alt="Bonus">
-                                </div>
-                                <h3 class="hnr-house-web-feature-title">BONUS Whatsapp</h3>
-                                <p class="hnr-house-web-feature-text">
-                                    Anda dapat langsung bonus aplikasi Whatsapp yang terkoneksi website Anda secara control,
-                                    bahkan harus memeksimalkan marketing agar sempurna hingga bisa dirubah antar yang
-                                    menginkan website Anda.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Feature 17: FREE Training -->
-                        <div class="col-md-6 mb-4">
-                            <div class="hnr-house-web-feature-card">
-                                <div class="hnr-house-web-feature-icon">
-                                    <img src="{{ asset('assets/images/icon/icon-card-web17.png') }}" alt="Training">
-                                </div>
-                                <h3 class="hnr-house-web-feature-title">FREE Training</h3>
-                                <p class="hnr-house-web-feature-text">
-                                    Untuk pembuatan paket website Discovery, kami diberikan dan hosting langsung sandera
-                                    selama 2 bulan. Ramu juga akan di training cara menambah dan mengelola informasi secara
-                                    mudah.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-            <!-- Pricing Section -->
-            <!-- Pricing Section -->
             <div class="row mt-5 mb-1 text-center reveal-section">
                 <div class="col-12">
                     <h2 class="hnr-house-web-pricing-title"><span class="hnr-house-web-title-orange">Paket </span> Website
@@ -385,7 +257,8 @@
                                 Cocok untuk bisnis kecil &amp; personal branding
                             </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-ekonomi/') }}"
-                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
+                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn"
+                                onclick="gtag_report_conversion('web-startup-ekonomi')">Beli
                                 Paket</a>
                         </div>
 
@@ -488,7 +361,8 @@
                                 Rekomendasi terbaik untuk UKM &amp; lembaga
                             </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-best-seller/') }}"
-                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
+                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn"
+                                onclick="gtag_report_conversion('web-startup-best')">Beli
                                 Paket</a>
                         </div>
 
@@ -618,7 +492,8 @@
                                 Solusi lengkap untuk perusahaan besar &amp; instansi
                             </p>
                             <a href="{{ url('https://shop.hanara.id/product/paket-website-startup-lebih-hemat/ ') }}"
-                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn">Beli
+                                target="_blank" rel="noopener noreferrer" class="hnr-house-web-pricing-btn"
+                                onclick="gtag_report_conversion('web-startup-hemat')">Beli
                                 Paket</a>
                         </div>
 

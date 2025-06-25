@@ -29,7 +29,8 @@
                             </p>
 
                             <a href="{{ url('https://shop.hanara.id/product-category/cctv/') }}" target="_blank"
-                                rel="noopener noreferrer" class="hnr-cctv-button">Pesan Sekarang !!!</a>
+                                rel="noopener noreferrer" class="hnr-cctv-button"
+                                onclick="gtag_report_conversion('cctv-shop')">Pesan Sekarang !!!</a>
                         </div>
                     </div>
                 </div>

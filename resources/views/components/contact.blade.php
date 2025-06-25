@@ -199,9 +199,9 @@
                 <!-- Submit Button -->
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" id="submitBtn" class="g-recaptcha btn btn-submit"
-                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}" data-callback='onSubmit'
-                            data-action='submit'>
+                        <button onclick="gtag_report_conversion()"type="submit" id="submitBtn"
+                            class="g-recaptcha btn btn-submit" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
+                            data-callback='onSubmit' data-action='submit'>
                             <span class="spinner-border spinner-border-sm d-none" role="status"
                                 aria-hidden="true"></span>
                             <span class="btn-text">Kirim Pesan</span>

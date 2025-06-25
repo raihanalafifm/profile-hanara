@@ -153,7 +153,8 @@
                             Solusi file sharing & kolaborasi berbasis cloud untuk tim Anda. <br> Akses data dengan aman,
                             fleksibel, dan efisien di mana saja.
                         </p>
-                        <a href="{{ route('nextcloud') }}" class="solution-link">
+                        <a href="{{ route('nextcloud') }}" class="solution-link"
+                            onclick="gtag_report_conversion('nextcloud-interest')">
                             <i class="fas fa-arrow-right"></i> Read More
                         </a>
                     </div>
@@ -170,7 +171,8 @@
                             Layanan email server yang aman, stabil, dan mudah dikelola. <br> Ideal untuk perusahaan yang
                             membutuhkan komunikasi bisnis tanpa hambatan.
                         </p>
-                        <a href="{{ route('instalasi-zimbra') }}" class="solution-link">
+                        <a href="{{ route('instalasi-zimbra') }}" class="solution-link"
+                            onclick="gtag_report_conversion('zimbra-interest')">
                             <i class="fas fa-arrow-right"></i> Read More
                         </a>
                     </div>
@@ -204,7 +206,8 @@
                             Bangun reputasi bisnis Anda secara profesional di platform digital. <br> Kami bantu kelola
                             strategi konten, interaksi, hingga laporan performa.
                         </p>
-                        <a href="#" class="solution-link">
+                        <a href="{{ route('sosmed') }}" class="solution-link"
+                            onclick="gtag_report_conversion('sosmed-interest')">
                             <i class="fas fa-arrow-right"></i> Read More
                         </a>
                     </div>
@@ -221,7 +224,8 @@
                             Solusi perangkat komunikasi RIG & HT untuk industri, logistik, dan keamanan. <br>Komunikasi
                             real-time yang kuat dan andal di lapangan.
                         </p>
-                        <a href="{{ route('motorola') }}" class="solution-link">
+                        <a href="{{ route('motorola') }}" class="solution-link"
+                            onclick="gtag_report_conversion('motorola-interest')">
                             <i class="fas fa-arrow-right"></i> Read More
                         </a>
                     </div>
@@ -238,7 +242,8 @@
                             Sistem berbasis web seperti HCM & HCIS untuk manajemen SDM, absensi, dan payroll. <br>
                             Kustomisasi sesuai kebutuhan operasional perusahaan Anda.
                         </p>
-                        <a href="{{ route('develop-web') }}" class="solution-link">
+                        <a href="{{ route('develop-web') }}" class="solution-link"
+                            onclick="gtag_report_conversion('web-dev-interest')">
                             <i class="fas fa-arrow-right"></i> Read More
                         </a>
                     </div>
