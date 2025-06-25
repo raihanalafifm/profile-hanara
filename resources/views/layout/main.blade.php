@@ -189,7 +189,17 @@
         </button>
     </div>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17259213239"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17259213239');
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Tambahkan JS untuk Scroll Down Button -->
     <script>

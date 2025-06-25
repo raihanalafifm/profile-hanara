@@ -91,16 +91,16 @@
 
 <body>
     <div class="header">
-        <h2>🔒 Admin Login Alert</h2>
-        <p>Security notification for your Hanara account</p>
+        <h2>🔒 User Login Alert</h2>
+        <p>Activity notification for Hanara system</p>
     </div>
 
     <div class="content">
         <p>Dear <strong>{{ $adminName }}</strong>,</p>
 
         <div class="alert-box">
-            <p style="margin: 0;"><strong>⚠️ Login Activity Detected</strong></p>
-            <p style="margin: 5px 0 0 0;">We noticed a login to your Hanara admin account using the email address
+            <p style="margin: 0;"><strong>ℹ️ Login Activity Detected</strong></p>
+            <p style="margin: 5px 0 0 0;">Someone has logged into the Hanara system using the email address
                 <strong>{{ $loginUser->email }}</strong>.
             </p>
         </div>

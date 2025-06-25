@@ -28,7 +28,7 @@ class AdminLoginNotification extends Mailable
 
     public function build()
     {
-        return $this->subject('Admin Login Alert for Your Hanara Account')
+        return $this->subject('User Login Alert - Hanara System')
             ->view('emails.admin-login-notification');
     }
 }

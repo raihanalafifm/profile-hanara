@@ -11,11 +11,14 @@ class SendAdminLoginNotification
 {
     public function handle(UserLoggedIn $event)
     {
-        $adminEmail = 'abdul.hamied@hanara.id';
-        $adminName = 'Abdul Hamied';
+        // Kirim notifikasi ke SEMUA user (admin dan user biasa)
+        $allUsers = User::all();
 
-        Mail::to($adminEmail)->send(
-            new AdminLoginNotification($adminName, $event->user, $event->loginTime, $event->ipAddress, $event->userAgent)
-        );
+        foreach ($allUsers as $user) {
+            // Kirim ke setiap user dengan nama mereka masing-masing
+            Mail::to($user->email)->send(
+                new AdminLoginNotification($user->name, $event->user, $event->loginTime, $event->ipAddress, $event->userAgent)
+            );
+        }
     }
 }
