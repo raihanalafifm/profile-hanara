@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\UserLoggedIn;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
@@ -33,6 +34,9 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        // Trigger event untuk notifikasi admin
+        event(new UserLoggedIn(Auth::user(), $request->ip(), $request->userAgent()));
 
         // Create response with redirect
         $response = redirect()->intended(route('backend.dashboard'));
