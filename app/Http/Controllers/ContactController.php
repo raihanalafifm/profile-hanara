@@ -12,10 +12,15 @@ class ContactController extends Controller
 {
     public function submit(Request $request)
     {
-        // Log incoming request
-        Log::info('Contact form submission', $request->all());
-        // dd($request->all());
-        // Validasi sesuai dengan field di form Anda
+        // Log incoming request for debugging
+        Log::info('Contact form submission attempt', [
+            'ip' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'has_recaptcha' => !empty($request->input('g-recaptcha-response')),
+            'recaptcha_length' => strlen($request->input('g-recaptcha-response', ''))
+        ]);
+
+        // Validasi sesuai dengan field di form
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -24,7 +29,7 @@ class ContactController extends Controller
             'whatsapp' => 'nullable|string|max:20',
             'preferred_time' => 'required|in:Pagi,Siang,Sore',
             'message' => 'required|string|min:10|max:5000',
-            'g-recaptcha-response' => [new reCAPTCHA()],
+            'g-recaptcha-response' => ['required', new reCAPTCHA()],
         ], [
             'name.required' => 'Nama harus diisi',
             'email.required' => 'Email harus diisi',
@@ -32,26 +37,33 @@ class ContactController extends Controller
             'preferred_time.required' => 'Waktu yang diinginkan harus dipilih',
             'message.required' => 'Informasi kebutuhan harus diisi',
             'message.min' => 'Informasi kebutuhan minimal 10 karakter',
+            'g-recaptcha-response.required' => 'Silakan verifikasi reCAPTCHA',
         ]);
 
         try {
-            // Log validated data
-            Log::info('Validated data', $validated);
+            // Log validated data (without sensitive info)
+            Log::info('Contact form validation passed', [
+                'email' => $validated['email'],
+                'ip' => $request->ip()
+            ]);
 
-            // Kirim email ke Gmail Anda (akan masuk ke Mailtrap)
+            // Kirim email
             Mail::to('info@hanara.id')->send(new ContactFormMail($validated));
 
-            Log::info('Email sent successfully');
+            Log::info('Contact form email sent successfully', [
+                'email' => $validated['email'],
+                'ip' => $request->ip()
+            ]);
 
-            // Jika berhasil, redirect dengan pesan sukses
-            return redirect()->back()->with('success', 'Pesan berhasil dikirim, tim Kami akan segera menghubungi Anda');
+            return redirect()->back()->with('success', 'Pesan berhasil dikirim, tim Kami akan segera menghubungi Anda');
         } catch (\Exception $e) {
             // Log error detail
-            Log::error('Contact form error', [
+            Log::error('Contact form submission error', [
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
-                'trace' => $e->getTraceAsString()
+                'ip' => $request->ip(),
+                'email' => $validated['email'] ?? 'unknown'
             ]);
 
             // Untuk development, tampilkan error detail

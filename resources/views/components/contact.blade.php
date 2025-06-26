@@ -199,9 +199,8 @@
                 <!-- Submit Button -->
                 <div class="row">
                     <div class="col-12">
-                        <button onclick="gtag_report_conversion()"type="submit" id="submitBtn"
-                            class="g-recaptcha btn btn-submit" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"
-                            data-callback='onSubmit' data-action='submit'>
+                        <button type="submit" id="submitBtn" class="btn btn-submit"
+                            onclick="gtag_report_conversion()">
                             <span class="spinner-border spinner-border-sm d-none" role="status"
                                 aria-hidden="true"></span>
                             <span class="btn-text">Kirim Pesan</span>
@@ -985,11 +984,66 @@
 <!-- Optional: Add confetti library for celebration effect -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<script src="https://www.google.com/recaptcha/api.js"></script>
+<!-- reCAPTCHA v3 Script -->
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
 <script>
-    function onSubmit(token) {
-        document.getElementById("contactForm").submit();
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (form && submitBtn) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent default submission
+
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.querySelector('.spinner-border').classList.remove('d-none');
+                submitBtn.querySelector('.btn-text').textContent = 'Mengirim...';
+
+                // Execute reCAPTCHA v3
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {
+                        action: 'contact_form'
+                    }).then(function(token) {
+                        console.log('reCAPTCHA token generated successfully');
+
+                        // Add token to form
+                        let tokenInput = document.querySelector(
+                            'input[name="g-recaptcha-response"]');
+                        if (!tokenInput) {
+                            tokenInput = document.createElement('input');
+                            tokenInput.type = 'hidden';
+                            tokenInput.name = 'g-recaptcha-response';
+                            form.appendChild(tokenInput);
+                        }
+                        tokenInput.value = token;
+
+                        // Trigger Google Analytics conversion
+                        if (typeof gtag_report_conversion === 'function') {
+                            gtag_report_conversion();
+                        }
+
+                        // Submit the form
+                        setTimeout(function() {
+                            form.submit();
+                        }, 100);
+
+                    }).catch(function(error) {
+                        console.error('reCAPTCHA error:', error);
+
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitBtn.querySelector('.spinner-border').classList.add(
+                            'd-none');
+                        submitBtn.querySelector('.btn-text').textContent =
+                        'Kirim Pesan';
+
+                        alert('reCAPTCHA verification failed. Please try again.');
+                    });
+                });
+            });
+        }
+    });
 </script>
 
 
