@@ -289,8 +289,9 @@
                             <p class="sosmed-pricing-description">
                                 Cocok untuk bisnis yang baru memulai
                             </p>
-                            <a href="#" onclick="gtag_report_conversion('sosmed-starter')"
-                                class="hnr-house-web-pricing-btn">Beli Paket</a>
+                            <a href="{{ url('https://shop.hanara.id/product/zimbra-cloud-ose/ ') }}" target="_blank"
+                                onclick="gtag_report_conversion('sosmed-starter')" class="hnr-house-web-pricing-btn">Beli
+                                Paket</a>
                         </div>
 
                         <div class="hnr-house-web-pricing-features">
@@ -350,8 +351,9 @@
                             <p class="sosmed-pricing-description">
                                 Untuk bisnis yang ingin berkembang
                             </p>
-                            <a href="#" onclick="gtag_report_conversion('sosmed-growth')"
-                                class="hnr-house-web-pricing-btn">Beli Paket</a>
+                            <a href="{{ url('https://shop.hanara.id/product/zimbra-cloud-ose/ ') }}" target="_blank"
+                                onclick="gtag_report_conversion('sosmed-growth')" class="hnr-house-web-pricing-btn">Beli
+                                Paket</a>
                         </div>
 
                         <div class="hnr-house-web-pricing-features">
@@ -412,8 +414,9 @@
                             <p class="sosmed-pricing-description">
                                 Solusi lengkap untuk ekspansi bisnis
                             </p>
-                            <a href="#" onclick="gtag_report_conversion('sosmed-best')"
-                                class="hnr-house-web-pricing-btn">Beli Paket</a>
+                            <a href="{{ url('https://shop.hanara.id/product/zimbra-cloud-ose/ ') }}" target="_blank"
+                                onclick="gtag_report_conversion('sosmed-best')" class="hnr-house-web-pricing-btn">Beli
+                                Paket</a>
                         </div>
 
                         <div class="hnr-house-web-pricing-features">
