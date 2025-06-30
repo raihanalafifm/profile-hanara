@@ -362,58 +362,69 @@ class BusinessSolutionController extends Controller
         // Get Business Solution Service Schema
         $schemaService = config('seo.schema.business_solution_service');
 
-        // Specific schema untuk Digital Marketing
+        // Schema yang diperbaiki untuk Digital Marketing
         $schemaDigitalMarketing = [
             '@context' => 'https://schema.org',
             '@type' => 'Service',
+            'name' => 'Digital Marketing Services - Hanara',
+            'description' => 'Layanan digital marketing terpadu untuk bisnis Anda, termasuk manajemen sosial media, iklan berbayar, dan produksi konten kreatif',
             'serviceType' => 'Digital Marketing Services',
-            'name' => 'Digital Marketing Hanara',
-            'description' => 'Layanan digital marketing terpadu untuk bisnis Anda',
-            'provider' => config('seo.schema.organization'),
+            'provider' => [
+                '@type' => 'Organization',
+                'name' => 'PT Hanara Prima Solusindo',
+                'url' => 'https://hanara.id',
+                'logo' => 'https://hanara.id/assets/images/LOGO-PERUSAHAAN/HANARA.ID-2023.-II.png',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'streetAddress' => 'Jl. Sutoyo No.8, Tanah Patah',
+                    'addressLocality' => 'Kota Bengkulu',
+                    'addressRegion' => 'Bengkulu',
+                    'postalCode' => '38224',
+                    'addressCountry' => 'ID'
+                ]
+            ],
             'areaServed' => [
                 '@type' => 'Country',
                 'name' => 'Indonesia'
             ],
-            'hasOfferCatalog' => [
-                '@type' => 'OfferCatalog',
-                'name' => 'Digital Marketing Services',
-                'itemListElement' => [
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Paket Starter',
-                            'description' => '1 Platform (Instagram/Facebook), 8 Konten/Bulan'
-                        ],
-                        'price' => '4950000',
-                        'priceCurrency' => 'IDR'
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Paket Growth',
-                            'description' => '2 Platform + LinkedIn, 12 Konten/Bulan, Facebook Ads'
-                        ],
-                        'price' => '8950000',
-                        'priceCurrency' => 'IDR'
-                    ],
-                    [
-                        '@type' => 'Offer',
-                        'itemOffered' => [
-                            '@type' => 'Service',
-                            'name' => 'Paket Pro',
-                            'description' => '3 Platform + TikTok, 16 Konten/Bulan, Full Service'
-                        ],
-                        'price' => '14950000',
-                        'priceCurrency' => 'IDR'
-                    ]
+            'offers' => [
+                [
+                    '@type' => 'Offer',
+                    'name' => 'Paket Starter Digital Marketing',
+                    'description' => 'Cocok untuk bisnis yang baru memulai. 1 Platform (Instagram/Facebook), 8 Konten/Bulan, Desain Visual, Copywriting',
+                    'price' => '4950000',
+                    'priceCurrency' => 'IDR',
+                    'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
+                    'availability' => 'https://schema.org/InStock',
+                    'url' => 'https://hanara.id/business-solution/digital-marketing'
+                ],
+                [
+                    '@type' => 'Offer',
+                    'name' => 'Paket Growth Digital Marketing',
+                    'description' => 'Untuk bisnis yang ingin berkembang. 2 Platform (IG/Facebook + LinkedIn), 12 Konten/Bulan, Facebook Ads (500K Budget), Google My Business',
+                    'price' => '8950000',
+                    'priceCurrency' => 'IDR',
+                    'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
+                    'availability' => 'https://schema.org/InStock',
+                    'url' => 'https://hanara.id/business-solution/digital-marketing'
+                ],
+                [
+                    '@type' => 'Offer',
+                    'name' => 'Paket Pro Digital Marketing (Best Seller)',
+                    'description' => 'Solusi lengkap untuk ekspansi bisnis. 3 Platform (IG/FB + LinkedIn + TikTok), 16 Konten/Bulan, Facebook Ads (1JT Budget), Talent Support, Video Reels/TikTok',
+                    'price' => '14950000',
+                    'priceCurrency' => 'IDR',
+                    'priceValidUntil' => date('Y-m-d', strtotime('+1 year')),
+                    'availability' => 'https://schema.org/InStock',
+                    'url' => 'https://hanara.id/business-solution/digital-marketing'
                 ]
             ],
             'aggregateRating' => [
                 '@type' => 'AggregateRating',
                 'ratingValue' => '4.9',
-                'reviewCount' => '87'
+                'reviewCount' => '87',
+                'bestRating' => '5',
+                'worstRating' => '1'
             ]
         ];
 

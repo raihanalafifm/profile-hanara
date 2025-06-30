@@ -151,14 +151,16 @@
 
                             @foreach ($features as $feature)
                                 <div class="col-md-6 col-lg-3 mb-4">
-                                    <div class="hnr-feature-card" itemscope itemtype="https://schema.org/Product">
+                                    <!-- HAPUS itemscope dan itemtype Product -->
+                                    <div class="hnr-feature-card">
                                         <div class="hnr-feature-icon">
                                             <img src="{{ asset('assets/images/icon/' . $feature['icon']) }}"
                                                 alt="{{ $feature['title'] }} - Fitur Zimbra" loading="lazy" width="10"
                                                 height="10">
                                         </div>
-                                        <h3 class="hnr-feature-card-title" itemprop="name">{{ $feature['title'] }}</h3>
-                                        <p class="hnr-feature-card-text" itemprop="description">
+                                        <!-- HAPUS itemprop attributes -->
+                                        <h3 class="hnr-feature-card-title">{{ $feature['title'] }}</h3>
+                                        <p class="hnr-feature-card-text">
                                             {{ $feature['description'] }}
                                         </p>
                                     </div>
@@ -359,6 +361,8 @@
         </div>
     </section>
 @endsection
+
+
 
 <!-- Include FAQ Schema sebagai JSON-LD -->
 @push('schema-org')
